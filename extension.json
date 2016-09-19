@@ -1,0 +1,42 @@
+{
+	"name": "TwoColConflict",
+	"version": "0.0.1",
+	"author": [
+		"WMDE"
+	],
+	"url": "https://phabricator.wikimedia.org/T143823",
+	"descriptionmsg": "twoColConflict-desc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"manifest_version": 1,
+	"AutoloadClasses": {
+		"TwoColConflictHooks": "TwoColConflict.hooks.php"
+	},
+	"Hooks": {
+		"BeforePageDisplay": [
+			"TwoColConflictHooks::onBeforePageDisplay"
+		]
+	},
+	"MessagesDirs": {
+		"TwoColConflict": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"ext.TwoColConflict.init": {
+			"scripts": [
+				"modules/ext.TwoColConflict.js",
+				"modules/ext.TwoColConflict.init.js"
+			],
+			"styles": [
+				"modules/ext.TwoColConflict.css"
+			],
+			"messages": [],
+			"dependencies": []
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "TwoColConflict"
+	}
+}

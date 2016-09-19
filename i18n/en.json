@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"WMDE"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "This is an extension for showing a side-by-side edit merge screen for edit conflict resolution"
+}
