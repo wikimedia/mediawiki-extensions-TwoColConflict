@@ -4,7 +4,7 @@
 	"author": [
 		"WMDE"
 	],
-	"url": "https://phabricator.wikimedia.org/T143823",
+	"url": "https://www.mediawiki.org/wiki/Extension:TwoColConflict",
 	"descriptionmsg": "twoColConflict-desc",
 	"license-name": "GPL-2.0+",
 	"type": "other",
