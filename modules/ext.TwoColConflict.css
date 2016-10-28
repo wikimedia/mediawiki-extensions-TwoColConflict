@@ -1,3 +1,35 @@
-.mw-twocolconflict-foo {
-	float: left;
+.mw-twocolconflict-explainconflict {
+	border: 1px solid #a7a7a7;
+	padding: 0 0.5em;
+	margin-bottom: 1em;
+}
+
+.mw-twocolconflict-changes-col, .mw-twocolconflict-editor-col {
+	display: table-cell;
+	width: 50%;
+	padding: 0 0.5em;
+}
+
+.mw-twocolconflict-col-desc {
+	font-size: 0.9em;
+ }
+
+.mw-twocolconflict-changes-col textarea {
+	background-color: #f2f2f2;
+
+}
+
+.editOptions {
+	border-top: 1px solid #c0c0c0;
+	margin-top: 1em;
+}
+
+#wpTextbox2 {
+	margin-top: 23px; /* height of the toolbar in the editor textbox */
+}
+
+#wpTextbox2.mw-twocolconflict-wikieditor {
+    line-height: 1.5em;
+    resize: vertical;
+    margin-top: 33px;
 }

@@ -10,11 +10,12 @@
 	"type": "other",
 	"manifest_version": 1,
 	"AutoloadClasses": {
-		"TwoColConflictHooks": "TwoColConflict.hooks.php"
+		"TwoColConflictHooks": "TwoColConflict.hooks.php",
+		"TwoColConflictPage": "includes/TwoColConflictPage.php"
 	},
 	"Hooks": {
-		"BeforePageDisplay": [
-			"TwoColConflictHooks::onBeforePageDisplay"
+		"AlternateEdit": [
+			"TwoColConflictHooks::onAlternateEdit"
 		]
 	},
 	"MessagesDirs": {
@@ -23,11 +24,7 @@
 		]
 	},
 	"ResourceModules": {
-		"ext.TwoColConflict.init": {
-			"scripts": [
-				"modules/ext.TwoColConflict.js",
-				"modules/ext.TwoColConflict.init.js"
-			],
+		"ext.TwoColConflict.editor": {
 			"styles": [
 				"modules/ext.TwoColConflict.css"
 			],
