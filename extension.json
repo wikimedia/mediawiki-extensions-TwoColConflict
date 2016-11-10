@@ -11,7 +11,8 @@
 	"manifest_version": 1,
 	"AutoloadClasses": {
 		"TwoColConflictHooks": "TwoColConflict.hooks.php",
-		"TwoColConflictPage": "includes/TwoColConflictPage.php"
+		"TwoColConflictPage": "includes/TwoColConflictPage.php",
+		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php"
 	},
 	"Hooks": {
 		"AlternateEdit": [

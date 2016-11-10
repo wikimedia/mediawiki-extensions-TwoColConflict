@@ -7,14 +7,21 @@
 .mw-twocolconflict-changes-col, .mw-twocolconflict-editor-col {
 	display: table-cell;
 	width: 50%;
-	padding: 0 0.5em;
+}
+
+.mw-twocolconflict-changes-col {
+	padding-right: 0.5em;
+}
+
+.mw-twocolconflict-editor-col {
+	padding-left: 0.5em;
 }
 
 .mw-twocolconflict-col-desc {
 	font-size: 0.9em;
  }
 
-.editOptions {
+.mw-twocolconflict-form .editOptions {
 	border-top: 1px solid #c0c0c0;
 	margin-top: 1em;
 }
@@ -42,10 +49,14 @@
 	text-shadow: none;
 	text-align: start;
 	overflow: auto;
-	padding: 0.1em;
+	padding: 2px;
 	width: 100%;
 	height: 400px;
 	background-color: #f2f2f2;
+}
+
+#mw-twocolconflict-changes-editor div {
+	display: inline-block;
 }
 
 #mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor {
@@ -55,4 +66,42 @@
 
 .mw-twocolconflict-editor-col #wpTextbox1 {
 	height: 400px;
+}
+
+.mw-twocolconflict-lastuser, del.mw-twocolconflict-diffchange {
+	background-color: #add8e6;
+}
+
+.mw-twocolconflict-user, ins.mw-twocolconflict-diffchange {
+	background-color: #ffffe0;
+}
+
+ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
+	text-decoration: none;
+}
+
+.mw-twocolconflict-diffchange-own,
+.mw-twocolconflict-diffchange-foreign,
+.mw-twocolconflict-diffchange-same {
+	margin: 5px 0 3px 0;
+}
+
+.mw-twocolconflict-diffchange-same {
+	background-color: #e2e2e2;
+}
+
+.mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title,
+.mw-twocolconflict-diffchange-foreign .mw-twocolconflict-diffchange-title {
+	color: white;
+	padding: 1px 2px;
+	font-weight: bold;
+	border-radius: 2px;
+}
+
+.mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title {
+	background-color: #ff8c00;
+}
+
+.mw-twocolconflict-diffchange-foreign .mw-twocolconflict-diffchange-title {
+	background-color: #3879ec;
 }
