@@ -83,18 +83,18 @@ class TwoColConflictPage extends EditPage {
 	private function buildChangesTextbox() {
 		global $wgUser;
 
-		$name = 'wpTextbox2';
+		$name = 'mw-twocolconflict-changes-editor';
 		$wikitext = $this->safeUnicodeOutput( $this->textbox1 );
 		$wikitext = $this->addNewLineAtEnd( $wikitext );
 
-		$customAttribs = [ 'readonly' ];
+		$customAttribs = [];
 		if ( $this->wikiEditorIsEnabled() ) {
 			$customAttribs[ 'class' ] = 'mw-twocolconflict-wikieditor';
 		}
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $wgUser );
 
-		return Html::textarea( $name, $wikitext, $attribs );
+		return Html::rawElement( 'div', $attribs, $wikitext );
 	}
 
 	private function buildConflictPageEditorCol() {
