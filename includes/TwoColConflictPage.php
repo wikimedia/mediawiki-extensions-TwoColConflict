@@ -1,7 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 class TwoColConflictPage extends EditPage {
 
 	protected function addExplainConflictHeader( OutputPage $out ) {
