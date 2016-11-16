@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="361.26532mm"
+   height="221.69354mm"
+   viewBox="0 0 1280.074 785.5283"
+   id="svg6145"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="2ColDifRTL.svg">
+  <defs
+     id="defs6147" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="910.56883"
+     inkscape:cy="511.44988"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1163"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="1381.8887,897.01544"
+       orientation="1,0"
+       id="guide6267" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6150">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-14.248726,3.2590781)">
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 14.521916,733.2692 64,48.5 57.000004,-46.75 66.25,46.5 60.5,-47.25 60.25,47.25 67.75,-47.5 68.75,46.75 64,-45.5 62,46.25 66.25,-46.75 58.75,47 65.75,-47 68,47.5 63.25,-48.5 63.25,47.75 66.74998,-47.25 60.5,47 66.25,-46.75 68.5,47 61.5,-45.25 0,-739.2800846 -1279.523174,0 z"
+       id="path6097"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDifWhite.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 259.97178,266.18104 475.55134,0.22 0.1363,496.34815 -25.17569,14.88515 -58.97611,-46.99 -67.16724,46.99 -61.1604,-47.537 -64.43687,46.445 -69.89761,-46.445 -66.07508,48.084 -62.25256,-49.177 z"
+       id="path4192-4-7-3-8-0-4-5-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:13.39678192;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 755.78701,272.9645 469.16929,0 0.2489,495.3112 -60.8804,-43.55676 -67.0752,46.5575 -60.4219,-47.33758 -67.88428,46.77571 -62.7723,-47.02571 -61.75491,47.24083 -63.97214,-46.72292 -24.12093,15.80042 z"
+       id="path4192-8-9-8-3-6-3-2-5-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;fill-opacity:0.98431373;fill-rule:evenodd;stroke:#e6e6e6;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 17.251566,732.07104 61.68164,45.938 56.234134,-46.65 66.62942,46.697 60.62496,-47.619 60.69119,47.677 66.97274,-47.051 69.18614,47.004 63.63404,-46.538 62.1889,46.675 66.75618,-46.868 58.3062,46.72 65.16689,-47.459 68.48012,47.767 62.9416,-47.927 63.1095,47.619 67.12078,-47.573 60.8044,47.483 65.5041,-46.823 68.4277,46.969 59.166,-43.289 0.4925,-735.12209493 -1274.129294,-0.01 z"
+       id="path5450-6-6-9-0-7-0-1-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccc"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path5460-9-0-2-0-8-6-7-1"
+       sodipodi:type="arc"
+       sodipodi:cx="135.96774"
+       sodipodi:cy="172.1597"
+       sodipodi:rx="64.573372"
+       sodipodi:ry="64.573372"
+       sodipodi:start="0"
+       sodipodi:end="6.2468825"
+       sodipodi:open="true"
+       d="m 200.54111,172.1597 a 64.573372,64.573372 0 0 1 -63.98733,64.57071 64.573372,64.573372 0 0 1 -65.148772,-63.39868 64.573372,64.573372 0 0 1 62.804802,-65.72147 64.573372,64.573372 0 0 1 66.28876,62.20576"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-5-8-1-1-6-9-2-4"
+       width="115.01924"
+       height="18.863991"
+       x="80.056679"
+       y="260.98785"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-0-7-0-5-2-1-9-9-8"
+       width="115.01924"
+       height="283.98346"
+       x="80.512672"
+       y="348.2691"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:#d8d8d8;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-2-6-0-8-6-7-6-7"
+       width="119.66088"
+       height="22.686516"
+       x="1146.765"
+       y="24.724152"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 23.699856,69.333945 1260.339444,0"
+       id="path5496-1-7-4-2-0-1-8-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-6-0-6-6-7-8-5-8-4"
+       width="148.60286"
+       height="22.686516"
+       x="60.941105"
+       y="24.282745"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:#d8d8d8;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-3-8-7-1-6-7-6-7-1"
+       width="54.13187"
+       height="22.686516"
+       x="908.11151"
+       y="25.601105"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:#d8d8d8;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-3-1-8-3-9-8-6-5-2-2"
+       width="54.13187"
+       height="22.686516"
+       x="1063.6919"
+       y="24.188995"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:#d8d8d8;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-3-6-0-0-3-6-4-6-4-9"
+       width="54.13187"
+       height="22.686516"
+       x="986.96039"
+       y="24.001495"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-6-3-0-9-8-3-4-1-3-3"
+       width="449.34164"
+       height="24.324741"
+       x="253.41809"
+       y="23.808136"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e2e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.89999962;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-3-6-2-5-7-4-4-2-8-3-8"
+       width="3.7974331"
+       height="3.9424837"
+       x="268.82263"
+       y="33.935089"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#ff9955;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-65-4-8-5-2"
+       width="247.76791"
+       height="15.290102"
+       x="458.66876"
+       y="354.90973"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-5-6-8-37-4-5"
+       width="353.80057"
+       height="15.290102"
+       x="352.12268"
+       y="424.9097"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#72a3ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-58-3-6-9-2-2"
+       width="157.52599"
+       height="15.290102"
+       x="548.12268"
+       y="464.9097"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-4-3-6-4-1-3"
+       width="407.37201"
+       height="15.290102"
+       x="298.12271"
+       y="534.90967"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-3-0-4-5-5-6"
+       width="407.37201"
+       height="15.290102"
+       x="298.39572"
+       y="574.90967"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-6-0-6-30-2-3"
+       width="203.13992"
+       height="15.290102"
+       x="502.12271"
+       y="604.90967"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-09-9-7-83-7-6"
+       width="388.99954"
+       height="15.290102"
+       x="798.52539"
+       y="354.90973"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-54-3-2-5-0-2"
+       width="388.99954"
+       height="15.290102"
+       x="798.52539"
+       y="464.9097"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-33-3-5-8-2-8"
+       width="388.99954"
+       height="15.290102"
+       x="798.52539"
+       y="389.90973"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-52-8-7-7-5-0"
+       width="143.07167"
+       height="15.290102"
+       x="1043.5969"
+       y="424.55255"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-7-5-8-2-9-4"
+       width="388.99954"
+       height="15.290102"
+       x="798.52545"
+       y="534.90967"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-74-1-6-6-6-2"
+       width="388.99954"
+       height="15.290102"
+       x="798.52539"
+       y="494.9097"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-73-1-7-8-9-2"
+       width="388.99954"
+       height="15.290102"
+       x="798.78613"
+       y="604.90967"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:#d8d8d8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 735.57355,763.20674 15.19493,-11.1442 -15.19183,-1.1074 z"
+       id="path6246-6-7-6-7-9-8-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path6068-0"
+       d="m 735.57355,763.20674 15.23716,-11.1201 -10e-4,-4.418 -15.26914,3.4132 z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-5-8-1-1-6-9-2-4-3"
+       width="115.01924"
+       height="18.863991"
+       x="587.76233"
+       y="200.58723"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:#e5e5e5;stroke-width:5.9000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-5-8-1-1-6-9-2-4-3-6"
+       width="115.01924"
+       height="18.863991"
+       x="1068.2623"
+       y="200.0872"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:#d8d8d8;stroke-width:10.48653221;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5462-5-8-1-1-6-9-2-4-3-7"
+       width="204.43271"
+       height="33.52845"
+       x="1020.5555"
+       y="120.38048"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-65-4-8-5-8-9"
+       width="492.48975"
+       height="15.290102"
+       x="259.18243"
+       y="-750.82288"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g6041"
+       transform="matrix(0.72073821,0,0,0.72073821,206.72482,85.605192)"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4922-54-0-8-3-9"
+         d="m 1147.4652,454.80498 0,53.515"
+         style="fill:none;fill-rule:evenodd;stroke:#347bff;stroke-width:6.9000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4922-54-0-8-3-9-5"
+         d="m 1156.4483,454.13624 -17.8966,0.0341"
+         style="fill:none;fill-rule:evenodd;stroke:#347bff;stroke-width:4.06595707;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4922-54-0-8-3-9-5-3"
+         d="m 1156.4483,509.51123 -17.8966,0.0341"
+         style="fill:none;fill-rule:evenodd;stroke:#347bff;stroke-width:4.06595707;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#d8d8d8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4209-3-0-4-5-5-6-5"
+       width="395.94345"
+       height="15.290102"
+       x="310.56793"
+       y="394.82712"
+       inkscape:export-filename="/home/chkr/wikidata/tcb/2ColDif.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>

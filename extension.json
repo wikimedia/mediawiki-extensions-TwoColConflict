@@ -9,11 +9,17 @@
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"manifest_version": 1,
+	"config": {
+		"TwoColConflictBetaFeature": true
+	},
 	"AutoloadClasses": {
 		"TwoColConflictHooks": "TwoColConflict.hooks.php",
 		"TwoColConflictPage": "includes/TwoColConflictPage.php"
 	},
 	"Hooks": {
+		"GetBetaFeaturePreferences": [
+			"TwoColConflictHooks::getBetaFeaturePreferences"
+		],
 		"AlternateEdit": [
 			"TwoColConflictHooks::onAlternateEdit"
 		]
