@@ -6,12 +6,45 @@ use MediaWiki\Diff\WordAccumulator;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class LineBasedUnifiedDiffFormatter extends DiffFormatter {
+
+	/**
+	 * @var string String added to <ins> tags.
+	 */
 	public $insClass = ' class="diffchange"';
+
+	/**
+	 * @var string String added to <del> tags.
+	 */
 	public $delClass = ' class="diffchange"';
 
+	/**
+	 * @var int
+	 */
 	private $oldline = 1;
+
+	/**
+	 * @var int
+	 */
 	private $newline = 1;
+
+	/**
+	 * @var array
+	 */
 	private $retval = [];
+
+	/**
+	 * @var int max WordLevelDiff edits for choosing a line diff instead
+	 */
+	private $wordLevelDiffEditsThreshold;
+
+	/**
+	 * LineBasedUnifiedDiffFormatter constructor.
+	 *
+	 * @param int $wordLevelDiffEditsThreshold max WordLevelDiff edits for choosing a line diff instead
+	 */
+	public function __construct( $wordLevelDiffEditsThreshold = 5 ) {
+		$this->wordLevelDiffEditsThreshold = $wordLevelDiffEditsThreshold;
+	}
 
 	/**
 	 * @param Diff $diff A Diff object.
@@ -112,7 +145,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 
 		// when comparing long multi-word lines getting an inline results might lead to
 		// a lot inline edits that confuse more then help
-		if ( count( $diff->getEdits() ) > 5 ) {
+		if ( count( $diff->getEdits() ) > $this->wordLevelDiffEditsThreshold ) {
 			return false;
 		}
 
