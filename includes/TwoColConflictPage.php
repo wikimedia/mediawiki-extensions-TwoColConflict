@@ -120,7 +120,9 @@ class TwoColConflictPage extends EditPage {
 		$wikitext = $this->safeUnicodeOutput( $this->getUnifiedDiffText() );
 		$wikitext = $this->addNewLineAtEnd( $wikitext );
 
-		$customAttribs = [];
+		$customAttribs = [
+			'tabindex' => 0
+		];
 		if ( $this->wikiEditorIsEnabled() ) {
 			$customAttribs[ 'class' ] = 'mw-twocolconflict-wikieditor';
 		}
