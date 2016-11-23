@@ -192,14 +192,16 @@ class TwoColConflictPage extends EditPage {
 					switch ( $changeSet[ 'action' ] ) {
 						case 'add':
 							$output[] = '<div class="mw-twocolconflict-diffchange-own">' .
-								'<div class="mw-twocolconflict-diffchange-title">' .
+								'<div class="mw-twocolconflict-diffchange-title" ' .
+								'unselectable="on">' . // used by IE9
 								$this->getContext()->msg( 'twoColConflict-diffchange-own-title' ) .
 								'</div>';
 							$output[] = $changeSet['new'] . '</div>';
 							break;
 						case 'delete':
 							$output[] = '<div class="mw-twocolconflict-diffchange-foreign">' .
-								'<div class="mw-twocolconflict-diffchange-title">' .
+								'<div class="mw-twocolconflict-diffchange-title" ' .
+								'unselectable="on">' . // used by IE9
 								$this->getContext()->msg(
 									'twoColConflict-diffchange-foreign-title',
 									$lastUser
