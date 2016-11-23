@@ -96,7 +96,9 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	padding: 1px 2px;
 	font-weight: bold;
 	border-radius: 2px;
+	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none;
+	-khtml-user-select: none; /* Konqueror */
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
