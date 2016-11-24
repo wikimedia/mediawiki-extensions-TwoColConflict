@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Derugon",
+			"Gomoko"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Affichage d’un écran de fusion des modifications côte-à-côte pour résoudre les conflits de modification",
+	"twoColConflict-explainconflict": "Un autre utilisateur vient juste d'éditer et de sauvegarder cette page, amenant à un conflit entre votre version et la version actuelle. Vous devrez fusionner vos changements avec la version du texte actuelle. Seul le texte dans le champ d'édition sera sauvegardé en cliquant sur \"$1\".",
+	"twoColConflict-changes-col-title": "Modifications contradictoires",
+	"twoColConflict-changes-col-desc": "Il existe des différences entre la version publiée actuelle (par $1 sur $2) et <span class=\"mw-twocolconflict-user\">votre</span> texte ($3)",
+	"twoColConflict-editor-col-title": "Éditeur dont la version sera publiée",
+	"twoColConflict-editor-col-desc": "La version dans l'éditeur sera publiée. Initialement, son contenu est la version publiée actuelle (par $1 sur $2)",
+	"twoColConflict-diffchange-own-title": "dans votre version",
+	"twoColConflict-diffchange-foreign-title": "dans la version $1"
+}

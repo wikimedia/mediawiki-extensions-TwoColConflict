@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Zeigt einen Seite-an-Seite-Bearbeitungszusammenführungsbildschirm für die Auflösung von Bearbeitungskonflikten an",
+	"twoColConflict-explainconflict": "Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion zusammenführen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
+	"twoColConflict-changes-col-title": "Kollidierende Änderungen",
+	"twoColConflict-changes-col-desc": "Unterschiede zwischen der aktuell veröffentlichten Version (von $1 am $2) und <span class=\"mw-twocolconflict-user\">deinem</span> Text ($3)",
+	"twoColConflict-editor-col-title": "Editor mit der Version, die veröffentlicht werden soll.",
+	"twoColConflict-editor-col-desc": "Die Version im Editor wird veröffentlicht. Zunächst ist der Inhalt die derzeit veröffentlichte Version (von $1 am $2).",
+	"twoColConflict-diffchange-own-title": "In deiner Version",
+	"twoColConflict-diffchange-foreign-title": "In der Version von $1"
+}
