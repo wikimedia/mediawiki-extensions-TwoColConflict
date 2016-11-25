@@ -8,4 +8,7 @@ Feature: Two column edit conflict screen
     And I save the edit
     Then The two column edit conflict screen should be shown
     And The editor should contain "I am a longer sentence than before."
-    And The changes textbox should contain "Adding some random content."
+    And Changes should be shown as split into foreign and own
+    And Section for common changes should not be there
+    And Own changes section should contain "Adding some random content."
+    And Foreign changes section should contain "I am a longer sentence than before."
