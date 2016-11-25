@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"twoColConflict-changes-col-title": "Motstridande ändringar",
+	"twoColConflict-diffchange-own-title": "i din version",
+	"twoColConflict-diffchange-foreign-title": "i $1s version"
+}

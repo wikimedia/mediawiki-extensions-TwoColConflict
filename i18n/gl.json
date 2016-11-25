@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Mostra unha pantalla doble de fusión de edicións para amañar conflitos de edición",
+	"twoColConflict-diffchange-own-title": "na súa versión",
+	"twoColConflict-diffchange-foreign-title": "na versión $1"
+}

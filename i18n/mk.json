@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"twoColConflict": "Двостолбна спротиставеност",
+	"twoColConflict-desc": "Напореден приказ на уредувања за спојување при спротиставеност во уредувањето",
+	"twoColConflict-explainconflict": "Друг корисник штотуку ја измени и зачува страницава. Има спротиставеност помеѓу вашата и тековно објавената верзија. Ќе треба да ги припоите вашите промени кон тековната верзија. Само текстот во уредничкото поле ќе се зачува кога ќе стиснете на „$1“.",
+	"twoColConflict-changes-col-title": "Спротиставени промени",
+	"twoColConflict-changes-col-desc": "Разликите помеѓу тековната објавена верзија (од $1 на $2) и <span class=\"mw-twocolconflict-user\">вашиот</span> текст ($3)",
+	"twoColConflict-editor-col-title": "Уредник со верзија што ќе се објави",
+	"twoColConflict-editor-col-desc": "Верзијата во уредникот што ќе се објави. Првично, неговата содржина е тековната објавена верзија (од $1 на $2)",
+	"twoColConflict-diffchange-own-title": "во вашата верзија",
+	"twoColConflict-diffchange-foreign-title": "во верзијата на $1"
+}
