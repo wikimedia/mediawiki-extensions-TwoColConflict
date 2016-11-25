@@ -180,7 +180,7 @@ class TwoColConflictPage extends EditPage {
 		$yourText = $this->textbox1;
 
 		$currentLines = explode( "\n", $currentText );
-		$yourLines = explode( "\n", $yourText );
+		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $yourText ) );
 
 		$combinedChanges = $this->getLineBasedUnifiedDiff( $currentLines, $yourLines );
 
