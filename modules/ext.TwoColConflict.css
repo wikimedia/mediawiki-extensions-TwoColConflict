@@ -21,13 +21,20 @@
 	font-size: 0.9em;
  }
 
+.mw-twocolconflict-editor-col .mw-twocolconflict-col-desc {
+	margin-bottom: 31px;  /* diff-options height - editor-toolbar height */
+}
+
+.mw-twocolconflict-editor-col.mw-twocolconflict-wikieditor .mw-twocolconflict-col-desc {
+	margin-bottom: 21px;  /* diff-options height - editor-toolbar height */
+}
+
 .mw-twocolconflict-form .editOptions {
 	border-top: 1px solid #c0c0c0;
 	margin-top: 1em;
 }
 
 #mw-twocolconflict-changes-editor {
-	margin-top: 24px; /* height of the toolbar in the editor textbox */
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	flex-direction: column;
@@ -54,12 +61,7 @@
 	background-color: #f2f2f2;
 }
 
-#mw-twocolconflict-changes-editor div {
-	display: inline-block;
-}
-
 #mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor {
-	margin-top: 34px;
 	line-height: 1.5em;
 }
 
@@ -79,25 +81,39 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	text-decoration: none;
 }
 
+.mw-twocolconflict-diffchange-foreign,
+.mw-twocolconflict-diffchange-own,
+.mw-twocolconflict-diffchange-same {
+	display: inline-block;
+}
+
 .mw-twocolconflict-diffchange-foreign, .mw-twocolconflict-diffchange-own {
 	margin: 0 0 0.3em 0.3em;
 	padding: 0 0.3em 0 0.3em;
-	border-left-width:2px;
-	border-left-style:solid;
+	border-left-width: 2px;
+	border-left-style: solid;
 }
 
 .mw-twocolconflict-diffchange-foreign{
-	border-left-color:#3879ec;
+	border-left-color: #3879ec;
 }
 
 .mw-twocolconflict-diffchange-own{
-	border-left-color:#ff8c00;
+	border-left-color: #ff8c00;
 }
 
 .mw-twocolconflict-diffchange-same {
 	background-color: #e2e2e2;
-	padding: 0 0.3em 0 0.5em;
 	margin: 1em 0 1em 0;
+	width: 100%;
+}
+
+.mw-twocolconflict-diffchange-same div {
+	padding: 0 0.3em 0 0.5em;
+}
+
+.mw-twocolconflict-diffchange-same-collapsed {
+	display: none;
 }
 
 #mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same:first-child {
@@ -134,4 +150,23 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 
 .mw-twocolconflict-diffchange-foreign .mw-twocolconflict-diffchange-title {
 	background-color: #3879ec;
+}
+
+.mw-twocolconflict-filter-options {
+	display: table;
+	margin: 10px 0 10px 0;
+}
+
+.mw-twocolconflict-filter-options div {
+	vertical-align: middle;
+	display: none; /* will be hidden unless js is available */
+}
+
+.mw-twocolconflict-filter-unchanged {
+	font-weight: bold;
+	padding-right: 30px;
+}
+
+.mw-twocolconflict-filter-options .oo-ui-fieldLayout {
+	padding-right: 10px;
 }

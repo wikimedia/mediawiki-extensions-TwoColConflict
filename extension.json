@@ -37,6 +37,13 @@
 			],
 			"messages": [],
 			"dependencies": []
+		},
+		"ext.TwoColConflict.filter": {
+			"scripts": [
+				"modules/ext.TwoColConflict.filter.js"
+			],
+			"messages": [],
+			"dependencies": []
 		}
 	},
 	"ResourceFileModulePaths": {
