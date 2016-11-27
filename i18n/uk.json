@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Показує екран об'єднання редагувань (два вікна поряд) для вирішення конфліктів редагувань",
+	"twoColConflict-explainconflict": "Інший користувач щойно відредагував і зберіг цю сторінку. Наявний конфлікт між Вашою і поточною версією. Вам треба об'єднати свої зміни з поточною версією тексту. Якщо Ви натиснете «$1», буде збережено лише текст, присутній у вікні редактора.",
+	"twoColConflict-changes-col-title": "Конфліктні зміни",
+	"twoColConflict-changes-col-desc": "Різниця між поточною версією (опубліковано $1 $2) і <span class=\"mw-twocolconflict-user\">Вашим</span> текстом ($3)",
+	"twoColConflict-editor-col-title": "Редактор з версією, що має бути опублікована",
+	"twoColConflict-editor-col-desc": "Версію в редакторі буде опубліковано. Початковим його вмістом є поточна версія (опублікована $1 $2)",
+	"twoColConflict-diffchange-own-title": "у вашій версії",
+	"twoColConflict-diffchange-foreign-title": "у версії $1"
+}
