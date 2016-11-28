@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Facenapalm",
+			"Kareyac"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Показывает экран слияния правок для разрешения конфликтов редактирований в две колонки",
+	"twoColConflict-diffchange-own-title": "в вашей версии"
+}
