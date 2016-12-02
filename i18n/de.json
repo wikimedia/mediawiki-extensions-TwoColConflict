@@ -6,6 +6,7 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Zeigt einen Seite-an-Seite-Bearbeitungszusammenführungsbildschirm für die Auflösung von Bearbeitungskonflikten an",
+	"twoColConflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
 	"twoColConflict-explainconflict": "Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion zusammenführen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
 	"twoColConflict-changes-col-title": "Kollidierende Änderungen",
 	"twoColConflict-changes-col-desc": "Unterschiede zwischen der aktuell veröffentlichten Version (von $1 am $2) und <span class=\"mw-twocolconflict-user\">deinem</span> Text ($3)",
