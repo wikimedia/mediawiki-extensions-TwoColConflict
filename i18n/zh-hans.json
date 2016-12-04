@@ -6,6 +6,8 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "在编辑冲突解决时，显示并排的编辑合并屏幕",
+	"twoColConflict-beta-feature-message": "两列编辑冲突",
+	"twoColConflict-beta-feature-description": "通过使用更高级的两列视图来显示编辑差异视图。",
 	"twoColConflict-explainconflict": "其他用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您将不得不合并您的更改至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
 	"twoColConflict-changes-col-title": "冲突更改",
 	"twoColConflict-changes-col-desc": "当前发布的版本（由$1在$2发布）和<span class=\"mw-twocolconflict-user\">您的</span>文本（$3）之间的不同",

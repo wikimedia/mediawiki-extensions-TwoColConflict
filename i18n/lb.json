@@ -6,6 +6,7 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Weist en Ecran wou op 2 Säiten zwou Versioune gewise gi fir en Ännerungskonflikt ze léisen",
+	"twoColConflict-beta-feature-message": "Zwou-Kolonnen Ännerungskonflikt",
 	"twoColConflict-changes-col-title": "Ännerungen déi am Konflikt sinn",
 	"twoColConflict-diffchange-own-title": "an Ärer Versioun",
 	"twoColConflict-diffchange-foreign-title": "am $1 senger Versioun"
