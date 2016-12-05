@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"twoColConflict-desc": "সম্পাদনা দ্বন্দ্ব নিরসনের জন্য পার্শ্ব-প্রতি-পার্শ্ব সম্পাদনা একত্রীকরণের স্ক্রীন দেখায়",
+	"twoColConflict-beta-feature-message": "দুই কলাম সম্পাদনা দ্বন্দ্ব",
+	"twoColConflict-beta-feature-description": "আরো উন্নত দুই কলাম দৃশ্য ব্যবহার সম্পাদনা দ্বন্দ্বের দৃশ্য প্রদর্শন করানো হবে।"
+}
