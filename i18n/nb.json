@@ -6,6 +6,8 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Viser en todelt skjerm for fletting av redigeringer ved redigeringskonflikt",
+	"twoColConflict-beta-feature-message": "Tokolonners redigeringskonflikt",
+	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
 	"twoColConflict-explainconflict": "En annen bruker redigerte og lagret nettopp denne siden. Det oppsto en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil lagres når du klikker på «$1».",
 	"twoColConflict-changes-col-title": "Motstridende endringer",
 	"twoColConflict-changes-col-desc": "Forskjeller mellom den nåværende publiserte versjonen (av $1 $2) og <span class=\"mw-twocolconflict-user\"din</span> tekst ($3)",
