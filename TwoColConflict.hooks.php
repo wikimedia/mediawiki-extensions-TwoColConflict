@@ -14,8 +14,14 @@ class TwoColConflictHooks {
 
 	public static function onAlternateEdit( EditPage $editPage ) {
 		global $wgHooks;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 
+		/**
+		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
+		 * is loaded then require the current user to have the feature enabled.
+		 */
 		if (
+			$config->get( 'TwoColConflictBetaFeature' ) &&
 			class_exists( BetaFeatures::class ) &&
 			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' )
 		) {
