@@ -124,6 +124,10 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	user-select: none;
 }
 
+[mw-twocolconflict-diffchange-title-pseudo]::before {
+	content: attr(mw-twocolconflict-diffchange-title-pseudo);
+}
+
 .mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title {
 	background-color: #ff8c00;
 }
