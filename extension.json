@@ -21,8 +21,8 @@
 		"GetBetaFeaturePreferences": [
 			"TwoColConflictHooks::getBetaFeaturePreferences"
 		],
-		"AlternateEdit": [
-			"TwoColConflictHooks::onAlternateEdit"
+		"CustomEditor": [
+			"TwoColConflictHooks::onCustomEditor"
 		]
 	},
 	"MessagesDirs": {

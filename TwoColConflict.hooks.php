@@ -12,8 +12,7 @@ use MediaWiki\MediaWikiServices;
 
 class TwoColConflictHooks {
 
-	public static function onAlternateEdit( EditPage $editPage ) {
-		global $wgHooks;
+	public static function onCustomEditor( Article $article, User $user ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		/**
@@ -23,15 +22,12 @@ class TwoColConflictHooks {
 		if (
 			$config->get( 'TwoColConflictBetaFeature' ) &&
 			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' )
+			!BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' )
 		) {
 			return true;
 		}
 
-		$key = array_search( 'TwoColConflictHooks::onAlternateEdit', $wgHooks );
-		unset( $wgHooks[ 'AlternateEdit' ][ $key ] );
-
-		$twoColConflictPage = new TwoColConflictPage( $editPage->mArticle );
+		$twoColConflictPage = new TwoColConflictPage( $article );
 		$twoColConflictPage->edit();
 
 		return false;
