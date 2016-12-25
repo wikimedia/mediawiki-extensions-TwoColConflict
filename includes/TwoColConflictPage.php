@@ -21,17 +21,17 @@ class TwoColConflictPage extends EditPage {
 	 * @param OutputPage $out
 	 */
 	protected function addExplainConflictHeader( OutputPage $out ) {
-		$labelAsPublish = $this->mArticle->getContext()->getConfig()->get(
+		$labelAsPublish = $this->context->getConfig()->get(
 			'EditSubmitButtonLabelPublish'
 		);
 
-		$buttonLabel = $this->getContext()->msg(
+		$buttonLabel = $this->context->msg(
 			$labelAsPublish ? 'publishchanges' : 'savechanges'
 		)->text();
 
 		$out->wrapWikiMsg(
 			"<div class='mw-twocolconflict-explainconflict'>\n$1\n</div>",
-			$this->getContext()->msg( 'twoColConflict-explainconflict', $buttonLabel )
+			$this->context->msg( 'twoColConflict-explainconflict', $buttonLabel )
 		);
 	}
 
@@ -82,7 +82,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildConflictPageChangesCol() {
-		global $wgUser;
+		$currentUser = $this->context->getUser();
 
 		$lastUser =
 			'<span class="mw-twocolconflict-lastuser">' .
@@ -90,11 +90,11 @@ class TwoColConflictPage extends EditPage {
 			'</span>';
 		$lastChangeTime = $this->getContext()->getLanguage()->userTimeAndDate(
 			$this->getArticle()->getPage()->getTimestamp(),
-			$wgUser
+			$currentUser
 		);
 		$yourChangeTime = $this->getContext()->getLanguage()->userTimeAndDate(
 			time(),
-			$wgUser
+			$currentUser
 		);
 
 		$out = '<div class="mw-twocolconflict-changes-col">';
@@ -114,8 +114,6 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildChangesTextbox() {
-		global $wgUser;
-
 		$name = 'mw-twocolconflict-changes-editor';
 		$wikitext = $this->safeUnicodeOutput( $this->getUnifiedDiffText() );
 		$wikitext = $this->addNewLineAtEnd( $wikitext );
@@ -127,7 +125,7 @@ class TwoColConflictPage extends EditPage {
 			$customAttribs[ 'class' ] = 'mw-twocolconflict-wikieditor';
 		}
 
-		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $wgUser );
+		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
 
 		return Html::rawElement( 'div', $attribs, $wikitext );
 	}
@@ -138,11 +136,11 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildConflictPageEditorCol() {
-		global $wgUser;
-
 		$lastUser = $this->getArticle()->getPage()->getUserText();
 		$lastChangeTime = $this->getArticle()->getPage()->getTimestamp();
-		$lastChangeTime = $this->getContext()->getLanguage()->userTimeAndDate( $lastChangeTime, $wgUser );
+		$lastChangeTime = $this->context->getLanguage()->userTimeAndDate(
+			$lastChangeTime, $this->context->getUser()
+		);
 
 		$out = '<div class="mw-twocolconflict-editor-col">';
 		$out.= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
@@ -194,7 +192,7 @@ class TwoColConflictPage extends EditPage {
 							$output[] = '<div class="mw-twocolconflict-diffchange-own">' .
 								'<div class="mw-twocolconflict-diffchange-title">' .
 							    '<span mw-twocolconflict-diffchange-title-pseudo="' .
-								$this->getContext()->msg( 'twoColConflict-diffchange-own-title' ) .
+								$this->context->msg( 'twoColConflict-diffchange-own-title' ) .
 							    '" unselectable="on">' . // used by IE9
 							    '</span>' .
 								'</div>';
@@ -204,7 +202,7 @@ class TwoColConflictPage extends EditPage {
 							$output[] = '<div class="mw-twocolconflict-diffchange-foreign">' .
 								'<div class="mw-twocolconflict-diffchange-title">' .
 							    '<span mw-twocolconflict-diffchange-title-pseudo="' .
-								$this->getContext()->msg(
+								$this->context->msg(
 									'twoColConflict-diffchange-foreign-title',
 									$lastUser
 								) .
@@ -230,10 +228,6 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	private function addCSS() {
-		global $wgOut;
-
-		if ( $wgOut->getResourceLoader()->isModuleRegistered( 'ext.TwoColConflict.editor' ) ) {
-			$wgOut->addModuleStyles( 'ext.TwoColConflict.editor' );
-		}
+		$this->context->getOutput()->addModuleStyles( 'ext.TwoColConflict.editor' );
 	}
 }
