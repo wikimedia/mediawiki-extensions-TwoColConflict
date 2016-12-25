@@ -7,15 +7,6 @@
 class TwoColConflictPage extends EditPage {
 
 	/**
-	 * TwoColConflictPage constructor.
-	 *
-	 * @param Article $article
-	 */
-	public function __construct( Article $article ) {
-		parent::__construct( $article );
-	}
-
-	/**
 	 * Replace default header for explaining the conflict screen.
 	 *
 	 * @param OutputPage $out
