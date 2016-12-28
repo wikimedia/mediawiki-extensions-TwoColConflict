@@ -13,11 +13,11 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	 * @dataProvider provider_testFormat
 	 * @covers LineBasedUnifiedDiffFormatter::format
 	 */
-	public function testFormat( $before, $after, $result ) {
+	public function testFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );
-		$this->assertEquals( $result, $output );
+		$this->assertEquals( $expectedOutput, $output );
 	}
 
 	public function provider_testFormat() {
@@ -373,11 +373,11 @@ TEXT
 	 * @dataProvider provider_testMarkupFormat
 	 * @covers LineBasedUnifiedDiffFormatter::format
 	 */
-	public function testMarkupFormat( $before, $after, $result ) {
+	public function testMarkupFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );
-		$this->assertEquals( $result, $output );
+		$this->assertEquals( $expectedOutput, $output );
 	}
 
 	public function provider_testMarkupFormat() {
