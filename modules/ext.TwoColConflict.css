@@ -157,8 +157,15 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 {
 	position: relative;
 	overflow: hidden;
-	white-space: nowrap;
 	background-color: #e2e2e2;
+}
+
+.mw-twocolconflict-diffchange-fadeout-start {
+	margin-left: 2em;
+}
+
+.mw-twocolconflict-diffchange-fadeout-end {
+	margin-right: 2em;
 }
 
 .mw-twocolconflict-diffchange-fadeout-end:after,
