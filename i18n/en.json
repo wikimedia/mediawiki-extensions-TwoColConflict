@@ -14,5 +14,8 @@
 	"twoColConflict-editor-col-title": "Editor with version to be published",
 	"twoColConflict-editor-col-desc": "The version in the editor will be published. Initially, its content is the currently published version (by $1 on $2)",
 	"twoColConflict-diffchange-own-title": "in your version",
-	"twoColConflict-diffchange-foreign-title": "in $1's version"
+	"twoColConflict-diffchange-foreign-title": "in $1's version",
+	"twoColConflict-label-show": "show",
+	"twoColConflict-label-hide": "hide",
+	"twoColConflict-label-unchanged": "unchanged text"
 }
