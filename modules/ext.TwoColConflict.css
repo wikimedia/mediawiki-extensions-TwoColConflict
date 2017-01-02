@@ -152,6 +152,44 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	background-color: #3879ec;
 }
 
+.mw-twocolconflict-diffchange-fadeout-end,
+.mw-twocolconflict-diffchange-fadeout-start
+{
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: #e2e2e2;
+}
+
+.mw-twocolconflict-diffchange-fadeout-end:after,
+.mw-twocolconflict-diffchange-fadeout-start:before
+{
+	content: "";
+	pointer-events: none;
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	top: 0;
+}
+
+.mw-twocolconflict-diffchange-fadeout-end:after {
+	right: 0;
+	background-image: -webkit-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -moz-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -ms-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -o-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: linear-gradient(to left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+}
+
+.mw-twocolconflict-diffchange-fadeout-start:before {
+	left: 0;
+	background-image: -webkit-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -moz-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -ms-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -o-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: linear-gradient(to right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+}
+
 .mw-twocolconflict-filter-options {
 	display: table;
 	margin: 10px 0 10px 0;

@@ -277,11 +277,13 @@ class TwoColConflictPage extends EditPage {
 		}
 
 		return
+			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
 			htmlentities( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
-			$this->getContext()->msg( 'ellipsis' ) .
+			'</span>' .
 			( count( $lines ) > 1 ? "\n" : $this->getContext()->msg( 'word-separator' ) ) .
-			$this->getContext()->msg( 'ellipsis' )  .
-			htmlentities( $this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false ) );
+			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
+			htmlentities( $this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false ) ) .
+			'</span>';
 	}
 
 	/**
