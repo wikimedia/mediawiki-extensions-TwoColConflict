@@ -44,7 +44,8 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
-			'One... ...even.',
+			'<span class="mw-twocolconflict-diffchange-fadeout-end">One</span> ' .
+			'<span class="mw-twocolconflict-diffchange-fadeout-start">even.</span>',
 			$twoColConflictPageMock->getCollapsedText( 'One Two Three Four Five Six Seven.', 10 )
 		);
 	}
@@ -68,7 +69,8 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
-			"One...\n...Four.",
+			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One</span>\n" .
+			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Four.</span>",
 			$twoColConflictPageMock->getCollapsedText( "One Two\nThree Four.", 10 )
 		);
 	}
@@ -80,7 +82,8 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
-			"One Two...\n...Six Seven.",
+			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One Two</span>\n" .
+			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Six Seven.</span>",
 			$twoColConflictPageMock->getCollapsedText( "One Two\nThree Four\nFive Six Seven.", 25 )
 		);
 	}
@@ -204,7 +207,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 			->getMock();
 		$mockContext->method( 'msg' )
 			->will( $this->returnValueMap( [
-				[ 'ellipsis', '...' ],
 				[ 'word-separator', ' ' ]
 			] ) );
 
