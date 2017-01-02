@@ -9,14 +9,12 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	/**
 	 * @covers TwoColConflictPageTest::getCollapsedText
 	 */
-	public function testGetCollapsedText_noCutWhenInLimit() {
+	public function testGetCollapsedText_returnFalseWhenInLimit() {
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
-		$this->assertEquals(
-			'One Two Three.',
+		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( 'One Two Three.', 14 )
 		);
-		$this->assertEquals(
-			'واحد اثنين ثلاثة',
+		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( 'واحد اثنين ثلاثة', 16 )
 		);
 	}
@@ -24,15 +22,13 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	/**
 	 * @covers TwoColConflictPageTest::getCollapsedText
 	 */
-	public function testGetCollapsedText_noCutWhenOverLimitWithWhitespaces() {
+	public function testGetCollapsedText_returnFalseWhenWhenOverLimitWithWhitespaces() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
-		$this->assertEquals(
-			'One Two Three.',
+		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( "One Two Three.\n \n", 14 )
 		);
-		$this->assertEquals(
-			'واحد اثنين ثلاثة',
+		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( '   واحد اثنين ثلاثة', 16 )
 		);
 	}
@@ -53,11 +49,10 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	/**
 	 * @covers TwoColConflictPageTest::getCollapsedText
 	 */
-	public function testGetCollapsedText_noCutWhenTwoLinesInLimit() {
+	public function testGetCollapsedText_returnFalseWhenTwoLinesInLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
 		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
-		$this->assertEquals(
-			"One Two\nThree Four.",
+		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( "One Two\nThree Four.", 25 )
 		);
 	}

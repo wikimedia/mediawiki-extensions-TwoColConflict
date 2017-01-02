@@ -247,10 +247,7 @@ class TwoColConflictPage extends EditPage {
 							break;
 						case 'copy':
 							$output[] = '<div class="mw-twocolconflict-diffchange-same">' .
-								'<div class="mw-twocolconflict-diffchange-same-full">' .
-								$changeSet['copy'] . '</div>' .
-								'<div class="mw-twocolconflict-diffchange-same-collapsed">' .
-								$this->getCollapsedText( $changeSet['copy'] ) . '</div>' .
+								$this->addUnchangedText( $changeSet['copy'] ) .
 								'</div>';
 							break;
 					}
@@ -262,18 +259,36 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	/**
+	 * Build HTML for the unchanged text in the unified diff box.
+	 *
+	 * @return string
+	 */
+	private function addUnchangedText( $text ) {
+		$collapsedText = $this->getCollapsedText( $text );
+
+		if ( !$collapsedText ) {
+			return $text;
+		}
+
+		return
+			'<div class="mw-twocolconflict-diffchange-same-full">' . $text . '</div>' .
+			'<div class="mw-twocolconflict-diffchange-same-collapsed">' . $collapsedText . '</div>';
+	}
+
+	/**
 	 * Get a collapsed version of multi-line text.
+	 * Returns false if text is within length-limit.
 	 *
 	 * @param string $text
 	 * @param int $maxLength
-	 * @return string
+	 * @return string|false
 	 */
 	private function getCollapsedText( $text, $maxLength = 150 ) {
 		$text = $this->trimWhiteSpaces( html_entity_decode( $text ) );
 		$lines = explode( "\n", $text );
 
 		if ( mb_strlen( $text ) <= $maxLength && count( $lines ) <= 2 ) {
-			return htmlentities( $text );
+			return false;
 		}
 
 		return

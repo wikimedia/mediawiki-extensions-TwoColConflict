@@ -4,11 +4,11 @@
 
 		$( 'input[name="mw-twocolconflict-same"]' ).change( function () {
 			if ( $( this ).val() === 'show' ) {
-				$( '.mw-twocolconflict-diffchange-same-collapsed' ).hide();
-				$( '.mw-twocolconflict-diffchange-same-full' ).show();
+				$( '.mw-twocolconflict-diffchange-same-collapsed' ).slideUp();
+				$( '.mw-twocolconflict-diffchange-same-full' ).slideDown();
 			} else {
-				$( '.mw-twocolconflict-diffchange-same-full' ).hide();
-				$( '.mw-twocolconflict-diffchange-same-collapsed' ).show();
+				$( '.mw-twocolconflict-diffchange-same-full' ).slideUp();
+				$( '.mw-twocolconflict-diffchange-same-collapsed' ).slideDown();
 			}
 		} );
 
