@@ -58,7 +58,16 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function addEditFormBeforeContent() {
-		return $this->buildConflictPageChangesCol() . $this->buildConflictPageEditorCol();
+		$out = $this->buildConflictPageChangesCol();
+
+		$editorClass = '';
+		if ( $this->wikiEditorIsEnabled() ) {
+			$editorClass = ' mw-twocolconflict-wikieditor';
+		}
+		$out.= '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
+		$out.= $this->buildConflictPageEditorCol();
+
+		return $out;
 	}
 
 	/**
@@ -67,7 +76,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function addEditFormAfterContent() {
-		// this div is opened when encapsulating the editor in buildConflictPageEditorCol.
+		// this div is opened when encapsulating the default editor in addEditFormBeforeContent.
 		return '</div>';
 	}
 
@@ -171,13 +180,7 @@ class TwoColConflictPage extends EditPage {
 			$lastChangeTime, $this->context->getUser()
 		);
 
-		$editorClass = '';
-		if ( $this->wikiEditorIsEnabled() ) {
-			$editorClass = ' mw-twocolconflict-wikieditor';
-		}
-
-		$out = '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
-		$out.= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+		$out = '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out.= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
 			'twoColConflict-editor-col-desc', $lastUser, $lastChangeTime
 			) . '</div>';
