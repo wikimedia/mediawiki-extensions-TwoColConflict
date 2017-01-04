@@ -5,8 +5,9 @@
 }
 
 .mw-twocolconflict-changes-col, .mw-twocolconflict-editor-col {
-	display: table-cell;
+	box-sizing: border-box;
 	width: 50%;
+	float: left;
 }
 
 .mw-twocolconflict-changes-col {
@@ -37,6 +38,7 @@
 #mw-twocolconflict-changes-editor {
 	white-space: pre-wrap;
 	word-wrap: break-word;
+	overflow-wrap: break-word;
 	flex-direction: column;
 	resize: vertical;
 	-moz-appearance: textfield-multiline;
@@ -56,8 +58,8 @@
 	text-shadow: none;
 	text-align: start;
 	overflow: auto;
-	width: 100%;
 	height: 400px;
+	width: 100%;
 	background-color: #f2f2f2;
 }
 
@@ -82,8 +84,7 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 }
 
 .mw-twocolconflict-diffchange-foreign,
-.mw-twocolconflict-diffchange-own,
-.mw-twocolconflict-diffchange-same {
+.mw-twocolconflict-diffchange-own {
 	display: inline-block;
 }
 
@@ -105,7 +106,6 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 .mw-twocolconflict-diffchange-same {
 	background-color: #e2e2e2;
 	margin: 1em 0 1em 0;
-	width: 100%;
 }
 
 .mw-twocolconflict-diffchange-same div {
