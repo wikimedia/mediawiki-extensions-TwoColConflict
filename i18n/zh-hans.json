@@ -14,5 +14,8 @@
 	"twoColConflict-editor-col-title": "有待发布版本的编辑者",
 	"twoColConflict-editor-col-desc": "编辑者中的版本将被发布。起初，它的内容是当前发布的版本（由$1在$2发布）",
 	"twoColConflict-diffchange-own-title": "在您的版本中",
-	"twoColConflict-diffchange-foreign-title": "在$1的版本中"
+	"twoColConflict-diffchange-foreign-title": "在$1的版本中",
+	"twoColConflict-label-show": "显示",
+	"twoColConflict-label-hide": "隐藏",
+	"twoColConflict-label-unchanged": "未更改文本"
 }

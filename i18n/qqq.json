@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WMDE"
+			"WMDE",
+			"Robby"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -15,7 +16,7 @@
 	"twoColConflict-editor-col-desc": "Description text for the editor column.\n\nParameters:\n$1 - Username of user that edited the last valid version.\n$2 - User-formatted time and date when the current revision was changed.",
 	"twoColConflict-diffchange-own-title": "The title text in the unified diff view for changes by the user.",
 	"twoColConflict-diffchange-foreign-title": "The title text in the unified diff view for conflicting changes.\n\nParameters:\n$1 - Username of the user that edited the current revision of the page.",
-	"twoColConflict-label-show": "Label for the option showing elements in the diff view.",
-	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.",
+	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
+	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
 	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view."
 }

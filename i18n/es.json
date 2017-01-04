@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dgstranz",
+			"Fitoschido"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Muestra una pantalla de combinación doble para solucionar conflictos",
+	"twoColConflict-label-show": "mostrar",
+	"twoColConflict-label-hide": "ocultar",
+	"twoColConflict-label-unchanged": "texto sin cambios"
+}

@@ -9,5 +9,8 @@
 	"twoColConflict-beta-feature-message": "Zwou-Kolonnen Ännerungskonflikt",
 	"twoColConflict-changes-col-title": "Ännerungen déi am Konflikt sinn",
 	"twoColConflict-diffchange-own-title": "an Ärer Versioun",
-	"twoColConflict-diffchange-foreign-title": "am $1 senger Versioun"
+	"twoColConflict-diffchange-foreign-title": "am $1 senger Versioun",
+	"twoColConflict-label-show": "weisen",
+	"twoColConflict-label-hide": "verstoppen",
+	"twoColConflict-label-unchanged": "onverännerten Text"
 }

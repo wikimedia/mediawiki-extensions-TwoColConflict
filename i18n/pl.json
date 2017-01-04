@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"twoColConflict-label-show": "pokaż",
+	"twoColConflict-label-hide": "ukryj",
+	"twoColConflict-label-unchanged": "niezmieniony tekst"
+}

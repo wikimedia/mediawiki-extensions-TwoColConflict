@@ -12,5 +12,7 @@
 	"twoColConflict-changes-col-desc": "Differenze tra la versione attualmente pubblicata (da $1 il $2) e <span class=\"mw-twocolconflict-user\">il tuo</span> testo ($3)",
 	"twoColConflict-editor-col-desc": "La versione nell'editor verrà pubblicata. Inizialmente, il suo contenuto è la versione attualmente pubblicata (da $1 il $2)",
 	"twoColConflict-diffchange-own-title": "nella tua versione",
-	"twoColConflict-diffchange-foreign-title": "nella versione di $1"
+	"twoColConflict-diffchange-foreign-title": "nella versione di $1",
+	"twoColConflict-label-show": "mostra",
+	"twoColConflict-label-hide": "nascondi"
 }

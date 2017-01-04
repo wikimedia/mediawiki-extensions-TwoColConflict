@@ -14,5 +14,8 @@
 	"twoColConflict-editor-col-title": "Уредник со верзија што ќе се објави",
 	"twoColConflict-editor-col-desc": "Верзијата во уредникот што ќе се објави. Првично, неговата содржина е тековната објавена верзија (од $1 на $2)",
 	"twoColConflict-diffchange-own-title": "во вашата верзија",
-	"twoColConflict-diffchange-foreign-title": "во верзијата на $1"
+	"twoColConflict-diffchange-foreign-title": "во верзијата на $1",
+	"twoColConflict-label-show": "прикажи",
+	"twoColConflict-label-hide": "скриј",
+	"twoColConflict-label-unchanged": "непроменет текст"
 }

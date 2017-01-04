@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"twoColConflict-label-show": "показване",
+	"twoColConflict-label-hide": "скриване",
+	"twoColConflict-label-unchanged": "неизменен текст"
+}

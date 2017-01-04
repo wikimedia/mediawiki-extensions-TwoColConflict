@@ -6,6 +6,8 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Amosar una pantalla d'entemecer con paneles axacentes pa resolver conflictos d'edición",
+	"twoColConflict-beta-feature-message": "Conflictu d'edición a dos columnes",
+	"twoColConflict-beta-feature-description": "Amosar la vista d'edición de conflictu usando una vista en dos columnes más avanzada.",
 	"twoColConflict-explainconflict": "Otru usuariu ta acabante d'editar y guardar esta páxina. Hai un conflictu ente la to versión y la versión actual. tendrás qu'entemecer los tos cambios na actual versión del testu. Sólo va guardase'l testu del campu del editor cuando faigas click en «$1».",
 	"twoColConflict-changes-col-title": "Cambios en conflictu",
 	"twoColConflict-changes-col-desc": "Diferencies ente la versión publicada actual (por $1 el $2) ya'l <span class=\"mw-twocolconflict-user\">to</span> testu ($3)",

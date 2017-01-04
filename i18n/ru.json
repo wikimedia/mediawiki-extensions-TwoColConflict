@@ -7,5 +7,8 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Показывает экран слияния правок для разрешения конфликтов редактирований в две колонки",
-	"twoColConflict-diffchange-own-title": "в вашей версии"
+	"twoColConflict-diffchange-own-title": "в вашей версии",
+	"twoColConflict-label-show": "показать",
+	"twoColConflict-label-hide": "скрыть",
+	"twoColConflict-label-unchanged": "неизменный текст"
 }

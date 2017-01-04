@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-label-show": "보이기",
+	"twoColConflict-label-hide": "숨기기"
+}
