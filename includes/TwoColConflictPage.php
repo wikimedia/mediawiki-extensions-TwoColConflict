@@ -24,7 +24,7 @@ class TwoColConflictPage extends EditPage {
 		)->text();
 
 		$out->wrapWikiMsg(
-			"<div class='mw-twocolconflict-explainconflict'>\n$1\n</div>",
+			"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
 			$this->context->msg( 'twoColConflict-explainconflict', $buttonLabel )
 		);
 	}
