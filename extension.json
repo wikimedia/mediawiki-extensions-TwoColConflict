@@ -13,7 +13,7 @@
 		"TwoColConflictBetaFeature": true
 	},
 	"AutoloadClasses": {
-		"TwoColConflictHooks": "TwoColConflict.hooks.php",
+		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
 		"TwoColConflictPage": "includes/TwoColConflictPage.php",
 		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php"
 	},
