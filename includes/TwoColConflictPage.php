@@ -77,7 +77,7 @@ class TwoColConflictPage extends EditPage {
 	 */
 	private function addEditFormAfterContent() {
 		// this div is opened when encapsulating the default editor in addEditFormBeforeContent.
-		return '</div>';
+		return '</div><div style="clear: both" />';
 	}
 
 	/**
