@@ -8,7 +8,7 @@
 	"twoColConflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twoColConflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
 	"twoColConflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.",
-	"twoColConflict-explainconflict": "Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion zusammenführen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
+	"twoColConflict-explainconflict": "<strong>Warnung:</strong> Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion zusammenführen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
 	"twoColConflict-changes-col-title": "Kollidierende Änderungen",
 	"twoColConflict-changes-col-desc": "Unterschiede zwischen der aktuell veröffentlichten Version (von $1 am $2) und <span class=\"mw-twocolconflict-user\">deinem</span> Text ($3)",
 	"twoColConflict-editor-col-title": "Editor mit der Version, die veröffentlicht werden soll.",
