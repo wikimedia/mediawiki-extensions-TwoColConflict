@@ -5,6 +5,7 @@
 		]
 	},
 	"twoColConflict": "TwoColConflict",
+	"twoColConflict-explainconflict": "<strong>경고:</strong> 다른 사용자가 방금 이 문서를 편집하고 저장했습니다. 당신의 판과 현재 판 사이에 충돌이 있습니다. 변경 사항을 현재의 텍스트 판으로 병합해야 합니다. \"$1\"를 클릭하면 편집기 필드의 텍스트만 저장됩니다.",
 	"twoColConflict-label-show": "보이기",
 	"twoColConflict-label-hide": "숨기기"
 }
