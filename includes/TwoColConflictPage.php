@@ -229,7 +229,7 @@ class TwoColConflictPage extends EditPage {
 							$output[] = '<div class="mw-twocolconflict-diffchange-own">' .
 								'<div class="mw-twocolconflict-diffchange-title">' .
 							    '<span mw-twocolconflict-diffchange-title-pseudo="' .
-								$this->context->msg( 'twoColConflict-diffchange-own-title' ) .
+								$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
 							    '" unselectable="on">' . // used by IE9
 							    '</span>' .
 								'</div>';
@@ -242,7 +242,7 @@ class TwoColConflictPage extends EditPage {
 								$this->context->msg(
 									'twoColConflict-diffchange-foreign-title',
 									$lastUser
-								) .
+								)->escaped() .
 							    '" unselectable="on">' . // used by IE9
 							    '</span>' .
 								'</div>';
