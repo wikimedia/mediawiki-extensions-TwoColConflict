@@ -102,10 +102,11 @@ class TwoColConflictPage extends EditPage {
 		);
 
 		$out = '<div class="mw-twocolconflict-changes-col">';
-		$out.= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' ) . '</h3>';
+		$out.= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
+			'</h3>';
 		$out.= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
 			'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
-			) . '</div>';
+			)->parse() . '</div>';
 		$out.= $this->buildFilterOptionsMenu();
 		$out.= $this->buildChangesTextbox();
 		$out.= '</div>';
