@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Mostra unha pantalla doble de fusión de edicións para amañar conflitos de edición",
 	"twoColConflict-diffchange-own-title": "na súa versión",
-	"twoColConflict-diffchange-foreign-title": "na versión $1"
+	"twoColConflict-diffchange-foreign-title": "na versión $1",
+	"twoColConflict-label-show": "amosar",
+	"twoColConflict-label-hide": "agochar"
 }
