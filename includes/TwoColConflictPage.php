@@ -233,8 +233,9 @@ class TwoColConflictPage extends EditPage {
 								$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
 							    '" unselectable="on">' . // used by IE9
 							    '</span>' .
+								'</div>' .
+								$changeSet['new'] .
 								'</div>';
-							$output[] = $changeSet['new'] . '</div>';
 							break;
 						case 'delete':
 							$output[] = '<div class="mw-twocolconflict-diffchange-foreign">' .
@@ -246,8 +247,9 @@ class TwoColConflictPage extends EditPage {
 								)->escaped() .
 							    '" unselectable="on">' . // used by IE9
 							    '</span>' .
+								'</div>' .
+								$changeSet['old'] .
 								'</div>';
-							$output[] = $changeSet['old'] . '</div>';
 							break;
 						case 'copy':
 							$output[] = '<div class="mw-twocolconflict-diffchange-same">' .
