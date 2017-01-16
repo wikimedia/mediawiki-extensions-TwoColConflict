@@ -1,4 +1,4 @@
-( function () {
+( function ( $ ) {
 	$( function () {
 		$( '.mw-twocolconflict-filter-options div' ).css( 'display', 'table-cell' );
 
@@ -16,4 +16,4 @@
 			$( 'input[name="mw-twocolconflict-same"]' )[ 0 ].closest( 'label' ).click();
 		} );
 	} );
-}() );
+}( jQuery ) );

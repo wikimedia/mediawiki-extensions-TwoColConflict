@@ -25,7 +25,7 @@ class TwoColConflictPage extends EditPage {
 
 		$out->wrapWikiMsg(
 			"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
-			$this->context->msg( 'twoColConflict-explainconflict', $buttonLabel )
+			[ 'twoColConflict-explainconflict', $buttonLabel ]
 		);
 	}
 
@@ -300,11 +300,11 @@ class TwoColConflictPage extends EditPage {
 
 		return
 			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
-			htmlentities( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
+			htmlspecialchars( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
 			'</span>' .
 			( count( $lines ) > 1 ? "\n" : $this->getContext()->msg( 'word-separator' ) ) .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
-			htmlentities( $this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false ) ) .
+			htmlspecialchars( $this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false ) ) .
 			'</span>';
 	}
 
@@ -341,7 +341,7 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	/**
-	 * Trims non-printable characters from a string.
+	 * Trims whitespaces and most non-printable characters from a string.
 	 *
 	 * @param string $string
 	 * @param null|boolean $trimAtEnd
