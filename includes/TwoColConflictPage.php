@@ -158,10 +158,11 @@ class TwoColConflictPage extends EditPage {
 		$wikitext = $this->addNewLineAtEnd( $wikitext );
 
 		$customAttribs = [
-			'tabindex' => 0
+			'tabindex' => 0,
+			'class' => 'mw-twocolconflict-changes-editor'
 		];
 		if ( $this->wikiEditorIsEnabled() ) {
-			$customAttribs[ 'class' ] = 'mw-twocolconflict-wikieditor';
+			$customAttribs[ 'class' ] .= ' mw-twocolconflict-wikieditor';
 		}
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );

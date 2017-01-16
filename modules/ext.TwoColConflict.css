@@ -1,4 +1,5 @@
-.mw-twocolconflict-changes-col, .mw-twocolconflict-editor-col {
+.mw-twocolconflict-changes-col,
+.mw-twocolconflict-editor-col {
 	box-sizing: border-box;
 	width: 50%;
 	float: left;
@@ -14,7 +15,7 @@
 
 .mw-twocolconflict-col-desc {
 	font-size: 0.9em;
- }
+}
 
 .mw-twocolconflict-editor-col .mw-twocolconflict-col-desc {
 	margin-bottom: 31px;  /* diff-options height - editor-toolbar height */
@@ -29,7 +30,7 @@
 	margin-top: 1em;
 }
 
-#mw-twocolconflict-changes-editor {
+.mw-twocolconflict-changes-editor {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -40,8 +41,8 @@
 	-webkit-user-select: text;
 	border: 1px solid #c0c0c0;
 	box-sizing: border-box;
-	font: medium -moz-fixed;
-	font: -webkit-small-control;
+	font: medium '-moz-fixed';
+	font: '-webkit-small-control';
 	font-family: monospace;
 	text-rendering: auto;
 	color: initial;
@@ -57,43 +58,45 @@
 	background-color: #f2f2f2;
 }
 
-#mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor {
+.mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor {
 	line-height: 1.5em;
 }
 
+/* stylelint-disable selector-no-id */
 .mw-twocolconflict-editor-col #wpTextbox1 {
 	height: 400px;
 }
+/* stylelint-enable selector-no-id */
 
-.mw-twocolconflict-lastuser, del.mw-twocolconflict-diffchange {
+.mw-twocolconflict-lastuser,
+del.mw-twocolconflict-diffchange {
 	background-color: #add8e6;
 }
 
-.mw-twocolconflict-user, ins.mw-twocolconflict-diffchange {
+.mw-twocolconflict-user,
+ins.mw-twocolconflict-diffchange {
 	background-color: #ffec60;
 }
 
-ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
+ins.mw-twocolconflict-diffchange,
+del.mw-twocolconflict-diffchange {
 	text-decoration: none;
 }
 
 .mw-twocolconflict-diffchange-foreign,
 .mw-twocolconflict-diffchange-own {
 	display: inline-block;
-}
-
-.mw-twocolconflict-diffchange-foreign, .mw-twocolconflict-diffchange-own {
 	margin: 0 0 0.3em 0.3em;
 	padding: 0 0.3em 0 0.3em;
 	border-left-width: 2px;
 	border-left-style: solid;
 }
 
-.mw-twocolconflict-diffchange-foreign{
+.mw-twocolconflict-diffchange-foreign {
 	border-left-color: #3879ec;
 }
 
-.mw-twocolconflict-diffchange-own{
+.mw-twocolconflict-diffchange-own {
 	border-left-color: #ff8c00;
 }
 
@@ -110,17 +113,17 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	display: none;
 }
 
-#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same:first-child {
+.mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same:first-child {
 	margin: 0 0 1em 0;
 }
 
-#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same:last-child {
+.mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same:last-child {
 	margin: 1em 0 0 0;
 }
 
 .mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title,
 .mw-twocolconflict-diffchange-foreign .mw-twocolconflict-diffchange-title {
-	color: white;
+	color: #fff;
 	padding: 1px 2px;
 	margin: 0 0 4px -4px;
 	font-weight: bold;
@@ -134,8 +137,8 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 	user-select: none;
 }
 
-[mw-twocolconflict-diffchange-title-pseudo]::before {
-	content: attr(mw-twocolconflict-diffchange-title-pseudo);
+[mw-twocolconflict-diffchange-title-pseudo]:before {
+	content: attr( mw-twocolconflict-diffchange-title-pseudo );
 }
 
 .mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title {
@@ -147,8 +150,7 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 }
 
 .mw-twocolconflict-diffchange-fadeout-end,
-.mw-twocolconflict-diffchange-fadeout-start
-{
+.mw-twocolconflict-diffchange-fadeout-start {
 	position: relative;
 	overflow: hidden;
 	background-color: #e2e2e2;
@@ -163,9 +165,8 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 }
 
 .mw-twocolconflict-diffchange-fadeout-end:after,
-.mw-twocolconflict-diffchange-fadeout-start:before
-{
-	content: "";
+.mw-twocolconflict-diffchange-fadeout-start:before {
+	content: '';
 	pointer-events: none;
 	position: absolute;
 	width: 100px;
@@ -175,20 +176,20 @@ ins.mw-twocolconflict-diffchange,  del.mw-twocolconflict-diffchange {
 
 .mw-twocolconflict-diffchange-fadeout-end:after {
 	right: 0;
-	background-image: -webkit-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -moz-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -ms-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -o-linear-gradient(right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: linear-gradient(to left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -webkit-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -moz-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -ms-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -o-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: linear-gradient( to left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 }
 
 .mw-twocolconflict-diffchange-fadeout-start:before {
 	left: 0;
-	background-image: -webkit-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -moz-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -ms-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: -o-linear-gradient(left, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
-	background-image: linear-gradient(to right, rgba(226, 226, 226, 1), rgba(226, 226, 226, 0));
+	background-image: -webkit-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -moz-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -ms-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: -o-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
+	background-image: linear-gradient( to left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 }
 
 .mw-twocolconflict-filter-options {
