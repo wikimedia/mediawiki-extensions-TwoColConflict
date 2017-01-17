@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ladsgroup"
+		]
+	},
+	"twoColConflict": "تعارض‌دوستونی",
+	"twoColConflict-desc": "نمایش کنارهم حل تعارض ویرایشی",
+	"twoColConflict-beta-feature-message": "تعارض ویرایشی دو ستونی",
+	"twoColConflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد",
+	"twoColConflict-explainconflict": "<strong>هشدار:</strong> کاربری دیگر هم‌اکنون این صفحه را ویرایش و ذخیره کرده‌است. تعارض بین نسخه شما و نسخه کنونی وجود دارد. شما باید نسخه خودتان را در نسخه کنونی ادغام کنید. هنگامی که بر «$1» کلیک کنید، فقط متن بخش ویرایش ذخیره خواهد شد.",
+	"twoColConflict-changes-col-title": "تغییرات متعارض",
+	"twoColConflict-changes-col-desc": "تقاوت بین نسخه منتشر شده (توسط $1 در $2) و متن <span class=\"mw-twocolconflict-user\">شما</span> ($3)",
+	"twoColConflict-editor-col-title": "ویرایش‌گر با نسخه‌ای که منتشر خواهد شد",
+	"twoColConflict-editor-col-desc": "این نسخه در ویرایش‌گر منتشر خواهد شد. در ابتدا محتویات آن، نسخه کنونی منتشر شده‌است (توسط $1 در $2)",
+	"twoColConflict-diffchange-own-title": "در نسخه شما",
+	"twoColConflict-diffchange-foreign-title": "در نسخه $1",
+	"twoColConflict-label-show": "نمایش",
+	"twoColConflict-label-hide": "نهفتن",
+	"twoColConflict-label-unchanged": "متن تغییرنکرده"
+}
