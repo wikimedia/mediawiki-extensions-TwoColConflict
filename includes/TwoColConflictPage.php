@@ -267,8 +267,9 @@ class TwoColConflictPage extends EditPage {
 
 	/**
 	 * Build HTML for the unchanged text in the unified diff box.
-	 *
-	 * @return string
+
+	 * @param string $text HTML
+	 * @return string HTML
 	 */
 	private function addUnchangedText( $text ) {
 		$collapsedText = $this->getCollapsedText( $text );
@@ -286,7 +287,7 @@ class TwoColConflictPage extends EditPage {
 	 * Get a collapsed version of multi-line text.
 	 * Returns false if text is within length-limit.
 	 *
-	 * @param string $text
+	 * @param string $text HTML
 	 * @param int $maxLength
 	 * @return string|false
 	 */
@@ -348,19 +349,15 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function trimWhiteSpaces( $string, $trimAtEnd = null ) {
-		if ( $trimAtEnd === null ) {
+		if ( $trimAtEnd !== false ) {
 			$string = preg_replace( '/[' . self::WHITESPACES . ']+$/u', '', $string );
-			return preg_replace( '/^[' . self::WHITESPACES . ']+/u', '', $string );
 		}
 
-		if ( $trimAtEnd === true ) {
-			return preg_replace( '/[' . self::WHITESPACES . ']+$/u', '', $string );
+		if ( $trimAtEnd !== true ) {
+			$string = preg_replace( '/^[' . self::WHITESPACES . ']+/u', '', $string );
 		}
 
-		if ( $trimAtEnd === false ) {
-			return preg_replace( '/^[' . self::WHITESPACES . ']+/u', '', $string );
-		}
-
+		return $string;
 	}
 
 	private function wikiEditorIsEnabled() {

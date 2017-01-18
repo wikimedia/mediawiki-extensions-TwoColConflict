@@ -33,6 +33,10 @@ class TwoColConflictHooks {
 		return false;
 	}
 
+	/**
+	 * @param User $user
+	 * @param array[] &$prefs
+	 */
 	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );

@@ -225,12 +225,18 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 		];
 	}
 
+	/**
+	 * @return TwoColConflictPage
+	 */
 	private function getMockPage() {
 		return $this->getMockBuilder( 'TwoColConflictPage' )
 			->disableOriginalConstructor()
 			->getMock();
 	}
 
+	/**
+	 * @return TwoColConflictPage
+	 */
 	private function getMockPageWithContext() {
 		$mockContext = $this->getMockBuilder( 'RequestContext' )
 			->disableOriginalConstructor()
