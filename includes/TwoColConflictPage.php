@@ -89,9 +89,9 @@ class TwoColConflictPage extends EditPage {
 		$currentUser = $this->context->getUser();
 
 		$lastUser =
-			'<span class="mw-twocolconflict-lastuser">' .
+			'<span class="mw-twocolconflict-lastuser"><bdi>' .
 			$this->mArticle->getPage()->getUserText() .
-			'</span>';
+			'</bdi></span>';
 		$lastChangeTime = $this->getContext()->getLanguage()->userTimeAndDate(
 			$this->getArticle()->getPage()->getTimestamp(),
 			$currentUser
@@ -176,7 +176,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildConflictPageEditorCol() {
-		$lastUser = $this->getArticle()->getPage()->getUserText();
+		$lastUser = '<bdi>' . $this->getArticle()->getPage()->getUserText() . '</bdi>';
 		$lastChangeTime = $this->getArticle()->getPage()->getTimestamp();
 		$lastChangeTime = $this->context->getLanguage()->userTimeAndDate(
 			$lastChangeTime, $this->context->getUser()
