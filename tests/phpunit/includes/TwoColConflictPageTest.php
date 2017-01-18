@@ -190,6 +190,41 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 		];
 	}
 
+	/**
+	 * @param string $input
+	 * @param null|boolean $trimAtEnd
+	 * @param string $result
+	 * @dataProvider provider_trimWhiteSpaces
+	 * @covers TwoColConflictPageTest::trimWhiteSpaces
+	 */
+	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
+		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		self::assertEquals(
+			$result,
+			$twoColConflictPageMock->trimWhiteSpaces( $input, $trimAtEnd )
+		);
+	}
+
+	public function provider_trimWhiteSpaces() {
+		return [
+			[
+				'input' => ' Text ',
+				'trimAtEnd' => null,
+				'result' => 'Text',
+			],
+			[
+				'input' => ' Text ',
+				'trimAtEnd' => true,
+				'result' => ' Text',
+			],
+			[
+				'input' => ' Text ',
+				'trimAtEnd' => false,
+				'result' => 'Text ',
+			]
+		];
+	}
+
 	private function getMockPage() {
 		return $this->getMockBuilder( 'TwoColConflictPage' )
 			->disableOriginalConstructor()
