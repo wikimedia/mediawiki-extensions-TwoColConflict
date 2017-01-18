@@ -63,11 +63,10 @@
 	line-height: 1.5em;
 }
 
-/* stylelint-disable selector-no-id */
+/* stylelint-disable-next-line selector-no-id */
 .mw-twocolconflict-editor-col #wpTextbox1 {
 	height: 400px;
 }
-/* stylelint-enable selector-no-id */
 
 .mw-twocolconflict-lastuser,
 del.mw-twocolconflict-diffchange {
