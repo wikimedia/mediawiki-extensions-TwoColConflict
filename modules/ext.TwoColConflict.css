@@ -30,7 +30,8 @@
 	margin-top: 1em;
 }
 
-.mw-twocolconflict-changes-editor {
+.mw-twocolconflict-changes-editor,
+.mw-twocolconflict-hidden-editor {
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -59,7 +60,14 @@
 	cursor: text;
 }
 
-.mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor {
+.mw-twocolconflict-hidden-editor {
+	padding: 0 4px;
+	position: absolute;
+	top: -10000px;
+}
+
+.mw-twocolconflict-changes-editor.mw-twocolconflict-wikieditor,
+.mw-twocolconflict-hidden-editor.mw-twocolconflict-wikieditor {
 	line-height: 1.5em;
 }
 

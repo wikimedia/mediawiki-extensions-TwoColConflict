@@ -50,6 +50,11 @@
 			"scripts": [
 				"modules/ext.TwoColConflict.filterOptions.js"
 			]
+		},
+		"ext.TwoColConflict.jumpScrollJs": {
+			"scripts": [
+				"modules/ext.TwoColConflict.jumpScroll.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

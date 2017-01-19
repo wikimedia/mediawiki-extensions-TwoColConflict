@@ -108,7 +108,11 @@ class TwoColConflictPage extends EditPage {
 				'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
 			)->parse() . '</div>';
 		$out .= $this->buildFilterOptionsMenu();
-		$out .= $this->buildChangesTextbox();
+
+		$unifiedDiff = $this->getUnifiedDiff();
+
+		$out .= $this->buildChangesTextbox( $this->getMarkedUpDiffText( $unifiedDiff ) );
+		$out .= $this->buildHiddenChangesTextbox( $this->getMarkedUpForeignText( $unifiedDiff ) );
 		$out .= '</div>';
 
 		return $out;
@@ -150,16 +154,15 @@ class TwoColConflictPage extends EditPage {
 	/**
 	 * Build HTML for the textbox with the unified diff.
 	 *
+	 * @param string $wikiText
 	 * @return string
 	 */
-	private function buildChangesTextbox() {
+	private function buildChangesTextbox( $wikiText ) {
 		$name = 'mw-twocolconflict-changes-editor';
-		$wikitext = $this->safeUnicodeOutput( $this->getUnifiedDiffText() );
-		$wikitext = $this->addNewLineAtEnd( $wikitext );
 
 		$customAttribs = [
 			'tabindex' => 0,
-			'class' => 'mw-twocolconflict-changes-editor'
+			'class' => $name
 		];
 		if ( $this->wikiEditorIsEnabled() ) {
 			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
@@ -167,7 +170,26 @@ class TwoColConflictPage extends EditPage {
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
 
-		return Html::rawElement( 'div', $attribs, $wikitext );
+		return Html::rawElement( 'div', $attribs, $wikiText );
+	}
+
+	/**
+	 * Build HTML for a hidden textbox with the marked up foreign text.
+	 *
+	 * @param string $wikiText
+	 * @return string
+	 */
+	private function buildHiddenChangesTextbox( $wikiText ) {
+		$name = 'mw-twocolconflict-hidden-editor';
+
+		$customAttribs['class'] = $name;
+		if ( $this->wikiEditorIsEnabled() ) {
+			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
+		}
+
+		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
+
+		return Html::rawElement( 'div', $attribs, $wikiText );
 	}
 
 	/**
@@ -207,62 +229,144 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	/**
-	 * Build HTML for the content of the unified diff box.
+	 * Get unified diff from the conflicting texts
 	 *
-	 * @return string
+	 * @return array[]
 	 */
-	private function getUnifiedDiffText() {
-		$lastUser = $this->getArticle()->getPage()->getUserText();
+	private function getUnifiedDiff() {
 		$currentText = $this->toEditText( $this->getCurrentContent() );
 		$yourText = $this->textbox1;
 
 		$currentLines = explode( "\n", $currentText );
 		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $yourText ) );
 
-		$combinedChanges = $this->getLineBasedUnifiedDiff( $currentLines, $yourLines );
+		return $this->getLineBasedUnifiedDiff( $currentLines, $yourLines );
+	}
+
+	/**
+	 * Build HTML for the content of the unified diff box.
+	 *
+	 * @param array[] $unifiedDiff
+	 * @return string
+	 */
+	private function getMarkedUpDiffText( array $unifiedDiff ) {
+		$lastUser = $this->getArticle()->getPage()->getUserText();
 
 		$output = [];
-		foreach ( $currentLines as $key => $currentLine ) {
-			++$key;
-			if ( isset( $combinedChanges[$key] ) ) {
-				foreach ( $combinedChanges[$key] as $changeSet ) {
-					switch ( $changeSet['action'] ) {
-						case 'add':
-							$output[] = '<div class="mw-twocolconflict-diffchange-own">' .
-								'<div class="mw-twocolconflict-diffchange-title">' .
-								'<span mw-twocolconflict-diffchange-title-pseudo="' .
-								$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
-								'" unselectable="on">' . // used by IE9
-								'</span>' .
-								'</div>' .
-								$changeSet['new'] .
-								'</div>';
-							break;
-						case 'delete':
-							$output[] = '<div class="mw-twocolconflict-diffchange-foreign">' .
-								'<div class="mw-twocolconflict-diffchange-title">' .
-								'<span mw-twocolconflict-diffchange-title-pseudo="' .
-								$this->context->msg(
-									'twoColConflict-diffchange-foreign-title',
-									$lastUser
-								)->escaped() .
-								'" unselectable="on">' . // used by IE9
-								'</span>' .
-								'</div>' .
-								$changeSet['old'] .
-								'</div>';
-							break;
-						case 'copy':
-							$output[] = '<div class="mw-twocolconflict-diffchange-same">' .
-								$this->addUnchangedText( $changeSet['copy'] ) .
-								'</div>';
-							break;
-					}
+		foreach ( $unifiedDiff as $key => $currentLine ) {
+			foreach ( $currentLine as $changeSet ) {
+				switch ( $changeSet['action'] ) {
+					case 'add':
+						$class = 'mw-twocolconflict-diffchange-own';
+						if ( $this->hasConflictInLine( $currentLine ) ) {
+							$class .= ' mw-twocolconflict-diffchange-conflict';
+						}
+
+						$output[] = '<div class="' . $class . '">' .
+							'<div class="mw-twocolconflict-diffchange-title">' .
+							'<span mw-twocolconflict-diffchange-title-pseudo="' .
+							$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
+							'" unselectable="on">' . // used by IE9
+							'</span>' .
+							'</div>' .
+							$changeSet['new'] .
+							'</div>';
+						break;
+					case 'delete':
+						$class = 'mw-twocolconflict-diffchange-foreign';
+						if ( $this->hasConflictInLine( $currentLine ) ) {
+							$class .= ' mw-twocolconflict-diffchange-conflict';
+						}
+
+						$output[] = '<div class="' . $class . '">' .
+							'<div class="mw-twocolconflict-diffchange-title">' .
+							'<span mw-twocolconflict-diffchange-title-pseudo="' .
+							$this->context->msg(
+								'twoColConflict-diffchange-foreign-title',
+								$lastUser
+							)->escaped() .
+							'" unselectable="on">' . // used by IE9
+							'</span>' .
+							'</div>' .
+							$changeSet['old'] .
+							'</div>';
+						break;
+					case 'copy':
+						$output[] = '<div class="mw-twocolconflict-diffchange-same">' .
+							$this->addUnchangedText( $changeSet['copy'] ) .
+							'</div>';
+						break;
 				}
 			}
 		}
 
-		return implode( "\n", $output );
+		return $this->normalizeMarkedUpText( implode( "\n", $output ) );
+	}
+
+	/**
+	 * Build HTML for the marked up foreign text in the hidden textbox
+	 *
+	 * @param array[] $unifiedDiff
+	 * @return string
+	 */
+	private function getMarkedUpForeignText( array $unifiedDiff ) {
+		$output = '';
+		foreach ( $unifiedDiff as $key => $currentLine ) {
+			foreach ( $currentLine as $changeSet ) {
+				switch ( $changeSet['action'] ) {
+					case 'add':
+						$class = 'mw-twocolconflict-plain-own';
+						if ( $this->hasConflictInLine( $currentLine ) ) {
+							$class .= ' mw-twocolconflict-plain-own';
+						}
+
+						$output .= '<div class="' . $class . '"></div>';
+						break;
+					case 'delete':
+						$class = 'mw-twocolconflict-plain-foreign';
+						if ( $this->hasConflictInLine( $currentLine ) ) {
+							$output .= "\n"; // conflicting lines need an extra line-break here
+							$class .= ' mw-twocolconflict-plain-conflict';
+						}
+
+						$output .= '<div class="' . $class . '">' . $changeSet['old'] . '</div>';
+						break;
+					case 'copy':
+						$output .= '<div class="mw-twocolconflict-plain-same">' .
+							$this->addUnchangedText( $changeSet['copy'] ) .
+							'</div>';
+						break;
+				}
+			}
+		}
+
+		return $this->normalizeMarkedUpText( $output );
+	}
+
+	/**
+	 * Check if a unified diff line contains an edit conflict.
+	 *
+	 * @param array[] $currentLine
+	 * @return boolean
+	 */
+	private function hasConflictInLine( array $currentLine ) {
+		if ( count( $currentLine ) < 2 ) {
+			return false;
+		}
+
+		return $currentLine[0]['action'] === 'delete' &&
+			$currentLine[1]['action'] === 'add';
+	}
+
+	/**
+	 * Normalize marked up lines to editor text.
+
+	 * @param string $wikiText
+	 * @return string
+	 */
+	private function normalizeMarkedUpText( $wikiText ) {
+		$wikiText = $this->safeUnicodeOutput( $wikiText );
+		return $this->addNewLineAtEnd( $wikiText );
 	}
 
 	/**
@@ -371,6 +475,7 @@ class TwoColConflictPage extends EditPage {
 		$this->context->getOutput()->addModuleScripts( [
 			'ext.TwoColConflict.initJs',
 			'ext.TwoColConflict.filterOptionsJs',
+			'ext.TwoColConflict.jumpScrollJs'
 		] );
 	}
 }
