@@ -9,7 +9,6 @@ use MediaWiki\MediaWikiServices;
  * @ingroup Extensions
  * @license GPL-2.0+
  */
-
 class TwoColConflictHooks {
 
 	public static function onCustomEditor( Article $article, User $user ) {

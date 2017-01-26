@@ -64,8 +64,8 @@ class TwoColConflictPage extends EditPage {
 		if ( $this->wikiEditorIsEnabled() ) {
 			$editorClass = ' mw-twocolconflict-wikieditor';
 		}
-		$out.= '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
-		$out.= $this->buildConflictPageEditorCol();
+		$out .= '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
+		$out .= $this->buildConflictPageEditorCol();
 
 		return $out;
 	}
@@ -102,14 +102,14 @@ class TwoColConflictPage extends EditPage {
 		);
 
 		$out = '<div class="mw-twocolconflict-changes-col">';
-		$out.= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
+		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
 			'</h3>';
-		$out.= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
-			'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
+		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
+				'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
 			)->parse() . '</div>';
-		$out.= $this->buildFilterOptionsMenu();
-		$out.= $this->buildChangesTextbox();
-		$out.= '</div>';
+		$out .= $this->buildFilterOptionsMenu();
+		$out .= $this->buildChangesTextbox();
+		$out .= '</div>';
 
 		return $out;
 	}
@@ -138,11 +138,11 @@ class TwoColConflictPage extends EditPage {
 		] );
 
 		$out = '<div class="mw-twocolconflict-filter-options">';
-		$out.= '<div class="mw-twocolconflict-filter-unchanged">' .
+		$out .= '<div class="mw-twocolconflict-filter-unchanged">' .
 			$this->getContext()->msg( 'twoColConflict-label-unchanged' ) .
 			'</div>';
-		$out.= $showHideOptions;
-		$out.= '</div>';
+		$out .= $showHideOptions;
+		$out .= '</div>';
 
 		return $out;
 	}
@@ -162,7 +162,7 @@ class TwoColConflictPage extends EditPage {
 			'class' => 'mw-twocolconflict-changes-editor'
 		];
 		if ( $this->wikiEditorIsEnabled() ) {
-			$customAttribs[ 'class' ] .= ' mw-twocolconflict-wikieditor';
+			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
 		}
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
@@ -183,8 +183,8 @@ class TwoColConflictPage extends EditPage {
 		);
 
 		$out = '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
-		$out.= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
-			'twoColConflict-editor-col-desc', $lastUser, $lastChangeTime
+		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
+				'twoColConflict-editor-col-desc', $lastUser, $lastChangeTime
 			) . '</div>';
 
 		return $out;
@@ -224,16 +224,16 @@ class TwoColConflictPage extends EditPage {
 		$output = [];
 		foreach ( $currentLines as $key => $currentLine ) {
 			++$key;
-			if ( isset( $combinedChanges[ $key ] ) ) {
-				foreach ( $combinedChanges[ $key ] as $changeSet ) {
-					switch ( $changeSet[ 'action' ] ) {
+			if ( isset( $combinedChanges[$key] ) ) {
+				foreach ( $combinedChanges[$key] as $changeSet ) {
+					switch ( $changeSet['action'] ) {
 						case 'add':
 							$output[] = '<div class="mw-twocolconflict-diffchange-own">' .
 								'<div class="mw-twocolconflict-diffchange-title">' .
-							    '<span mw-twocolconflict-diffchange-title-pseudo="' .
+								'<span mw-twocolconflict-diffchange-title-pseudo="' .
 								$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
-							    '" unselectable="on">' . // used by IE9
-							    '</span>' .
+								'" unselectable="on">' . // used by IE9
+								'</span>' .
 								'</div>' .
 								$changeSet['new'] .
 								'</div>';
@@ -241,13 +241,13 @@ class TwoColConflictPage extends EditPage {
 						case 'delete':
 							$output[] = '<div class="mw-twocolconflict-diffchange-foreign">' .
 								'<div class="mw-twocolconflict-diffchange-title">' .
-							    '<span mw-twocolconflict-diffchange-title-pseudo="' .
+								'<span mw-twocolconflict-diffchange-title-pseudo="' .
 								$this->context->msg(
 									'twoColConflict-diffchange-foreign-title',
 									$lastUser
 								)->escaped() .
-							    '" unselectable="on">' . // used by IE9
-							    '</span>' .
+								'" unselectable="on">' . // used by IE9
+								'</span>' .
 								'</div>' .
 								$changeSet['old'] .
 								'</div>';
@@ -267,7 +267,6 @@ class TwoColConflictPage extends EditPage {
 
 	/**
 	 * Build HTML for the unchanged text in the unified diff box.
-
 	 * @param string $text HTML
 	 * @return string HTML
 	 */
@@ -330,7 +329,7 @@ class TwoColConflictPage extends EditPage {
 			);
 
 		} else {
-			$result =  preg_replace(
+			$result = preg_replace(
 				'/^[^' . self::WHITESPACES . ']+?[' . self::WHITESPACES . ']+?/u',
 				'',
 				mb_substr( $string, -$maxLength ),

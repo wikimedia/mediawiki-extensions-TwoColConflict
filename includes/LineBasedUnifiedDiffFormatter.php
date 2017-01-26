@@ -69,12 +69,12 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 				case 'change':
 					$wordLevelDiff = $this->getWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 					if ( $wordLevelDiff ) {
-						$this->retval[ $this->oldline ][] = [
+						$this->retval[$this->oldline][] = [
 							'action' => 'delete',
 							'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 							'oldline' => $this->oldline,
 						];
-						$this->retval[ $this->oldline ][] = [
+						$this->retval[$this->oldline][] = [
 							'action' => 'add',
 							'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
 							'newline' => $this->newline
@@ -101,7 +101,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param string[] $lines Lines that should be marked deleted.
 	 */
 	private function deleteLines( array $lines ) {
-		$this->retval[ $this->oldline ][] = [
+		$this->retval[$this->oldline][] = [
 			'action' => 'delete',
 			'old' => "<del{$this->delClass}>" . $this->composeLines( $lines ) . '</del>',
 			'oldline' => $this->oldline,
@@ -112,7 +112,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param string[] $lines Lines that should be marked as added.
 	 */
 	private function addLines( array $lines ) {
-		$this->retval[ $this->oldline ][] = [
+		$this->retval[$this->oldline][] = [
 			'action' => 'add',
 			'new' => "<ins{$this->insClass}>" . $this->composeLines( $lines ) . '</ins>',
 			'newline' => $this->newline
@@ -123,7 +123,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param string[] $lines Lines that should be copied.
 	 */
 	private function copyLines( array $lines ) {
-		$this->retval[ $this->oldline ][] = [
+		$this->retval[$this->oldline][] = [
 			'action' => 'copy',
 			'copy' => $this->composeLines( $lines, false ),
 			'oldline' => $this->oldline,
@@ -138,7 +138,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param string[] $orig Lines that should be marked deleted.
 	 * @param string[] $closing Lines that should be marked deleted.
 	 *
-	 *  @return WordLevelDiff|boolean
+	 * @return WordLevelDiff|boolean
 	 */
 	private function getWordLevelDiff( array $orig, array $closing ) {
 		$diff = new WordLevelDiff( $orig, $closing );
@@ -210,10 +210,10 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 */
 	private function composeLines( array $lines, $replaceEmptyLine = true ) {
 		$result = [];
-			foreach ( $lines as $line ) {
-				$line = htmlspecialchars( $line );
-				$result[] = $this->replaceEmptyLine( $line, $replaceEmptyLine );
-			}
+		foreach ( $lines as $line ) {
+			$line = htmlspecialchars( $line );
+			$result[] = $this->replaceEmptyLine( $line, $replaceEmptyLine );
+		}
 		return implode( "\n", $result );
 	}
 
