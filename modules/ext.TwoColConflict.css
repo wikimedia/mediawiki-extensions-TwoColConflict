@@ -18,11 +18,11 @@
 }
 
 .mw-twocolconflict-editor-col .mw-twocolconflict-col-desc {
-	margin-bottom: 31px;  /* diff-options height - editor-toolbar height */
+	margin-bottom: 35px;  /* diff-options height - editor-toolbar height */
 }
 
 .mw-twocolconflict-editor-col.mw-twocolconflict-wikieditor .mw-twocolconflict-col-desc {
-	margin-bottom: 21px;  /* diff-options height - editor-toolbar height */
+	margin-bottom: 25px;  /* diff-options height - editor-toolbar height */
 }
 
 .mw-twocolconflict-form .editOptions {
@@ -53,7 +53,7 @@
 	text-shadow: none;
 	text-align: start;
 	overflow: auto;
-	height: 400px;
+	height: 402px;
 	width: 100%;
 	background-color: #f2f2f2;
 	cursor: text;
@@ -66,6 +66,7 @@
 /* stylelint-disable-next-line selector-no-id */
 .mw-twocolconflict-editor-col #wpTextbox1 {
 	height: 400px;
+	padding: 0 4px;
 }
 
 .mw-twocolconflict-lastuser,
