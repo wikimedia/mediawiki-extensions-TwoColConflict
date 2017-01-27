@@ -473,6 +473,8 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	private function addJS() {
+		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflict', 'true' );
+
 		$this->context->getOutput()->addModuleScripts( [
 			'ext.TwoColConflict.initJs',
 			'ext.TwoColConflict.filterOptionsJs',
