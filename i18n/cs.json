@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mormegil"
+		]
+	},
+	"twoColConflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
+	"twoColConflict-beta-feature-message": "Dvousloupcový editační konflikt",
+	"twoColConflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.",
+	"twoColConflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a uložil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude uložen pouze text v editačním poli.",
+	"twoColConflict-changes-col-title": "Konfliktní změny",
+	"twoColConflict-changes-col-desc": "Rozdíly mezi aktuálně zveřejněnou verzí (z $2 od {{GENDER:$1|uživatele|uživatelky}} $1) a <span class=\"mw-twocolconflict-user\">vaším</span> textem ($3)",
+	"twoColConflict-editor-col-title": "Editor s verzí ke zveřejnění",
+	"twoColConflict-editor-col-desc": "Zveřejněna bude verze v editoru. Na počátku je jeho obsahem aktuální zveřejněná verze (z $2 od {{GENDER:$1|uživatele|uživatelky}} $1).",
+	"twoColConflict-diffchange-own-title": "ve vaší verzi",
+	"twoColConflict-diffchange-foreign-title": "ve verzi {{GENDER:$1|uživatele|uživatelky}} $1",
+	"twoColConflict-label-show": "zobrazit",
+	"twoColConflict-label-hide": "skrýt",
+	"twoColConflict-label-unchanged": "nezměněný text"
+}

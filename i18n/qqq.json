@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"WMDE",
-			"Robby"
+			"Robby",
+			"Mormegil"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "{{desc|name=TwoColConflict|url=https://www.mediawiki.org/wiki/Extension:TwoColConflict}}",
 	"twoColConflict-beta-feature-message": "Label for the TwoColConflict Beta Feature.",
 	"twoColConflict-beta-feature-description": "Description for the TwoColConflict Beta Feature, describing the feature that will be enabled.",
-	"twoColConflict-explainconflict": "Appears at the top of a page when there is an edit conflict.\n\nParameters:\n$1 - Label of the save button. Either {{msg-mw|savechanges}} or {{msg-mw|publishchanges}}.\n\nSee also:\n* {{msg-mw|Savearticle}}",
+	"twoColConflict-explainconflict": "Appears at the top of a page when there is an edit conflict.\n\nParameters:\n$1 - Label of the save button. Either {{msg-mw|savechanges}} or {{msg-mw|publishchanges}}.\n\nSee also:\n* {{msg-mw|Explainconflict}}\n* {{msg-mw|Savearticle}}",
 	"twoColConflict-changes-col-title": "Header for the unified diff column with the changes.",
 	"twoColConflict-changes-col-desc": "Description text for the unified diff column with the changes.\n\nParameters:\n$1 - Username of the user that edited the current revision of the page.\n$2 - User-formatted time and date when the current revision was changed.\n$3 - User-formatted time and date of the conflicting change.",
 	"twoColConflict-editor-col-title": "Header for the editor column.",
