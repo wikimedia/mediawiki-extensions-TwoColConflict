@@ -170,6 +170,7 @@ class TwoColConflictPage extends EditPage {
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
 
+		$wikiText = '<div>' . $wikiText . '</div>'; // to set the cursor style see T156483
 		return Html::rawElement( 'div', $attribs, $wikiText );
 	}
 
