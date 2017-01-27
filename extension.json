@@ -41,12 +41,15 @@
 			"messages": [],
 			"dependencies": []
 		},
-		"ext.TwoColConflict.filter": {
+		"ext.TwoColConflict.initJs": {
 			"scripts": [
-				"modules/ext.TwoColConflict.filter.js"
-			],
-			"messages": [],
-			"dependencies": []
+				"modules/ext.TwoColConflict.init.js"
+			]
+		},
+		"ext.TwoColConflict.filterOptionsJs": {
+			"scripts": [
+				"modules/ext.TwoColConflict.filterOptions.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

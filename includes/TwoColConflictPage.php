@@ -369,6 +369,9 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	private function addJS() {
-		$this->context->getOutput()->addModuleScripts( 'ext.TwoColConflict.filter' );
+		$this->context->getOutput()->addModuleScripts( [
+			'ext.TwoColConflict.initJs',
+			'ext.TwoColConflict.filterOptionsJs',
+		] );
 	}
 }
