@@ -48,8 +48,10 @@ class TwoColConflictHooks {
 					'ltr' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-ltr.svg",
 					'rtl' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",
 				],
-				'info-link' => 'https://www.mediawiki.org/wiki/Extension:TwoColConflict',
-				'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:TwoColConflict',
+				'info-link'
+					=> 'https://meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts',
+				'discussion-link'
+					=> 'https://meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts',
 			];
 		}
 	}
