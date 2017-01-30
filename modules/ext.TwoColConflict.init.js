@@ -1,4 +1,6 @@
-( function ( $ ) {
+( function ( mw, $ ) {
+	var autoScroll = new mw.libs.twoColConflict.AutoScroll();
+
 	function selectText( element ) {
 		var range, selection;
 
@@ -22,5 +24,19 @@
 				selectText( this );
 			}
 		} );
+
+		autoScroll.setScrollBaseData();
+		autoScroll.scrollToFirstConflict();
+
+		$( window ).on( 'resize', function() {
+			autoScroll.setScrollBaseData();
+		} );
+
+		$(
+			'.mw-twocolconflict-diffchange-foreign, ' +
+			'.mw-twocolconflict-diffchange-own'
+		).click( function() {
+			autoScroll.scrollToConflictWithData( $( this ) );
+		} );
 	} );
-}( jQuery ) );
+}( mediaWiki, jQuery ) );
