@@ -70,6 +70,62 @@
 		},
 
 		/**
+		 * Check if a change div element upper boundary is in view of its scrollable
+		 *
+		 * @param {jQuery} $changeDiv
+		 * @param {jQuery} $scrollable
+		 * @return {boolean}
+		 */
+		changeElementTopIsInView: function( $changeDiv, $scrollable ) {
+			return this.getDivTopOffset( $changeDiv, $scrollable ) < 0;
+		},
+
+		/**
+		 * Get the first visible change div in the conflict-view
+		 *
+		 * @return {jQuery}
+		 */
+		getFirstVisibleChangesElement: function() {
+			var $changesEditor = $( '.mw-twocolconflict-changes-editor' ),
+				$changeDivs = $(
+					'.mw-twocolconflict-diffchange-own, ' +
+					'.mw-twocolconflict-diffchange-foreign, ' +
+					'.mw-twocolconflict-diffchange-same, ' +
+					'.mw-twocolconflict-diffchange-conflict'
+				),
+				i = 0, count, $currentDiv;
+
+			for ( count = $changeDivs.length; i < count; i++ ) {
+				$currentDiv = $( $changeDivs[ i ] );
+
+				if ( this.changeElementTopIsInView( $currentDiv, $changesEditor ) ) {
+					break;
+				}
+			}
+
+			return $currentDiv;
+		},
+
+		/**
+		 * Scroll the conflict-view to the position of the given change div element
+		 * with an additional offset
+		 *
+		 * @param {jQuery} $changeDiv
+		 * @param {number} manualOffset
+		 */
+		scrollToChangeWithOffset: function( $changeDiv, manualOffset ) {
+			var $changesEditor = $( '.mw-twocolconflict-changes-editor' ),
+				changeDivOffset;
+
+			changeDivOffset = this.getDivTopOffset(
+				$changesEditor,
+				$changeDiv
+			);
+
+			$changesEditor.scrollTop( changeDivOffset + $changesEditor.scrollTop() + manualOffset );
+		},
+
+		/**
 		 * Scroll the conflict- and editor-view to the position of the given
 		 * change div element
 		 *

@@ -1,20 +1,48 @@
-( function ( $ ) {
-	$( function () {
+( function( mw, $ ) {
+	var autoScroll = new mw.libs.twoColConflict.AutoScroll();
+
+	$( function() {
 		// show filter options when js is available
 		$( '.mw-twocolconflict-filter-options div' ).css( 'display', 'table-cell' );
 
-		$( 'input[name="mw-twocolconflict-same"]' ).change( function () {
+		$( 'input[name="mw-twocolconflict-same"]' ).change( function() {
+			var $changeDiv = autoScroll.getFirstVisibleChangesElement(),
+				manualOffset;
+
+			manualOffset = autoScroll.getDivTopOffset(
+				$changeDiv,
+				$( '.mw-twocolconflict-changes-editor' )
+			);
+
 			if ( $( this ).val() === 'show' ) {
-				$( '.mw-twocolconflict-diffchange-same-collapsed' ).slideUp();
-				$( '.mw-twocolconflict-diffchange-same-full' ).slideDown();
+				$( '.mw-twocolconflict-diffchange-same-collapsed' ).hide();
+				$( '.mw-twocolconflict-diffchange-same-full' ).show();
 			} else {
-				$( '.mw-twocolconflict-diffchange-same-full' ).slideUp();
-				$( '.mw-twocolconflict-diffchange-same-collapsed' ).slideDown();
+				$( '.mw-twocolconflict-diffchange-same-full' ).hide();
+				$( '.mw-twocolconflict-diffchange-same-collapsed' ).show();
 			}
+
+			// wait for expanding animations to be finished
+			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
+				autoScroll.scrollToChangeWithOffset( $changeDiv, manualOffset );
+			} );
 		} );
 
-		$( '.mw-twocolconflict-diffchange-same-collapsed' ).click( function () {
+		$( '.mw-twocolconflict-diffchange-same-collapsed' ).click( function() {
+			var $changeDiv = $( this ).parent(),
+				manualOffset;
+
+			manualOffset = autoScroll.getDivTopOffset(
+				$changeDiv,
+				$( '.mw-twocolconflict-changes-editor' )
+			);
+
 			$( 'input[name="mw-twocolconflict-same"]' )[ 0 ].closest( 'label' ).click();
+
+			// wait for expanding animations to be finished
+			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
+				autoScroll.scrollToChangeWithOffset( $changeDiv, manualOffset );
+			} );
 		} );
 	} );
-}( jQuery ) );
+}( mediaWiki, jQuery ) );
