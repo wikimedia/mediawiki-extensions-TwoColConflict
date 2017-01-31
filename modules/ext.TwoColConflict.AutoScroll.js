@@ -101,9 +101,9 @@
 		/**
 		 * Scroll to the first conflict
 		 */
-		scrollToFirstConflict: function() {
+		scrollToFirstOwnAddition: function() {
 			this.scrollToConflictWithData(
-				$( '.mw-twocolconflict-diffchange-conflict:eq(0)' )
+				$( '.mw-twocolconflict-diffchange-own:eq(0)' )
 			);
 		}
 	} );
