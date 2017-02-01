@@ -37,7 +37,7 @@
 				$( '.mw-twocolconflict-changes-editor' )
 			);
 
-			$( 'input[name="mw-twocolconflict-same"]' )[ 0 ].closest( 'label' ).click();
+			$( 'input[name="mw-twocolconflict-same"]' )[ 0 ].click();
 
 			// wait for expanding animations to be finished
 			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
