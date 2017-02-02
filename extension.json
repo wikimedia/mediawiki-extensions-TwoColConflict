@@ -44,6 +44,9 @@
 		"ext.TwoColConflict.initJs": {
 			"scripts": [
 				"modules/ext.TwoColConflict.init.js"
+			],
+			"dependencies": [
+				"ext.TwoColConflict.AutoScroll"
 			]
 		},
 		"ext.TwoColConflict.filterOptionsJs": {
@@ -51,9 +54,9 @@
 				"modules/ext.TwoColConflict.filterOptions.js"
 			]
 		},
-		"ext.TwoColConflict.jumpScrollJs": {
+		"ext.TwoColConflict.AutoScroll": {
 			"scripts": [
-				"modules/ext.TwoColConflict.jumpScroll.js"
+				"modules/ext.TwoColConflict.AutoScroll.js"
 			]
 		}
 	},
