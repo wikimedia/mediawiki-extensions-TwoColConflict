@@ -24,5 +24,14 @@
 	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
 	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
 	"twoColConflict-label-show-changes": "Label for the options which filter conflicting text in the diff view.\n{{Identical|Show change}}",
-	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view."
+	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view.",
+	"twoColConflict-show-help-tooltip": "Text shown in a tooltip for the \"Show help\" button.",
+	"twoColConflict-help-dialog-slide1": "Text shown on the first slide of the help dialog.",
+	"twoColConflict-help-dialog-slide2": "Text shown on the second slide of the help dialog.",
+	"twoColConflict-help-dialog-slide3": "Text shown on the third slide of the help dialog.",
+	"twoColConflict-help-dialog-slide4": "Text shown on the fourth slide of the help dialog.",
+	"twoColConflict-tutorial": "Text shown above the TwoColConflict tutorial. This should contain as few words as possible to avoid being truncated.",
+	"twoColConflict-previous-dialog": "Label of the button to go to the previous tutorial slide.\n{{Identical|Previous}}",
+	"twoColConflict-next-dialog": "Label of the button to go to the next tutorial slide.\n{{Identical|Next}}",
+	"twoColConflict-close-dialog": "Label of the button to close the RevisionSlider tutorial.\n{{Identical|Close}}"
 }
