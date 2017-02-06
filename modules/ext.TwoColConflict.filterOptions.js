@@ -3,7 +3,9 @@
 
 	$( function() {
 		// show filter options when js is available
-		$( '.mw-twocolconflict-filter-options div' ).css( 'display', 'table-cell' );
+		$( '.mw-twocolconflict-filter-options' ).css( 'display', 'table' );
+		// set some styles only with js enabled
+		$( '.mw-twocolconflict-editor-col' ).addClass( 'mw-twocolconflict-js' );
 
 		$( 'input[name="mw-twocolconflict-same"]' ).change( function() {
 			var $changeDiv = autoScroll.getFirstVisibleChangesElement(),
