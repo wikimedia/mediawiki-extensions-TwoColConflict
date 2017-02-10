@@ -3,9 +3,17 @@
 
 	$( function() {
 		// show filter options when js is available
-		$( '.mw-twocolconflict-filter-options' ).css( 'display', 'table' );
+		$( '.mw-twocolconflict-filter-options-container' ).css( 'display', 'block' );
 		// set some styles only with js enabled
 		$( '.mw-twocolconflict-editor-col' ).addClass( 'mw-twocolconflict-js' );
+
+		$( 'input[name="mw-twocolconflict-show-changes"]' ).change( function () {
+			if ( $( this ).val() === 'mine' ) {
+				$( '.mw-twocolconflict-diffchange-foreign' ).slideUp();
+			} else {
+				$( '.mw-twocolconflict-diffchange-foreign' ).slideDown();
+			}
+		} );
 
 		$( 'input[name="mw-twocolconflict-same"]' ).change( function() {
 			var $changeDiv = autoScroll.getFirstVisibleChangesElement(),

@@ -126,6 +126,31 @@ class TwoColConflictPage extends EditPage {
 	private function buildFilterOptionsMenu() {
 		$this->context->getOutput()->enableOOUI();
 
+		$mineBtn = [
+			'data' => 'mine',
+			'label' => $this->getContext()->msg( 'twoColConflict-label-mine' )->text()
+		];
+
+		$bothBtn = [
+			'data' => 'both',
+			'label' => $this->getContext()->msg( 'twoColConflict-label-both' )->text()
+		];
+
+		$isRTL = ( $this->getContext()->getLanguage()->getDir() == 'rtl' ) ? true : false;
+
+		$mineBothOptions = new OOUI\RadioSelectInputWidget( [
+			'options' =>
+				( $isRTL ) ? [
+					$mineBtn, $bothBtn
+				] : [
+					$bothBtn, $mineBtn
+				],
+			'name' => 'mw-twocolconflict-show-changes',
+			'title' => 'mw-twocolconflict-show-changes',
+			'classes' => [ 'mw-twocolconflict-filter-options-btn',
+			               'mw-twocolconflict-filter-options-btn-mine-both' ]
+		] );
+
 		$showHideOptions = new OOUI\RadioSelectInputWidget( [
 			'options' => [
 				[
@@ -139,13 +164,25 @@ class TwoColConflictPage extends EditPage {
 			],
 			'name' => 'mw-twocolconflict-same',
 			'title' => 'mw-twocolconflict-same',
+			'classes' => [ 'mw-twocolconflict-filter-options-btn' ]
 		] );
 
-		$out = '<div class="mw-twocolconflict-filter-options">';
-		$out .= '<div class="mw-twocolconflict-filter-unchanged">' .
-			$this->getContext()->msg( 'twoColConflict-label-unchanged' ) .
-			'</div>';
+		$out = '<div class="mw-twocolconflict-filter-options-container">';
+
+		$out .= '<div class="mw-twocolconflict-filter-options-row">';
+		$out .= '<div class="mw-twocolconflict-filter-titles">' .
+		       $this->getContext()->msg( 'twoColConflict-label-show-changes' )->text() .
+		       '</div>';
+		$out .= $mineBothOptions;
+		$out .= '</div>';
+
+		$out .= '<div class="mw-twocolconflict-filter-options-row">';
+		$out .= '<div class="mw-twocolconflict-filter-titles">' .
+		       $this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
+		       '</div>';
 		$out .= $showHideOptions;
+		$out .= '</div>';
+
 		$out .= '</div>';
 
 		return $out;
