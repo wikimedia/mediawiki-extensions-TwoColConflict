@@ -49,9 +49,9 @@ class TwoColConflictHooks {
 					'rtl' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",
 				],
 				'info-link'
-					=> 'https://meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts',
+					=> 'https://www.mediawiki.org/wiki/Help:Two_Column_Edit_Conflict_View',
 				'discussion-link'
-					=> 'https://meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts',
+					=> 'https://www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View',
 			];
 		}
 	}
