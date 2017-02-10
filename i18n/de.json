@@ -16,7 +16,10 @@
 	"twoColConflict-editor-col-desc": "Die Version im Editor wird veröffentlicht. Zunächst ist der Inhalt die derzeit veröffentlichte Version (von $1 am $2).",
 	"twoColConflict-diffchange-own-title": "In deiner Version",
 	"twoColConflict-diffchange-foreign-title": "In der Version von $1",
+	"twoColConflict-label-mine": "meine",
+	"twoColConflict-label-both": "beide",
 	"twoColConflict-label-show": "anzeigen",
 	"twoColConflict-label-hide": "ausblenden",
+	"twoColConflict-label-show-changes": "Änderungen anzeigen",
 	"twoColConflict-label-unchanged": "Unveränderten Text"
 }

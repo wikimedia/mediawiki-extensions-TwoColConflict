@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"twoColConflict-label-mine": "le mie",
+	"twoColConflict-label-both": "ambes",
+	"twoColConflict-label-show-changes": "monstrar cambiamentos"
+}

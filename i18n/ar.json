@@ -15,7 +15,10 @@
 	"twoColConflict-editor-col-desc": "النسخة في المحرر سيتم نشرها. كبداية، محتواها هو النسخة المنشورة حاليا (بواسطة $1 في $2)",
 	"twoColConflict-diffchange-own-title": "في نسختك",
 	"twoColConflict-diffchange-foreign-title": "في نسخة $1",
+	"twoColConflict-label-mine": "الخاص بي",
+	"twoColConflict-label-both": "الكل",
 	"twoColConflict-label-show": "عرض",
 	"twoColConflict-label-hide": "إخفاء",
+	"twoColConflict-label-show-changes": "عرض التغييرات",
 	"twoColConflict-label-unchanged": "نص لم يتم تغييره"
 }
