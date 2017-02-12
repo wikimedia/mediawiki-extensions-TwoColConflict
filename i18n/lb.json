@@ -10,7 +10,10 @@
 	"twoColConflict-changes-col-title": "Ännerungen déi am Konflikt sinn",
 	"twoColConflict-diffchange-own-title": "an Ärer Versioun",
 	"twoColConflict-diffchange-foreign-title": "am $1 senger Versioun",
+	"twoColConflict-label-mine": "meng",
+	"twoColConflict-label-both": "déi zwou",
 	"twoColConflict-label-show": "weisen",
 	"twoColConflict-label-hide": "verstoppen",
+	"twoColConflict-label-show-changes": "Ännerunge weisen",
 	"twoColConflict-label-unchanged": "onverännerten Text"
 }

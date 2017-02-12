@@ -7,7 +7,10 @@
 	"twoColConflict-changes-col-title": "Motstridande ändringar",
 	"twoColConflict-diffchange-own-title": "i din version",
 	"twoColConflict-diffchange-foreign-title": "i $1s version",
+	"twoColConflict-label-mine": "min",
+	"twoColConflict-label-both": "båda",
 	"twoColConflict-label-show": "visa",
 	"twoColConflict-label-hide": "dölj",
+	"twoColConflict-label-show-changes": "visa ändringar",
 	"twoColConflict-label-unchanged": "oförändrad text"
 }

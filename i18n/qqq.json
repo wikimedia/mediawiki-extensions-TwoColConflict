@@ -3,7 +3,8 @@
 		"authors": [
 			"WMDE",
 			"Robby",
-			"Mormegil"
+			"Mormegil",
+			"Liuxinyu970226"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -18,7 +19,7 @@
 	"twoColConflict-diffchange-own-title": "The title text in the unified diff view for changes by the user.",
 	"twoColConflict-diffchange-foreign-title": "The title text in the unified diff view for conflicting changes.\n\nParameters:\n$1 - Username of the user that edited the current revision of the page.",
 	"twoColConflict-label-mine": "Label for the option that shows only the current user's conflicting contribution.",
-	"twoColConflict-label-both": "Label for the option that shows both conflicting contributions.",
+	"twoColConflict-label-both": "Label for the option that shows both conflicting contributions.\n{{Identical|Both}}",
 	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
 	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
 	"twoColConflict-label-show-changes": "Label for the options which filter conflicting text in the diff view.",
