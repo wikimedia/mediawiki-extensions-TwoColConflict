@@ -13,6 +13,8 @@
 	"twoColConflict-editor-col-desc": "La versione nell'editor verrà pubblicata. Inizialmente, il suo contenuto è la versione attualmente pubblicata (da $1 il $2)",
 	"twoColConflict-diffchange-own-title": "nella tua versione",
 	"twoColConflict-diffchange-foreign-title": "nella versione di $1",
+	"twoColConflict-label-both": "entrambe",
 	"twoColConflict-label-show": "mostra",
-	"twoColConflict-label-hide": "nascondi"
+	"twoColConflict-label-hide": "nascondi",
+	"twoColConflict-label-show-changes": "mostra modifiche"
 }
