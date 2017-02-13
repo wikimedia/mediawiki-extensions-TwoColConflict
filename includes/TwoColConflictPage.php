@@ -261,6 +261,7 @@ class TwoColConflictPage extends EditPage {
 		$formatter = new LineBasedUnifiedDiffFormatter();
 		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
 		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
+
 		return $formatter->format(
 			new Diff( $fromTextLines, $toTextLines )
 		);
@@ -363,15 +364,16 @@ class TwoColConflictPage extends EditPage {
 					case 'delete':
 						$class = 'mw-twocolconflict-plain-foreign';
 						if ( $this->hasConflictInLine( $currentLine ) ) {
-							$output .= "\n"; // conflicting lines need an extra line-break here
 							$class .= ' mw-twocolconflict-plain-conflict';
 						}
 
-						$output .= '<div class="' . $class . '">' . $changeSet['old'] . '</div>';
+						$output .= '<div class="' . $class . '">' .
+							$changeSet['old'] . "\n" .
+							'</div>';
 						break;
 					case 'copy':
 						$output .= '<div class="mw-twocolconflict-plain-same">' .
-							$this->addUnchangedText( $changeSet['copy'] ) .
+							$changeSet['copy'] . "\n" .
 							'</div>';
 						break;
 				}
