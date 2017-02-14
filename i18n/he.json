@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"twoColConflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
+	"twoColConflict-beta-feature-message": "התנגשות עריכה בשני טורים",
+	"twoColConflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
+	"twoColConflict-explainconflict": "<strong>אזהרה:</strong> משתמש אחר ערך ושמר את הדף הזה זה עתה. יש התנגשות בין הגרסה שלך לבין הגרסה הנוכחית. עליך למזג את השינויים שלך אל גרסת הטקסט הנוכחית. רק טקסט בשדה העריכה יישמר כשתלחץ על \"$1\".",
+	"twoColConflict-changes-col-title": "שינויים מתנגשים",
+	"twoColConflict-changes-col-desc": "הבדלים בין הגרסה הנוכחית (מאת $1 ב־$2) והטקסט <span class=\"mw-twocolconflict-user\">שלך</span> ($3)",
+	"twoColConflict-editor-col-title": "עורך עם גרסה שתפורסם",
+	"twoColConflict-editor-col-desc": "הגרסה בעורך תפורסם. תחילה, התוכן שלו הוא הגרסה שמפורסמת כעת (מאת $1 ב־$2)",
+	"twoColConflict-diffchange-own-title": "בגרסה שלך",
+	"twoColConflict-diffchange-foreign-title": "בגרסה של $1",
+	"twoColConflict-label-mine": "שלי",
+	"twoColConflict-label-both": "שתיהן",
+	"twoColConflict-label-show": "הצגה",
+	"twoColConflict-label-hide": "הסתרה",
+	"twoColConflict-label-show-changes": "הצגת שינויים",
+	"twoColConflict-label-unchanged": "טקסט שלא שוּנה"
+}

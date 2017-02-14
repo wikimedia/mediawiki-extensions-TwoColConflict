@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Veeven"
+			"Veeven",
+			"Chaduvari"
 		]
 	},
+	"twoColConflict-label-mine": "నావి",
+	"twoColConflict-label-both": "రెండూ",
 	"twoColConflict-label-show": "చూపించు",
-	"twoColConflict-label-hide": "దాచు"
+	"twoColConflict-label-hide": "దాచు",
+	"twoColConflict-label-show-changes": "మార్పులు చూపించు"
 }
