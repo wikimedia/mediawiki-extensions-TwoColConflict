@@ -31,12 +31,5 @@
 		$( window ).on( 'resize', function() {
 			autoScroll.setScrollBaseData();
 		} );
-
-		$(
-			'.mw-twocolconflict-diffchange-foreign, ' +
-			'.mw-twocolconflict-diffchange-own'
-		).click( function() {
-			autoScroll.scrollToConflictWithData( $( this ) );
-		} );
 	} );
 }( mediaWiki, jQuery ) );
