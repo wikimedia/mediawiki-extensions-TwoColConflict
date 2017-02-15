@@ -26,7 +26,7 @@
 		} );
 
 		autoScroll.setScrollBaseData();
-		autoScroll.scrollToFirstOwnAddition();
+		autoScroll.scrollToFirstOwnOrConflict();
 
 		$( window ).on( 'resize', function() {
 			autoScroll.setScrollBaseData();

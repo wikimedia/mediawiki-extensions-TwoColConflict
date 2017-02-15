@@ -157,9 +157,11 @@
 		/**
 		 * Scroll to the first conflict
 		 */
-		scrollToFirstOwnAddition: function() {
+		scrollToFirstOwnOrConflict: function() {
 			this.scrollToConflictWithData(
-				$( '.mw-twocolconflict-diffchange-own:eq(0)' )
+				$( $(
+					'.mw-twocolconflict-diffchange-conflict, .mw-twocolconflict-diffchange-own'
+				)[ 0 ] )
 			);
 		}
 	} );
