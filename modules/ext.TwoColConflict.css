@@ -20,12 +20,12 @@
 
 .mw-twocolconflict-editor-col.mw-twocolconflict-js
 .mw-twocolconflict-col-desc {
-	margin-bottom: 85px;  /* diff-options height - editor-toolbar height */
+	margin-bottom: 74px;  /* diff-options height - editor-toolbar height */
 }
 
 .mw-twocolconflict-editor-col.mw-twocolconflict-js.mw-twocolconflict-wikieditor
 .mw-twocolconflict-col-desc {
-	margin-bottom: 75px;  /* diff-options height - editor-toolbar height */
+	margin-bottom: 62px;  /* diff-options height - editor-toolbar height */
 }
 
 .mw-twocolconflict-form .editOptions {
@@ -229,10 +229,6 @@ del.mw-twocolconflict-diffchange {
 	padding: 0 10px 0 10px;
 }
 
-.mw-twocolconflict-filter-options-btn .oo-ui-fieldLayout-body {
-	min-width: 120px;
-}
-
 .mw-twocolconflict-filter-options-btn-mine-both div:nth-of-type( 1 ) .oo-ui-fieldLayout-body {
 	background: -webkit-linear-gradient( bottom, rgba( 255, 236, 96, 1 ) 50%, rgba( 173, 216, 230, 1 ) 50% );
 	background: -moz-linear-gradient( bottom, rgba( 255, 236, 96, 1 ) 50%, rgba( 173, 216, 230, 1 ) 50% );
@@ -243,4 +239,9 @@ del.mw-twocolconflict-diffchange {
 
 .mw-twocolconflict-filter-options-btn-mine-both div:nth-of-type( 2 ) .oo-ui-fieldLayout-body {
 	background: rgba( 255, 236, 96, 1 );
+}
+
+.mw-twocolconflict-filter-options-btn.oo-ui-radioSelectInputWidget .oo-ui-fieldLayout .oo-ui-fieldLayout-body {
+	min-width: 120px;
+	padding: 0 0.25em;
 }
