@@ -18,13 +18,11 @@
 	margin-bottom: 10px;
 }
 
-.mw-twocolconflict-editor-col.mw-twocolconflict-js
-.mw-twocolconflict-col-desc {
+.mw-twocolconflict-editor-col.mw-twocolconflict-js .mw-twocolconflict-col-desc {
 	margin-bottom: 74px;  /* diff-options height - editor-toolbar height */
 }
 
-.mw-twocolconflict-editor-col.mw-twocolconflict-js.mw-twocolconflict-wikieditor
-.mw-twocolconflict-col-desc {
+.mw-twocolconflict-editor-col.mw-twocolconflict-js.mw-twocolconflict-wikieditor .mw-twocolconflict-col-desc {
 	margin-bottom: 62px;  /* diff-options height - editor-toolbar height */
 }
 
