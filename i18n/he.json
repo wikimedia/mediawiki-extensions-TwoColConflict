@@ -4,6 +4,7 @@
 			"Amire80"
 		]
 	},
+	"twoColConflict": "התנגשות בשני טורים",
 	"twoColConflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
 	"twoColConflict-beta-feature-message": "התנגשות עריכה בשני טורים",
 	"twoColConflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
