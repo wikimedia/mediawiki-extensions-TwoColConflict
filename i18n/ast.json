@@ -15,7 +15,10 @@
 	"twoColConflict-editor-col-desc": "La versión que ta nel editor publicaráse. Al principiu, el conteníu ye la versión publicada actualmente (por $1 el $2)",
 	"twoColConflict-diffchange-own-title": "na to versión",
 	"twoColConflict-diffchange-foreign-title": "na versión de $1",
+	"twoColConflict-label-mine": "de mio",
+	"twoColConflict-label-both": "dambes",
 	"twoColConflict-label-show": "amosar",
 	"twoColConflict-label-hide": "anubrir",
+	"twoColConflict-label-show-changes": "amosar cambeos",
 	"twoColConflict-label-unchanged": "testu ensin cambeos"
 }
