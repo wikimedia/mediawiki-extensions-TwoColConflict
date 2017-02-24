@@ -9,7 +9,7 @@
 	"twoColConflict-desc": "Pokazuje pola tekstowe obok siebie podczas konfliktu zapisu edycji, aby ułatwić jego rozwiązanie",
 	"twoColConflict-beta-feature-message": "Dwukolumnowe wyświetlanie konfliktu edycji",
 	"twoColConflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.",
-	"twoColConflict-explainconflict": "<strong>Ostrzeżenie:</strong> Ktoś inny zmienił treść tej strony i zapisał podczas Twojej edycji. Spowodowało to konflikt między Twoją wersją a najnowsza wersją edytowanej strony. Należy dołączyć swoje zmiany do wersji bieżącej. Tylko tekst w polu edycji zostanie zapisany po kliknięciu na \"$1\".",
+	"twoColConflict-explainconflict": "<strong>Ostrzeżenie:</strong> Ktoś inny zmienił treść tej strony i zapisał podczas Twojej edycji. Spowodowało to konflikt między Twoją wersją a najnowsza wersją edytowanej strony. Należy dołączyć swoje zmiany do wersji bieżącej. Tylko tekst w polu edycji zostanie zapisany po kliknięciu na „$1”.",
 	"twoColConflict-changes-col-title": "Konfliktowe zmiany",
 	"twoColConflict-changes-col-desc": "Różnice między najnowszą wersją opublikowaną (przez $1 $2) a <span class=\"mw-twocolconflict-user\">Twoją</span> treścią ($3)",
 	"twoColConflict-editor-col-title": "Edytor z wersją do opublikowania",

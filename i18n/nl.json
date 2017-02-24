@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"twoColConflict-changes-col-desc": "De verschillen tussen de momenteel gepubliceerde versie (door $1 op $2) en <span class=\"mw-twocolconflict-user\">uw</span> tekst ($3)",
+	"twoColConflict-diffchange-own-title": "in uw versie",
+	"twoColConflict-diffchange-foreign-title": "in $1's versie",
+	"twoColConflict-label-mine": "mijn",
+	"twoColConflict-label-both": "beide",
+	"twoColConflict-label-show": "weergeven",
+	"twoColConflict-label-hide": "verbergen",
+	"twoColConflict-label-show-changes": "toon wijzigingen",
+	"twoColConflict-label-unchanged": "ongewijzigd tekst"
+}
