@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Arthur2e5",
+			"LNDDYL",
+			"烈羽"
 		]
 	},
+	"twoColConflict-editor-col-desc": "位於編輯器裡的版本將會發行。其初始內容是目前發行的版本（由 $1 於 $2）",
+	"twoColConflict-label-mine": "我的",
+	"twoColConflict-label-both": "兩者",
 	"twoColConflict-label-show": "顯示",
 	"twoColConflict-label-hide": "隱藏"
 }

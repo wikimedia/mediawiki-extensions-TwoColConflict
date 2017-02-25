@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Arthur2e5"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
-	"twoColConflict-desc": "在编辑冲突解决时，显示并排的编辑合并屏幕",
+	"twoColConflict-desc": "使用并排合并界面解决编辑冲突",
 	"twoColConflict-beta-feature-message": "两列编辑冲突",
-	"twoColConflict-beta-feature-description": "通过使用更高级的两列视图来显示编辑差异视图。",
-	"twoColConflict-explainconflict": "<strong>警告：</strong>其他用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您将不得不合并您的更改至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
-	"twoColConflict-changes-col-title": "冲突更改",
-	"twoColConflict-changes-col-desc": "当前发布的版本（由$1在$2发布）和<span class=\"mw-twocolconflict-user\">您的</span>文本（$3）之间的不同",
-	"twoColConflict-editor-col-title": "有待发布版本的编辑者",
-	"twoColConflict-editor-col-desc": "编辑者中的版本将被发布。起初，它的内容是当前发布的版本（由$1在$2发布）",
+	"twoColConflict-beta-feature-description": "通过使用更高级的两列视图来显示编辑冲突视图。",
+	"twoColConflict-explainconflict": "<strong>警告：</strong>另一位用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您需要将自己的更改至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
+	"twoColConflict-changes-col-title": "更改冲突",
+	"twoColConflict-changes-col-desc": "当前发布的版本（由$1于$2发布）和<span class=\"mw-twocolconflict-user\">您的</span>文本（$3）之间的不同",
+	"twoColConflict-editor-col-title": "有待发布版本的编辑器",
+	"twoColConflict-editor-col-desc": "编辑器中的版本将被发布。其初始内容为当前发布的版本（由$1于$2发布）",
 	"twoColConflict-diffchange-own-title": "在您的版本中",
 	"twoColConflict-diffchange-foreign-title": "在$1的版本中",
 	"twoColConflict-label-mine": "我的",
