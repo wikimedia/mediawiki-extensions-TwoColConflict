@@ -1,4 +1,5 @@
 <?php
+use MediaWiki\MediaWikiServices;
 
 /**
  * @license GNU GPL v2+
@@ -8,6 +9,12 @@ class TwoColConflictPage extends EditPage {
 
 	const WHITESPACES =
 		'\s\xA0\x{1680}\x{180E}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}';
+
+	protected function incrementConflictStats() {
+		parent::incrementConflictStats();
+		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$stats->increment( 'TwoColConflict.conflict' );
+	}
 
 	/**
 	 * Replace default header for explaining the conflict screen.
@@ -48,6 +55,8 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	protected function showConflict() {
+		$this->incrementConflictStats();
+
 		// don't show the original conflict view at the bottom
 		return false;
 	}
