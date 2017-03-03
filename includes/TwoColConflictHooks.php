@@ -56,4 +56,18 @@ class TwoColConflictHooks {
 		}
 	}
 
+	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
+		$testModules['qunit']['ext.TwoColConflict.tests'] = [
+			'scripts' => [
+				'tests/qunit/TwoColConflict.HelpDialog.test.js'
+			],
+			'dependencies' => [
+				'ext.TwoColConflict.HelpDialog'
+			],
+			'localBasePath' => dirname( __DIR__ ),
+			'remoteExtPath' => 'TwoColConflict',
+		];
+
+		return true;
+	}
 }

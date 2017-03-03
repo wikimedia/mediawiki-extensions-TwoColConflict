@@ -29,6 +29,9 @@
 		],
 		"CustomEditor": [
 			"TwoColConflictHooks::onCustomEditor"
+		],
+		"ResourceLoaderTestModules": [
+			"TwoColConflictHooks::onResourceLoaderTestModules"
 		]
 	},
 	"MessagesDirs": {

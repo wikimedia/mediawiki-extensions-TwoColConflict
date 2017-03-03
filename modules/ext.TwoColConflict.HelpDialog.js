@@ -174,6 +174,10 @@
 				windowManager.closeWindow( dialog );
 			}
 		};
+
+		HelpDialog.getDialogInstance = function () {
+			return dialog;
+		};
 	};
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
