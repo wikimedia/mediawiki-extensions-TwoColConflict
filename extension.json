@@ -2,7 +2,10 @@
 	"name": "TwoColConflict",
 	"version": "0.0.1",
 	"author": [
-		"WMDE"
+		"TCB team (Wikimedia Deutschland)",
+		"Christoph Jauera",
+		"Addshore",
+		"Tobias Gritschacher"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TwoColConflict",
 	"descriptionmsg": "twoColConflict-desc",
