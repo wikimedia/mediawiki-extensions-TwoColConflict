@@ -99,7 +99,6 @@ del.mw-twocolconflict-diffchange {
 
 .mw-twocolconflict-diffchange-foreign,
 .mw-twocolconflict-diffchange-own {
-	display: inline-block;
 	margin: 0 0 0.3em 0.3em;
 	padding: 0 0.3em 0 0.3em;
 	border-left-width: 2px;

@@ -300,7 +300,7 @@ class TwoColConflictPage extends EditPage {
 	private function getMarkedUpDiffText( array $unifiedDiff ) {
 		$lastUser = $this->getArticle()->getPage()->getUserText();
 
-		$output = [];
+		$output = '';
 		foreach ( $unifiedDiff as $key => $currentLine ) {
 			foreach ( $currentLine as $changeSet ) {
 				switch ( $changeSet['action'] ) {
@@ -310,7 +310,7 @@ class TwoColConflictPage extends EditPage {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
 
-						$output[] = '<div class="' . $class . '">' .
+						$output .= '<div class="' . $class . '">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
 							'<span mw-twocolconflict-diffchange-title-pseudo="' .
 							$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
@@ -318,7 +318,7 @@ class TwoColConflictPage extends EditPage {
 							'</span>' .
 							'</div>' .
 							$changeSet['new'] .
-							'</div>';
+							'</div>' . "\n";
 						break;
 					case 'delete':
 						$class = 'mw-twocolconflict-diffchange-foreign';
@@ -326,7 +326,7 @@ class TwoColConflictPage extends EditPage {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
 
-						$output[] = '<div class="' . $class . '">' .
+						$output .= '<div class="' . $class . '">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
 							'<span mw-twocolconflict-diffchange-title-pseudo="' .
 							$this->context->msg(
@@ -338,17 +338,21 @@ class TwoColConflictPage extends EditPage {
 							'</div>' .
 							$changeSet['old'] .
 							'</div>';
+
+						if ( !$this->hasConflictInLine( $currentLine ) ) {
+							$output .= "\n";
+						}
 						break;
 					case 'copy':
-						$output[] = '<div class="mw-twocolconflict-diffchange-same">' .
+						$output .= '<div class="mw-twocolconflict-diffchange-same">' .
 							$this->addUnchangedText( $changeSet['copy'] ) .
-							'</div>';
+							'</div>' . "\n";
 						break;
 				}
 			}
 		}
 
-		return $this->normalizeMarkedUpText( implode( "\n", $output ) );
+		return $this->normalizeMarkedUpText( $output );
 	}
 
 	/**
