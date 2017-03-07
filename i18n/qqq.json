@@ -23,6 +23,6 @@
 	"twoColConflict-label-both": "Label for the option that shows both conflicting contributions.\n{{Identical|Both}}",
 	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
 	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
-	"twoColConflict-label-show-changes": "Label for the options which filter conflicting text in the diff view.",
+	"twoColConflict-label-show-changes": "Label for the options which filter conflicting text in the diff view.\n{{Identical|Show change}}",
 	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view."
 }
