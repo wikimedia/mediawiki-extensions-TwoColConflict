@@ -49,7 +49,8 @@
 				"modules/ext.TwoColConflict.init.js"
 			],
 			"dependencies": [
-				"ext.TwoColConflict.AutoScroll"
+				"ext.TwoColConflict.AutoScroll",
+				"ext.TwoColConflict.HelpDialog"
 			]
 		},
 		"ext.TwoColConflict.filterOptionsJs": {
@@ -63,6 +64,30 @@
 		"ext.TwoColConflict.AutoScroll": {
 			"scripts": [
 				"modules/ext.TwoColConflict.AutoScroll.js"
+			]
+		},
+		"ext.TwoColConflict.HelpDialog": {
+			"scripts": [
+				"modules/ext.TwoColConflict.HelpDialog.js"
+			],
+			"dependencies": [
+				"oojs-ui"
+			],
+			"messages": [
+				"twoColConflict-show-help-tooltip",
+				"twoColConflict-help-dialog-slide1",
+				"twoColConflict-help-dialog-slide2",
+				"twoColConflict-help-dialog-slide3",
+				"twoColConflict-help-dialog-slide4",
+				"twoColConflict-tutorial",
+				"twoColConflict-previous-dialog",
+				"twoColConflict-next-dialog",
+				"twoColConflict-close-dialog"
+			]
+		},
+		"ext.TwoColConflict.HelpDialogCss": {
+			"styles": [
+				"modules/ext.TwoColConflict.HelpDialog.css"
 			]
 		}
 	},

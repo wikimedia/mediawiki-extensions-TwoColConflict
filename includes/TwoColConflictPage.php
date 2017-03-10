@@ -116,6 +116,7 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
 				'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
 			)->parse() . '</div>';
+
 		$out .= $this->buildFilterOptionsMenu();
 
 		$unifiedDiff = $this->getUnifiedDiff();
@@ -190,8 +191,30 @@ class TwoColConflictPage extends EditPage {
 		       $this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
 		       '</div>';
 		$out .= $showHideOptions;
+		$out .= $this->buildHelpButton();
 		$out .= '</div>';
 
+		$out .= '</div>';
+
+		return $out;
+	}
+
+	/**
+	 * Build HTML for the help button for the unified diff view.
+	 *
+	 * @return string
+	 */
+	private function buildHelpButton() {
+		$helpButton = new OOUI\ButtonInputWidget( [
+			'icon' => 'help',
+			'framed' => false,
+			'name' => 'mw-twocolconflict-show-help',
+			'title' => $this->getContext()->msg( 'twoColConflict-show-help-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-show-help' ]
+		] );
+
+		$out = '<div class="mw-twocolconflict-show-help-container">';
+		$out .= $helpButton;
 		$out .= '</div>';
 
 		return $out;
@@ -521,7 +544,10 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	private function addCSS() {
-		$this->context->getOutput()->addModuleStyles( 'ext.TwoColConflict.editor' );
+		$this->context->getOutput()->addModuleStyles( [
+			'ext.TwoColConflict.editor',
+			'ext.TwoColConflict.HelpDialogCss',
+		] );
 	}
 
 	private function addJS() {

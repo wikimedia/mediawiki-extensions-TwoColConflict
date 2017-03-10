@@ -5,6 +5,10 @@
 		"jquery": true
 	},
 	"globals": {
-		"mediaWiki": false
+		"mediaWiki": false,
+		"OO": false
+	},
+	"rules": {
+		"dot-notation": [ "error", { "allowKeywords": true } ]
 	}
 }
