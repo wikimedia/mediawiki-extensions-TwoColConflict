@@ -71,7 +71,8 @@
 				"modules/ext.TwoColConflict.HelpDialog.js"
 			],
 			"dependencies": [
-				"oojs-ui"
+				"oojs-ui",
+				"ext.TwoColConflict.HelpDialogImages"
 			],
 			"messages": [
 				"twoColConflict-show-help-tooltip",
@@ -89,6 +90,36 @@
 			"styles": [
 				"modules/ext.TwoColConflict.HelpDialog.css"
 			]
+		},
+		"ext.TwoColConflict.HelpDialogImages": {
+			"class": "ResourceLoaderImageModule",
+			"selector": ".mw-twocolconflict-help-dialog-slide-{name}",
+			"images": {
+				"1": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.helpDialog/slide1-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.helpDialog/slide1-rtl.svg"
+					}
+				},
+				"2": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.helpDialog/slide2-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.helpDialog/slide2-rtl.svg"
+					}
+				},
+				"3": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.helpDialog/slide3-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.helpDialog/slide3-rtl.svg"
+					}
+				},
+				"4": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.helpDialog/slide4-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.helpDialog/slide4-rtl.svg"
+					}
+				}
+			}
 		}
 	},
 	"ResourceFileModulePaths": {

@@ -45,35 +45,3 @@
 	font-size: 14px;
 	line-height: 1.5;
 }
-
-.ltr .mw-twocolconflict-help-dialog-slide-1 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide1-ltr.svg );
-}
-
-.ltr .mw-twocolconflict-help-dialog-slide-2 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide2-ltr.svg );
-}
-
-.ltr .mw-twocolconflict-help-dialog-slide-3 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide3-ltr.svg );
-}
-
-.ltr .mw-twocolconflict-help-dialog-slide-4 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide4-ltr.svg );
-}
-
-.rtl .mw-twocolconflict-help-dialog-slide-1 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide1-rtl.svg );
-}
-
-.rtl .mw-twocolconflict-help-dialog-slide-2 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide2-rtl.svg );
-}
-
-.rtl .mw-twocolconflict-help-dialog-slide-3 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide3-rtl.svg );
-}
-
-.rtl .mw-twocolconflict-help-dialog-slide-4 {
-	background-image: url( ../resources/ext.TwoColConflict.helpDialog/slide4-rtl.svg );
-}
