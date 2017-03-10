@@ -19,6 +19,15 @@
 		},
 
 		/**
+		 * Get the height of the change div titles
+		 *
+		 * @return {number}
+		 */
+		getChangeDivTitleHeight: function() {
+			return parseInt( $( '.mw-twocolconflict-diffchange-title:first' ).outerHeight( true ) );
+		},
+
+		/**
 		 * Synchronize width and height of the hidden textbox with the
 		 * actual textbox
 		 */
@@ -149,7 +158,7 @@
 			} );
 
 			$textEditor.animate( {
-				scrollTop: dataOffset,
+				scrollTop: dataOffset - this.getChangeDivTitleHeight(),
 				duration: 1000
 			} );
 		},
