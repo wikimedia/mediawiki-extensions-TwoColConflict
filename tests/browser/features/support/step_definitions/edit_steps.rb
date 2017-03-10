@@ -3,7 +3,7 @@ When(/^Another user changes content of the "(.+?)" page to "(.+?)"$/) do |page_t
     api.edit(
         title: page_title,
         text: page_content,
-        summary: "Conflicting edit"
+        summary: 'Conflicting edit'
     )
   end
 end
