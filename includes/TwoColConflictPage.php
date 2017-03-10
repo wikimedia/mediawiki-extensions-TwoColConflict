@@ -22,18 +22,21 @@ class TwoColConflictPage extends EditPage {
 	 * @param OutputPage $out
 	 */
 	protected function addExplainConflictHeader( OutputPage $out ) {
-		$labelAsPublish = $this->context->getConfig()->get(
-			'EditSubmitButtonLabelPublish'
-		);
+		// don't show conflict message when coming from VisualEditor
+		if ( $this->getContext()->getRequest()->getVal( 'veswitched' ) !== "1" ) {
+			$labelAsPublish = $this->context->getConfig()->get(
+				'EditSubmitButtonLabelPublish'
+			);
 
-		$buttonLabel = $this->context->msg(
-			$labelAsPublish ? 'publishchanges' : 'savechanges'
-		)->text();
+			$buttonLabel = $this->context->msg(
+				$labelAsPublish ? 'publishchanges' : 'savechanges'
+			)->text();
 
-		$out->wrapWikiMsg(
-			"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
-			[ 'twoColConflict-explainconflict', $buttonLabel ]
-		);
+			$out->wrapWikiMsg(
+				"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
+				[ 'twoColConflict-explainconflict', $buttonLabel ]
+			);
+		}
 	}
 
 	/**
