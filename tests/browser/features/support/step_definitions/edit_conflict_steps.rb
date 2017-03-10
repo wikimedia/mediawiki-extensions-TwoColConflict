@@ -116,3 +116,11 @@ end
 Then(/^The show unchanged text option should be selected$/) do
   expect(on(EditConflictPage).twocolconflict_option_show_selected?).to be_truthy
 end
+
+Then(/^The editor view should be scrolled$/) do
+  browser.execute_script('$( ".mw-twocolconflict-editor-col textarea" ).scrollTop() > 0;')
+end
+
+Then(/^The diff view should be scrolled$/) do
+  browser.execute_script('$( ".mw-twocolconflict-changes-editor" ).scrollTop() > 0;')
+end
