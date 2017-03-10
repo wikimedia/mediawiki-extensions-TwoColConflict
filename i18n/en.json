@@ -22,7 +22,7 @@
 	"twoColConflict-label-show-changes": "show changes",
 	"twoColConflict-label-unchanged": "unchanged text",
 	"twoColConflict-show-help-tooltip": "Show help text",
-	"twoColConflict-help-dialog-slide1": "After enabled, whenever an edit conflict happens, the new two-column view for conflict resolution will appear. You will see a box with the conflicting changes in one column and an editor with the currently saved version of the text in another column.",
+	"twoColConflict-help-dialog-slide1": "After enabled, whenever an edit conflict happens, the new two-column view for conflict resolution will appear. You will see a box with the conflicting changes in one column and an editor with the currently saved version of the text in another column. Feedback is very much appreciated [[mw:Help_talk:Two_Column_Edit_Conflict_View|here]].",
 	"twoColConflict-help-dialog-slide2": "Inside the box containing the conflicting changes, both the conflicting text and your text is shown, and the differences between the two are highlighted.",
 	"twoColConflict-help-dialog-slide3": "There are buttons above the box which allow you to hide any unchanged parts of the text to make it easier to focus on the conflicting areas. Also you have the possibility to only show your version of the text.",
 	"twoColConflict-help-dialog-slide4": "You can then copy and paste the desired parts of the text to the editor to adjust the version that should be saved. Once you hit the \"Save changes\" button, the version from the editor will be saved.",
