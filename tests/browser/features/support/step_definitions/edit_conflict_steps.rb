@@ -49,6 +49,14 @@ Then(/^Section for common changes should be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_same_element).to be_visible
 end
 
+Then(/^Section for full common changes should be there$/) do
+  expect(on(EditConflictPage).twocolconflict_changes_same_full_element).to be_visible
+end
+
+Then(/^Section for collapsed common changes should be there$/) do
+  expect(on(EditConflictPage).twocolconflict_changes_same_collapsed_element).to be_visible
+end
+
 Then(/^Section for foreign changes should be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_foreign_element).to be_visible
 end
@@ -59,6 +67,14 @@ end
 
 Then(/^Section for common changes should not be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_same_element).not_to be_visible
+end
+
+Then(/^Section for full common changes should not be there$/) do
+  expect(on(EditConflictPage).twocolconflict_changes_same_full_element).not_to be_visible
+end
+
+Then(/^Section for collapsed common changes should not be there$/) do
+  expect(on(EditConflictPage).twocolconflict_changes_same_collapsed_element).not_to be_visible
 end
 
 Then(/^Section for foreign changes should not be there$/) do
@@ -75,4 +91,28 @@ end
 
 Then(/^Own version title should be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_title_own_element).to be_visible
+end
+
+When(/^I select the show mine option$/) do
+  on(EditConflictPage).twocolconflict_option_mine_div_element.when_present.click
+end
+
+When(/^I select the hide unchanged text option$/) do
+  on(EditConflictPage).twocolconflict_option_hide_div_element.when_present.click
+end
+
+When(/^I handle a multi line edit conflict$/) do
+  step 'I go to the "TwoColConflict Test Page" page with multi line content'
+  step 'I click Edit'
+  step 'Another user changes the multi line content of the "TwoColConflict Test Page" page'
+  step 'I edit the page with "ChangeB"'
+  step 'I save the edit'
+end
+
+When(/^I click on the collapsed common changes$/) do
+  on(EditConflictPage).twocolconflict_changes_same_collapsed_element.when_present.click
+end
+
+Then(/^The show unchanged text option should be selected$/) do
+  expect(on(EditConflictPage).twocolconflict_option_show_selected?).to be_truthy
 end
