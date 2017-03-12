@@ -15,5 +15,9 @@
 	"twoColConflict-label-show": "weisen",
 	"twoColConflict-label-hide": "verstoppen",
 	"twoColConflict-label-show-changes": "Ännerunge weisen",
-	"twoColConflict-label-unchanged": "onverännerten Text"
+	"twoColConflict-label-unchanged": "onverännerten Text",
+	"twoColConflict-show-help-tooltip": "Hëllefstext weisen",
+	"twoColConflict-previous-dialog": "Vireg",
+	"twoColConflict-next-dialog": "Weider",
+	"twoColConflict-close-dialog": "Zoumaachen"
 }

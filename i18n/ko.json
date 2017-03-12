@@ -11,5 +11,8 @@
 	"twoColConflict-label-both": "둘 다",
 	"twoColConflict-label-show": "보이기",
 	"twoColConflict-label-hide": "숨기기",
-	"twoColConflict-label-show-changes": "차이 보기"
+	"twoColConflict-label-show-changes": "차이 보기",
+	"twoColConflict-previous-dialog": "이전",
+	"twoColConflict-next-dialog": "다음",
+	"twoColConflict-close-dialog": "닫기"
 }

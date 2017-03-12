@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Facenapalm",
-			"Kareyac"
+			"Kareyac",
+			"Redredsonia"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -12,5 +13,9 @@
 	"twoColConflict-label-show": "показать",
 	"twoColConflict-label-hide": "скрыть",
 	"twoColConflict-label-show-changes": "показать изменения",
-	"twoColConflict-label-unchanged": "неизменный текст"
+	"twoColConflict-label-unchanged": "неизменный текст",
+	"twoColConflict-show-help-tooltip": "Показать текст справки",
+	"twoColConflict-previous-dialog": "Назад",
+	"twoColConflict-next-dialog": "Далее",
+	"twoColConflict-close-dialog": "Закрыть"
 }

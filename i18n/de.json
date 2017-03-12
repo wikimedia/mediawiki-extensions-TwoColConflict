@@ -21,5 +21,14 @@
 	"twoColConflict-label-show": "anzeigen",
 	"twoColConflict-label-hide": "ausblenden",
 	"twoColConflict-label-show-changes": "Änderungen anzeigen",
-	"twoColConflict-label-unchanged": "Unveränderten Text"
+	"twoColConflict-label-unchanged": "Unveränderten Text",
+	"twoColConflict-show-help-tooltip": "Hilfetext anzeigen",
+	"twoColConflict-help-dialog-slide1": "Nach der Aktivierung, immer wenn ein Bearbeitungskonflikt auftaucht, erscheint die neue zweispaltige Ansicht zur Konfliktauflösung. Du wirst einen Kasten mit den kollidierenden Änderungen in einer Spalte und einen Editor mit der aktuell gespeicherten Version des Textes in einer weiteren Spalte sehen. Rückmeldungen werden [[mw:Help_talk:Two_Column_Edit_Conflict_View|hier]] sehr geschätzt.",
+	"twoColConflict-help-dialog-slide2": "Innerhalb des Kastens, der die Konfliktänderungen enthält, werden der Konflikttext und dein Text angezeigt. Die Unterschiede zwischen den beiden Texten werden hervorgehoben.",
+	"twoColConflict-help-dialog-slide3": "Es gibt Schaltflächen über dem Kasten, die es dir erlauben, alle unveränderten Teile des Textes auszublenden, um die kollidierenden Bereiche leichter zu fokussieren. Du hast auch die Möglichkeit, nur deine Version des Textes anzuzeigen.",
+	"twoColConflict-help-dialog-slide4": "Du kannst dann die gewünschten Teile des Textes kopieren und in den Editor einfügen, um die Version anzupassen, die gespeichert werden soll. Sobald du die Schaltfläche „Änderungen speichern“ gedrückt hast, wird die Version aus dem Editor gespeichert.",
+	"twoColConflict-tutorial": "Tutorial zur Auflösung von Bearbeitungskonflikten",
+	"twoColConflict-previous-dialog": "Vorheriges",
+	"twoColConflict-next-dialog": "Nächstes",
+	"twoColConflict-close-dialog": "Schließen"
 }

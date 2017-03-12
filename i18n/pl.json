@@ -21,5 +21,9 @@
 	"twoColConflict-label-show": "pokaż",
 	"twoColConflict-label-hide": "ukryj",
 	"twoColConflict-label-show-changes": "pokaż zmiany",
-	"twoColConflict-label-unchanged": "niezmieniony tekst"
+	"twoColConflict-label-unchanged": "niezmieniony tekst",
+	"twoColConflict-show-help-tooltip": "Pokaż tekst pomocy",
+	"twoColConflict-previous-dialog": "Poprzedni",
+	"twoColConflict-next-dialog": "Następny",
+	"twoColConflict-close-dialog": "Zamknij"
 }

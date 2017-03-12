@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dgstranz",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -21,5 +22,10 @@
 	"twoColConflict-label-show": "mostrar",
 	"twoColConflict-label-hide": "ocultar",
 	"twoColConflict-label-show-changes": "mostrar cambios",
-	"twoColConflict-label-unchanged": "texto sin cambios"
+	"twoColConflict-label-unchanged": "texto sin cambios",
+	"twoColConflict-show-help-tooltip": "Mostrar el texto de ayuda",
+	"twoColConflict-tutorial": "Tutorial para resolver conflictos de edición",
+	"twoColConflict-previous-dialog": "Anterior",
+	"twoColConflict-next-dialog": "Siguiente",
+	"twoColConflict-close-dialog": "Cerrar"
 }

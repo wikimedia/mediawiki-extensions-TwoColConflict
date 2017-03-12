@@ -5,5 +5,9 @@
 		]
 	},
 	"twoColConflict-label-show": "ښکاره کول",
-	"twoColConflict-label-hide": "پټول"
+	"twoColConflict-label-hide": "پټول",
+	"twoColConflict-show-help-tooltip": "لارښود متن ښکاره کول",
+	"twoColConflict-previous-dialog": "پخوانی",
+	"twoColConflict-next-dialog": "راتلونکی",
+	"twoColConflict-close-dialog": "تړل"
 }

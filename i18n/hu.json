@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"BanKris"
+		]
+	},
+	"twoColConflict-show-help-tooltip": "Súgószöveg megjelenítése",
+	"twoColConflict-previous-dialog": "Előző",
+	"twoColConflict-next-dialog": "Következő",
+	"twoColConflict-close-dialog": "Bezárás"
+}

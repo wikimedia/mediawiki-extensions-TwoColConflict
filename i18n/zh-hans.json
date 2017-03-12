@@ -21,5 +21,14 @@
 	"twoColConflict-label-show": "显示",
 	"twoColConflict-label-hide": "隐藏",
 	"twoColConflict-label-show-changes": "显示更改",
-	"twoColConflict-label-unchanged": "未更改文本"
+	"twoColConflict-label-unchanged": "未更改文本",
+	"twoColConflict-show-help-tooltip": "显示帮助文本",
+	"twoColConflict-help-dialog-slide1": "在启用后，无论编辑冲突是否发生，都将显示新版两列冲突解决视图。您将在其中一列中看到包含冲突更改的方框，并在另一列中看到带有当前文本保存版本的编辑器。我们非常希望您[[mw:Help_talk:Two_Column_Edit_Conflict_View|在此]]提供反馈。",
+	"twoColConflict-help-dialog-slide2": "在方框中包含冲突的更改，冲突的文本与您的文本都会显示，并且两者之间的差异也会被高亮。",
+	"twoColConflict-help-dialog-slide3": "在方框上方有按钮，其允许您隐藏文本中任何未更改的部分，使其更容易集中于冲突部分。另外您可以只显示文本中您的版本。",
+	"twoColConflict-help-dialog-slide4": "然后您可以复制粘贴文本中需要的部分至编辑器，来调整应被保存的版本。一旦您按下“保存更改”按钮，来自编辑器的版本将被保存。",
+	"twoColConflict-tutorial": "编辑冲突解决指导",
+	"twoColConflict-previous-dialog": "上一步",
+	"twoColConflict-next-dialog": "下一步",
+	"twoColConflict-close-dialog": "关闭"
 }
