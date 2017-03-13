@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Matma Rex",
+			"Sfic"
+		]
+	},
+	"twoColConflict-label-mine": "मेरी/ \nमेरा",
+	"twoColConflict-label-both": "दोनों",
+	"twoColConflict-previous-dialog": "पिछला",
+	"twoColConflict-next-dialog": "अगला"
+}

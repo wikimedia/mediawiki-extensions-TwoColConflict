@@ -16,5 +16,9 @@
 	"twoColConflict-label-both": "entrambe",
 	"twoColConflict-label-show": "mostra",
 	"twoColConflict-label-hide": "nascondi",
-	"twoColConflict-label-show-changes": "mostra modifiche"
+	"twoColConflict-label-show-changes": "mostra modifiche",
+	"twoColConflict-show-help-tooltip": "Mostra testo di aiuto",
+	"twoColConflict-previous-dialog": "Precedente",
+	"twoColConflict-next-dialog": "Successivo",
+	"twoColConflict-close-dialog": "Chiudi"
 }
