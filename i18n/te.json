@@ -9,5 +9,8 @@
 	"twoColConflict-label-both": "రెండూ",
 	"twoColConflict-label-show": "చూపించు",
 	"twoColConflict-label-hide": "దాచు",
-	"twoColConflict-label-show-changes": "మార్పులు చూపించు"
+	"twoColConflict-label-show-changes": "మార్పులు చూపించు",
+	"twoColConflict-previous-dialog": "మునుపటి",
+	"twoColConflict-next-dialog": "తదుపరి",
+	"twoColConflict-close-dialog": "మూసివేయి"
 }
