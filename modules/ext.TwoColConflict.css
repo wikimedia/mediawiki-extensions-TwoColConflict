@@ -1,8 +1,12 @@
+.mw-twocolconflict-form form {
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .mw-twocolconflict-changes-col,
 .mw-twocolconflict-editor-col {
-	box-sizing: border-box;
-	width: 50%;
-	float: left;
+	flex-grow: 1;
+	width: 300px;
 }
 
 .mw-twocolconflict-changes-col {
@@ -16,14 +20,6 @@
 .mw-twocolconflict-col-desc {
 	font-size: 0.9em;
 	margin-bottom: 10px;
-}
-
-.mw-twocolconflict-editor-col.mw-twocolconflict-js .mw-twocolconflict-col-desc {
-	margin-bottom: 74px;  /* diff-options height - editor-toolbar height */
-}
-
-.mw-twocolconflict-editor-col.mw-twocolconflict-js.mw-twocolconflict-wikieditor .mw-twocolconflict-col-desc {
-	margin-bottom: 62px;  /* diff-options height - editor-toolbar height */
 }
 
 .mw-twocolconflict-form .editOptions {
