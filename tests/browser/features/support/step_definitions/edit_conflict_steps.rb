@@ -101,6 +101,14 @@ When(/^I select the hide unchanged text option$/) do
   on(EditConflictPage).twocolconflict_option_hide_div_element.when_present.click
 end
 
+When(/^I handle an edit conflict$/) do
+  step 'I go to the "TwoColConflict Test Page" page with content "I am a sentence."'
+  step 'I click Edit'
+  step 'Another user changes content of the "TwoColConflict Test Page" page to "I am a longer sentence than before."'
+  step 'I edit the page with "Adding some random content."'
+  step 'I save the edit'
+end
+
 When(/^I handle a multi line edit conflict$/) do
   step 'I go to the "TwoColConflict Test Page" page with multi line content'
   step 'I click Edit'

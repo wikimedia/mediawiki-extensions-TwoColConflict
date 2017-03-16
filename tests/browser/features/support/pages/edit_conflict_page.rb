@@ -31,4 +31,11 @@ class EditConflictPage
   radio_button(:twocolconflict_option_show, xpath: '(//*[@name="mw-twocolconflict-same"])[1]')
   span(:twocolconflict_option_show_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[1]')
   span(:twocolconflict_option_hide_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[2]')
+
+  button(:twocolconflict_show_help, css: '.mw-twocolconflict-show-help > button')
+  div(:twocolconflict_help_dialog, css: '.mw-twocolconflict-help-dialog')
+  link(:twocolconflict_help_next, css: '.mw-twocolconflict-help-next > a')
+  link(:twocolconflict_help_previous, css: '.mw-twocolconflict-help-previous > a')
+  link(:twocolconflict_help_close_start, css: '.mw-twocolconflict-help-close-start > a')
+  link(:twocolconflict_help_close_end, css: '.mw-twocolconflict-help-close-end > a')
 end
