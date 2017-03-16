@@ -54,7 +54,7 @@
 		 * @return {string}
 		 */
 		getCssPrefix: function () {
-			return this.config.name.toLowerCase();
+			return 'mw-' + this.config.name.toLowerCase();
 		},
 
 		/**
@@ -71,12 +71,12 @@
 			slide.$element
 				.append(
 					$( '<div>' ).addClass(
-						'mw-' + this.getCssPrefix() +
+						this.getCssPrefix() +
 						'-help-dialog-image-' + imageMode + ' ' + imageClass
 					)
 				)
 				.append(
-					$( '<p>' ).addClass( 'mw-' + this.getCssPrefix() + '-help-dialog-text' )
+					$( '<p>' ).addClass( this.getCssPrefix() + '-help-dialog-text' )
 						.html( mw.message( message ).parse() )
 				);
 
@@ -131,12 +131,12 @@
 	 */
 	HelpDialog.init = function ( config ) {
 		var windowManager = new OO.ui.WindowManager(),
-			dialog;
+			dialog = new HelpDialog( config );
 
 		$( 'body' )
 			.append( windowManager.$element )
 			.click( function ( event ) {
-				if ( $( event.target ).hasClass( config.name.toLowerCase() + '-help-dialog' ) ) {
+				if ( $( event.target ).hasClass( dialog.getCssPrefix() + '-help-dialog' ) ) {
 					HelpDialog.hide();
 				}
 			} );
@@ -149,14 +149,12 @@
 				label: mw.msg( config.next ),
 				flags: [ 'primary', 'progressive' ],
 				modes: [ 'initial', 'middle' ],
-				classes: [ config.name.toLowerCase() + '-help-next' ]
+				classes: [ dialog.getCssPrefix() + '-help-next' ]
 			},
 			{ action: 'previous', flags: 'safe', label: mw.msg( config.prev ), modes: [ 'middle', 'last' ], classes: [ config.name + '-help-previous' ] },
-			{ label: mw.msg( config.close ), flags: 'safe', modes: 'initial', classes: [ config.name.toLowerCase() + '-help-close-start' ] },
-			{ label: mw.msg( config.close ), flags: 'primary', modes: 'last', classes: [ config.name.toLowerCase() + '-help-close-end' ] }
+			{ label: mw.msg( config.close ), flags: 'safe', modes: 'initial', classes: [ dialog.getCssPrefix() + '-help-close-start' ] },
+			{ label: mw.msg( config.close ), flags: 'primary', modes: 'last', classes: [ dialog.getCssPrefix() + '-help-close-end' ] }
 		];
-
-		dialog = new HelpDialog( config );
 
 		HelpDialog.show = function () {
 			if ( !windowManager.hasWindow( dialog ) ) {

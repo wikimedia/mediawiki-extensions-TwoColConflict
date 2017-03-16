@@ -69,6 +69,7 @@
 			getSlideTextHtml( dialog.slides[ 3 ] ),
 			addLinkTargets( mw.message( 'twoColConflict-help-dialog-slide4' ).parse() )
 		);
+		assert.equal( dialog.getCssPrefix(), 'mw-twocolconflict' );
 		assert.ok( dialog.slides[ 0 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-1' ) );
 		assert.ok( dialog.slides[ 1 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-2' ) );
 		assert.ok( dialog.slides[ 2 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-3' ) );
