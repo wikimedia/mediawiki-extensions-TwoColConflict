@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nersip"
 		]
 	},
 	"twoColConflict-label-show": "rodyti",
 	"twoColConflict-label-hide": "slėpti",
-	"twoColConflict-label-unchanged": "nepakeistas tekstas"
+	"twoColConflict-label-unchanged": "nepakeistas tekstas",
+	"twoColConflict-show-help-tooltip": "Rodyti pagalbos tekstą",
+	"twoColConflict-previous-dialog": "Ankstesnis",
+	"twoColConflict-next-dialog": "Kitas",
+	"twoColConflict-close-dialog": "Uždaryti"
 }
