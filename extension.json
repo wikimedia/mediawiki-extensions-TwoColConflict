@@ -16,6 +16,7 @@
 		"MediaWiki": ">= 1.25.0"
 	},
 	"config": {
+		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
 		"TwoColConflictBetaFeature": true
 	},
 	"AutoloadClasses": {
