@@ -114,11 +114,13 @@ class TwoColConflictPage extends EditPage {
 		);
 
 		$out = '<div class="mw-twocolconflict-changes-col">';
+		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
 			'</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
 				'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
 			)->parse() . '</div>';
+		$out .= '</div>';
 
 		$out .= $this->buildFilterOptionsMenu();
 
@@ -277,10 +279,12 @@ class TwoColConflictPage extends EditPage {
 			$lastChangeTime, $this->context->getUser()
 		);
 
-		$out = '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+		$out = '<div class="mw-twocolconflict-col-header">';
+		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
 				'twoColConflict-editor-col-desc', $lastUser, $lastChangeTime
 			) . '</div>';
+		$out .= '</div>';
 
 		return $out;
 	}

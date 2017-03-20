@@ -55,6 +55,54 @@
 		} );
 	}
 
+	/**
+	 * Calculates the spacing between the bottom of the header and the top of the text editor
+	 *
+	 * @param {jQuery} $header
+	 * @param {jQuery} $editor
+	 * @return {number}
+	 */
+	function getSpaceBetweenHeaderAndEditor( $header, $editor ) {
+		return $editor.offset().top - $header.offset().top - $header.height();
+	}
+
+	/**
+	 * Calculates the height difference of two headers
+	 *
+	 * @param {jQuery} $header1
+	 * @param {jQuery} $header2
+	 * @return {number}
+	 */
+	function getHeaderHeightDiff( $header1, $header2 ) {
+		return $header1.height() - $header2.height();
+	}
+
+	/**
+	 * Adjusts the spacing below the editor column's header in order to synchronize the position of
+	 * both columns and removes the editor column's left padding and spacing when it collapses below
+	 * the changes column
+	 */
+	function adjustEditorColSpacing() {
+		var $changesCol = $( '.mw-twocolconflict-changes-col' ),
+			$editorCol = $( '.mw-twocolconflict-editor-col' ),
+			$changesColHeader = $( '.mw-twocolconflict-changes-col .mw-twocolconflict-col-header' ),
+			$editorColHeader = $( '.mw-twocolconflict-editor-col .mw-twocolconflict-col-header' ),
+			$changesEditor = $( '.mw-twocolconflict-changes-editor' ),
+			$wikiEditorToolbar = $( '#wikiEditor-ui-toolbar' ),
+			toolbarHeight = $wikiEditorToolbar.length ? $wikiEditorToolbar.height() : $( '#toolbar' ).height();
+
+		if ( $changesCol.position().left !== $editorCol.position().left ) {
+			$editorColHeader.css( 'margin-bottom',
+				getSpaceBetweenHeaderAndEditor( $changesColHeader, $changesEditor ) -
+				getHeaderHeightDiff( $editorColHeader, $changesColHeader ) - toolbarHeight + 'px'
+			);
+			$editorCol.css( 'padding-left', '0.5em' );
+		} else {
+			$editorColHeader.css( 'margin-bottom', '10px' );
+			$editorCol.css( 'padding-left', 0 );
+		}
+	}
+
 	$( function () {
 		$( '.mw-twocolconflict-changes-editor' ).keydown( function( e ) {
 			if ( e.ctrlKey && e.keyCode === 65 ) { // CTRL + A
@@ -68,8 +116,14 @@
 
 		$( window ).on( 'resize', function() {
 			autoScroll.setScrollBaseData();
+			adjustEditorColSpacing();
 		} );
 
 		initHelpDialog();
+		adjustEditorColSpacing();
+
+		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
+			adjustEditorColSpacing();
+		} );
 	} );
 }( mediaWiki, jQuery ) );
