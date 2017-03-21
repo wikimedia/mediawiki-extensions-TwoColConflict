@@ -1,3 +1,5 @@
+@import 'mediawiki.mixins';
+
 .mw-twocolconflict-form form {
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -19,6 +21,14 @@
 	-ms-flex: 1 auto;
 	flex: 1 auto;
 	width: 300px;
+}
+
+// mixin to address IE9 and lower
+&.mw-twocolconflict-changes-col,
+&.mw-twocolconflict-editor-col {
+	box-sizing: border-box;
+	width: 50%;
+	float: left;
 }
 
 .mw-twocolconflict-changes-col {
