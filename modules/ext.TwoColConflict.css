@@ -1,11 +1,23 @@
 .mw-twocolconflict-form form {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
 	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-ms-flex-direction: row;
+	-ms-flex-wrap: wrap;
 	flex-flow: row wrap;
 }
 
 .mw-twocolconflict-changes-col,
 .mw-twocolconflict-editor-col {
-	flex-grow: 1;
+	-webkit-flex: 1 auto;
+	-moz-flex: 1 auto;
+	-ms-flex: 1 auto;
+	flex: 1 auto;
 	width: 300px;
 }
 
