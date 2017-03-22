@@ -4,7 +4,7 @@ class SpecialPreferencesPage
 
   link(:beta_features_tab, css: '#preftab-betafeatures')
   checkbox(:twocolconflict_checkbox, name: 'wptwocolconflict')
-  div(:twocolconflict_checkbox_div, xpath: '//*[@name="wptwocolconflict"]//parent::div')
+  span(:twocolconflict_checkbox_div, xpath: '//*[@name="wptwocolconflict"]//parent::span')
   button(:submit_button, css: '#prefcontrol')
 
   def enable_twocolconflict

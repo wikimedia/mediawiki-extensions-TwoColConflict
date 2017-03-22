@@ -25,10 +25,10 @@ class EditConflictPage
       css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-own .mw-twocolconflict-diffchange-title'
   )
 
-  div(:twocolconflict_option_both_div, xpath: '(//*[@name="mw-twocolconflict-show-changes"]//parent::div)[1]')
-  div(:twocolconflict_option_mine_div, xpath: '(//*[@name="mw-twocolconflict-show-changes"]//parent::div)[2]')
+  span(:twocolconflict_option_both_div, xpath: '(//*[@name="mw-twocolconflict-show-changes"]//parent::span)[1]')
+  span(:twocolconflict_option_mine_div, xpath: '(//*[@name="mw-twocolconflict-show-changes"]//parent::span)[2]')
 
   radio_button(:twocolconflict_option_show, xpath: '(//*[@name="mw-twocolconflict-same"])[1]')
-  div(:twocolconflict_option_show_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::div)[1]')
-  div(:twocolconflict_option_hide_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::div)[2]')
+  span(:twocolconflict_option_show_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[1]')
+  span(:twocolconflict_option_hide_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[2]')
 end
