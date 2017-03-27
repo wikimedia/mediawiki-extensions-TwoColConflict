@@ -12,5 +12,9 @@
 	"twoColConflict-label-show": "weergeven",
 	"twoColConflict-label-hide": "verbergen",
 	"twoColConflict-label-show-changes": "toon wijzigingen",
-	"twoColConflict-label-unchanged": "ongewijzigd tekst"
+	"twoColConflict-label-unchanged": "ongewijzigd tekst",
+	"twoColConflict-show-help-tooltip": "Hulptekst weergeven",
+	"twoColConflict-previous-dialog": "Vorige",
+	"twoColConflict-next-dialog": "Volgende",
+	"twoColConflict-close-dialog": "Sluiten"
 }
