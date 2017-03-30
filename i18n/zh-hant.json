@@ -12,5 +12,8 @@
 	"twoColConflict-label-both": "兩者",
 	"twoColConflict-label-show": "顯示",
 	"twoColConflict-label-hide": "隱藏",
-	"twoColConflict-label-show-changes": "顯示變更"
+	"twoColConflict-label-show-changes": "顯示變更",
+	"twoColConflict-previous-dialog": "上一個",
+	"twoColConflict-next-dialog": "下一個",
+	"twoColConflict-close-dialog": "關閉"
 }

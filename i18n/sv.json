@@ -12,5 +12,10 @@
 	"twoColConflict-label-show": "visa",
 	"twoColConflict-label-hide": "dölj",
 	"twoColConflict-label-show-changes": "visa ändringar",
-	"twoColConflict-label-unchanged": "oförändrad text"
+	"twoColConflict-label-unchanged": "oförändrad text",
+	"twoColConflict-show-help-tooltip": "Visa hjälptext",
+	"twoColConflict-tutorial": "Guide om att lösa redigeringskonflikter",
+	"twoColConflict-previous-dialog": "Föregående",
+	"twoColConflict-next-dialog": "Nästa",
+	"twoColConflict-close-dialog": "Stäng"
 }
