@@ -103,6 +103,13 @@
 		}
 	}
 
+	/**
+	 * Open the hyperlinks of the edit summary in a new tab by default
+	 */
+	function addTargetToEditSummaryLinks() {
+		$( '.mw-twocolconflict-edit-summary' ).find( 'a' ).attr( 'target', '_blank' );
+	}
+
 	$( function () {
 		$( '.mw-twocolconflict-changes-editor' ).keydown( function( e ) {
 			if ( e.ctrlKey && e.keyCode === 65 ) { // CTRL + A
@@ -120,10 +127,12 @@
 		} );
 
 		initHelpDialog();
+		addTargetToEditSummaryLinks();
 		adjustEditorColSpacing();
 
 		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
 			adjustEditorColSpacing();
 		} );
+
 	} );
 }( mediaWiki, jQuery ) );

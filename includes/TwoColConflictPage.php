@@ -98,28 +98,17 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildConflictPageChangesCol() {
-		$currentUser = $this->context->getUser();
-
 		$lastUser =
 			'<span class="mw-twocolconflict-lastuser"><bdi>' .
 			$this->mArticle->getPage()->getUserText() .
 			'</bdi></span>';
-		$lastChangeTime = $this->getContext()->getLanguage()->userTimeAndDate(
-			$this->getArticle()->getPage()->getTimestamp(),
-			$currentUser
-		);
-		$yourChangeTime = $this->getContext()->getLanguage()->userTimeAndDate(
-			time(),
-			$currentUser
-		);
 
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
 			'</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
-				'twoColConflict-changes-col-desc', $lastUser, $lastChangeTime, $yourChangeTime
-			)->parse() . '</div>';
+				'twoColConflict-changes-col-desc', $lastUser )->parse() . '</div>';
 		$out .= '</div>';
 
 		$out .= $this->buildFilterOptionsMenu();
@@ -268,22 +257,35 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	/**
+	 * Build HTML for Edit Summary.
+	 *
+	 * @return string
+	 */
+	private function buildEditSummary() {
+		$rev = $this->getArticle()->getPage()->getRevision();
+
+		$out = '<div class="mw-twocolconflict-edit-summary">';
+		$out .= Linker::userLink( $rev->getUser(), $rev->getUserText() );
+		$out .= $this->getContext()->getLanguage()->getDirMark();
+		$out .= Linker::revComment( $rev );
+		$out .= '</div>';
+
+		return $out;
+	}
+
+	/**
 	 * Build HTML to encapsulate editor with the conflicting text.
 	 *
 	 * @return string
 	 */
 	private function buildConflictPageEditorCol() {
-		$lastUser = '<bdi>' . $this->getArticle()->getPage()->getUserText() . '</bdi>';
-		$lastChangeTime = $this->getArticle()->getPage()->getTimestamp();
-		$lastChangeTime = $this->context->getLanguage()->userTimeAndDate(
-			$lastChangeTime, $this->context->getUser()
-		);
-
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
-		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
-				'twoColConflict-editor-col-desc', $lastUser, $lastChangeTime
-			) . '</div>';
+		$out .= '<div class="mw-twocolconflict-col-desc">';
+		$out .= $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' );
+		$out .= $this->buildEditSummary();
+		$out .= $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' );
+		$out .= '</div>';
 		$out .= '</div>';
 
 		return $out;
