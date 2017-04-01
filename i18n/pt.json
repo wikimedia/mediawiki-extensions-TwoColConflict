@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fúlvio",
+			"Hamilton Abreu",
+			"Vitorvicentevalente"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Apresenta um ecrã de fusão de edições lado a lado, para resolução de conflitos de edição",
+	"twoColConflict-beta-feature-message": "Conflito de edição em duas colunas",
+	"twoColConflict-beta-feature-description": "Mostra o conflito de edição em uma visualização mais avançada em duas colunas.",
+	"twoColConflict-explainconflict": "<strong>Aviso:</strong> Outro utilizador acaba de editar e salvar esta página. Existe um conflito entre a sua versão e a versão actual. Terá que mesclar suas alterações na versão actual do texto. Somente o texto no campo de edição será salvo ao clicar em \"$1\".",
+	"twoColConflict-changes-col-title": "Alterações conflitantes",
+	"twoColConflict-changes-col-desc": "Diferenças entre a versão actualmente publicada (por $1 em $2) e <span class=\"mw-twocolconflict-user\">seu</span> texto ($3)",
+	"twoColConflict-editor-col-title": "Editor cuja versão será publicada",
+	"twoColConflict-editor-col-desc": "A versão no editor será publicada. Inicialmente, seu conteúdo é a versão actualmente publicada (por $1 em $2)",
+	"twoColConflict-diffchange-own-title": "em sua versão",
+	"twoColConflict-diffchange-foreign-title": "na versão de $1",
+	"twoColConflict-label-mine": "minha",
+	"twoColConflict-label-both": "ambas",
+	"twoColConflict-label-show": "mostrar",
+	"twoColConflict-label-hide": "ocultar",
+	"twoColConflict-label-show-changes": "mostrar alterações",
+	"twoColConflict-label-unchanged": "texto sem alterações",
+	"twoColConflict-show-help-tooltip": "Mostrar o texto de ajuda",
+	"twoColConflict-help-dialog-slide1": "Após habilitado, sempre que ocorrer um conflito de edição, a nova exibição em duas colunas para resolução de conflitos será exibida. Verá uma caixa com as alterações conflitantes em uma coluna e um editor com a versão actualmente salva noutra coluna. Os comentários são muito apreciados [[mw:Help_talk:Two_Column_Edit_Conflict_View|aqui]].",
+	"twoColConflict-help-dialog-slide2": "Dentro da caixa que contém as alterações conflitantes, tanto o texto em conflito quanto o seu texto são mostrados, e as diferenças entre os dois são realçadas.",
+	"twoColConflict-help-dialog-slide3": "Existem botões acima da caixa que permitem ocultar quaisquer partes não alteradas do texto para facilitar a concentração nas áreas conflitantes. Existe também a possibilidade de mostrar apenas a sua versão do texto.",
+	"twoColConflict-help-dialog-slide4": "Em seguida, pode copiar e colar as partes desejadas do texto no editor para ajustar a versão que deve ser salva. Após clicar no botão \"Salvar alterações\", a versão do editor será salva.",
+	"twoColConflict-tutorial": "Tutorial para resolver conflitos de edição",
+	"twoColConflict-previous-dialog": "Anterior",
+	"twoColConflict-next-dialog": "Próximo",
+	"twoColConflict-close-dialog": "Fechar"
+}

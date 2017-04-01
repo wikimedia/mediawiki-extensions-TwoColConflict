@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"01miki10",
+			"Stryn"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Näyttää rinnakkaisen muokkaustenyhdistämisnäytön päällekkäisten muokkausten ratkaisemiseksi.",
+	"twoColConflict-beta-feature-message": "Kaksisarakkeinen muokkausristiriita",
+	"twoColConflict-beta-feature-description": "Näytä muokkausristiriitanäkymä käyttäen kehittyneempää kaksisarakkeista näkymää.",
+	"twoColConflict-explainconflict": "<strong>Varoitus:</strong> Toinen käyttäjä on juuri muokannut ja tallentanut tämän sivun. Sinun versiosi ja nykyisen version välillä on ristiriita. Sinun täytyy yhdistää muutoksesi olemassa olevaan tekstiin. Vain muokkauskentässä oleva teksti tallennetaan napsauttaessasi \"$1\".",
+	"twoColConflict-changes-col-title": "Muutokset, joita ristiriita koskee",
+	"twoColConflict-changes-col-desc": "Eroavaisuudet tällä hetkellä julkaistun version (julkaissut $1 $2) ja <span class=\"mw-twocolconflict-user\">sinun</span> tekstisi ($3) välillä",
+	"twoColConflict-label-mine": "minun",
+	"twoColConflict-label-both": "molempien",
+	"twoColConflict-label-show": "näytä",
+	"twoColConflict-label-hide": "piilota",
+	"twoColConflict-label-show-changes": "näytä muutokset",
+	"twoColConflict-label-unchanged": "muuttamaton teksti",
+	"twoColConflict-show-help-tooltip": "Näytä ohjeteksti",
+	"twoColConflict-tutorial": "Opas muokkausristiriidan ratkaisemiseen",
+	"twoColConflict-previous-dialog": "Edellinen",
+	"twoColConflict-next-dialog": "Seuraava",
+	"twoColConflict-close-dialog": "Sulje"
+}
