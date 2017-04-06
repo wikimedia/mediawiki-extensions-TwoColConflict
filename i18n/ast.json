@@ -20,5 +20,14 @@
 	"twoColConflict-label-show": "amosar",
 	"twoColConflict-label-hide": "anubrir",
 	"twoColConflict-label-show-changes": "amosar cambeos",
-	"twoColConflict-label-unchanged": "testu ensin cambeos"
+	"twoColConflict-label-unchanged": "testu ensin cambeos",
+	"twoColConflict-show-help-tooltip": "Amosar el testu d'ayuda",
+	"twoColConflict-help-dialog-slide1": "En activándose, de la qu'asoceda un conflictu d'edición, apaecerá la nueva vista de dos columnes pa iguar conflictos. Verás un cuadru colos cambios conflictivos n'una columna y un editor cola versión del testu guardada na otra columna. Prestaríanos recibir comentarios [[mw:Help_talk:Two_Column_Edit_Conflict_View|equí]].",
+	"twoColConflict-help-dialog-slide2": "Dientro del cuadru que contien los cambios conflictivos, s'amuesen tanto'l testu conflictivu como'l to testu, coles diferencies ente ellos resaltaes.",
+	"twoColConflict-help-dialog-slide3": "Hai botones enriba del cuadru que permiten anubrir les partes del testu sin cambios, para que seya más cenciello centrase nes partes conflictives. Tamién tienes la posibilidá d'amosar sólo la to versión del testu.",
+	"twoColConflict-help-dialog-slide4": "Darréu puedes copiar y pegar les partes del testu que quieras nel editor, p'axustar la versión que tien de guardase. En primiendo nel botón «Guardar cambios», guardaráse la versión del editor.",
+	"twoColConflict-tutorial": "Tutorial pa iguar los conflictos d'edición",
+	"twoColConflict-previous-dialog": "Anterior",
+	"twoColConflict-next-dialog": "Siguiente",
+	"twoColConflict-close-dialog": "Zarrar"
 }
