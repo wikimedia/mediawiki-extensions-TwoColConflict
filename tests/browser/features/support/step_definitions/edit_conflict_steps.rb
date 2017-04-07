@@ -101,6 +101,10 @@ When(/^I select the hide unchanged text option$/) do
   on(EditConflictPage).twocolconflict_option_hide_div_element.when_present.click
 end
 
+When(/^I select the show unchanged text option$/) do
+  on(EditConflictPage).twocolconflict_option_show_div_element.when_present.click
+end
+
 When(/^I handle an edit conflict$/) do
   step 'I go to the "TwoColConflict Test Page" page with content "I am a sentence."'
   step 'I click Edit'
@@ -123,6 +127,10 @@ end
 
 Then(/^The show unchanged text option should be selected$/) do
   expect(on(EditConflictPage).twocolconflict_option_show_selected?).to be_truthy
+end
+
+Then(/^The hide unchanged text option should be selected$/) do
+  expect(on(EditConflictPage).twocolconflict_option_hide_selected?).to be_truthy
 end
 
 Then(/^The editor view should be scrolled$/) do

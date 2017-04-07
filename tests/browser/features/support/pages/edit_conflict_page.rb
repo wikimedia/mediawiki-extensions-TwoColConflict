@@ -29,6 +29,7 @@ class EditConflictPage
   span(:twocolconflict_option_mine_div, xpath: '(//*[@name="mw-twocolconflict-show-changes"]//parent::span)[2]')
 
   radio_button(:twocolconflict_option_show, xpath: '(//*[@name="mw-twocolconflict-same"])[1]')
+  radio_button(:twocolconflict_option_hide, xpath: '(//*[@name="mw-twocolconflict-same"])[2]')
   span(:twocolconflict_option_show_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[1]')
   span(:twocolconflict_option_hide_div, xpath: '(//*[@name="mw-twocolconflict-same"]//parent::span)[2]')
 

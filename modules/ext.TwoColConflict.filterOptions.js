@@ -15,7 +15,15 @@
 			}
 		} );
 
-		$( 'input[name="mw-twocolconflict-same"]' ).change( function() {
+		// select 'both' as the default option
+		$( 'input[name="mw-twocolconflict-show-changes"]' )[ 0 ].click();
+
+		/**
+		 * Either shows or hides the text surrounding the diff text
+		 *
+		 * @param {boolean} show
+		 */
+		function surroundingText( show ) {
 			var $changeDiv = autoScroll.getFirstVisibleChangesElement(),
 				manualOffset;
 
@@ -24,7 +32,7 @@
 				$( '.mw-twocolconflict-changes-editor' )
 			);
 
-			if ( $( this ).val() === 'show' ) {
+			if ( show ) {
 				$( '.mw-twocolconflict-diffchange-same-collapsed' ).hide();
 				$( '.mw-twocolconflict-diffchange-same-full' ).show();
 			} else {
@@ -36,7 +44,14 @@
 			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
 				autoScroll.scrollToChangeWithOffset( $changeDiv, manualOffset );
 			} );
+		}
+
+		$( 'input[name="mw-twocolconflict-same"]' ).click( function() {
+			surroundingText( $( this ).val() === 'show' );
 		} );
+
+		// select 'hide' as the default option
+		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
 
 		$( '.mw-twocolconflict-diffchange-same-collapsed' ).click( function() {
 			var $changeDiv = $( this ).parent(),
