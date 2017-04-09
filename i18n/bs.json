@@ -11,7 +11,7 @@
 	"twoColConflict-explainconflict": "<strong>Upozorenje:</strong> Drugi korisnik upravo je uredio i sačuvao ovu stranicu. Došlo je do sukoba između Vaše i trenutne verzije. Morat ćete spojiti svoje izmjene u trenutnu verziju teksta. Kad kliknete na \"$1\" jedino će se sačuvati tekst koji se nalazi u uređivaču.",
 	"twoColConflict-changes-col-title": "Sukobljene izmjene",
 	"twoColConflict-changes-col-desc": "Razlike između trenutno objavljene verzije (korisnika $1 na $2) i <span class=\"mw-twocolconflict-user\">Vašeg</span> teksta ($3)",
-	"twoColConflict-editor-col-title": "Uređivač s verziju koja će biti objavljena",
+	"twoColConflict-editor-col-title": "Uređivač s verzijom koja će biti objavljena",
 	"twoColConflict-editor-col-desc": "Bit će objavljena verzija u uređivaču. U njoj se prvobitno nalazi trenutno objavljena verzija (korisnika $1 na $2)",
 	"twoColConflict-diffchange-own-title": "u Vašoj verziji",
 	"twoColConflict-diffchange-foreign-title": "u verziji korisnika $1",
