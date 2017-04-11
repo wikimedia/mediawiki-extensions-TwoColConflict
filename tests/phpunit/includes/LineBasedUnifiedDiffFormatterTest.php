@@ -227,9 +227,9 @@ TEXT
 									'action' => 'delete',
 									'old' =>
 <<<TEXT
-<del class="diffchange">Just multi-line text.
-To change number 2.
-To change number 3.</del>
+Just multi-line <del class="diffchange">text</del>.
+<del class="diffchange">To change </del>number 2.
+<del class="diffchange">To change </del>number 3.
 TEXT
 									,
 									'oldline' => 1
@@ -238,9 +238,9 @@ TEXT
 									'action' => 'add',
 									'new' =>
 <<<TEXT
-<ins class="diffchange">Just multi-line test.
-Line number 2 changed.
-Line number 3 also changed.</ins>
+Just multi-line <ins class="diffchange">test</ins>.
+<ins class="diffchange">Line </ins>number 2 <ins class="diffchange">changed</ins>.
+<ins class="diffchange">Line </ins>number 3 <ins class="diffchange">also changed</ins>.
 TEXT
 									,
 									'newline' => 1
@@ -282,10 +282,10 @@ TEXT
 									'action' => 'delete',
 									'old' =>
 <<<TEXT
-<del class="diffchange">Line number two. This line is quite long!
-And that's line number three - even longer than the line before.
+Line number two. <del class="diffchange">This </del>line <del class="diffchange">is </del>quite long!
+<del class="diffchange">And that's line number three - even longer than the line before.</del>
 &#160;
-Just another line with an empty line above.</del>
+<del class="diffchange">Just another line with an empty line above</del>.
 TEXT
 									,
 									'oldline' => 2
@@ -294,9 +294,9 @@ TEXT
 									'action' => 'add',
 									'new' =>
 <<<TEXT
-<ins class="diffchange">Add something new.
-Line number two. Now line number three and quite long!
-Add more new stuff.</ins>
+<ins class="diffchange">Add something new.</ins>
+Line number two. <ins class="diffchange">Now </ins>line <ins class="diffchange">number three and </ins>quite long!
+<ins class="diffchange">Add more new stuff</ins>.
 TEXT
 									,
 									'newline' => 2

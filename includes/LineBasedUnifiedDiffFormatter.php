@@ -33,20 +33,6 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	private $retval = [];
 
 	/**
-	 * @var int max WordLevelDiff edits for choosing a line diff instead
-	 */
-	private $wordLevelDiffEditsThreshold;
-
-	/**
-	 * LineBasedUnifiedDiffFormatter constructor.
-	 *
-	 * @param int $wordLevelDiffEditsThreshold max WordLevelDiff edits for choosing a line diff instead
-	 */
-	public function __construct( $wordLevelDiffEditsThreshold = 5 ) {
-		$this->wordLevelDiffEditsThreshold = $wordLevelDiffEditsThreshold;
-	}
-
-	/**
 	 * @param Diff $diff A Diff object.
 	 *
 	 * @return array[] Associative array showing lists of changes in lines of the original text.
@@ -67,22 +53,19 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 					$this->oldline += count( $edit->getOrig() );
 					break;
 				case 'change':
-					$wordLevelDiff = $this->getWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
-					if ( $wordLevelDiff ) {
-						$this->retval[$this->oldline][] = [
-							'action' => 'delete',
-							'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
-							'oldline' => $this->oldline,
-						];
-						$this->retval[$this->oldline][] = [
-							'action' => 'add',
-							'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
-							'newline' => $this->newline
-						];
-					} else {
-						$this->deleteLines( $edit->getOrig() );
-						$this->addLines( $edit->getClosing() );
-					}
+					$wordLevelDiff = new WordLevelDiff( $edit->getOrig(), $edit->getClosing() );
+
+					$this->retval[$this->oldline][] = [
+						'action' => 'delete',
+						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
+						'oldline' => $this->oldline,
+					];
+					$this->retval[$this->oldline][] = [
+						'action' => 'add',
+						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
+						'newline' => $this->newline
+					];
+
 					$this->oldline += count( $edit->getOrig() );
 					$this->newline += count( $edit->getClosing() );
 					break;
@@ -129,27 +112,6 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 			'oldline' => $this->oldline,
 			'newline' => $this->newline
 		];
-	}
-
-	/**
-	 * Gets a diff on word level of two lines.
-	 * Returns false if the number of coherent changes is over 5.
-	 *
-	 * @param string[] $orig Lines that should be marked deleted.
-	 * @param string[] $closing Lines that should be marked deleted.
-	 *
-	 * @return WordLevelDiff|boolean
-	 */
-	private function getWordLevelDiff( array $orig, array $closing ) {
-		$diff = new WordLevelDiff( $orig, $closing );
-
-		// when comparing long multi-word lines getting an inline results might lead to
-		// a lot inline edits that confuse more then help
-		if ( count( $diff->getEdits() ) > $this->wordLevelDiffEditsThreshold ) {
-			return false;
-		}
-
-		return $diff;
 	}
 
 	/**

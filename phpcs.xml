@@ -5,4 +5,9 @@
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="utf8"/>
 	<exclude-pattern>vendor</exclude-pattern>
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="115"/>
+		</properties>
+	</rule>
 </ruleset>
