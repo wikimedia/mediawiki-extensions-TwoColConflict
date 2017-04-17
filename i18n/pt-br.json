@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"twoColConflict-diffchange-own-title": "em sua versão",
+	"twoColConflict-diffchange-foreign-title": "na versão de $1",
+	"twoColConflict-label-mine": "minha",
+	"twoColConflict-label-both": "ambas",
+	"twoColConflict-label-show": "mostrar",
+	"twoColConflict-previous-dialog": "Anterior"
+}
