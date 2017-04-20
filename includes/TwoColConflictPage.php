@@ -48,7 +48,7 @@ class TwoColConflictPage extends EditPage {
 		if ( $this->isConflict ) {
 			$this->addCSS();
 			$this->addJS();
-			$this->editFormTextTop = '<div class="mw-twocolconflict-form">';
+			$this->editFormTextTop = '<div class="mw-twocolconflict-form mw-twocolconflict-before-base-selection">';
 			$this->editFormTextBottom = '</div>';
 			$this->editFormTextBeforeContent = $this->addEditFormBeforeContent();
 			$this->editFormTextAfterContent = $this->addEditFormAfterContent();
@@ -78,6 +78,7 @@ class TwoColConflictPage extends EditPage {
 		}
 		$out .= '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
 		$out .= $this->buildConflictPageEditorCol();
+		$out .= $this->buildMyVersionTextHiddenField();
 
 		return $out;
 	}
@@ -277,12 +278,27 @@ class TwoColConflictPage extends EditPage {
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
+		$out .= '<div class="mw-twocolconflict-edit-desc">';
 		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</div>';
 		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' ) . '</div>';
 		$out .= '</div>';
-		$out .= '</div>';
+		$out .= '<div class="mw-twocolconflict-base-selection-desc">';
+		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) . '<br>';
+		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) . '<br>';
+		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-3' );
+		$out .= '</div></div></div>';
 
 		return $out;
+	}
+
+	/**
+	 * Build HTML for the hidden field with the text the user submitted.
+	 *
+	 * @return string
+	 */
+	private function buildMyVersionTextHiddenField() {
+		$editableMyVersionText = $this->toEditText( $this->textbox1 );
+		return HTML::input( 'mw-twocolconflict-mytext', $editableMyVersionText, 'hidden' );
 	}
 
 	/**

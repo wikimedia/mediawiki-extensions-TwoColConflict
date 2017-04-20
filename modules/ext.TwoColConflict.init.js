@@ -1,6 +1,9 @@
 ( function ( mw, $ ) {
 	var autoScroll = new mw.libs.twoColConflict.AutoScroll(),
-		helpDialog = mw.libs.twoColConflict.HelpDialog;
+		helpDialog = mw.libs.twoColConflict.HelpDialog,
+		BaseVersionSelector = mw.libs.twoColConflict.BaseVersionSelector;
+
+	mw.loader.load( 'ext.TwoColConflict.BaseVersionSelectorCss' );
 
 	function selectText( element ) {
 		var range, selection;
@@ -110,6 +113,31 @@
 		$( '.mw-twocolconflict-edit-summary' ).find( 'a' ).attr( 'target', '_blank' );
 	}
 
+	function afterBaseVersionSelection() {
+		$( '.mw-twocolconflict-form' ).removeClass( 'mw-twocolconflict-before-base-selection' );
+		// select 'hide' as the default option
+		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
+		this.redrawPage();
+		autoScroll.scrollToFirstOwnOrConflict();
+	}
+
+	function initAndShowBaseVersionSelector() {
+		var versionSelector = new BaseVersionSelector(),
+			windowManager = new OO.ui.WindowManager( {
+				modal: false
+			} );
+
+		$( '.mw-twocolconflict-col-header' ).append( windowManager.$element );
+		versionSelector.setCloseCallback( afterBaseVersionSelection );
+		windowManager.addWindows( [ versionSelector ] );
+		windowManager.openWindow( versionSelector );
+	}
+
+	function redrawPage() {
+		autoScroll.setScrollBaseData();
+		adjustEditorColSpacing();
+	}
+
 	$( function () {
 		$( '.mw-twocolconflict-changes-editor' ).keydown( function( e ) {
 			if ( e.ctrlKey && e.keyCode === 65 ) { // CTRL + A
@@ -118,14 +146,9 @@
 			}
 		} );
 
-		autoScroll.setScrollBaseData();
-		autoScroll.scrollToFirstOwnOrConflict();
+		$( window ).on( 'resize', redrawPage );
 
-		$( window ).on( 'resize', function() {
-			autoScroll.setScrollBaseData();
-			adjustEditorColSpacing();
-		} );
-
+		initAndShowBaseVersionSelector();
 		initHelpDialog();
 		addTargetToEditSummaryLinks();
 

@@ -34,7 +34,7 @@ Then(/^A textbox for the editor should be shown$/) do
 end
 
 Then(/^The editor should contain "(.+?)"$/) do |text|
-  expect(on(EditConflictPage).twocolconflict_editor_text_element.text).to match(text)
+  expect(on(EditConflictPage).twocolconflict_editor_text_element.value).to match(text)
 end
 
 Then(/^Own changes section should contain "(.+?)"$/) do |text|
