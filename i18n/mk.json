@@ -10,7 +10,7 @@
 	"twoColConflict-beta-feature-description": "Прикажи ги спротиставените уредувања во понапреден двостолбен облик.",
 	"twoColConflict-explainconflict": "<strong>Предупредување:</strong> Друг корисник штотуку ја измени и зачува страницава. Има спротиставеност помеѓу вашата и тековно објавената верзија. Ќе треба да ги припоите вашите промени кон тековната верзија. Само текстот во уредничкото поле ќе се зачува кога ќе стиснете на „$1“.",
 	"twoColConflict-changes-col-title": "Спротиставени промени",
-	"twoColConflict-changes-col-desc": "Разликите помеѓу тековната објавена верзија на $1 и <span class=\"mw-twocolconflict-user\">вашиот</span> текст ($3)",
+	"twoColConflict-changes-col-desc": "Разликите помеѓу тековната објавена верзија на $1 и <span class=\"mw-twocolconflict-user\">вашиот</span> текст",
 	"twoColConflict-editor-col-title": "Уредник со верзија што ќе се објави",
 	"twoColConflict-editor-col-desc-1": "Првично, содржината на уредникот е тековно објавената верзија:",
 	"twoColConflict-editor-col-desc-2": "Додајте ги вашите промени во уредникот, па стиснете на „објави промени“",
