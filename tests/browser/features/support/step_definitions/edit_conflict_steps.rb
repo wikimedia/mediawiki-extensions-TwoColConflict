@@ -121,8 +121,12 @@ When(/^I handle a multi line edit conflict$/) do
   step 'I save the edit'
 end
 
-When(/^I click on the collapsed common changes$/) do
-  on(EditConflictPage).twocolconflict_changes_same_collapsed_element.when_present.click
+When(/^I click on a collapse changes button$/) do
+  on(EditConflictPage).twocolconflict_collapse_changes_element.when_present.click
+end
+
+When(/^I click on an expand changes button$/) do
+  on(EditConflictPage).twocolconflict_expand_changes_element.when_present.click
 end
 
 Then(/^The show unchanged text option should be selected$/) do

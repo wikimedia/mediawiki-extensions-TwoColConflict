@@ -15,6 +15,14 @@ class EditConflictPage
       :twocolconflict_changes_same_collapsed,
       css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same-collapsed'
   )
+  button(
+      :twocolconflict_collapse_changes,
+      css: '.mw-twocolconflict-diffchange-same-full .mw-twocolconflict-expand-collapse-btn > button'
+  )
+  button(
+      :twocolconflict_expand_changes,
+      css: '.mw-twocolconflict-diffchange-same-collapsed .mw-twocolconflict-expand-collapse-btn > button'
+  )
   div(:twocolconflict_changes_foreign, css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-foreign')
   div(:twocolconflict_changes_own, css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-own')
   div(

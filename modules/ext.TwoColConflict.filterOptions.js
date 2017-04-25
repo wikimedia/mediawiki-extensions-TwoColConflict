@@ -1,5 +1,6 @@
 ( function( mw, $ ) {
-	var autoScroll = new mw.libs.twoColConflict.AutoScroll();
+	var autoScroll = new mw.libs.twoColConflict.AutoScroll(),
+		expandBtn, collapseBtn;
 
 	$( function() {
 		// show filter options when js is available
@@ -14,9 +15,6 @@
 				$( '.mw-twocolconflict-diffchange-foreign' ).slideDown();
 			}
 		} );
-
-		// select 'both' as the default option
-		$( 'input[name="mw-twocolconflict-show-changes"]' )[ 0 ].click();
 
 		/**
 		 * Either shows or hides the text surrounding the diff text
@@ -50,24 +48,31 @@
 			surroundingText( $( this ).val() === 'show' );
 		} );
 
+		expandBtn = new OO.ui.ButtonInputWidget( {
+			indicator: 'down',
+			value: 0,
+			name: 'mw-twocolconflict-expand-collapse',
+			classes: [ 'mw-twocolconflict-expand-collapse-btn' ]
+		} );
+
+		collapseBtn = new OO.ui.ButtonInputWidget( {
+			indicator: 'up',
+			value: 1,
+			name: 'mw-twocolconflict-expand-collapse',
+			classes: [ 'mw-twocolconflict-expand-collapse-btn' ]
+		} );
+
+		$( '.mw-twocolconflict-diffchange-same-collapsed' ).prepend( expandBtn.$element );
+		$( '.mw-twocolconflict-diffchange-same-full' ).prepend( collapseBtn.$element );
+
+		$( 'button[name="mw-twocolconflict-expand-collapse"]' ).click( function () {
+			$( 'input[name="mw-twocolconflict-same"]' )[ $( this ).val() ].click();
+		} );
+
+		// select 'both' as the default option
+		$( 'input[name="mw-twocolconflict-show-changes"]' )[ 0 ].click();
+
 		// select 'hide' as the default option
 		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
-
-		$( '.mw-twocolconflict-diffchange-same-collapsed' ).click( function() {
-			var $changeDiv = $( this ).parent(),
-				manualOffset;
-
-			manualOffset = autoScroll.getDivTopOffset(
-				$changeDiv,
-				$( '.mw-twocolconflict-changes-editor' )
-			);
-
-			$( 'input[name="mw-twocolconflict-same"]' )[ 0 ].click();
-
-			// wait for expanding animations to be finished
-			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
-				autoScroll.scrollToChangeWithOffset( $changeDiv, manualOffset );
-			} );
-		} );
 	} );
 }( mediaWiki, jQuery ) );
