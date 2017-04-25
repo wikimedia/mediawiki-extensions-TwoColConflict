@@ -561,6 +561,7 @@ class TwoColConflictPage extends EditPage {
 
 	private function addJS() {
 		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflict', 'true' );
+		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
 
 		$this->context->getOutput()->addModules( [
 			'ext.TwoColConflict.initJs',
