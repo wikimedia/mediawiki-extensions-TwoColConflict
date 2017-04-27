@@ -13,6 +13,7 @@
 	"twoColConflict-changes-col-title": "Cambios en conflito",
 	"twoColConflict-changes-col-desc": "Diferenzas entre a versión publicada actualmente por $1 e <span class=\"mw-twocolconflict-user\"> o seu</span> texto",
 	"twoColConflict-editor-col-title": "Editor cuxa versión vai ser publicada",
+	"twoColConflict-editor-col-desc-1": "Inicialmente, o contido do editor é a versión publicada actualmenteː",
 	"twoColConflict-editor-col-desc-2": "Realice os seus cambios no editor e prema en \"publicar as modificacións\"",
 	"twoColConflict-diffchange-own-title": "na súa versión",
 	"twoColConflict-diffchange-foreign-title": "na versión $1",
