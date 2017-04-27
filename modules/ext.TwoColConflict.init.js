@@ -50,6 +50,11 @@
 					message: 'twoColConflict-help-dialog-slide4',
 					imageClass: 'mw-twocolconflict-help-dialog-slide-4',
 					imageMode: 'landscape'
+				},
+				{
+					message: 'twoColConflict-help-dialog-slide5',
+					imageClass: 'mw-twocolconflict-help-dialog-slide-5',
+					imageMode: 'landscape'
 				}
 			]
 		} );

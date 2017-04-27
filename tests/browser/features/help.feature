@@ -20,5 +20,6 @@ Feature: Two column edit conflict help
     And I have moved to the next step
     And I have moved to the next step
     And I have moved to the next step
+    And I have moved to the next step
     And I have closed the help dialog at the end
     Then The help dialog should not be present
