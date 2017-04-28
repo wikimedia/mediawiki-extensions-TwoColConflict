@@ -128,11 +128,13 @@
 
 		initHelpDialog();
 		addTargetToEditSummaryLinks();
-		adjustEditorColSpacing();
 
-		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
+		if ( mw.config.get( 'wgTwoColConflictWikiEditor' ) ) {
+			$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
+				adjustEditorColSpacing();
+			} );
+		} else {
 			adjustEditorColSpacing();
-		} );
-
+		}
 	} );
 }( mediaWiki, jQuery ) );
