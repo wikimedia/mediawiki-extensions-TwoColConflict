@@ -53,9 +53,20 @@
 				"modules/ext.TwoColConflict.init.js"
 			],
 			"dependencies": [
+				"ext.TwoColConflict.Settings",
 				"ext.TwoColConflict.AutoScroll",
 				"ext.TwoColConflict.BaseVersionSelector",
 				"ext.TwoColConflict.HelpDialog"
+			]
+		},
+		"ext.TwoColConflict.Settings": {
+			"scripts": [
+				"modules/ext.TwoColConflict.Settings.js"
+			],
+			"dependencies": [
+				"mediawiki.storage",
+				"mediawiki.cookie",
+				"mediawiki.api.options"
 			]
 		},
 		"ext.TwoColConflict.filterOptionsJs": {
