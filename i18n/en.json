@@ -23,7 +23,7 @@
 	"twoColConflict-label-show-changes": "show changes",
 	"twoColConflict-label-unchanged": "unchanged text",
 	"twoColConflict-show-help-tooltip": "Show help text",
-	"twoColConflict-help-dialog-slide1": "This page helps you to resolve an edit conflict. There are two columns: The first shows the conflicting changes and the second column is a text editor, whose content will be saved.\n\n Feedback is very much appreciated [[mw:Help_talk:Two_Column_Edit_Conflict_View|here]].",
+	"twoColConflict-help-dialog-slide1": "This page helps you to resolve an edit conflict. There are two columns: The first shows the conflicting changes and the second is a text editor, whose content will be published.\n\nFeedback is very much appreciated [[mw:Help_talk:Two_Column_Edit_Conflict_View|here]].",
 	"twoColConflict-help-dialog-slide2": "The first column shows the changes in your version and the changes in the currently saved version. The differences between both versions are highlighted.",
 	"twoColConflict-help-dialog-slide3": "At the top of the first column you can click on \"show\" to see unchanged text. This might help to understand the context of changes. By default, unchanged text is greyed out and collapsed. You can also click on \"mine\" to see only your changes.",
 	"twoColConflict-help-dialog-slide4": "The second column is an editor. Copy and paste the desired parts of your version into the text in the editor. Only what is in the editor will be published, when you click the \"Publish changes\" button.",
