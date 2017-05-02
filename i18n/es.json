@@ -14,6 +14,7 @@
 	"twoColConflict-changes-col-title": "Cambios en conflicto",
 	"twoColConflict-changes-col-desc": "Diferencias entre la versión actual publicada por $1 y <span class=\"mw-twocolconflict-user\">your</span> texto",
 	"twoColConflict-editor-col-title": "Editor cuya versión se va a publicar",
+	"twoColConflict-editor-col-desc-2": "Realiza tus cambios en el editor y pulsa en «Publicar cambios»",
 	"twoColConflict-diffchange-own-title": "en tu versión",
 	"twoColConflict-diffchange-foreign-title": "en la versión de $1",
 	"twoColConflict-label-mine": "mía",

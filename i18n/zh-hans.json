@@ -24,7 +24,7 @@
 	"twoColConflict-label-show-changes": "显示更改",
 	"twoColConflict-label-unchanged": "未更改文本",
 	"twoColConflict-show-help-tooltip": "显示帮助文本",
-	"twoColConflict-help-dialog-slide1": "此页面帮助您解决编辑冲突。这里有两列：第一列显示冲突的更改，而第二列则是文本编辑器，这里是将要保存的内容。\n\n我们非常希望您[[mw:Help_talk:Two_Column_Edit_Conflict_View|在此]]提供反馈。",
+	"twoColConflict-help-dialog-slide1": "此页面帮助您解决编辑冲突。这里有两列：第一列显示冲突的更改，而第二列则是文本编辑器，这里是将要发布的内容。\n\n我们非常希望您[[mw:Help_talk:Two_Column_Edit_Conflict_View|在此]]提供反馈。",
 	"twoColConflict-help-dialog-slide2": "第一列显示您的版本中的更改，以及当前保存版本中的更改。两版本之间的不同之处已高亮显示。",
 	"twoColConflict-help-dialog-slide3": "在第一列的上方您可以点击“显示”来查看未更改的文本。这或许能帮助理解更改环境。默认情况下，未更改的文本显示为灰色并被折叠。您也可以点击“我的”只查看您的更改。",
 	"twoColConflict-help-dialog-slide4": "第二列是一个编辑器。复制粘贴您的版本中需要的部分到编辑器中的文本。当您点击“发布更改”按钮时，只有编辑器中的内容将被发布。",

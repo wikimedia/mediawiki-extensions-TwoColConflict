@@ -14,6 +14,7 @@
 	"twoColConflict-label-show-changes": "visa ändringar",
 	"twoColConflict-label-unchanged": "oförändrad text",
 	"twoColConflict-show-help-tooltip": "Visa hjälptext",
+	"twoColConflict-help-dialog-slide2": "Den första kolumnen visar ändringarna i din version och ändringarna i den nuvarande sparade versionen. Skillnaderna mellan båda versioner är markerade.",
 	"twoColConflict-tutorial": "Guide om att lösa redigeringskonflikter",
 	"twoColConflict-previous-dialog": "Föregående",
 	"twoColConflict-next-dialog": "Nästa",

@@ -24,7 +24,7 @@
 	"twoColConflict-label-show-changes": "Änderungen anzeigen",
 	"twoColConflict-label-unchanged": "Unveränderten Text",
 	"twoColConflict-show-help-tooltip": "Hilfetext anzeigen",
-	"twoColConflict-help-dialog-slide1": "Diese Seite hilft dir, einen Bearbeitungskonflikt zu lösen. Es gibt zwei Spalten: Die erste zeigt die kollidierenden Änderungen und die zweite Spalte ist ein Texteditor, dessen Inhalt gespeichert wird.\n\nRückmeldungen werden [[mw:Help_talk:Two_Column_Edit_Conflict_View|hier]] sehr geschätzt.",
+	"twoColConflict-help-dialog-slide1": "Diese Seite hilft dir, einen Bearbeitungskonflikt zu lösen. Es gibt zwei Spalten: Die erste zeigt die kollidierenden Änderungen und die zweite ist ein Texteditor, dessen Inhalt veröffentlicht wird.\n\nRückmeldungen werden [[mw:Help_talk:Two_Column_Edit_Conflict_View|hier]] sehr geschätzt.",
 	"twoColConflict-help-dialog-slide2": "Die erste Spalte zeigt die Änderungen in deiner und in der derzeit gespeicherten Version. Die Unterschiede zwischen beiden Versionen sind hervorgehoben.",
 	"twoColConflict-help-dialog-slide3": "Am Anfang der ersten Spalte kannst du auf „anzeigen“ klicken, um den unveränderten Text anzusehen. Dies kann dir helfen, den Kontext der Änderungen zu verstehen. Standardmäßig wird unveränderter Text ausgegraut und eingeklappt. Du kannst auch auf „meine“ klicken, um nur deine Änderungen anzusehen.",
 	"twoColConflict-help-dialog-slide4": "Die zweite Spalte ist ein Editor. Kopiere die gewünschten Teile deiner Version und füge sie in den Text im Editor ein. Nur das, was im Editor steht, wird veröffentlicht, wenn du auf die Schaltfläche „Änderungen veröffentlichen“ klickst.",
