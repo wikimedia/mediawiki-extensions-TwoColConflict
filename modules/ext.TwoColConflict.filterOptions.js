@@ -69,9 +69,6 @@
 			$( 'input[name="mw-twocolconflict-same"]' )[ $( this ).val() ].click();
 		} );
 
-		// select 'both' as the default option
-		$( 'input[name="mw-twocolconflict-show-changes"]' )[ 0 ].click();
-
 		// select 'hide' as the default option
 		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
 	} );

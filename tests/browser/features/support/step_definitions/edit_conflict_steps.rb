@@ -77,24 +77,12 @@ Then(/^Section for collapsed common changes should not be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_same_collapsed_element).not_to be_visible
 end
 
-Then(/^Section for foreign changes should not be there$/) do
-  expect(on(EditConflictPage).twocolconflict_changes_foreign_element).not_to be_visible
-end
-
-Then(/^Section for own changes should not be there$/) do
-  expect(on(EditConflictPage).twocolconflict_changes_own_element).not_to be_visible
-end
-
 Then(/^Foreign version title should be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_title_foreign_element).to be_visible
 end
 
 Then(/^Own version title should be there$/) do
   expect(on(EditConflictPage).twocolconflict_changes_title_own_element).to be_visible
-end
-
-When(/^I select the show mine option$/) do
-  on(EditConflictPage).twocolconflict_option_mine_div_element.when_present.click
 end
 
 When(/^I select the hide unchanged text option$/) do
