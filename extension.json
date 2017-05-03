@@ -54,6 +54,7 @@
 			],
 			"dependencies": [
 				"ext.TwoColConflict.AutoScroll",
+				"ext.TwoColConflict.BaseVersionSelector",
 				"ext.TwoColConflict.HelpDialog"
 			]
 		},
@@ -68,6 +69,25 @@
 		"ext.TwoColConflict.AutoScroll": {
 			"scripts": [
 				"modules/ext.TwoColConflict.AutoScroll.js"
+			]
+		},
+		"ext.TwoColConflict.BaseVersionSelector": {
+			"scripts": [
+				"modules/ext.TwoColConflict.BaseVersionSelector.js"
+			],
+			"messages": [
+				"twoColConflict-base-selection-dialog-text",
+				"twoColConflict-base-selection-own-label",
+				"twoColConflict-base-selection-foreign-label",
+				"twoColConflict-base-selection-submit-label"
+			],
+			"dependencies": [
+				"oojs-ui"
+			]
+		},
+		"ext.TwoColConflict.BaseVersionSelectorCss": {
+			"styles": [
+				"modules/ext.TwoColConflict.BaseVersionSelector.css"
 			]
 		},
 		"ext.TwoColConflict.HelpDialog": {
