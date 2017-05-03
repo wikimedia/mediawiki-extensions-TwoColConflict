@@ -115,6 +115,7 @@
 				"twoColConflict-help-dialog-slide2",
 				"twoColConflict-help-dialog-slide3",
 				"twoColConflict-help-dialog-slide4",
+				"twoColConflict-help-dialog-slide5",
 				"twoColConflict-tutorial",
 				"twoColConflict-previous-dialog",
 				"twoColConflict-next-dialog",
@@ -152,6 +153,12 @@
 					"file": {
 						"ltr": "resources/ext.TwoColConflict.helpDialog/slide4-ltr.svg",
 						"rtl": "resources/ext.TwoColConflict.helpDialog/slide4-rtl.svg"
+					}
+				},
+				"5": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.helpDialog/slide5-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.helpDialog/slide5-rtl.svg"
 					}
 				}
 			}

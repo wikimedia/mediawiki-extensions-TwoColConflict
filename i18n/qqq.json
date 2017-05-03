@@ -39,6 +39,7 @@
 	"twoColConflict-help-dialog-slide2": "Text shown on the second slide of the help dialog.",
 	"twoColConflict-help-dialog-slide3": "Text shown on the third slide of the help dialog.\n\n\"show\" is {{msg-mw|twoColConflict-label-show}} and \"mine\" is {{msg-mw|twoColConflict-label-mine}}.",
 	"twoColConflict-help-dialog-slide4": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a random user who edited some pages.}}\nText shown on the fourth slide of the help dialog.",
+	"twoColConflict-help-dialog-slide5": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a random user who edited some pages.}}\nText shown on the fifth slide of the help dialog.",
 	"twoColConflict-tutorial": "Text shown above the TwoColConflict tutorial. This should contain as few words as possible to avoid being truncated.",
 	"twoColConflict-previous-dialog": "Label of the button to go to the previous tutorial slide.\n{{Identical|Previous}}",
 	"twoColConflict-next-dialog": "Label of the button to go to the next tutorial slide.\n{{Identical|Next}}",
