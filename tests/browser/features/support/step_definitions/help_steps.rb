@@ -27,6 +27,10 @@ Given(/^The help dialog is hidden$/) do
   on(EditConflictPage).wait_for_help_dialog_to_hide
 end
 
+When(/^The help dialog is visible$/) do
+  step 'The help dialog should be visible'
+end
+
 Then(/^The help dialog should be visible/) do
   expect(on(EditConflictPage).twocolconflict_help_dialog_element.when_present).to be_visible
 end

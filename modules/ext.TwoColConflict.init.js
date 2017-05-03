@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
-	var autoScroll = new mw.libs.twoColConflict.AutoScroll(),
+	var settings = new mw.libs.twoColConflict.Settings(),
+		autoScroll = new mw.libs.twoColConflict.AutoScroll(),
 		helpDialog = mw.libs.twoColConflict.HelpDialog,
 		BaseVersionSelector = mw.libs.twoColConflict.BaseVersionSelector;
 
@@ -158,6 +159,11 @@
 			} );
 		} else {
 			adjustEditorColSpacing();
+		}
+
+		if ( !settings.shouldHideHelpDialogue() ) {
+			helpDialog.show();
+			settings.setHideHelpDialogue( true );
 		}
 	} );
 }( mediaWiki, jQuery ) );

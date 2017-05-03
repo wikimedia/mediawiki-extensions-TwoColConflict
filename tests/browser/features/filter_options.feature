@@ -7,6 +7,7 @@ Feature: Two column edit conflict screen
 
   Scenario: Hide common changes filter collapses common changes
     When I handle a multi line edit conflict
+    And I have dismissed the help dialog
     And I select the show unchanged text option
     Then The two column edit conflict screen should be shown
     And Section for full common changes should be there
@@ -14,6 +15,7 @@ Feature: Two column edit conflict screen
 
   Scenario: Hide common changes when clicking a collapse changes button
     When I handle a multi line edit conflict
+    And I have dismissed the help dialog
     And I select the show unchanged text option
     And I click on a collapse changes button
     Then The two column edit conflict screen should be shown
@@ -23,6 +25,7 @@ Feature: Two column edit conflict screen
 
   Scenario: Show hidden common changes when clicking an expand changes button
     When I handle a multi line edit conflict
+    And I have dismissed the help dialog
     And I select the hide unchanged text option
     And I click on an expand changes button
     Then The two column edit conflict screen should be shown

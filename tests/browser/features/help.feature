@@ -6,12 +6,17 @@ Feature: Two column edit conflict help
     And TwoColConflict is enabled as a beta feature
     And I handle an edit conflict
 
-  Scenario: Two column edit conflict tutorial shows
-    When I click on the show help button
+  Scenario: Two column edit conflict tutorial is present on first load
     Then The help dialog should be visible
 
+  Scenario: RevisionSlider tutorial is not present after it was dismissed once
+    When I have dismissed the help dialog
+    And I refresh the edit conflict page
+    And I dismiss the refresh dialogs
+    Then The help dialog should not be present
+
   Scenario: Two column edit conflict sequence works
-    When I click on the show help button
+    When The help dialog is visible
     And I have moved to the next step
     And I have moved to the next step
     And I have moved to the next step

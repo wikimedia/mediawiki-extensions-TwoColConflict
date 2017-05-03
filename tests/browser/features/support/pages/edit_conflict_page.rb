@@ -49,4 +49,10 @@ class EditConflictPage
   hidden_field(:twocolconflict_base_option,  name: 'mw-twocolconflict-base-version')
   label(:twocolconflict_base_mine_label, css: '.mw-twocolconflict-base-dialog-radio label:nth-of-type(2)')
   link(:twocolconflict_base_submit, css: '.mw-twocolconflict-base-dialog .oo-ui-buttonElement-button')
+
+  def wait_for_help_dialog_to_hide
+    wait_until do
+      !twocolconflict_help_dialog_element.visible?
+    end
+  end
 end
