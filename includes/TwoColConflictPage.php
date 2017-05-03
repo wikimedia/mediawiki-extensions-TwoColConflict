@@ -98,17 +98,21 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildConflictPageChangesCol() {
-		$lastUser =
-			'<span class="mw-twocolconflict-lastuser"><bdi>' .
-			$this->mArticle->getPage()->getUserText() .
-			'</bdi></span>';
-
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
 			'</h3>';
-		$out .= '<div class="mw-twocolconflict-col-desc">' . $this->getContext()->msg(
-				'twoColConflict-changes-col-desc', $lastUser )->parse() . '</div>';
+		$out .= '<div class="mw-twocolconflict-col-desc">';
+		$out .= $this->getContext()->msg( 'twoColConflict-changes-col-desc-1' )->text();
+		$out .= '<ul>';
+		$out .= '';
+		$out .= '<li><span class="mw-twocolconflict-lastuser">' .
+			$this->getContext()->msg( 'twoColConflict-changes-col-desc-2' )->text() . '</span><br/>' .
+			$this->buildEditSummary() . '</li>';
+		$out .= '<li><span class="mw-twocolconflict-user">' .
+			$this->getContext()->msg( 'twoColConflict-changes-col-desc-4' )->text() . '</span></li>';
+		$out .= '</ul>';
+		$out .= '</div>';
 		$out .= '</div>';
 
 		$out .= $this->buildFilterOptionsMenu();
@@ -262,13 +266,36 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildEditSummary() {
-		$rev = $this->getArticle()->getPage()->getRevision();
+		$currentRev = $this->getArticle()->getPage()->getRevision();
+		$baseRevId = $this->getContext()->getRequest()->getIntOrNull( 'editRevId' );
+		$nEdits = $this->getTitle()->countRevisionsBetween( $baseRevId, $currentRev, 100 );
 
-		$out = '<div class="mw-twocolconflict-edit-summary">';
-		$out .= Linker::userLink( $rev->getUser(), $rev->getUserText() );
-		$out .= $this->getContext()->getLanguage()->getDirMark();
-		$out .= Linker::revComment( $rev );
-		$out .= '</div>';
+		if ( $nEdits === 0 ) {
+			$out = '<div class="mw-twocolconflict-edit-summary">';
+			$out .= Linker::userLink( $currentRev->getUser(), $currentRev->getUserText() );
+			$out .= $this->getContext()->getLanguage()->getDirMark();
+			$out .= Linker::revComment( $currentRev );
+			$out .= '</div>';
+		} else {
+			$services = MediaWikiServices::getInstance();
+			$linkRenderer = $services->getLinkRenderer();
+			$historyLinkHtml = $linkRenderer->makeKnownLink(
+				$this->getTitle(),
+				$this->getContext()->msg( 'twoColConflict-history-link' )->text(),
+				[
+					'target' => '_blank',
+				],
+				[
+					'action' => 'history',
+				]
+			);
+
+			$out = $this->getContext()->msg(
+				'twoColConflict-changes-col-desc-3',
+				$nEdits + 1,
+				$historyLinkHtml
+			)->text();
+		}
 
 		return $out;
 	}
@@ -282,9 +309,8 @@ class TwoColConflictPage extends EditPage {
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
-		$out .= $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' );
-		$out .= $this->buildEditSummary();
-		$out .= $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' );
+		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</div>';
+		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' ) . '</div>';
 		$out .= '</div>';
 		$out .= '</div>';
 
