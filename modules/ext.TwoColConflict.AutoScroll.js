@@ -1,9 +1,9 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 
 	/**
 	 * @constructor
 	 */
-	var AutoScroll = function() {
+	var AutoScroll = function () {
 	};
 
 	$.extend( AutoScroll.prototype, {
@@ -14,7 +14,7 @@
 		 * @param {jQuery} $target
 		 * @return {number}
 		 */
-		getDivTopOffset: function( $source, $target ) {
+		getDivTopOffset: function ( $source, $target ) {
 			return $target.offset().top - $source.offset().top;
 		},
 
@@ -23,7 +23,7 @@
 		 *
 		 * @return {number}
 		 */
-		getChangeDivTitleHeight: function() {
+		getChangeDivTitleHeight: function () {
 			return parseInt( $( '.mw-twocolconflict-diffchange-title:first' ).outerHeight( true ) );
 		},
 
@@ -31,7 +31,7 @@
 		 * Synchronize width and height of the hidden textbox with the
 		 * actual textbox
 		 */
-		synchronizeHiddenTextBox: function() {
+		synchronizeHiddenTextBox: function () {
 			var $hiddenChangesEditor = $( '.mw-twocolconflict-hidden-editor' ),
 				$textEditor = $( '#wpTextbox1' );
 
@@ -47,7 +47,7 @@
 		 * Calculate and set data of relative top positions for change div elements
 		 * with the help of the plain marked up div elements in the hidden textbox
 		 */
-		setScrollBaseData: function() {
+		setScrollBaseData: function () {
 			var $changeDivs = $(
 					'.mw-twocolconflict-diffchange-own, ' +
 					'.mw-twocolconflict-diffchange-foreign, ' +
@@ -85,7 +85,7 @@
 		 * @param {jQuery} $scrollable
 		 * @return {boolean}
 		 */
-		changeElementTopIsInView: function( $changeDiv, $scrollable ) {
+		changeElementTopIsInView: function ( $changeDiv, $scrollable ) {
 			return this.getDivTopOffset( $changeDiv, $scrollable ) < 0;
 		},
 
@@ -94,7 +94,7 @@
 		 *
 		 * @return {jQuery}
 		 */
-		getFirstVisibleChangesElement: function() {
+		getFirstVisibleChangesElement: function () {
 			var $changesEditor = $( '.mw-twocolconflict-changes-editor' ),
 				$changeDivs = $(
 					'.mw-twocolconflict-diffchange-own, ' +
@@ -122,7 +122,7 @@
 		 * @param {jQuery} $changeDiv
 		 * @param {number} manualOffset
 		 */
-		scrollToChangeWithOffset: function( $changeDiv, manualOffset ) {
+		scrollToChangeWithOffset: function ( $changeDiv, manualOffset ) {
 			var $changesEditor = $( '.mw-twocolconflict-changes-editor' ),
 				changeDivOffset;
 
@@ -140,7 +140,7 @@
 		 *
 		 * @param {jQuery} $changeDiv
 		 */
-		scrollToConflictWithData: function( $changeDiv ) {
+		scrollToConflictWithData: function ( $changeDiv ) {
 			var $changesEditor = $( '.mw-twocolconflict-changes-editor' ),
 				$textEditor = $( '#wpTextbox1' ),
 				changeDivOffset, dataOffset;
@@ -166,7 +166,7 @@
 		/**
 		 * Scroll to the first conflict
 		 */
-		scrollToFirstOwnOrConflict: function() {
+		scrollToFirstOwnOrConflict: function () {
 			this.scrollToConflictWithData(
 				$( $(
 					'.mw-twocolconflict-diffchange-conflict, .mw-twocolconflict-diffchange-own'
