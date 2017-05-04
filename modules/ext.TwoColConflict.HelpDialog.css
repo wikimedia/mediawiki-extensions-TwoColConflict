@@ -11,7 +11,7 @@
 	margin-right: 0;
 }
 
-.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .twocolconflict-help-dialog > .oo-ui-window-frame {
+.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog.mw-twocolconflict-help-dialog > .oo-ui-window-frame {
 	top: 30%;
 	bottom: auto;
 }
