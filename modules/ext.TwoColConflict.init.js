@@ -145,7 +145,7 @@
 	}
 
 	$( function () {
-		$( '.mw-twocolconflict-changes-editor' ).keydown( function( e ) {
+		$( '.mw-twocolconflict-changes-editor' ).keydown( function ( e ) {
 			if ( e.ctrlKey && e.keyCode === 65 ) { // CTRL + A
 				e.preventDefault();
 				selectText( this );

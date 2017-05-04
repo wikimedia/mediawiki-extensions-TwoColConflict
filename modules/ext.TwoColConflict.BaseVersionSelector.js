@@ -57,7 +57,7 @@
 				label: mw.msg( 'twoColConflict-base-selection-submit-label' ),
 				flags: [ 'progressive' ]
 			} );
-			submit.on( 'click', function() {
+			submit.on( 'click', function () {
 				self.setBaseVersion();
 				self.close().then(
 					self.closeCallback

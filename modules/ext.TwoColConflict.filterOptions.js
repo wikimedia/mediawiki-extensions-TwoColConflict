@@ -1,8 +1,8 @@
-( function( mw, $ ) {
+( function ( mw, $ ) {
 	var autoScroll = new mw.libs.twoColConflict.AutoScroll(),
 		expandBtn, collapseBtn;
 
-	$( function() {
+	$( function () {
 		// show filter options when js is available
 		$( '.mw-twocolconflict-filter-options-container' ).css( 'display', 'block' );
 		// set some styles only with js enabled
@@ -39,12 +39,12 @@
 			}
 
 			// wait for expanding animations to be finished
-			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function() {
+			$( '.mw-twocolconflict-diffchange-same-full' ).promise().done( function () {
 				autoScroll.scrollToChangeWithOffset( $changeDiv, manualOffset );
 			} );
 		}
 
-		$( 'input[name="mw-twocolconflict-same"]' ).click( function() {
+		$( 'input[name="mw-twocolconflict-same"]' ).click( function () {
 			surroundingText( $( this ).val() === 'show' );
 		} );
 
