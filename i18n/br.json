@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Y-M D"
 		]
 	},
-	"twoColConflict-label-mine": "ma hini",
-	"twoColConflict-label-both": "an daou",
-	"twoColConflict-label-show-changes": "diskouez ar c'hemmoù"
+	"twoColConflict-base-selection-own-label": "Ma zestenn",
+	"twoColConflict-base-selection-submit-label": "Mat eo"
 }
