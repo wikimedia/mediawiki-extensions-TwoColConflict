@@ -7,5 +7,13 @@
 	"twoColConflict-changes-col-desc-3": "$1 {{PLURAL:$1|aldiz}} aldatua ($2)",
 	"twoColConflict-changes-col-desc-4": "zure testua.",
 	"twoColConflict-base-selection-own-label": "Nire testua",
+	"twoColConflict-diffchange-own-title": "zure bertsioan",
+	"twoColConflict-diffchange-foreign-title": "$1(r)en bertsioan",
+	"twoColConflict-label-show": "erakutsi",
+	"twoColConflict-label-hide": "ezkutatu",
+	"twoColConflict-label-unchanged": "aldatu gabeko testua",
+	"twoColConflict-show-help-tooltip": "Erakutsi laguntza-testua",
+	"twoColConflict-previous-dialog": "Aurrekoa",
+	"twoColConflict-next-dialog": "Hurrengoa",
 	"twoColConflict-close-dialog": "Itxi"
 }

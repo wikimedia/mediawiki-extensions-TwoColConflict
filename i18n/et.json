@@ -1,0 +1,42 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"twoColConflict-desc": "Näitab redigeerimiskonflikti lahendamise tarbeks kaheküljelist muudatuste liitmise vaadet.",
+	"twoColConflict-beta-feature-message": "Kaheveeruline redigeerimiskonflikt",
+	"twoColConflict-beta-feature-description": "Kuvab redigeerimiskonflikti vaadet edasi arendatud kaheveerulises versioonis.",
+	"twoColConflict-explainconflict": "<strong>Hoiatus:</strong> Teine kasutaja tegi just muudatuse ja salvestas lehekülje. Sinu versioon ja praegune versioon on konfliktis. Sul tuleb liita oma muudatused teksti praeguse versiooniga. Ainult toimetamisväljal olev tekst salvestatakse, kui klõpsad nuppu \"$1\".",
+	"twoColConflict-changes-col-title": "Konfliktsed muudatused",
+	"twoColConflict-changes-col-desc-1": "Erinevused järgmiste versioonide vahel:",
+	"twoColConflict-changes-col-desc-2": "praegune avaldatud versioon",
+	"twoColConflict-changes-col-desc-3": "muudetud $1 {{PLURAL:$1|korda}} ($2)",
+	"twoColConflict-changes-col-desc-4": "sinu tekst",
+	"twoColConflict-history-link": "redaktsioonilugu",
+	"twoColConflict-editor-col-title": "Toimeti avaldatava versiooniga",
+	"twoColConflict-editor-col-desc-1": "Esialgu on toimeti sisuks praegune avaldatud versioon.",
+	"twoColConflict-editor-col-desc-2": "Lisa toimetis tekstile oma muudatused ja klõpsa nuppu \"Avalda muudatused\".",
+	"twoColConflict-base-selection-desc-1": "1) Vali allolevas hüpikkastis alusversioon.",
+	"twoColConflict-base-selection-desc-2": "2) Kohenda teksti, et versioonid ühendada.",
+	"twoColConflict-base-selection-desc-3": "3) Klõpsa nuppu \"Avalda muudatused\". Ainult toimetis olev tekst avaldatakse.",
+	"twoColConflict-base-selection-dialog-text": "Milline versioon, mille alusel konfliktsed versioonid ühendada, peaks olema esialgu toimetis?",
+	"twoColConflict-base-selection-own-label": "Minu tekst",
+	"twoColConflict-base-selection-foreign-label": "Praegune avaldatud versioon",
+	"twoColConflict-base-selection-submit-label": "Sobib",
+	"twoColConflict-diffchange-own-title": "sinu versioonis",
+	"twoColConflict-diffchange-foreign-title": "kasutaja $1 versioonis",
+	"twoColConflict-label-show": "näita",
+	"twoColConflict-label-hide": "peida",
+	"twoColConflict-label-unchanged": "muutmata tekst",
+	"twoColConflict-show-help-tooltip": "Näita abiteksti",
+	"twoColConflict-help-dialog-slide1": "See lehekülg on abiks redigeerimiskonflikti lahendamisel. Siin on kaks veergu: esimeses on konfliktsed muudatused ja teises on tekstitoimeti, mille sisu avaldatakse.\n\nOleme tänulikud, kui annad [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View siin] tagasisidet.",
+	"twoColConflict-help-dialog-slide2": "Esimene veerg näitab muudatusi sinu versioonis ja muudatusi praeguses salvestatud versioonis. Nende versioonide vahelised erinevused on esile tõstetud.",
+	"twoColConflict-help-dialog-slide3": "Esimese veeru ülaosas saad klõpsata valikul \"näita\", et vaadata muutmata teksti. See võib olla abiks muudatuste kontekstist arusaamisel. Vaikimisi on muutmata tekst tuhm ja peidetud.",
+	"twoColConflict-help-dialog-slide4": "Teises veerus on toimeti. Lehekülje avamisel on toimeti ülaosas valikukast. See võimaldab otsustada, milline versioon peaks toimetis olemas. See on harilikult versioon, milles on tehtud rohkem muudatusi.",
+	"twoColConflict-help-dialog-slide5": "Kopeeri ja kleebi soovitud osa teisest versioonist toimetis olevasse teksti. Ainult toimetis olev tekst avaldatakse, kui klõpsad nuppu \"Avalda muudatused\".",
+	"twoColConflict-tutorial": "Redigeerimiskonflikti lahendamise õppekäik",
+	"twoColConflict-previous-dialog": "Tagasi",
+	"twoColConflict-next-dialog": "Edasi",
+	"twoColConflict-close-dialog": "Sule"
+}

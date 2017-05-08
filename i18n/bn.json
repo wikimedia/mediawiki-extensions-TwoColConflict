@@ -6,17 +6,20 @@
 			"Bodhisattwa"
 		]
 	},
+	"twoColConflict": "দুই স্তম্ভ দ্বন্দ্ব",
 	"twoColConflict-desc": "সম্পাদনা দ্বন্দ্ব নিরসনের জন্য পার্শ্ব-প্রতি-পার্শ্ব সম্পাদনা একত্রীকরণের স্ক্রীন দেখায়",
-	"twoColConflict-beta-feature-message": "দুই কলাম সম্পাদনা দ্বন্দ্ব",
-	"twoColConflict-beta-feature-description": "আরো উন্নত দুই কলাম দৃশ্য ব্যবহার সম্পাদনা দ্বন্দ্বের দৃশ্য প্রদর্শন করানো হবে।",
+	"twoColConflict-beta-feature-message": "দুই স্তম্ভ সম্পাদনা দ্বন্দ্ব",
+	"twoColConflict-beta-feature-description": "আরো উন্নত দুই স্তম্ভ দৃশ্য ব্যবহার সম্পাদনা দ্বন্দ্বের দৃশ্য প্রদর্শন করানো হবে।",
 	"twoColConflict-changes-col-desc-4": "আপনার পাঠ্য।",
 	"twoColConflict-base-selection-own-label": "আমার পাঠ্য",
+	"twoColConflict-base-selection-foreign-label": "বর্তমানে প্রকাশিত সংস্করণ",
 	"twoColConflict-base-selection-submit-label": "ঠিক আছে",
 	"twoColConflict-diffchange-own-title": "আপনার সংস্করণে",
 	"twoColConflict-label-show": "দেখাও",
 	"twoColConflict-label-hide": "আড়াল করো",
 	"twoColConflict-label-unchanged": "অপরিবর্তিত লেখা",
 	"twoColConflict-show-help-tooltip": "সাহায্য পাঠ্য দেখান",
+	"twoColConflict-tutorial": "সম্পাদনা দ্বন্দ্ব সমাধান নির্দেশিকা",
 	"twoColConflict-previous-dialog": "পূর্ববর্তী",
 	"twoColConflict-next-dialog": "পরবর্তী",
 	"twoColConflict-close-dialog": "বন্ধ করুন"
