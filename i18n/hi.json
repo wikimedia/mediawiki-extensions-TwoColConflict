@@ -9,6 +9,9 @@
 	"twoColConflict-history-link": "अवतरण का इतिहास",
 	"twoColConflict-base-selection-own-label": "मेरा पाठ",
 	"twoColConflict-base-selection-submit-label": "ठीक है",
+	"twoColConflict-label-show": "दिखाएँ",
+	"twoColConflict-label-hide": "छुपाएँ",
 	"twoColConflict-previous-dialog": "पिछला",
-	"twoColConflict-next-dialog": "अगला"
+	"twoColConflict-next-dialog": "अगला",
+	"twoColConflict-close-dialog": "बंद करें"
 }
