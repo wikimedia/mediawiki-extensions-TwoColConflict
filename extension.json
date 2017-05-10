@@ -74,7 +74,8 @@
 				"modules/ext.TwoColConflict.filterOptions.js"
 			],
 			"dependencies": [
-				"ext.TwoColConflict.AutoScroll"
+				"ext.TwoColConflict.AutoScroll",
+				"oojs-ui"
 			]
 		},
 		"ext.TwoColConflict.AutoScroll": {
