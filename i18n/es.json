@@ -8,7 +8,7 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Muestra una pantalla de combinación doble para solucionar conflictos",
-	"twoColConflict-beta-feature-message": "Conflicto de edición sobre dos columnas",
+	"twoColConflict-beta-feature-message": "Conflicto de edición en dos columnas",
 	"twoColConflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.",
 	"twoColConflict-explainconflict": "<strong>Advertencia:</strong> Otro usuario acaba de editar y guardar esta página. Hay un conflicto entre tu versión y la versión actual. Tienes que combinar tus cambios con la versión actual del texto. Solo se guardará el texto en el campo de edición cuando hagas clic en «$1».",
 	"twoColConflict-changes-col-title": "Cambios en conflicto",

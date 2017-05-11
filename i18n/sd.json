@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Indus Asia"
+			"Indus Asia",
+			"Mehtab ahmed"
 		]
 	},
-	"twoColConflict-previous-dialog": "گذريل"
+	"twoColConflict-previous-dialog": "گذريل",
+	"twoColConflict-close-dialog": "بند ڪريو"
 }

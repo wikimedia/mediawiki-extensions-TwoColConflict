@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
-			"زكريا"
+			"زكريا",
+			"Mido"
 		]
 	},
 	"twoColConflict": "دمج التعديلات",
@@ -16,8 +17,8 @@
 	"twoColConflict-changes-col-desc-4": "نصك.",
 	"twoColConflict-history-link": "تاريخ المراجعة",
 	"twoColConflict-editor-col-title": "محرر النسخة التي ستنشر",
-	"twoColConflict-editor-col-desc-1": "كبداية، محتوى المحرر هو النسخة المنشورة حاليا:",
-	"twoColConflict-editor-col-desc-2": "أضف تغييراتك في المحرر واضغط على \"نشر التعديلات\"",
+	"twoColConflict-editor-col-desc-1": "كبداية، محتوى المحرر هو النسخة المنشورة حاليا.",
+	"twoColConflict-editor-col-desc-2": "أضف تغييراتك للنص في المحرر واضغط على \"نشر التعديلات\".",
 	"twoColConflict-base-selection-own-label": "نصي",
 	"twoColConflict-base-selection-submit-label": "موافق",
 	"twoColConflict-diffchange-own-title": "في نسختك",

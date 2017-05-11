@@ -5,9 +5,8 @@
 			"Obsuser"
 		]
 	},
-	"twoColConflict-changes-col-desc": "Разлике између тренутно објављене верзије корисника $1 и <span class=\"mw-twocolconflict-user\">Вашег</span> текста",
-	"twoColConflict-editor-col-desc-1": "У почетку, садржај уређивача је тренутно објављена верзија:",
-	"twoColConflict-editor-col-desc-2": "Унесите своје измене у уређивач и кликните на „Објави измене”",
+	"twoColConflict-editor-col-desc-1": "У почетку, садржај уређивача је тренутно објављена верзија.",
+	"twoColConflict-editor-col-desc-2": "Унесите своје измене текста у уређивач и кликните на „Објави измене”.",
 	"twoColConflict-label-show": "прикажи",
 	"twoColConflict-label-hide": "сакриј"
 }
