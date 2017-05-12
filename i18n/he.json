@@ -37,7 +37,7 @@
 	"twoColConflict-help-dialog-slide4": "הטור השני הוא עורך. כאשר הדף פתוח, מופיעה תיבת בחירה בראש העורך. היא מאפשרת לך להחליט איזו גרסה אמורה להיות בעורך. לעתים קרובות זאת הגרסה שבה נעשו יותר שינויי.",
 	"twoColConflict-help-dialog-slide5": "{{GENDER:|העתק והדבק|העתיקי והדביקי|העתיקו והדביקו}} את החלקים הרצויים של הגרסה האחרת אל תוך הטקסט בעורך. רק מה שמופיע בעורך יפורסם כאשר תלחצו על כפתור \"פרסום השינויים\".",
 	"twoColConflict-tutorial": "הדרכה על פתרון התנגשויות עריכה",
-	"twoColConflict-previous-dialog": "הבא",
-	"twoColConflict-next-dialog": "הקודם",
+	"twoColConflict-previous-dialog": "הקודם",
+	"twoColConflict-next-dialog": "הבא",
 	"twoColConflict-close-dialog": "סגירה"
 }

@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"NoiX180"
+		]
+	},
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-desc": "Nuduhaké layar gabungan besutan kanthi sesandhingan minangka karampungané cengkah besutan",
+	"twoColConflict-beta-feature-message": "Cengkah besutan rong kolem",
+	"twoColConflict-beta-feature-description": "Tuduhaké layaré cengkah besutan nganggo layar rong kolem sing luwih maju.",
+	"twoColConflict-changes-col-title": "Owahan sing cengkah",
+	"twoColConflict-changes-col-desc-1": "Béda antara",
+	"twoColConflict-changes-col-desc-2": "vèrsi sing mentas dibabar",
+	"twoColConflict-changes-col-desc-3": "ngowahi {{PLURAL:$1|ping}} $1 ($2)",
+	"twoColConflict-changes-col-desc-4": "tulisané panjenengan.",
+	"twoColConflict-history-link": "sujarah révisi",
+	"twoColConflict-editor-col-title": "Pambesut mawa vèrsi sing arep dibabar",
+	"twoColConflict-base-selection-own-label": "Tulisanku",
+	"twoColConflict-base-selection-foreign-label": "Vèrsi sing mentas dibabar",
+	"twoColConflict-base-selection-submit-label": "YA",
+	"twoColConflict-diffchange-own-title": "vèrsiné panjenengan",
+	"twoColConflict-diffchange-foreign-title": "vèrsiné $1",
+	"twoColConflict-label-show": "tuduhaké",
+	"twoColConflict-label-hide": "dhelikaké",
+	"twoColConflict-label-unchanged": "tulisan wutuh",
+	"twoColConflict-show-help-tooltip": "Tuduhaké tulisan pambiyantu",
+	"twoColConflict-tutorial": "Panuntun ngrampungaké cengkah besutan",
+	"twoColConflict-previous-dialog": "Sadurungé",
+	"twoColConflict-next-dialog": "Sabanjuré",
+	"twoColConflict-close-dialog": "Tutup"
+}
