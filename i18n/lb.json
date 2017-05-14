@@ -9,6 +9,7 @@
 	"twoColConflict-beta-feature-message": "Zwou-Kolonnen Ännerungskonflikt",
 	"twoColConflict-changes-col-title": "Ännerungen déi am Konflikt sinn",
 	"twoColConflict-changes-col-desc-1": "Ënnerscheeder tëscht",
+	"twoColConflict-changes-col-desc-2": "déi aktuell publizéiert Versioun",
 	"twoColConflict-changes-col-desc-3": "huet $1 {{PLURAL:$1|Mol}} geännert ($2)",
 	"twoColConflict-changes-col-desc-4": "Ären Text.",
 	"twoColConflict-history-link": "Historique vun de Versiounen",

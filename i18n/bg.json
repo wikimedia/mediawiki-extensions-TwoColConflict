@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Vodnokon4e"
 		]
 	},
+	"twoColConflict-base-selection-submit-label": "Добре",
 	"twoColConflict-label-show": "показване",
 	"twoColConflict-label-hide": "скриване",
 	"twoColConflict-label-unchanged": "неизменен текст"
