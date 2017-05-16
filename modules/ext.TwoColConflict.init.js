@@ -90,15 +90,27 @@
 	 * Adjusts the spacing below the editor column's header in order to synchronize the position of
 	 * both columns and removes the editor column's left padding and spacing when it collapses below
 	 * the changes column
+	 *
+	 * When called for the first time and if the WikiEditor is enabled the WikiEditor's toolbar
+	 * height will be hardcoded in case the WikiEditor wasn't loaded yet, any subsequent calls will fetch
+	 * the height dynamically
+	 *
+	 *  @param {boolean} $isInit
 	 */
-	function adjustEditorColSpacing() {
+	function adjustEditorColSpacing( $isInit ) {
 		var $changesCol = $( '.mw-twocolconflict-changes-col' ),
 			$editorCol = $( '.mw-twocolconflict-editor-col' ),
 			$changesColHeader = $( '.mw-twocolconflict-changes-col .mw-twocolconflict-col-header' ),
 			$editorColHeader = $( '.mw-twocolconflict-editor-col .mw-twocolconflict-col-header' ),
 			$changesEditor = $( '.mw-twocolconflict-changes-editor' ),
 			$wikiEditorToolbar = $( '#wikiEditor-ui-toolbar' ),
+			toolbarHeight = null;
+
+		if ( $isInit ) {
+			toolbarHeight = mw.config.get( 'wgTwoColConflictWikiEditor' ) ? 32 : $( '#toolbar' ).height();
+		} else {
 			toolbarHeight = $wikiEditorToolbar.length ? $wikiEditorToolbar.height() : $( '#toolbar' ).height();
+		}
 
 		if ( $changesCol.position().left !== $editorCol.position().left ) {
 			$editorColHeader.css( 'margin-bottom',
@@ -119,11 +131,16 @@
 		$( '.mw-twocolconflict-edit-summary' ).find( 'a' ).attr( 'target', '_blank' );
 	}
 
+	function redrawPage() {
+		autoScroll.setScrollBaseData();
+		adjustEditorColSpacing( false );
+	}
+
 	function afterBaseVersionSelection() {
 		$( '.mw-twocolconflict-form' ).removeClass( 'mw-twocolconflict-before-base-selection' );
 		// select 'hide' as the default option
 		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
-		this.redrawPage();
+		redrawPage();
 		autoScroll.scrollToFirstOwnOrConflict();
 	}
 
@@ -137,11 +154,9 @@
 		versionSelector.setCloseCallback( afterBaseVersionSelection );
 		windowManager.addWindows( [ versionSelector ] );
 		windowManager.openWindow( versionSelector );
-	}
 
-	function redrawPage() {
-		autoScroll.setScrollBaseData();
-		adjustEditorColSpacing();
+		$( '.mw-twocolconflict-edit-desc' ).hide();
+		$( '.mw-twocolconflict-base-selection-desc' ).show();
 	}
 
 	$( function () {
@@ -157,14 +172,7 @@
 		initAndShowBaseVersionSelector();
 		initHelpDialog();
 		addTargetToEditSummaryLinks();
-
-		if ( mw.config.get( 'wgTwoColConflictWikiEditor' ) ) {
-			$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
-				adjustEditorColSpacing();
-			} );
-		} else {
-			adjustEditorColSpacing();
-		}
+		adjustEditorColSpacing( true );
 
 		if ( !settings.shouldHideHelpDialogue() ) {
 			helpDialog.show();

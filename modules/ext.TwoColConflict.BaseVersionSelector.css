@@ -7,14 +7,6 @@
 	filter: blur( 5px );
 }
 
-.mw-twocolconflict-base-selection-desc {
-	display: block;
-}
-
-.mw-twocolconflict-edit-desc {
-	display: none;
-}
-
 .mw-twocolconflict-base-dialog fieldset {
 	width: 100%;
 }
