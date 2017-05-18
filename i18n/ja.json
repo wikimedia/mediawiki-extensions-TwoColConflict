@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirinano"
+		]
+	},
+	"twoColConflict-beta-feature-message": "2列で編集の競合を表示",
+	"twoColConflict-beta-feature-description": "2列の編集画面を使用して、編集競合を表示します。"
+}

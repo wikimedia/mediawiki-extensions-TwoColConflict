@@ -5,6 +5,8 @@
 			"Obsuser"
 		]
 	},
+	"twoColConflict-beta-feature-message": "Сукобљене измене у две колоне",
+	"twoColConflict-beta-feature-description": "Напреднији приказ сукобљених измена, у две колоне.",
 	"twoColConflict-editor-col-desc-1": "У почетку, садржај уређивача је тренутно објављена верзија.",
 	"twoColConflict-editor-col-desc-2": "Унесите своје измене текста у уређивач и кликните на „Објави измене”.",
 	"twoColConflict-label-show": "прикажи",
