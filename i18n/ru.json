@@ -12,7 +12,6 @@
 	"twoColConflict-desc": "Показывает экран слияния правок для разрешения конфликтов редактирований в две колонки",
 	"twoColConflict-changes-col-desc-1": "Разница между",
 	"twoColConflict-base-selection-own-label": "Мой текст",
-	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "в вашей версии",
 	"twoColConflict-label-show": "показать",
 	"twoColConflict-label-hide": "скрыть",
