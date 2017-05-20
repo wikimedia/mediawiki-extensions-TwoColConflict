@@ -25,7 +25,7 @@
 	"twoColConflict-base-selection-desc-3": "3) Clique em \"Publicar alterações\". Somente o que está no editor será publicado.",
 	"twoColConflict-base-selection-dialog-text": "O que deveria estar inicialmente no editor e servir como base para combinar as versões em conflito?",
 	"twoColConflict-base-selection-own-label": "Meu texto",
-	"twoColConflict-base-selection-foreign-label": "A versão publicado actualmente",
+	"twoColConflict-base-selection-foreign-label": "A versão publicada actualmente",
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "em sua versão",
 	"twoColConflict-diffchange-foreign-title": "na versão de $1",
