@@ -279,14 +279,14 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
-		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</div>';
-		$out .= '<div>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' ) . '</div>';
+		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
+		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' ) . '</p>';
 		$out .= '</div>';
-		$out .= '<div class="mw-twocolconflict-base-selection-desc">';
-		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) . '<br>';
-		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) . '<br>';
-		$out .= $this->getContext()->msg( 'twoColConflict-base-selection-desc-3' );
-		$out .= '</div></div></div>';
+		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
+		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) . '</li>';
+		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) . '</li>';
+		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-3' ) . '</li>';
+		$out .= '</ol></div></div>';
 
 		return $out;
 	}
