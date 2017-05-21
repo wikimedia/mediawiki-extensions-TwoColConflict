@@ -34,6 +34,8 @@
 	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
 	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
 	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view.",
+	"twoColConflict-label-show-unchanged": "Label for the buttons in the diff view to show unchanged text.",
+	"twoColConflict-label-hide-unchanged": "Label for the buttons in the diff view to hide unchanged text.",
 	"twoColConflict-show-help-tooltip": "Text shown in a tooltip for the \"Show help\" button.",
 	"twoColConflict-help-dialog-slide1": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a person who edits pages.}}\nText shown on the first slide of the help dialog.",
 	"twoColConflict-help-dialog-slide2": "Text shown on the second slide of the help dialog.",

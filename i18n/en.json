@@ -30,6 +30,8 @@
 	"twoColConflict-label-show": "show",
 	"twoColConflict-label-hide": "hide",
 	"twoColConflict-label-unchanged": "unchanged text",
+	"twoColConflict-label-show-unchanged": "show unchanged text",
+	"twoColConflict-label-hide-unchanged": "hide unchanged text",
 	"twoColConflict-show-help-tooltip": "Show help text",
 	"twoColConflict-help-dialog-slide1": "This page helps you to resolve an edit conflict. There are two columns: The first shows the conflicting changes and the second is a text editor, whose content will be published.\n\nFeedback is very much appreciated [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View here].",
 	"twoColConflict-help-dialog-slide2": "The first column shows the changes in your version and the changes in the currently saved version. The differences between both versions are highlighted.",

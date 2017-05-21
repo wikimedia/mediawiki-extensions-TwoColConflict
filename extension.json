@@ -73,6 +73,10 @@
 			"scripts": [
 				"modules/ext.TwoColConflict.filterOptions.js"
 			],
+			"messages": [
+				"twoColConflict-label-show-unchanged",
+				"twoColConflict-label-hide-unchanged"
+			],
 			"dependencies": [
 				"ext.TwoColConflict.AutoScroll",
 				"oojs-ui"
