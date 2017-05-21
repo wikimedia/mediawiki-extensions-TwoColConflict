@@ -5,5 +5,6 @@
 		]
 	},
 	"twoColConflict-beta-feature-message": "2列で編集の競合を表示",
-	"twoColConflict-beta-feature-description": "2列の編集画面を使用して、編集競合を表示します。"
+	"twoColConflict-beta-feature-description": "2列の編集画面を使用して、編集競合を表示します。",
+	"twoColConflict-explainconflict": "<strong>警告:</strong> このページを編集し始めた後に、他の利用者がこのページに変更を保存しました。あなたの版と最新版との間には矛盾があります。あなたの変更を最新版に統合する必要があります。「$1」をクリックすると、編集エリアにあるテキストだけが保存されます。"
 }
