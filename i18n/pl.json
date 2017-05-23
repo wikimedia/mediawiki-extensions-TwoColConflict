@@ -20,7 +20,7 @@
 	"twoColConflict-editor-col-desc-1": "Początkowo, zawartością edytora jest ostatnia opublikowana wersja.",
 	"twoColConflict-editor-col-desc-2": "Dodaj swoje zmiany tekstu w tym edytorze i kliknij \"Zapisz\".",
 	"twoColConflict-base-selection-desc-1": "1) Wybierz wersję bazową w poniższym okienku.",
-	"twoColConflict-base-selection-desc-2": "2) Dopasuj tekst aby połączyć obydwie wersje.",
+	"twoColConflict-base-selection-desc-2": "2) Dopasuj tekst, aby połączyć obydwie wersje.",
 	"twoColConflict-base-selection-desc-3": "3) Kliknij na \"Zapisz\". Zostanie opublikowane tylko to, co znajdzie się w edytorze.",
 	"twoColConflict-base-selection-dialog-text": "Co powinno być wstępnie zawartością edytora jako podstawa do procesu łączenia konfliktujących wersji?",
 	"twoColConflict-base-selection-own-label": "Mój tekst",
