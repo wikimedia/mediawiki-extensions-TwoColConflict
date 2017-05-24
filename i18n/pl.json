@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Woytecr"
+			"Woytecr",
+			"Tar Lócesilion"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -17,7 +18,7 @@
 	"twoColConflict-changes-col-desc-4": "twoim tekstem.",
 	"twoColConflict-history-link": "historia wersji",
 	"twoColConflict-editor-col-title": "Edytor z wersją do opublikowania",
-	"twoColConflict-editor-col-desc-1": "Początkowo, zawartością edytora jest ostatnia opublikowana wersja.",
+	"twoColConflict-editor-col-desc-1": "Domyślnie zawartością okna edycji jest najnowsza opublikowana wersja.",
 	"twoColConflict-editor-col-desc-2": "Dodaj swoje zmiany tekstu w tym edytorze i kliknij \"Zapisz\".",
 	"twoColConflict-base-selection-desc-1": "1) Wybierz wersję bazową w poniższym okienku.",
 	"twoColConflict-base-selection-desc-2": "2) Dopasuj tekst, aby połączyć obydwie wersje.",
