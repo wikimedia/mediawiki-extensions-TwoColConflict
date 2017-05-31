@@ -231,7 +231,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @return TwoColConflictPage
 	 */
 	private function getMockPage() {
-		return $this->getMockBuilder( 'TwoColConflictPage' )
+		return $this->getMockBuilder( TwoColConflictPage::class )
 			->disableOriginalConstructor()
 			->getMock();
 	}
@@ -240,7 +240,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @return TwoColConflictPage
 	 */
 	private function getMockPageWithContext() {
-		$mockContext = $this->getMockBuilder( 'RequestContext' )
+		$mockContext = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$mockContext->method( 'msg' )
@@ -254,4 +254,5 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 
 		return $twoColConflictPageMock;
 	}
+
 }
