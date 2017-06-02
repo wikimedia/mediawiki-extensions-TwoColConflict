@@ -55,7 +55,7 @@
 
 			submit = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'twoColConflict-base-selection-submit-label' ),
-				flags: [ 'progressive' ]
+				flags: [ 'primary', 'progressive' ]
 			} );
 			submit.on( 'click', function () {
 				self.setBaseVersion();
