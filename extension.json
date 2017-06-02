@@ -108,6 +108,7 @@
 			],
 			"dependencies": [
 				"oojs-ui",
+				"oojs-ui.styles.icons-interactions",
 				"ext.TwoColConflict.HelpDialogImages"
 			],
 			"messages": [
