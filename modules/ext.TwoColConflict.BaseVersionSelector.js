@@ -59,7 +59,7 @@
 			} );
 			submit.on( 'click', function () {
 				self.setBaseVersion();
-				self.close().then(
+				self.close().closed.then(
 					self.closeCallback
 				);
 
