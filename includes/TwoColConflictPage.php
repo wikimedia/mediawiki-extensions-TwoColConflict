@@ -172,6 +172,9 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildHelpButton() {
+		// Load icon pack with the 'help' icon
+		$this->context->getOutput()->addModuleStyles( 'oojs-ui.styles.icons-content' );
+
 		$helpButton = new OOUI\ButtonInputWidget( [
 			'icon' => 'help',
 			'framed' => false,
