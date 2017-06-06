@@ -155,8 +155,8 @@ class TwoColConflictPage extends EditPage {
 
 		$out .= '<div class="mw-twocolconflict-filter-options-row">';
 		$out .= '<div class="mw-twocolconflict-filter-titles">' .
-		       $this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
-		       '</div>';
+			$this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
+			'</div>';
 		$out .= $showHideOptions;
 		$out .= $this->buildHelpButton();
 		$out .= '</div>';
