@@ -32,6 +32,8 @@
 	"twoColConflict-label-show": "afficher",
 	"twoColConflict-label-hide": "masquer",
 	"twoColConflict-label-unchanged": "texte non modifié",
+	"twoColConflict-label-show-unchanged": "afficher le texte non modifié",
+	"twoColConflict-label-hide-unchanged": "masquer le texte non modifié",
 	"twoColConflict-show-help-tooltip": "Afficher le texte d’aide",
 	"twoColConflict-help-dialog-slide1": "Cettte page vous aide à résoudre un conflit d'édition. Il y a deux colonnes : la première contient les modifications qui posent problème et la deuxième est un éditeur de texte dont le contenu sera publié. \n\nVotre avis est très apprécié [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View ici].",
 	"twoColConflict-help-dialog-slide2": "La première colonne montre les modifications de votre version avec celles de la version actuellement sauvegardée. Les différences entre les deux versions sont mises en évidence.",

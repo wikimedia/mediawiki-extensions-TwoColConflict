@@ -31,6 +31,8 @@
 	"twoColConflict-label-show": "anzeigen",
 	"twoColConflict-label-hide": "ausblenden",
 	"twoColConflict-label-unchanged": "Unveränderten Text",
+	"twoColConflict-label-show-unchanged": "Unveränderten Text anzeigen",
+	"twoColConflict-label-hide-unchanged": "Unveränderten Text ausblenden",
 	"twoColConflict-show-help-tooltip": "Hilfetext anzeigen",
 	"twoColConflict-help-dialog-slide1": "Diese Seite hilft dir, einen Bearbeitungskonflikt zu lösen. Es gibt zwei Spalten: Die erste zeigt die kollidierenden Änderungen und die zweite ist ein Texteditor, dessen Inhalt veröffentlicht wird.\n\nRückmeldungen werden [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View hier] sehr geschätzt.",
 	"twoColConflict-help-dialog-slide2": "Die erste Spalte zeigt die Änderungen in deiner und in der derzeit gespeicherten Version. Die Unterschiede zwischen beiden Versionen sind hervorgehoben.",
