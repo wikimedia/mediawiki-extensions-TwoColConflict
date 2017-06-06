@@ -136,7 +136,35 @@
 		adjustEditorColSpacing( false );
 	}
 
+	function disableEditButtons() {
+		if ( $( '#wpSaveWidget' ).length ) {
+			OO.ui.infuse( 'wpSaveWidget' ).setDisabled( true );
+			OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( true );
+			OO.ui.infuse( 'wpDiffWidget' ).setDisabled( true );
+		} else {
+			// not using OOUI buttons
+			$( '#wpSave, #wpPreview, #wpDiff' ).prop( 'disabled', true );
+		}
+	}
+
+	function enableEditButtons() {
+		if ( $( '#wpSaveWidget' ).length ) {
+			OO.ui.infuse( 'wpSaveWidget' ).setDisabled( false );
+			OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( false );
+			OO.ui.infuse( 'wpDiffWidget' ).setDisabled( false );
+		} else {
+			$( '#wpSave, #wpPreview, #wpDiff' ).prop( 'disabled', false );
+		}
+	}
+
+	function beforeBaseVersionSelection() {
+		disableEditButtons();
+		$( '.mw-twocolconflict-edit-desc' ).hide();
+		$( '.mw-twocolconflict-base-selection-desc' ).show();
+	}
+
 	function afterBaseVersionSelection() {
+		enableEditButtons();
 		$( '.mw-twocolconflict-form' ).removeClass( 'mw-twocolconflict-before-base-selection' );
 		// select 'hide' as the default option
 		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
@@ -149,14 +177,11 @@
 			windowManager = new OO.ui.WindowManager( {
 				modal: false
 			} );
-
+		beforeBaseVersionSelection();
 		$( '.mw-twocolconflict-col-header' ).append( windowManager.$element );
 		versionSelector.setCloseCallback( afterBaseVersionSelection );
 		windowManager.addWindows( [ versionSelector ] );
 		windowManager.openWindow( versionSelector );
-
-		$( '.mw-twocolconflict-edit-desc' ).hide();
-		$( '.mw-twocolconflict-base-selection-desc' ).show();
 	}
 
 	$( function () {
