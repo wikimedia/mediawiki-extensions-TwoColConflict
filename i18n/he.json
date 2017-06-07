@@ -30,6 +30,8 @@
 	"twoColConflict-label-show": "הצגה",
 	"twoColConflict-label-hide": "הסתרה",
 	"twoColConflict-label-unchanged": "טקסט שלא שוּנה",
+	"twoColConflict-label-show-unchanged": "הצגת טקסט שלא השתנה",
+	"twoColConflict-label-hide-unchanged": "הסתרת טקסט שלא השתנה",
 	"twoColConflict-show-help-tooltip": "הצגת טקסט העזרה",
 	"twoColConflict-help-dialog-slide1": "הדף הזה עוזר לך לפתור התנגשות עריכה. יש שני טורים: הראשון מציג את השינויים המתנגשים והשני הוא עורך טקסט, שהתוכן שלו יפורסם.\n\nנשמח מאוד לקבל משוב [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View כאן].",
 	"twoColConflict-help-dialog-slide2": "הטור הראשון מציג את השינויים בגרסה שלך והשינויים בגרסה השמורה עכשיו. השינויים בין שתי הגרסאות מודגשים.",

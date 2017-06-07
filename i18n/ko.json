@@ -22,6 +22,8 @@
 	"twoColConflict-base-selection-submit-label": "확인",
 	"twoColConflict-label-show": "보이기",
 	"twoColConflict-label-hide": "숨기기",
+	"twoColConflict-label-show-unchanged": "변경되지 않은 텍스트 보이기",
+	"twoColConflict-label-hide-unchanged": "변경되지 않은 텍스트 숨기기",
 	"twoColConflict-show-help-tooltip": "도움말 텍스트 보기",
 	"twoColConflict-tutorial": "편집 충돌 해결 강좌",
 	"twoColConflict-previous-dialog": "이전",

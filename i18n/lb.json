@@ -21,6 +21,8 @@
 	"twoColConflict-label-show": "weisen",
 	"twoColConflict-label-hide": "verstoppen",
 	"twoColConflict-label-unchanged": "onverännerten Text",
+	"twoColConflict-label-show-unchanged": "Onverännerten Text weisen",
+	"twoColConflict-label-hide-unchanged": "Onverännerten Text verstoppen",
 	"twoColConflict-show-help-tooltip": "Hëllefstext weisen",
 	"twoColConflict-previous-dialog": "Vireg",
 	"twoColConflict-next-dialog": "Weider",

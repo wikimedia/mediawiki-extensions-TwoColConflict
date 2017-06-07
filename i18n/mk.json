@@ -30,6 +30,8 @@
 	"twoColConflict-label-show": "прикажи",
 	"twoColConflict-label-hide": "скриј",
 	"twoColConflict-label-unchanged": "непроменет текст",
+	"twoColConflict-label-show-unchanged": "прикажи непроменет текст",
+	"twoColConflict-label-hide-unchanged": "скриј непроменет текст",
 	"twoColConflict-show-help-tooltip": "Прикажи текст за помош",
 	"twoColConflict-help-dialog-slide1": "Страницава служи за разрешување на спротиставеност во уредувања. Има два столба: Првиот ги прикажува спротиставените уредувања, а вториот е текстуален уредник, чија содржина ќе биде објавена.\n\nГо цениме вашето мислење искажано [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View тука].",
 	"twoColConflict-help-dialog-slide2": "Првиот столб прикажува измени во вашата верзија и промените во тековно зачуваната верзија. Разликите меѓу двете верзии се со друга боја.",

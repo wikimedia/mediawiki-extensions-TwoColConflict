@@ -31,6 +31,8 @@
 	"twoColConflict-label-show": "显示",
 	"twoColConflict-label-hide": "隐藏",
 	"twoColConflict-label-unchanged": "未更改文本",
+	"twoColConflict-label-show-unchanged": "显示未更改文本",
+	"twoColConflict-label-hide-unchanged": "隐藏未更改文本",
 	"twoColConflict-show-help-tooltip": "显示帮助文本",
 	"twoColConflict-help-dialog-slide1": "此页面帮助您解决编辑冲突。这里有两列：第一列显示冲突的更改，而第二列则是文本编辑器，这里是将要发布的内容。\n\n我们非常希望您[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 在此]提供反馈。",
 	"twoColConflict-help-dialog-slide2": "第一列显示您的版本中的更改，以及当前保存版本中的更改。两版本之间的不同之处已高亮显示。",
