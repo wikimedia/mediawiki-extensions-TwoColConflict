@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Matma Rex",
-			"Sfic"
+			"Sfic",
+			"Anamdas"
 		]
 	},
 	"twoColConflict-changes-col-desc-2": "वर्तमान प्रकाशित संस्करण",
@@ -16,6 +17,8 @@
 	"twoColConflict-diffchange-foreign-title": "$1 जी के संस्करण में",
 	"twoColConflict-label-show": "दिखाएँ",
 	"twoColConflict-label-hide": "छुपाएँ",
+	"twoColConflict-label-show-unchanged": "अपरिवर्तित पाठ दिखाएँ",
+	"twoColConflict-label-hide-unchanged": "अपरिवर्तित पाठ छुपाएँ",
 	"twoColConflict-previous-dialog": "पिछला",
 	"twoColConflict-next-dialog": "अगला",
 	"twoColConflict-close-dialog": "बंद करें"
