@@ -37,6 +37,7 @@
 				this.slides.push(
 					this.getSlide(
 						this.config.slides[ i ].message,
+						this.config.slides[ i ].parameters,
 						this.config.slides[ i ].imageClass,
 						this.config.slides[ i ].imageMode
 					)
@@ -59,13 +60,14 @@
 
 		/**
 		 * @param {string} message to be parse by mw.message
+		 * @param {Object[]} parameters array of message parameters
 		 * @param {string} imageClass class of image to show
 		 * @param {string} imageMode how the image should be displayed, possible values:
 		 * - "landscape"
 		 * - "portrait"
 		 * @return {OO.ui.PanelLayout}
 		 */
-		getSlide: function ( message, imageClass, imageMode ) {
+		getSlide: function ( message, parameters, imageClass, imageMode ) {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
@@ -77,7 +79,7 @@
 				)
 				.append(
 					$( '<p>' ).addClass( this.getCssPrefix() + '-help-dialog-text' )
-						.html( mw.message( message ).parse() )
+						.html( mw.message( message, parameters ).parse() )
 				);
 
 			slide.$element.find( 'a' ).attr( 'target', '_blank' );

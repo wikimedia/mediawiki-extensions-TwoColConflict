@@ -24,19 +24,21 @@ class TwoColConflictPage extends EditPage {
 	protected function addExplainConflictHeader( OutputPage $out ) {
 		// don't show conflict message when coming from VisualEditor
 		if ( $this->getContext()->getRequest()->getVal( 'veswitched' ) !== "1" ) {
-			$labelAsPublish = $this->context->getConfig()->get(
-				'EditSubmitButtonLabelPublish'
-			);
-
-			$buttonLabel = $this->context->msg(
-				$labelAsPublish ? 'publishchanges' : 'savechanges'
-			)->text();
-
 			$out->wrapWikiMsg(
 				"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
-				[ 'twoColConflict-explainconflict', $buttonLabel ]
+				[ 'twoColConflict-explainconflict', $this->getSubmitButtonLabel() ]
 			);
 		}
+	}
+
+	private function getSubmitButtonLabel() {
+		$labelAsPublish = $this->context->getConfig()->get(
+			'EditSubmitButtonLabelPublish'
+		);
+
+		return $this->context->msg(
+			$labelAsPublish ? 'publishchanges' : 'savechanges'
+		)->text();
 	}
 
 	/**
@@ -283,12 +285,14 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
 		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
-		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-2' ) . '</p>';
+		$out .= '<p>'
+			. $this->getContext()->msg( 'twoColConflict-editor-col-desc-2', $this->getSubmitButtonLabel() ) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
 		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) . '</li>';
 		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) . '</li>';
-		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-3' ) . '</li>';
+		$out .= '<li>'
+			. $this->getContext()->msg( 'twoColConflict-base-selection-desc-3', $this->getSubmitButtonLabel() ) . '</li>';
 		$out .= '</ol></div></div>';
 
 		return $out;
@@ -575,6 +579,7 @@ class TwoColConflictPage extends EditPage {
 	private function addJS() {
 		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflict', 'true' );
 		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
+		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflictSubmitLabel', $this->getSubmitButtonLabel() );
 
 		$this->context->getOutput()->addModules( [
 			'ext.TwoColConflict.initJs',
