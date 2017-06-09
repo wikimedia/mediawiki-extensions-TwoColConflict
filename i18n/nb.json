@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Pmt"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -10,12 +11,11 @@
 	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
 	"twoColConflict-explainconflict": "<strong>Advarsel:</strong> En annen bruker redigerte og lagret nettopp denne siden. Det er en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil lagres når du klikker på «$1».",
 	"twoColConflict-changes-col-title": "Motstridende endringer",
-	"twoColConflict-changes-col-desc": "Forskjeller mellom den nåværende publiserte versjonen (av $1 $2) og <span class=\"mw-twocolconflict-user\"din</span> tekst ($3)",
 	"twoColConflict-editor-col-title": "Editor med versjonen som skal publiseres",
-	"twoColConflict-editor-col-desc": "Versjonen i editoren vil publiseres. For tiden er innholdet den nåværende versjonen (av $1 $2)",
 	"twoColConflict-diffchange-own-title": "i din versjon",
 	"twoColConflict-diffchange-foreign-title": "i versjonen til $1",
 	"twoColConflict-label-show": "vis",
 	"twoColConflict-label-hide": "skjul",
-	"twoColConflict-label-unchanged": "uendret tekst"
+	"twoColConflict-label-unchanged": "uendret tekst",
+	"twoColConflict-label-hide-unchanged": "Skjul uforandret tekst"
 }
