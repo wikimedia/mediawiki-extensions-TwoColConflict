@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Selven",
-			"Fringio"
+			"Fringio",
+			"Ontsed"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -11,6 +12,8 @@
 	"twoColConflict-beta-feature-message": "Conflitto di modifiche su due colonne",
 	"twoColConflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e salvato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà salvato quando cliccherai su \"$1\".",
 	"twoColConflict-changes-col-title": "Modifiche in conflitto",
+	"twoColConflict-editor-col-desc-2": "Aggiungi le tue modifiche al testo nell'editor e clicca su \"$1\".",
+	"twoColConflict-base-selection-desc-3": "3)Clicca su \"$1\". Solo quello che è nell'editor verrà pubblicato.",
 	"twoColConflict-diffchange-own-title": "nella tua versione",
 	"twoColConflict-diffchange-foreign-title": "nella versione di $1",
 	"twoColConflict-label-show": "mostra",
@@ -18,6 +21,7 @@
 	"twoColConflict-label-show-unchanged": "mostra testo non modificato",
 	"twoColConflict-label-hide-unchanged": "nascondi testo non modificato",
 	"twoColConflict-show-help-tooltip": "Mostra testo di aiuto",
+	"twoColConflict-help-dialog-slide3": "In cima alla prima colonna, cliccare su \"{{int:twoColConflict-label-show}}\" per vedere il testo non modificato. Ciò potrebbe aiutare a capire il contesto dei cambiamenti. Per default, il testo non modificato è grigio e raggruppato.",
 	"twoColConflict-previous-dialog": "Precedente",
 	"twoColConflict-next-dialog": "Successivo",
 	"twoColConflict-close-dialog": "Chiudi"
