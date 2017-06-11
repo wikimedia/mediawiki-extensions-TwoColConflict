@@ -18,6 +18,8 @@
 	"twoColConflict-label-show": "দেখাও",
 	"twoColConflict-label-hide": "আড়াল করো",
 	"twoColConflict-label-unchanged": "অপরিবর্তিত লেখা",
+	"twoColConflict-label-show-unchanged": "অপরিবর্তিত লেখা দেখান",
+	"twoColConflict-label-hide-unchanged": "অপরিবর্তিত লেখা লুকান",
 	"twoColConflict-show-help-tooltip": "সাহায্য পাঠ্য দেখান",
 	"twoColConflict-tutorial": "সম্পাদনা দ্বন্দ্ব সমাধান নির্দেশিকা",
 	"twoColConflict-previous-dialog": "পূর্ববর্তী",

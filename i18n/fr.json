@@ -39,7 +39,7 @@
 	"twoColConflict-help-dialog-slide2": "La première colonne montre les modifications de votre version avec celles de la version actuellement sauvegardée. Les différences entre les deux versions sont mises en évidence.",
 	"twoColConflict-help-dialog-slide3": "En haut de la première colonne vous pouvez cliquer sur « {{int:twoColConflict-label-show}} » pour voir le texte non modifié. Cela peut vous aider à comprendre le contexte des modifications. Par défaut, le texte non modifié est grisé et condensé.",
 	"twoColConflict-help-dialog-slide4": "La deuxième colonne est un éditeur. Quand la page s'ouvre, une boîte de sélection apparait en haut de l'éditeur. Cela vous permet de choisir la version que vous voulez éditer. Il s'agit souvent de la version dans laquelle le plus de modifications ont été faites.",
-	"twoColConflict-help-dialog-slide5": "Copier et coller les parties souhaitées de l’autre version dans le texte dans l’éditeur. Seul ce qui est dans l’éditeur sera publié, quand vous cliquerez sur le bouton « $1 ».",
+	"twoColConflict-help-dialog-slide5": "Copier et coller les parties souhaitées de l’autre version dans le texte de l’éditeur. Seul ce qui est dans l’éditeur sera publié, quand vous cliquerez sur le bouton « $1 ».",
 	"twoColConflict-tutorial": "Aide pour résoudre les conflicts de modifications",
 	"twoColConflict-previous-dialog": "Précédent",
 	"twoColConflict-next-dialog": "Suivant",
