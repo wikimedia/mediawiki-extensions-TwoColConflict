@@ -13,7 +13,7 @@
 	"twoColConflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e salvato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà salvato quando cliccherai su \"$1\".",
 	"twoColConflict-changes-col-title": "Modifiche in conflitto",
 	"twoColConflict-editor-col-desc-2": "Aggiungi le tue modifiche al testo nell'editor e clicca su \"$1\".",
-	"twoColConflict-base-selection-desc-3": "3)Clicca su \"$1\". Solo quello che è nell'editor verrà pubblicato.",
+	"twoColConflict-base-selection-desc-3": "3) Clicca su \"$1\". Solo quello che è nell'editor verrà pubblicato.",
 	"twoColConflict-diffchange-own-title": "nella tua versione",
 	"twoColConflict-diffchange-foreign-title": "nella versione di $1",
 	"twoColConflict-label-show": "mostra",

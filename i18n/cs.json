@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mormegil",
-			"Dvorapa"
+			"Dvorapa",
+			"JAn Dudík"
 		]
 	},
 	"twoColConflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
@@ -10,8 +11,15 @@
 	"twoColConflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.",
 	"twoColConflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a uložil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude uložen pouze text v editačním poli.",
 	"twoColConflict-changes-col-title": "Konfliktní změny",
-	"twoColConflict-changes-col-desc": "Rozdíly mezi aktuálně zveřejněnou verzí od {{GENDER:$1|uživatele|uživatelky}} $1 a <span class=\"mw-twocolconflict-user\">vaším</span> textem",
+	"twoColConflict-changes-col-desc-1": "Rozdíly mezi",
+	"twoColConflict-changes-col-desc-2": "aktuálně zveřejněná verze",
+	"twoColConflict-changes-col-desc-3": "změněno $1 {{PLURAL:$1|krát}} ($2)",
+	"twoColConflict-changes-col-desc-4": "váš text.",
+	"twoColConflict-history-link": "Historie editací",
 	"twoColConflict-editor-col-title": "Editor s verzí ke zveřejnění",
+	"twoColConflict-editor-col-desc-1": "Obsah editačního okna je právě zveřejněná verze.",
+	"twoColConflict-editor-col-desc-2": "Přidejte vaše změny do textu v editačním okně a klikněte na „$1“.",
+	"twoColConflict-base-selection-desc-1": "1) Zvoltye zákaldní verzi v okně níže.",
 	"twoColConflict-diffchange-own-title": "ve vaší verzi",
 	"twoColConflict-diffchange-foreign-title": "ve verzi {{GENDER:$1|uživatele|uživatelky}} $1",
 	"twoColConflict-label-show": "zobrazit",
