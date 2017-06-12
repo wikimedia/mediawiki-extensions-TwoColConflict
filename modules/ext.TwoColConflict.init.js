@@ -171,10 +171,9 @@
 	function afterBaseVersionSelection() {
 		enableEditButtons();
 		$( '.mw-twocolconflict-form' ).removeClass( 'mw-twocolconflict-before-base-selection' );
-		// select 'hide' as the default option
-		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
 		redrawPage();
 		autoScroll.scrollToFirstOwnOrConflict();
+		$( '.mw-twocolconflict-changes-editor' ).focus();
 	}
 
 	function initAndShowBaseVersionSelector() {
@@ -198,6 +197,11 @@
 		} );
 
 		$( window ).on( 'resize', redrawPage );
+
+		// set label for the textbox to the editor header text
+		$( '#wpTextbox1' ).attr( {
+			'aria-labelledby': 'mw-twocolconflict-edit-header'
+		} );
 
 		initAndShowBaseVersionSelector();
 		initHelpDialog();

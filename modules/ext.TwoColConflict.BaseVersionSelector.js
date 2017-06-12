@@ -39,8 +39,8 @@
 				radioSelect, submit, fieldset, form;
 
 			radioSelect = new OO.ui.RadioSelectInputWidget( {
-				classes: [ 'mw-twocolconflict-base-dialog-radio' ],
 				name: 'mw-twocolconflict-base-version',
+				classes: [ 'mw-twocolconflict-base-dialog-radio' ],
 				options: [
 					{
 						data: 'yours',
@@ -67,7 +67,7 @@
 
 			fieldset = new OO.ui.FieldsetLayout();
 			fieldset.addItems( [
-				new OO.ui.FieldLayout( radioSelect ),
+				radioSelect,
 				submit
 			] );
 

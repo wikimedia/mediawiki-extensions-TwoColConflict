@@ -55,7 +55,10 @@
 			classes: [ 'mw-twocolconflict-expand-collapse-btn' ],
 			title: mw.msg( 'twoColConflict-label-show-unchanged' )
 		} );
-		expandBtn.$element.children().attr( 'aria-label', expandBtn.getTitle() );
+		expandBtn.$element.children().attr( {
+			'aria-label': expandBtn.getTitle(),
+			'aria-expanded': false
+		} );
 
 		collapseBtn = new OO.ui.ButtonInputWidget( {
 			indicator: 'up',
@@ -64,7 +67,10 @@
 			classes: [ 'mw-twocolconflict-expand-collapse-btn' ],
 			title: mw.msg( 'twoColConflict-label-hide-unchanged' )
 		} );
-		collapseBtn.$element.children().attr( 'aria-label', collapseBtn.getTitle() );
+		collapseBtn.$element.children().attr( {
+			'aria-label': collapseBtn.getTitle(),
+			'aria-expanded': true
+		} );
 
 		$( '.mw-twocolconflict-diffchange-same-collapsed' ).prepend( expandBtn.$element );
 		$( '.mw-twocolconflict-diffchange-same-full' ).prepend( collapseBtn.$element );

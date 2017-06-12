@@ -7,11 +7,11 @@ class EditConflictPage
   div(:twocolconflict_editor_desc, css: '.mw-twocolconflict-editor-col .mw-twocolconflict-col-desc')
   text_area(:twocolconflict_editor_text, css: '.mw-twocolconflict-editor-col textarea')
   div(:twocolconflict_changes_same, css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same')
-  div(
+  span(
       :twocolconflict_changes_same_full,
       css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same-full'
   )
-  div(
+  span(
       :twocolconflict_changes_same_collapsed,
       css: '#mw-twocolconflict-changes-editor .mw-twocolconflict-diffchange-same-collapsed'
   )
