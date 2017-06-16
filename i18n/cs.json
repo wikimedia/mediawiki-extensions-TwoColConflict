@@ -3,7 +3,8 @@
 		"authors": [
 			"Mormegil",
 			"Dvorapa",
-			"JAn Dudík"
+			"JAn Dudík",
+			"Matěj Suchánek"
 		]
 	},
 	"twoColConflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
@@ -12,17 +13,30 @@
 	"twoColConflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a uložil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude uložen pouze text v editačním poli.",
 	"twoColConflict-changes-col-title": "Konfliktní změny",
 	"twoColConflict-changes-col-desc-1": "Rozdíly mezi",
-	"twoColConflict-changes-col-desc-2": "aktuálně zveřejněná verze",
-	"twoColConflict-changes-col-desc-3": "změněno $1 {{PLURAL:$1|krát}} ($2)",
-	"twoColConflict-changes-col-desc-4": "váš text.",
-	"twoColConflict-history-link": "Historie editací",
+	"twoColConflict-changes-col-desc-2": "aktuálně zveřejněnou verzí",
+	"twoColConflict-changes-col-desc-3": "změněno {{PLURAL:$1|$1krát}} ($2)",
+	"twoColConflict-changes-col-desc-4": "vaším textem.",
+	"twoColConflict-history-link": "historie editací",
 	"twoColConflict-editor-col-title": "Editor s verzí ke zveřejnění",
-	"twoColConflict-editor-col-desc-1": "Obsah editačního okna je právě zveřejněná verze.",
-	"twoColConflict-editor-col-desc-2": "Přidejte vaše změny do textu v editačním okně a klikněte na „$1“.",
-	"twoColConflict-base-selection-desc-1": "1) Zvoltye zákaldní verzi v okně níže.",
+	"twoColConflict-editor-col-desc-1": "Obsah editoru je zpočátku právě zveřejněná verze.",
+	"twoColConflict-editor-col-desc-2": "Přidejte své změny do textu v editoru a klikněte na „$1“.",
+	"twoColConflict-base-selection-desc-1": "1) Zvolte výchozí verzi v okně níže.",
+	"twoColConflict-base-selection-desc-2": "2) Úpravou textu zkombinujte obě verze.",
+	"twoColConflict-base-selection-desc-3": "3) Klikněte na „$1“. Zveřejněn bude pouze obsah tohoto editoru.",
+	"twoColConflict-base-selection-dialog-text": "Jaký obsah sloužící jako základ pro kombinaci konfliktních verzí by měl mít editor na začátku?",
+	"twoColConflict-base-selection-own-label": "Můj text",
+	"twoColConflict-base-selection-foreign-label": "Právě zveřejněnou verzi",
+	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "ve vaší verzi",
 	"twoColConflict-diffchange-foreign-title": "ve verzi {{GENDER:$1|uživatele|uživatelky}} $1",
 	"twoColConflict-label-show": "zobrazit",
 	"twoColConflict-label-hide": "skrýt",
-	"twoColConflict-label-unchanged": "nezměněný text"
+	"twoColConflict-label-unchanged": "nezměněný text",
+	"twoColConflict-label-show-unchanged": "zobrazit nezměněný text",
+	"twoColConflict-label-hide-unchanged": "skrýt nezměněný text",
+	"twoColConflict-show-help-tooltip": "Zobrazit text nápovědy",
+	"twoColConflict-tutorial": "Návod pro řešení editačních konfliktů",
+	"twoColConflict-previous-dialog": "Předchozí",
+	"twoColConflict-next-dialog": "Další",
+	"twoColConflict-close-dialog": "Zavřít"
 }
