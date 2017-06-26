@@ -11,6 +11,11 @@ use MediaWiki\MediaWikiServices;
  */
 class TwoColConflictHooks {
 
+	/**
+	 * @param Article $article
+	 * @param User $user
+	 * @return bool
+	 */
 	public static function onCustomEditor( Article $article, User $user ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
@@ -56,6 +61,11 @@ class TwoColConflictHooks {
 		}
 	}
 
+	/**
+	 * @param array &$testModules
+	 * @param ResourceLoader $rl
+	 * @return bool
+	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
 			'scripts' => [

@@ -10,6 +10,9 @@ class TwoColConflictPage extends EditPage {
 	const WHITESPACES =
 		'\s\xA0\x{1680}\x{180E}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}';
 
+	/**
+	 * Increment stats to count conflicts handled
+	 */
 	protected function incrementConflictStats() {
 		parent::incrementConflictStats();
 		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
@@ -19,7 +22,7 @@ class TwoColConflictPage extends EditPage {
 	/**
 	 * Replace default header for explaining the conflict screen.
 	 *
-	 * @param OutputPage $out
+	 * @param OutputPage $out OutputPage used for page output.
 	 */
 	protected function addExplainConflictHeader( OutputPage $out ) {
 		// don't show conflict message when coming from VisualEditor
@@ -44,7 +47,8 @@ class TwoColConflictPage extends EditPage {
 	/**
 	 * Set the HTML to encapsulate the default edit form.
 	 *
-	 * @param callable|null $formCallback
+	 * @param callable|null $formCallback That takes an OutputPage parameter; will be called
+	 *     during form output near the top, for captchas and the like.
 	 */
 	public function showEditForm( $formCallback = null ) {
 		if ( $this->isConflict ) {
@@ -59,6 +63,12 @@ class TwoColConflictPage extends EditPage {
 		parent::showEditForm( $formCallback );
 	}
 
+	/**
+	 * Shows the diff part in the original conflict handling. Is not
+	 * used and overwritten.
+	 *
+	 * @return bool
+	 */
 	protected function showConflict() {
 		$this->incrementConflictStats();
 
@@ -211,7 +221,8 @@ class TwoColConflictPage extends EditPage {
 
 		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
 
-		$wikiText = '<div>' . $wikiText . '</div>'; // to set the cursor style see T156483
+		// div to set the cursor style see T156483
+		$wikiText = '<div>' . $wikiText . '</div>';
 		return Html::rawElement( 'div', $attribs, $wikiText );
 	}
 
@@ -363,7 +374,8 @@ class TwoColConflictPage extends EditPage {
 							'<div class="mw-twocolconflict-diffchange-title">' .
 							'<span mw-twocolconflict-diffchange-title-pseudo="' .
 							$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
-							'" unselectable="on">' . // used by IE9
+							// unselectable used by IE9
+							'" unselectable="on">' .
 							'</span>' .
 							'</div>' .
 							$changeSet['new'] .
@@ -382,7 +394,8 @@ class TwoColConflictPage extends EditPage {
 								'twoColConflict-diffchange-foreign-title',
 								$lastUser
 							)->escaped() .
-							'" unselectable="on">' . // used by IE9
+							// unselectable used by IE9
+							'" unselectable="on">' .
 							'</span>' .
 							'</div>' .
 							$changeSet['old'] .
