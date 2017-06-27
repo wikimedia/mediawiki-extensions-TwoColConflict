@@ -38,6 +38,23 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @param EditPage $editPage
+	 * @param Status $status
+	 */
+	public static function onAttemptSaveAfter( EditPage $editPage, Status $status ) {
+		global $wgRequest;
+
+		if ( !$wgRequest->getBool( 'mw-twocolconflict-submit' ) ) {
+			return;
+		}
+
+		if ( $status->value == EditPage::AS_SUCCESS_UPDATE ) {
+			$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+			$stats->increment( 'TwoColConflict.conflict.resolved' );
+		}
+	}
+
+	/**
 	 * @param User $user
 	 * @param array[] &$prefs
 	 */

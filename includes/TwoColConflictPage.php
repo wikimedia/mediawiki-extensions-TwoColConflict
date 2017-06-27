@@ -82,7 +82,8 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function addEditFormBeforeContent() {
-		$out = $this->buildConflictPageChangesCol();
+		$out = HTML::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
+		$out .= $this->buildConflictPageChangesCol();
 
 		$editorClass = '';
 		if ( $this->wikiEditorIsEnabled() ) {
