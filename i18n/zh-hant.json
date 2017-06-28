@@ -10,6 +10,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-beta-feature-message": "兩欄編輯衝突",
 	"twoColConflict-beta-feature-description": "使用更先進的兩欄介面顯示編輯衝突。",
+	"twoColConflict-base-selection-submit-label": "確定",
 	"twoColConflict-label-show": "顯示",
 	"twoColConflict-label-hide": "隱藏",
 	"twoColConflict-previous-dialog": "上一個",
