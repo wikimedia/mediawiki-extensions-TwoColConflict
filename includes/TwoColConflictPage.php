@@ -54,6 +54,7 @@ class TwoColConflictPage extends EditPage {
 		if ( $this->isConflict ) {
 			$this->addCSS();
 			$this->addJS();
+			$this->deactivateWikEd();
 			$this->editFormTextTop = '<div class="mw-twocolconflict-form mw-twocolconflict-before-base-selection">';
 			$this->editFormTextBottom = '</div>';
 			$this->editFormTextBeforeContent = $this->addEditFormBeforeContent();
@@ -580,6 +581,11 @@ class TwoColConflictPage extends EditPage {
 
 	private function wikiEditorIsEnabled() {
 		return class_exists( WikiEditorHooks::class ) && WikiEditorHooks::isEnabled( 'toolbar' );
+	}
+
+	private function deactivateWikEd() {
+		// T167503, T168503 might be removed when wikEd works with TwoColConflict
+		$this->context->getOutput()->addMeta( 'wikEdStartupFlag', '' );
 	}
 
 	private function addCSS() {
