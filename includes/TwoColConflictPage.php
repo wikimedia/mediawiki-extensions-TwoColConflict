@@ -91,7 +91,7 @@ class TwoColConflictPage extends EditPage {
 		}
 		$out .= '<div class="mw-twocolconflict-editor-col' . $editorClass . '">';
 		$out .= $this->buildConflictPageEditorCol();
-		$out .= $this->buildMyVersionTextHiddenField();
+		$out .= $this->buildRawTextsHiddenFields();
 
 		return $out;
 	}
@@ -315,9 +315,11 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return string
 	 */
-	private function buildMyVersionTextHiddenField() {
-		$editableMyVersionText = $this->toEditText( $this->textbox1 );
-		return HTML::input( 'mw-twocolconflict-mytext', $editableMyVersionText, 'hidden' );
+	private function buildRawTextsHiddenFields() {
+		$editableYourVersionText = $this->toEditText( $this->textbox1 );
+		$editableCurrentVersionText = $this->toEditText( $this->getCurrentContent() );
+		return HTML::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
+			HTML::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
 	}
 
 	/**
