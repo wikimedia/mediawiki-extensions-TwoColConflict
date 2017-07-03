@@ -164,8 +164,6 @@
 
 	function beforeBaseVersionSelection() {
 		disableEditButtons();
-		$( '.mw-twocolconflict-edit-desc' ).hide();
-		$( '.mw-twocolconflict-base-selection-desc' ).show();
 	}
 
 	function afterBaseVersionSelection() {
