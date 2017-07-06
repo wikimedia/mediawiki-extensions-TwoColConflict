@@ -7,7 +7,7 @@ Then(/^The base version selections screen should hide/) do
 end
 
 Then(/^The use currently published version option should be selected$/) do
-  expect(on(EditConflictPage).twocolconflict_base_option_element.value).to match('yours')
+  expect(on(EditConflictPage).twocolconflict_base_option_element.value).to match('current')
 end
 
 When(/^I click the ok button in the base selection dialog$/) do

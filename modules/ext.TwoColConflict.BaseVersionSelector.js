@@ -43,11 +43,11 @@
 				name: 'mw-twocolconflict-base-version',
 				options: [
 					{
-						data: 'yours',
+						data: 'current',
 						label: mw.msg( 'twoColConflict-base-selection-foreign-label' )
 					},
 					{
-						data: 'mine',
+						data: 'your',
 						label: mw.msg( 'twoColConflict-base-selection-own-label' )
 					}
 				]
@@ -81,8 +81,10 @@
 		},
 
 		setBaseVersion: function () {
-			if ( $( '.mw-twocolconflict-base-dialog-radio input:checked' ).val() === 'mine' ) {
-				$( '#wpTextbox1' ).val( $( 'input[name="mw-twocolconflict-mytext"]' ).val() );
+			if ( $( '.mw-twocolconflict-base-dialog-radio input:checked' ).val() === 'your' ) {
+				$( '#wpTextbox1' ).val( $( 'input[name="mw-twocolconflict-your-text"]' ).val() );
+			} else {
+				$( '#wpTextbox1' ).val( $( 'input[name="mw-twocolconflict-current-text"]' ).val() );
 			}
 		},
 
