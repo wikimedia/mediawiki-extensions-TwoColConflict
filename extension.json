@@ -31,6 +31,9 @@
 		"CustomEditor": [
 			"TwoColConflictHooks::onCustomEditor"
 		],
+		"EditPage::attemptSave:after": [
+			"TwoColConflictHooks::onAttemptSaveAfter"
+		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflictHooks::onResourceLoaderTestModules"
 		]
