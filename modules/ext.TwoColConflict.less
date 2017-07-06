@@ -49,7 +49,19 @@
 	margin: 0;
 }
 
+.mw-twocolconflict-edit-desc {
+	min-height: 90px;
+}
+
 .mw-twocolconflict-base-selection-desc {
+	display: none;
+}
+
+.client-js .mw-twocolconflict-base-selection-desc {
+	display: block;
+}
+
+.client-js .mw-twocolconflict-edit-desc {
 	display: none;
 }
 
@@ -250,7 +262,11 @@ del.mw-twocolconflict-diffchange {
 
 .mw-twocolconflict-filter-options-container {
 	margin-bottom: 10px;
-	display: none; /* will be hidden unless JS is available */
+	display: none;
+}
+
+.client-js .mw-twocolconflict-filter-options-container {
+	display: block;
 }
 
 .mw-twocolconflict-filter-options-row {
