@@ -281,23 +281,27 @@ TEXT
 								[
 									'action' => 'delete',
 									'old' =>
+// @codingStandardsIgnoreStart
 <<<TEXT
 Line number two. <del class="diffchange">This </del>line <del class="diffchange">is </del>quite long!
 <del class="diffchange">And that's line number three - even longer than the line before.</del>
 &#160;
 <del class="diffchange">Just another line with an empty line above</del>.
 TEXT
+// @codingStandardsIgnoreEnd
 									,
 									'oldline' => 2
 								],
 								[
 									'action' => 'add',
 									'new' =>
+// @codingStandardsIgnoreStart
 <<<TEXT
 <ins class="diffchange">Add something new.</ins>
 Line number two. <ins class="diffchange">Now </ins>line <ins class="diffchange">number three and </ins>quite long!
 <ins class="diffchange">Add more new stuff</ins>.
 TEXT
+// @codingStandardsIgnoreEnd
 									,
 									'newline' => 2
 								]

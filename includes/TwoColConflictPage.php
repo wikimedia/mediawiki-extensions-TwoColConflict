@@ -55,7 +55,8 @@ class TwoColConflictPage extends EditPage {
 			$this->addCSS();
 			$this->addJS();
 			$this->deactivateWikEd();
-			$this->editFormTextTop = '<div class="mw-twocolconflict-form mw-twocolconflict-before-base-selection">';
+			$this->editFormTextTop =
+				'<div class="mw-twocolconflict-form mw-twocolconflict-before-base-selection">';
 			$this->editFormTextBottom = '</div>';
 			$this->editFormTextBeforeContent = $this->addEditFormBeforeContent();
 			$this->editFormTextAfterContent = $this->addEditFormAfterContent();
@@ -122,10 +123,11 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<ul>';
 		$out .= '';
 		$out .= '<li><span class="mw-twocolconflict-lastuser">' .
-			$this->getContext()->msg( 'twoColConflict-changes-col-desc-2' )->text() . '</span><br/>' .
-			$this->buildEditSummary() . '</li>';
+			$this->getContext()->msg( 'twoColConflict-changes-col-desc-2' )->text() .
+			'</span><br/>' . $this->buildEditSummary() . '</li>';
 		$out .= '<li><span class="mw-twocolconflict-user">' .
-			$this->getContext()->msg( 'twoColConflict-changes-col-desc-4' )->text() . '</span></li>';
+			$this->getContext()->msg( 'twoColConflict-changes-col-desc-4' )->text() .
+			'</span></li>';
 		$out .= '</ul>';
 		$out .= '</div>';
 		$out .= '</div>';
@@ -298,14 +300,20 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
 		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
-		$out .= '<p>'
-			. $this->getContext()->msg( 'twoColConflict-editor-col-desc-2', $this->getSubmitButtonLabel() ) . '</p>';
+		$out .= '<p>' .
+			$this->getContext()->msg(
+				'twoColConflict-editor-col-desc-2', $this->getSubmitButtonLabel()
+			) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
-		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) . '</li>';
-		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) . '</li>';
+		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) .
+			'</li>';
+		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) .
+			'</li>';
 		$out .= '<li>'
-			. $this->getContext()->msg( 'twoColConflict-base-selection-desc-3', $this->getSubmitButtonLabel() ) . '</li>';
+			. $this->getContext()->msg(
+				'twoColConflict-base-selection-desc-3', $this->getSubmitButtonLabel()
+			) . '</li>';
 		$out .= '</ol></div></div>';
 
 		return $out;
@@ -527,7 +535,9 @@ class TwoColConflictPage extends EditPage {
 			'</span>' .
 			( count( $lines ) > 1 ? "\n" : $this->getContext()->msg( 'word-separator' ) ) .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
-			htmlspecialchars( $this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false ) ) .
+			htmlspecialchars(
+				$this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false )
+			) .
 			'</span>';
 	}
 
@@ -599,11 +609,12 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	private function addJS() {
-		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflict', 'true' );
-		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
-		$this->context->getOutput()->addJsConfigVars( 'wgTwoColConflictSubmitLabel', $this->getSubmitButtonLabel() );
+		$out = $this->context->getOutput();
+		$out->addJsConfigVars( 'wgTwoColConflict', 'true' );
+		$out->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
+		$out->addJsConfigVars( 'wgTwoColConflictSubmitLabel', $this->getSubmitButtonLabel() );
 
-		$this->context->getOutput()->addModules( [
+		$out->addModules( [
 			'ext.TwoColConflict.initJs',
 			'ext.TwoColConflict.filterOptionsJs'
 		] );
