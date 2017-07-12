@@ -75,6 +75,7 @@ class TwoColConflictPage extends EditPage {
 	 */
 	private function addEditFormBeforeContent() {
 		$out = HTML::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
+		$out = HTML::input( 'mw-twocolconflict-title', $this->getTitle()->getText(), 'hidden' );
 		$out .= $this->buildConflictPageChangesCol();
 
 		$editorClass = '';
@@ -255,7 +256,7 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return string
 	 */
-	private function buildEditSummary() {
+	protected function buildEditSummary() {
 		$currentRev = $this->getArticle()->getPage()->getRevision();
 		$baseRevId = $this->context->getRequest()->getIntOrNull( 'editRevId' );
 		$nEdits = $this->getTitle()->countRevisionsBetween( $baseRevId, $currentRev, 100 );
@@ -327,9 +328,10 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return string
 	 */
-	private function buildRawTextsHiddenFields() {
+	protected function buildRawTextsHiddenFields() {
 		$editableYourVersionText = $this->toEditText( $this->textbox1 );
 		$editableCurrentVersionText = $this->toEditText( $this->getCurrentContent() );
+
 		return HTML::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
 			HTML::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
 	}
@@ -341,7 +343,7 @@ class TwoColConflictPage extends EditPage {
 	 * @param string[] $toTextLines
 	 * @return array[]
 	 */
-	private function getLineBasedUnifiedDiff( $fromTextLines, $toTextLines ) {
+	protected function getLineBasedUnifiedDiff( $fromTextLines, $toTextLines ) {
 		$formatter = new LineBasedUnifiedDiffFormatter();
 		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
 		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
@@ -356,7 +358,7 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return array[]
 	 */
-	private function getUnifiedDiff() {
+	protected function getUnifiedDiff() {
 		$currentText = $this->toEditText( $this->getCurrentContent() );
 		$yourText = $this->textbox1;
 
@@ -367,13 +369,20 @@ class TwoColConflictPage extends EditPage {
 	}
 
 	/**
+	 * @return string
+	 */
+	protected function getLastUserText() {
+		return $this->getArticle()->getPage()->getUserText();
+	}
+
+	/**
 	 * Build HTML for the content of the unified diff box.
 	 *
 	 * @param array[] $unifiedDiff
 	 * @return string
 	 */
 	private function getMarkedUpDiffText( array $unifiedDiff ) {
-		$lastUser = $this->getArticle()->getPage()->getUserText();
+		$lastUser = $this->getLastUserText();
 
 		$output = '';
 		foreach ( $unifiedDiff as $key => $currentLine ) {

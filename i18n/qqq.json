@@ -47,5 +47,16 @@
 	"twoColConflict-tutorial": "Text shown above the TwoColConflict tutorial. This should contain as few words as possible to avoid being truncated.",
 	"twoColConflict-previous-dialog": "Label of the button to go to the previous tutorial slide.\n{{Identical|Previous}}",
 	"twoColConflict-next-dialog": "Label of the button to go to the next tutorial slide.\n{{Identical|Next}}",
-	"twoColConflict-close-dialog": "Label of the button to close the RevisionSlider tutorial.\n{{Identical|Close}}"
+	"twoColConflict-close-dialog": "Label of the button to close the RevisionSlider tutorial.\n{{Identical|Close}}",
+	"twoColConflict-test-title-label": "Label for the conflict test page input box to load an article.",
+	"twoColConflict-test-title-submit": "Submit button on the conflict test page to load an article.",
+	"twoColConflict-test-title-not-existing": "Error message shown on the conflict test page when the submitted title does not exist.",
+	"twoColConflict-test-text-submit": "Submit button on the conflict test page to submit changes creating a test conflict.",
+	"twoColConflict-test-initial-hint": "First hint shown on the conflict test page above the input field to load an article to experiment with.",
+	"twoColConflict-test-edit-hint": "Second hint shown on the conflict test page above the editor to make changes.",
+	"twoColConflict-test-conflict-hint": "Third hint shown on the conflict test page above the simulated edit conflict.",
+	"twoColConflict-test-preview-submit": "Label for the submit button to show the conflict result preview.",
+	"twoColConflict-test-preview-hint": "Last hint shown on the conflict test page above the preview of the resolved test conflict.",
+	"twoColConflict-test-username": "Username for the conflict test page's fictitious conflicting edit.",
+	"twoColConflict-test-summary-text": "Edit summary for the conflict test page's fictitious conflicting edit."
 }

@@ -35,6 +35,10 @@ class TwoColConflictHooks {
 		$key = array_search( 'TwoColConflictHooks::onAlternateEdit', $wgHooks['AlternateEdit'] );
 		unset( $wgHooks[ 'AlternateEdit' ][ $key ] );
 
+		if ( get_class( $editPage ) === TwoColConflictTestPage::class ) {
+			return true;
+		}
+
 		$twoColConflictPage = new TwoColConflictPage( $editPage->getArticle() );
 		$twoColConflictPage->edit();
 

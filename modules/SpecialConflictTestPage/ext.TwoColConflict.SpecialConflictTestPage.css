@@ -1,0 +1,18 @@
+.mw-twocolconflict-test-title-submit,
+.mw-twocolconflict-test-text-submit {
+	margin-top: 1em;
+}
+
+.mw-twocolconflict-test-hintbox {
+	font-size: 1em;
+	background: #eaf3ff;
+	border: 1px solid #2a4b8d;
+	color: #222;
+	padding: 0.5em;
+	margin-bottom: 2em;
+}
+
+.mw-twocolconflict-test-conflict-hint {
+	font-size: 1.25em;
+	color: #2a4b8d;
+}

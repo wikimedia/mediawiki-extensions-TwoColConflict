@@ -22,7 +22,13 @@
 	"AutoloadClasses": {
 		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
 		"TwoColConflictPage": "includes/TwoColConflictPage.php",
-		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php"
+		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
+		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
+		"TwoColConflictTestPage": "includes/SpecialConflictTestPage/TwoColConflictTestPage.php",
+		"HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
+		"HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",
+		"HtmlWikiTextEditor": "includes/SpecialConflictTestPage/HtmlWikiTextEditor.php",
+		"HtmlPreview": "includes/SpecialConflictTestPage/HtmlPreview.php"
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
@@ -42,6 +48,9 @@
 		"TwoColConflict": [
 			"i18n"
 		]
+	},
+	"ExtensionMessagesFiles": {
+		"TwoColConflictAlias": "TwoColConflict.alias.php"
 	},
 	"ResourceModules": {
 		"ext.TwoColConflict.editor": {
@@ -172,10 +181,18 @@
 					}
 				}
 			}
+		},
+		"ext.TwoColConflict.SpecialConflictTestPageCss": {
+			"styles": [
+				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "TwoColConflict"
+	},
+	"SpecialPages": {
+		"SimulateTwoColEditConflict": "SpecialConflictTestPage"
 	}
 }
