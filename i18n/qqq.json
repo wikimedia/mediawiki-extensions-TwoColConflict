@@ -5,7 +5,8 @@
 			"Robby",
 			"Mormegil",
 			"Liuxinyu970226",
-			"Amire80"
+			"Amire80",
+			"Mainframe98"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -40,7 +41,7 @@
 	"twoColConflict-show-help-tooltip": "Text shown in a tooltip for the \"Show help\" button.",
 	"twoColConflict-help-dialog-slide1": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a person who edits pages.}}\nText shown on the first slide of the help dialog.",
 	"twoColConflict-help-dialog-slide2": "Text shown on the second slide of the help dialog.",
-	"twoColConflict-help-dialog-slide3": "Text shown on the third slide of the help dialog.\n\n See also:\n{{msg-mw|twoColConflict-label-show}}.",
+	"twoColConflict-help-dialog-slide3": "Text shown on the third slide of the help dialog.\n\nSee also:\n{{msg-mw|twoColConflict-label-show}}.",
 	"twoColConflict-help-dialog-slide4": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a random user who edited some pages.}}\nText shown on the fourth slide of the help dialog.",
 	"twoColConflict-help-dialog-slide5": "{{doc-important|The \"editor\" here refers to the editor softwares/extensions/features such as Wikitext editor, VisualEditor, ... etc. Not a random user who edited some pages.}}\nText shown on the fifth slide of the help dialog.\n\nParameters:\n$1 - Label of the save button. Either {{msg-mw|savechanges}} or {{msg-mw|publishchanges}}.",
 	"twoColConflict-tutorial": "Text shown above the TwoColConflict tutorial. This should contain as few words as possible to avoid being truncated.",
