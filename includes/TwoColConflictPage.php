@@ -116,8 +116,8 @@ class TwoColConflictPage extends EditPage {
 	private function buildConflictPageChangesCol() {
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
-		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() .
-			'</h3>';
+		$out .= '<h3 id="mw-twocolconflict-changes-header">' .
+			$this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= $this->getContext()->msg( 'twoColConflict-changes-col-desc-1' )->text();
 		$out .= '<ul>';
@@ -152,6 +152,8 @@ class TwoColConflictPage extends EditPage {
 		$this->context->getOutput()->enableOOUI();
 
 		$showHideOptions = new OOUI\RadioSelectInputWidget( [
+			'name' => 'mw-twocolconflict-same',
+			'classes' => [ 'mw-twocolconflict-filter-options-btn' ],
 			'options' => [
 				[
 					'data' => 'show',
@@ -162,9 +164,11 @@ class TwoColConflictPage extends EditPage {
 					'label' => $this->getContext()->msg( 'twoColConflict-label-hide' )->text()
 				],
 			],
-			'name' => 'mw-twocolconflict-same',
-			'title' => 'mw-twocolconflict-same',
-			'classes' => [ 'mw-twocolconflict-filter-options-btn' ]
+		] );
+
+		$fieldset = new OOUI\FieldsetLayout();
+		$fieldset->addItems( [
+			$showHideOptions
 		] );
 
 		$out = '<div class="mw-twocolconflict-filter-options-container">';
@@ -173,7 +177,7 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<div class="mw-twocolconflict-filter-titles">' .
 			$this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
 			'</div>';
-		$out .= $showHideOptions;
+		$out .= $fieldset;
 		$out .= $this->buildHelpButton();
 		$out .= '</div>';
 
@@ -198,6 +202,10 @@ class TwoColConflictPage extends EditPage {
 			'title' => $this->getContext()->msg( 'twoColConflict-show-help-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-show-help' ]
 		] );
+		$helpButton->setAttributes( [
+			'aria-haspopup' => 'true',
+			'aria-label' => $helpButton->getTitle()
+		] );
 
 		$out = '<div class="mw-twocolconflict-show-help-container">';
 		$out .= $helpButton;
@@ -216,8 +224,11 @@ class TwoColConflictPage extends EditPage {
 		$name = 'mw-twocolconflict-changes-editor';
 
 		$customAttribs = [
-			'tabindex' => 0,
-			'class' => $name
+			'tabindex' => 1,
+			'accesskey' => '.',
+			'class' => $name,
+			'aria-labelledby' => 'mw-twocolconflict-changes-header',
+			'role' => 'grid',
 		];
 		if ( $this->wikiEditorIsEnabled() ) {
 			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
@@ -296,7 +307,8 @@ class TwoColConflictPage extends EditPage {
 	 */
 	private function buildConflictPageEditorCol() {
 		$out = '<div class="mw-twocolconflict-col-header">';
-		$out .= '<h3>' . $this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+		$out .= '<h3 id="mw-twocolconflict-edit-header">' .
+			$this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
 		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
@@ -381,11 +393,12 @@ class TwoColConflictPage extends EditPage {
 						if ( $this->hasConflictInLine( $currentLine ) ) {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
+						$label = $this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped();
 
-						$output .= '<div class="' . $class . '">' .
+						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
 							'<span mw-twocolconflict-diffchange-title-pseudo="' .
-							$this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped() .
+							$label .
 							// unselectable used by IE9
 							'" unselectable="on">' .
 							'</span>' .
@@ -398,14 +411,15 @@ class TwoColConflictPage extends EditPage {
 						if ( $this->hasConflictInLine( $currentLine ) ) {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
+						$label = $this->context->msg(
+							'twoColConflict-diffchange-foreign-title',
+							$lastUser
+						)->escaped();
 
-						$output .= '<div class="' . $class . '">' .
+						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
 							'<span mw-twocolconflict-diffchange-title-pseudo="' .
-							$this->context->msg(
-								'twoColConflict-diffchange-foreign-title',
-								$lastUser
-							)->escaped() .
+							$label .
 							// unselectable used by IE9
 							'" unselectable="on">' .
 							'</span>' .
@@ -418,7 +432,9 @@ class TwoColConflictPage extends EditPage {
 						}
 						break;
 					case 'copy':
-						$output .= '<div class="mw-twocolconflict-diffchange-same">' .
+						$class = 'mw-twocolconflict-diffchange-same';
+						$label = $this->context->msg( 'twoColConflict-diffchange-unchanged-title' )->escaped();
+						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							$this->addUnchangedText( $changeSet['copy'] ) .
 							'</div>' . "\n";
 						break;
@@ -509,8 +525,8 @@ class TwoColConflictPage extends EditPage {
 		}
 
 		return
-			'<div class="mw-twocolconflict-diffchange-same-full">' . $text . '</div>' .
-			'<div class="mw-twocolconflict-diffchange-same-collapsed">' . $collapsedText . '</div>';
+			'<span class="mw-twocolconflict-diffchange-same-full">' . $text . '</span>' .
+			'<span class="mw-twocolconflict-diffchange-same-collapsed">' . $collapsedText . '</span>';
 	}
 
 	/**

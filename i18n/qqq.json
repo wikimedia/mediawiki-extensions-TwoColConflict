@@ -31,6 +31,7 @@
 	"twoColConflict-base-selection-submit-label": "The label on the submit button in the base version selection dialog.\n{{Identical|OK}}",
 	"twoColConflict-diffchange-own-title": "The title text in the unified diff view for changes by the user.",
 	"twoColConflict-diffchange-foreign-title": "The title text in the unified diff view for conflicting changes.\n\nParameters:\n$1 - Username of the user that edited the current revision of the page.",
+	"twoColConflict-diffchange-unchanged-title": "The label text in the unified diff view for unchanged text.",
 	"twoColConflict-label-show": "Label for the option showing elements in the diff view.\n{{Identical|Show}}",
 	"twoColConflict-label-hide": "Label for the option hiding elements in the diff view.\n{{Identical|Hide}}",
 	"twoColConflict-label-unchanged": "Label for the options showing and hiding unchanged text in the diff view.",
