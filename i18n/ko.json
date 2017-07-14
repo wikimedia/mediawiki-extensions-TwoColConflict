@@ -25,6 +25,7 @@
 	"twoColConflict-label-show-unchanged": "변경되지 않은 텍스트 보이기",
 	"twoColConflict-label-hide-unchanged": "변경되지 않은 텍스트 숨기기",
 	"twoColConflict-show-help-tooltip": "도움말 텍스트 보기",
+	"twoColConflict-help-dialog-slide1": "이 문서는 편집 충돌 해결에 도움을 줍니다. 2개의 컬럼이 있습니다: 첫 번째 컬럼은 충돌이 되는 변경사항을 보여주며 두 번째 컬럼은 내용이 게시될 텍스트 편집기입니다.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 여기에 의견을 주시면 대단히 감사하겠습니다].",
 	"twoColConflict-tutorial": "편집 충돌 해결 강좌",
 	"twoColConflict-previous-dialog": "이전",
 	"twoColConflict-next-dialog": "다음",
