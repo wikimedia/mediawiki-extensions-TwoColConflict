@@ -18,6 +18,7 @@
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "an Ärer Versioun",
 	"twoColConflict-diffchange-foreign-title": "am $1 senger Versioun",
+	"twoColConflict-diffchange-unchanged-title": "onverännerten Text",
 	"twoColConflict-label-show": "weisen",
 	"twoColConflict-label-hide": "verstoppen",
 	"twoColConflict-label-unchanged": "onverännerten Text",

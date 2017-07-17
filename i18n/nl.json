@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Festina90"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -26,13 +27,14 @@
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "in uw versie",
 	"twoColConflict-diffchange-foreign-title": "in $1's versie",
+	"twoColConflict-diffchange-unchanged-title": "Onveranderde tekst",
 	"twoColConflict-label-show": "weergeven",
 	"twoColConflict-label-hide": "verbergen",
 	"twoColConflict-label-unchanged": "ongewijzigd tekst",
 	"twoColConflict-label-show-unchanged": "ongewijzigde tekst tonen",
 	"twoColConflict-label-hide-unchanged": "ongewijzigde tekst verbergen",
 	"twoColConflict-show-help-tooltip": "Hulptekst weergeven",
-	"twoColConflict-help-dialog-slide1": "Deze pagina helpt u bij het oplossen van een bewerkingsconflict. Er zijn twee kolommen: De eerste toont de tegenstrijdige wijzigingen en de tweede kolom is de tekstbewerker, met de inhoud die wordt gepubliceerd.\n\nTerugkoppeling wordt zeer gewaardeerd, deze kunt u [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View hier] kwijt.",
+	"twoColConflict-help-dialog-slide1": "Deze pagina helpt u bij het oplossen van een bewerkingsconflict. Er zijn twee kolommen: De eerste toont de tegenstrijdige wijzigingen en de tweede kolom is de tekstbewerker, met de inhoud die wordt gepubliceerd.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Feedback wordt hier enorm gewaardeerd].",
 	"twoColConflict-help-dialog-slide2": "De eerste kolom toont de wijzigingen in uw versie en de wijzigingen in de huidige opgeslagen versie. De verschillen tussen beide versies zijn gemarkeerd.",
 	"twoColConflict-help-dialog-slide5": "Kopieer en plak de gewenste delen van de andere versie in de tekst in de bewerker. Alleen wat zich in de bewerker bevindt wordt gepubliceerd, wanneer u op de \"$1\" knop klikt.",
 	"twoColConflict-tutorial": "Handleiding voor het oplossen van bewerkingsconflicten",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Mikel Ibaiba"
 		]
 	},
 	"twoColConflict-changes-col-desc-3": "$1 {{PLURAL:$1|aldiz}} aldatua ($2)",
@@ -9,6 +10,7 @@
 	"twoColConflict-base-selection-own-label": "Nire testua",
 	"twoColConflict-diffchange-own-title": "zure bertsioan",
 	"twoColConflict-diffchange-foreign-title": "$1(r)en bertsioan",
+	"twoColConflict-diffchange-unchanged-title": "Aldatu gabeko testua",
 	"twoColConflict-label-show": "erakutsi",
 	"twoColConflict-label-hide": "ezkutatu",
 	"twoColConflict-label-unchanged": "aldatu gabeko testua",
