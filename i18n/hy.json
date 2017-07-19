@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Aram1985"
 		]
 	},
 	"twoColConflict-base-selection-own-label": "Իմ տեքստը",
 	"twoColConflict-base-selection-submit-label": "Լավ",
+	"twoColConflict-diffchange-unchanged-title": "անփոփոխ տեքստ",
 	"twoColConflict-label-show": "ցուցադրել",
 	"twoColConflict-label-hide": "թաքցնել",
 	"twoColConflict-label-unchanged": "անփոփոխ տեքստը"
