@@ -5,6 +5,7 @@
 		]
 	},
 	"twoColConflict": "TwoColConflict",
+	"twoColConflict-beta-feature-message": "Editor de conflitos em duas colunas",
 	"twoColConflict-changes-col-title": "Alterações conflitantes",
 	"twoColConflict-changes-col-desc-1": "Diferenças entre",
 	"twoColConflict-changes-col-desc-4": "seu texto.",

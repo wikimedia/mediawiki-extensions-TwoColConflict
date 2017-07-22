@@ -6,7 +6,7 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Uporedo prikazuje ekran za rješavanje sukoba izmjena",
-	"twoColConflict-beta-feature-message": "Sukob izmjena u 2 kolone",
+	"twoColConflict-beta-feature-message": "Sukob izmjena u dvije kolone",
 	"twoColConflict-beta-feature-description": "Prikazuje sukob izmjena u naprednijem režimu s dvije kolone.",
 	"twoColConflict-explainconflict": "<strong>Upozorenje:</strong> Drugi korisnik upravo je uredio i sačuvao ovu stranicu. Došlo je do sukoba između Vaše i trenutne verzije. Morat ćete spojiti svoje izmjene u trenutnu verziju teksta. Kad kliknete na \"$1\" jedino će se sačuvati tekst koji se nalazi u uređivaču.",
 	"twoColConflict-changes-col-title": "Sukobljene izmjene",
