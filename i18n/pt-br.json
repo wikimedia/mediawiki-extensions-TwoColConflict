@@ -6,6 +6,7 @@
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-beta-feature-message": "Editor de conflitos em duas colunas",
+	"twoColConflict-explainconflict": "<strong>Aviso:</strong> Outro usuário acabou de editar e salvar esta página. Existe um conflito entre sua versão e a versão atual. Você terá que mesclar suas mudanças na versão de texto atual. Somente o texto no campo do editor será salvo quando você clicar em \"$1\".",
 	"twoColConflict-changes-col-title": "Alterações conflitantes",
 	"twoColConflict-changes-col-desc-1": "Diferenças entre",
 	"twoColConflict-changes-col-desc-4": "seu texto.",
@@ -21,6 +22,7 @@
 	"twoColConflict-label-show-unchanged": "mostrar texto sem alterações",
 	"twoColConflict-label-hide-unchanged": "ocultar texto sem alterações",
 	"twoColConflict-show-help-tooltip": "Mostrar texto de ajuda",
+	"twoColConflict-tutorial": "Editar o tutorial de resolução de conflitos",
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Próximo",
 	"twoColConflict-close-dialog": "Fechar"

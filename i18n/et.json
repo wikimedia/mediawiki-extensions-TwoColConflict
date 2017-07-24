@@ -30,7 +30,7 @@
 	"twoColConflict-label-hide": "peida",
 	"twoColConflict-label-unchanged": "muutmata tekst",
 	"twoColConflict-show-help-tooltip": "Näita abiteksti",
-	"twoColConflict-help-dialog-slide1": "See lehekülg on abiks redigeerimiskonflikti lahendamisel. Siin on kaks veergu: esimeses on konfliktsed muudatused ja teises on tekstitoimeti, mille sisu avaldatakse.\n\nOleme tänulikud, kui annad [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View siin] tagasisidet.",
+	"twoColConflict-help-dialog-slide1": "See lehekülg on abiks redigeerimiskonflikti lahendamisel. Siin on kaks veergu: esimeses on konfliktsed muudatused ja teises on tekstitoimeti, mille sisu avaldatakse.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Oleme tänulikud, kui annad siin tagasisidet].",
 	"twoColConflict-help-dialog-slide2": "Esimene veerg näitab muudatusi sinu versioonis ja muudatusi praeguses salvestatud versioonis. Nende versioonide vahelised erinevused on esile tõstetud.",
 	"twoColConflict-help-dialog-slide3": "Esimese veeru ülaosas saad klõpsata valikul \"{{int:twoColConflict-label-show}}\", et vaadata muutmata teksti. See võib olla abiks muudatuste kontekstist arusaamisel. Vaikimisi on muutmata tekst tuhm ja peidetud.",
 	"twoColConflict-help-dialog-slide4": "Teises veerus on toimeti. Lehekülje avamisel on toimeti ülaosas valikukast. See võimaldab otsustada, milline versioon peaks toimetis olema. See on harilikult versioon, milles on tehtud rohkem muudatusi.",
