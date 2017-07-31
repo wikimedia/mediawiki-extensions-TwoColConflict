@@ -27,6 +27,7 @@
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "i din version",
 	"twoColConflict-diffchange-foreign-title": "i $1s version",
+	"twoColConflict-diffchange-unchanged-title": "oförändrad text",
 	"twoColConflict-label-show": "visa",
 	"twoColConflict-label-hide": "dölj",
 	"twoColConflict-label-unchanged": "oförändrad text",
