@@ -19,6 +19,7 @@
 	"twoColConflict-editor-col-title": "محرر النسخة التي ستنشر",
 	"twoColConflict-editor-col-desc-1": "كبداية، محتوى المحرر هو النسخة المنشورة حاليا.",
 	"twoColConflict-editor-col-desc-2": "أضف تغييراتك للنص في المحرر واضغط على \"نشر التعديلات\".",
+	"twoColConflict-base-selection-dialog-text": "ما النص الذي تريد أن يظهر في المحرر لدمج التعديلات بناء عليه؟",
 	"twoColConflict-base-selection-own-label": "نصي",
 	"twoColConflict-base-selection-submit-label": "موافق",
 	"twoColConflict-diffchange-own-title": "في نسختك",
