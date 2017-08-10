@@ -250,7 +250,7 @@ class TwoColConflictPage extends EditPage {
 	private function buildHiddenChangesTextbox( $wikiText ) {
 		$name = 'mw-twocolconflict-hidden-editor';
 
-		$customAttribs['class'] = $name;
+		$customAttribs = [ 'class' => $name ];
 		if ( $this->wikiEditorIsEnabled() ) {
 			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
 		}
