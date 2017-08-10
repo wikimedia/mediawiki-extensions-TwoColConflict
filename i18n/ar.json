@@ -3,7 +3,8 @@
 		"authors": [
 			"Meno25",
 			"زكريا",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
 	"twoColConflict": "دمج التعديلات",
@@ -18,7 +19,7 @@
 	"twoColConflict-history-link": "تاريخ المراجعة",
 	"twoColConflict-editor-col-title": "محرر النسخة التي ستنشر",
 	"twoColConflict-editor-col-desc-1": "كبداية، محتوى المحرر هو النسخة المنشورة حاليا.",
-	"twoColConflict-editor-col-desc-2": "أضف تغييراتك للنص في المحرر واضغط على \"نشر التعديلات\".",
+	"twoColConflict-editor-col-desc-2": "أضف تغييراتك للنص في المحرر واضغط على \"$1\".",
 	"twoColConflict-base-selection-dialog-text": "ما النص الذي تريد أن يظهر في المحرر لدمج التعديلات بناء عليه؟",
 	"twoColConflict-base-selection-own-label": "نصي",
 	"twoColConflict-base-selection-submit-label": "موافق",
@@ -29,9 +30,9 @@
 	"twoColConflict-label-unchanged": "نص لم يتم تغييره",
 	"twoColConflict-show-help-tooltip": "أظهر نص المساعدة",
 	"twoColConflict-help-dialog-slide1": "بعد تفعيله، متى ما حدث تضارب في التحرير، فسيظهر العارض ثنائي الأعمدة لحل التضاربات. أنت سترى صندوقا بالتغييرات المتعارضة في عامود ومحرر بالنسخة المحفوظة حاليا من النص في عمود آخر. الآراء مقدرة جدا [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_Viewهنا].",
-	"twoColConflict-help-dialog-slide2": "بداخل الصندوق المحتوي على التغييرات المتعارضة، فسيتم عرض النص المتعارض ونصك معا، وسيتم التعليم على التغييرات ما بين الاثنين.",
-	"twoColConflict-help-dialog-slide3": "هناك أزرار فوق الصندوق تسمح لك بإخفاء أي أجزاء لم يتم تغييرها من النص لتسهيل التركيز على المساحات المتعارضة. أيضا لديك الإمكانية لعرض نسختك من النص فقط.",
-	"twoColConflict-help-dialog-slide4": "أنت يمكنك نسخ الأجزاء المرغوب فيها من النص للمحرر لضبط النسخة التي ينبغي حفظها. متى ما ضغطت على زر \"Save changes\"، فالنسخة من المحرر سيتم حفظها.",
+	"twoColConflict-help-dialog-slide2": "يبين العمود الأول التغيير في نسختك والتغيير في النسخة المحفوظة حاليًا، ويسلط الضوء على الاختلافات بين كلا النسختين.",
+	"twoColConflict-help-dialog-slide3": "في الجزء العلوي من العمود الأول يمكنك النقر على \"{{int:twoColConflict-label-show}}\" لرؤية النص دون تغيير، وهذا قد يساعد على فهم سياق التغيرات. افتراضيًا، يكون النص غير المتغير رماديًا ومطويًا.",
+	"twoColConflict-help-dialog-slide4": "العمود الثاني هو المحرر. عندما تفتح الصفحة، يوجد مربع اختيار على رأس المحرر، وهو يتيح لك أن تقرر النسخة التي ينبغي أن تكون في المحرر، هذه هي في كثير من الأحيان النسخة حيث تم إجراء تغييرات أكثر.",
 	"twoColConflict-tutorial": "معلم حل تضاربات التحرير",
 	"twoColConflict-previous-dialog": "السابق",
 	"twoColConflict-next-dialog": "التالي",
