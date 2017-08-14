@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leeheonjin"
+			"Leeheonjin",
+			"Blakegripling ph"
 		]
 	},
 	"twoColConflict-changes-col-desc-1": "Mga kaibahan sa pagitan ng",
+	"twoColConflict-changes-col-desc-2": "kasalukuyang inilimbag na bersyon",
+	"twoColConflict-base-selection-foreign-label": "kasalukuyang inilimbag na bersyon",
 	"twoColConflict-base-selection-submit-label": "Okay"
 }
