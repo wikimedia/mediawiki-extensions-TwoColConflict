@@ -71,7 +71,7 @@ class TwoColConflictHooks {
 					'rtl' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",
 				],
 				'info-link'
-					=> 'https://www.mediawiki.org/wiki/Help:Two_Column_Edit_Conflict_View',
+					=> 'https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Two_Column_Edit_Conflict_View',
 				'discussion-link'
 					=> 'https://www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View',
 			];
