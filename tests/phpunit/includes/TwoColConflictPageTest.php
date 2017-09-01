@@ -246,8 +246,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 			] ) );
 
 		$twoColConflictPageMock = $this->getMockPage();
-		$twoColConflictPageMock->method( 'getContext' )
-			->will( $this->returnValue( $mockContext ) );
+		$twoColConflictPageMock->context = $mockContext;
 
 		return $twoColConflictPageMock;
 	}
