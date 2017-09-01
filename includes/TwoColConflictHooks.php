@@ -42,9 +42,7 @@ class TwoColConflictHooks {
 	 * @param Status $status
 	 */
 	public static function onAttemptSaveAfter( EditPage $editPage, Status $status ) {
-		global $wgRequest;
-
-		if ( !$wgRequest->getBool( 'mw-twocolconflict-submit' ) ) {
+		if ( !$editPage->getContext()->getRequest()->getBool( 'mw-twocolconflict-submit' ) ) {
 			return;
 		}
 
