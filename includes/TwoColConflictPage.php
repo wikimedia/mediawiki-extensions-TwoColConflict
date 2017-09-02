@@ -26,7 +26,7 @@ class TwoColConflictPage extends EditPage {
 	 */
 	protected function addExplainConflictHeader( OutputPage $out ) {
 		// don't show conflict message when coming from VisualEditor
-		if ( $this->getContext()->getRequest()->getVal( 'veswitched' ) !== "1" ) {
+		if ( $this->context->getRequest()->getVal( 'veswitched' ) !== "1" ) {
 			$out->wrapWikiMsg(
 				"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
 				[ 'twoColConflict-explainconflict', $this->getSubmitButtonLabel() ]
@@ -117,16 +117,16 @@ class TwoColConflictPage extends EditPage {
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-changes-header">' .
-			$this->getContext()->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
+			$this->context->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
-		$out .= $this->getContext()->msg( 'twoColConflict-changes-col-desc-1' )->text();
+		$out .= $this->context->msg( 'twoColConflict-changes-col-desc-1' )->text();
 		$out .= '<ul>';
 		$out .= '';
 		$out .= '<li><span class="mw-twocolconflict-lastuser">' .
-			$this->getContext()->msg( 'twoColConflict-changes-col-desc-2' )->text() .
+			$this->context->msg( 'twoColConflict-changes-col-desc-2' )->text() .
 			'</span><br/>' . $this->buildEditSummary() . '</li>';
 		$out .= '<li><span class="mw-twocolconflict-user">' .
-			$this->getContext()->msg( 'twoColConflict-changes-col-desc-4' )->text() .
+			$this->context->msg( 'twoColConflict-changes-col-desc-4' )->text() .
 			'</span></li>';
 		$out .= '</ul>';
 		$out .= '</div>';
@@ -157,11 +157,11 @@ class TwoColConflictPage extends EditPage {
 			'options' => [
 				[
 					'data' => 'show',
-					'label' => $this->getContext()->msg( 'twoColConflict-label-show' )->text()
+					'label' => $this->context->msg( 'twoColConflict-label-show' )->text()
 				],
 				[
 					'data' => 'hide',
-					'label' => $this->getContext()->msg( 'twoColConflict-label-hide' )->text()
+					'label' => $this->context->msg( 'twoColConflict-label-hide' )->text()
 				],
 			],
 		] );
@@ -175,7 +175,7 @@ class TwoColConflictPage extends EditPage {
 
 		$out .= '<div class="mw-twocolconflict-filter-options-row">';
 		$out .= '<div class="mw-twocolconflict-filter-titles">' .
-			$this->getContext()->msg( 'twoColConflict-label-unchanged' )->text() .
+			$this->context->msg( 'twoColConflict-label-unchanged' )->text() .
 			'</div>';
 		$out .= $fieldset;
 		$out .= $this->buildHelpButton();
@@ -199,7 +199,7 @@ class TwoColConflictPage extends EditPage {
 			'icon' => 'help',
 			'framed' => false,
 			'name' => 'mw-twocolconflict-show-help',
-			'title' => $this->getContext()->msg( 'twoColConflict-show-help-tooltip' )->text(),
+			'title' => $this->context->msg( 'twoColConflict-show-help-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-show-help' ]
 		] );
 		$helpButton->setAttributes( [
@@ -267,13 +267,13 @@ class TwoColConflictPage extends EditPage {
 	 */
 	private function buildEditSummary() {
 		$currentRev = $this->getArticle()->getPage()->getRevision();
-		$baseRevId = $this->getContext()->getRequest()->getIntOrNull( 'editRevId' );
+		$baseRevId = $this->context->getRequest()->getIntOrNull( 'editRevId' );
 		$nEdits = $this->getTitle()->countRevisionsBetween( $baseRevId, $currentRev, 100 );
 
 		if ( $nEdits === 0 ) {
 			$out = '<div class="mw-twocolconflict-edit-summary">';
 			$out .= Linker::userLink( $currentRev->getUser(), $currentRev->getUserText() );
-			$out .= $this->getContext()->getLanguage()->getDirMark();
+			$out .= $this->context->getLanguage()->getDirMark();
 			$out .= Linker::revComment( $currentRev );
 			$out .= '</div>';
 		} else {
@@ -281,7 +281,7 @@ class TwoColConflictPage extends EditPage {
 			$linkRenderer = $services->getLinkRenderer();
 			$historyLinkHtml = $linkRenderer->makeKnownLink(
 				$this->getTitle(),
-				$this->getContext()->msg( 'twoColConflict-history-link' )->text(),
+				$this->context->msg( 'twoColConflict-history-link' )->text(),
 				[
 					'target' => '_blank',
 				],
@@ -290,7 +290,7 @@ class TwoColConflictPage extends EditPage {
 				]
 			);
 
-			$out = $this->getContext()->msg(
+			$out = $this->context->msg(
 				'twoColConflict-changes-col-desc-3',
 				$nEdits + 1,
 				$historyLinkHtml
@@ -308,22 +308,22 @@ class TwoColConflictPage extends EditPage {
 	private function buildConflictPageEditorCol() {
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-edit-header">' .
-			$this->getContext()->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+			$this->context->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
-		$out .= '<p>' . $this->getContext()->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
+		$out .= '<p>' . $this->context->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
 		$out .= '<p>' .
-			$this->getContext()->msg(
+			$this->context->msg(
 				'twoColConflict-editor-col-desc-2', $this->getSubmitButtonLabel()
 			) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
-		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-1' ) .
+		$out .= '<li>' . $this->context->msg( 'twoColConflict-base-selection-desc-1' ) .
 			'</li>';
-		$out .= '<li>' . $this->getContext()->msg( 'twoColConflict-base-selection-desc-2' ) .
+		$out .= '<li>' . $this->context->msg( 'twoColConflict-base-selection-desc-2' ) .
 			'</li>';
 		$out .= '<li>'
-			. $this->getContext()->msg(
+			. $this->context->msg(
 				'twoColConflict-base-selection-desc-3', $this->getSubmitButtonLabel()
 			) . '</li>';
 		$out .= '</ol></div></div>';
@@ -549,7 +549,7 @@ class TwoColConflictPage extends EditPage {
 			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
 			htmlspecialchars( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
 			'</span>' .
-			( count( $lines ) > 1 ? "\n" : $this->getContext()->msg( 'word-separator' ) ) .
+			( count( $lines ) > 1 ? "\n" : $this->context->msg( 'word-separator' ) ) .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
 			htmlspecialchars(
 				$this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false )
