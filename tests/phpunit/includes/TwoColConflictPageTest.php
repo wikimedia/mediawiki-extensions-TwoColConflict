@@ -12,7 +12,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_returnFalseWhenInLimit() {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( 'One Two Three.', 14 )
 		);
@@ -26,7 +26,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 */
 	public function testGetCollapsedText_returnFalseWhenWhenOverLimitWithWhitespaces() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( "One Two Three.\n \n", 14 )
 		);
@@ -40,7 +39,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 */
 	public function testGetCollapsedText_cutWhenSingleLineOverLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
 			'<span class="mw-twocolconflict-diffchange-fadeout-end">One</span> ' .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">even.</span>',
@@ -53,7 +51,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 */
 	public function testGetCollapsedText_returnFalseWhenTwoLinesInLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertFalse(
 			$twoColConflictPageMock->getCollapsedText( "One Two\nThree Four.", 25 )
 		);
@@ -64,7 +61,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 */
 	public function testGetCollapsedText_cutWhenTwoLinesOverLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One</span>\n" .
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Four.</span>",
@@ -77,7 +73,6 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 */
 	public function testGetCollapsedText_cutWhenMultipleLinesInLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $twoColConflictPageMock );
 		$this->assertEquals(
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One Two</span>\n" .
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Six Seven.</span>",
@@ -89,7 +84,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_noCutWhenInLimit() {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		$this->assertEquals(
 			'One Two Three.',
 			$twoColConflictPageMock->trimStringToFullWord( 'One Two Three.', 14 )
@@ -104,7 +99,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtEndOfResult() {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		$this->assertEquals(
 			'One Two',
 			$twoColConflictPageMock->trimStringToFullWord( 'One Two Three.', 8, true )
@@ -115,7 +110,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtStartOfResult() {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		$this->assertEquals(
 			'Three.',
 			$twoColConflictPageMock->trimStringToFullWord( 'One Two. And Three.', 7, false )
@@ -130,7 +125,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atEnd( $input, $maxLength, $result ) {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		self::assertEquals(
 			$result,
 			$twoColConflictPageMock->trimStringToFullWord( $input, $maxLength, true )
@@ -165,7 +160,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atStart( $input, $maxLength, $result ) {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		self::assertEquals(
 			$result,
 			$twoColConflictPageMock->trimStringToFullWord( $input, $maxLength, false )
@@ -200,7 +195,7 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @covers TwoColConflictPageTest::trimWhiteSpaces
 	 */
 	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
-		$twoColConflictPageMock = TestingAccessWrapper::newFromObject( $this->getMockPage() );
+		$twoColConflictPageMock = $this->getMockPage();
 		self::assertEquals(
 			$result,
 			$twoColConflictPageMock->trimWhiteSpaces( $input, $trimAtEnd )
@@ -231,9 +226,11 @@ class TwoColConflictPageTest extends MediaWikiTestCase {
 	 * @return TwoColConflictPage
 	 */
 	private function getMockPage() {
-		return $this->getMockBuilder( TwoColConflictPage::class )
-			->disableOriginalConstructor()
-			->getMock();
+		return TestingAccessWrapper::newFromObject(
+			$this->getMockBuilder( TwoColConflictPage::class )
+				->disableOriginalConstructor()
+				->getMock()
+		);
 	}
 
 	/**
