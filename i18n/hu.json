@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"BanKris",
-			"Urbalazs"
+			"Urbalazs",
+			"Bencemac"
 		]
 	},
+	"twoColConflict-beta-feature-message": "Kétoszlopos nézet szerkesztési ütközésnél",
+	"twoColConflict-beta-feature-description": "Szerkesztési ütközés esetén egy fejlettebb, kétoszlopos nézet megjelenítése.",
 	"twoColConflict-base-selection-foreign-label": "A jelenleg közzétett verzió",
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-show-help-tooltip": "Súgószöveg megjelenítése",

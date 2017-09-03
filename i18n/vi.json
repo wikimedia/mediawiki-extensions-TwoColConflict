@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Quenhitran"
+			"Quenhitran",
+			"Minh Nguyen"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -27,13 +28,19 @@
 	"twoColConflict-base-selection-submit-label": "Đồng ý",
 	"twoColConflict-diffchange-own-title": "trong phiên bản của bạn",
 	"twoColConflict-diffchange-foreign-title": "trong phiên bản của $1",
+	"twoColConflict-diffchange-unchanged-title": "nội dung không bị thay đổi",
 	"twoColConflict-label-show": "hiện",
 	"twoColConflict-label-hide": "ẩn",
 	"twoColConflict-label-unchanged": "nội dung không bị thay đổi",
 	"twoColConflict-label-show-unchanged": "hiển thị nội dung không bị thay đổi",
 	"twoColConflict-label-hide-unchanged": "ẩn nội dung không bị thay đổi",
 	"twoColConflict-show-help-tooltip": "Hiển thị trợ giúp",
-	"twoColConflict-help-dialog-slide1": "Trang này giúp bạn giải quyết sửa đổi mâu thuẫn. Có hai cột: Cột đầu tiên hiển thị những nội dung sửa đổi bị mâu thuẫn và cột thứ hai là trình soạn thảo nội dung, nội dung hiển thị ở đây sẽ được xuất bản.\n\nChúng tôi rất mong nhận được phản hồi của bạn [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View tại đây].",
+	"twoColConflict-help-dialog-slide1": "Trang này giúp bạn giải quyết sửa đổi mâu thuẫn. Có hai cột: Cột đầu tiên hiển thị những nội dung sửa đổi bị mâu thuẫn và cột thứ hai là trình soạn thảo nội dung, nội dung hiển thị ở đây sẽ được xuất bản.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Chúng tôi rất mong nhận được phản hồi của bạn tại đây].",
+	"twoColConflict-help-dialog-slide2": "Cột đầu tiên hiển thị các thay đổi trong phiên bản của bạn và các thay đổi trong phiên bản hiện hành. Có tô màu các khác biệt giữa hai phiên bản.",
+	"twoColConflict-help-dialog-slide3": "Bạn có thể bấm vào “{{int:twoColConflict-label-show}}” vào đầu cột đầu tiên để xem những phần văn bản không thay đổi. Điều này có thể giúp bạn hiểu ngữ cảnh của các thay đổi. Theo mặc định, những phần văn bản không thay đổi được in màu xám và thu nhỏ.",
+	"twoColConflict-help-dialog-slide4": "Cột thứ hai là hộp sửa đổi. Khi trang được mở, có hộp lựa chọn vào đầu hộp sửa đổi cho phép bạn chọn phiên bản để hiển thị trong hộp sửa đổi. Thường thường nên chọn phiên bản có nhiều thay đổi hơn.",
+	"twoColConflict-help-dialog-slide5": "Hãy chép dán các phần muốn giữ của phiên bản kia vào của hộp sửa đổi. Chỉ có nội dung trong hộp sửa đổi sẽ được xuất bản khi bạn bấm nút “$1”.",
+	"twoColConflict-tutorial": "Hướng dẫn giải quyết sửa đổi mâu thuẫn",
 	"twoColConflict-previous-dialog": "Trước",
 	"twoColConflict-next-dialog": "Sau",
 	"twoColConflict-close-dialog": "Đóng"
