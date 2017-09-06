@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bunukwiki"
+			"Bunukwiki",
+			"Benel"
 		]
 	},
 	"twoColConflict-base-selection-submit-label": "malucekay",
 	"twoColConflict-label-show": "paazih",
 	"twoColConflict-label-hide": "midimut",
+	"twoColConflict-previous-dialog": "ayaway a cacay",
 	"twoColConflict-next-dialog": "nuzikuzan"
 }
