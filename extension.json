@@ -28,8 +28,8 @@
 		"GetBetaFeaturePreferences": [
 			"TwoColConflictHooks::getBetaFeaturePreferences"
 		],
-		"CustomEditor": [
-			"TwoColConflictHooks::onCustomEditor"
+		"AlternateEdit": [
+			"TwoColConflictHooks::onAlternateEdit"
 		],
 		"EditPage::attemptSave:after": [
 			"TwoColConflictHooks::onAttemptSaveAfter"
