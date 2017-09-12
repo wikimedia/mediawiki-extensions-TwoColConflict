@@ -29,19 +29,12 @@ class TwoColConflictPage extends EditPage {
 		if ( $this->context->getRequest()->getVal( 'veswitched' ) !== "1" ) {
 			$out->wrapWikiMsg(
 				"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
-				[ 'twoColConflict-explainconflict', $this->getSubmitButtonLabel() ]
+				[
+					'twoColConflict-explainconflict',
+					$this->context->msg( $this->getSubmitButtonLabel() )->text()
+				]
 			);
 		}
-	}
-
-	private function getSubmitButtonLabel() {
-		$labelAsPublish = $this->context->getConfig()->get(
-			'EditSubmitButtonLabelPublish'
-		);
-
-		return $this->context->msg(
-			$labelAsPublish ? 'publishchanges' : 'savechanges'
-		)->text();
 	}
 
 	/**
@@ -312,9 +305,10 @@ class TwoColConflictPage extends EditPage {
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
 		$out .= '<p>' . $this->context->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
+		$submitLabel = $this->context->msg( $this->getSubmitButtonLabel() )->text();
 		$out .= '<p>' .
 			$this->context->msg(
-				'twoColConflict-editor-col-desc-2', $this->getSubmitButtonLabel()
+				'twoColConflict-editor-col-desc-2', $submitLabel
 			) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
@@ -324,7 +318,7 @@ class TwoColConflictPage extends EditPage {
 			'</li>';
 		$out .= '<li>'
 			. $this->context->msg(
-				'twoColConflict-base-selection-desc-3', $this->getSubmitButtonLabel()
+				'twoColConflict-base-selection-desc-3', $submitLabel
 			) . '</li>';
 		$out .= '</ol></div></div>';
 
@@ -628,7 +622,9 @@ class TwoColConflictPage extends EditPage {
 		$out = $this->context->getOutput();
 		$out->addJsConfigVars( 'wgTwoColConflict', 'true' );
 		$out->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
-		$out->addJsConfigVars( 'wgTwoColConflictSubmitLabel', $this->getSubmitButtonLabel() );
+		$out->addJsConfigVars( 'wgTwoColConflictSubmitLabel',
+			$this->context->msg( $this->getSubmitButtonLabel() )->text()
+		);
 
 		$out->addModules( [
 			'ext.TwoColConflict.initJs',
