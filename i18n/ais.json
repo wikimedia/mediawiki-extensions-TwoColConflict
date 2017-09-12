@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bunukwiki",
-			"Benel"
+			"Benel",
+			"Tokoabibi"
 		]
 	},
 	"twoColConflict-changes-col-desc-4": "numisuay a sulit.",
@@ -11,5 +12,6 @@
 	"twoColConflict-label-show": "paazih",
 	"twoColConflict-label-hide": "midimut",
 	"twoColConflict-previous-dialog": "ayaway a cacay",
-	"twoColConflict-next-dialog": "nuzikuzan"
+	"twoColConflict-next-dialog": "zikuzan a cacay",
+	"twoColConflict-close-dialog": "edeben"
 }
