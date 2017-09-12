@@ -142,24 +142,15 @@
 	}
 
 	function disableEditButtons() {
-		if ( $( '#wpSaveWidget' ).length ) {
-			OO.ui.infuse( 'wpSaveWidget' ).setDisabled( true );
-			OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( true );
-			OO.ui.infuse( 'wpDiffWidget' ).setDisabled( true );
-		} else {
-			// not using OOUI buttons
-			$( '#wpSave, #wpPreview, #wpDiff' ).prop( 'disabled', true );
-		}
+		OO.ui.infuse( 'wpSaveWidget' ).setDisabled( true );
+		OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( true );
+		OO.ui.infuse( 'wpDiffWidget' ).setDisabled( true );
 	}
 
 	function enableEditButtons() {
-		if ( $( '#wpSaveWidget' ).length ) {
-			OO.ui.infuse( 'wpSaveWidget' ).setDisabled( false );
-			OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( false );
-			OO.ui.infuse( 'wpDiffWidget' ).setDisabled( false );
-		} else {
-			$( '#wpSave, #wpPreview, #wpDiff' ).prop( 'disabled', false );
-		}
+		OO.ui.infuse( 'wpSaveWidget' ).setDisabled( false );
+		OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( false );
+		OO.ui.infuse( 'wpDiffWidget' ).setDisabled( false );
 	}
 
 	function beforeBaseVersionSelection() {
