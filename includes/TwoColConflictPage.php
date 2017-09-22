@@ -502,7 +502,6 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function normalizeMarkedUpText( $wikiText ) {
-		$wikiText = $this->safeUnicodeOutput( $wikiText );
 		return nl2br( $this->addNewLineAtEnd( $wikiText ) );
 	}
 
