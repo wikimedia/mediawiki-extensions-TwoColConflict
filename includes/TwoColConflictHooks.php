@@ -17,7 +17,6 @@ class TwoColConflictHooks {
 	 * @return bool
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
-		global $wgHooks;
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		/**
@@ -32,32 +31,18 @@ class TwoColConflictHooks {
 			return true;
 		}
 
-		$key = array_search( 'TwoColConflictHooks::onAlternateEdit', $wgHooks['AlternateEdit'] );
-		unset( $wgHooks[ 'AlternateEdit' ][ $key ] );
-
-		if ( get_class( $editPage ) === TwoColConflictTestPage::class ) {
+		if ( get_class( $editPage ) === TwoColConflictTestEditPage::class ) {
 			return true;
 		}
 
-		$twoColConflictPage = new TwoColConflictPage( $editPage->getArticle() );
-		$twoColConflictPage->edit();
-
-		return false;
-	}
-
-	/**
-	 * @param EditPage $editPage
-	 * @param Status $status
-	 */
-	public static function onAttemptSaveAfter( EditPage $editPage, Status $status ) {
-		if ( !$editPage->getContext()->getRequest()->getBool( 'mw-twocolconflict-submit' ) ) {
-			return;
-		}
-
-		if ( $status->value == EditPage::AS_SUCCESS_UPDATE ) {
-			$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
-			$stats->increment( 'TwoColConflict.conflict.resolved' );
-		}
+		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+			return new TwoColConflictHelper(
+				$editPage->getTitle(),
+				$editPage->getContext()->getOutput(),
+				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$submitButtonLabel
+			);
+		} );
 	}
 
 	/**

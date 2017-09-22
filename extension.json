@@ -21,10 +21,11 @@
 	},
 	"AutoloadClasses": {
 		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
-		"TwoColConflictPage": "includes/TwoColConflictPage.php",
+		"TwoColConflictHelper": "includes/TwoColConflictHelper.php",
 		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
 		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
-		"TwoColConflictTestPage": "includes/SpecialConflictTestPage/TwoColConflictTestPage.php",
+		"TwoColConflictTestHelper": "includes/SpecialConflictTestPage/TwoColConflictTestHelper.php",
+		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
 		"HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
 		"HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",
 		"HtmlWikiTextEditor": "includes/SpecialConflictTestPage/HtmlWikiTextEditor.php",
@@ -36,9 +37,6 @@
 		],
 		"AlternateEdit": [
 			"TwoColConflictHooks::onAlternateEdit"
-		],
-		"EditPage::attemptSave:after": [
-			"TwoColConflictHooks::onAttemptSaveAfter"
 		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflictHooks::onResourceLoaderTestModules"

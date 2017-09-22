@@ -1,71 +1,75 @@
 <?php
+use MediaWiki\EditPage\TextboxBuilder;
+use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
 
 /**
  * @license GNU GPL v2+
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictPage extends EditPage {
+class TwoColConflictHelper extends TextConflictHelper {
+
+	/**
+	 * @var WikiPage
+	 */
+	private $wikiPage;
+
+	/**
+	 * @inheritDoc
+	 */
+	public function __construct( Title $title, OutputPage $out, IBufferingStatsdDataFactory $stats,
+		$submitLabel
+	) {
+		parent::__construct( $title, $out, $stats, $submitLabel );
+		$this->wikiPage = WikiPage::factory( $title );
+	}
 
 	const WHITESPACES =
 		'\s\xA0\x{1680}\x{180E}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}';
 
 	/**
-	 * Increment stats to count conflicts handled
+	 * @inheritDoc
 	 */
-	protected function incrementConflictStats() {
+	public function incrementConflictStats() {
 		parent::incrementConflictStats();
-		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
-		$stats->increment( 'TwoColConflict.conflict' );
+		$this->stats->increment( 'TwoColConflict.conflict' );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function incrementResolvedStats() {
+		parent::incrementResolvedStats();
+		$this->stats->increment( 'TwoColConflict.conflict.resolved' );
 	}
 
 	/**
 	 * Replace default header for explaining the conflict screen.
 	 *
-	 * @param OutputPage $out OutputPage used for page output.
+	 * @return string
 	 */
-	protected function addExplainConflictHeader( OutputPage $out ) {
+	public function getExplainHeader() {
 		// don't show conflict message when coming from VisualEditor
-		if ( $this->context->getRequest()->getVal( 'veswitched' ) !== "1" ) {
-			$out->wrapWikiMsg(
-				"<div class='mw-twocolconflict-explainconflict warningbox'>\n$1\n</div>",
-				[
+		if ( $this->out->getRequest()->getVal( 'veswitched' ) !== "1" ) {
+			return Html::rawElement(
+				'div',
+				[ 'class' => 'mw-twocolconflict-explainconflict warningbox' ],
+				$this->out->msg(
 					'twoColConflict-explainconflict',
-					$this->context->msg( $this->getSubmitButtonLabel() )->text()
-				]
+					$this->out->msg( $this->submitLabel )->text()
+				)->parse()
 			);
+		} else {
+			return '';
 		}
-	}
-
-	/**
-	 * Set the HTML to encapsulate the default edit form.
-	 *
-	 * @param callable|null $formCallback That takes an OutputPage parameter; will be called
-	 *     during form output near the top, for captchas and the like.
-	 */
-	public function showEditForm( $formCallback = null ) {
-		if ( $this->isConflict ) {
-			$this->addCSS();
-			$this->addJS();
-			$this->deactivateWikEd();
-			$this->editFormTextBeforeContent = $this->addEditFormBeforeContent();
-			$this->editFormTextAfterContent = $this->addEditFormAfterContent();
-		}
-
-		parent::showEditForm( $formCallback );
 	}
 
 	/**
 	 * Shows the diff part in the original conflict handling. Is not
 	 * used and overwritten.
-	 *
-	 * @return bool
 	 */
-	protected function showConflict() {
-		$this->incrementConflictStats();
-
-		// don't show the original conflict view at the bottom
-		return false;
+	public function showEditFormTextAfterFooters() {
+		return;
 	}
 
 	/**
@@ -73,9 +77,12 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return string
 	 */
-	private function addEditFormBeforeContent() {
+	public function getEditFormHtmlBeforeContent() {
 		$out = Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
-		$out = Html::input( 'mw-twocolconflict-title', $this->getTitle()->getText(), 'hidden' );
+		$out .= Html::input(
+			'mw-twocolconflict-title',
+			$this->wikiPage->getTitle()->getText(), 'hidden'
+		);
 		$out .= $this->buildConflictPageChangesCol();
 
 		$editorClass = '';
@@ -94,8 +101,13 @@ class TwoColConflictPage extends EditPage {
 	 *
 	 * @return string
 	 */
-	private function addEditFormAfterContent() {
-		// this div is opened when encapsulating the default editor in addEditFormBeforeContent.
+	public function getEditFormHtmlAfterContent() {
+		// Use this time to add all of our stuff to OutputPage
+		$this->addCSS();
+		$this->addJS();
+		$this->deactivateWikEd();
+
+		// this div is opened when encapsulating the default editor in getEditFormTextBeforeContent.
 		return '</div><div style="clear: both"></div>';
 	}
 
@@ -108,16 +120,16 @@ class TwoColConflictPage extends EditPage {
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-changes-header">' .
-			$this->context->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
+			$this->out->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
-		$out .= $this->context->msg( 'twoColConflict-changes-col-desc-1' )->text();
+		$out .= $this->out->msg( 'twoColConflict-changes-col-desc-1' )->text();
 		$out .= '<ul>';
 		$out .= '';
 		$out .= '<li><span class="mw-twocolconflict-lastuser">' .
-			$this->context->msg( 'twoColConflict-changes-col-desc-2' )->text() .
+			$this->out->msg( 'twoColConflict-changes-col-desc-2' )->text() .
 			'</span><br/>' . $this->buildEditSummary() . '</li>';
 		$out .= '<li><span class="mw-twocolconflict-user">' .
-			$this->context->msg( 'twoColConflict-changes-col-desc-4' )->text() .
+			$this->out->msg( 'twoColConflict-changes-col-desc-4' )->text() .
 			'</span></li>';
 		$out .= '</ul>';
 		$out .= '</div>';
@@ -140,7 +152,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function buildFilterOptionsMenu() {
-		$this->context->getOutput()->enableOOUI();
+		$this->out->enableOOUI();
 
 		$showHideOptions = new OOUI\RadioSelectInputWidget( [
 			'name' => 'mw-twocolconflict-same',
@@ -148,11 +160,11 @@ class TwoColConflictPage extends EditPage {
 			'options' => [
 				[
 					'data' => 'show',
-					'label' => $this->context->msg( 'twoColConflict-label-show' )->text()
+					'label' => $this->out->msg( 'twoColConflict-label-show' )->text()
 				],
 				[
 					'data' => 'hide',
-					'label' => $this->context->msg( 'twoColConflict-label-hide' )->text()
+					'label' => $this->out->msg( 'twoColConflict-label-hide' )->text()
 				],
 			],
 		] );
@@ -166,7 +178,7 @@ class TwoColConflictPage extends EditPage {
 
 		$out .= '<div class="mw-twocolconflict-filter-options-row">';
 		$out .= '<div class="mw-twocolconflict-filter-titles">' .
-			$this->context->msg( 'twoColConflict-label-unchanged' )->text() .
+			$this->out->msg( 'twoColConflict-label-unchanged' )->text() .
 			'</div>';
 		$out .= $fieldset;
 		$out .= $this->buildHelpButton();
@@ -184,13 +196,13 @@ class TwoColConflictPage extends EditPage {
 	 */
 	private function buildHelpButton() {
 		// Load icon pack with the 'help' icon
-		$this->context->getOutput()->addModuleStyles( 'oojs-ui.styles.icons-content' );
+		$this->out->addModuleStyles( 'oojs-ui.styles.icons-content' );
 
 		$helpButton = new OOUI\ButtonInputWidget( [
 			'icon' => 'help',
 			'framed' => false,
 			'name' => 'mw-twocolconflict-show-help',
-			'title' => $this->context->msg( 'twoColConflict-show-help-tooltip' )->text(),
+			'title' => $this->out->msg( 'twoColConflict-show-help-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-show-help' ]
 		] );
 		$helpButton->setAttributes( [
@@ -225,7 +237,9 @@ class TwoColConflictPage extends EditPage {
 			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
 		}
 
-		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
+		$attribs = ( new TextboxBuilder() )->buildTextboxAttribs(
+			$name, $customAttribs, $this->out->getUser(), $this->title
+		);
 
 		// div to set the cursor style see T156483
 		$wikiText = '<div>' . $wikiText . '</div>';
@@ -246,7 +260,9 @@ class TwoColConflictPage extends EditPage {
 			$customAttribs['class'] .= ' mw-twocolconflict-wikieditor';
 		}
 
-		$attribs = $this->buildTextboxAttribs( $name, $customAttribs, $this->context->getUser() );
+		$attribs = ( new TextboxBuilder() )->buildTextboxAttribs(
+			$name, $customAttribs, $this->out->getUser(), $this->title
+		);
 
 		return Html::rawElement( 'div', $attribs, $wikiText );
 	}
@@ -257,22 +273,22 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	protected function buildEditSummary() {
-		$currentRev = $this->getArticle()->getPage()->getRevision();
-		$baseRevId = $this->context->getRequest()->getIntOrNull( 'editRevId' );
-		$nEdits = $this->getTitle()->countRevisionsBetween( $baseRevId, $currentRev, 100 );
+		$currentRev = $this->wikiPage->getRevision();
+		$baseRevId = $this->out->getRequest()->getIntOrNull( 'editRevId' );
+		$nEdits = $this->title->countRevisionsBetween( $baseRevId, $currentRev, 100 );
 
 		if ( $nEdits === 0 ) {
 			$out = '<div class="mw-twocolconflict-edit-summary">';
 			$out .= Linker::userLink( $currentRev->getUser(), $currentRev->getUserText() );
-			$out .= $this->context->getLanguage()->getDirMark();
+			$out .= $this->out->getLanguage()->getDirMark();
 			$out .= Linker::revComment( $currentRev );
 			$out .= '</div>';
 		} else {
 			$services = MediaWikiServices::getInstance();
 			$linkRenderer = $services->getLinkRenderer();
 			$historyLinkHtml = $linkRenderer->makeKnownLink(
-				$this->getTitle(),
-				$this->context->msg( 'twoColConflict-history-link' )->text(),
+				$this->title,
+				$this->out->msg( 'twoColConflict-history-link' )->text(),
 				[
 					'target' => '_blank',
 				],
@@ -281,7 +297,7 @@ class TwoColConflictPage extends EditPage {
 				]
 			);
 
-			$out = $this->context->msg(
+			$out = $this->out->msg(
 				'twoColConflict-changes-col-desc-3',
 				$nEdits + 1,
 				$historyLinkHtml
@@ -299,23 +315,23 @@ class TwoColConflictPage extends EditPage {
 	private function buildConflictPageEditorCol() {
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-edit-header">' .
-			$this->context->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+			$this->out->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
-		$out .= '<p>' . $this->context->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
-		$submitLabel = $this->context->msg( $this->getSubmitButtonLabel() )->text();
+		$out .= '<p>' . $this->out->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
+		$submitLabel = $this->out->msg( $this->submitLabel )->text();
 		$out .= '<p>' .
-			$this->context->msg(
+			$this->out->msg(
 				'twoColConflict-editor-col-desc-2', $submitLabel
 			) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
-		$out .= '<li>' . $this->context->msg( 'twoColConflict-base-selection-desc-1' ) .
+		$out .= '<li>' . $this->out->msg( 'twoColConflict-base-selection-desc-1' ) .
 			'</li>';
-		$out .= '<li>' . $this->context->msg( 'twoColConflict-base-selection-desc-2' ) .
+		$out .= '<li>' . $this->out->msg( 'twoColConflict-base-selection-desc-2' ) .
 			'</li>';
 		$out .= '<li>'
-			. $this->context->msg(
+			. $this->out->msg(
 				'twoColConflict-base-selection-desc-3', $submitLabel
 			) . '</li>';
 		$out .= '</ol></div></div>';
@@ -329,11 +345,8 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	protected function buildRawTextsHiddenFields() {
-		$editableYourVersionText = $this->toEditText( $this->textbox1 );
-		$editableCurrentVersionText = $this->toEditText( $this->getCurrentContent() );
-
-		return Html::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
-			Html::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
+		return Html::input( 'mw-twocolconflict-your-text', $this->yourtext, 'hidden' ) .
+			Html::input( 'mw-twocolconflict-current-text', $this->storedversion, 'hidden' );
 	}
 
 	/**
@@ -359,11 +372,8 @@ class TwoColConflictPage extends EditPage {
 	 * @return array[]
 	 */
 	protected function getUnifiedDiff() {
-		$currentText = $this->toEditText( $this->getCurrentContent() );
-		$yourText = $this->textbox1;
-
-		$currentLines = explode( "\n", $currentText );
-		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $yourText ) );
+		$currentLines = explode( "\n", $this->storedversion );
+		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
 
 		return $this->getLineBasedUnifiedDiff( $currentLines, $yourLines );
 	}
@@ -372,7 +382,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	protected function getLastUserText() {
-		return $this->getArticle()->getPage()->getUserText();
+		return $this->wikiPage->getRevision()->getUserText();
 	}
 
 	/**
@@ -393,7 +403,7 @@ class TwoColConflictPage extends EditPage {
 						if ( $this->hasConflictInLine( $currentLine ) ) {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
-						$label = $this->context->msg( 'twoColConflict-diffchange-own-title' )->escaped();
+						$label = $this->out->msg( 'twoColConflict-diffchange-own-title' )->escaped();
 
 						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
@@ -411,7 +421,7 @@ class TwoColConflictPage extends EditPage {
 						if ( $this->hasConflictInLine( $currentLine ) ) {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
-						$label = $this->context->msg(
+						$label = $this->out->msg(
 							'twoColConflict-diffchange-foreign-title',
 							$lastUser
 						)->escaped();
@@ -433,7 +443,7 @@ class TwoColConflictPage extends EditPage {
 						break;
 					case 'copy':
 						$class = 'mw-twocolconflict-diffchange-same';
-						$label = $this->context->msg( 'twoColConflict-diffchange-unchanged-title' )->escaped();
+						$label = $this->out->msg( 'twoColConflict-diffchange-unchanged-title' )->escaped();
 						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							$this->addUnchangedText( $changeSet['copy'] ) .
 							'</div>' . "\n";
@@ -508,7 +518,7 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function normalizeMarkedUpText( $wikiText ) {
-		return nl2br( $this->addNewLineAtEnd( $wikiText ) );
+		return nl2br( ( new TextboxBuilder() )->addNewLineAtEnd( $wikiText ) );
 	}
 
 	/**
@@ -548,7 +558,7 @@ class TwoColConflictPage extends EditPage {
 			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
 			htmlspecialchars( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
 			'</span>' .
-			( count( $lines ) > 1 ? "\n" : $this->context->msg( 'word-separator' ) ) .
+			( count( $lines ) > 1 ? "\n" : $this->out->msg( 'word-separator' ) ) .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
 			htmlspecialchars(
 				$this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false )
@@ -613,26 +623,25 @@ class TwoColConflictPage extends EditPage {
 
 	private function deactivateWikEd() {
 		// T167503, T168503 might be removed when wikEd works with TwoColConflict
-		$this->context->getOutput()->addMeta( 'wikEdStartupFlag', '' );
+		$this->out->addMeta( 'wikEdStartupFlag', '' );
 	}
 
 	private function addCSS() {
-		$this->context->getOutput()->addModuleStyles( [
+		$this->out->addModuleStyles( [
 			'ext.TwoColConflict.editor',
 			'ext.TwoColConflict.HelpDialogCss',
 		] );
 	}
 
 	private function addJS() {
-		$out = $this->context->getOutput();
-		$out->addJsConfigVars( 'wgTwoColConflict', 'true' );
-		$out->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
-		$out->addJsConfigVars( 'wgTwoColConflictSubmitLabel',
-			$this->context->msg( $this->getSubmitButtonLabel() )->text()
+		$this->out->addJsConfigVars( 'wgTwoColConflict', 'true' );
+		$this->out->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
+		$this->out->addJsConfigVars( 'wgTwoColConflictSubmitLabel',
+			$this->out->msg( $this->submitLabel )->text()
 		);
-		$out->addBodyClasses( [ 'mw-twocolconflict-page' ] );
+		$this->out->addBodyClasses( [ 'mw-twocolconflict-page' ] );
 
-		$out->addModules( [
+		$this->out->addModules( [
 			'ext.TwoColConflict.initJs',
 			'ext.TwoColConflict.filterOptionsJs'
 		] );

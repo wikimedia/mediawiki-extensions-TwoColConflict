@@ -127,10 +127,21 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param Article $article
 	 */
 	private function showConflict( $article ) {
-		$twoColConflictTestPage = new TwoColConflictTestPage( $article );
-		$twoColConflictTestPage->setUpConflictingTestText();
-		$twoColConflictTestPage->setUpFakeConflictRequest();
-		$twoColConflictTestPage->edit();
+		$conflictTestEditPage = new TwoColConflictTestEditPage( $article );
+		$conflictTestEditPage->setUpFakeConflictRequest();
+
+		$conflictTestEditPage->setEditConflictHelperFactory(
+			function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
+			return new TwoColConflictTestHelper(
+				$conflictTestEditPage->getTitle(),
+				$conflictTestEditPage->getContext()->getOutput(),
+				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$submitButtonLabel
+			);
+		 }
+		);
+
+		$conflictTestEditPage->edit();
 
 		// overwrite title set by EditPage
 		$this->getOutput()->setPageTitle( new Message( 'twoColConflict-test-page-title' ) );
