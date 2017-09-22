@@ -48,9 +48,6 @@ class TwoColConflictPage extends EditPage {
 			$this->addCSS();
 			$this->addJS();
 			$this->deactivateWikEd();
-			$this->editFormTextTop =
-				'<div class="mw-twocolconflict-form mw-twocolconflict-before-base-selection">';
-			$this->editFormTextBottom = '</div>';
 			$this->editFormTextBeforeContent = $this->addEditFormBeforeContent();
 			$this->editFormTextAfterContent = $this->addEditFormAfterContent();
 		}
@@ -624,6 +621,7 @@ class TwoColConflictPage extends EditPage {
 		$out->addJsConfigVars( 'wgTwoColConflictSubmitLabel',
 			$this->context->msg( $this->getSubmitButtonLabel() )->text()
 		);
+		$out->addBodyClasses( [ 'mw-twocolconflict-page' ] );
 
 		$out->addModules( [
 			'ext.TwoColConflict.initJs',

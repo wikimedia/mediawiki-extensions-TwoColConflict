@@ -159,7 +159,7 @@
 
 	function afterBaseVersionSelection() {
 		enableEditButtons();
-		$( '.mw-twocolconflict-form' ).removeClass( 'mw-twocolconflict-before-base-selection' );
+		$( '#wpTextbox1' ).addClass( 'mw-twocolconflict-after-base-selection' );
 		redrawPage();
 		autoScroll.scrollToFirstOwnOrConflict();
 		$( '.mw-twocolconflict-changes-editor' ).focus();
