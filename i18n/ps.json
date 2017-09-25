@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
+	"twoColConflict-base-selection-submit-label": "ښه",
 	"twoColConflict-label-show": "ښکاره کول",
 	"twoColConflict-label-hide": "پټول",
 	"twoColConflict-show-help-tooltip": "لارښود متن ښکاره کول",
