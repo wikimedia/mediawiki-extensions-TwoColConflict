@@ -20,9 +20,9 @@
 }
 
 .mw-twocolconflict-base-dialog-radio .oo-ui-radioOptionWidget.oo-ui-labelElement .oo-ui-labelElement-label {
-	line-height: initial;
-	padding-left: 0;
-	margin-left: 1em;
+	display: inline-block;
+	padding-right: 0.46875em;
+	margin-left: 0.46875em;
 }
 
 .mw-twocolconflict-base-dialog .oo-ui-buttonWidget {
