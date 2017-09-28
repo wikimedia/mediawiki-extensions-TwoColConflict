@@ -43,5 +43,16 @@
 	"twoColConflict-tutorial": "Tutorial zur Auflösung von Bearbeitungskonflikten",
 	"twoColConflict-previous-dialog": "Vorheriges",
 	"twoColConflict-next-dialog": "Nächstes",
-	"twoColConflict-close-dialog": "Schließen"
+	"twoColConflict-close-dialog": "Schließen",
+	"twoColConflict-test-title-label": "Titel der Wikiseite, für die der Bearbeitungskonflikt simuliert werden soll.",
+	"twoColConflict-test-title-submit": "Bearbeitungsseite anzeigen",
+	"twoColConflict-test-title-not-existing": "Es gibt keine Seite mit diesem Titel.",
+	"twoColConflict-test-text-submit": "Konflikt erstellen",
+	"twoColConflict-test-initial-hint": "Auf dieser Seite kannst du die neue Zwei-Spalten-Bearbeitungskonflikt-Oberfläche austesten, ohne irgendetwas zu zerstören.",
+	"twoColConflict-test-edit-hint": "Mache unten einige Änderungen. Sie werden nicht gespeichert. Sie werden nur verwendet, um einen Beispiel-Bearbeitungskonflikt zu simulieren.",
+	"twoColConflict-test-conflict-hint": "Dies ist der Testkonflikt. Änderungen werden nicht gespeichert, es kann jedoch eine Vorschau angezeigt werden.",
+	"twoColConflict-test-preview-submit": "Speicherung der Änderungen simulieren",
+	"twoColConflict-test-preview-hint": "Vielen Dank für das Austesten der Zwei-Spalten-Bearbeitungskonflikt-Oberfläche! Hilf uns bei der Verbesserung, indem du [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View uns wissen lässt, was du denkst].\n\nEs folgt das Ergebnis der Auflösung deines Test-Bearbeitungskonfliktes.",
+	"twoColConflict-test-username": "Konflikttest-Benutzer",
+	"twoColConflict-test-summary-text": "Konflikttest-Bearbeitungszusammenfassung"
 }
