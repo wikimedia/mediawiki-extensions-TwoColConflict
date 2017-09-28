@@ -27,7 +27,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		$request = $this->getRequest();
 
 		if ( $request->getVal( 'wpPreview' ) != null || $request->getVal( 'wpDiff' ) != null ) {
-			$this->showHintBox( ( new Message( 'twoColConflict-test-preview-hint' ) )->parse() );
+			$this->showHintBoxRaw( ( new Message( 'twoColConflict-test-preview-hint' ) )->parse() );
 
 			$title = Title::newFromText( $request->getVal( 'mw-twocolconflict-title' ) );
 			$this->showPreview( $title, $request->getVal( 'wpTextbox1' ) );
@@ -75,11 +75,15 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param string $additionalClass
 	 */
 	private function showHintBox( $message, $additionalClass = '' ) {
+		$this->showHintBoxRaw( Html::rawElement( 'p', [], $message ), $additionalClass );
+	}
+
+	private function showHintBoxRaw( $message, $additionalClass = '' ) {
 		$this->getOutput()->addHTML(
 			Html::rawElement(
 				'div',
 				[ 'class' => 'mw-twocolconflict-test-hintbox ' . $additionalClass ],
-				Html::rawElement( 'p', [], $message )
+				$message
 			)
 		);
 	}
