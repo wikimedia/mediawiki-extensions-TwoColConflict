@@ -142,12 +142,20 @@
 	}
 
 	function disableEditButtons() {
+		if ( mw.config.get( 'wgTwoColConflictTestMode' ) ) {
+			OO.ui.infuse( 'wpTestPreviewWidget' ).setDisabled( true );
+			return;
+		}
 		OO.ui.infuse( 'wpSaveWidget' ).setDisabled( true );
 		OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( true );
 		OO.ui.infuse( 'wpDiffWidget' ).setDisabled( true );
 	}
 
 	function enableEditButtons() {
+		if ( mw.config.get( 'wgTwoColConflictTestMode' ) ) {
+			OO.ui.infuse( 'wpTestPreviewWidget' ).setDisabled( false );
+			return;
+		}
 		OO.ui.infuse( 'wpSaveWidget' ).setDisabled( false );
 		OO.ui.infuse( 'wpPreviewWidget' ).setDisabled( false );
 		OO.ui.infuse( 'wpDiffWidget' ).setDisabled( false );
