@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"01miki10",
-			"Stryn"
+			"Stryn",
+			"Nike"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -31,5 +32,7 @@
 	"twoColConflict-tutorial": "Opas muokkausristiriidan ratkaisemiseen",
 	"twoColConflict-previous-dialog": "Edellinen",
 	"twoColConflict-next-dialog": "Seuraava",
-	"twoColConflict-close-dialog": "Sulje"
+	"twoColConflict-close-dialog": "Sulje",
+	"twoColConflict-test-title-submit": "Näytä muokkaussivu",
+	"twoColConflict-test-text-submit": "Luo muokkausristiriita"
 }

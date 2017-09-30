@@ -46,5 +46,6 @@
 	"twoColConflict-tutorial": "Tutorial per risolvere conflitti di edizione",
 	"twoColConflict-previous-dialog": "Precedente",
 	"twoColConflict-next-dialog": "Successivo",
-	"twoColConflict-close-dialog": "Chiudi"
+	"twoColConflict-close-dialog": "Chiudi",
+	"twoColConflict-test-text-submit": "Crea conflitto"
 }

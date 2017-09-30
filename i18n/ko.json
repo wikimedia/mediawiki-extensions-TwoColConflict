@@ -29,5 +29,12 @@
 	"twoColConflict-tutorial": "편집 충돌 해결 강좌",
 	"twoColConflict-previous-dialog": "이전",
 	"twoColConflict-next-dialog": "다음",
-	"twoColConflict-close-dialog": "닫기"
+	"twoColConflict-close-dialog": "닫기",
+	"twoColConflict-test-title-submit": "편집 문서 표시",
+	"twoColConflict-test-title-not-existing": "이 제목의 문서가 없습니다.",
+	"twoColConflict-test-text-submit": "만들기 충동",
+	"twoColConflict-test-edit-hint": "아래의 일부 변경사항을 적용합니다. 저장되지는 않습니다. 예시 편집 충돌을 모의 실험하기 위해서만 사용됩니다.",
+	"twoColConflict-test-conflict-hint": "이것은 테스트 충돌입니다. 변경사항은 저장되지 않지만 미리 보기는 가능합니다.",
+	"twoColConflict-test-preview-submit": "변경사항 저장 모의 실험",
+	"twoColConflict-test-summary-text": "충돌 테스트 편집 요약"
 }

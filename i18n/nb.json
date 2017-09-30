@@ -43,5 +43,16 @@
 	"twoColConflict-tutorial": "Veiviser for å løse redigeringskonflikter",
 	"twoColConflict-previous-dialog": "Forrige",
 	"twoColConflict-next-dialog": "Neste",
-	"twoColConflict-close-dialog": "Lukk"
+	"twoColConflict-close-dialog": "Lukk",
+	"twoColConflict-test-title-label": "Tittelen på wikisiden redigeringskonflikten skal simuleres for",
+	"twoColConflict-test-title-submit": "Vis redigeringsside",
+	"twoColConflict-test-title-not-existing": "Det er ingen side med denne tittelen.",
+	"twoColConflict-test-text-submit": "Skap konflikt",
+	"twoColConflict-test-initial-hint": "På denne siden kan du prøve grensesnittet for tokolonners redigeringskonflikt uten å lage trøbbel.",
+	"twoColConflict-test-edit-hint": "Gjør noen endringer nedenfor. De vil ikke bli lagret, men brukes kun til å simulere et eksempel på en redigeringskonflikt.",
+	"twoColConflict-test-conflict-hint": "Dette er testkonflikten. Endringene vil ikke bli lagret, men kan forhåndsvises.",
+	"twoColConflict-test-preview-submit": "Simuler lagring av endringer",
+	"twoColConflict-test-preview-hint": "Takk for at du prøver ut grensesnittet for tokolonners redigeringskonflikt. Hjelp oss å gjøre det bedre ved å [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View gi oss tilbakemelding om hva du syns].\n\nNedenfor er resultatet fra løsningen av testkonflikten din.",
+	"twoColConflict-test-username": "Konflikttestbruker",
+	"twoColConflict-test-summary-text": "Redigeringsforklaring for konflikttest"
 }

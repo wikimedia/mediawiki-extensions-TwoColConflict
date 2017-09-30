@@ -43,5 +43,16 @@
 	"twoColConflict-tutorial": "编辑冲突解决指导",
 	"twoColConflict-previous-dialog": "上一步",
 	"twoColConflict-next-dialog": "下一步",
-	"twoColConflict-close-dialog": "关闭"
+	"twoColConflict-close-dialog": "关闭",
+	"twoColConflict-test-title-label": "应当模拟编辑冲突的Wiki页面标题",
+	"twoColConflict-test-title-submit": "显示编辑页面",
+	"twoColConflict-test-title-not-existing": "没有该标题的页面。",
+	"twoColConflict-test-text-submit": "创建冲突",
+	"twoColConflict-test-initial-hint": "在此页面上，您可以尝试新的两栏编辑冲突界面，而不扰乱任何内容。",
+	"twoColConflict-test-edit-hint": "在下方进行一些更改。这些更改不会保存，只用于模拟示例编辑冲突。",
+	"twoColConflict-test-conflict-hint": "这是测试冲突。更改不会保存，但可以预览。",
+	"twoColConflict-test-preview-submit": "模拟保存更改",
+	"twoColConflict-test-preview-hint": "感谢尝试两栏编辑冲突界面！通过[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 让我们知道您在想什么]，来使其更加完美。\n\n下面是您的测试编辑冲突解决的结果。",
+	"twoColConflict-test-username": "冲突测试用户",
+	"twoColConflict-test-summary-text": "冲突测试编辑摘要"
 }

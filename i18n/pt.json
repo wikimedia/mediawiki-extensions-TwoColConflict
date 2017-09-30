@@ -44,5 +44,16 @@
 	"twoColConflict-tutorial": "Guia prático para resolver conflitos de edição",
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Próximo",
-	"twoColConflict-close-dialog": "Fechar"
+	"twoColConflict-close-dialog": "Fechar",
+	"twoColConflict-test-title-label": "Título da página da wiki para a qual o conflito de edições deve ser simulado",
+	"twoColConflict-test-title-submit": "Mostrar a página de edição",
+	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",
+	"twoColConflict-test-text-submit": "Criar um conflito",
+	"twoColConflict-test-initial-hint": "Nesta página pode experimentar a nova interface do conflito de edições em duas colunas, sem causar estragos.",
+	"twoColConflict-test-edit-hint": "Faça algumas alterações abaixo. Elas não serão gravadas. Só serão usadas para simular um conflito de edições, como exemplo.",
+	"twoColConflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão gravadas mas podem ser antevistas.",
+	"twoColConflict-test-preview-submit": "Simular a gravação das alterações",
+	"twoColConflict-test-preview-hint": "Obrigado por experimentar a interface da conflito de edições em duas colunas! Ajude a melhorá-la [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View dizendo-nos o que achou].\n\nAbaixo encontra o resultado da resolução do seu teste de conflito de edições.",
+	"twoColConflict-test-username": "Utilizador do teste de conflito",
+	"twoColConflict-test-summary-text": "Resumo de edição do teste de conflito"
 }

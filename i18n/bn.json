@@ -24,5 +24,7 @@
 	"twoColConflict-tutorial": "সম্পাদনা দ্বন্দ্ব সমাধান নির্দেশিকা",
 	"twoColConflict-previous-dialog": "পূর্ববর্তী",
 	"twoColConflict-next-dialog": "পরবর্তী",
-	"twoColConflict-close-dialog": "বন্ধ করুন"
+	"twoColConflict-close-dialog": "বন্ধ করুন",
+	"twoColConflict-test-title-submit": "সম্পাদনার পাতা দেখান",
+	"twoColConflict-test-text-submit": "দ্বন্দ্ব তৈরি করুন"
 }

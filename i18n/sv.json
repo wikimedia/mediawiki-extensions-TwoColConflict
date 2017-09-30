@@ -34,7 +34,7 @@
 	"twoColConflict-label-show-unchanged": "visa oförändrad text",
 	"twoColConflict-label-hide-unchanged": "dölj oförändrad text",
 	"twoColConflict-show-help-tooltip": "Visa hjälptext",
-	"twoColConflict-help-dialog-slide1": "Denna sida hjälper dig att lösa en redigeringskonflikt. Det finns två kolumner: Den första visar ändringarna i konflikt och den andra är en textredigerare med det innehåll som ska publiceras.\n\nÅterkoppling uppskattas mycket [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View här].",
+	"twoColConflict-help-dialog-slide1": "Denna sida hjälper dig att lösa en redigeringskonflikt. Det finns två kolumner: Den första visar ändringarna i konflikt och den andra är en textredigerare med det innehåll som ska publiceras.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Återkoppling uppskattas mycket här].",
 	"twoColConflict-help-dialog-slide2": "Den första kolumnen visar ändringarna i din version och ändringarna i den nuvarande sparade versionen. Skillnaderna mellan båda versioner är markerade.",
 	"twoColConflict-help-dialog-slide3": "Längst upp i den första kolumnen kan du klicka på \"{{int:twoColConflict-label-show}}\" för att se oförändrad text. Detta kan hjälpa att förstå ändringarnas sammanhang. Som standard är oförändrad text gråfärgad och hopfälld.",
 	"twoColConflict-help-dialog-slide4": "Den andra kolumnen är en redigerare. När sidan öppnas finns en markeringsruta längst upp i redigeraren. Den låter dig bestämma vilken version som ska finnas i redigeraren. Detta är oftast versionen där flera ändringar gjordes.",
@@ -42,5 +42,16 @@
 	"twoColConflict-tutorial": "Guide om att lösa redigeringskonflikter",
 	"twoColConflict-previous-dialog": "Föregående",
 	"twoColConflict-next-dialog": "Nästa",
-	"twoColConflict-close-dialog": "Stäng"
+	"twoColConflict-close-dialog": "Stäng",
+	"twoColConflict-test-title-label": "Titeln på wikisidan där redigeringskonflikten ska simuleras",
+	"twoColConflict-test-title-submit": "Visa redigeringssida",
+	"twoColConflict-test-title-not-existing": "Det finns ingen sida med denna titel.",
+	"twoColConflict-test-text-submit": "Skapa konflikt",
+	"twoColConflict-test-initial-hint": "På denna sida kan du prova det nya tvåkolumnsgränssnittet för redigeringskonflikter utan att förstöra någonting.",
+	"twoColConflict-test-edit-hint": "Gör några ändringar nedan. De kommer inte att sparas. De kommer endast användas för att simulera ett exempel på en redigeringskonflikt.",
+	"twoColConflict-test-conflict-hint": "Detta är en testkonflikt. Ändringar kommer inte att sparas, men kan förhandsgranskas.",
+	"twoColConflict-test-preview-submit": "Simulera att spara ändringar",
+	"twoColConflict-test-preview-hint": "Tack för att du provar tvåkolumnsgränssnittet för redigeringskonflikter! Hjälp oss att göra det bättre genom att [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View berätta för oss vad du tyckte].\n\nNedan finns resultatet av lösningen på din testkonflikt.",
+	"twoColConflict-test-username": "ConflictTest-användare",
+	"twoColConflict-test-summary-text": "Redigeringssammanfattning för ConflictTest"
 }

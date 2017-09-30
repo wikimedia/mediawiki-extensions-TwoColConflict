@@ -29,6 +29,8 @@
 	"twoColConflict-label-show": "näita",
 	"twoColConflict-label-hide": "peida",
 	"twoColConflict-label-unchanged": "muutmata tekst",
+	"twoColConflict-label-show-unchanged": "näita muutmata teksti",
+	"twoColConflict-label-hide-unchanged": "peida muutmata tekst",
 	"twoColConflict-show-help-tooltip": "Näita abiteksti",
 	"twoColConflict-help-dialog-slide1": "See lehekülg on abiks redigeerimiskonflikti lahendamisel. Siin on kaks veergu: esimeses on konfliktsed muudatused ja teises on tekstitoimeti, mille sisu avaldatakse.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Oleme tänulikud, kui annad siin tagasisidet].",
 	"twoColConflict-help-dialog-slide2": "Esimene veerg näitab muudatusi sinu versioonis ja muudatusi praeguses salvestatud versioonis. Nende versioonide vahelised erinevused on esile tõstetud.",

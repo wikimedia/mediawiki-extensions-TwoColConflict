@@ -27,5 +27,13 @@
 	"twoColConflict-show-help-tooltip": "Hëllefstext weisen",
 	"twoColConflict-previous-dialog": "Vireg",
 	"twoColConflict-next-dialog": "Weider",
-	"twoColConflict-close-dialog": "Zoumaachen"
+	"twoColConflict-close-dialog": "Zoumaachen",
+	"twoColConflict-test-title-submit": "Ännerungssäit weisen",
+	"twoColConflict-test-title-not-existing": "Et gëtt keng Säit mat dësem Fichier.",
+	"twoColConflict-test-text-submit": "Konflikt uleeën",
+	"twoColConflict-test-conflict-hint": "Dëst ass den Test-Konflikt. Ännerunge ginn net gespäichert si kënnen awer gewise ginn,",
+	"twoColConflict-test-preview-submit": "Ännerunge späichere simuléieren",
+	"twoColConflict-test-preview-hint": "Merci fir d'Ausprobéiere vum, Zwee-Kolonnen-Interface fir Ännerungskonflikter! Hëlleft eis en ze verbesseren [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View an deem Dir eis wësse looosst wat Dir dovun haalt].",
+	"twoColConflict-test-username": "KonfliktTest-Benotzer",
+	"twoColConflict-test-summary-text": "Resumé vun der Ännerung vum Konflikt-Test"
 }

@@ -43,5 +43,13 @@
 	"twoColConflict-tutorial": "آموزش رفع تعارض ویرایشی",
 	"twoColConflict-previous-dialog": "قبلی",
 	"twoColConflict-next-dialog": "بعدی",
-	"twoColConflict-close-dialog": "بستن"
+	"twoColConflict-close-dialog": "بستن",
+	"twoColConflict-test-title-label": "عنوان صفحهٔ ویکی که ویرایش تداخل‌دار باید مشابه آن باشد",
+	"twoColConflict-test-title-submit": "نمایش ویرایش صفحه",
+	"twoColConflict-test-title-not-existing": "صفحه‌ای با این عنوان وجود ندارد.",
+	"twoColConflict-test-text-submit": "ایجاد تعارض",
+	"twoColConflict-test-initial-hint": "در این صفحه می‌توانید دو ستون جدید تداخل ویرایش بدون به‌ریختگی مشاهده کنید.",
+	"twoColConflict-test-preview-submit": "شبیه‌سازی ذخیره تغییرات",
+	"twoColConflict-test-username": "کاربر آزمایش تداخل",
+	"twoColConflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل"
 }

@@ -44,5 +44,16 @@
 	"twoColConflict-tutorial": "Aide pour résoudre les conflicts de modifications",
 	"twoColConflict-previous-dialog": "Précédent",
 	"twoColConflict-next-dialog": "Suivant",
-	"twoColConflict-close-dialog": "Fermer"
+	"twoColConflict-close-dialog": "Fermer",
+	"twoColConflict-test-title-label": "Titre de la page Wiki pour laquelle le conflit d\"édition doit être simulé",
+	"twoColConflict-test-title-submit": "Afficher la page de modification",
+	"twoColConflict-test-title-not-existing": "Il n'y a pas de page avec ce titre.",
+	"twoColConflict-test-text-submit": "Créer un conflit",
+	"twoColConflict-test-initial-hint": "Sur cette page vous pouvez essayer sur deux colonnes, le nouvel interface d'édition des conflits sans en oublier.",
+	"twoColConflict-test-edit-hint": "Faites quelques changements ci-dessous. Ils ne seront pas sauvegardés. Ils seront utilisés uniquement pour simuler un exemple d'édition de conflit.",
+	"twoColConflict-test-conflict-hint": "Ceci est le conflit testé. Les modifications ne seront pas sauvegardées mais peuvent être affichées.",
+	"twoColConflict-test-preview-submit": "Simuler la sauvegarde des modifications",
+	"twoColConflict-test-preview-hint": "Merci d'utiliser l'interface d'Edition de Conflit sur deux colonnes ! Aidez-nous à l'améliorer en nous [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View disant ce que vous en pensez].\n\nCi-dessous, le résultat de la résolution de votre test de conflit d'édition.",
+	"twoColConflict-test-username": "Utilisateur du test de conflit",
+	"twoColConflict-test-summary-text": "Résumé du test d'édition de conflit"
 }
