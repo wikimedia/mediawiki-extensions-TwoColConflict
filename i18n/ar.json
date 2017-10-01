@@ -46,5 +46,16 @@
 	"twoColConflict-tutorial": "كيفية حل تضاربات التحرير",
 	"twoColConflict-previous-dialog": "السابق",
 	"twoColConflict-next-dialog": "التالي",
-	"twoColConflict-close-dialog": "إغلاق"
+	"twoColConflict-close-dialog": "إغلاق",
+	"twoColConflict-test-title-label": "عنوان صفحة الويكي التي ينبغي أن تتم محاكاة اختبار التعارض لها.",
+	"twoColConflict-test-title-submit": "عرض صفحة التعديل",
+	"twoColConflict-test-title-not-existing": "لا توجد صفحة بهذا العنوان.",
+	"twoColConflict-test-text-submit": "إنشاء التعارض",
+	"twoColConflict-test-initial-hint": "على هذه الصفحة يمكنك تجربة واجهة تعارض التعديلات ذات العمودين بدون تفويت أي شيء.",
+	"twoColConflict-test-edit-hint": "افعل بعض التغييرات بالأسفل. لن يتم خفظها. سيتم استخدامها فقط لمحاكاة مثال تعارض تعديل.",
+	"twoColConflict-test-conflict-hint": "هذا هو اختبار التعارض. التغييرات لن يتم حفظها لكن يمكن عرضها.",
+	"twoColConflict-test-preview-submit": "محاكاة حفظ التغييرات",
+	"twoColConflict-test-preview-hint": "شكرا لك لتجربة واجهة تعارض التعديل ذات العمودين! ساعدنا في جعلها أفضل عن طريق [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View إعطائنا رأيك].\n\nبالأسفل نتيجة حل اختبار تعارض التعديل الخاص بك.",
+	"twoColConflict-test-username": "ConflictTest User",
+	"twoColConflict-test-summary-text": "ملخص تعديل اختبار التعارض"
 }
