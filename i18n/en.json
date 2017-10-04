@@ -7,7 +7,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twoColConflict-beta-feature-message": "Two column edit conflict",
-	"twoColConflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.",
+	"twoColConflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.\n\nHint: If you don't want to wait until you run into a real edit conflict, you can simulate edit conflicts on our test page. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Click here] to find out how it works.",
 	"twoColConflict-explainconflict": "<strong>Warning:</strong> Another user just edited and saved this page. There is a conflict between your version and the current version. You will have to merge your changes into the current text version. Only the text in the editor field will be saved when you click on \"$1\".",
 	"twoColConflict-changes-col-title": "Conflicting changes",
 	"twoColConflict-changes-col-desc-1": "Differences between",
@@ -43,7 +43,7 @@
 	"twoColConflict-previous-dialog": "Previous",
 	"twoColConflict-next-dialog": "Next",
 	"twoColConflict-close-dialog": "Close",
-	"twoColConflict-test-title-label": "Title of the wiki page for which the edit conflict should be simulated",
+	"twoColConflict-test-title-label": "Enter the title of a wiki page for which the edit conflict should be simulated:",
 	"twoColConflict-test-title-submit": "Show edit page",
 	"twoColConflict-test-title-not-existing": "There is no page with this title.",
 	"twoColConflict-test-text-submit": "Create conflict",
@@ -51,7 +51,7 @@
 	"twoColConflict-test-edit-hint": "Make some changes below. They won't be saved. They will only be used to simulate an example edit conflict.",
 	"twoColConflict-test-conflict-hint": "This is the test conflict. Changes won't be saved but can be previewed.",
 	"twoColConflict-test-preview-submit": "Simulate save changes",
-	"twoColConflict-test-preview-hint": "Thanks for trying out the Two Column Edit Conflict interface! Help us make it better by [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View letting us know what you think].\n\nBelow the result of your test edit conflict resolution.",
+	"twoColConflict-test-preview-hint": "Thanks for trying out the Two Column Edit Conflict interface! Help us make improvements by providing us with your feedback [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page here].\n\nBelow are the results of your test edit conflict resolution.",
 	"twoColConflict-test-username": "ConflictTest User",
 	"twoColConflict-test-summary-text": "Conflict test edit summary"
 }
