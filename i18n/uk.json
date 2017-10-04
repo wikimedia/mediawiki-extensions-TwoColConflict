@@ -42,5 +42,16 @@
 	"twoColConflict-tutorial": "Інструкції з розв'язання конфліктів",
 	"twoColConflict-previous-dialog": "Назад",
 	"twoColConflict-next-dialog": "Далі",
-	"twoColConflict-close-dialog": "Закрити"
+	"twoColConflict-close-dialog": "Закрити",
+	"twoColConflict-test-title-label": "Назва вікісторінки, для якої слід симулювати конфлікт редагувань",
+	"twoColConflict-test-title-submit": "Показати редаговану сторінку",
+	"twoColConflict-test-title-not-existing": "Немає сторінки з такою назвою.",
+	"twoColConflict-test-text-submit": "Створити конфлікт",
+	"twoColConflict-test-initial-hint": "На цій сторінці Ви можете випробувати інтерфейс вирішення конфлікту редагувань у двох стовпцях без ризику наламати дров.",
+	"twoColConflict-test-edit-hint": "Зробіть якісь зміни нижче. Вони не будуть збережені. Їх буде використано лише для симулювання прикладу конфлікту редагувань.",
+	"twoColConflict-test-conflict-hint": "Це — тестовий конфлікт редагувань. Зміни не буде збережено, але їх можна буде переглянути.",
+	"twoColConflict-test-preview-submit": "Симулювати збереження змін",
+	"twoColConflict-test-preview-hint": "Дякуємо за те, що випробували інтерфейс вирішення конфліктів редагувань! Допоможіть нам покращити його, [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View давши нам знати, що Ви про нього думаєте].\n\nНижче показано результат Вашого тестового вирішення конфлікту редагувань.",
+	"twoColConflict-test-username": "Користувач тестування конфлікту",
+	"twoColConflict-test-summary-text": "Опис редагування при тестуванні конфлікту"
 }

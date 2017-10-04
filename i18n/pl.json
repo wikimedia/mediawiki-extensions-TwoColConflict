@@ -44,5 +44,6 @@
 	"twoColConflict-tutorial": "Samouczek rozwiązywania konfliktu edycji",
 	"twoColConflict-previous-dialog": "Poprzedni",
 	"twoColConflict-next-dialog": "Następny",
-	"twoColConflict-close-dialog": "Zamknij"
+	"twoColConflict-close-dialog": "Zamknij",
+	"twoColConflict-test-title-not-existing": "Nie ma strony o tym tytule."
 }

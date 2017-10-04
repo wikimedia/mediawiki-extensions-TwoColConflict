@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -47,8 +48,8 @@
 	"twoColConflict-test-title-submit": "Visa redigeringssida",
 	"twoColConflict-test-title-not-existing": "Det finns ingen sida med denna titel.",
 	"twoColConflict-test-text-submit": "Skapa konflikt",
-	"twoColConflict-test-initial-hint": "På denna sida kan du prova det nya tvåkolumnsgränssnittet för redigeringskonflikter utan att förstöra någonting.",
-	"twoColConflict-test-edit-hint": "Gör några ändringar nedan. De kommer inte att sparas. De kommer endast användas för att simulera ett exempel på en redigeringskonflikt.",
+	"twoColConflict-test-initial-hint": "På denna sida kan du prova det nya tvåkolumnsgränssnittet för redigeringskonflikter utan att riskera förstöra någonting.",
+	"twoColConflict-test-edit-hint": "Gör några ändringar nedan. De kommer inte att sparas, utan kommer endast användas för att simulera ett exempel på en redigeringskonflikt.",
 	"twoColConflict-test-conflict-hint": "Detta är en testkonflikt. Ändringar kommer inte att sparas, men kan förhandsgranskas.",
 	"twoColConflict-test-preview-submit": "Simulera att spara ändringar",
 	"twoColConflict-test-preview-hint": "Tack för att du provar tvåkolumnsgränssnittet för redigeringskonflikter! Hjälp oss att göra det bättre genom att [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View berätta för oss vad du tyckte].\n\nNedan finns resultatet av lösningen på din testkonflikt.",

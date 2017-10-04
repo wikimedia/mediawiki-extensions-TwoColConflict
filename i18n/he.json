@@ -43,5 +43,14 @@
 	"twoColConflict-tutorial": "הדרכה על פתרון התנגשויות עריכה",
 	"twoColConflict-previous-dialog": "הקודם",
 	"twoColConflict-next-dialog": "הבא",
-	"twoColConflict-close-dialog": "סגירה"
+	"twoColConflict-close-dialog": "סגירה",
+	"twoColConflict-test-title-label": "כותרת דף הוויקי שעבורו צריך לדמות התנגשות עריכה",
+	"twoColConflict-test-title-submit": "הצגת דף העריכה",
+	"twoColConflict-test-title-not-existing": "אין דף עם כותרת כזאת.",
+	"twoColConflict-test-text-submit": "יצירת התנגשות",
+	"twoColConflict-test-initial-hint": "בדף הזה אפשר לנסות את הממשק החדש לפתרון התנגשויות עריכה בשני טורים בלי לשבש דבר.",
+	"twoColConflict-test-edit-hint": "תעשו שינויים להלן. הם לא יישמרו. הם ישמשו רק להדמיית התנגשות עריכה לדוגמה.",
+	"twoColConflict-test-conflict-hint": "זוהי התנגשות לדוגמה. השינויים לא יישמרו, אבל אפשר לראות תצוגה מקדימה שלהם.",
+	"twoColConflict-test-preview-submit": "הדמיית שמירת שינויים",
+	"twoColConflict-test-preview-hint": "תודה על ניסוי ממשק התנגשות עריכה בשני טורים. [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View עזרו לנו לשפר אותו]."
 }
