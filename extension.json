@@ -40,6 +40,9 @@
 		"EditPage::attemptSave:after": [
 			"TwoColConflictHooks::onAttemptSaveAfter"
 		],
+		"SpecialPage_initList": [
+			"TwoColConflictHooks::onSpecialPage_initList"
+		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflictHooks::onResourceLoaderTestModules"
 		]
@@ -191,8 +194,5 @@
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "TwoColConflict"
-	},
-	"SpecialPages": {
-		"SimulateTwoColEditConflict": "SpecialConflictTestPage"
 	}
 }
