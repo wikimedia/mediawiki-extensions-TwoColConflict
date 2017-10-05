@@ -105,7 +105,7 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * @param array $aSpecialPages
+	 * @param array &$aSpecialPages
 	 *
 	 * @return bool
 	 */
