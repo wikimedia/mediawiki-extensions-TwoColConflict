@@ -52,5 +52,7 @@
 	"twoColConflict-test-edit-hint": "תעשו שינויים להלן. הם לא יישמרו. הם ישמשו רק להדמיית התנגשות עריכה לדוגמה.",
 	"twoColConflict-test-conflict-hint": "זוהי התנגשות לדוגמה. השינויים לא יישמרו, אבל אפשר לראות תצוגה מקדימה שלהם.",
 	"twoColConflict-test-preview-submit": "הדמיית שמירת שינויים",
-	"twoColConflict-test-preview-hint": "תודה על ניסוי ממשק התנגשות עריכה בשני טורים. [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View עזרו לנו לשפר אותו]."
+	"twoColConflict-test-preview-hint": "תודה על ניסוי ממשק התנגשות עריכה בשני טורים. [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View עזרו לנו לשפר אותו].",
+	"twoColConflict-test-username": "משתמש ConflictTest",
+	"twoColConflict-test-summary-text": "תקציר עריכה בשביל בדיקת התנגשות"
 }
