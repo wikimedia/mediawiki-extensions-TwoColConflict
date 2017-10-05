@@ -110,6 +110,10 @@ class TwoColConflictHooks {
 	 * @return bool
 	 */
 	public static function onSpecialPage_initList( &$aSpecialPages ) {
+		if ( defined( 'MW_NO_SESSION' ) ) {
+			return true;
+		}
+
 		$user = RequestContext::getMain()->getUser();
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
