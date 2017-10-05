@@ -103,4 +103,32 @@ class TwoColConflictHooks {
 
 		return true;
 	}
+
+	/**
+	 * @param array $aSpecialPages
+	 *
+	 * @return bool
+	 */
+	public static function onSpecialPage_initList( &$aSpecialPages ) {
+		global $wgUser;
+
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		/**
+		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
+		 * is loaded then require the current user to have the feature enabled.
+		 */
+		if (
+			$config->get( 'TwoColConflictBetaFeature' ) &&
+			class_exists( BetaFeatures::class ) &&
+			!BetaFeatures::isFeatureEnabled( $wgUser, 'twocolconflict' )
+		) {
+			return true;
+		}
+
+		$aSpecialPages['SimulateTwoColEditConflict'] = 'SpecialConflictTestPage';
+
+		return true;
+	}
+
 }
