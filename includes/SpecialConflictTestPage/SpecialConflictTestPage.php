@@ -57,7 +57,7 @@ class SpecialConflictTestPage extends SpecialPage {
 
 			$this->showChangeText(
 				$testArticle->getPage()->getContent()->serialize(),
-				$testTitle->getText()
+				$testTitle->getPrefixedText()
 			);
 			return;
 		}
