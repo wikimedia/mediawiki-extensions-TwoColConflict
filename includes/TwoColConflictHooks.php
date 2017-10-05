@@ -110,8 +110,7 @@ class TwoColConflictHooks {
 	 * @return bool
 	 */
 	public static function onSpecialPage_initList( &$aSpecialPages ) {
-		global $wgUser;
-
+		$user = RequestContext::getMain()->getUser();
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		/**
@@ -121,7 +120,8 @@ class TwoColConflictHooks {
 		if (
 			$config->get( 'TwoColConflictBetaFeature' ) &&
 			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $wgUser, 'twocolconflict' )
+			$user instanceof User &&
+			!BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' )
 		) {
 			return true;
 		}
