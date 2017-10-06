@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"twoColConflict-beta-feature-message": "การแก้ไขชนกันสองคอลัมน์",
+	"twoColConflict-beta-feature-description": "แสดงมุมมองการแก้ไขชนกันโดยใช้มุมมองแบบสองคอลัมน์ขั้นสูง"
+}

@@ -49,7 +49,10 @@
 	"twoColConflict-test-title-not-existing": "صفحه‌ای با این عنوان وجود ندارد.",
 	"twoColConflict-test-text-submit": "ایجاد تعارض",
 	"twoColConflict-test-initial-hint": "در این صفحه می‌توانید دو ستون جدید تداخل ویرایش بدون به‌ریختگی مشاهده کنید.",
+	"twoColConflict-test-edit-hint": "انجام تعدادی از تغییرات در زیر. آنها ذخیره نمی‌شوند. آنها فقط برای شبیه‌سازی نمونه‌های تعارض ویرایشی نمایش داده می‌شوند.",
+	"twoColConflict-test-conflict-hint": "این یک تعارض آزمایشی‌ست. تغییرات ذخیره نمی‌شود ولی به صورت پیش‌نمایش دیده می‌شوند.",
 	"twoColConflict-test-preview-submit": "شبیه‌سازی ذخیره تغییرات",
+	"twoColConflict-test-preview-hint": "بابت استفاده از ابزار رفع تعارض ویرایشی ممنون! [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View با نظر دادن] به ما در بهبود آن کمک کنید.\n\nدر زیر نتایج آزمایش ابزار تعارض ویرایشی موجود است.",
 	"twoColConflict-test-username": "کاربر آزمایش تداخل",
 	"twoColConflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل"
 }
