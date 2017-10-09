@@ -223,6 +223,12 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 
 		list( $html, $response ) = $this->executeSpecialPage();
 
-		$this->assertEquals( '', $html );
+		$this->assertWarningBox(
+			$html,
+			'You must enable the \'Two column edit conflict\' ' .
+			'beta feature in your preferences to use this special page.'
+		);
+		// assertion to avoid phpunit showing hamcrest test as risky
+		$this->assertTrue( true );
 	}
 }

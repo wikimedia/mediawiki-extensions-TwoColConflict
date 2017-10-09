@@ -19,6 +19,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	 */
 	public function execute( $subPage ) {
 		if ( !$this->isInBetaAndEnabled() ) {
+			$this->showWarningBox( ( new Message( 'twoColConflict-test-needsbeta' ) )->parse() );
 			return;
 		}
 
