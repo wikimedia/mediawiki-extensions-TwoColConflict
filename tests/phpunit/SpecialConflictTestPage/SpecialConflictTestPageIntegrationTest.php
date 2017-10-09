@@ -219,7 +219,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		$this->assertTrue( true );
 	}
 
-	public function testNoPageWhenBetaFeatureAndNoUser() {
+	public function testNoOutputWhenBetaFeatureAndNoUser() {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
 		list( $html, $response ) = $this->executeSpecialPage();
