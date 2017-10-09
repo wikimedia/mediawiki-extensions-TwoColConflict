@@ -38,9 +38,7 @@ class HtmlSpecialTestTitleForm {
 				new TextInputWidget(
 					[
 						'name' => 'mw-twocolconflict-test-title',
-						'value' => Title::newMainPage()->getText(),
 						'classes' => [ 'mw-twocolconflict-test-title' ],
-						'placeholder' => Title::newMainPage()->getText(),
 						'suggestions' => false,
 						'autofocus' => true,
 						'required' => true,

@@ -96,7 +96,6 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'input' ) )
-					->andAlso( withAttribute( 'placeholder' )->havingValue( 'Main Page' ) )
 					->andAlso( withAttribute( 'name' )->havingValue( 'mw-twocolconflict-test-title' ) )
 			) ) )
 		);
