@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twoColConflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
-	"twoColConflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.",
+	"twoColConflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.\n\nHinweis: Falls du nicht warten möchtest, bis du in einen echten Bearbeitungskonflikt verwickelt wirst, kannst du [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page hier] Bearbeitungskonflikte auf unserer Testseite simulieren, um herauszufinden, wie sie funktionieren.",
 	"twoColConflict-explainconflict": "<strong>Warnung:</strong> Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion einfügen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
 	"twoColConflict-changes-col-title": "Kollidierende Änderungen",
 	"twoColConflict-changes-col-desc-1": "Unterschiede zwischen",
@@ -44,7 +44,7 @@
 	"twoColConflict-previous-dialog": "Vorheriges",
 	"twoColConflict-next-dialog": "Nächstes",
 	"twoColConflict-close-dialog": "Schließen",
-	"twoColConflict-test-title-label": "Titel der Wikiseite, für die der Bearbeitungskonflikt simuliert werden soll.",
+	"twoColConflict-test-title-label": "Gib den Titel einer nicht geschützten Wikiseite ein, für die der Bearbeitungskonflikt simuliert werden soll:",
 	"twoColConflict-test-title-submit": "Bearbeitungsseite anzeigen",
 	"twoColConflict-test-title-not-existing": "Es gibt keine Seite mit diesem Titel.",
 	"twoColConflict-test-text-submit": "Konflikt erstellen",
@@ -52,7 +52,7 @@
 	"twoColConflict-test-edit-hint": "Mache unten einige Änderungen. Sie werden nicht gespeichert. Sie werden nur verwendet, um einen Beispiel-Bearbeitungskonflikt zu simulieren.",
 	"twoColConflict-test-conflict-hint": "Dies ist der Testkonflikt. Änderungen werden nicht gespeichert, es kann jedoch eine Vorschau angezeigt werden.",
 	"twoColConflict-test-preview-submit": "Speicherung der Änderungen simulieren",
-	"twoColConflict-test-preview-hint": "Vielen Dank für das Austesten der Zwei-Spalten-Bearbeitungskonflikt-Oberfläche! Hilf uns bei der Verbesserung, indem du [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View uns wissen lässt, was du denkst].\n\nEs folgt das Ergebnis der Auflösung deines Test-Bearbeitungskonfliktes.",
+	"twoColConflict-test-preview-hint": "Vielen Dank für das Ausprobieren der Oberfläche des Zwei-Spalten-Bearbeitungskonflikts! Hilf uns bei Verbesserungen, indem du uns [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page hier] Rückmeldungen gibst.\n\nUnten sind die Ergebnisse der Auflösung deines Test-Bearbeitungskonfliktes.",
 	"twoColConflict-test-username": "Konflikttest-Benutzer",
 	"twoColConflict-test-summary-text": "Konflikttest-Bearbeitungszusammenfassung"
 }

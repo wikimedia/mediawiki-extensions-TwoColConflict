@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Visar en jämförelsesida för att lösa redigeringskonflikter",
 	"twoColConflict-beta-feature-message": "Redigeringskonflikter i två kolumner",
-	"twoColConflict-beta-feature-description": "Visar redigeringskonflikten med en mer avancerad tvåkolumnsvy.",
+	"twoColConflict-beta-feature-description": "Visar redigeringskonflikten med en mer avancerad tvåkolumnsvy.\n\nTips: Om du inte vill vänta tills du stöter på en riktig redigeringskonflikt kan du simulera redigeringskonflikter på vår testsida. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Klicka här] för att ta reda på hur det fungerar.",
 	"twoColConflict-explainconflict": "<strong>Varning:</strong> En annan användare redigerade och sparade denna sida. Det har uppstått en redigeringskonflikt mellan din version och nuvarande version. Du behöver sammanfoga dina ändringar till den nuvarande textversionen. Endast texten i redigeraren kommer att sparas när du klickar på \"$1\".",
 	"twoColConflict-changes-col-title": "Motstridande ändringar",
 	"twoColConflict-changes-col-desc-1": "Skillnader mellan",
@@ -44,7 +44,7 @@
 	"twoColConflict-previous-dialog": "Föregående",
 	"twoColConflict-next-dialog": "Nästa",
 	"twoColConflict-close-dialog": "Stäng",
-	"twoColConflict-test-title-label": "Titeln på wikisidan där redigeringskonflikten ska simuleras",
+	"twoColConflict-test-title-label": "Ange titeln på en wikisida där redigeringskonflikten ska simuleras:",
 	"twoColConflict-test-title-submit": "Visa redigeringssida",
 	"twoColConflict-test-title-not-existing": "Det finns ingen sida med denna titel.",
 	"twoColConflict-test-text-submit": "Skapa konflikt",
@@ -52,7 +52,7 @@
 	"twoColConflict-test-edit-hint": "Gör några ändringar nedan. De kommer inte att sparas, utan kommer endast användas för att simulera ett exempel på en redigeringskonflikt.",
 	"twoColConflict-test-conflict-hint": "Detta är en testkonflikt. Ändringar kommer inte att sparas, men kan förhandsgranskas.",
 	"twoColConflict-test-preview-submit": "Simulera att spara ändringar",
-	"twoColConflict-test-preview-hint": "Tack för att du provar tvåkolumnsgränssnittet för redigeringskonflikter! Hjälp oss att göra det bättre genom att [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View berätta för oss vad du tyckte].\n\nNedan finns resultatet av lösningen på din testkonflikt.",
+	"twoColConflict-test-preview-hint": "Tack för att du provar tvåkolumnsgränssnittet för redigeringskonflikter! Hjälp oss förbättra det genom ge oss din återkoppling [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View här].\n\nNedan finns resultaten av lösningen på din testkonflikt.",
 	"twoColConflict-test-username": "ConflictTest-användare",
 	"twoColConflict-test-summary-text": "Redigeringssammanfattning för ConflictTest"
 }
