@@ -44,6 +44,7 @@
 	"twoColConflict-previous-dialog": "Vorheriges",
 	"twoColConflict-next-dialog": "Nächstes",
 	"twoColConflict-close-dialog": "Schließen",
+	"twoColConflict-test-needsbeta": "Du musst die Betafunktion „Zwei-Spalten-Bearbeitungskonflikt“ in deinen Einstellungen aktivieren, um diese Spezialseite zu nutzen.",
 	"twoColConflict-test-title-label": "Gib den Titel einer nicht geschützten Wikiseite ein, für die der Bearbeitungskonflikt simuliert werden soll:",
 	"twoColConflict-test-title-submit": "Bearbeitungsseite anzeigen",
 	"twoColConflict-test-title-not-existing": "Es gibt keine Seite mit diesem Titel.",

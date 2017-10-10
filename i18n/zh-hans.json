@@ -44,7 +44,7 @@
 	"twoColConflict-previous-dialog": "上一步",
 	"twoColConflict-next-dialog": "下一步",
 	"twoColConflict-close-dialog": "关闭",
-	"twoColConflict-test-title-label": "输入应用作模拟编辑冲突的wiki页面的标题：",
+	"twoColConflict-test-title-label": "输入应用作模拟编辑冲突，未受保护的wiki页面的标题：",
 	"twoColConflict-test-title-submit": "显示编辑页面",
 	"twoColConflict-test-title-not-existing": "没有该标题的页面。",
 	"twoColConflict-test-text-submit": "创建冲突",
