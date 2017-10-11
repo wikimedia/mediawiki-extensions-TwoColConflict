@@ -30,6 +30,7 @@
 	"twoColConflict-previous-dialog": "이전",
 	"twoColConflict-next-dialog": "다음",
 	"twoColConflict-close-dialog": "닫기",
+	"twoColConflict-test-needsbeta": "이 특수 문서를 사용하려면 환경 설정에서 '2단 편집 충돌' 베타 기능을 활성화해야 합니다.",
 	"twoColConflict-test-title-submit": "편집 문서 표시",
 	"twoColConflict-test-title-not-existing": "이 제목의 문서가 없습니다.",
 	"twoColConflict-test-text-submit": "만들기 충돌",

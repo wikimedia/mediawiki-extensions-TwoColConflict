@@ -9,7 +9,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Apresenta um ecrã de fusão de edições lado a lado, para resolução de conflitos de edição",
 	"twoColConflict-beta-feature-message": "Conflito de edições em duas colunas",
-	"twoColConflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.",
+	"twoColConflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.\n\nDica: Se não quiser esperar até que ocorra um conflito de edições, pode simular um conflito na nossa página de testes. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Clique aqui] para descobrir como isto funciona.",
 	"twoColConflict-explainconflict": "<strong>Aviso:</strong> Um outro utilizador acaba de editar e gravar esta página. Existe um conflito entre a sua versão e a versão atual. Terá que fundir as suas alterações na versão atual do texto. Só o texto no campo de edição será gravado ao clicar \"$1\".",
 	"twoColConflict-changes-col-title": "Alterações em conflito",
 	"twoColConflict-changes-col-desc-1": "Diferenças entre",
@@ -45,7 +45,8 @@
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Próximo",
 	"twoColConflict-close-dialog": "Fechar",
-	"twoColConflict-test-title-label": "Título da página da wiki para a qual o conflito de edições deve ser simulado",
+	"twoColConflict-test-needsbeta": "Para usar esta página especial tem de ativar a funcionalidade beta 'Conflito de edições em duas colunas' nas suas preferências.",
+	"twoColConflict-test-title-label": "Introduza o título de uma página da wiki que não esteja protegida, para a qual o conflito de edições deve ser simulado:",
 	"twoColConflict-test-title-submit": "Mostrar a página de edição",
 	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",
 	"twoColConflict-test-text-submit": "Criar um conflito",
@@ -53,7 +54,7 @@
 	"twoColConflict-test-edit-hint": "Faça algumas alterações abaixo. Elas não serão gravadas. Só serão usadas para simular um conflito de edições, como exemplo.",
 	"twoColConflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão gravadas mas podem ser antevistas.",
 	"twoColConflict-test-preview-submit": "Simular a gravação das alterações",
-	"twoColConflict-test-preview-hint": "Obrigado por experimentar a interface da conflito de edições em duas colunas! Ajude a melhorá-la [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View dizendo-nos o que achou].\n\nAbaixo encontra o resultado da resolução do seu teste de conflito de edições.",
+	"twoColConflict-test-preview-hint": "Obrigado por experimentar a interface de conflito de edições em duas colunas! Ajude a melhorá-la dizendo-nos o que achou, [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page aqui].\n\nEncontra abaixo os resultados da resolução do seu teste de conflito de edições.",
 	"twoColConflict-test-username": "Utilizador do teste de conflito",
 	"twoColConflict-test-summary-text": "Resumo de edição do teste de conflito"
 }

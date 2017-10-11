@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Arthur2e5"
+			"Arthur2e5",
+			"NeverBehave"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "使用并排合并界面解决编辑冲突",
 	"twoColConflict-beta-feature-message": "两栏编辑冲突",
-	"twoColConflict-beta-feature-description": "使用更先进的两栏视图显示编辑冲突。\n\n提示：如果您不希望等到您面临一次真的编辑冲突，您可以在我们的测试页面模拟编辑冲突。[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 点此]了解它是如何工作的。",
+	"twoColConflict-beta-feature-description": "使用更先进的双栏视图显示编辑冲突。\n\n提示：如果您不希望等到您面临一次真的编辑冲突，您可以在我们的测试页面模拟编辑冲突。[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 点此]了解它是如何工作的。",
 	"twoColConflict-explainconflict": "<strong>警告：</strong>另一位用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您需要将自己的更改至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
 	"twoColConflict-changes-col-title": "更改冲突",
 	"twoColConflict-changes-col-desc-1": "比较两栏之间的不同：",
@@ -44,15 +45,16 @@
 	"twoColConflict-previous-dialog": "上一步",
 	"twoColConflict-next-dialog": "下一步",
 	"twoColConflict-close-dialog": "关闭",
-	"twoColConflict-test-title-label": "输入应用作模拟编辑冲突，未受保护的wiki页面的标题：",
+	"twoColConflict-test-needsbeta": "您必须在您的参数设置中启用“两栏编辑冲突”测试功能来使用该特殊页面。",
+	"twoColConflict-test-title-label": "输入一个未受保护的wiki页面的标题以模拟编辑冲突：",
 	"twoColConflict-test-title-submit": "显示编辑页面",
 	"twoColConflict-test-title-not-existing": "没有该标题的页面。",
 	"twoColConflict-test-text-submit": "创建冲突",
-	"twoColConflict-test-initial-hint": "在此页面上，您可以尝试新的两栏编辑冲突界面，而不扰乱任何内容。",
+	"twoColConflict-test-initial-hint": "在此页面上，您可以尝试新的双栏编辑冲突界面，而不扰乱任何内容。",
 	"twoColConflict-test-edit-hint": "在下方进行一些更改。这些更改不会保存，只用于模拟示例编辑冲突。",
 	"twoColConflict-test-conflict-hint": "这是测试冲突。更改不会保存，但可以预览。",
 	"twoColConflict-test-preview-submit": "模拟保存更改",
-	"twoColConflict-test-preview-hint": "感谢尝试两栏编辑冲突界面！通过[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我们提供您的反馈，来帮助我们对它做出改进吧。\n\n下面是您的测试编辑冲突解决的结果。",
+	"twoColConflict-test-preview-hint": "感谢尝试双栏编辑冲突界面！通过[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我们提供您的反馈，来帮助我们对它做出改进吧。\n\n下面是您的测试编辑冲突解决的结果。",
 	"twoColConflict-test-username": "冲突测试用户",
 	"twoColConflict-test-summary-text": "冲突测试编辑摘要"
 }

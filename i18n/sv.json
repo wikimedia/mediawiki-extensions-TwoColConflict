@@ -44,6 +44,7 @@
 	"twoColConflict-previous-dialog": "Föregående",
 	"twoColConflict-next-dialog": "Nästa",
 	"twoColConflict-close-dialog": "Stäng",
+	"twoColConflict-test-needsbeta": "Du måste aktivera betafunktionen \"Redigeringskonflikter i två kolumner\" i dina inställningar för att använda denna specialsida.",
 	"twoColConflict-test-title-label": "Ange titeln på en wikisida som inte är skyddad där redigeringskonflikten ska simuleras:",
 	"twoColConflict-test-title-submit": "Visa redigeringssida",
 	"twoColConflict-test-title-not-existing": "Det finns ingen sida med denna titel.",

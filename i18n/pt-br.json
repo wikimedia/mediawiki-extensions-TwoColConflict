@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -42,5 +43,14 @@
 	"twoColConflict-tutorial": "Editar o tutorial de resolução de conflitos",
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Próximo",
-	"twoColConflict-close-dialog": "Fechar"
+	"twoColConflict-close-dialog": "Fechar",
+	"twoColConflict-test-title-submit": "Mostrar a página de edição",
+	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",
+	"twoColConflict-test-text-submit": "Criar um conflito",
+	"twoColConflict-test-initial-hint": "Nesta página, você pode experimentar a nova interface Two Column Edit Conflict sem mexer com nada.",
+	"twoColConflict-test-edit-hint": "Faça algumas alterações abaixo. Eles não serão salvos. Eles só serão usados para simular um exemplo de conflito de edição.",
+	"twoColConflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão gravadas mas podem ser pre-visualizadas.",
+	"twoColConflict-test-preview-submit": "Simular a gravação das alterações",
+	"twoColConflict-test-username": "Usuário do teste de conflito",
+	"twoColConflict-test-summary-text": "Resumo de edição do teste de conflito"
 }

@@ -42,5 +42,6 @@
 	"twoColConflict-tutorial": "Tutorial pa iguar los conflictos d'edición",
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Siguiente",
-	"twoColConflict-close-dialog": "Zarrar"
+	"twoColConflict-close-dialog": "Zarrar",
+	"twoColConflict-test-summary-text": "Resume d'ediciones de prueba de conflictu"
 }
