@@ -7,5 +7,6 @@
 	"twoColConflict-beta-feature-message": "Divu kolonnu labojumu konflikts",
 	"twoColConflict-changes-col-desc-4": "tavs teksts",
 	"twoColConflict-base-selection-own-label": "Mans teksts",
-	"twoColConflict-base-selection-submit-label": "Labi"
+	"twoColConflict-base-selection-submit-label": "Labi",
+	"twoColConflict-test-text-submit": "Izveidot konfliktu"
 }

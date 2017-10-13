@@ -11,7 +11,7 @@
 	"twoColConflict": "دمج التعديلات",
 	"twoColConflict-desc": "عرض شاشة دمج التعديلات لحل تضاربات التحرير",
 	"twoColConflict-beta-feature-message": "دمج التعديلات",
-	"twoColConflict-beta-feature-description": "عرض تضارب التحرير باستخدام طريقة العمودين المتقدمة.",
+	"twoColConflict-beta-feature-description": "عرض تضارب التحرير باستخدام طريقة العمودين الأكثر تقدما.\n\nملاحظة: لو كنت لا تريد الانتظار حتى تصطدم بتضارب تحرير، فيمكنك محاكاة تضلربات التحرير في صفحة التجربة الخاصة بنا. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page اضغط هنا] لمعرفة كيف تعمل.",
 	"twoColConflict-explainconflict": "<strong>تحذير:</strong> لقد قام مستخدم آخر بتعديل وحفظ هذه الصفحة. هناك تضارب في التعديلات بين نسختك والنسخة الحالية. يتوجب عليك دمج تغييراتك في النسخة النصية الحالية. النص الموجود المُحرر هو الذي سيُحفظ فقط عند ضغطك على \"$1\".",
 	"twoColConflict-changes-col-title": "التغييرات المتضاربة",
 	"twoColConflict-changes-col-desc-1": "الفروقات بين",
@@ -47,7 +47,8 @@
 	"twoColConflict-previous-dialog": "السابق",
 	"twoColConflict-next-dialog": "التالي",
 	"twoColConflict-close-dialog": "إغلاق",
-	"twoColConflict-test-title-label": "عنوان صفحة الويكي التي ينبغي أن تتم محاكاة اختبار التعارض لها.",
+	"twoColConflict-test-needsbeta": "أنت يجب عليك تفعيل خاصية البيتا 'Two column edit conflict' في تفضيلاتك لاستخدام هذه الصفحة الخاصة.",
+	"twoColConflict-test-title-label": "أدخل عنوان صفحة الويكي التي ينبغي أن تتم محاكاة اختبار التعارض لها:",
 	"twoColConflict-test-title-submit": "عرض صفحة التعديل",
 	"twoColConflict-test-title-not-existing": "لا توجد صفحة بهذا العنوان.",
 	"twoColConflict-test-text-submit": "إنشاء التعارض",
@@ -55,7 +56,7 @@
 	"twoColConflict-test-edit-hint": "افعل بعض التغييرات بالأسفل. لن يتم خفظها. سيتم استخدامها فقط لمحاكاة مثال تعارض تعديل.",
 	"twoColConflict-test-conflict-hint": "هذا هو اختبار التعارض. التغييرات لن يتم حفظها لكن يمكن عرضها.",
 	"twoColConflict-test-preview-submit": "محاكاة حفظ التغييرات",
-	"twoColConflict-test-preview-hint": "شكرا لك لتجربة واجهة تعارض التعديل ذات العمودين! ساعدنا في جعلها أفضل عن طريق [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View إعطائنا رأيك].\n\nبالأسفل نتيجة حل اختبار تعارض التعديل الخاص بك.",
+	"twoColConflict-test-preview-hint": "شكرا لك لتجربة واجهة تعارض التعديل ذات العمودين! ساعدنا في جعلها أفضل عن طريق إعطائنا رأيك [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View هنا].\n\nبالأسفل نتيجة حل اختبار تعارض التعديل الخاص بك.",
 	"twoColConflict-test-username": "ConflictTest User",
 	"twoColConflict-test-summary-text": "ملخص تعديل اختبار التعارض"
 }

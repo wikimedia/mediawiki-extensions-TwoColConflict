@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Viser en todelt skjerm for fletting av redigeringer ved redigeringskonflikt",
 	"twoColConflict-beta-feature-message": "Tokolonners redigeringskonflikt",
-	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
+	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.\n\nHint: om du ikke ønsker å vente til du opplever en virkelig redigeringskonflikt, kan du simulere redigeringskonflikter på testsiden vår. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Klikk her] for å finne ut hvordan det virker.",
 	"twoColConflict-explainconflict": "<strong>Advarsel:</strong> En annen bruker redigerte og lagret nettopp denne siden. Det er en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil lagres når du klikker på «$1».",
 	"twoColConflict-changes-col-title": "Motstridende endringer",
 	"twoColConflict-changes-col-desc-1": "Forskjeller mellom",
@@ -44,7 +44,8 @@
 	"twoColConflict-previous-dialog": "Forrige",
 	"twoColConflict-next-dialog": "Neste",
 	"twoColConflict-close-dialog": "Lukk",
-	"twoColConflict-test-title-label": "Tittelen på wikisiden redigeringskonflikten skal simuleres for",
+	"twoColConflict-test-needsbeta": "Du må slå på betafunksjonen «Tokolonners redigeringskonflikt» i innstillingene dine for å bruke denne spesialsiden.",
+	"twoColConflict-test-title-label": "Skriv inn tittelen på en ikke-beskyttet wikiside som redigeringen skal simuleres i:",
 	"twoColConflict-test-title-submit": "Vis redigeringsside",
 	"twoColConflict-test-title-not-existing": "Det er ingen side med denne tittelen.",
 	"twoColConflict-test-text-submit": "Skap konflikt",
@@ -52,7 +53,7 @@
 	"twoColConflict-test-edit-hint": "Gjør noen endringer nedenfor. De vil ikke bli lagret, men brukes kun til å simulere et eksempel på en redigeringskonflikt.",
 	"twoColConflict-test-conflict-hint": "Dette er testkonflikten. Endringene vil ikke bli lagret, men kan forhåndsvises.",
 	"twoColConflict-test-preview-submit": "Simuler lagring av endringer",
-	"twoColConflict-test-preview-hint": "Takk for at du prøver ut grensesnittet for tokolonners redigeringskonflikt. Hjelp oss å gjøre det bedre ved å [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View gi oss tilbakemelding om hva du syns].\n\nNedenfor er resultatet fra løsningen av testkonflikten din.",
+	"twoColConflict-test-preview-hint": "Takk for at du prøver ut grensesnittet for tokolonners redigeringskonflikt. Hjelp oss å gjøre det bedre ved å [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View gi oss tilbakemelding om hva du syns].\n\nNedenfor er resultatet fra løsingen av testkonflikten din.",
 	"twoColConflict-test-username": "Konflikttestbruker",
 	"twoColConflict-test-summary-text": "Redigeringsforklaring for konflikttest"
 }
