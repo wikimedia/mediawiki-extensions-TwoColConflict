@@ -45,6 +45,7 @@
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Siguiente",
 	"twoColConflict-close-dialog": "Cerrar",
+	"twoColConflict-test-needsbeta": "Antes de utilizar esta página especial, debes activar en tus preferencias la función en pruebas «Conflictos de edición en dos columnas».",
 	"twoColConflict-test-title-submit": "Mostrar la página de edición",
 	"twoColConflict-test-title-not-existing": "No hay ninguna página con este título.",
 	"twoColConflict-test-text-submit": "Crear conflicto",
