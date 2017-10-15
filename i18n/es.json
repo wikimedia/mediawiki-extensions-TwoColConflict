@@ -46,9 +46,12 @@
 	"twoColConflict-next-dialog": "Siguiente",
 	"twoColConflict-close-dialog": "Cerrar",
 	"twoColConflict-test-needsbeta": "Antes de utilizar esta página especial, debes activar en tus preferencias la función en pruebas «Conflictos de edición en dos columnas».",
+	"twoColConflict-test-title-label": "Digita el título de una página no protegida del wiki para simular un conflicto de edición en ella:",
 	"twoColConflict-test-title-submit": "Mostrar la página de edición",
 	"twoColConflict-test-title-not-existing": "No hay ninguna página con este título.",
 	"twoColConflict-test-text-submit": "Crear conflicto",
 	"twoColConflict-test-edit-hint": "Realiza algunos cambios a continuación. No se guardarán; solo se utilizarán para simular un conflicto de edición a modo de ejemplo.",
-	"twoColConflict-test-preview-hint": "¡Gracias por poner a prueba la interfaz de conflictos de ediciones en dos columnas! Ayúdanos a mejorarla [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View con tus comentarios].\n\nA continuación, el resultado de tu resolución de conflictos de prueba."
+	"twoColConflict-test-preview-submit": "Simular guardar cambios",
+	"twoColConflict-test-preview-hint": "¡Gracias por poner a prueba la interfaz de conflictos de ediciones en dos columnas! Ayúdanos a mejorarla [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page con tus comentarios].\n\nA continuación, el resultado de tu resolución de conflictos de prueba.",
+	"twoColConflict-test-summary-text": "Resumen de edición de la prueba de conflicto"
 }
