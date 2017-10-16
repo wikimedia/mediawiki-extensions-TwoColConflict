@@ -44,6 +44,7 @@
 	"twoColConflict-next-dialog": "Next",
 	"twoColConflict-close-dialog": "Close",
 	"twoColConflict-test-needsbeta": "You must enable the 'Two column edit conflict' beta feature in your preferences to use this special page.",
+	"twoColConflict-test-page-title": "Edit Conflict: Simulation",
 	"twoColConflict-test-title-label": "Enter the title of a non-protected wiki page for which the edit conflict should be simulated:",
 	"twoColConflict-test-title-submit": "Show edit page",
 	"twoColConflict-test-title-not-existing": "There is no page with this title.",

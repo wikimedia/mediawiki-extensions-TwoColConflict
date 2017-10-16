@@ -25,6 +25,7 @@ class SpecialConflictTestPage extends SpecialPage {
 
 		$this->getOutput()->enableOOUI();
 		$this->addModules();
+		$this->getOutput()->setPageTitle( new Message( 'twoColConflict-test-page-title' ) );
 		$request = $this->getRequest();
 
 		if ( $request->getVal( 'wpPreview' ) != null || $request->getVal( 'wpDiff' ) != null ) {
@@ -125,6 +126,9 @@ class SpecialConflictTestPage extends SpecialPage {
 		$twoColConflictTestPage->setUpConflictingTestText();
 		$twoColConflictTestPage->setUpFakeConflictRequest();
 		$twoColConflictTestPage->edit();
+
+		// overwrite title set by EditPage
+		$this->getOutput()->setPageTitle( new Message( 'twoColConflict-test-page-title' ) );
 	}
 
 	/**

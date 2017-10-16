@@ -49,6 +49,7 @@
 	"twoColConflict-next-dialog": "Label of the button to go to the next tutorial slide.\n{{Identical|Next}}",
 	"twoColConflict-close-dialog": "Label of the button to close the RevisionSlider tutorial.\n{{Identical|Close}}",
 	"twoColConflict-test-needsbeta": "Error message show on the conflict test page if the beta feature is not enabled.",
+	"twoColConflict-test-page-title": "Page title when simulating edit conflicts on the conflict test pages.",
 	"twoColConflict-test-title-label": "Label for the conflict test page input box to load an article.",
 	"twoColConflict-test-title-submit": "Submit button on the conflict test page to load an article.",
 	"twoColConflict-test-title-not-existing": "Error message shown on the conflict test page when the submitted title does not exist.",
