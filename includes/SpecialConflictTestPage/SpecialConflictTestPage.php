@@ -18,6 +18,8 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param null|string $subPage
 	 */
 	public function execute( $subPage ) {
+		$this->getPresetPage();
+
 		if ( !$this->isInBetaAndEnabled() ) {
 			$this->showWarningBox( ( new Message( 'twoColConflict-test-needsbeta' ) )->parse() );
 			return;
@@ -104,7 +106,10 @@ class SpecialConflictTestPage extends SpecialPage {
 	}
 
 	private function showLoadTitle() {
-		$this->getOutput()->addHTML( ( new HtmlSpecialTestTitleForm( $this ) )->getHtml() );
+		$this->getOutput()->addHTML( ( new HtmlSpecialTestTitleForm(
+			$this,
+			$this->getPresetPage()
+		) )->getHtml() );
 	}
 
 	/**
@@ -164,5 +169,36 @@ class SpecialConflictTestPage extends SpecialPage {
 		}
 
 		return true;
+	}
+
+	private function getPresetPage() {
+		$dbName = MediaWikiServices::getInstance()->getMainConfig()->get( 'DBname' );
+		$defaults = $this->testSiteDefaults();
+
+		if ( !isset( $defaults[ $dbName ] ) ) {
+			return '';
+		}
+
+		return $defaults[ $dbName ];
+	}
+
+	private function testSiteDefaults() {
+		return [
+			'testwiki' => 'Page023',
+			'metawiki' => 'WMDE_Technical_Wishes/Edit_Conflicts',
+			'mediawikiwiki' => 'Help:Two_Column_Edit_Conflict_View',
+			'enwiki' => 'Wild_goat',
+			'dewiki' => 'Hausziege',
+			'eswiki' => 'Ammotragus_lervia',
+			'jawiki' => 'ヤギ',
+			'frwiki' => 'Mouflon_à_manchettes',
+			'ruwiki' => 'Гривистый_баран',
+			'itwiki' => 'Ammotragus_lervia',
+			'zhwiki' => '羊亚科',
+			'plwiki' => 'Arui_grzywiasta',
+			'ptwiki' => 'Capra_aegagrus_hircus',
+			'hewiki' => 'עז_הבית',
+			'arwiki' => 'ماعز',
+		];
 	}
 }

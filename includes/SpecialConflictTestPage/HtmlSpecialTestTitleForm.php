@@ -16,10 +16,17 @@ class HtmlSpecialTestTitleForm {
 	private $specialPage;
 
 	/**
-	 * @param SpecialPage $specialPage
+	 * @var string
 	 */
-	public function __construct( SpecialPage $specialPage ) {
+	private $defaultValue;
+
+	/**
+	 * @param SpecialPage $specialPage
+	 * @param string $defaultValue
+	 */
+	public function __construct( SpecialPage $specialPage, $defaultValue = '' ) {
 		$this->specialPage = $specialPage;
+		$this->defaultValue = $defaultValue;
 	}
 
 	/**
@@ -38,6 +45,7 @@ class HtmlSpecialTestTitleForm {
 				new TextInputWidget(
 					[
 						'name' => 'mw-twocolconflict-test-title',
+						'value' => $this->defaultValue,
 						'classes' => [ 'mw-twocolconflict-test-title' ],
 						'suggestions' => false,
 						'autofocus' => true,
