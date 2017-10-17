@@ -46,5 +46,6 @@
 	"twoColConflict-close-dialog": "Pechar",
 	"twoColConflict-test-title-submit": "Amosar a páxina de edición",
 	"twoColConflict-test-title-not-existing": "Non hai  ningunha páxina con este título.",
-	"twoColConflict-test-text-submit": "Crear un conflito"
+	"twoColConflict-test-text-submit": "Crear un conflito",
+	"twoColConflict-test-preview-submit": "Simular gardar cambios"
 }

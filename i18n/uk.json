@@ -7,7 +7,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Показує екран об'єднання редагувань (два вікна поряд) для вирішення конфліктів редагувань",
 	"twoColConflict-beta-feature-message": "Конфлікт редагувань у двох стовпцях",
-	"twoColConflict-beta-feature-description": "Відкривати перегляд конфлікту редагувань, використовуючи просунутий метод перегляду конфліктних версій у форматі двох стовпців.",
+	"twoColConflict-beta-feature-description": "Відкривайте перегляд конфлікту редагувань, використовуючи просунутий метод перегляду конфліктних версій у форматі двох стовпців.\n\nПідказка: якщо Ви не хочете чекати, поки Вам трапиться справжній конфлікт редагувань, можете симулювати конфлікти редагувань на нашій сторінці для тестування. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Клацніть тут], щоб дізнатись, як це працює.",
 	"twoColConflict-explainconflict": "<strong>Попередження:</strong> Інший користувач щойно відредагував і зберіг цю сторінку. Наявний конфлікт між Вашою і поточною версією. Вам треба об'єднати свої зміни з поточною версією тексту. Якщо Ви натиснете «$1», буде збережено лише текст, присутній у вікні редактора.",
 	"twoColConflict-changes-col-title": "Конфліктні зміни",
 	"twoColConflict-changes-col-desc-1": "Різниця між",
@@ -43,7 +43,8 @@
 	"twoColConflict-previous-dialog": "Назад",
 	"twoColConflict-next-dialog": "Далі",
 	"twoColConflict-close-dialog": "Закрити",
-	"twoColConflict-test-title-label": "Назва вікісторінки, для якої слід симулювати конфлікт редагувань",
+	"twoColConflict-test-needsbeta": "Щоб використовувати цю спеціальну сторінку, Вам треба увімкнути бета-функцію «Конфлікт редагувань у двох стовпцях» у своїх налаштуваннях.",
+	"twoColConflict-test-title-label": "Введіть назву незахищеної вікісторінки, для якої слід симулювати конфлікт редагувань:",
 	"twoColConflict-test-title-submit": "Показати редаговану сторінку",
 	"twoColConflict-test-title-not-existing": "Немає сторінки з такою назвою.",
 	"twoColConflict-test-text-submit": "Створити конфлікт",
@@ -51,7 +52,7 @@
 	"twoColConflict-test-edit-hint": "Зробіть якісь зміни нижче. Вони не будуть збережені. Їх буде використано лише для симулювання прикладу конфлікту редагувань.",
 	"twoColConflict-test-conflict-hint": "Це — тестовий конфлікт редагувань. Зміни не буде збережено, але їх можна буде переглянути.",
 	"twoColConflict-test-preview-submit": "Симулювати збереження змін",
-	"twoColConflict-test-preview-hint": "Дякуємо за те, що випробували інтерфейс вирішення конфліктів редагувань! Допоможіть нам покращити його, [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View давши нам знати, що Ви про нього думаєте].\n\nНижче показано результат Вашого тестового вирішення конфлікту редагувань.",
+	"twoColConflict-test-preview-hint": "Дякуємо за те, що випробували інтерфейс вирішення конфліктів редагувань! Допоможіть нам покращити його, залишивши свій відгук [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page тут].\n\nНижче показано результати Вашого тестового вирішення конфлікту редагувань.",
 	"twoColConflict-test-username": "Користувач тестування конфлікту",
 	"twoColConflict-test-summary-text": "Опис редагування при тестуванні конфлікту"
 }
