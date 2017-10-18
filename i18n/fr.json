@@ -47,6 +47,7 @@
 	"twoColConflict-next-dialog": "Suivant",
 	"twoColConflict-close-dialog": "Fermer",
 	"twoColConflict-test-needsbeta": "Vous devez activer la fonctionnalité bêta 'Conflit d’édition sur deux colonnes' dans vos préférences pour utiliser cette page spéciale.",
+	"twoColConflict-test-page-title": "Conflit d'édition: simulation",
 	"twoColConflict-test-title-label": "Saisir le titre d’une page wiki non protégée, pour laquelle le conflit d’édition doit être simulé :",
 	"twoColConflict-test-title-submit": "Afficher la page de modification",
 	"twoColConflict-test-title-not-existing": "Il n'y a pas de page avec ce titre.",

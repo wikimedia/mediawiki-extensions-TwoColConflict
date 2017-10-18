@@ -46,6 +46,7 @@
 	"twoColConflict-next-dialog": "Próximo",
 	"twoColConflict-close-dialog": "Fechar",
 	"twoColConflict-test-needsbeta": "Para usar esta página especial tem de ativar a funcionalidade beta 'Conflito de edições em duas colunas' nas suas preferências.",
+	"twoColConflict-test-page-title": "Conflito de Edições: Simulação",
 	"twoColConflict-test-title-label": "Introduza o título de uma página da wiki que não esteja protegida, para a qual o conflito de edições deve ser simulado:",
 	"twoColConflict-test-title-submit": "Mostrar a página de edição",
 	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",

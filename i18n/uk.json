@@ -44,6 +44,7 @@
 	"twoColConflict-next-dialog": "Далі",
 	"twoColConflict-close-dialog": "Закрити",
 	"twoColConflict-test-needsbeta": "Щоб використовувати цю спеціальну сторінку, Вам треба увімкнути бета-функцію «Конфлікт редагувань у двох стовпцях» у своїх налаштуваннях.",
+	"twoColConflict-test-page-title": "Конфлікт редагувань: симуляція",
 	"twoColConflict-test-title-label": "Введіть назву незахищеної вікісторінки, для якої слід симулювати конфлікт редагувань:",
 	"twoColConflict-test-title-submit": "Показати редаговану сторінку",
 	"twoColConflict-test-title-not-existing": "Немає сторінки з такою назвою.",

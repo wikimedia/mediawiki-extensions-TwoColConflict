@@ -46,6 +46,7 @@
 	"twoColConflict-next-dialog": "下一步",
 	"twoColConflict-close-dialog": "关闭",
 	"twoColConflict-test-needsbeta": "您必须在您的参数设置中启用“两栏编辑冲突”测试功能来使用该特殊页面。",
+	"twoColConflict-test-page-title": "编辑冲突：模拟",
 	"twoColConflict-test-title-label": "输入一个未受保护的wiki页面的标题以模拟编辑冲突：",
 	"twoColConflict-test-title-submit": "显示编辑页面",
 	"twoColConflict-test-title-not-existing": "没有该标题的页面。",
