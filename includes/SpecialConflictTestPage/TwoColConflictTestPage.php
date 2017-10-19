@@ -92,8 +92,8 @@ class TwoColConflictTestPage extends TwoColConflictPage {
 		$editableYourVersionText = $this->toEditText( $this->textbox1 );
 		$editableCurrentVersionText = $this->conflictingTestText;
 
-		return HTML::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
-			HTML::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
+		return Html::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
+			Html::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
 	}
 
 	/**

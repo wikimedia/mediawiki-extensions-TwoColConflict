@@ -74,8 +74,8 @@ class TwoColConflictPage extends EditPage {
 	 * @return string
 	 */
 	private function addEditFormBeforeContent() {
-		$out = HTML::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
-		$out = HTML::input( 'mw-twocolconflict-title', $this->getTitle()->getText(), 'hidden' );
+		$out = Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
+		$out = Html::input( 'mw-twocolconflict-title', $this->getTitle()->getText(), 'hidden' );
 		$out .= $this->buildConflictPageChangesCol();
 
 		$editorClass = '';
@@ -332,8 +332,8 @@ class TwoColConflictPage extends EditPage {
 		$editableYourVersionText = $this->toEditText( $this->textbox1 );
 		$editableCurrentVersionText = $this->toEditText( $this->getCurrentContent() );
 
-		return HTML::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
-			HTML::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
+		return Html::input( 'mw-twocolconflict-your-text', $editableYourVersionText, 'hidden' ) .
+			Html::input( 'mw-twocolconflict-current-text', $editableCurrentVersionText, 'hidden' );
 	}
 
 	/**
