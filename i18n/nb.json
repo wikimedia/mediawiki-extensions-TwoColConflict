@@ -45,6 +45,7 @@
 	"twoColConflict-next-dialog": "Neste",
 	"twoColConflict-close-dialog": "Lukk",
 	"twoColConflict-test-needsbeta": "Du må slå på betafunksjonen «Tokolonners redigeringskonflikt» i innstillingene dine for å bruke denne spesialsiden.",
+	"twoColConflict-test-page-title": "Redigeringskonflikt: Simulering",
 	"twoColConflict-test-title-label": "Skriv inn tittelen på en ikke-beskyttet wikiside som redigeringen skal simuleres i:",
 	"twoColConflict-test-title-submit": "Vis redigeringsside",
 	"twoColConflict-test-title-not-existing": "Det er ingen side med denne tittelen.",

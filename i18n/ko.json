@@ -38,5 +38,6 @@
 	"twoColConflict-test-edit-hint": "아래의 일부 변경사항을 적용합니다. 저장되지는 않습니다. 예시 편집 충돌을 모의 실험하기 위해서만 사용됩니다.",
 	"twoColConflict-test-conflict-hint": "이것은 테스트 충돌입니다. 변경사항은 저장되지 않지만 미리 보기는 가능합니다.",
 	"twoColConflict-test-preview-submit": "변경사항 저장 모의 실험",
+	"twoColConflict-test-preview-hint": "2단 편집 충돌 인터페이스를 사용해 주셔서 감사합니다! [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 여기]에 의견을 제공하여 개선을 도와주십시오.\n\n테스트 편집 충돌 해결의 결과는 아래와 같습니다.",
 	"twoColConflict-test-summary-text": "충돌 테스트 편집 요약"
 }

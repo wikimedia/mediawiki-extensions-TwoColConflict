@@ -1,8 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
-			"MyraMidnight"
+			"MyraMidnight",
+			"Snævar"
 		]
 	},
+	"twoColConflict-desc": "Sýnir hlið við hlið sameiningarskjá fyrir lausn breytingaáreksturs.",
+	"twoColConflict-explainconflict": "<strong>Viðvörun:</strong> Annar notandi hefur rétt í þessu breytt og vistað síðunni. Það er til staðar árekstur á milli útgáfu þinnar og núverandi útgáfu. Þú þarft að sameina þínar breytingar í núverandi útgáfu textans. Aðeins textinn í ritlinum verður vistaður þegar þú smellir á \"$1\".",
+	"twoColConflict-changes-col-title": "Árekstur breytinga",
+	"twoColConflict-changes-col-desc-1": "Munur á milli",
+	"twoColConflict-changes-col-desc-2": "núverandi útgefinni útgáfu",
+	"twoColConflict-changes-col-desc-3": "breytti $1 {{PLURAL:$1|sinni|sinnum}} ($2)",
+	"twoColConflict-changes-col-desc-4": "textanum þínum.",
+	"twoColConflict-history-link": "breytingarskrá",
+	"twoColConflict-editor-col-title": "Ritilinn með útgáfuna sem verður útgefin",
+	"twoColConflict-editor-col-desc-1": "Í fyrstu, er innihald ritilsins núverandi útgefna útgáfan.",
+	"twoColConflict-editor-col-desc-2": "Bættu við þínum breytingum í texta ritilsins og smelltu á \"$1\".",
+	"twoColConflict-base-selection-desc-1": "1) Veldu grunnútgáfu í sprettiglugganum hér fyrir neðan.",
+	"twoColConflict-base-selection-desc-2": "2) Breyttu textanum svo hún innihaldi báðar útgáfur.",
+	"twoColConflict-base-selection-desc-3": "3) Smelltu á \"$1\". Aðeins það sem er í ritlinum verður útgefið.",
+	"twoColConflict-base-selection-own-label": "Textinn minn",
+	"twoColConflict-base-selection-foreign-label": "Núverandi útgefin útgáfa",
+	"twoColConflict-base-selection-submit-label": "Í lagi",
+	"twoColConflict-diffchange-own-title": "í þinni útgáfu",
+	"twoColConflict-diffchange-foreign-title": "í útgáfu $1",
+	"twoColConflict-diffchange-unchanged-title": "óbreyttur texti",
+	"twoColConflict-label-show": "sýna",
+	"twoColConflict-label-hide": "fela",
+	"twoColConflict-label-unchanged": "óbreyttur texti",
+	"twoColConflict-label-show-unchanged": "sýna óbreyttan texta",
+	"twoColConflict-label-hide-unchanged": "fela óbreyttan texta",
+	"twoColConflict-show-help-tooltip": "Sýna hjálpar texta",
 	"twoColConflict-help-dialog-slide2": "Fyrsti flokkurinn birtir breytingar á þinni útgáfu og breytingar á núverandi vistaðri útgáfu. Mismunurinn á báðum útgáfum eru undirstrikaðar."
 }
