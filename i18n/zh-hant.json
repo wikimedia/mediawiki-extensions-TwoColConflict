@@ -4,7 +4,8 @@
 			"Liuxinyu970226",
 			"Arthur2e5",
 			"LNDDYL",
-			"烈羽"
+			"烈羽",
+			"A2093064"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -15,5 +16,9 @@
 	"twoColConflict-label-hide": "隱藏",
 	"twoColConflict-previous-dialog": "上一步",
 	"twoColConflict-next-dialog": "下一個",
-	"twoColConflict-close-dialog": "關閉"
+	"twoColConflict-close-dialog": "關閉",
+	"twoColConflict-test-page-title": "編輯衝突：模擬",
+	"twoColConflict-test-title-label": "輸入一個未受保護的wiki頁面的標題以模擬編輯衝突：",
+	"twoColConflict-test-title-submit": "顯示編輯頁面",
+	"twoColConflict-test-initial-hint": "在此頁面上，您可以嘗試新的兩欄編輯衝突介面，而不擾亂任何內容。"
 }
