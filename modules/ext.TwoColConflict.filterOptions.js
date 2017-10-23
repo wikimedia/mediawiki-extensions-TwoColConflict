@@ -27,10 +27,10 @@
 
 			if ( show ) {
 				$( '.mw-twocolconflict-diffchange-same-collapsed' ).hide();
-				$( '.mw-twocolconflict-diffchange-same-full' ).show();
+				$( '.mw-twocolconflict-diffchange-same-full' ).css( 'display', 'block' );
 			} else {
 				$( '.mw-twocolconflict-diffchange-same-full' ).hide();
-				$( '.mw-twocolconflict-diffchange-same-collapsed' ).show();
+				$( '.mw-twocolconflict-diffchange-same-collapsed' ).css( 'display', 'block' );
 			}
 
 			// wait for expanding animations to be finished
