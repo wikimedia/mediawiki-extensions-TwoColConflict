@@ -1,8 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rupalichinchure"
+			"Rupalichinchure",
+			"V.narsikar"
 		]
 	},
-	"twoColConflict-diffchange-unchanged-title": "न बदललेला मजकूर"
+	"twoColConflict": "TwoColConflict",
+	"twoColConflict-beta-feature-message": "द्वि-स्तंभी संपादन विसंवाद",
+	"twoColConflict-changes-col-desc-1": "मधील फरक",
+	"twoColConflict-changes-col-desc-2": "सध्याची प्रकाशित आवृत्ती",
+	"twoColConflict-changes-col-desc-3": "$1 {{PLURAL:$1|वेळा}} बदलले ($2)",
+	"twoColConflict-changes-col-desc-4": "आपला मजकूर.",
+	"twoColConflict-history-link": "आवृत्तीचा इतिहास",
+	"twoColConflict-base-selection-own-label": "माझा मजकूर",
+	"twoColConflict-base-selection-foreign-label": "सध्या प्रकाशित झालेली आवृत्ती",
+	"twoColConflict-base-selection-submit-label": "ठीक आहे",
+	"twoColConflict-diffchange-own-title": "आपल्या आवृत्तीत",
+	"twoColConflict-diffchange-foreign-title": "$1च्या आवृत्तीत",
+	"twoColConflict-diffchange-unchanged-title": "न बदललेला मजकूर",
+	"twoColConflict-label-show": "दाखवा",
+	"twoColConflict-label-hide": "लपवा",
+	"twoColConflict-label-unchanged": "न-बदललेला मजकूर",
+	"twoColConflict-label-show-unchanged": "न-बदललेला मजकूर दाखवा",
+	"twoColConflict-label-hide-unchanged": "बदल न झालेला मजकूर लपवा",
+	"twoColConflict-show-help-tooltip": "सहाय्य मजकूर दाखवा",
+	"twoColConflict-previous-dialog": "मागील",
+	"twoColConflict-next-dialog": "पुढील",
+	"twoColConflict-close-dialog": "बंद करा",
+	"twoColConflict-test-needsbeta": "हे विशेष पान वापरण्यास आपण 'द्वि-स्तंभी संपादन विसंवाद'('Two column edit conflict')चे बीटा फिचर आपल्या पसंतीक्रमात सक्षम करा.",
+	"twoColConflict-test-title-submit": "संपादन पान दाखवा",
+	"twoColConflict-test-title-not-existing": "अशा शीर्षकाचे कोणतेही पान नाही."
 }
