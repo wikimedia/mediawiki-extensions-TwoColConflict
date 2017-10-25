@@ -77,9 +77,10 @@ class HtmlWikiTextEditor {
 			'cols' => 80,
 			'rows' => 25,
 			'accesskey' => ',',
-			'tabindex' => 1,
+			'tabindex' => 3,
 			'lang' => $pageLang->getHtmlCode(),
 			'dir' => $pageLang->getDir(),
+			'autofocus' => 'autofocus',
 		];
 
 		return Html::textarea( 'mw-twocolconflict-test-text', $wikiText, $attributes );
