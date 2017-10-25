@@ -1,5 +1,3 @@
-@import 'mediawiki.mixins';
-
 .mw-twocolconflict-page form {
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -21,14 +19,16 @@
 	-ms-flex: 1 auto;
 	flex: 1 auto;
 	width: 300px;
+	box-sizing: border-box;
+
 }
 
-// mixin to address IE9 and lower
-&.mw-twocolconflict-changes-col,
-&.mw-twocolconflict-editor-col {
-	box-sizing: border-box;
-	width: 50%;
-	float: left;
+/* address some IE issues with grid */
+/* stylelint-disable-next-line no-duplicate-selectors */
+.mw-twocolconflict-changes-col,
+.mw-twocolconflict-editor-col {
+	width: 50% \0/ie;
+	float: left \0/ie;
 }
 
 .mw-twocolconflict-changes-col {
