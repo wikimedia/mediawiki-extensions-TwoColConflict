@@ -45,6 +45,7 @@
 	"twoColConflict-next-dialog": "بعدی",
 	"twoColConflict-close-dialog": "بستن",
 	"twoColConflict-test-needsbeta": "برای استفاده از این صفحهٔ ویژه ابتدا باید افزونهٔ «تعارض ویرایشی دو ستونی» را از بخش '''آزمایشی''' فعال کنید.",
+	"twoColConflict-test-page-title": "تعارض ویرایش: شبیه‌سازی",
 	"twoColConflict-test-title-label": "عنوان صفحهٔ محافظت نشدهٔ ویکی که ویرایش تداخل‌دار باید مشابه آن باشد را وارد کنید:",
 	"twoColConflict-test-title-submit": "نمایش ویرایش صفحه",
 	"twoColConflict-test-title-not-existing": "صفحه‌ای با این عنوان وجود ندارد.",
