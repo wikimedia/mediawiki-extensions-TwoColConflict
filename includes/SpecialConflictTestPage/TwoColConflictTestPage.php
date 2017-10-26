@@ -33,6 +33,12 @@ class TwoColConflictTestPage extends TwoColConflictPage {
 	}
 
 	/**
+	 * Do not add the page specific edit notices on the simulated conflict view
+	 */
+	protected function addEditNotices() {
+	}
+
+	/**
 	 * Attempt submission - is overwritten in case of a test conflict to avoid any real save
 	 * this will also avoid running the hook that triggers logging a resolved conflict
 	 * @param array|bool &$resultDetails See docs for $result in internalAttemptSave
