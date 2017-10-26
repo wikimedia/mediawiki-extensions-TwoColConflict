@@ -48,6 +48,7 @@
 	"twoColConflict-next-dialog": "التالي",
 	"twoColConflict-close-dialog": "إغلاق",
 	"twoColConflict-test-needsbeta": "أنت يجب عليك تفعيل خاصية البيتا 'Two column edit conflict' في تفضيلاتك لاستخدام هذه الصفحة الخاصة.",
+	"twoColConflict-test-page-title": "تضارب تحرير: محاكاة",
 	"twoColConflict-test-title-label": "أدخل عنوان صفحة الويكي التي ينبغي أن تتم محاكاة اختبار التعارض لها:",
 	"twoColConflict-test-title-submit": "عرض صفحة التعديل",
 	"twoColConflict-test-title-not-existing": "لا توجد صفحة بهذا العنوان.",

@@ -7,7 +7,7 @@
 	"twoColConflict": "Двостолбна спротиставеност",
 	"twoColConflict-desc": "Напореден приказ на уредувања за спојување при спротиставеност во уредувањето",
 	"twoColConflict-beta-feature-message": "Двостолбна спротиставеност на уредувања",
-	"twoColConflict-beta-feature-description": "Прикажи ги спротиставените уредувања во понапреден двостолбен облик.",
+	"twoColConflict-beta-feature-description": "Прикажи ги спротиставените уредувања во понапреден двостолбен облик.\n\nСовет: Ако не сакате да чекате да наидете на вистинска спротиставеност во уредувањата, можете да направите божемна на нашата пробна страница. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Стиснете тука] за да дознаете како.",
 	"twoColConflict-explainconflict": "<strong>Предупредување:</strong> Друг корисник штотуку ја измени и зачува страницава. Има спротиставеност помеѓу вашата и тековно објавената верзија. Ќе треба да ги припоите вашите промени кон тековната верзија. Само текстот во уредничкото поле ќе се зачува кога ќе стиснете на „$1“.",
 	"twoColConflict-changes-col-title": "Спротиставени промени",
 	"twoColConflict-changes-col-desc-1": "Разлики помеѓу",
@@ -43,6 +43,7 @@
 	"twoColConflict-previous-dialog": "Претходно",
 	"twoColConflict-next-dialog": "Следно",
 	"twoColConflict-close-dialog": "Затвори",
+	"twoColConflict-test-needsbeta": "Мора да ја овозможите бета-можноста „Двостолбена спротиставеност во уредувањата“ во вашите нагодувања за да ја користите оваа службена страница.",
 	"twoColConflict-test-page-title": "Спротиставеност во уредувањето: Божемна",
 	"twoColConflict-test-title-label": "Внесете наслов на незаштитена викистраница за која ќе се направи божемна спротиставеност во уредувањето",
 	"twoColConflict-test-title-submit": "Прик. уред. страница",
@@ -52,7 +53,7 @@
 	"twoColConflict-test-edit-hint": "Направете некои измени подолу. Нема да се зачуваат, туку служат само за да дадат божемна спротиставеност во уредувањата.",
 	"twoColConflict-test-conflict-hint": "Ова е проба за спротиставеност. Измените нема да се зачуваат, туку само можат да се прегледаат.",
 	"twoColConflict-test-preview-submit": "Божемно зачувување на измените",
-	"twoColConflict-test-preview-hint": "Ви благодариме што го испробавте новиот посредник за Двостолбна спротиставеност! Помогнете ни да го подобриме — \n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View дајте ни ваше мислење].\n\nПодолу е исходот од решавањето на пробната спротиставеност.",
+	"twoColConflict-test-preview-hint": "Ви благодариме што го испробувате посредникот за Двостолбна спротиставеност во уредувањата! Помогнете ни да го подобриме, давајќи ни ваши мислења [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page тука].\n\nПодолу ќе го најдете исходот од решението на пробната спротиставеност.",
 	"twoColConflict-test-username": "Корисник на Проба на спротиставеност",
 	"twoColConflict-test-summary-text": "Опис уредувањето на пробата на спротиставеност"
 }
