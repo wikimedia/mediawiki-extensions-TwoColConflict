@@ -55,7 +55,7 @@
 	"ResourceModules": {
 		"ext.TwoColConflict.editor": {
 			"styles": [
-				"modules/ext.TwoColConflict.less"
+				"modules/ext.TwoColConflict.css"
 			],
 			"messages": [],
 			"dependencies": []
