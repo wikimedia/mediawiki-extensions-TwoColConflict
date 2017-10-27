@@ -46,6 +46,7 @@ class HtmlSpecialTestTextForm {
 				'label' => ( new Message( 'twoColConflict-test-text-submit' ) )->plain(),
 				'type' => 'submit',
 				'flags' => [ 'primary', 'progressive' ],
+				'tabIndex' => 4
 			]
 		) )->addClasses( [ 'mw-twocolconflict-test-text-submit' ] ) .
 		Html::closeElement( 'form' );
