@@ -10,7 +10,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Muestra una pantalla de combinación doble para solucionar conflictos",
 	"twoColConflict-beta-feature-message": "Conflicto de edición en dos columnas",
-	"twoColConflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.\n\nPista: Si prefiere no esperar hasta que se tope con un conflicto de edición real, puede simular conflictos de edición en nuestra página de prueba.\n[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Clic aquí] para averiguar como funciona.",
+	"twoColConflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.\n\nPista: si prefieres no esperar hasta que te topes con un conflicto de edición real, puedes simular conflictos de edición en nuestra página de pruebas.\n[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Haz clic aquí] para averiguar cómo funciona.",
 	"twoColConflict-explainconflict": "<strong>Advertencia:</strong> Otro usuario acaba de editar y guardar esta página. Hay un conflicto entre tu versión y la versión actual. Tienes que combinar tus cambios con la versión actual del texto. Solo se guardará el texto en el campo de edición cuando hagas clic en «$1».",
 	"twoColConflict-changes-col-title": "Cambios en conflicto",
 	"twoColConflict-changes-col-desc-1": "Diferencias entre",
