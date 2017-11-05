@@ -9,7 +9,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Laat een zij-aan-zij-overzicht zien tijdens een bewerkingsconflict",
 	"twoColConflict-beta-feature-message": "Twee kolommen-bewerkingsconflict",
-	"twoColConflict-beta-feature-description": "Laat het scherm voor bewerkingsconflicten in een meer geavanceerd twee kolommen-overzicht zien.",
+	"twoColConflict-beta-feature-description": "Laat het scherm voor bewerkingsconflicten in een meer geavanceerd twee kolommen-overzicht zien.\n\nHint: Als u niet wilt wachten totdat u een echt bewerkingsconflict tegenkomt, kunt u bewerkingsconflicten simuleren op onze test pagina. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Klik hier] om uit te vinden hoe dit werkt.",
 	"twoColConflict-explainconflict": "<strong>Waarschuwing:</strong> Een andere bewerker heeft net deze pagina bewerkt en opgeslagen. Er is een conflict tussen uw versie en de huidige versie. U moet uw wijzigingen in de huidige versie samenvoegen. Alleen de text in het bewerkingsveld wordt opgeslagen wanneer u op \"$1\" klikt.",
 	"twoColConflict-changes-col-title": "Conflicterende wijzigingen",
 	"twoColConflict-changes-col-desc-1": "Verschillen tussen",
@@ -40,5 +40,12 @@
 	"twoColConflict-tutorial": "Handleiding voor het oplossen van bewerkingsconflicten",
 	"twoColConflict-previous-dialog": "Vorige",
 	"twoColConflict-next-dialog": "Volgende",
-	"twoColConflict-close-dialog": "Sluiten"
+	"twoColConflict-close-dialog": "Sluiten",
+	"twoColConflict-test-page-title": "Bewerkingsconflict: Simulatie",
+	"twoColConflict-test-title-label": "Voer de titel van een niet-beveiligde wikipagina in waarvoor een bewerkingsconflict te simuleren:",
+	"twoColConflict-test-title-not-existing": "Er bestaat geen pagina met deze titel.",
+	"twoColConflict-test-text-submit": "Conflict creëeren",
+	"twoColConflict-test-edit-hint": "Maak de wijzigingen hier beneden. Ze zullen niet worden opgeslagen en worden alleen gebruikt om een bewerkingsconflict te simuleren.",
+	"twoColConflict-test-username": "ConflictTest gebruiker",
+	"twoColConflict-test-summary-text": "Conflict test bewerkingssamenvatting"
 }
