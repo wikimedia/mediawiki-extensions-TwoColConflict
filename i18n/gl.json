@@ -47,5 +47,7 @@
 	"twoColConflict-test-title-submit": "Amosar a páxina de edición",
 	"twoColConflict-test-title-not-existing": "Non hai  ningunha páxina con este título.",
 	"twoColConflict-test-text-submit": "Crear un conflito",
-	"twoColConflict-test-preview-submit": "Simular gardar cambios"
+	"twoColConflict-test-preview-submit": "Simular gardar cambios",
+	"twoColConflict-test-username": "Usuario de proba de conflito",
+	"twoColConflict-test-summary-text": "Resumo de edición da proba de conflito"
 }
