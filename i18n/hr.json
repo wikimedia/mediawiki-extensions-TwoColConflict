@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"MaGa",
-			"Wumbolo"
+			"Wumbolo",
+			"Bugoslav"
 		]
 	},
 	"twoColConflict-desc": "Usporedni prikaz za rješavanje sukoba uređivanja",
@@ -20,7 +21,7 @@
 	"twoColConflict-help-dialog-slide1": "Ova stranica pomaže vam riješiti sukob uređivanja. Dva su stupca: jedan prikazuje sukobljene promjene, a drugi uređivač teksta čiji sadržaj će biti objavljen.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Cijenimo povratnu informaciju ovdje].",
 	"twoColConflict-help-dialog-slide2": "Unutar prozora sa sukobljenim promjenama biti će prikazane sporne izmjene i istaknute razlike među njima.",
 	"twoColConflict-help-dialog-slide3": "Pritiskom na dugmad iznad prozora možete sakriti nepromijenjene dijelove teksta kako biste se usredotočili na sukobljene izmjene. Postoji i mogućnost prikaza samo Vaše inačice teksta.",
-	"twoColConflict-help-dialog-slide4": "Možete kopirati i zalijepiti željene dijelove teksta u uređivač i tako prilagoditi inačicu koja će biti spremljena. Spremanjem promjena biti će spremljena inačica iz urednika.",
+	"twoColConflict-help-dialog-slide4": "Drugi stupac je programska oprema za uređivanje teksta. Kad je stranica otvorena, na vrhu uređivača, nalazi se izbornik za odabir više mogućnosti. Taj izbornik omogućava vam odlučiti koju ćete inačicu upotrijebiti u uređivaču u daljnjem radu. Možete kopirati i zalijepiti željene dijelove teksta u uređivač i tako prilagoditi inačicu koja će biti spremljena. Najčešće je riječ o inačici u kojoj se nalazi više načinjenih promjena.",
 	"twoColConflict-tutorial": "Priručnik za rješavanje sukoba uređivanja",
 	"twoColConflict-previous-dialog": "Natrag",
 	"twoColConflict-next-dialog": "Dalje",
