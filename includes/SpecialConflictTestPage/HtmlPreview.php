@@ -51,12 +51,13 @@ class HtmlPreview {
 
 		Wikimedia\ScopedCallback::consume( $scopedCallback );
 
-		return $parseResult->getText();
+		return $parseResult->getText( [
+			'enableSectionEditLinks' => false,
+		] );
 	}
 
 	private function getParserOptions() {
 		$parserOptions = new ParserOptions();
-		$parserOptions->setEditSection( false );
 		$parserOptions->setIsPreview( true );
 		return $parserOptions;
 	}
