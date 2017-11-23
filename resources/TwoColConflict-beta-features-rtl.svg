@@ -7,38 +7,38 @@
     </defs>
     <g id="screenshot" clip-path="url(#jagged-edge)">
         <path d="M.5 162.25l263-.5V.5H.5z" id="background" fill="#fff"/>
-        <path d="M253 22c0-7.732-6.268-14-14-14s-14 6.268-14 14 6.268 14 14 14 14-6.268 14-14z" id="logo" fill="#e5e5e5"/>
-        <path d="M226 163.807V58h25v105.807z" id="sidebar" fill="#e5e5e5"/>
-        <g transform="matrix(-1 0 0 1 264 0)" id="personal-tools" fill="#e5e5e5">
+        <path d="M253 22c0-7.732-6.268-14-14-14s-14 6.268-14 14 6.268 14 14 14 14-6.268 14-14z" id="logo" fill="#eaecf0"/>
+        <path d="M226 163.807V58h25v105.807z" id="sidebar" fill="#eaecf0"/>
+        <g transform="matrix(-1 0 0 1 264 0)" id="personal-tools" fill="#eaecf0">
             <path id="path10" d="M233 5h26v6h-26zm-24 0h22v6h-22zm-24 0h22v6h-22zm-23 0h13v6h-13zm15 0h6v6h-6zm-23 0h6v6h-6z"/>
         </g>
-        <g transform="matrix(-1 0 0 1 264 0)" id="search" fill="#e5e5e5">
+        <g transform="matrix(-1 0 0 1 264 0)" id="search" fill="#eaecf0">
             <path d="M258 16v4h-92v-4h92m1-1h-94v6h94z" id="path5717"/>
             <path d="M168 17h2v2h-2z" id="icon"/>
         </g>
-        <path d="M226 45v-5h25v5z" id="sitename" fill="#e5e5e5"/>
-        <path id="border" d="M264 0v162H0V0zm-1 1H1v150.533l11 9.166 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 11-9.167z" fill="#e5e5e5"/>
-        <path d="M216 59.002l-97.857.045-.028 104.224h97.773z" id="path4192-4-7-3-8-0-4-5-8" fill="#e5e5e5" fill-rule="evenodd" stroke-width=".206"/>
-        <path id="path4192-8-9-8-3-6-3-2-5-7" d="M113.974 60.398H17.43l-.05 102.873h96.483z" fill="none" fill-rule="evenodd" stroke="#e5e5e5" stroke-width="2.757"/>
+        <path d="M226 45v-5h25v5z" id="sitename" fill="#eaecf0"/>
+        <path id="border" d="M264 0v162H0V0zm-1 1H1v150.533l11 9.166 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 12-10 12 10 11-9.167z" fill="#eaecf0"/>
+        <path d="M216 59.002l-97.857.045-.028 104.224h97.773z" id="path4192-4-7-3-8-0-4-5-8" fill="#eaecf0" fill-rule="evenodd" stroke-width=".206"/>
+        <path id="path4192-8-9-8-3-6-3-2-5-7" d="M113.974 60.398H17.43l-.05 102.873h96.483z" fill="none" fill-rule="evenodd" stroke="#eaecf0" stroke-width="2.757"/>
         <path id="rect4209-65-4-8-5-2" d="M210.918 77.26h-50.985v3.147h50.985z" fill="#36c" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-5-6-8-37-4-5" d="M211.03 91.665h-72.803v3.146h72.803z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-5-6-8-37-4-5" d="M211.03 91.665h-72.803v3.146h72.803z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
         <path id="rect4209-58-3-6-9-2-2" d="M211.03 99.896h-32.415v3.146h32.415z" fill="#36c" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-4-3-6-4-1-3" d="M211.03 114.3h-83.827v3.146h83.827z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-3-0-4-5-5-6" d="M210.974 122.531h-83.827v3.146h83.827z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-6-0-6-30-2-3" d="M211.03 128.704h-41.8v3.147h41.8z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-09-9-7-83-7-6" d="M105.18 77.26H25.132v3.147h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-54-3-2-5-0-2" d="M105.18 99.896H25.132v3.146h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-33-3-5-8-2-8" d="M105.18 84.463H25.132v3.146h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-52-8-7-7-5-0" d="M105.18 91.665H75.738v3.146h29.44z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-7-5-8-2-9-4" d="M105.18 114.3H25.132v3.146h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-74-1-6-6-6-2" d="M105.18 106.069H25.132v3.146h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect4209-73-1-7-8-9-2" d="M105.125 128.704H25.08v3.147h80.046z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
-        <path id="rect5462-5-8-1-1-6-9-2-4-3" d="M210.281 45.505h-23.668v3.881h23.669z" fill="#e5e5e5" stroke="#e5e5e5" stroke-width="1.214" stroke-linecap="round"/>
-        <path id="rect5462-5-8-1-1-6-9-2-4-3-6" d="M104.822 45.402H81.154v3.881h23.668z" fill="#e5e5e5" stroke="#e5e5e5" stroke-width="1.214" stroke-linecap="round"/>
-        <path id="rect5462-5-8-1-1-6-9-2-4-3-7" d="M214.645 29h-42.067v6.9h42.067z" fill="#d8d8d8" stroke="#d8d8d8" stroke-width="2.158" stroke-linecap="round"/>
+        <path id="rect4209-4-3-6-4-1-3" d="M211.03 114.3h-83.827v3.146h83.827z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-3-0-4-5-5-6" d="M210.974 122.531h-83.827v3.146h83.827z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-6-0-6-30-2-3" d="M211.03 128.704h-41.8v3.147h41.8z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-09-9-7-83-7-6" d="M105.18 77.26H25.132v3.147h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-54-3-2-5-0-2" d="M105.18 99.896H25.132v3.146h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-33-3-5-8-2-8" d="M105.18 84.463H25.132v3.146h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-52-8-7-7-5-0" d="M105.18 91.665H75.738v3.146h29.44z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-7-5-8-2-9-4" d="M105.18 114.3H25.132v3.146h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-74-1-6-6-6-2" d="M105.18 106.069H25.132v3.146h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-73-1-7-8-9-2" d="M105.125 128.704H25.08v3.147h80.046z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect5462-5-8-1-1-6-9-2-4-3" d="M210.281 45.505h-23.668v3.881h23.669z" fill="#eaecf0" stroke="#eaecf0" stroke-width="1.214" stroke-linecap="round"/>
+        <path id="rect5462-5-8-1-1-6-9-2-4-3-6" d="M104.822 45.402H81.154v3.881h23.668z" fill="#eaecf0" stroke="#eaecf0" stroke-width="1.214" stroke-linecap="round"/>
+        <path id="rect5462-5-8-1-1-6-9-2-4-3-7" d="M214.645 29h-42.067v6.9h42.067z" fill="#c8ccd1" stroke="#c8ccd1" stroke-width="2.158" stroke-linecap="round"/>
         <path d="M73.65 89.296v7.937" id="path4922-54-0-8-3-9" fill="none" fill-rule="evenodd" stroke="#36c" stroke-width="1.023"/>
         <path d="M72.317 89.197l2.654.006" id="path4922-54-0-8-3-9-5" fill="none" fill-rule="evenodd" stroke="#36c" stroke-width=".603"/>
         <path d="M72.317 97.41l2.654.005" id="path4922-54-0-8-3-9-5-3" fill="none" fill-rule="evenodd" stroke="#36c" stroke-width=".603"/>
-        <path id="rect4209-3-0-4-5-5-6-5" d="M210.939 85.474h-81.475v3.147h81.475z" fill="#d8d8d8" stroke-width=".617" stroke-linecap="round"/>
+        <path id="rect4209-3-0-4-5-5-6-5" d="M210.939 85.474h-81.475v3.147h81.475z" fill="#c8ccd1" stroke-width=".617" stroke-linecap="round"/>
     </g>
 </svg>
