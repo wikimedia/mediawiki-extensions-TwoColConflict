@@ -13,6 +13,7 @@
 	"twoColConflict-changes-col-desc-4": "tavs teksts",
 	"twoColConflict-history-link": "versiju hronoloģija",
 	"twoColConflict-editor-col-title": "Labošanas lauks ar publicējamo versiju",
+	"twoColConflict-editor-col-desc-1": "Sākotnēji labošanas laukā ir pašlaik publicētā versija.",
 	"twoColConflict-base-selection-desc-1": "1) Izvēlies pamata versiju dialogā zemāk.",
 	"twoColConflict-base-selection-desc-2": "2) Pielāgo tekstu, lai apvienotu abas versijas.",
 	"twoColConflict-base-selection-desc-3": "3) Klikšķini uz \"$1\". Tiks publicēts tikai tas, kas ir labošanas logā.",
