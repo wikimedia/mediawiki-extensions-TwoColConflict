@@ -83,8 +83,10 @@
 		setBaseVersion: function () {
 			if ( $( '.mw-twocolconflict-base-dialog-radio input:checked' ).val() === 'your' ) {
 				$( '#wpTextbox1' ).val( $( 'input[name="mw-twocolconflict-your-text"]' ).val() );
+				mw.track( 'counter.MediaWiki.TwoColConflict.event.baseSelection.your' );
 			} else {
 				$( '#wpTextbox1' ).val( $( 'input[name="mw-twocolconflict-current-text"]' ).val() );
+				mw.track( 'counter.MediaWiki.TwoColConflict.event.baseSelection.current' );
 			}
 		},
 
