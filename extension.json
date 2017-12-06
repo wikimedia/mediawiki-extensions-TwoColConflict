@@ -21,10 +21,10 @@
 	},
 	"AutoloadClasses": {
 		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
-		"TwoColConflictHelper": "includes/TwoColConflictHelper.php",
-		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
+		"InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
+		"InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
+		"LineBasedUnifiedDiffFormatter": "includes/InlineTwoColConflict/LineBasedUnifiedDiffFormatter.php",
 		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
-		"TwoColConflictTestHelper": "includes/SpecialConflictTestPage/TwoColConflictTestHelper.php",
 		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
 		"HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
 		"HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",

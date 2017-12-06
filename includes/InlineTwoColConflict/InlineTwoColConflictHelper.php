@@ -7,7 +7,7 @@ use MediaWiki\MediaWikiServices;
  * @license GNU GPL v2+
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictHelper extends TextConflictHelper {
+class InlineTwoColConflictHelper extends TextConflictHelper {
 
 	/**
 	 * @var WikiPage

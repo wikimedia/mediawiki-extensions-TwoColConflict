@@ -6,10 +6,10 @@ use Wikimedia\TestingAccessWrapper;
  * @license GNU GPL v2+
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictHelperTest extends MediaWikiTestCase {
+class InlineTwoColConflictHelperTest extends MediaWikiTestCase {
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_returnFalseWhenInLimit() {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -22,7 +22,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_returnFalseWhenWhenOverLimitWithWhitespaces() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
@@ -35,7 +35,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_cutWhenSingleLineOverLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
@@ -47,7 +47,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_returnFalseWhenTwoLinesInLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
@@ -57,7 +57,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_cutWhenTwoLinesOverLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
@@ -69,7 +69,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::getCollapsedText
+	 * @covers InlineTwoColConflictHelperTest::getCollapsedText
 	 */
 	public function testGetCollapsedText_cutWhenMultipleLinesInLimit() {
 		$twoColConflictPageMock = $this->getMockPageWithContext();
@@ -81,7 +81,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::trimStringToFullWord
+	 * @covers InlineTwoColConflictHelperTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_noCutWhenInLimit() {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -96,7 +96,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::trimStringToFullWord
+	 * @covers InlineTwoColConflictHelperTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtEndOfResult() {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -107,7 +107,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers TwoColConflictHelperTest::trimStringToFullWord
+	 * @covers InlineTwoColConflictHelperTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtStartOfResult() {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -122,7 +122,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atEnd
-	 * @covers TwoColConflictHelperTest::trimStringToFullWord
+	 * @covers InlineTwoColConflictHelperTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atEnd( $input, $maxLength, $result ) {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -157,7 +157,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atStart
-	 * @covers TwoColConflictHelperTest::trimStringToFullWord
+	 * @covers InlineTwoColConflictHelperTest::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atStart( $input, $maxLength, $result ) {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -192,7 +192,7 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	 * @param null|boolean $trimAtEnd
 	 * @param string $result
 	 * @dataProvider provider_trimWhiteSpaces
-	 * @covers TwoColConflictHelperTest::trimWhiteSpaces
+	 * @covers InlineTwoColConflictHelperTest::trimWhiteSpaces
 	 */
 	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
 		$twoColConflictPageMock = $this->getMockPage();
@@ -223,18 +223,18 @@ class TwoColConflictHelperTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @return TwoColConflictHelper
+	 * @return InlineTwoColConflictHelper
 	 */
 	private function getMockPage() {
 		return TestingAccessWrapper::newFromObject(
-			$this->getMockBuilder( TwoColConflictHelper::class )
+			$this->getMockBuilder( InlineTwoColConflictHelper::class )
 				->disableOriginalConstructor()
 				->getMock()
 		);
 	}
 
 	/**
-	 * @return TwoColConflictHelper
+	 * @return InlineTwoColConflictHelper
 	 */
 	private function getMockPageWithContext() {
 		$mockOut = $this->getMockBuilder( OutputPage::class )

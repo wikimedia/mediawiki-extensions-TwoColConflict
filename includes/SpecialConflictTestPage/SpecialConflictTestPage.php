@@ -132,7 +132,7 @@ class SpecialConflictTestPage extends SpecialPage {
 
 		$conflictTestEditPage->setEditConflictHelperFactory(
 			function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
-			return new TwoColConflictTestHelper(
+			return new InlineTwoColConflictTestHelper(
 				$conflictTestEditPage->getTitle(),
 				$conflictTestEditPage->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),

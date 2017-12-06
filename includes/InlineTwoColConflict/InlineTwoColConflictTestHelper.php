@@ -4,7 +4,7 @@
  * @license GNU GPL v2+
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictTestHelper extends TwoColConflictHelper {
+class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 
 	/** @var string */
 	private $conflictingTestText;
