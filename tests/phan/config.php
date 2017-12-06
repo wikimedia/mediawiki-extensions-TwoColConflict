@@ -52,6 +52,7 @@ return [
 		'./../../maintenance',
 		'./../../vendor',
 		'./../../extensions/BetaFeatures',
+		'./../../extensions/EventLogging',
 		'./../../extensions/WikiEditor',
 	],
 
@@ -77,6 +78,7 @@ return [
 		'./../../maintenance',
 		'./../../vendor',
 		'./../../extensions/BetaFeatures',
+		'./../../extensions/EventLogging',
 		'./../../extensions/WikiEditor',
 	],
 
