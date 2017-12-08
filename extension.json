@@ -23,6 +23,7 @@
 		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
 		"InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
 		"InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
+		"RandomChangesGenerator": "includes/RandomChangesGenerator.php",
 		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
 		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
 		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
