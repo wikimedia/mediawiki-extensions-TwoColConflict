@@ -11,27 +11,29 @@ use MediaWiki\MediaWikiServices;
  */
 class TwoColConflictHooks {
 
+	private static function shouldTwoColConflictBeShown( EditPage $editPage ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		$betaFeatureDisabled = $config->get( 'TwoColConflictBetaFeature' ) &&
+			class_exists( BetaFeatures::class ) &&
+			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' );
+
+		return !$betaFeatureDisabled;
+	}
+
 	/**
 	 * @param EditPage $editPage
 	 *
 	 * @return bool
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		/**
-		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
-		 * is loaded then require the current user to have the feature enabled.
-		 */
-		if (
-			$config->get( 'TwoColConflictBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' )
-		) {
+		// Skip out on the test page
+		if ( get_class( $editPage ) === TwoColConflictTestEditPage::class ) {
 			return true;
 		}
 
-		if ( get_class( $editPage ) === TwoColConflictTestEditPage::class ) {
+		// Skip out if the feature is disabled
+		if ( !self::shouldTwoColConflictBeShown( $editPage ) ) {
 			return true;
 		}
 
@@ -43,6 +45,30 @@ class TwoColConflictHooks {
 				$submitButtonLabel
 			);
 		} );
+	}
+
+	/**
+	 * @param EditPage $editPage
+	 * @param OutputPage $outputPage
+	 */
+	public static function onEditPageBeforeConflictDiff( EditPage $editPage, OutputPage $outputPage ) {
+		if ( class_exists( EventLogging::class ) ) {
+			$user = $outputPage->getUser();
+			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=17520555
+			EventLogging::logEvent(
+				'TwoColConflictConflict',
+				17520555,
+				[
+					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $editPage ),
+					'isAnon' => $user->isAnon(),
+					'editCount' => (int)$user->getEditCount(),
+					'pageNs' => $editPage->getTitle()->getNamespace(),
+					'baseRevisionId' => $editPage->getBaseRevision()->getId(),
+					'parentRevisionId' => $editPage->getParentRevId(),
+					'textUser' => $editPage->textbox2,
+				]
+			);
+		}
 	}
 
 	/**

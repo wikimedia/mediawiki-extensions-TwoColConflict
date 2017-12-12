@@ -39,6 +39,9 @@
 		"AlternateEdit": [
 			"TwoColConflictHooks::onAlternateEdit"
 		],
+		"EditPageBeforeConflictDiff": [
+			"TwoColConflictHooks::onEditPageBeforeConflictDiff"
+		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflictHooks::onResourceLoaderTestModules"
 		]
@@ -186,6 +189,9 @@
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
 			]
 		}
+	},
+	"EventLoggingSchemas": {
+		"TwoColConflictConflict": 17520555
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
