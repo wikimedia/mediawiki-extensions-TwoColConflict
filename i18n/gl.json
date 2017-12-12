@@ -44,6 +44,7 @@
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Seguinte",
 	"twoColConflict-close-dialog": "Pechar",
+	"twoColConflict-test-needsbeta": "Antes de usar esta páxina especial, debe activar nas súas preferencias a función en probas \"Conflitos de edición en dúas columnas\".",
 	"twoColConflict-test-page-title": "Conflito de ediciónː simulación",
 	"twoColConflict-test-title-label": "Indique o título dunha páxina non protexida da wiki para simular un conflito de edición nela:",
 	"twoColConflict-test-title-submit": "Amosar a páxina de edición",
