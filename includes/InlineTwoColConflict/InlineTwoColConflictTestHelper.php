@@ -13,7 +13,9 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	 * Generate text for mocked conflicting revision text
 	 */
 	public function setUpConflictingTestText() {
-		$this->conflictingTestText = $this->generateFakeConflictingText( $this->storedversion );
+		$this->conflictingTestText = RandomChangesGenerator::generateRandomlyChangedText(
+			$this->storedversion
+		);
 	}
 
 	/**
@@ -90,50 +92,5 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	 */
 	protected function getLastUserText() {
 		return $this->out->msg( 'twoColConflict-test-username' );
-	}
-
-	/**
-	 * @param string $baseVersionText
-	 * @return string
-	 */
-	private function generateFakeConflictingText( $baseVersionText ) {
-		$randomWord = $this->getRandomWord( $baseVersionText, 5 );
-		return $this->insertTextAtRandom( $baseVersionText, $randomWord );
-	}
-
-	/**
-	 * Inserts text to a random place in a text. Text will be inserted in a place where a
-	 * contiguous flow of characters or numbers is interrupted by other symbols. See
-	 * RegExp \pL and \pN definitions.
-	 *
-	 * @param string $originalText
-	 * @param string $textToInsert
-	 * @return string
-	 */
-	private function insertTextAtRandom( $originalText, $textToInsert ) {
-		preg_match_all( '#[^\pL\pN]+#u', $originalText, $spaces, PREG_OFFSET_CAPTURE );
-		$match = $spaces[0][ array_rand( $spaces[0] ) ];
-		return substr_replace( $originalText, $match[0] . $textToInsert, $match[1], 0 );
-	}
-
-	/**
-	 * Returns a random group of contiguous characters or numbers greater than a specific length
-	 * from a text. See RegExp \pL and \pN definitions.
-	 *
-	 * @param string $text
-	 * @param int $minLength Min length of word. Will fallback to the best fit after 30 attempts.
-	 * @return string
-	 */
-	private function getRandomWord( $text, $minLength ) {
-		$randomWord = '';
-		$attempts = 0;
-		$words = preg_split( '#[^\pL\pN]+#u', $text, -1, PREG_SPLIT_NO_EMPTY );
-
-		while ( mb_strlen( $randomWord ) < $minLength && $attempts < 30 ) {
-			$randomWord = $words[ array_rand( $words ) ];
-			$attempts++;
-		}
-
-		return $randomWord;
 	}
 }
