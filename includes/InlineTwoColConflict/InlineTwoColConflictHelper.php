@@ -33,6 +33,16 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	public function incrementConflictStats() {
 		parent::incrementConflictStats();
 		$this->stats->increment( 'TwoColConflict.conflict' );
+		// XXX This is copied directly from core and we may be able to refactor something here.
+		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
+		if (
+			$this->title->getNamespace() >= NS_MAIN &&
+			$this->title->getNamespace() <= NS_CATEGORY_TALK
+		) {
+			$this->stats->increment(
+				'TwoColConflict.conflict.byNamespaceId.' . $this->title->getNamespace()
+			);
+		}
 	}
 
 	/**
@@ -41,6 +51,16 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	public function incrementResolvedStats() {
 		parent::incrementResolvedStats();
 		$this->stats->increment( 'TwoColConflict.conflict.resolved' );
+		// XXX This is copied directly from core and we may be able to refactor something here.
+		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
+		if (
+			$this->title->getNamespace() >= NS_MAIN &&
+			$this->title->getNamespace() <= NS_CATEGORY_TALK
+		) {
+			$this->stats->increment(
+				'TwoColConflict.conflict.resolved.byNamespaceId.' . $this->title->getNamespace()
+			);
+		}
 	}
 
 	/**
