@@ -23,7 +23,7 @@
 		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
 		"InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
 		"InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
-		"LineBasedUnifiedDiffFormatter": "includes/InlineTwoColConflict/LineBasedUnifiedDiffFormatter.php",
+		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
 		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
 		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
 		"HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
