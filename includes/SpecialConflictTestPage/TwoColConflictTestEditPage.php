@@ -52,7 +52,7 @@ class TwoColConflictTestEditPage extends EditPage {
 			'tabindex' => ++$tabindex,
 			'inputId' => 'wpPreview',
 			'useInputTag' => true,
-			'flags' => [ 'constructive', 'primary' ],
+			'flags' => [ 'progressive', 'primary' ],
 			'label' => $this->context->msg( 'twoColConflict-test-preview-submit' )->text(),
 			'infusable' => true,
 			'type' => 'submit',
