@@ -53,6 +53,7 @@
 	"twoColConflict-test-title-label": "Label for the conflict test page input box to load an article.",
 	"twoColConflict-test-title-submit": "Submit button on the conflict test page to load an article.",
 	"twoColConflict-test-title-not-existing": "Error message shown on the conflict test page when the submitted title does not exist.",
+	"twoColConflict-test-no-direct-editing": "Error message shown on the conflict test page when the submitted page's content model does not support direct editing (e.&nbsp;g. a Structured Discussions topic or a Wikibase item).",
 	"twoColConflict-test-text-submit": "Submit button on the conflict test page to submit changes creating a test conflict.",
 	"twoColConflict-test-initial-hint": "First hint shown on the conflict test page above the input field to load an article to experiment with.",
 	"twoColConflict-test-edit-hint": "Second hint shown on the conflict test page above the editor to make changes.",

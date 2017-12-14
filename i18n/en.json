@@ -48,6 +48,7 @@
 	"twoColConflict-test-title-label": "Enter the title of a non-protected wiki page for which the edit conflict should be simulated:",
 	"twoColConflict-test-title-submit": "Show edit page",
 	"twoColConflict-test-title-not-existing": "There is no page with this title.",
+	"twoColConflict-test-no-direct-editing": "This page cannot be edited directly.",
 	"twoColConflict-test-text-submit": "Create conflict",
 	"twoColConflict-test-initial-hint": "On this page you can try out the new Two Column Edit Conflict interface without messing anything up.",
 	"twoColConflict-test-edit-hint": "Make some changes below. They won't be saved. They will only be used to simulate an example edit conflict.",
