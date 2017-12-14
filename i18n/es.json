@@ -53,6 +53,7 @@
 	"twoColConflict-test-title-not-existing": "No hay ninguna página con este título.",
 	"twoColConflict-test-text-submit": "Crear conflicto",
 	"twoColConflict-test-edit-hint": "Realiza algunos cambios a continuación. No se guardarán; solo se utilizarán para simular un conflicto de edición a modo de ejemplo.",
+	"twoColConflict-test-conflict-hint": "Este es el conflicto de prueba. Los cambios no se guardarán pero pueden previsualizarse.",
 	"twoColConflict-test-preview-submit": "Simular guardar cambios",
 	"twoColConflict-test-preview-hint": "¡Gracias por poner a prueba la interfaz de conflictos de ediciones en dos columnas! Ayúdanos a mejorarla [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page con tus comentarios].\n\nA continuación, el resultado de tu resolución de conflictos de prueba.",
 	"twoColConflict-test-summary-text": "Resumen de edición de la prueba de conflicto"
