@@ -49,6 +49,7 @@
 	"twoColConflict-test-title-label": "Gib den Titel einer nicht geschützten Wikiseite ein, für die der Bearbeitungskonflikt simuliert werden soll:",
 	"twoColConflict-test-title-submit": "Bearbeitungsseite anzeigen",
 	"twoColConflict-test-title-not-existing": "Es gibt keine Seite mit diesem Titel.",
+	"twoColConflict-test-no-direct-editing": "Diese Seite kann nicht direkt bearbeitet werden.",
 	"twoColConflict-test-text-submit": "Konflikt erstellen",
 	"twoColConflict-test-initial-hint": "Auf dieser Seite kannst du die neue Zwei-Spalten-Bearbeitungskonflikt-Oberfläche austesten, ohne irgendetwas zu zerstören.",
 	"twoColConflict-test-edit-hint": "Mache unten einige Änderungen. Sie werden nicht gespeichert. Sie werden nur verwendet, um einen Beispiel-Bearbeitungskonflikt zu simulieren.",

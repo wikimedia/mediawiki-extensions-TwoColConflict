@@ -3,7 +3,8 @@
 		"authors": [
 			"Fúlvio",
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Athena in Wonderland"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -50,6 +51,7 @@
 	"twoColConflict-test-title-label": "Introduza o título de uma página da wiki que não esteja protegida, para a qual o conflito de edições deve ser simulado:",
 	"twoColConflict-test-title-submit": "Mostrar a página de edição",
 	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",
+	"twoColConflict-test-no-direct-editing": "Esta página não pode ser editada diretamente.",
 	"twoColConflict-test-text-submit": "Criar um conflito",
 	"twoColConflict-test-initial-hint": "Nesta página pode experimentar a nova interface do conflito de edições em duas colunas, sem causar estragos.",
 	"twoColConflict-test-edit-hint": "Faça algumas alterações abaixo. Elas não serão gravadas. Só serão usadas para simular um conflito de edições, como exemplo.",

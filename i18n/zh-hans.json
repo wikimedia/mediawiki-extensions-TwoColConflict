@@ -50,6 +50,7 @@
 	"twoColConflict-test-title-label": "输入一个未受保护的wiki页面的标题以模拟编辑冲突：",
 	"twoColConflict-test-title-submit": "显示编辑页面",
 	"twoColConflict-test-title-not-existing": "没有该标题的页面。",
+	"twoColConflict-test-no-direct-editing": "此页面不能直接编辑。",
 	"twoColConflict-test-text-submit": "创建冲突",
 	"twoColConflict-test-initial-hint": "在此页面上，您可以尝试新的双栏编辑冲突界面，而不扰乱任何内容。",
 	"twoColConflict-test-edit-hint": "在下方进行一些更改。这些更改不会保存，只用于模拟示例编辑冲突。",

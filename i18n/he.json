@@ -49,6 +49,7 @@
 	"twoColConflict-test-title-label": "נא להזין כותרת של דף שאינו מוגן שעבורו צריך לדמות עריכה:",
 	"twoColConflict-test-title-submit": "הצגת דף העריכה",
 	"twoColConflict-test-title-not-existing": "אין דף עם כותרת כזאת.",
+	"twoColConflict-test-no-direct-editing": "לא ניתן לערוך את הדף הזה ישירות.",
 	"twoColConflict-test-text-submit": "יצירת התנגשות",
 	"twoColConflict-test-initial-hint": "בדף הזה אפשר לנסות את הממשק החדש לפתרון התנגשויות עריכה בשני טורים בלי לשבש דבר.",
 	"twoColConflict-test-edit-hint": "תעשו שינויים להלן. הם לא יישמרו. הם ישמשו רק להדמיית התנגשות עריכה לדוגמה.",

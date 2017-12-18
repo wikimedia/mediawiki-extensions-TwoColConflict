@@ -52,6 +52,7 @@
 	"twoColConflict-test-title-label": "Saisir le titre d’une page wiki non protégée, pour laquelle le conflit d’édition doit être simulé :",
 	"twoColConflict-test-title-submit": "Afficher la page de modification",
 	"twoColConflict-test-title-not-existing": "Il n'y a pas de page avec ce titre.",
+	"twoColConflict-test-no-direct-editing": "Cette page ne peut pas être modifiée directement.",
 	"twoColConflict-test-text-submit": "Créer un conflit",
 	"twoColConflict-test-initial-hint": "Sur cette page vous pouvez essayer sur deux colonnes, le nouvel interface d'édition des conflits sans en oublier.",
 	"twoColConflict-test-edit-hint": "Faites quelques changements ci-dessous. Ils ne seront pas sauvegardés. Ils seront utilisés uniquement pour simuler un exemple d'édition de conflit.",
