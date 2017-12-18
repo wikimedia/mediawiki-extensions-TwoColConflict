@@ -2,6 +2,25 @@
 
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 
+	protected function setUp() {
+		parent::setUp();
+
+		// register a namespace with non-editable content model to test T182668
+		$this->mergeMwGlobalArrayValue( 'wgExtraNamespaces', [
+			12312 => 'Dummy',
+			12313 => 'Dummy_talk',
+		] );
+		$this->mergeMwGlobalArrayValue( 'wgNamespaceContentModels', [
+			12312 => 'testing',
+		] );
+		$this->mergeMwGlobalArrayValue( 'wgContentHandlers', [
+			'testing' => 'DummyContentHandlerForTesting',
+		] );
+		MWNamespace::clearCaches();
+		// and a page inside it
+		$this->insertPage( 'Dummy', '', 12312 );
+	}
+
 	/**
 	 * Returns a new instance of the special page under test.
 	 *
@@ -30,6 +49,16 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 					$this->assertFormIsPresent( $html );
 					$this->assertTitleInputFieldPresent( $html );
 					$this->assertWarningBox( $html, 'There is no page with this title.' );
+				},
+			],
+			'Expect warning on non-editable title' => [
+				new FauxRequest( [
+					'mw-twocolconflict-test-title' => 'Dummy:Dummy',
+				] ),
+				function ( $html ) {
+					$this->assertFormIsPresent( $html );
+					$this->assertTitleInputFieldPresent( $html );
+					$this->assertWarningBox( $html, 'This page cannot be edited directly.' );
 				},
 			],
 			'Expect editor on valid title' => [

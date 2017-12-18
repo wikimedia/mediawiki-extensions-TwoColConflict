@@ -56,6 +56,15 @@ class SpecialConflictTestPage extends SpecialPage {
 		}
 
 		$testArticle = Article::newFromTitle( $testTitle, $this->getContext() );
+
+		if ( !$testArticle->getContentHandler()->supportsDirectEditing() ) {
+			$this->showHintBox( ( new Message( 'twoColConflict-test-initial-hint' ) )->parse() );
+
+			$this->showWarningBox( new Message( 'twoColConflict-test-no-direct-editing' ) );
+			$this->showLoadTitle();
+			return;
+		}
+
 		if ( $request->getVal( 'mw-twocolconflict-test-text' ) === null ) {
 			$this->showHintBox( ( new Message( 'twoColConflict-test-edit-hint' ) )->parse() );
 
