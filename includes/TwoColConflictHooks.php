@@ -15,7 +15,7 @@ class TwoColConflictHooks {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$betaFeatureDisabled = $config->get( 'TwoColConflictBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
 			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' );
 
 		return !$betaFeatureDisabled;
