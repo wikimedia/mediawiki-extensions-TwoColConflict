@@ -51,6 +51,7 @@
 	"twoColConflict-test-title-label": "Digita el título de una página no protegida del wiki para simular un conflicto de edición en ella:",
 	"twoColConflict-test-title-submit": "Mostrar la página de edición",
 	"twoColConflict-test-title-not-existing": "No hay ninguna página con este título.",
+	"twoColConflict-test-no-direct-editing": "No se puede editar esta página directamente.",
 	"twoColConflict-test-text-submit": "Crear conflicto",
 	"twoColConflict-test-edit-hint": "Realiza algunos cambios a continuación. No se guardarán; solo se utilizarán para simular un conflicto de edición a modo de ejemplo.",
 	"twoColConflict-test-conflict-hint": "Este es el conflicto de prueba. Los cambios no se guardarán pero pueden previsualizarse.",

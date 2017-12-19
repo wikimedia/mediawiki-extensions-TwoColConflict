@@ -48,6 +48,7 @@
 	"twoColConflict-test-title-label": "Escribe'l títulu d'una páxina sin protexer de la wiki p'asemeyar un conflictu d'edición nella:",
 	"twoColConflict-test-title-submit": "Amosar la páxina d'edición",
 	"twoColConflict-test-title-not-existing": "Nun hai nenguna páxina con esti títulu.",
+	"twoColConflict-test-no-direct-editing": "Esta páxina nun puede editase direutamente.",
 	"twoColConflict-test-text-submit": "Crear conflictu",
 	"twoColConflict-test-initial-hint": "Nesta páxina puedes probar la interfaz del nuevu Conflictu d'edición en dos columnes ensin estropiar nada.",
 	"twoColConflict-test-edit-hint": "Fai dellos cambeos más abaxo. Nun van guardase; solo van utilizase p'asemeyar un conflictu d'edición a manera d'exemplu.",

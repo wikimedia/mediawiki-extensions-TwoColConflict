@@ -49,5 +49,6 @@
 	"twoColConflict-close-dialog": "Chiudi",
 	"twoColConflict-test-page-title": "Conflitto di modifica: simulazione",
 	"twoColConflict-test-title-label": "Inserisci il titolo di una pagina wiki non protetta per la quale deve essere simulato il conflitto di modifica:",
+	"twoColConflict-test-no-direct-editing": "Questa pagina non può essere modificata direttamente.",
 	"twoColConflict-test-text-submit": "Crea conflitto"
 }

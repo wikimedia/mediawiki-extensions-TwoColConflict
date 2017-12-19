@@ -35,6 +35,7 @@
 	"twoColConflict-test-title-label": "편집 충돌을 모의 시험할 보호되지 않은 위키 문서의 제목을 입력하십시오:",
 	"twoColConflict-test-title-submit": "편집 문서 표시",
 	"twoColConflict-test-title-not-existing": "이 제목의 문서가 없습니다.",
+	"twoColConflict-test-no-direct-editing": "이 문서를 직접 편집할 수 없습니다.",
 	"twoColConflict-test-text-submit": "만들기 충돌",
 	"twoColConflict-test-edit-hint": "아래의 일부 변경사항을 적용합니다. 저장되지는 않습니다. 예시 편집 충돌을 모의 실험하기 위해서만 사용됩니다.",
 	"twoColConflict-test-conflict-hint": "이것은 테스트 충돌입니다. 변경사항은 저장되지 않지만 미리 보기는 가능합니다.",
