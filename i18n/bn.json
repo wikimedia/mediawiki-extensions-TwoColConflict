@@ -26,5 +26,6 @@
 	"twoColConflict-next-dialog": "পরবর্তী",
 	"twoColConflict-close-dialog": "বন্ধ করুন",
 	"twoColConflict-test-title-submit": "সম্পাদনার পাতা দেখান",
+	"twoColConflict-test-no-direct-editing": "এই পাতা সরাসরি সম্পাদনা করা যাবে না।",
 	"twoColConflict-test-text-submit": "দ্বন্দ্ব তৈরি করুন"
 }
