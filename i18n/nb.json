@@ -49,6 +49,7 @@
 	"twoColConflict-test-title-label": "Skriv inn tittelen på en ikke-beskyttet wikiside som redigeringen skal simuleres i:",
 	"twoColConflict-test-title-submit": "Vis redigeringsside",
 	"twoColConflict-test-title-not-existing": "Det er ingen side med denne tittelen.",
+	"twoColConflict-test-no-direct-editing": "Denne siden kan ikke redigeres direkte.",
 	"twoColConflict-test-text-submit": "Skap konflikt",
 	"twoColConflict-test-initial-hint": "På denne siden kan du prøve grensesnittet for tokolonners redigeringskonflikt uten å lage trøbbel.",
 	"twoColConflict-test-edit-hint": "Gjør noen endringer nedenfor. De vil ikke bli lagret, men brukes kun til å simulere et eksempel på en redigeringskonflikt.",

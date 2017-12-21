@@ -3,7 +3,8 @@
 		"authors": [
 			"Matma Rex",
 			"Sfic",
-			"Anamdas"
+			"Anamdas",
+			"Rajatkatiyar10"
 		]
 	},
 	"twoColConflict-changes-col-desc-2": "वर्तमान प्रकाशित संस्करण",
@@ -21,5 +22,6 @@
 	"twoColConflict-label-hide-unchanged": "अपरिवर्तित पाठ छुपाएँ",
 	"twoColConflict-previous-dialog": "पिछला",
 	"twoColConflict-next-dialog": "अगला",
-	"twoColConflict-close-dialog": "बंद करें"
+	"twoColConflict-close-dialog": "बंद करें",
+	"twoColConflict-test-no-direct-editing": "यह पृष्ठ सीधे नहीं बदला जा सकता है|"
 }
