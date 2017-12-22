@@ -32,6 +32,7 @@
 	"twoColConflict-test-title-label": "Gitt den Titel vun enger net gespaarter Wikisäit an, fir déi de Wiki-Konflikt simuléiert gi soll:",
 	"twoColConflict-test-title-submit": "Ännerungssäit weisen",
 	"twoColConflict-test-title-not-existing": "Et gëtt keng Säit mat dësem Fichier.",
+	"twoColConflict-test-no-direct-editing": "Dës Säit kann net direkt geännert ginn.",
 	"twoColConflict-test-text-submit": "Konflikt uleeën",
 	"twoColConflict-test-conflict-hint": "Dëst ass den Test-Konflikt. Ännerunge ginn net gespäichert si kënnen awer gewise ginn,",
 	"twoColConflict-test-preview-submit": "Ännerunge späichere simuléieren",
