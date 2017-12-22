@@ -24,6 +24,7 @@
 		"InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
 		"InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
 		"RandomChangesGenerator": "includes/RandomChangesGenerator.php",
+		"CollapsedTextBuilder": "includes/CollapsedTextBuilder.php",
 		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
 		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
 		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",

@@ -24,9 +24,6 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$this->wikiPage = WikiPage::factory( $title );
 	}
 
-	const WHITESPACES =
-		'\s\xA0\x{1680}\x{180E}\x{2000}-\x{200A}\x{2028}\x{2029}\x{202F}\x{205F}\x{3000}';
-
 	/**
 	 * @inheritDoc
 	 */
@@ -547,7 +544,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * @return string HTML
 	 */
 	private function addUnchangedText( $text ) {
-		$collapsedText = $this->getCollapsedText( $text );
+		$collapsedText = CollapsedTextBuilder::buildCollapsedText( $text );
 
 		if ( !$collapsedText ) {
 			return $text;
@@ -556,85 +553,6 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		return
 			'<span class="mw-twocolconflict-diffchange-same-full">' . $text . '</span>' .
 			'<span class="mw-twocolconflict-diffchange-same-collapsed">' . $collapsedText . '</span>';
-	}
-
-	/**
-	 * Get a collapsed version of multi-line text.
-	 * Returns false if text is within length-limit.
-	 *
-	 * @param string $text HTML
-	 * @param int $maxLength
-	 * @return string|false
-	 */
-	private function getCollapsedText( $text, $maxLength = 150 ) {
-		$text = $this->trimWhiteSpaces( html_entity_decode( $text ) );
-		$lines = explode( "\n", $text );
-
-		if ( mb_strlen( $text ) <= $maxLength && count( $lines ) <= 2 ) {
-			return false;
-		}
-
-		return
-			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
-			htmlspecialchars( $this->trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
-			'</span>' .
-			( count( $lines ) > 1 ? "\n" : $this->out->msg( 'word-separator' ) ) .
-			'<span class="mw-twocolconflict-diffchange-fadeout-start">' .
-			htmlspecialchars(
-				$this->trimStringToFullWord( array_pop( $lines ), $maxLength / 2, false )
-			) .
-			'</span>';
-	}
-
-	/**
-	 * Trims a string at the start or end to the next full word.
-	 *
-	 * @param string $string
-	 * @param int $maxLength
-	 * @param boolean $trimAtEnd
-	 * @return string
-	 */
-	private function trimStringToFullWord( $string, $maxLength, $trimAtEnd = true ) {
-		if ( mb_strlen( $string ) <= $maxLength ) {
-			return $string;
-		}
-
-		if ( $trimAtEnd ) {
-			$result = preg_replace(
-				'/[' . self::WHITESPACES . ']+?[^' . self::WHITESPACES . ']+?$/u',
-				'',
-				mb_substr( $string, 0, $maxLength )
-			);
-
-		} else {
-			$result = preg_replace(
-				'/^[^' . self::WHITESPACES . ']+?[' . self::WHITESPACES . ']+?/u',
-				'',
-				mb_substr( $string, -$maxLength ),
-				1
-			);
-		}
-
-		return $this->trimWhiteSpaces( $result, $trimAtEnd );
-	}
-
-	/**
-	 * Trims whitespaces and most non-printable characters from a string.
-	 *
-	 * @param string $string
-	 * @param null|boolean $trimAtEnd
-	 * @return string
-	 */
-	private function trimWhiteSpaces( $string, $trimAtEnd = null ) {
-		if ( $trimAtEnd !== false ) {
-			$string = preg_replace( '/[' . self::WHITESPACES . ']+$/u', '', $string );
-		}
-
-		if ( $trimAtEnd !== true ) {
-			$string = preg_replace( '/^[' . self::WHITESPACES . ']+/u', '', $string );
-		}
-
-		return $string;
 	}
 
 	private function wikiEditorIsEnabled() {
