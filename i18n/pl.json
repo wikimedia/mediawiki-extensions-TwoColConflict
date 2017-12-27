@@ -45,5 +45,6 @@
 	"twoColConflict-previous-dialog": "Poprzedni",
 	"twoColConflict-next-dialog": "Następny",
 	"twoColConflict-close-dialog": "Zamknij",
-	"twoColConflict-test-title-not-existing": "Nie ma strony o tym tytule."
+	"twoColConflict-test-title-not-existing": "Nie ma strony o tym tytule.",
+	"twoColConflict-test-no-direct-editing": "Tej strony nie można edytować bezpośrednio."
 }

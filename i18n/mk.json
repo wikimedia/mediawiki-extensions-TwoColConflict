@@ -48,6 +48,7 @@
 	"twoColConflict-test-title-label": "Внесете наслов на незаштитена викистраница за која ќе се направи божемна спротиставеност во уредувањето",
 	"twoColConflict-test-title-submit": "Прик. уред. страница",
 	"twoColConflict-test-title-not-existing": "Нема страница со таков наслов.",
+	"twoColConflict-test-no-direct-editing": "Оваа страница не може да се уредува непосредно.",
 	"twoColConflict-test-text-submit": "Направи спротиставеност",
 	"twoColConflict-test-initial-hint": "На оваа страница можете да го испробувате новиот посредник  Двостолбна спротиставеност без да пореметите нешто.",
 	"twoColConflict-test-edit-hint": "Направете некои измени подолу. Нема да се зачуваат, туку служат само за да дадат божемна спротиставеност во уредувањата.",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vriullop",
-			"Ssola"
+			"Ssola",
+			"Fitoschido"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -42,5 +43,6 @@
 	"twoColConflict-tutorial": "Tutorial per a resoldre conflictes d'edició",
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Següent",
-	"twoColConflict-close-dialog": "Tanca"
+	"twoColConflict-close-dialog": "Tanca",
+	"twoColConflict-test-no-direct-editing": "No es pot editar aquesta pàgina directament."
 }
