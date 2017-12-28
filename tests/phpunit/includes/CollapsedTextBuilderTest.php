@@ -9,7 +9,7 @@ use Wikimedia\TestingAccessWrapper;
 class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_returnFalseWhenInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -22,7 +22,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_returnFalseWhenWhenOverLimitWithWhitespaces() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -35,7 +35,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_cutWhenSingleLineOverLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -48,7 +48,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_returnFalseWhenTwoLinesInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -58,7 +58,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_cutWhenTwoLinesOverLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -70,7 +70,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->buildCollapsedText
+	 * @covers CollapsedTextBuilder::buildCollapsedText
 	 */
 	public function testbuildCollapsedText_cutWhenMultipleLinesInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -82,7 +82,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->trimStringToFullWord
+	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_noCutWhenInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -97,7 +97,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->trimStringToFullWord
+	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtEndOfResult() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -108,7 +108,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers CollapsedTextBuilder->trimStringToFullWord
+	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtStartOfResult() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -123,7 +123,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atEnd
-	 * @covers CollapsedTextBuilder->trimStringToFullWord
+	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atEnd( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -158,7 +158,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atStart
-	 * @covers CollapsedTextBuilder->trimStringToFullWord
+	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atStart( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -193,7 +193,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param null|boolean $trimAtEnd
 	 * @param string $result
 	 * @dataProvider provider_trimWhiteSpaces
-	 * @covers CollapsedTextBuilder->trimWhiteSpaces
+	 * @covers CollapsedTextBuilder::trimWhiteSpaces
 	 */
 	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
