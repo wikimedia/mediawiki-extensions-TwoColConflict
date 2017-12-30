@@ -550,8 +550,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			return $text;
 		}
 
-		return
-			'<span class="mw-twocolconflict-diffchange-same-full">' . $text . '</span>' .
+		return '<span class="mw-twocolconflict-diffchange-same-full">' . $text . '</span>' .
 			'<span class="mw-twocolconflict-diffchange-same-collapsed">' . $collapsedText . '</span>';
 	}
 

@@ -21,8 +21,7 @@ class CollapsedTextBuilder {
 			return false;
 		}
 
-		return
-			'<span class="mw-twocolconflict-diffchange-fadeout-end">' .
+		return '<span class="mw-twocolconflict-diffchange-fadeout-end">' .
 			htmlspecialchars( self::trimStringToFullWord( $lines[0], $maxLength / 2, true ) ) .
 			'</span>' .
 			( count( $lines ) > 1 ? "\n" : wfMessage( 'word-separator' ) ) .
