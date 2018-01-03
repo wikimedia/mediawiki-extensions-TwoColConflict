@@ -555,7 +555,8 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	private function wikiEditorIsEnabled() {
-		return class_exists( WikiEditorHooks::class ) && WikiEditorHooks::isEnabled( 'toolbar' );
+		return ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' ) &&
+			$this->out->getUser()->getOption( 'usebetatoolbar' );
 	}
 
 	private function deactivateWikEd() {
