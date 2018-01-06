@@ -3,7 +3,8 @@
 		"authors": [
 			"Ykhwong",
 			"SeoJeongHo",
-			"Tursetic"
+			"Tursetic",
+			"Bluemersen"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -20,6 +21,8 @@
 	"twoColConflict-base-selection-own-label": "내 텍스트",
 	"twoColConflict-base-selection-foreign-label": "현재 게시된 판",
 	"twoColConflict-base-selection-submit-label": "확인",
+	"twoColConflict-diffchange-own-title": "당신의 편집 버전",
+	"twoColConflict-diffchange-foreign-title": "$1의 편집 버전",
 	"twoColConflict-label-show": "보이기",
 	"twoColConflict-label-hide": "숨기기",
 	"twoColConflict-label-show-unchanged": "변경되지 않은 텍스트 보이기",
