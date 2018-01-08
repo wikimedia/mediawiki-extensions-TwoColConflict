@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twoColConflict-beta-feature-message": "Editor de conflitos em duas colunas",
-	"twoColConflict-beta-feature-description": "Mostre a exibição de conflito de edição usando uma visualização de duas colunas mais avançada.",
+	"twoColConflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.\n\nDica: Se não quiser esperar até que ocorra um conflito de edições, pode simular um conflito na nossa página de testes. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Clique aqui] para descobrir como isto funciona.",
 	"twoColConflict-explainconflict": "<strong>Aviso:</strong> Outro usuário acabou de editar e salvar esta página. Existe um conflito entre sua versão e a versão atual. Você terá que mesclar suas mudanças na versão de texto atual. Somente o texto no campo do editor será salvo quando você clicar em \"$1\".",
 	"twoColConflict-changes-col-title": "Alterações conflitantes",
 	"twoColConflict-changes-col-desc-1": "Diferenças entre",
