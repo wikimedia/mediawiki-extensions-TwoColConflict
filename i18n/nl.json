@@ -45,6 +45,7 @@
 	"twoColConflict-test-page-title": "Bewerkingsconflict: Simulatie",
 	"twoColConflict-test-title-label": "Voer de titel van een niet-beveiligde wikipagina in waarvoor een bewerkingsconflict te simuleren:",
 	"twoColConflict-test-title-not-existing": "Er bestaat geen pagina met deze titel.",
+	"twoColConflict-test-no-direct-editing": "Deze pagina kan niet direct worden bewerkt.",
 	"twoColConflict-test-text-submit": "Conflict creëeren",
 	"twoColConflict-test-edit-hint": "Maak de wijzigingen hier beneden. Ze zullen niet worden opgeslagen en worden alleen gebruikt om een bewerkingsconflict te simuleren.",
 	"twoColConflict-test-username": "ConflictTest gebruiker",
