@@ -278,8 +278,6 @@ return [
 	'suppress_issue_types' => [
 		// approximate error count: 1
 		"PhanParamSignatureMismatch",
-		// approximate error count: 12
-		"PhanParamTooMany",
 	],
 
 	/**

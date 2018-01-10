@@ -28,7 +28,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	private $newline = 1;
 
 	/**
-	 * @var array
+	 * @var array[]
 	 */
 	private $retval = [];
 
