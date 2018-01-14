@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Arthur2e5",
-			"NeverBehave"
+			"NeverBehave",
+			"LNDDYL"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -17,7 +18,7 @@
 	"twoColConflict-changes-col-desc-3": "更改了$1{{PLURAL:$1|次}}（$2）",
 	"twoColConflict-changes-col-desc-4": "您的文本。",
 	"twoColConflict-history-link": "版本历史",
-	"twoColConflict-editor-col-title": "有待发布版本的编辑器",
+	"twoColConflict-editor-col-title": "编辑器里有待发布的版本",
 	"twoColConflict-editor-col-desc-1": "首先，编辑器的内容是当前发布版本。",
 	"twoColConflict-editor-col-desc-2": "在编辑器中添加您的更改到文本中，并点击“$1”。",
 	"twoColConflict-base-selection-desc-1": "一、在下方的弹窗中选择基础版本。",
