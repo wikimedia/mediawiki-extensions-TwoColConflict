@@ -44,13 +44,18 @@
 	"twoColConflict-previous-dialog": "Anterior",
 	"twoColConflict-next-dialog": "Próximo",
 	"twoColConflict-close-dialog": "Fechar",
+	"twoColConflict-test-needsbeta": "Para usar esta página especial tem de ativar a funcionalidade beta 'Conflito de edições em duas colunas' nas suas preferências.",
+	"twoColConflict-test-page-title": "Conflito de Edições: Simulação",
+	"twoColConflict-test-title-label": "Introduza o título de uma página da wiki que não esteja protegida, para a qual o conflito de edições deve ser simulado:",
 	"twoColConflict-test-title-submit": "Mostrar a página de edição",
 	"twoColConflict-test-title-not-existing": "Não existe nenhuma página com este título.",
+	"twoColConflict-test-no-direct-editing": "Esta página não pode ser editada diretamente.",
 	"twoColConflict-test-text-submit": "Criar um conflito",
 	"twoColConflict-test-initial-hint": "Nesta página, você pode experimentar a nova interface Two Column Edit Conflict sem mexer com nada.",
 	"twoColConflict-test-edit-hint": "Faça algumas alterações abaixo. Eles não serão salvos. Eles só serão usados para simular um exemplo de conflito de edição.",
 	"twoColConflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão gravadas mas podem ser pre-visualizadas.",
 	"twoColConflict-test-preview-submit": "Simular a gravação das alterações",
+	"twoColConflict-test-preview-hint": "Obrigado por experimentar a interface de conflito de edições em duas colunas! Ajude a melhorá-la dizendo-nos o que achou, [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page aqui].\n\nEncontra abaixo os resultados da resolução do seu teste de conflito de edições.",
 	"twoColConflict-test-username": "Usuário do teste de conflito",
 	"twoColConflict-test-summary-text": "Resumo de edição do teste de conflito"
 }
