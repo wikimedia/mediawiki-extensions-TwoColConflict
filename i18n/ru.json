@@ -32,6 +32,7 @@
 	"twoColConflict-base-selection-submit-label": "OK",
 	"twoColConflict-diffchange-own-title": "в вашей версии",
 	"twoColConflict-diffchange-foreign-title": "в версии $1",
+	"twoColConflict-diffchange-unchanged-title": "неизменённый текст",
 	"twoColConflict-label-show": "показать",
 	"twoColConflict-label-hide": "скрыть",
 	"twoColConflict-label-unchanged": "неизменённый текст",

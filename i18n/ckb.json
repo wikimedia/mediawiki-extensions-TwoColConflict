@@ -1,9 +1,42 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lost Whispers"
+			"Lost Whispers",
+			"Épine"
 		]
 	},
-	"twoColConflict-label-both": "ھەردووکیان",
-	"twoColConflict-label-show-changes": "گۆڕانکارییەکان نیشان بدە"
+	"twoColConflict-beta-feature-message": "کێشەی دەستکاریی دوو ڕیز",
+	"twoColConflict-explainconflict": "<strong>ئاگاداری:</strong> بەکارھێنەرێکی تر ھەر ئێستا پەڕەکەی دەستکاری کردووە و پاشەکەوتی کردووە، ئەمەش وادەکات کە کێشە دروست ببێت لە پاشەکەوتکردنی گۆڕانکارییەکانی تۆ. دەبێت ئێستا گۆڕانکارییەکانت لەگەڵ دەقی ھەنووکەیی تێکەڵ بکەیت.",
+	"twoColConflict-changes-col-title": "گۆڕانکارییەکانی کێشەی دەستکاری",
+	"twoColConflict-changes-col-desc-1": "جیاوازییەکانی نێوان",
+	"twoColConflict-changes-col-desc-2": "وەشانە پاشەکەوتکراوەکەی ئێستا",
+	"twoColConflict-changes-col-desc-3": "$1 جار گۆڕدراوە ($2)",
+	"twoColConflict-changes-col-desc-4": "دەقەکەی تۆ",
+	"twoColConflict-history-link": "مێژووی پێداچوونەوەکان",
+	"twoColConflict-editor-col-desc-2": "گۆڕانکارییەکانت زیاد بە سەر دەقی سندووقەکە و کرتە لەسەر «$1» بکە.",
+	"twoColConflict-base-selection-desc-1": "وەشانە بنەڕەتییەکە ھەڵبژێرە لەم ھەڵبژاردانەی خوارەوە",
+	"twoColConflict-base-selection-desc-2": "دەقەکە چاک بکە تا لەگەڵ ھەردووک وەشانەکە بگونجێت",
+	"twoColConflict-base-selection-desc-3": "کرتە لەسەر «$1» بکە. تەنھا ئەوەی لە سندووقەکەیە پاشەکەوت دەبێت.",
+	"twoColConflict-base-selection-dialog-text": "دەبێت چی پاشەکەوت بکرێت؟",
+	"twoColConflict-base-selection-own-label": "دەقەکەی من",
+	"twoColConflict-base-selection-foreign-label": "وەشانە پاشەکەوتکراوەکەی ئێستا",
+	"twoColConflict-base-selection-submit-label": "باشە",
+	"twoColConflict-diffchange-own-title": "لە وەشانەکەی تۆدا",
+	"twoColConflict-diffchange-foreign-title": "لە وەشانەکەی $1دا",
+	"twoColConflict-diffchange-unchanged-title": "دەقی نەگۆڕدراو",
+	"twoColConflict-label-show": "نیشاندان",
+	"twoColConflict-label-hide": "شاردنەوە",
+	"twoColConflict-label-unchanged": "دەقی نەگۆڕدراو",
+	"twoColConflict-label-show-unchanged": "نیشاندانی دەقی نەگۆڕدراو",
+	"twoColConflict-label-hide-unchanged": "شاردنەوەی دەقی نەگۆڕدراو",
+	"twoColConflict-show-help-tooltip": "نیشاندانی دەقی یارمەتی",
+	"twoColConflict-help-dialog-slide1": "ئەم پەڕەیە یارمەتیت دەدات لە چارەسەرکردنی کێشەکانی دەستکاریکردن. دوو ستوون ھەن: یەکەمیان گۆڕانکارییەکان نیشان دەدات کە بووەتە ھۆی دروستبوونی کێشەکە، دووەمیشیان دەستکاریکەرێکی دەقە.\n\nبۆ ھەر چەشنە ڕەخنەیەک، یان فیدباکێک، [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View تکایە کرتە لێرە بکە].",
+	"twoColConflict-help-dialog-slide2": "ستوونی یەکەم گۆڕانکارییەکانی تۆ و وەشانە پاشەکەوتکراوەکەی ئێستا دەردەخات. جیاوازییەکانی وەشانەکەی خەریکە پاشەکەوتی دەکەیت لەگەڵ وەشانە پاشەکەوتکراوەکەی ئێستا ڕووناککراون.",
+	"twoColConflict-previous-dialog": "پێشوو",
+	"twoColConflict-next-dialog": "دواتر",
+	"twoColConflict-close-dialog": "داخستن",
+	"twoColConflict-test-needsbeta": "دەبێت ھەڵبژاردەی بێتا کارا بکەیت بۆ بینینی ئەم پەڕەیە.",
+	"twoColConflict-test-title-submit": "پیشاندانی پەڕەی دەستکاری",
+	"twoColConflict-test-title-not-existing": "ھیچ پەڕەیەک بەم ناوە نییە.",
+	"twoColConflict-test-no-direct-editing": "ناتواندرێت ئەم پەڕەیە ڕاستەوخۆ دەستکاریی بکرێت."
 }
