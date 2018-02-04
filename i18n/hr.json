@@ -9,7 +9,7 @@
 	"twoColConflict": "Dvostupačni sukob uređivanja",
 	"twoColConflict-desc": "Usporedni prikaz za rješavanje sukoba uređivanja",
 	"twoColConflict-beta-feature-message": "Rješavanje sukoba uređivanja",
-	"twoColConflict-beta-feature-description": "Savjet: ako ne želite čekati dok uletite u trenutačni i stvarni sukob uređivanja, možete simulirati sukob uređivanja na našoj testnoj stranici, [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page kliknite ovdje,] da biste na taj način saznali kako funkcionira.",
+	"twoColConflict-beta-feature-description": "Prikaz sukoba uređivanja uz pomoć naprednog dvostupčanog pregleda.\n\nSavjet: ako ne želite čekati dok uletite u trenutačni i stvarni sukob uređivanja, možete simulirati sukob uređivanja na našoj testnoj stranici, [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page kliknite ovdje,] da biste na taj način saznali kako funkcionira.",
 	"twoColConflict-explainconflict": "<strong>Upozorenje:</strong> drugi je suradnik uređivao i upravo spremio izmjene na ovoj stranici. Nastao je sukob uređivanja između Vaše i trenutačne inačice. Trebat će te spojiti Vaše promjene u trenutačnu inačicu teksta. Klikom na \"$1\" biti će spremljen samo tekst u polju uređivača.",
 	"twoColConflict-changes-col-title": "Sukobljene promjene",
 	"twoColConflict-changes-col-desc-1": "Razlike između",
