@@ -8,6 +8,7 @@
 	-moz-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
 	-ms-flex-direction: row;
+	/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 	-ms-flex-wrap: wrap;
 	flex-flow: row wrap;
 }
@@ -120,7 +121,7 @@
 	line-height: 1.5em;
 }
 
-/* stylelint-disable-next-line selector-no-id */
+/* stylelint-disable-next-line selector-max-id */
 .mw-twocolconflict-editor-col #wpTextbox1 {
 	height: 400px;
 	padding: 0 0.3em 0 0.8em;
@@ -209,7 +210,7 @@ del.mw-twocolconflict-diffchange {
 	user-select: none;
 }
 
-[mw-twocolconflict-diffchange-title-pseudo]:before {
+[ mw-twocolconflict-diffchange-title-pseudo ]:before {
 	content: attr( mw-twocolconflict-diffchange-title-pseudo );
 }
 
