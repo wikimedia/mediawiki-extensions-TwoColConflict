@@ -1,4 +1,4 @@
-/* stylelint-disable-next-line selector-no-id */
+/* stylelint-disable-next-line selector-max-id */
 #wpTextbox1:not( .mw-twocolconflict-after-base-selection ) {
 	-webkit-filter: blur( 5px );
 	-moz-filter: blur( 5px );
