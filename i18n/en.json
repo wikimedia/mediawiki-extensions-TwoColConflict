@@ -7,7 +7,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twoColConflict-beta-feature-message": "Two column edit conflict",
-	"twoColConflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.\n\nHint: If you don't want to wait until you run into a real edit conflict, you can simulate edit conflicts on our test page. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Click here] to find out how it works.",
+	"twoColConflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.",
 	"twoColConflict-explainconflict": "<strong>Warning:</strong> Another user just edited and saved this page. There is a conflict between your version and the current version. You will have to merge your changes into the current text version. Only the text in the editor field will be saved when you click on \"$1\".",
 	"twoColConflict-changes-col-title": "Conflicting changes",
 	"twoColConflict-changes-col-desc-1": "Differences between",
