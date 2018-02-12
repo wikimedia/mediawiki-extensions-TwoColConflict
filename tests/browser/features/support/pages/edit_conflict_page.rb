@@ -46,7 +46,7 @@ class EditConflictPage
   link(:twocolconflict_help_close_end, css: '.mw-twocolconflict-help-close-end > a')
 
   div(:twocolconflict_base_dialog, css: '.mw-twocolconflict-base-dialog')
-  hidden_field(:twocolconflict_base_option,  name: 'mw-twocolconflict-base-version')
+  text_field(:twocolconflict_base_option,  name: 'mw-twocolconflict-base-version')
   label(:twocolconflict_base_mine_label, css: '.mw-twocolconflict-base-dialog-radio label:nth-of-type(2)')
   link(:twocolconflict_base_submit, css: '.mw-twocolconflict-base-dialog .oo-ui-buttonElement-button')
 
