@@ -10,7 +10,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Apresenta um ecrã de fusão de edições lado a lado, para resolução de conflitos de edição",
 	"twoColConflict-beta-feature-message": "Conflito de edições em duas colunas",
-	"twoColConflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.\n\nDica: Se não quiser esperar até que ocorra um conflito de edições, pode simular um conflito na nossa página de testes. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Clique aqui] para descobrir como isto funciona.",
+	"twoColConflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.",
 	"twoColConflict-explainconflict": "<strong>Aviso:</strong> Um outro utilizador acaba de editar e gravar esta página. Existe um conflito entre a sua versão e a versão atual. Terá que fundir as suas alterações na versão atual do texto. Só o texto no campo de edição será gravado ao clicar \"$1\".",
 	"twoColConflict-changes-col-title": "Alterações em conflito",
 	"twoColConflict-changes-col-desc-1": "Diferenças entre",

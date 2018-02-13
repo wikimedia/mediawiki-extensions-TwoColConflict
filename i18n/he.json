@@ -8,7 +8,7 @@
 	"twoColConflict": "התנגשות בשני טורים",
 	"twoColConflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
 	"twoColConflict-beta-feature-message": "התנגשות עריכה בשני טורים",
-	"twoColConflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.\n\nרמז: אם אינך רוצה לחכות להתנגשות אמיתית, אפשר לדמות התנגשות עריכה בדף הבדיקות שלנו. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page נא ללחוץ כאן] כדי לראות איך זה עובד.",
+	"twoColConflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
 	"twoColConflict-explainconflict": "<strong>אזהרה:</strong> משתמש אחר ערך ושמר את הדף הזה זה עתה. יש התנגשות בין הגרסה שלך לבין הגרסה הנוכחית. עליך למזג את השינויים שלך אל גרסת הטקסט הנוכחית. רק טקסט בשדה העריכה יישמר כשתלחץ על \"$1\".",
 	"twoColConflict-changes-col-title": "שינויים מתנגשים",
 	"twoColConflict-changes-col-desc-1": "הבדלים בין",

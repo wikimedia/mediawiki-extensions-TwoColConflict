@@ -10,7 +10,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "使用并排合并界面解决编辑冲突",
 	"twoColConflict-beta-feature-message": "双栏编辑冲突",
-	"twoColConflict-beta-feature-description": "使用更先进的双栏视图显示编辑冲突。\n\n提示：如果您不希望等到您面临一次真的编辑冲突，您可以在我们的测试页面模拟编辑冲突。[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 点此]了解它是如何工作的。",
+	"twoColConflict-beta-feature-description": "使用更先进的双栏视图显示编辑冲突。",
 	"twoColConflict-explainconflict": "<strong>警告：</strong>另一位用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您需要将自己的更改至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
 	"twoColConflict-changes-col-title": "更改冲突",
 	"twoColConflict-changes-col-desc-1": "比较两栏之间的不同：",

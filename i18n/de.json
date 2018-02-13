@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twoColConflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
-	"twoColConflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.\n\nHinweis: Wer nicht auf echte Bearbeitungskonflikte warten möchte, kann sie auf einer Testseite simulieren. Wie das funktioniert, [https://de.wikipedia.org/wiki/Wikipedia:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte/Feedbackrunde_Testseite steht hier].",
+	"twoColConflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.",
 	"twoColConflict-explainconflict": "<strong>Warnung:</strong> Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion einfügen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
 	"twoColConflict-changes-col-title": "Kollidierende Änderungen",
 	"twoColConflict-changes-col-desc-1": "Unterschiede zwischen",

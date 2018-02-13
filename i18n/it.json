@@ -11,7 +11,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Mostra una schermata di unione affiancata per modificare la risoluzione dei conflitti",
 	"twoColConflict-beta-feature-message": "Conflitto di modifiche su due colonne",
-	"twoColConflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.\n\nSuggerimento: se non vuoi attendere un conflitto di modifica reale, puoi simularlo nella nostra pagina di prova. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Clicca qui] per scoprire come funziona.",
+	"twoColConflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.",
 	"twoColConflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e salvato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà salvato quando cliccherai su \"$1\".",
 	"twoColConflict-changes-col-title": "Modifiche in conflitto",
 	"twoColConflict-changes-col-desc-1": "Differenze fra",
