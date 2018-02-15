@@ -54,6 +54,7 @@ class TwoColConflictHooks {
 	public static function onEditPageBeforeConflictDiff( EditPage $editPage, OutputPage $outputPage ) {
 		if ( class_exists( EventLogging::class ) ) {
 			$user = $outputPage->getUser();
+			$baseRevision = $editPage->getBaseRevision();
 			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=17520555
 			EventLogging::logEvent(
 				'TwoColConflictConflict',
@@ -63,7 +64,7 @@ class TwoColConflictHooks {
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
-					'baseRevisionId' => $editPage->getBaseRevision()->getId(),
+					'baseRevisionId' => ( $baseRevision ? $baseRevision->getId() : 0 ),
 					'parentRevisionId' => $editPage->getParentRevId(),
 					'textUser' => $editPage->textbox2,
 				]
