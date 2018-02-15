@@ -9,7 +9,7 @@
 		]
 	},
 	"twoColConflict-beta-feature-message": "Сукобљене измене у две колоне",
-	"twoColConflict-beta-feature-description": "Напреднији приказ сукобљених измена, у две колоне.",
+	"twoColConflict-beta-feature-description": "Приказ сукоба измена уз помоћ напреднијег режима, у две колоне.",
 	"twoColConflict-changes-col-title": "Сукобљене измене",
 	"twoColConflict-changes-col-desc-1": "Међуразлике",
 	"twoColConflict-changes-col-desc-2": "тренутно објављена измена",
