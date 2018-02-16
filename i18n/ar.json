@@ -11,7 +11,7 @@
 	"twoColConflict": "دمج التعديلات",
 	"twoColConflict-desc": "عرض شاشة دمج التعديلات لحل تضاربات التحرير",
 	"twoColConflict-beta-feature-message": "دمج التعديلات",
-	"twoColConflict-beta-feature-description": "عرض تضارب التحرير باستخدام طريقة العمودين الأكثر تقدما.\n\nملاحظة: لو كنت لا تريد الانتظار حتى تصطدم بتضارب تحرير، فيمكنك محاكاة تضلربات التحرير في صفحة التجربة الخاصة بنا. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page اضغط هنا] لمعرفة كيف تعمل.",
+	"twoColConflict-beta-feature-description": "عرض تضارب التحرير باستخدام طريقة العمودين الأكثر تقدما.",
 	"twoColConflict-explainconflict": "<strong>تحذير:</strong> لقد قام مستخدم آخر بتعديل وحفظ هذه الصفحة. هناك تضارب في التعديلات بين نسختك والنسخة الحالية. يتوجب عليك دمج تغييراتك في النسخة النصية الحالية. النص الموجود المُحرر هو الذي سيُحفظ فقط عند ضغطك على \"$1\".",
 	"twoColConflict-changes-col-title": "التغييرات المتضاربة",
 	"twoColConflict-changes-col-desc-1": "الفروقات بين",

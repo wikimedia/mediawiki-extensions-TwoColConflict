@@ -49,6 +49,6 @@
 	"twoColConflict-test-title-not-existing": "Не постоји страница са тим насловом.",
 	"twoColConflict-test-text-submit": "Направи сукоб",
 	"twoColConflict-test-initial-hint": "На овој страници можете испробати нови интерфејс за „Сукобљене измене у две колоне”, без могућности да направите нешто погрешно.",
-	"twoColConflict-test-preview-submit": "Симулирај снимање промена",
+	"twoColConflict-test-preview-submit": "Симулирај чување измена",
 	"twoColConflict-test-summary-text": "Сажетак промене теста сукоба"
 }
