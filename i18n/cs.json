@@ -4,12 +4,13 @@
 			"Mormegil",
 			"Dvorapa",
 			"JAn Dudík",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Ilimanaq29"
 		]
 	},
 	"twoColConflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
 	"twoColConflict-beta-feature-message": "Dvousloupcový editační konflikt",
-	"twoColConflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.\n\nRada: Pokud se vám nechce čekat, dokud nenarazíte na skutečný editační konflikt, můžete si vyzkoušet editační konflikty na naší testovací stránce. Informace o tom, jak to funguje, najdete na stránce //meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page.",
+	"twoColConflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.",
 	"twoColConflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a uložil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude uložen pouze text v editačním poli.",
 	"twoColConflict-changes-col-title": "Konfliktní změny",
 	"twoColConflict-changes-col-desc-1": "Rozdíly mezi",
