@@ -8,7 +8,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Viser en todelt skjerm for fletting av redigeringer ved redigeringskonflikt",
 	"twoColConflict-beta-feature-message": "Tokolonners redigeringskonflikt",
-	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.\n\nHint: om du ikke ønsker å vente til du opplever en virkelig redigeringskonflikt, kan du simulere redigeringskonflikter på testsiden vår. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Klikk her] for å finne ut hvordan det virker.",
+	"twoColConflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
 	"twoColConflict-explainconflict": "<strong>Advarsel:</strong> En annen bruker redigerte og lagret nettopp denne siden. Det er en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil lagres når du klikker på «$1».",
 	"twoColConflict-changes-col-title": "Motstridende endringer",
 	"twoColConflict-changes-col-desc-1": "Forskjeller mellom",
