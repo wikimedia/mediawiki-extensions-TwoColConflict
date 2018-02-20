@@ -3,7 +3,8 @@
 		"authors": [
 			"Kareyac",
 			"Vodnokon4e",
-			"ShockD"
+			"ShockD",
+			"StanProg"
 		]
 	},
 	"twoColConflict-beta-feature-message": "Конфликт на редакциите в две колони",
@@ -11,5 +12,7 @@
 	"twoColConflict-base-selection-submit-label": "Добре",
 	"twoColConflict-label-show": "показване",
 	"twoColConflict-label-hide": "скриване",
-	"twoColConflict-label-unchanged": "неизменен текст"
+	"twoColConflict-label-unchanged": "неизменен текст",
+	"twoColConflict-show-help-tooltip": "Показва помощна информация",
+	"twoColConflict-close-dialog": "Затваряне"
 }
