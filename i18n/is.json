@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"MyraMidnight",
-			"Snævar"
+			"Snævar",
+			"Sveinn í Felli"
 		]
 	},
 	"twoColConflict-desc": "Sýnir hlið við hlið sameiningarskjá fyrir lausn breytingaáreksturs.",
@@ -31,5 +32,9 @@
 	"twoColConflict-label-show-unchanged": "sýna óbreyttan texta",
 	"twoColConflict-label-hide-unchanged": "fela óbreyttan texta",
 	"twoColConflict-show-help-tooltip": "Sýna hjálpar texta",
-	"twoColConflict-help-dialog-slide2": "Fyrsti flokkurinn birtir breytingar á þinni útgáfu og breytingar á núverandi vistaðri útgáfu. Mismunurinn á báðum útgáfum eru undirstrikaðar."
+	"twoColConflict-help-dialog-slide2": "Fyrsti flokkurinn birtir breytingar á þinni útgáfu og breytingar á núverandi vistaðri útgáfu. Mismunurinn á báðum útgáfum eru undirstrikaðar.",
+	"twoColConflict-previous-dialog": "Fyrra",
+	"twoColConflict-next-dialog": "Næsta",
+	"twoColConflict-close-dialog": "Loka",
+	"twoColConflict-test-title-submit": "Birta breytingasíðu"
 }
