@@ -8,7 +8,7 @@
 	"twoColConflict": "تعارض‌دوستونی",
 	"twoColConflict-desc": "نمایش کنارهم حل تعارض ویرایشی",
 	"twoColConflict-beta-feature-message": "تعارض ویرایشی دو ستونی",
-	"twoColConflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد.\n\nنکته: اگر نمی‌توانید تا به وجود آمدن تعارض ویرایشی صبر کنید، می‌توانید در صفحهٔ تمرینتان متن دارای تعارض ویرایشی را ذخیره کنید و [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page اینجا] را کلیک کنید تا متوجه شوید چگونه کار می‌کند.",
+	"twoColConflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد.",
 	"twoColConflict-explainconflict": "<strong>هشدار:</strong> کاربری دیگر هم‌اکنون این صفحه را ویرایش و ذخیره کرده‌است. تعارض بین نسخه شما و نسخه کنونی وجود دارد. شما باید نسخه خودتان را در نسخه کنونی ادغام کنید. هنگامی که بر «$1» کلیک کنید، فقط متن بخش ویرایش ذخیره خواهد شد.",
 	"twoColConflict-changes-col-title": "تغییرات متعارض",
 	"twoColConflict-changes-col-desc-1": "تفاوت‌ها",
