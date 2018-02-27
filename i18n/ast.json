@@ -7,7 +7,7 @@
 	"twoColConflict": "TwoColConflict",
 	"twoColConflict-desc": "Amosar una pantalla d'entemecer con paneles axacentes pa resolver conflictos d'edición",
 	"twoColConflict-beta-feature-message": "Conflictu d'edición a dos columnes",
-	"twoColConflict-beta-feature-description": "Amosar el conflictu d'edición con una vista más avanzada en dos columnes.\n\nGabitu: Si nun quies esperar hasta atopar un conflictu d'edición real, puedes asemeyar conflictos d'edición na páxina de pruebes.\n[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Fai clic equí] pa probar como funciona.",
+	"twoColConflict-beta-feature-description": "Amosar el conflictu d'edición con una vista más avanzada en dos columnes.",
 	"twoColConflict-explainconflict": "<strong>Atención:</strong> Otru usuariu ta acabante d'editar y guardar esta páxina. Hai un conflictu ente la to versión y la versión actual. Tendrás qu'entemecer los tos cambios na versión actual del testu. Sólo va guardase'l testu del campu del editor cuando faigas click en «$1».",
 	"twoColConflict-changes-col-title": "Cambios en conflictu",
 	"twoColConflict-changes-col-desc-1": "Diferencies ente",
