@@ -6,7 +6,7 @@
 	},
 	"twoColConflict-desc": "Näitab redigeerimiskonflikti lahendamise tarbeks kaheküljelist muudatuste liitmise vaadet.",
 	"twoColConflict-beta-feature-message": "Kaheveeruline redigeerimiskonflikt",
-	"twoColConflict-beta-feature-description": "Kuvab redigeerimiskonflikti vaadet edasi arendatud kaheveerulises versioonis.\n\nVihje: Ilma päris redigeerimiskonflikti sattumata, saad redigeerimiskonflikti esile kutsuda katseleheküljel. Uuri [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page siit], kuidas see töötab.",
+	"twoColConflict-beta-feature-description": "Kuvab redigeerimiskonflikti vaadet edasi arendatud kaheveerulises versioonis.",
 	"twoColConflict-explainconflict": "<strong>Hoiatus:</strong> Teine kasutaja tegi just muudatuse ja salvestas lehekülje. Sinu versioon ja praegune versioon on konfliktis. Sul tuleb liita oma muudatused teksti praeguse versiooniga. Ainult toimetamisväljal olev tekst salvestatakse, kui klõpsad nuppu \"$1\".",
 	"twoColConflict-changes-col-title": "Konfliktsed muudatused",
 	"twoColConflict-changes-col-desc-1": "Erinevused järgmiste versioonide vahel:",
