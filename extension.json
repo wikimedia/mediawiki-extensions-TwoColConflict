@@ -9,7 +9,7 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TwoColConflict",
 	"descriptionmsg": "twoColConflict-desc",
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"manifest_version": 1,
 	"requires": {
