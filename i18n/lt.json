@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Nersip"
+			"Nersip",
+			"Manvydasz"
 		]
 	},
+	"twoColConflict-beta-feature-message": "Dviejų stulpelių redagavimo konfliktas",
+	"twoColConflict-beta-feature-description": "Rodyti redagavimo konflikto puslapį naudojant tobulesnį dviejų stulpelių rodinį.",
 	"twoColConflict-label-show": "rodyti",
 	"twoColConflict-label-hide": "slėpti",
 	"twoColConflict-label-unchanged": "nepakeistas tekstas",
