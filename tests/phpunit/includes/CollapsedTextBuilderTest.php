@@ -3,14 +3,13 @@
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @license GNU GPL v2+
+ * @covers \CollapsedTextBuilder
+ *
+ * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_returnFalseWhenInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertFalse(
@@ -21,9 +20,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_returnFalseWhenWhenOverLimitWithWhitespaces() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertFalse(
@@ -34,9 +30,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_cutWhenSingleLineOverLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -47,9 +40,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_returnFalseWhenTwoLinesInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertFalse(
@@ -57,9 +47,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_cutWhenTwoLinesOverLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -69,9 +56,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::buildCollapsedText
-	 */
 	public function testbuildCollapsedText_cutWhenMultipleLinesInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -81,9 +65,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::trimStringToFullWord
-	 */
 	public function testTrimStringToFullWord_noCutWhenInLimit() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -96,9 +77,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::trimStringToFullWord
-	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtEndOfResult() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -107,9 +85,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		);
 	}
 
-	/**
-	 * @covers CollapsedTextBuilder::trimStringToFullWord
-	 */
 	public function testTrimStringToFullWord_trimWhiteSpaceAtStartOfResult() {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
 		$this->assertEquals(
@@ -123,7 +98,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atEnd
-	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atEnd( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -158,7 +132,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param int $maxLength
 	 * @param string $result
 	 * @dataProvider provider_trimStringToFullWord_atStart
-	 * @covers CollapsedTextBuilder::trimStringToFullWord
 	 */
 	public function testTrimStringToFullWord_atStart( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
@@ -193,7 +166,6 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 * @param null|boolean $trimAtEnd
 	 * @param string $result
 	 * @dataProvider provider_trimWhiteSpaces
-	 * @covers CollapsedTextBuilder::trimWhiteSpaces
 	 */
 	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
 		$collapsedTextBuilder = TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );

@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @license GNU GPL v2+
+ * @covers \LineBasedUnifiedDiffFormatter
+ *
+ * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
@@ -11,7 +13,6 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	 * @param string $after
 	 * @param array $expectedOutput
 	 * @dataProvider provider_testFormat
-	 * @covers LineBasedUnifiedDiffFormatter::format
 	 */
 	public function testFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
@@ -375,7 +376,6 @@ TEXT
 	 * @param string $after
 	 * @param array $expectedOutput
 	 * @dataProvider provider_testMarkupFormat
-	 * @covers LineBasedUnifiedDiffFormatter::format
 	 */
 	public function testMarkupFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );

@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * @covers \HtmlPreview
+ * @covers \HtmlSpecialTestTextForm
+ * @covers \HtmlSpecialTestTitleForm
+ * @covers \HtmlWikiTextEditor
+ * @covers \SpecialConflictTestPage
+ * @covers \TwoColConflictTestEditPage
+ *
+ * @license GPL-2.0-or-later
+ * @author Christoph Jauera <christoph.jauera@wikimedia.de>
+ */
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 
 	protected function setUp() {
