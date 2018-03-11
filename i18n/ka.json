@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otogi"
+			"Otogi",
+			"David1010"
 		]
 	},
 	"twoColConflict-beta-feature-message": "რედაქტირების კონფლიქტის ორი სვეტი",
-	"twoColConflict-beta-feature-description": "აჩვენებს რედაქტირების კონფლიქტს უფრო განვითარებული ორი სვეტის გამოყენებით."
+	"twoColConflict-beta-feature-description": "აჩვენებს რედაქტირების კონფლიქტს უფრო განვითარებული ორი სვეტის გამოყენებით.",
+	"twoColConflict-base-selection-submit-label": "კარგი"
 }
