@@ -80,7 +80,7 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 			'</bdi></a>';
 		$out .= $this->out->getLanguage()->getDirMark();
 		$out .= ' <span class="comment">(' .
-			$this->out->msg( 'twoColConflict-test-summary-text' ) .
+			$this->out->msg( 'twocolconflict-test-summary-text' ) .
 			')</span>';
 		$out .= '</div>';
 
@@ -91,7 +91,7 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	 * @return string
 	 */
 	protected function getLastUserText() {
-		return $this->out->msg( 'twoColConflict-test-username' );
+		return $this->out->msg( 'twocolconflict-test-username' );
 	}
 
 }

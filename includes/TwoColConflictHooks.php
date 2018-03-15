@@ -81,8 +81,8 @@ class TwoColConflictHooks {
 
 		if ( $config->get( 'TwoColConflictBetaFeature' ) ) {
 			$prefs['twocolconflict'] = [
-				'label-message' => 'twoColConflict-beta-feature-message',
-				'desc-message' => 'twoColConflict-beta-feature-description',
+				'label-message' => 'twocolconflict-beta-feature-message',
+				'desc-message' => 'twocolconflict-beta-feature-description',
 				'screenshot' => [
 					'ltr' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-ltr.svg",
 					'rtl' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",

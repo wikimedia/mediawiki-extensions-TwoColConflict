@@ -28,7 +28,7 @@
 			BaseVersionSelector.parent.prototype.initialize.call( this );
 			this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
 			this.content.$element.append(
-				$( '<p>' ).text( mw.msg( 'twoColConflict-base-selection-dialog-text' ) ),
+				$( '<p>' ).text( mw.msg( 'twocolconflict-base-selection-dialog-text' ) ),
 				this.composeForm()
 			);
 			this.$body.append( this.content.$element );
@@ -44,17 +44,17 @@
 				options: [
 					{
 						data: 'current',
-						label: mw.msg( 'twoColConflict-base-selection-foreign-label' )
+						label: mw.msg( 'twocolconflict-base-selection-foreign-label' )
 					},
 					{
 						data: 'your',
-						label: mw.msg( 'twoColConflict-base-selection-own-label' )
+						label: mw.msg( 'twocolconflict-base-selection-own-label' )
 					}
 				]
 			} );
 
 			submit = new OO.ui.ButtonWidget( {
-				label: mw.msg( 'twoColConflict-base-selection-submit-label' ),
+				label: mw.msg( 'twocolconflict-base-selection-submit-label' ),
 				flags: [ 'primary', 'progressive' ]
 			} );
 			submit.on( 'click', function () {

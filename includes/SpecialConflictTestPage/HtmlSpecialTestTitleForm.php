@@ -54,7 +54,7 @@ class HtmlSpecialTestTitleForm {
 				),
 				[
 					'align' => 'top',
-					'label' => ( new Message( 'twoColConflict-test-title-label' ) )->plain(),
+					'label' => ( new Message( 'twocolconflict-test-title-label' ) )->plain(),
 				]
 			) ]
 		] ) ) .
@@ -64,7 +64,7 @@ class HtmlSpecialTestTitleForm {
 		) .
 		( new ButtonInputWidget(
 		[
-			'label' => ( new Message( 'twoColConflict-test-title-submit' ) )->plain(),
+			'label' => ( new Message( 'twocolconflict-test-title-submit' ) )->plain(),
 			'type' => 'submit',
 			'flags' => [ 'primary', 'progressive' ],
 		]
