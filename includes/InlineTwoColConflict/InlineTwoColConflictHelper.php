@@ -4,7 +4,7 @@ use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class InlineTwoColConflictHelper extends TextConflictHelper {

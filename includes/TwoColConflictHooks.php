@@ -5,8 +5,6 @@ use MediaWiki\MediaWikiServices;
 /**
  * Hooks for TwoColConflict extension
  *
- * @file
- * @ingroup Extensions
  * @license GPL-2.0-or-later
  */
 class TwoColConflictHooks {
