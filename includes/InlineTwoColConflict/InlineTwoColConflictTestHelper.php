@@ -75,7 +75,7 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	 */
 	protected function buildEditSummary() {
 		$out = '<div class="mw-twocolconflict-edit-summary">';
-		$out .= '<a href="#" class="mw-userlink" onclick="_blank"><bdi>' .
+		$out .= '<a href="#" class="mw-userlink"><bdi>' .
 			$this->getLastUserText() .
 			'</bdi></a>';
 		$out .= $this->out->getLanguage()->getDirMark();
