@@ -1,6 +1,11 @@
 <?php
 
+/**
+ * @license GPL-2.0-or-later
+ * @author Christoph Jauera <christoph.jauera@wikimedia.de>
+ */
 class RandomChangesGenerator {
+
 	/**
 	 * Generate random changes in a text given by adding random words from that text
 	 *
