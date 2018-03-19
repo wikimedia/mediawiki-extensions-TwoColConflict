@@ -12,7 +12,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	 * @param string $before
 	 * @param string $after
 	 * @param array $expectedOutput
-	 * @dataProvider provider_testFormat
+	 * @dataProvider provideFormat
 	 */
 	public function testFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
@@ -21,7 +21,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 		$this->assertEquals( $expectedOutput, $output );
 	}
 
-	public function provider_testFormat() {
+	public function provideFormat() {
 		return [
 			[
 				'before' => 'Just text.',
@@ -375,7 +375,7 @@ TEXT
 	 * @param string $before
 	 * @param string $after
 	 * @param array $expectedOutput
-	 * @dataProvider provider_testMarkupFormat
+	 * @dataProvider provideFormatWithMarkup
 	 */
 	public function testMarkupFormat( $before, $after, $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
@@ -384,7 +384,7 @@ TEXT
 		$this->assertEquals( $expectedOutput, $output );
 	}
 
-	public function provider_testMarkupFormat() {
+	public function provideFormatWithMarkup() {
 		return [
 			[
 				'before' => 'Text with [markup] <references />.',
