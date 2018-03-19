@@ -18,8 +18,6 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param null|string $subPage
 	 */
 	public function execute( $subPage ) {
-		$this->getPresetPage();
-
 		if ( !$this->isInBetaAndEnabled() ) {
 			$this->showWarningBox( ( new Message( 'twoColConflict-test-needsbeta' ) )->parse() );
 			return;
