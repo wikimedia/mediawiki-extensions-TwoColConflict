@@ -23,18 +23,16 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param EditPage $editPage
-	 *
-	 * @return bool
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
 		// Skip out on the test page
 		if ( get_class( $editPage ) === TwoColConflictTestEditPage::class ) {
-			return true;
+			return;
 		}
 
 		// Skip out if the feature is disabled
 		if ( !self::shouldTwoColConflictBeShown( $editPage ) ) {
-			return true;
+			return;
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
@@ -99,7 +97,6 @@ class TwoColConflictHooks {
 	/**
 	 * @param array &$testModules
 	 * @param ResourceLoader $rl
-	 * @return bool
 	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
@@ -112,7 +109,5 @@ class TwoColConflictHooks {
 			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'TwoColConflict',
 		];
-
-		return true;
 	}
 }
