@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-			"Banjo"
+			"Banjo",
+			"Navhy"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
-	"twoColConflict-desc": "Mostra unha pantalla doble de fusión de edicións para amañar conflitos de edición",
+	"twoColConflict-desc": "Amosa unha pantalla doble de fusión de edicións para amañar conflitos de edición",
 	"twoColConflict-beta-feature-message": "Conflito de edición sobre dúas columnas",
 	"twoColConflict-beta-feature-description": "Mostrar o conflito de edición utilizando una versión máis avanzada da vista en dúas columnas.\n\nPista: se prefire non esperar ata que se atope cun conflito de edición real, pode simular conflitos de edición na nosa páxina de probas.\n[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Prema aquí] para averiguar como funciona.",
 	"twoColConflict-explainconflict": "<strong>Advertencia:</strong> Outro usuario acaba de editar e gardar esta páxina. Hai un conflito entre a súa versión e a versión actual. Ten que combinar os seus cambios coa versión actual do texto. Só se gardará o texto da caixa de edición cando prema en «$1».",
@@ -34,9 +35,9 @@
 	"twoColConflict-label-unchanged": "texto sen cambios",
 	"twoColConflict-label-show-unchanged": "amosar o texto sen mudanzas",
 	"twoColConflict-label-hide-unchanged": "agochar o texto sen mudanzas",
-	"twoColConflict-show-help-tooltip": "Mostrar o texto de axuda",
-	"twoColConflict-help-dialog-slide1": "Esta páxina axúdao a resolver un conflito de edición. Hai dúas columnasː a primeira mostra os cambios conflitivos e a segunda é un editor de texto, cuxo contido será o que se publique.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Os seus comentarios serán moi apreciados aquí].",
-	"twoColConflict-help-dialog-slide2": "A primeira columna mostra os cambios na súa versión e os cambios na versión actual gardada. As diferenzas entre as dúas versións están resaltadas.",
+	"twoColConflict-show-help-tooltip": "Amosar o texto de axuda",
+	"twoColConflict-help-dialog-slide1": "Esta páxina axúdao a resolver un conflito de edición. Hai dúas columnas: a primeira amosa os cambios conflitivos e a segunda é un editor de texto, cuxo contido será o que se publique.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View Os seus comentarios serán moi apreciados aquí].",
+	"twoColConflict-help-dialog-slide2": "A primeira columna amosa os cambios na súa versión e os cambios na versión actual gardada. As diferenzas entre as dúas versións están resaltadas.",
 	"twoColConflict-help-dialog-slide3": "Na parte superior da primeira columna, pode premer en \"{{int:twoColConflict-label-show}}\" para ver o texto sen cambios. Isto pode axudar a captar mellor o contexto onde se producen os cambios. Por defecto, o texto sen cambios está difuminado e pregado.",
 	"twoColConflict-help-dialog-slide4": "A segunda columna é un editor. Ó abrir a páxina, hai unha caixa de selección na parte superior do editor que lle permite decidir qué versión quere que apareza no editor. Normalmente será a versión onde se teñan feito máis cambios.",
 	"twoColConflict-help-dialog-slide5": "Copie e pegue as partes desexadas da outra versión dentro do texto no editor. Cando prema no botón \"$1\", só se publicará o que conteña o editor.",
