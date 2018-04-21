@@ -15,6 +15,19 @@
 	"twoColConflict-changes-col-desc-3": "$1 {{PLURAL:$1|പ്രാവശ്യം}} മാറി ($2)",
 	"twoColConflict-changes-col-desc-4": "താങ്കളുടെ എഴുത്ത്.",
 	"twoColConflict-history-link": "നാൾവഴി",
+	"twoColConflict-base-selection-own-label": "എന്റെ എഴുത്ത്",
+	"twoColConflict-base-selection-foreign-label": "നിലവിൽ പ്രസിദ്ധീകരിച്ചിട്ടുള്ള പതിപ്പ്",
+	"twoColConflict-base-selection-submit-label": "ശരി",
+	"twoColConflict-diffchange-own-title": "താങ്കളുടെ പതിപ്പിൽ",
+	"twoColConflict-diffchange-foreign-title": "$1 എന്ന ഉപയോക്താവിന്റെ പതിപ്പിൽ",
+	"twoColConflict-diffchange-unchanged-title": "മാറ്റമില്ലാത്ത എഴുത്ത്",
 	"twoColConflict-label-show": "പ്രദർശിപ്പിക്കുക",
-	"twoColConflict-label-hide": "മറയ്ക്കുക"
+	"twoColConflict-label-hide": "മറയ്ക്കുക",
+	"twoColConflict-label-unchanged": "മാറ്റമില്ലാത്ത എഴുത്ത്",
+	"twoColConflict-label-show-unchanged": "മാറ്റമില്ലാത്ത എഴുത്ത് പ്രദർശിപ്പിക്കുക",
+	"twoColConflict-label-hide-unchanged": "മാറ്റമില്ലാത്ത എഴുത്ത് മറയ്ക്കുക",
+	"twoColConflict-show-help-tooltip": "സഹായ എഴുത്തുകൾ പ്രദർശിപ്പിക്കുക",
+	"twoColConflict-previous-dialog": "മുൻപത്തേത്",
+	"twoColConflict-next-dialog": "അടുത്തത്",
+	"twoColConflict-close-dialog": "അടയ്ക്കുക"
 }
