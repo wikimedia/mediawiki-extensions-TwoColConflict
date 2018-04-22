@@ -5,5 +5,7 @@
 		]
 	},
 	"twoColConflict-beta-feature-message": "Двухслупковы канфлікт рэдагавання",
-	"twoColConflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе."
+	"twoColConflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе.",
+	"twoColConflict-show-help-tooltip": "Паказаць тэкст даведкі",
+	"twoColConflict-close-dialog": "Закрыць"
 }

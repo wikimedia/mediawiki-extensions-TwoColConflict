@@ -39,6 +39,7 @@
 	"twoColConflict-test-title-label": "Ievadi neaizsargātas lapas nosaukumu, kurai simulēt labojumu konfliktu:",
 	"twoColConflict-test-title-submit": "Rādīt labošanas lapu",
 	"twoColConflict-test-title-not-existing": "Nav lapas ar šādu nosaukumu",
+	"twoColConflict-test-no-direct-editing": "Šo lapu pa tiešo nevar labot.",
 	"twoColConflict-test-text-submit": "Izveidot konfliktu",
 	"twoColConflict-test-initial-hint": "Šajā lapā tu vari izmēģināt jauno divu kolonnu labojuma konflikta saskarni neko nesabojājot.",
 	"twoColConflict-test-edit-hint": "Veic dažas izmaiņas zemāk. Tās netiks saglabātas. Tās tiks izmantotas tikai, lai simulētu labojuma konfliktu.",
