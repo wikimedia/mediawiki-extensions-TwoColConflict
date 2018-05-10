@@ -3,7 +3,8 @@
 		"authors": [
 			"01miki10",
 			"Stryn",
-			"Nike"
+			"Nike",
+			"4shadoww"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -14,9 +15,14 @@
 	"twoColConflict-changes-col-title": "Muutokset, joita ristiriita koskee",
 	"twoColConflict-changes-col-desc-1": "Eroavaisuudet välillä",
 	"twoColConflict-changes-col-desc-2": "tällä hetkellä julkaistu versio",
+	"twoColConflict-changes-col-desc-3": "muutettu $1 {{PLURAL:$1|kertaa}} ($2)",
 	"twoColConflict-changes-col-desc-4": "sinun tekstisi.",
 	"twoColConflict-history-link": "muutoshistoria",
 	"twoColConflict-editor-col-title": "Muokkain, jossa oleva versio julkaistaan",
+	"twoColConflict-editor-col-desc-2": "Lisää muutoksesi editorissa olevaan tekstiin ja klikkaa \"$1\".",
+	"twoColConflict-base-selection-desc-1": "1) Valitse versio mihin verrataan, popup-ikkunasta alhaalta.",
+	"twoColConflict-base-selection-desc-2": "2) Muokkaa tekstiä yhdistääksesi molemmat versiot.",
+	"twoColConflict-base-selection-desc-3": "3) Klikkaa \"$1\". Vain editorissa oleva teksti julkaistaan.",
 	"twoColConflict-base-selection-own-label": "Minun teksti",
 	"twoColConflict-base-selection-foreign-label": "Tällä hetkellä julkaistu versio",
 	"twoColConflict-base-selection-submit-label": "OK",
@@ -33,6 +39,7 @@
 	"twoColConflict-previous-dialog": "Edellinen",
 	"twoColConflict-next-dialog": "Seuraava",
 	"twoColConflict-close-dialog": "Sulje",
+	"twoColConflict-test-page-title": "Muokkausristiriita: Simulaatio",
 	"twoColConflict-test-title-submit": "Näytä muokkaussivu",
 	"twoColConflict-test-text-submit": "Luo muokkausristiriita"
 }
