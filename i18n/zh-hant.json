@@ -16,7 +16,7 @@
 	"twoColConflict-changes-col-title": "變更衝突",
 	"twoColConflict-changes-col-desc-1": "兩者的差異",
 	"twoColConflict-changes-col-desc-2": "目前發佈的版本",
-	"twoColConflict-changes-col-desc-3": "更改了$1{{PLURAL:$1|次}}（$2）",
+	"twoColConflict-changes-col-desc-3": "變更了 $1 {{PLURAL:$1|筆}}（$2）",
 	"twoColConflict-changes-col-desc-4": "您的文字。",
 	"twoColConflict-history-link": "修訂歷史",
 	"twoColConflict-editor-col-title": "編輯器內存在即將發佈的版本",
