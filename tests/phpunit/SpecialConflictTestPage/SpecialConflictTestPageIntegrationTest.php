@@ -5,6 +5,8 @@
  * @covers \HtmlSpecialTestTextForm
  * @covers \HtmlSpecialTestTitleForm
  * @covers \HtmlWikiTextEditor
+ * @covers \InlineTwoColConflictHelper
+ * @covers \InlineTwoColConflictTestHelper
  * @covers \SpecialConflictTestPage
  * @covers \TwoColConflictTestEditPage
  *
