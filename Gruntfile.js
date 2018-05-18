@@ -35,9 +35,10 @@ module.exports = function ( grunt ) {
 		svgmin: {
 			options: {
 				js2svg: {
-					pretty: true,
-					multipass: true
+					indent: '	',
+					pretty: true
 				},
+				multipass: true,
 				plugins: [ {
 					cleanupIDs: false
 				}, {
@@ -68,6 +69,7 @@ module.exports = function ( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'eslint', 'jsonlint', 'stylelint', 'banana', 'svgmin' ] );
-	grunt.registerTask( 'default', 'test' );
+	grunt.registerTask( 'minify', 'svgmin' );
+	grunt.registerTask( 'test', [ 'eslint', 'jsonlint', 'stylelint', 'banana' ] );
+	grunt.registerTask( 'default', [ 'minify', 'test' ] );
 };
