@@ -6,7 +6,8 @@
 			"Redredsonia",
 			"Alexey zakharenkov",
 			"Okras",
-			"Ләйсән"
+			"Ләйсән",
+			"Ole Yves"
 		]
 	},
 	"twoColConflict": "TwoColConflict",
@@ -47,5 +48,19 @@
 	"twoColConflict-tutorial": "Обучение по разрешению конфликтов редактирования",
 	"twoColConflict-previous-dialog": "Назад",
 	"twoColConflict-next-dialog": "Далее",
-	"twoColConflict-close-dialog": "Закрыть"
+	"twoColConflict-close-dialog": "Закрыть",
+	"twoColConflict-test-needsbeta": "Вы должны включить бета-функцию «Двухколоночный конфликт редактирования» в своих настройках, чтобы использовать эту служебную страницу.",
+	"twoColConflict-test-page-title": "Конфликт редактирования: симуляция",
+	"twoColConflict-test-title-label": "Вставьте заголовок незащищённой страницы вики, для которой должен быть симулирован конфликт редактирования:",
+	"twoColConflict-test-title-submit": "Показать страницу редактирования",
+	"twoColConflict-test-title-not-existing": "Нет страницы с этим названием.",
+	"twoColConflict-test-no-direct-editing": "Эта страница не может быть отредактирована напрямую.",
+	"twoColConflict-test-text-submit": "Создать конфликт",
+	"twoColConflict-test-initial-hint": "На этой странице вы можете попробовать новый интерфейс «Двухколоночного конфликта редактирования» без порчи чего-либо.",
+	"twoColConflict-test-edit-hint": "Сделайте изменения ниже. Они не будут сохранены. Они будут использованы только для симуляции конфликта редактирования.",
+	"twoColConflict-test-conflict-hint": "Это тестовый конфликт. Изменения не будут сохранены, но могут быть предпросмотрены.",
+	"twoColConflict-test-preview-submit": "Симулировать сохранение изменений",
+	"twoColConflict-test-preview-hint": "Спасибо за то, что попробовали пользование интерфейсом «Двухколоночного конфликта редактирования»! Помогите нам улучшить его, предоставив свои отзывы [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page здесь].\n\nНиже — результаты разрешения вашего тестового конфликта редактирования.",
+	"twoColConflict-test-username": "Участник тестового конфликта",
+	"twoColConflict-test-summary-text": "Описание тестовой конфликтной правки"
 }
