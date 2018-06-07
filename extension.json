@@ -35,7 +35,7 @@
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
-			"TwoColConflictHooks::getBetaFeaturePreferences"
+			"TwoColConflictHooks::onGetBetaFeaturePreferences"
 		],
 		"AlternateEdit": [
 			"TwoColConflictHooks::onAlternateEdit"
