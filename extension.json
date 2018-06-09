@@ -13,7 +13,7 @@
 	"type": "other",
 	"manifest_version": 1,
 	"requires": {
-		"MediaWiki": ">= 1.30.0"
+		"MediaWiki": ">= 1.32.0"
 	},
 	"config": {
 		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
@@ -81,7 +81,7 @@
 			"dependencies": [
 				"mediawiki.storage",
 				"mediawiki.cookie",
-				"mediawiki.api.options"
+				"mediawiki.api"
 			]
 		},
 		"ext.TwoColConflict.filterOptionsJs": {
