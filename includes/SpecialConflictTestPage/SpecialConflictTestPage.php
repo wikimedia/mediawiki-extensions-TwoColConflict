@@ -139,6 +139,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	 */
 	private function showConflict( $article ) {
 		$conflictTestEditPage = new TwoColConflictTestEditPage( $article );
+		$conflictTestEditPage->setContextTitle( $article->getTitle() );
 		$conflictTestEditPage->setUpFakeConflictRequest();
 
 		$conflictTestEditPage->setEditConflictHelperFactory(

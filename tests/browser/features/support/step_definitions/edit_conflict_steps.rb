@@ -66,15 +66,15 @@ Then(/^Section for own changes should be there$/) do
 end
 
 Then(/^Section for common changes should not be there$/) do
-  expect(on(EditConflictPage).twocolconflict_changes_same_element).not_to be_visible
+  expect(on(EditConflictPage).twocolconflict_changes_same_element).not_to be_present
 end
 
 Then(/^Section for full common changes should not be there$/) do
-  expect(on(EditConflictPage).twocolconflict_changes_same_full_element).not_to be_visible
+  expect(on(EditConflictPage).twocolconflict_changes_same_full_element).not_to be_present
 end
 
 Then(/^Section for collapsed common changes should not be there$/) do
-  expect(on(EditConflictPage).twocolconflict_changes_same_collapsed_element).not_to be_visible
+  expect(on(EditConflictPage).twocolconflict_changes_same_collapsed_element).not_to be_present
 end
 
 Then(/^Foreign version title should be there$/) do
