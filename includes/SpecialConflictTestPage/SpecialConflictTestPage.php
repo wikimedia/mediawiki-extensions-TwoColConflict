@@ -185,7 +185,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		 */
 		if (
 			$config->get( 'TwoColConflictBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
 			!BetaFeatures::isFeatureEnabled( $this->getContext()->getUser(), 'twocolconflict' )
 		) {
 			return false;
