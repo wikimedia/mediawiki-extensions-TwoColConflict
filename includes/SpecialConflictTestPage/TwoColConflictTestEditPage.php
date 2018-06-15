@@ -7,6 +7,16 @@
 class TwoColConflictTestEditPage extends EditPage {
 
 	/**
+	 * @param Article $article
+	 */
+	public function __construct( Article $article ) {
+		parent::__construct( $article );
+
+		/** @see https://phabricator.wikimedia.org/T176526 */
+		$this->setContextTitle( $article->getTitle() );
+	}
+
+	/**
 	 * Setup the request values to provoke a simulated edit conflict
 	 */
 	public function setUpFakeConflictRequest() {
@@ -43,28 +53,18 @@ class TwoColConflictTestEditPage extends EditPage {
 	}
 
 	/**
-	 * Returns an array of html code of the following buttons:
-	 * save, diff and preview
-	 *
 	 * @param int &$tabindex Current tabindex
-	 * @return array
+	 * @return OOUI\ButtonInputWidget[] 1-element array with the preview button only
 	 */
 	public function getEditButtons( &$tabindex ) {
-		$buttons = [];
-		$buttons['preview'] = new OOUI\ButtonInputWidget( [
-			'id' => 'wpTestPreviewWidget',
-			'name' => 'wpPreview',
-			'tabindex' => ++$tabindex,
-			'inputId' => 'wpPreview',
-			'useInputTag' => true,
-			'flags' => [ 'progressive', 'primary' ],
-			'label' => $this->context->msg( 'twoColConflict-test-preview-submit' )->text(),
-			'infusable' => true,
-			'type' => 'submit',
-			'title' => Linker::titleAttrib( 'preview' ),
-			'accessKey' => Linker::accesskey( 'preview' ),
-		] );
+		$buttons = parent::getEditButtons( $tabindex );
 
-		return $buttons;
+		$label = $this->context->msg( 'twoColConflict-test-preview-submit' )->text();
+		$buttons['preview']->setAttributes( [ 'id' => 'wpTestPreviewWidget' ] );
+		$buttons['preview']->setFlags( $buttons['save']->getFlags() );
+		$buttons['preview']->setLabel( $label );
+
+		// Remove all buttons but the preview button
+		return [ 'preview' => $buttons['preview'] ];
 	}
 }
