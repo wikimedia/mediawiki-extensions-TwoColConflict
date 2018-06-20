@@ -67,4 +67,5 @@ class TwoColConflictTestEditPage extends EditPage {
 		// Remove all buttons but the preview button
 		return [ 'preview' => $buttons['preview'] ];
 	}
+
 }

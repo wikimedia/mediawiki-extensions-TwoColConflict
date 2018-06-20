@@ -93,4 +93,5 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	protected function getLastUserText() {
 		return $this->out->msg( 'twoColConflict-test-username' );
 	}
+
 }

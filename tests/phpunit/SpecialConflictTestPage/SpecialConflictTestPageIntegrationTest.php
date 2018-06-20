@@ -273,4 +273,5 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		// assertion to avoid phpunit showing hamcrest test as risky
 		$this->assertTrue( true );
 	}
+
 }

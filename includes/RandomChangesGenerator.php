@@ -61,4 +61,5 @@ class RandomChangesGenerator {
 
 		return $randomWord;
 	}
+
 }

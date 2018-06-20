@@ -584,4 +584,5 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			'ext.TwoColConflict.filterOptionsJs'
 		] );
 	}
+
 }

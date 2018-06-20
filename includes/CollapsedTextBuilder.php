@@ -86,4 +86,5 @@ class CollapsedTextBuilder {
 
 		return $string;
 	}
+
 }
