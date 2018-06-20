@@ -193,4 +193,5 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 		}
 		return $line;
 	}
+
 }

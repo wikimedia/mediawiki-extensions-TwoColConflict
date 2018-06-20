@@ -113,4 +113,5 @@ class TwoColConflictHooks {
 			'remoteExtPath' => 'TwoColConflict',
 		];
 	}
+
 }

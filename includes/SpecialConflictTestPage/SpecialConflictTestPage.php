@@ -9,7 +9,7 @@ use MediaWiki\MediaWikiServices;
 class SpecialConflictTestPage extends SpecialPage {
 
 	/**
-	 * @var Config $config
+	 * @var Config
 	 */
 	public $config;
 
@@ -223,4 +223,5 @@ class SpecialConflictTestPage extends SpecialPage {
 			'arwiki' => 'ماعز',
 		];
 	}
+
 }
