@@ -189,7 +189,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 */
 	private function replaceEmptyLine( $line, $replaceEmptyLine = true ) {
 		if ( $line === '' && $replaceEmptyLine ) {
-			$line = '&#160;';
+			$line = '\u{00A0}';
 		}
 		return $line;
 	}
