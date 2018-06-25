@@ -286,7 +286,7 @@ TEXT
 <<<TEXT
 Line number two. <del class="diffchange">This </del>line <del class="diffchange">is </del>quite long!
 <del class="diffchange">And that's line number three - even longer than the line before.</del>
-\u{00A0}
+&#160;
 <del class="diffchange">Just another line with an empty line above</del>.
 TEXT
 // @codingStandardsIgnoreEnd
@@ -350,9 +350,9 @@ TEXT
 									'new' =>
 <<<TEXT
 Line number two. This line is <ins class="diffchange">now a bit longer</ins>!
-\u{00A0}
+&#160;
 <ins class="diffchange">And it gets even longer.</ins>
-\u{00A0}
+&#160;
 TEXT
 									,
 									'newline' => 2
