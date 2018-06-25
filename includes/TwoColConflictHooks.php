@@ -51,17 +51,18 @@ class TwoColConflictHooks {
 		if ( class_exists( EventLogging::class ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
-			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=17520555
+			$latestRevision = $editPage->getArticle()->getRevision();
+			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=18155295
 			EventLogging::logEvent(
 				'TwoColConflictConflict',
-				17520555,
+				18155295,
 				[
 					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $editPage ),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
 					'baseRevisionId' => ( $baseRevision ? $baseRevision->getId() : 0 ),
-					'parentRevisionId' => $editPage->getParentRevId(),
+					'latestRevisionId' => ( $latestRevision ? $latestRevision->getId() : 0 ),
 					'textUser' => $editPage->textbox2,
 				]
 			);
