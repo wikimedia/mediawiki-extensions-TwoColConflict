@@ -4,9 +4,9 @@
 			"BHARATHESHA ALASANDEMAJALU"
 		]
 	},
-	"twoColConflict-label-show": "ತೋಜಾಲೆ",
-	"twoColConflict-label-hide": "ದೆಂಗಾವು",
-	"twoColConflict-previous-dialog": "ದುಂಬುತಾ",
-	"twoColConflict-next-dialog": "ನನತಾ",
-	"twoColConflict-close-dialog": "ಮುಚ್ಚಿಲೆ"
+	"twocolconflict-label-show": "ತೋಜಾಲೆ",
+	"twocolconflict-label-hide": "ದೆಂಗಾವು",
+	"twocolconflict-previous-dialog": "ದುಂಬುತಾ",
+	"twocolconflict-next-dialog": "ನನತಾ",
+	"twocolconflict-close-dialog": "ಮುಚ್ಚಿಲೆ"
 }

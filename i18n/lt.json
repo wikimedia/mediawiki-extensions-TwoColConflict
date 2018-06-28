@@ -6,15 +6,15 @@
 			"Manvydasz"
 		]
 	},
-	"twoColConflict-beta-feature-message": "Dviejų stulpelių redagavimo konfliktas",
-	"twoColConflict-beta-feature-description": "Rodyti redagavimo konflikto puslapį naudojant tobulesnį dviejų stulpelių rodinį.",
-	"twoColConflict-label-show": "rodyti",
-	"twoColConflict-label-hide": "slėpti",
-	"twoColConflict-label-unchanged": "nepakeistas tekstas",
-	"twoColConflict-label-show-unchanged": "rodyti nepakeistą tekstą",
-	"twoColConflict-label-hide-unchanged": "slėpti nepakeistą tekstą",
-	"twoColConflict-show-help-tooltip": "Rodyti pagalbos tekstą",
-	"twoColConflict-previous-dialog": "Ankstesnis",
-	"twoColConflict-next-dialog": "Kitas",
-	"twoColConflict-close-dialog": "Uždaryti"
+	"twocolconflict-beta-feature-message": "Dviejų stulpelių redagavimo konfliktas",
+	"twocolconflict-beta-feature-description": "Rodyti redagavimo konflikto puslapį naudojant tobulesnį dviejų stulpelių rodinį.",
+	"twocolconflict-label-show": "rodyti",
+	"twocolconflict-label-hide": "slėpti",
+	"twocolconflict-label-unchanged": "nepakeistas tekstas",
+	"twocolconflict-label-show-unchanged": "rodyti nepakeistą tekstą",
+	"twocolconflict-label-hide-unchanged": "slėpti nepakeistą tekstą",
+	"twocolconflict-show-help-tooltip": "Rodyti pagalbos tekstą",
+	"twocolconflict-previous-dialog": "Ankstesnis",
+	"twocolconflict-next-dialog": "Kitas",
+	"twocolconflict-close-dialog": "Uždaryti"
 }

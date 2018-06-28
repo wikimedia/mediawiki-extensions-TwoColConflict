@@ -4,8 +4,8 @@
 			"Artsiom91"
 		]
 	},
-	"twoColConflict-beta-feature-message": "Двухслупковы канфлікт рэдагавання",
-	"twoColConflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе.",
-	"twoColConflict-show-help-tooltip": "Паказаць тэкст даведкі",
-	"twoColConflict-close-dialog": "Закрыць"
+	"twocolconflict-beta-feature-message": "Двухслупковы канфлікт рэдагавання",
+	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе.",
+	"twocolconflict-show-help-tooltip": "Паказаць тэкст даведкі",
+	"twocolconflict-close-dialog": "Закрыць"
 }

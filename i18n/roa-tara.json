@@ -4,15 +4,15 @@
 			"Joetaras"
 		]
 	},
-	"twoColConflict": "TwoColConflict",
-	"twoColConflict-changes-col-desc-4": "'u teste tune.",
-	"twoColConflict-history-link": "storie de le revisiune",
-	"twoColConflict-base-selection-submit-label": "OK",
-	"twoColConflict-diffchange-own-title": "jndr'à versiona toje",
-	"twoColConflict-diffchange-foreign-title": "jndr'à versione $1",
-	"twoColConflict-diffchange-unchanged-title": "teste non cangiate",
-	"twoColConflict-label-show": "fà 'ndrucà",
-	"twoColConflict-label-hide": "scunne",
-	"twoColConflict-label-unchanged": "teste non cangiate",
-	"twoColConflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate"
+	"twocolconflict": "TwoColConflict",
+	"twocolconflict-changes-col-desc-4": "'u teste tune.",
+	"twocolconflict-history-link": "storie de le revisiune",
+	"twocolconflict-base-selection-submit-label": "OK",
+	"twocolconflict-diffchange-own-title": "jndr'à versiona toje",
+	"twocolconflict-diffchange-foreign-title": "jndr'à versione $1",
+	"twocolconflict-diffchange-unchanged-title": "teste non cangiate",
+	"twocolconflict-label-show": "fà 'ndrucà",
+	"twocolconflict-label-hide": "scunne",
+	"twocolconflict-label-unchanged": "teste non cangiate",
+	"twocolconflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate"
 }

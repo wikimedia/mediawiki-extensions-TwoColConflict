@@ -5,9 +5,9 @@
 			"Chaduvari"
 		]
 	},
-	"twoColConflict-label-show": "చూపించు",
-	"twoColConflict-label-hide": "దాచు",
-	"twoColConflict-previous-dialog": "మునుపటి",
-	"twoColConflict-next-dialog": "తదుపరి",
-	"twoColConflict-close-dialog": "మూసివేయి"
+	"twocolconflict-label-show": "చూపించు",
+	"twocolconflict-label-hide": "దాచు",
+	"twocolconflict-previous-dialog": "మునుపటి",
+	"twocolconflict-next-dialog": "తదుపరి",
+	"twocolconflict-close-dialog": "మూసివేయి"
 }

@@ -7,12 +7,12 @@
 			"StanProg"
 		]
 	},
-	"twoColConflict-beta-feature-message": "Конфликт на редакциите в две колони",
-	"twoColConflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед в две колони.",
-	"twoColConflict-base-selection-submit-label": "Добре",
-	"twoColConflict-label-show": "показване",
-	"twoColConflict-label-hide": "скриване",
-	"twoColConflict-label-unchanged": "неизменен текст",
-	"twoColConflict-show-help-tooltip": "Показва помощна информация",
-	"twoColConflict-close-dialog": "Затваряне"
+	"twocolconflict-beta-feature-message": "Конфликт на редакциите в две колони",
+	"twocolconflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед в две колони.",
+	"twocolconflict-base-selection-submit-label": "Добре",
+	"twocolconflict-label-show": "показване",
+	"twocolconflict-label-hide": "скриване",
+	"twocolconflict-label-unchanged": "неизменен текст",
+	"twocolconflict-show-help-tooltip": "Показва помощна информация",
+	"twocolconflict-close-dialog": "Затваряне"
 }

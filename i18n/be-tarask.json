@@ -4,6 +4,6 @@
 			"Red Winged Duck"
 		]
 	},
-	"twoColConflict": "TwoColConflict",
-	"twoColConflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня"
+	"twocolconflict": "TwoColConflict",
+	"twocolconflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня"
 }

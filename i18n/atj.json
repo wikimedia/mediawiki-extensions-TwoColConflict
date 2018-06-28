@@ -5,14 +5,14 @@
 			"Benoit Rochon"
 		]
 	},
-	"twoColConflict-changes-col-desc-1": "Eci papitoc icinakok",
-	"twoColConflict-changes-col-desc-2": "mekwat ka actek e nokok",
-	"twoColConflict-changes-col-desc-3": "Ki meckotcitakiwon $1 {{PLURAL:$1|ni rikik tcitaw}} ($2)",
-	"twoColConflict-changes-col-desc-4": "Ki masinahikan",
-	"twoColConflict-history-link": "Kaki pe nankitcitakiwoki",
-	"twoColConflict-editor-col-desc-1": "Enko nehe mekwatc ka nokokpamitcitc ka ki actakiniwok.",
-	"twoColConflict-base-selection-desc-2": "Acotisinihikatew nicw masinhikana",
-	"twoColConflict-base-selection-own-label": "Ni masinihikan",
-	"twoColConflict-base-selection-submit-label": "Nici niheriten",
-	"twoColConflict-label-show": "wapata"
+	"twocolconflict-changes-col-desc-1": "Eci papitoc icinakok",
+	"twocolconflict-changes-col-desc-2": "mekwat ka actek e nokok",
+	"twocolconflict-changes-col-desc-3": "Ki meckotcitakiwon $1 {{PLURAL:$1|ni rikik tcitaw}} ($2)",
+	"twocolconflict-changes-col-desc-4": "Ki masinahikan",
+	"twocolconflict-history-link": "Kaki pe nankitcitakiwoki",
+	"twocolconflict-editor-col-desc-1": "Enko nehe mekwatc ka nokokpamitcitc ka ki actakiniwok.",
+	"twocolconflict-base-selection-desc-2": "Acotisinihikatew nicw masinhikana",
+	"twocolconflict-base-selection-own-label": "Ni masinihikan",
+	"twocolconflict-base-selection-submit-label": "Nici niheriten",
+	"twocolconflict-label-show": "wapata"
 }
