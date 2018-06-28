@@ -48,7 +48,7 @@
 			value: 0,
 			name: 'mw-twocolconflict-expand-collapse',
 			classes: [ 'mw-twocolconflict-expand-collapse-btn' ],
-			title: mw.msg( 'twoColConflict-label-show-unchanged' )
+			title: mw.msg( 'twocolconflict-label-show-unchanged' )
 		} );
 		expandBtn.$element.children().attr( {
 			'aria-label': expandBtn.getTitle(),
@@ -60,7 +60,7 @@
 			value: 1,
 			name: 'mw-twocolconflict-expand-collapse',
 			classes: [ 'mw-twocolconflict-expand-collapse-btn' ],
-			title: mw.msg( 'twoColConflict-label-hide-unchanged' )
+			title: mw.msg( 'twocolconflict-label-hide-unchanged' )
 		} );
 		collapseBtn.$element.children().attr( {
 			'aria-label': collapseBtn.getTitle(),

@@ -24,39 +24,39 @@
 
 	function initHelpDialog() {
 		helpDialog.init( {
-			name: 'twoColConflict',
-			title: 'twoColConflict-tutorial',
+			name: 'twocolconflict',
+			title: 'twocolconflict-tutorial',
 			size: 'medium',
-			prev: 'twoColConflict-previous-dialog',
-			next: 'twoColConflict-next-dialog',
-			close: 'twoColConflict-close-dialog',
+			prev: 'twocolconflict-previous-dialog',
+			next: 'twocolconflict-next-dialog',
+			close: 'twocolconflict-close-dialog',
 			slides: [
 				{
-					message: 'twoColConflict-help-dialog-slide1',
+					message: 'twocolconflict-help-dialog-slide1',
 					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-1',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide2',
+					message: 'twocolconflict-help-dialog-slide2',
 					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-2',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide3',
+					message: 'twocolconflict-help-dialog-slide3',
 					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-3',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide4',
+					message: 'twocolconflict-help-dialog-slide4',
 					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-4',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide5',
+					message: 'twocolconflict-help-dialog-slide5',
 					parameters: [ mw.config.get( 'wgTwoColConflictSubmitLabel' ) ],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-5',
 					imageMode: 'landscape'

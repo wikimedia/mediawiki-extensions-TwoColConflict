@@ -43,7 +43,7 @@ class HtmlSpecialTestTextForm {
 		) .
 		( new ButtonInputWidget(
 			[
-				'label' => ( new Message( 'twoColConflict-test-text-submit' ) )->plain(),
+				'label' => ( new Message( 'twocolconflict-test-text-submit' ) )->plain(),
 				'type' => 'submit',
 				'flags' => [ 'primary', 'progressive' ],
 				'tabIndex' => 4

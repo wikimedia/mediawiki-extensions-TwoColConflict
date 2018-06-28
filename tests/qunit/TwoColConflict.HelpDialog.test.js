@@ -6,30 +6,30 @@
 
 	QUnit.test( 'Initialize HelpDialog', function ( assert ) {
 		helpDialog.init( {
-			name: 'twoColConflict',
-			title: 'twoColConflict-tutorial',
+			name: 'twocolconflict',
+			title: 'twocolconflict-tutorial',
 			size: 'medium',
-			prev: 'twoColConflict-previous-dialog',
-			next: 'twoColConflict-next-dialog',
-			close: 'twoColConflict-close-dialog',
+			prev: 'twocolconflict-previous-dialog',
+			next: 'twocolconflict-next-dialog',
+			close: 'twocolconflict-close-dialog',
 			slides: [
 				{
-					message: 'twoColConflict-help-dialog-slide1',
+					message: 'twocolconflict-help-dialog-slide1',
 					imageClass: 'mw-twocolconflict-help-dialog-slide-1',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide2',
+					message: 'twocolconflict-help-dialog-slide2',
 					imageClass: 'mw-twocolconflict-help-dialog-slide-2',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide3',
+					message: 'twocolconflict-help-dialog-slide3',
 					imageClass: 'mw-twocolconflict-help-dialog-slide-3',
 					imageMode: 'landscape'
 				},
 				{
-					message: 'twoColConflict-help-dialog-slide4',
+					message: 'twocolconflict-help-dialog-slide4',
 					imageClass: 'mw-twocolconflict-help-dialog-slide-4',
 					imageMode: 'landscape'
 				}
@@ -55,19 +55,19 @@
 		assert.equal( dialog.slidePointer, 0 );
 		assert.equal(
 			getSlideTextHtml( dialog.slides[ 0 ] ),
-			addLinkTargets( mw.message( 'twoColConflict-help-dialog-slide1' ).parse() )
+			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide1' ).parse() )
 		);
 		assert.equal(
 			getSlideTextHtml( dialog.slides[ 1 ] ),
-			addLinkTargets( mw.message( 'twoColConflict-help-dialog-slide2' ).parse() )
+			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide2' ).parse() )
 		);
 		assert.equal(
 			getSlideTextHtml( dialog.slides[ 2 ] ),
-			addLinkTargets( mw.message( 'twoColConflict-help-dialog-slide3' ).parse() )
+			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide3' ).parse() )
 		);
 		assert.equal(
 			getSlideTextHtml( dialog.slides[ 3 ] ),
-			addLinkTargets( mw.message( 'twoColConflict-help-dialog-slide4' ).parse() )
+			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide4' ).parse() )
 		);
 		assert.equal( dialog.getCssPrefix(), 'mw-twocolconflict' );
 		assert.ok( dialog.slides[ 0 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-1' ) );

@@ -59,7 +59,7 @@ class TwoColConflictTestEditPage extends EditPage {
 	public function getEditButtons( &$tabindex ) {
 		$buttons = parent::getEditButtons( $tabindex );
 
-		$label = $this->context->msg( 'twoColConflict-test-preview-submit' )->text();
+		$label = $this->context->msg( 'twocolconflict-test-preview-submit' )->text();
 		$buttons['preview']->setAttributes( [ 'id' => 'wpTestPreviewWidget' ] );
 		$buttons['preview']->setFlags( $buttons['save']->getFlags() );
 		$buttons['preview']->setLabel( $label );

@@ -8,7 +8,7 @@
 		"Andrew Kostka"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TwoColConflict",
-	"descriptionmsg": "twoColConflict-desc",
+	"descriptionmsg": "twocolconflict-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
 	"manifest_version": 1,
@@ -89,8 +89,8 @@
 				"modules/ext.TwoColConflict.filterOptions.js"
 			],
 			"messages": [
-				"twoColConflict-label-show-unchanged",
-				"twoColConflict-label-hide-unchanged"
+				"twocolconflict-label-show-unchanged",
+				"twocolconflict-label-hide-unchanged"
 			],
 			"dependencies": [
 				"ext.TwoColConflict.AutoScroll",
@@ -107,10 +107,10 @@
 				"modules/ext.TwoColConflict.BaseVersionSelector.js"
 			],
 			"messages": [
-				"twoColConflict-base-selection-dialog-text",
-				"twoColConflict-base-selection-own-label",
-				"twoColConflict-base-selection-foreign-label",
-				"twoColConflict-base-selection-submit-label"
+				"twocolconflict-base-selection-dialog-text",
+				"twocolconflict-base-selection-own-label",
+				"twocolconflict-base-selection-foreign-label",
+				"twocolconflict-base-selection-submit-label"
 			],
 			"dependencies": [
 				"oojs-ui"
@@ -131,17 +131,17 @@
 				"ext.TwoColConflict.HelpDialogImages"
 			],
 			"messages": [
-				"twoColConflict-show-help-tooltip",
-				"twoColConflict-help-dialog-slide1",
-				"twoColConflict-help-dialog-slide2",
-				"twoColConflict-help-dialog-slide3",
-				"twoColConflict-help-dialog-slide4",
-				"twoColConflict-help-dialog-slide5",
-				"twoColConflict-label-show",
-				"twoColConflict-tutorial",
-				"twoColConflict-previous-dialog",
-				"twoColConflict-next-dialog",
-				"twoColConflict-close-dialog"
+				"twocolconflict-show-help-tooltip",
+				"twocolconflict-help-dialog-slide1",
+				"twocolconflict-help-dialog-slide2",
+				"twocolconflict-help-dialog-slide3",
+				"twocolconflict-help-dialog-slide4",
+				"twocolconflict-help-dialog-slide5",
+				"twocolconflict-label-show",
+				"twocolconflict-tutorial",
+				"twocolconflict-previous-dialog",
+				"twocolconflict-next-dialog",
+				"twocolconflict-close-dialog"
 			]
 		},
 		"ext.TwoColConflict.HelpDialogCss": {

@@ -72,7 +72,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 				'div',
 				[ 'class' => 'mw-twocolconflict-explainconflict warningbox' ],
 				$this->out->msg(
-					'twoColConflict-explainconflict',
+					'twocolconflict-explainconflict',
 					$this->out->msg( $this->submitLabel )->text()
 				)->parse()
 			);
@@ -137,16 +137,16 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$out = '<div class="mw-twocolconflict-changes-col">';
 		$out .= '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-changes-header">' .
-			$this->out->msg( 'twoColConflict-changes-col-title' )->parse() . '</h3>';
+			$this->out->msg( 'twocolconflict-changes-col-title' )->parse() . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
-		$out .= $this->out->msg( 'twoColConflict-changes-col-desc-1' )->text();
+		$out .= $this->out->msg( 'twocolconflict-changes-col-desc-1' )->text();
 		$out .= '<ul>';
 		$out .= '';
 		$out .= '<li><span class="mw-twocolconflict-lastuser">' .
-			$this->out->msg( 'twoColConflict-changes-col-desc-2' )->text() .
+			$this->out->msg( 'twocolconflict-changes-col-desc-2' )->text() .
 			'</span><br/>' . $this->buildEditSummary() . '</li>';
 		$out .= '<li><span class="mw-twocolconflict-user">' .
-			$this->out->msg( 'twoColConflict-changes-col-desc-4' )->text() .
+			$this->out->msg( 'twocolconflict-changes-col-desc-4' )->text() .
 			'</span></li>';
 		$out .= '</ul>';
 		$out .= '</div>';
@@ -177,11 +177,11 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			'options' => [
 				[
 					'data' => 'show',
-					'label' => $this->out->msg( 'twoColConflict-label-show' )->text()
+					'label' => $this->out->msg( 'twocolconflict-label-show' )->text()
 				],
 				[
 					'data' => 'hide',
-					'label' => $this->out->msg( 'twoColConflict-label-hide' )->text()
+					'label' => $this->out->msg( 'twocolconflict-label-hide' )->text()
 				],
 			],
 		] );
@@ -195,7 +195,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 
 		$out .= '<div class="mw-twocolconflict-filter-options-row">';
 		$out .= '<div class="mw-twocolconflict-filter-titles">' .
-			$this->out->msg( 'twoColConflict-label-unchanged' )->text() .
+			$this->out->msg( 'twocolconflict-label-unchanged' )->text() .
 			'</div>';
 		$out .= $fieldset;
 		$out .= $this->buildHelpButton();
@@ -219,7 +219,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			'icon' => 'help',
 			'framed' => false,
 			'name' => 'mw-twocolconflict-show-help',
-			'title' => $this->out->msg( 'twoColConflict-show-help-tooltip' )->text(),
+			'title' => $this->out->msg( 'twocolconflict-show-help-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-show-help' ]
 		] );
 		$helpButton->setAttributes( [
@@ -305,7 +305,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			$linkRenderer = $services->getLinkRenderer();
 			$historyLinkHtml = $linkRenderer->makeKnownLink(
 				$this->title,
-				$this->out->msg( 'twoColConflict-history-link' )->text(),
+				$this->out->msg( 'twocolconflict-history-link' )->text(),
 				[
 					'target' => '_blank',
 				],
@@ -315,7 +315,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			);
 
 			$out = $this->out->msg(
-				'twoColConflict-changes-col-desc-3',
+				'twocolconflict-changes-col-desc-3',
 				$nEdits + 1,
 				$historyLinkHtml
 			)->text();
@@ -332,24 +332,24 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	private function buildConflictPageEditorCol() {
 		$out = '<div class="mw-twocolconflict-col-header">';
 		$out .= '<h3 id="mw-twocolconflict-edit-header">' .
-			$this->out->msg( 'twoColConflict-editor-col-title' ) . '</h3>';
+			$this->out->msg( 'twocolconflict-editor-col-title' ) . '</h3>';
 		$out .= '<div class="mw-twocolconflict-col-desc">';
 		$out .= '<div class="mw-twocolconflict-edit-desc">';
-		$out .= '<p>' . $this->out->msg( 'twoColConflict-editor-col-desc-1' ) . '</p>';
+		$out .= '<p>' . $this->out->msg( 'twocolconflict-editor-col-desc-1' ) . '</p>';
 		$submitLabel = $this->out->msg( $this->submitLabel )->text();
 		$out .= '<p>' .
 			$this->out->msg(
-				'twoColConflict-editor-col-desc-2', $submitLabel
+				'twocolconflict-editor-col-desc-2', $submitLabel
 			) . '</p>';
 		$out .= '</div>';
 		$out .= '<ol class="mw-twocolconflict-base-selection-desc">';
-		$out .= '<li>' . $this->out->msg( 'twoColConflict-base-selection-desc-1' ) .
+		$out .= '<li>' . $this->out->msg( 'twocolconflict-base-selection-desc-1' ) .
 			'</li>';
-		$out .= '<li>' . $this->out->msg( 'twoColConflict-base-selection-desc-2' ) .
+		$out .= '<li>' . $this->out->msg( 'twocolconflict-base-selection-desc-2' ) .
 			'</li>';
 		$out .= '<li>'
 			. $this->out->msg(
-				'twoColConflict-base-selection-desc-3', $submitLabel
+				'twocolconflict-base-selection-desc-3', $submitLabel
 			) . '</li>';
 		$out .= '</ol></div></div>';
 
@@ -420,7 +420,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 						if ( $this->hasConflictInLine( $currentLine ) ) {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
-						$label = $this->out->msg( 'twoColConflict-diffchange-own-title' )->escaped();
+						$label = $this->out->msg( 'twocolconflict-diffchange-own-title' )->escaped();
 
 						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							'<div class="mw-twocolconflict-diffchange-title">' .
@@ -439,7 +439,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 							$class .= ' mw-twocolconflict-diffchange-conflict';
 						}
 						$label = $this->out->msg(
-							'twoColConflict-diffchange-foreign-title',
+							'twocolconflict-diffchange-foreign-title',
 							$lastUser
 						)->escaped();
 
@@ -460,7 +460,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 						break;
 					case 'copy':
 						$class = 'mw-twocolconflict-diffchange-same';
-						$label = $this->out->msg( 'twoColConflict-diffchange-unchanged-title' )->escaped();
+						$label = $this->out->msg( 'twocolconflict-diffchange-unchanged-title' )->escaped();
 						$output .= '<div class="' . $class . '" aria-label="' . $label . '" tabindex="1">' .
 							$this->addUnchangedText( $changeSet['copy'] ) .
 							'</div>' . "\n";
