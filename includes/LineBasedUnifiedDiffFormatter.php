@@ -180,7 +180,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	}
 
 	/**
-	 * Replace empty lines with a NBSP
+	 * Replace empty lines with a no-break space
 	 *
 	 * @param string $line Lines that should be altered.
 	 * @param boolean $replaceEmptyLine
@@ -189,7 +189,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 */
 	private function replaceEmptyLine( $line, $replaceEmptyLine = true ) {
 		if ( $line === '' && $replaceEmptyLine ) {
-			$line = '&#160;';
+			$line = "\u{00A0}";
 		}
 		return $line;
 	}
