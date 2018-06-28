@@ -79,6 +79,7 @@
 				"modules/ext.TwoColConflict.Settings.js"
 			],
 			"dependencies": [
+				"mediawiki.user",
 				"mediawiki.storage",
 				"mediawiki.cookie",
 				"mediawiki.api"
