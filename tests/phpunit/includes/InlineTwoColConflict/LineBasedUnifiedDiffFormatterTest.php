@@ -118,6 +118,34 @@ TEXT
 					],
 			],
 			[
+				'before' => <<<TEXT
+Delete the empty line below.
+
+TEXT
+				,
+				'after' => <<<TEXT
+Delete the empty line below.
+TEXT
+				,
+				'result' => [
+					1 => [
+						[
+							'action' => 'copy',
+							'copy' => 'Delete the empty line below.',
+							'oldline' => 1,
+							'newline' => 1,
+						],
+					],
+					2 => [
+						[
+							'action' => 'delete',
+							'old' => "<del class=\"diffchange\">\u{00A0}</del>",
+							'oldline' => 2,
+						],
+					],
+				],
+			],
+			[
 				'before' =>
 <<<TEXT
 Just multi-line text.
