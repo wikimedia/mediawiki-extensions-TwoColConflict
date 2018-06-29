@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"GR",
-			"Geraki"
+			"Geraki",
+			"Nikosgranturismogt"
 		]
 	},
 	"twocolconflict-desc": "Εμφάνιση πλάι-πλάι της οθόνης συγχώνευσης επεξεργασίας κατά την επίλυση σύγκρουσης επεξεργασίας",
@@ -39,5 +40,6 @@
 	"twocolconflict-tutorial": "Οδηγός επίλυσης σύγκρουσης επεξεργασιών",
 	"twocolconflict-previous-dialog": "Προηγούμενο",
 	"twocolconflict-next-dialog": "Επόμενο",
-	"twocolconflict-close-dialog": "Κλείσιμο"
+	"twocolconflict-close-dialog": "Κλείσιμο",
+	"twocolconflict-test-title-submit": "Εμφάνιση σελίδας επεξεργασίας"
 }
