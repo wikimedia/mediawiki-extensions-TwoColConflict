@@ -31,6 +31,7 @@
 	"twocolconflict-label-show": "εμφάνιση",
 	"twocolconflict-label-hide": "απόκρυψη",
 	"twocolconflict-label-unchanged": "κείμενο χωρίς αλλαγή",
+	"twocolconflict-label-show-unchanged": "εμφάνιση μη αλλαγμένου κειμένου",
 	"twocolconflict-show-help-tooltip": "Εμφάνιση κειμένου βοήθειας",
 	"twocolconflict-help-dialog-slide1": "Αυτή η σελίδα σας βοηθά να επιλύσετε μια σύγκρουση επεξεργασίας. Υπάρχουν δύο στήλες: Η πρώτη εμφανίζει τις συγκρουόμενες αλλαγές και η δεύτερη είναι ο επεξεργαστής κειμένου, του οποίου το περιεχόμενο θα δημοσιευτεί.\n\nΣχόλια για τη λειτουργία θα εκτιμηθούν πολύ  [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View εδώ].",
 	"twocolconflict-help-dialog-slide2": "Η πρώτη στήλη εμφανίζει τις αλλαγές στην έκδοσή σας και τις αλλαγές στην τρέχουσα αποθηκευμένη έκδοση.\nΟι αλλαγές μεταξύ και των δύο εκδόσεων είναι επισημασμένες.",
@@ -41,5 +42,8 @@
 	"twocolconflict-previous-dialog": "Προηγούμενο",
 	"twocolconflict-next-dialog": "Επόμενο",
 	"twocolconflict-close-dialog": "Κλείσιμο",
-	"twocolconflict-test-title-submit": "Εμφάνιση σελίδας επεξεργασίας"
+	"twocolconflict-test-title-submit": "Εμφάνιση σελίδας επεξεργασίας",
+	"twocolconflict-test-no-direct-editing": "Αυτή η σελίδα δεν μπορεί να τροποποιηθεί άμεσα.",
+	"twocolconflict-test-text-submit": "Δημιουργήστε σύγκρουση",
+	"twocolconflict-test-preview-submit": "Προσομοιώστε την αποθήκευση αλλαγών"
 }
