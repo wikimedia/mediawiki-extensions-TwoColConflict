@@ -49,6 +49,7 @@
 	"twocolconflict-test-title-label": "Ange titeln på en wikisida som inte är skyddad där redigeringskonflikten ska simuleras:",
 	"twocolconflict-test-title-submit": "Visa redigeringssida",
 	"twocolconflict-test-title-not-existing": "Det finns ingen sida med denna titel.",
+	"twocolconflict-test-no-direct-editing": "Denna sida kan inte redigeras direkt.",
 	"twocolconflict-test-text-submit": "Skapa konflikt",
 	"twocolconflict-test-initial-hint": "På denna sida kan du prova det nya tvåkolumnsgränssnittet för redigeringskonflikter utan att riskera förstöra någonting.",
 	"twocolconflict-test-edit-hint": "Gör några ändringar nedan. De kommer inte att sparas, utan kommer endast användas för att simulera ett exempel på en redigeringskonflikt.",
