@@ -58,7 +58,7 @@
 	"twocolconflict-test-edit-hint": "Faites quelques changements ci-dessous. Ils ne seront pas sauvegardés. Ils seront utilisés uniquement pour simuler un exemple d'édition de conflit.",
 	"twocolconflict-test-conflict-hint": "Ceci est le conflit testé. Les modifications ne seront pas sauvegardées mais peuvent être affichées.",
 	"twocolconflict-test-preview-submit": "Simuler la sauvegarde des modifications",
-	"twocolconflict-test-preview-hint": "Merci d'avoir essayé l'interface d'Edition de Conflit sur deux colonnes ! Aidez-nous à l'améliorer en nous faisant part de vos remarques [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page ici].\n\nCi-dessous, le résultat de la résolution de votre test de conflit d'édition.",
+	"twocolconflict-test-preview-hint": "Merci d'avoir essayé l'interface d'Edition de Conflit sur deux colonnes ! Aidez-nous à l'améliorer en nous faisant part de vos remarques [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page ici].\n\nCi-dessous, les résultats de la résolution de votre test de conflit d'édition.",
 	"twocolconflict-test-username": "Utilisateur TestdeConflit",
 	"twocolconflict-test-summary-text": "Résumé du test d'édition de conflit"
 }

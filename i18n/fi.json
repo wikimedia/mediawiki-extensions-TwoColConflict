@@ -41,5 +41,6 @@
 	"twocolconflict-close-dialog": "Sulje",
 	"twocolconflict-test-page-title": "Muokkausristiriita: Simulaatio",
 	"twocolconflict-test-title-submit": "Näytä muokkaussivu",
-	"twocolconflict-test-text-submit": "Luo muokkausristiriita"
+	"twocolconflict-test-text-submit": "Luo muokkausristiriita",
+	"twocolconflict-test-username": "Muokkauristiriidan kokeilu"
 }
