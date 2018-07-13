@@ -9,7 +9,7 @@
 			"BadDog"
 		]
 	},
-	"twocolconflict-beta-feature-message": "Сукоб измена у две колоне",
+	"twocolconflict-beta-feature-message": "Сукобљене измене у две колоне",
 	"twocolconflict-beta-feature-description": "Приказ сукоба измена користећи напреднији преглед у две колоне.",
 	"twocolconflict-changes-col-title": "Сукобљене измене",
 	"twocolconflict-changes-col-desc-1": "Међуразлике",
