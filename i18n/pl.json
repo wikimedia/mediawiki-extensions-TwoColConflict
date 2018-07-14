@@ -49,5 +49,6 @@
 	"twocolconflict-test-title-not-existing": "Nie ma strony o tym tytule.",
 	"twocolconflict-test-no-direct-editing": "Tej strony nie można edytować bezpośrednio.",
 	"twocolconflict-test-text-submit": "Utwórz konflikt",
+	"twocolconflict-test-conflict-hint": "To jest konflikt testowy. Zmiany nie zostaną zapisane, ale można je przejrzeć.",
 	"twocolconflict-test-preview-submit": "Symuluj zapisywanie zmian"
 }
