@@ -36,6 +36,9 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param Diff $diff A Diff object.
 	 *
 	 * @return array[] Associative array showing lists of changes in lines of the original text.
+	 * - The array is numbered with the numbers orientating on line numbers from the original or
+	 *   left side of the diff. Since the right side can hold more lines than the left, one line
+	 *   in the array can hold at least one delete, change or copy as well as an add action.
 	 */
 	public function format( $diff ) {
 		$this->oldline = 1;

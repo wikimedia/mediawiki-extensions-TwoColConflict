@@ -139,6 +139,34 @@ TEXT
 			],
 			[
 				'before' => <<<TEXT
+Add an empty line below.
+TEXT
+				,
+				'after' => <<<TEXT
+Add an empty line below.
+
+TEXT
+				,
+				'result' => [
+					1 => [
+						[
+							'action' => 'copy',
+							'copy' => 'Add an empty line below.',
+							'oldline' => 1,
+							'newline' => 1,
+						],
+					],
+					2 => [
+						[
+							'action' => 'add',
+							'new' => "<ins class=\"diffchange\">\u{00A0}</ins>",
+							'newline' => 2,
+						],
+					],
+				],
+			],
+			[
+				'before' => <<<TEXT
 Just multi-line text.
 Line number 1.5.
 Line number 2.
