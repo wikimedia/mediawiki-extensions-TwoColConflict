@@ -89,8 +89,78 @@
 	del.mw-twocolconflict-diffchange {
 		text-decoration: none;
 	}
+
+	&.mw-twocolconflict-split-unselected {
+		color: #72777d;
+
+		&.mw-twocolconflict-split-add {
+			border-color: #eaf3ff;
+		}
+
+		&.mw-twocolconflict-split-delete {
+			border-color: #fef6e7;
+		}
+
+		ins.mw-twocolconflict-diffchange {
+			background-color: #eaf3ff;
+		}
+
+		del.mw-twocolconflict-diffchange {
+			background-color: #fef6e7;
+		}
+	}
 }
 
 #toolbar {
 	display: none;
+}
+
+.mw-twocolconflict-split-selector-label {
+	margin-bottom: -15px;
+	text-align: center;
+
+	span {
+		display: inline-block;
+		line-height: 1.2em;
+		width: 110px;
+	}
+}
+
+.mw-twocolconflict-split-selection {
+	display: flex;
+	width: 64px;
+
+	div {
+		flex: 1;
+	}
+
+	div:nth-child(1) {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:active + span,
+		.oo-ui-radioInputWidget [type="radio"] + span {
+			border-color: #ac6700;
+			background: #fef7e7;
+		}
+
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:focus + span:before,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:active + span:before {
+			border-color: #ac6700;
+		}
+	}
+
+	div:nth-child(2) {
+		text-align: right;
+
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:active + span,
+		.oo-ui-radioInputWidget [type="radio"] + span {
+			border-color: #2c529d;
+			background: #ebf3fe;
+		}
+
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:focus + span:before,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:active + span:before {
+			border-color: #2c529d;
+		}
+	}
 }

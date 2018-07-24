@@ -3,6 +3,8 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use Message;
+use OOUI\RadioInputWidget;
 
 class HtmlSplitConflictView {
 
@@ -16,12 +18,18 @@ class HtmlSplitConflictView {
 		);
 
 		$currRowNum = 1;
+		$isFirstNonCopyLine = true;
 		foreach ( $unifiedDiff as $key => $currentLine ) {
 				foreach ( $currentLine as $changeSet ) {
+					if ( $changeSet['action'] !== 'copy' && $isFirstNonCopyLine ) {
+						$out .= $this->buildSideSelectorLabel();
+						$isFirstNonCopyLine = false;
+					}
 					switch ( $changeSet['action'] ) {
 						case 'delete':
 							$out .= $this->startRow( $currRowNum );
 							$out .= $this->buildRemovedLine( $changeSet['old'] );
+							$out .= $this->buildSideSelector( $currRowNum );
 
 							if ( !$this->hasConflictInLine( $currentLine ) ) {
 								$out .= $this->buildAddedLine( "\u{00A0}" );
@@ -33,6 +41,7 @@ class HtmlSplitConflictView {
 							if ( !$this->hasConflictInLine( $currentLine ) ) {
 								$out .= $this->startRow( $currRowNum );
 								$out .= $this->buildRemovedLine( "\u{00A0}" );
+								$out .= $this->buildSideSelector( $currRowNum );
 							}
 
 							$out .= $this->buildAddedLine( $changeSet['new'] );
@@ -82,6 +91,32 @@ class HtmlSplitConflictView {
 			'div', [ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
 			$text
 		);
+	}
+
+	private function buildSideSelectorLabel() {
+		return Html::openElement(
+			'div', [ 'class' => 'mw-twocolconflict-split-selector-label' ]
+			) .
+			Html::element(
+				'span', 	[], new Message( 'twocolconflict-split-choose-version' )
+			) .
+			Html::closeElement( 'div' );
+	}
+
+	private function buildSideSelector( $rowNum ) {
+		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
+			Html::rawElement( 'div', [], new RadioInputWidget( [
+				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
+				'value' => 'other',
+				'autocomplete' => 'off',
+				'selected' => true,
+			] ) ) .
+			Html::rawElement( 'div', [], new RadioInputWidget( [
+				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
+				'value' => 'your',
+				'autocomplete' => 'off',
+			] ) ).
+			Html::closeElement( 'div' );
 	}
 
 	/**

@@ -4,6 +4,8 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use MediaWikiTestCase;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
+use OOUI\BlankTheme;
+use OOUI\Theme;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView
@@ -12,6 +14,16 @@ use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class HtmlSplitConflictViewTest extends MediaWikiTestCase {
+
+	public function setUp() {
+		parent::setUp();
+		Theme::setSingleton( new BlankTheme() );
+	}
+
+	public function tearDown() {
+		Theme::setSingleton( null );
+		parent::tearDown();
+	}
 
 	public function provideGetHtml() {
 		// inputs inspired by the LineBasedUnifiedDiffFormatterTest
@@ -28,7 +40,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'delete', 'add' ],
+				[ 'row', 'delete', 'select', 'add' ],
 				[
 					[
 						[
@@ -43,7 +55,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'copy', 'row', 'delete', 'add', 'row', 'copy' ],
+				[ 'row', 'copy', 'row', 'delete', 'select', 'add', 'row', 'copy' ],
 				[
 					[
 						[
@@ -65,7 +77,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'delete', 'add', 'row', 'copy', 'row', 'delete', 'add' ],
+				[ 'row', 'delete', 'select', 'add', 'row', 'copy', 'row', 'delete', 'select', 'add' ],
 				[
 					[
 						[
@@ -120,6 +132,13 @@ TEXT
 					$offset = $this->assertDivExistsWithClassValue(
 						$html,
 						'mw-twocolconflict-split-row',
+						$offset
+					);
+					break;
+				case 'select':
+					$offset = $this->assertDivExistsWithClassValue(
+						$html,
+						'mw-twocolconflict-split-selection',
 						$offset
 					);
 					break;
