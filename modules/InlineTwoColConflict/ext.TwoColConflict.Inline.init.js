@@ -4,7 +4,7 @@
 		helpDialog = mw.libs.twoColConflict.HelpDialog,
 		BaseVersionSelector = mw.libs.twoColConflict.BaseVersionSelector;
 
-	mw.loader.load( 'ext.TwoColConflict.BaseVersionSelectorCss' );
+	mw.loader.load( 'ext.TwoColConflict.Inline.BaseVersionSelectorCss' );
 
 	function selectText( element ) {
 		var range, selection;

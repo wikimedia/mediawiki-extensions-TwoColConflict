@@ -578,8 +578,8 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 
 	private function addCSS() {
 		$this->out->addModuleStyles( [
-			'ext.TwoColConflict.editor',
-			'ext.TwoColConflict.HelpDialogCss',
+			'ext.TwoColConflict.InlineCss',
+			'ext.TwoColConflict.Inline.HelpDialogCss',
 		] );
 	}
 
@@ -592,8 +592,8 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$this->out->addBodyClasses( [ 'mw-twocolconflict-page' ] );
 
 		$this->out->addModules( [
-			'ext.TwoColConflict.initJs',
-			'ext.TwoColConflict.filterOptionsJs'
+			'ext.TwoColConflict.Inline.initJs',
+			'ext.TwoColConflict.Inline.filterOptionsJs'
 		] );
 	}
 
