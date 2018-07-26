@@ -1,6 +1,11 @@
 <?php
 
+namespace TwoColConflict\SpecialConflictTestPage;
+
+use Html;
+use Message;
 use OOUI\ButtonInputWidget;
+use SpecialPage;
 
 /**
  * Form allowing the user to change the base text for the conflict.

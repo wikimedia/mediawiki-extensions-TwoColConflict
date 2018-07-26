@@ -1,6 +1,14 @@
 <?php
 
+namespace TwoColConflict\SpecialConflictTestPage;
+
+use Article;
+use Html;
 use MediaWiki\MediaWikiServices;
+use Message;
+use SpecialPage;
+use Title;
+use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper;
 
 /**
  * @license GPL-2.0-or-later
@@ -9,7 +17,7 @@ use MediaWiki\MediaWikiServices;
 class SpecialConflictTestPage extends SpecialPage {
 
 	/**
-	 * @var Config
+	 * @var \Config
 	 */
 	public $config;
 
@@ -184,8 +192,8 @@ class SpecialConflictTestPage extends SpecialPage {
 		 */
 		if (
 			$config->get( 'TwoColConflictBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
-			!BetaFeatures::isFeatureEnabled( $this->getContext()->getUser(), 'twocolconflict' )
+			\ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
+			!\BetaFeatures::isFeatureEnabled( $this->getContext()->getUser(), 'twocolconflict' )
 		) {
 			return false;
 		}

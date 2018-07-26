@@ -1,7 +1,13 @@
 <?php
 
+namespace TwoColConflict\Tests;
+
+use Diff;
+use MediaWikiTestCase;
+use TwoColConflict\LineBasedUnifiedDiffFormatter;
+
 /**
- * @covers \LineBasedUnifiedDiffFormatter
+ * @covers \TwoColConflict\LineBasedUnifiedDiffFormatter
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

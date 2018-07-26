@@ -1,5 +1,13 @@
 <?php
 
+namespace TwoColConflict\SpecialConflictTestPage;
+
+use ContentHandler;
+use MWContentSerializationException;
+use ParserOptions;
+use SpecialPage;
+use Title;
+
 /**
  * Html of parsed wikitext
  */
@@ -49,7 +57,7 @@ class HtmlPreview {
 			$this->getParserOptions()
 		);
 
-		Wikimedia\ScopedCallback::consume( $scopedCallback );
+		\Wikimedia\ScopedCallback::consume( $scopedCallback );
 
 		return $parseResult->getText( [
 			'enableSectionEditLinks' => false,

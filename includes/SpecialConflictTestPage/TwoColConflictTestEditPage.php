@@ -1,5 +1,11 @@
 <?php
 
+namespace TwoColConflict\SpecialConflictTestPage;
+
+use Article;
+use EditPage;
+use Status;
+
 /**
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
@@ -54,7 +60,7 @@ class TwoColConflictTestEditPage extends EditPage {
 
 	/**
 	 * @param int &$tabindex Current tabindex
-	 * @return OOUI\ButtonInputWidget[] 1-element array with the preview button only
+	 * @return \OOUI\ButtonInputWidget[] 1-element array with the preview button only
 	 */
 	public function getEditButtons( &$tabindex ) {
 		$buttons = parent::getEditButtons( $tabindex );

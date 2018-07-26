@@ -1,5 +1,11 @@
 <?php
+
+namespace TwoColConflict;
+
+use Diff;
+use DiffFormatter;
 use MediaWiki\Diff\WordAccumulator;
+use WordLevelDiff;
 
 /**
  * @license GPL-2.0-or-later

@@ -1,14 +1,22 @@
 <?php
 
+namespace TwoColConflict\Tests\SpecialConflictTestPage;
+
+use FauxRequest;
+use MWNamespace;
+use SpecialPage;
+use SpecialPageTestBase;
+use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
+
 /**
- * @covers \HtmlPreview
- * @covers \HtmlSpecialTestTextForm
- * @covers \HtmlSpecialTestTitleForm
- * @covers \HtmlWikiTextEditor
- * @covers \InlineTwoColConflictHelper
- * @covers \InlineTwoColConflictTestHelper
- * @covers \SpecialConflictTestPage
- * @covers \TwoColConflictTestEditPage
+ * @covers \TwoColConflict\SpecialConflictTestPage\HtmlPreview
+ * @covers \TwoColConflict\SpecialConflictTestPage\HtmlSpecialTestTextForm
+ * @covers \TwoColConflict\SpecialConflictTestPage\HtmlSpecialTestTitleForm
+ * @covers \TwoColConflict\SpecialConflictTestPage\HtmlWikiTextEditor
+ * @covers \TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper
+ * @covers \TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper
+ * @covers \TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage
+ * @covers \TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

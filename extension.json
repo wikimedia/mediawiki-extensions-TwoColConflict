@@ -20,31 +20,31 @@
 		"TwoColConflictBetaFeature": true
 	},
 	"AutoloadClasses": {
-		"TwoColConflictHooks": "includes/TwoColConflictHooks.php",
-		"InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
-		"InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
-		"RandomChangesGenerator": "includes/RandomChangesGenerator.php",
-		"CollapsedTextBuilder": "includes/CollapsedTextBuilder.php",
-		"LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
-		"SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
-		"TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
-		"HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
-		"HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",
-		"HtmlWikiTextEditor": "includes/SpecialConflictTestPage/HtmlWikiTextEditor.php",
-		"HtmlPreview": "includes/SpecialConflictTestPage/HtmlPreview.php"
+		"TwoColConflict\\CollapsedTextBuilder": "includes/CollapsedTextBuilder.php",
+		"TwoColConflict\\LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
+		"TwoColConflict\\RandomChangesGenerator": "includes/RandomChangesGenerator.php",
+		"TwoColConflict\\TwoColConflictHooks": "includes/TwoColConflictHooks.php",
+		"TwoColConflict\\InlineTwoColConflict\\InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
+		"TwoColConflict\\InlineTwoColConflict\\InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
+		"TwoColConflict\\SpecialConflictTestPage\\HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
+		"TwoColConflict\\SpecialConflictTestPage\\HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",
+		"TwoColConflict\\SpecialConflictTestPage\\HtmlWikiTextEditor": "includes/SpecialConflictTestPage/HtmlWikiTextEditor.php",
+		"TwoColConflict\\SpecialConflictTestPage\\HtmlPreview": "includes/SpecialConflictTestPage/HtmlPreview.php",
+		"TwoColConflict\\SpecialConflictTestPage\\SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
+		"TwoColConflict\\SpecialConflictTestPage\\TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php"
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
-			"TwoColConflictHooks::onGetBetaFeaturePreferences"
+			"TwoColConflict\\TwoColConflictHooks::onGetBetaFeaturePreferences"
 		],
 		"AlternateEdit": [
-			"TwoColConflictHooks::onAlternateEdit"
+			"TwoColConflict\\TwoColConflictHooks::onAlternateEdit"
 		],
 		"EditPageBeforeConflictDiff": [
-			"TwoColConflictHooks::onEditPageBeforeConflictDiff"
+			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
 		],
 		"ResourceLoaderTestModules": [
-			"TwoColConflictHooks::onResourceLoaderTestModules"
+			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
 		]
 	},
 	"MessagesDirs": {

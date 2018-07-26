@@ -1,9 +1,14 @@
 <?php
 
+namespace TwoColConflict\SpecialConflictTestPage;
+
+use Html;
+use Message;
 use OOUI\ButtonInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
+use SpecialPage;
 
 /**
  * Form allowing the load an article as base version for the conflict test.

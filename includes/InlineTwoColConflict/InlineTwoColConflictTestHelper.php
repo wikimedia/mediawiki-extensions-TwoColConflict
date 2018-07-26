@@ -1,5 +1,10 @@
 <?php
 
+namespace TwoColConflict\InlineTwoColConflict;
+
+use Html;
+use TwoColConflict\RandomChangesGenerator;
+
 /**
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

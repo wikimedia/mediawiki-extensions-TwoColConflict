@@ -1,7 +1,19 @@
 <?php
+
+namespace TwoColConflict\InlineTwoColConflict;
+
+use Html;
+use Linker;
 use MediaWiki\EditPage\TextboxBuilder;
 use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
+use OOUI\ButtonInputWidget;
+use OOUI\FieldsetLayout;
+use OOUI\RadioSelectInputWidget;
+use Title;
+use TwoColConflict\CollapsedTextBuilder;
+use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use WikiPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -17,7 +29,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @inheritDoc
 	 */
-	public function __construct( Title $title, OutputPage $out, IBufferingStatsdDataFactory $stats,
+	public function __construct( Title $title, \OutputPage $out, \IBufferingStatsdDataFactory $stats,
 		$submitLabel
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
@@ -171,7 +183,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	private function buildFilterOptionsMenu() {
 		$this->out->enableOOUI();
 
-		$showHideOptions = new OOUI\RadioSelectInputWidget( [
+		$showHideOptions = new RadioSelectInputWidget( [
 			'name' => 'mw-twocolconflict-same',
 			'classes' => [ 'mw-twocolconflict-filter-options-btn' ],
 			'options' => [
@@ -186,7 +198,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 			],
 		] );
 
-		$fieldset = new OOUI\FieldsetLayout();
+		$fieldset = new FieldsetLayout();
 		$fieldset->addItems( [
 			$showHideOptions
 		] );
@@ -215,7 +227,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		// Load icon pack with the 'help' icon
 		$this->out->addModuleStyles( 'oojs-ui.styles.icons-content' );
 
-		$helpButton = new OOUI\ButtonInputWidget( [
+		$helpButton = new ButtonInputWidget( [
 			'icon' => 'help',
 			'framed' => false,
 			'name' => 'mw-twocolconflict-show-help',
@@ -379,7 +391,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
 
 		return $formatter->format(
-			new Diff( $fromTextLines, $toTextLines )
+			new \Diff( $fromTextLines, $toTextLines )
 		);
 	}
 
@@ -555,7 +567,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	private function wikiEditorIsEnabled() {
-		return ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' ) &&
+		return \ExtensionRegistry::getInstance()->isLoaded( 'WikiEditor' ) &&
 			$this->out->getUser()->getOption( 'usebetatoolbar' );
 	}
 

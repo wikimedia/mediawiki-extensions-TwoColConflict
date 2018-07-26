@@ -1,6 +1,13 @@
 <?php
 
+namespace TwoColConflict;
+
+use EditPage;
 use MediaWiki\MediaWikiServices;
+use OutputPage;
+use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper;
+use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
+use User;
 
 /**
  * Hooks for TwoColConflict extension
@@ -13,8 +20,8 @@ class TwoColConflictHooks {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		$betaFeatureDisabled = $config->get( 'TwoColConflictBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
-			!BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' );
+			\ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
+			!\BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' );
 
 		return !$betaFeatureDisabled;
 	}
@@ -47,13 +54,16 @@ class TwoColConflictHooks {
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
 	 */
-	public static function onEditPageBeforeConflictDiff( EditPage $editPage, OutputPage $outputPage ) {
-		if ( class_exists( EventLogging::class ) ) {
+	public static function onEditPageBeforeConflictDiff(
+		EditPage $editPage,
+		OutputPage $outputPage
+	) {
+		if ( class_exists( \EventLogging::class ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
 			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=18155295
-			EventLogging::logEvent(
+			\EventLogging::logEvent(
 				'TwoColConflictConflict',
 				18155295,
 				[
@@ -100,9 +110,9 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param array &$testModules
-	 * @param ResourceLoader $rl
+	 * @param \ResourceLoader $rl
 	 */
-	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
+	public static function onResourceLoaderTestModules( array &$testModules, \ResourceLoader $rl ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
 			'scripts' => [
 				'tests/qunit/TwoColConflict.HelpDialog.test.js'

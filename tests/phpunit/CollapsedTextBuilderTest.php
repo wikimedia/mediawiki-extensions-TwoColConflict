@@ -1,9 +1,13 @@
 <?php
 
+namespace TwoColConflict\Tests;
+
+use MediaWikiTestCase;
+use TwoColConflict\CollapsedTextBuilder;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \CollapsedTextBuilder
+ * @covers \TwoColConflict\CollapsedTextBuilder
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
@@ -195,11 +199,8 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		];
 	}
 
-	/**
-	 * @return CollapsedTextBuilder
-	 */
 	private function newInstance() {
-		return TestingAccessWrapper::newFromClass( 'CollapsedTextBuilder' );
+		return TestingAccessWrapper::newFromClass( CollapsedTextBuilder::class );
 	}
 
 }
