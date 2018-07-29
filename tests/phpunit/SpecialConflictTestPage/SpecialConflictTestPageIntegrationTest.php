@@ -3,6 +3,7 @@
 namespace TwoColConflict\Tests\SpecialConflictTestPage;
 
 use FauxRequest;
+use HamcrestPHPUnitIntegration;
 use MWNamespace;
 use SpecialPage;
 use SpecialPageTestBase;
@@ -22,6 +23,7 @@ use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
+	use HamcrestPHPUnitIntegration;
 
 	protected function setUp() {
 		parent::setUp();
@@ -127,7 +129,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertFormIsPresent( $html ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'form' ) )
@@ -142,7 +144,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertTitleInputFieldPresent( $html ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'input' ) )
@@ -152,7 +154,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertWikiEditorPresent( $html, $text ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'textarea' ) )
@@ -163,7 +165,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertTwoColConflictEditorPresent( $html ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'textarea' ) )
@@ -173,7 +175,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertParserOutputPresentWithContent( $html, $text ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'div' ) )
@@ -187,7 +189,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertWarningBox( $html, $text ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'div' ) )
@@ -201,7 +203,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertHintBox( $html, $text ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'div' ) )
@@ -215,7 +217,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertHiddenInputField( $html, $name, $value ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'input' ) )
@@ -227,7 +229,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	private function assertHiddenInputFieldAny( $html, $name ) {
-		assertThat(
+		$this->assertThatHamcrest(
 			$html,
 			is( htmlPiece( havingChild(
 				both( withTagName( 'input' ) )
@@ -264,8 +266,6 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		);
 
 		$htmlAssertionCallable( $html );
-		// assertion to avoid phpunit showing hamcrest test as risky
-		$this->assertTrue( true );
 	}
 
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
@@ -278,8 +278,6 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 			'You must enable the \'Two column edit conflict\' ' .
 			'beta feature in your preferences to use this special page.'
 		);
-		// assertion to avoid phpunit showing hamcrest test as risky
-		$this->assertTrue( true );
 	}
 
 }
