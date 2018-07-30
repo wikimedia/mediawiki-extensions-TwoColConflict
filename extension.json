@@ -31,8 +31,14 @@
 		"AlternateEdit": [
 			"TwoColConflict\\TwoColConflictHooks::onAlternateEdit"
 		],
+		"EditPage::attemptSave": [
+			"TwoColConflict\\TwoColConflictHooks::onAttemptSave"
+		],
 		"EditPageBeforeConflictDiff": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
+		],
+		"EditPageBeforeEditButtons": [
+			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons"
 		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"

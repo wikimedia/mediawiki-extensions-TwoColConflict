@@ -14,9 +14,11 @@ class HtmlSplitConflictView {
 
 	/**
 	 * @param array[] $unifiedDiff
+	 * @param string[] $yourLines
+	 * @param string[] $storedLines
 	 * @return string
 	 */
-	public function getHtml( array $unifiedDiff ) {
+	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) {
 		$out = Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
 		);
@@ -32,11 +34,15 @@ class HtmlSplitConflictView {
 					switch ( $changeSet['action'] ) {
 						case 'delete':
 							$out .= $this->startRow( $currRowNum );
-							$out .= $this->buildRemovedLine( $changeSet['old'] );
+							$out .= $this->buildRemovedLine(
+								$changeSet['old'],
+								$storedLines[ $changeSet['oldline'] - 1 ],
+								$currRowNum
+							);
 							$out .= $this->buildSideSelector( $currRowNum );
 
 							if ( !$this->hasConflictInLine( $currentLine ) ) {
-								$out .= $this->buildAddedLine( "\u{00A0}" );
+								$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
 								$out .= $this->endRow();
 								$currRowNum++;
 							}
@@ -44,17 +50,21 @@ class HtmlSplitConflictView {
 						case 'add':
 							if ( !$this->hasConflictInLine( $currentLine ) ) {
 								$out .= $this->startRow( $currRowNum );
-								$out .= $this->buildRemovedLine( "\u{00A0}" );
+								$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
 								$out .= $this->buildSideSelector( $currRowNum );
 							}
 
-							$out .= $this->buildAddedLine( $changeSet['new'] );
+							$out .= $this->buildAddedLine(
+								$changeSet['new'],
+								$yourLines[ $changeSet['newline'] - 1 ],
+								$currRowNum
+							);
 							$out .= $this->endRow();
 							$currRowNum++;
 							break;
 						case 'copy':
 							$out .= $this->startRow( $currRowNum );
-							$out .= $this->buildCopiedLine( $changeSet['copy'] );
+							$out .= $this->buildCopiedLine( $changeSet['copy'], $currRowNum );
 							$out .= $this->endRow();
 							$currRowNum++;
 							break;
@@ -66,9 +76,9 @@ class HtmlSplitConflictView {
 		return $out;
 	}
 
-	private function startRow( $lineNum ) {
+	private function startRow( $rowNum ) {
 		return Html::openElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-row', 'data-line-number' => $lineNum ]
+			'div', [ 'class' => 'mw-twocolconflict-split-row', 'data-line-number' => $rowNum ]
 		);
 	}
 
@@ -76,25 +86,31 @@ class HtmlSplitConflictView {
 		return Html::closeElement( 'div' );
 	}
 
-	private function buildAddedLine( $text ) {
+	private function buildAddedLine( $text, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div', 	[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
 			$text
-		);
+		) . Html::input(
+			'mw-twocolconflict-split-content[' . $rowNum . '][your]',
+			$rawText, 'hidden' );
 	}
 
-	private function buildRemovedLine( $text ) {
+	private function buildRemovedLine( $text, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
 			$text
-		);
+		) . Html::input(
+			'mw-twocolconflict-split-content[' . $rowNum . '][other]',
+			$rawText, 'hidden' );
 	}
 
-	private function buildCopiedLine( $text ) {
+	private function buildCopiedLine( $text, $rowNum ) {
 		return Html::rawElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
 			$text
-		);
+		) . Html::input(
+			'mw-twocolconflict-split-content[' . $rowNum . '][copy]',
+			$text, 'hidden' );
 	}
 
 	private function buildSideSelectorLabel() {

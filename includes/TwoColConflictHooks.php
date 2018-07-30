@@ -65,6 +65,30 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param EditPage $editPage
+	 * @return bool
+	 */
+	public static function onAttemptSave( EditPage $editPage ) {
+		$request = $editPage->getContext()->getRequest();
+		$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' );
+
+		if ( $request->getBool( 'mw-twocolconflict-submit' ) && $sideSelection !== null ) {
+			$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
+
+			$textLines = [];
+			foreach ( $contentRows as $num => $row ) {
+				if ( isset( $row['copy'] ) ) {
+					$textLines[] = $row['copy'];
+				} else {
+					$textLines[] = $row[ $sideSelection[ $num ] ];
+				}
+			}
+
+			$editPage->textbox1 = implode( $textLines, "\n" );
+		}
+	}
+
+	/**
+	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
 	 */
 	public static function onEditPageBeforeConflictDiff(
@@ -89,6 +113,25 @@ class TwoColConflictHooks {
 					'textUser' => $editPage->textbox2,
 				]
 			);
+		}
+	}
+
+	/**
+	 * @param EditPage &$editPage
+	 * @param array &$buttons
+	 * @param int &$tabindex
+	 */
+	public static function onEditPageBeforeEditButtons(
+		EditPage &$editPage,
+		array &$buttons,
+		&$tabindex
+	) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( !$config->get( 'TwoColConflictUseInline' ) &&
+			!( $editPage instanceof TwoColConflictTestEditPage )
+ ) {
+			unset( $buttons['preview'] );
+			unset( $buttons['diff'] );
 		}
 	}
 

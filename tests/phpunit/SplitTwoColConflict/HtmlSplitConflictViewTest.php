@@ -29,7 +29,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		// inputs inspired by the LineBasedUnifiedDiffFormatterTest
 		return [
 			[
-				[ 'row', 'copy' ],
+				[ 'row', 'copy', 'Just text.' ],
 				[
 					[
 						[
@@ -40,34 +40,40 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'delete', 'select', 'add' ],
+				[ 'row', 'delete', '1', 'select', 'add', 'a' ],
 				[
 					[
 						[
 							'action' => 'delete',
 							'old' => 'Just text.',
+							'oldline' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just text<ins class="diffchange"> and more</ins>.',
+							'newline' => 1,
 						],
 					],
 				],
 			],
 			[
-				[ 'row', 'copy', 'row', 'delete', 'select', 'add', 'row', 'copy' ],
+				[
+					'row', 'copy', 'Just multi-line text.',
+					'row', 'delete', '', 'select', 'add', 'b',
+					'row', 'copy', 'Line number 2.'
+				],
 				[
 					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just multi-line text.',
-
 						]
 					],
 					[
 						[
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 1.5.</ins>',
+							'newline' => 2,
 						],
 						[
 							'action' => 'copy',
@@ -77,7 +83,11 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'delete', 'select', 'add', 'row', 'copy', 'row', 'delete', 'select', 'add' ],
+				[
+					'row', 'delete', '1', 'select', 'add', 'a',
+					'row', 'copy', 'Line number 2.',
+					'row', 'delete', '', 'select', 'add', 'c'
+				],
 				[
 					[
 						[
@@ -88,10 +98,12 @@ Just multi-line <del class="diffchange">text.</del>
 <del class="diffchange">Line number 1.5</del>.
 TEXT
 							,
+							'oldline' => 1
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
+							'newline' => 1
 						]
 					],
 					[
@@ -104,7 +116,7 @@ TEXT
 						[
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 3.</ins>',
-
+							'newline' => 3,
 						]
 					],
 				],
@@ -117,14 +129,19 @@ TEXT
 	 * @dataProvider provideGetHtml
 	 */
 	public function testGetHtmlElementOrder( $expectedElements, $diff ) {
-		$htmlConflictView = new HtmlSplitConflictView();
-		$this->assertDivElementsPresentInOrder(
-			$htmlConflictView->getHtml( $diff ),
+		$htmlResult = ( new HtmlSplitConflictView() )->getHtml(
+			$diff,
+			str_split( 'abcde' ),
+			str_split( '12345' )
+		);
+
+		$this->assertElementsPresentInOrder(
+			$htmlResult,
 			$expectedElements
 		);
 	}
 
-	private function assertDivElementsPresentInOrder( $html, $expectedElements ) {
+	private function assertElementsPresentInOrder( $html, $expectedElements ) {
 		$offset = 0;
 		foreach ( $expectedElements as $element ) {
 			switch ( $element ) {
@@ -142,20 +159,49 @@ TEXT
 						$offset
 					);
 					break;
-				default:
+				case 'add':
+				case 'delete':
+				case 'copy':
 					$offset = $this->assertDivExistsWithClassValue(
 						$html,
 						'mw-twocolconflict-split-' . $element . ' mw-twocolconflict-split-column',
 						$offset
 					);
 					break;
+				default:
+					$offset = $this->assertInputExistsWithValue(
+						$html,
+						$element,
+						$offset
+					);
 			}
 		}
 	}
 
-	private function assertDivExistsWithClassValue( $html, $classValue, $startpos ) {
-		$pos = strpos( $html, '<div class="' . $classValue . '"', $startpos );
-		$this->assertTrue( $pos !== false );
+	private function assertInputExistsWithValue( $html, $value, $startPos ) {
+		$check = '<input type="hidden" value="' . $value . '" name="mw-twocolconflict-split-content';
+		if ( $value === '' ) {
+			$check = '<input type="hidden" name="mw-twocolconflict-split-content';
+		}
+
+		$pos = strpos(
+			$html,
+			$check,
+			$startPos
+			);
+		$this->assertTrue(
+			$pos !== false,
+			'Input element having value "'. $value .'" not found or in wrong position.' .$html
+		);
+		return $pos;
+	}
+
+	private function assertDivExistsWithClassValue( $html, $classValue, $startPos ) {
+		$pos = strpos( $html, '<div class="' . $classValue . '"', $startPos );
+		$this->assertTrue(
+			$pos !== false,
+			'Div element with class '. $classValue .' not found or in wrong position.'
+		);
 		return $pos;
 	}
 

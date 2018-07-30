@@ -106,7 +106,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	public function getEditFormHtmlBeforeContent() {
-		$out = Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
+		$out = Html::input( 'wpTextbox1', $this->storedversion, 'hidden' );
+		$out .= Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
 		$out .= Html::input(
 			'mw-twocolconflict-title',
 			$this->wikiPage->getTitle()->getText(), 'hidden'
@@ -139,7 +140,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildEditConflictView() {
 		$unifiedDiff = $this->getLineBasedUnifiedDiff();
 		$out = ( new HtmlSplitConflictHeader( $this ) )->getHtml();
-		$out .= ( new HtmlSplitConflictView() )->getHtml( $unifiedDiff );
+		$out .= ( new HtmlSplitConflictView() )->getHtml(
+			$unifiedDiff,
+			$this->yourLines,
+			$this->storedLines
+		);
 		return $out;
 	}
 
