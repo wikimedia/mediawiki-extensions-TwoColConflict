@@ -257,7 +257,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		$wgTitle = $testPageArr[ 'title' ];
 
 		/** @var string $html */
-		/** @var WebResponse $response */
+		/** @var \WebResponse $response */
 		list( $html, $response ) = $this->executeSpecialPage(
 			'',
 			$request,
@@ -271,6 +271,8 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
+		/** @var string $html */
+		/** @var \WebResponse $response */
 		list( $html, $response ) = $this->executeSpecialPage();
 
 		$this->assertWarningBox(
