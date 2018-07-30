@@ -200,6 +200,6 @@
 		"remoteExtPath": "TwoColConflict"
 	},
 	"SpecialPages": {
-		"SimulateTwoColEditConflict": "SpecialConflictTestPage"
+		"SimulateTwoColEditConflict": "TwoColConflict\\SpecialConflictTestPage\\SpecialConflictTestPage"
 	}
 }
