@@ -56,22 +56,22 @@
 		"TwoColConflictAlias": "TwoColConflict.alias.php"
 	},
 	"ResourceModules": {
-		"ext.TwoColConflict.editor": {
+		"ext.TwoColConflict.InlineCss": {
 			"styles": [
-				"modules/ext.TwoColConflict.css"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.css"
 			],
 			"messages": [],
 			"dependencies": []
 		},
-		"ext.TwoColConflict.initJs": {
+		"ext.TwoColConflict.Inline.initJs": {
 			"scripts": [
-				"modules/ext.TwoColConflict.init.js"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.init.js"
 			],
 			"dependencies": [
 				"ext.TwoColConflict.Settings",
-				"ext.TwoColConflict.AutoScroll",
-				"ext.TwoColConflict.BaseVersionSelector",
-				"ext.TwoColConflict.HelpDialog"
+				"ext.TwoColConflict.Inline.AutoScroll",
+				"ext.TwoColConflict.Inline.BaseVersionSelector",
+				"ext.TwoColConflict.Inline.HelpDialog"
 			]
 		},
 		"ext.TwoColConflict.Settings": {
@@ -85,27 +85,27 @@
 				"mediawiki.api"
 			]
 		},
-		"ext.TwoColConflict.filterOptionsJs": {
+		"ext.TwoColConflict.Inline.filterOptionsJs": {
 			"scripts": [
-				"modules/ext.TwoColConflict.filterOptions.js"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.filterOptions.js"
 			],
 			"messages": [
 				"twocolconflict-label-show-unchanged",
 				"twocolconflict-label-hide-unchanged"
 			],
 			"dependencies": [
-				"ext.TwoColConflict.AutoScroll",
+				"ext.TwoColConflict.Inline.AutoScroll",
 				"oojs-ui"
 			]
 		},
-		"ext.TwoColConflict.AutoScroll": {
+		"ext.TwoColConflict.Inline.AutoScroll": {
 			"scripts": [
-				"modules/ext.TwoColConflict.AutoScroll.js"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.AutoScroll.js"
 			]
 		},
-		"ext.TwoColConflict.BaseVersionSelector": {
+		"ext.TwoColConflict.Inline.BaseVersionSelector": {
 			"scripts": [
-				"modules/ext.TwoColConflict.BaseVersionSelector.js"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.js"
 			],
 			"messages": [
 				"twocolconflict-base-selection-dialog-text",
@@ -117,19 +117,19 @@
 				"oojs-ui"
 			]
 		},
-		"ext.TwoColConflict.BaseVersionSelectorCss": {
+		"ext.TwoColConflict.Inline.BaseVersionSelectorCss": {
 			"styles": [
-				"modules/ext.TwoColConflict.BaseVersionSelector.css"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.css"
 			]
 		},
-		"ext.TwoColConflict.HelpDialog": {
+		"ext.TwoColConflict.Inline.HelpDialog": {
 			"scripts": [
-				"modules/ext.TwoColConflict.HelpDialog.js"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.HelpDialog.js"
 			],
 			"dependencies": [
 				"oojs-ui",
 				"oojs-ui.styles.icons-interactions",
-				"ext.TwoColConflict.HelpDialogImages"
+				"ext.TwoColConflict.Inline.HelpDialogImages"
 			],
 			"messages": [
 				"twocolconflict-show-help-tooltip",
@@ -145,12 +145,12 @@
 				"twocolconflict-close-dialog"
 			]
 		},
-		"ext.TwoColConflict.HelpDialogCss": {
+		"ext.TwoColConflict.Inline.HelpDialogCss": {
 			"styles": [
-				"modules/ext.TwoColConflict.HelpDialog.css"
+				"modules/InlineTwoColConflict/ext.TwoColConflict.HelpDialog.css"
 			]
 		},
-		"ext.TwoColConflict.HelpDialogImages": {
+		"ext.TwoColConflict.Inline.HelpDialogImages": {
 			"class": "ResourceLoaderImageModule",
 			"selector": ".mw-twocolconflict-help-dialog-slide-{name}",
 			"images": {
