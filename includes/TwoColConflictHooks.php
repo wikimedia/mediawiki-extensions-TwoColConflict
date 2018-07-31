@@ -7,6 +7,7 @@ use MediaWiki\MediaWikiServices;
 use OutputPage;
 use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
+use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 
 /**
@@ -40,14 +41,26 @@ class TwoColConflictHooks {
 			return;
 		}
 
-		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-			return new InlineTwoColConflictHelper(
-				$editPage->getTitle(),
-				$editPage->getContext()->getOutput(),
-				MediaWikiServices::getInstance()->getStatsdDataFactory(),
-				$submitButtonLabel
-			);
-		} );
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( $config->get( 'TwoColConflictUseInline' ) ) {
+			$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+				return new InlineTwoColConflictHelper(
+					$editPage->getTitle(),
+					$editPage->getContext()->getOutput(),
+					MediaWikiServices::getInstance()->getStatsdDataFactory(),
+					$submitButtonLabel
+				);
+			} );
+		} else {
+			$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+				return new SplitTwoColConflictHelper(
+					$editPage->getTitle(),
+					$editPage->getContext()->getOutput(),
+					MediaWikiServices::getInstance()->getStatsdDataFactory(),
+					$submitButtonLabel
+				);
+			} );
+		}
 	}
 
 	/**

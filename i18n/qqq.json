@@ -62,5 +62,10 @@
 	"twocolconflict-test-preview-submit": "Label for the submit button to show the conflict result preview.",
 	"twocolconflict-test-preview-hint": "Last hint shown on the conflict test page above the preview of the resolved test conflict.",
 	"twocolconflict-test-username": "Username for the conflict test page's fictitious conflicting edit.",
-	"twocolconflict-test-summary-text": "Edit summary for the conflict test page's fictitious conflicting edit."
+	"twocolconflict-test-summary-text": "Edit summary for the conflict test page's fictitious conflicting edit.",
+	"twocolconflict-split-conflict-hint": "General hint shown during an edit conflict.",
+	"twocolconflict-split-your-version-header": "Header for the diff column showing the users changes.",
+	"twocolconflict-split-current-version-header": "Header for the diff column showing the current conflicting changes.",
+	"twocolconflict-split-not-saved-at": "Header for the diff columns showing the time and date when the content was modified by the users.\n\nParameters:\n* $1 - date\n* $2 - time",
+	"twocolconflict-split-saved-at": "Header for the diff columns showing the time and date when the current conflicting content was modified.\n\nParameters:\n* $1 - date\n* $2 - time"
 }
