@@ -29,5 +29,6 @@
 	"twocolconflict-close-dialog": "বন্ধ করুন",
 	"twocolconflict-test-title-submit": "সম্পাদনার পাতা দেখান",
 	"twocolconflict-test-no-direct-editing": "এই পাতা সরাসরি সম্পাদনা করা যাবে না।",
-	"twocolconflict-test-text-submit": "দ্বন্দ্ব তৈরি করুন"
+	"twocolconflict-test-text-submit": "দ্বন্দ্ব তৈরি করুন",
+	"twocolconflict-split-your-version-header": "আপনার সংস্করণ"
 }

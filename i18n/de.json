@@ -57,5 +57,10 @@
 	"twocolconflict-test-preview-submit": "Speicherung der Änderungen simulieren",
 	"twocolconflict-test-preview-hint": "Vielen Dank für das Ausprobieren der Oberfläche des Zwei-Spalten-Bearbeitungskonflikts! Hilf uns, die Funktion durch deine Rückmeldungen [https://de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte/Feedbackrunde_Testseite auf dieser Feedbackseite] zu verbessern.\n\nUnten sind die Ergebnisse der Auflösung deines Test-Bearbeitungskonfliktes.",
 	"twocolconflict-test-username": "KonfliktTest-Benutzer",
-	"twocolconflict-test-summary-text": "Konflikttest-Bearbeitungszusammenfassung"
+	"twocolconflict-test-summary-text": "Konflikttest-Bearbeitungszusammenfassung",
+	"twocolconflict-split-conflict-hint": "Vielen Dank für die Benutzung dieser Betafunktion. Du kannst weiterhin bei ihrer Verbesserung helfen, indem du [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View auf dieser Seite] deine Rückmeldung hinterlässt.",
+	"twocolconflict-split-your-version-header": "Deine Version",
+	"twocolconflict-split-current-version-header": "Kollidierende Version von $1 (derzeit live)",
+	"twocolconflict-split-not-saved-at": "Nicht gespeichert am $1 um $2.",
+	"twocolconflict-split-saved-at": "Gespeichert am $1 um $2."
 }

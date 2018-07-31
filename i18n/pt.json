@@ -59,5 +59,10 @@
 	"twocolconflict-test-preview-submit": "Simular a gravação das alterações",
 	"twocolconflict-test-preview-hint": "Obrigado por experimentar a interface do conflito entre edições em duas colunas! Ajude a melhorá-la dizendo-nos o que achou, [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page aqui].\n\nEncontra abaixo os resultados da resolução do seu teste de conflito entre edições.",
 	"twocolconflict-test-username": "Utilizador do teste de conflito",
-	"twocolconflict-test-summary-text": "Resumo de edição do teste de conflito"
+	"twocolconflict-test-summary-text": "Resumo de edição do teste de conflito",
+	"twocolconflict-split-conflict-hint": "Obrigado por usar esta funcionalidade beta. Pode ajudar a melhorá-la, deixando um comentário [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta página].",
+	"twocolconflict-split-your-version-header": "A sua versão",
+	"twocolconflict-split-current-version-header": "Versão em conflito de $1 (versão atual)",
+	"twocolconflict-split-not-saved-at": "não gravado $1, $2.",
+	"twocolconflict-split-saved-at": "gravado $1, $2."
 }

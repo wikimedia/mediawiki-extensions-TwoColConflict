@@ -50,5 +50,9 @@
 	"twocolconflict-test-no-direct-editing": "Tej strony nie można edytować bezpośrednio.",
 	"twocolconflict-test-text-submit": "Utwórz konflikt",
 	"twocolconflict-test-conflict-hint": "To jest konflikt testowy. Zmiany nie zostaną zapisane, ale można je przejrzeć.",
-	"twocolconflict-test-preview-submit": "Symuluj zapisywanie zmian"
+	"twocolconflict-test-preview-submit": "Symuluj zapisywanie zmian",
+	"twocolconflict-split-conflict-hint": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
+	"twocolconflict-split-your-version-header": "Twoja wersja",
+	"twocolconflict-split-not-saved-at": "nie zapisano $1, $2.",
+	"twocolconflict-split-saved-at": "zapisano $1, $2."
 }

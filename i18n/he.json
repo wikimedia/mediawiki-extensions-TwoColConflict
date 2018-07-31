@@ -57,5 +57,10 @@
 	"twocolconflict-test-preview-submit": "הדמיית שמירת שינויים",
 	"twocolconflict-test-preview-hint": "תודה על ניסוי ממשק התנגשות עריכה בשני טורים. נשמח לקבל ממך משוב שיעזור לנו לשפר אותו [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page כאן].\n\nלהלן תוצאות פתרון התנגשות העריכה שלך.",
 	"twocolconflict-test-username": "משתמש ConflictTest",
-	"twocolconflict-test-summary-text": "תקציר עריכה בשביל בדיקת התנגשות"
+	"twocolconflict-test-summary-text": "תקציר עריכה בשביל בדיקת התנגשות",
+	"twocolconflict-split-conflict-hint": "תודה על השימוש באפשרות הבטא הזאת. באפשרותך לעזור לשפר אותה עוד יותר באמצעות שליחת משוב [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View לדף הזה].",
+	"twocolconflict-split-your-version-header": "הגרסה שלך",
+	"twocolconflict-split-current-version-header": "גרסה מתנגשת של $1 (מפורסמת כרגע)",
+	"twocolconflict-split-not-saved-at": "לא נשמרה $1, $2",
+	"twocolconflict-split-saved-at": "נשמרה $1, $2."
 }
