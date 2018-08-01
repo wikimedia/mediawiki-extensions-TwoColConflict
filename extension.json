@@ -196,6 +196,11 @@
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
 			]
 		},
+		"ext.TwoColConflict.SplitJs": {
+			"scripts": [
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
+			]
+		},
 		"ext.TwoColConflict.SplitCss": {
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less"

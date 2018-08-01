@@ -97,6 +97,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$this->out->addModuleStyles( [
 			'ext.TwoColConflict.SplitCss',
 		] );
+		$this->out->addModules( [
+			'ext.TwoColConflict.SplitJs',
+		] );
 		return '';
 	}
 
