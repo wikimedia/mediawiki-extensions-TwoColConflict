@@ -38,5 +38,6 @@
 	"twocolconflict-test-preview-submit": "Ännerunge späichere simuléieren",
 	"twocolconflict-test-preview-hint": "Merci fir d'Ausprobéiere vum, Zwee-Kolonnen-Interface fir Ännerungskonflikter! Hëlleft eis en ze verbesseren an deem Dir eis Äre Feedback [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page hei] gitt.",
 	"twocolconflict-test-username": "KonfliktTest-Benotzer",
-	"twocolconflict-test-summary-text": "Resumé vun der Ännerung vum Konflikt-Test"
+	"twocolconflict-test-summary-text": "Resumé vun der Ännerung vum Konflikt-Test",
+	"twocolconflict-split-your-version-header": "Är Versioun"
 }

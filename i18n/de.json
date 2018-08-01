@@ -62,5 +62,6 @@
 	"twocolconflict-split-your-version-header": "Deine Version",
 	"twocolconflict-split-current-version-header": "Kollidierende Version von $1 (derzeit live)",
 	"twocolconflict-split-not-saved-at": "Nicht gespeichert am $1 um $2.",
-	"twocolconflict-split-saved-at": "Gespeichert am $1 um $2."
+	"twocolconflict-split-saved-at": "Gespeichert am $1 um $2.",
+	"twocolconflict-split-choose-version": "Bitte eine Version auswählen"
 }

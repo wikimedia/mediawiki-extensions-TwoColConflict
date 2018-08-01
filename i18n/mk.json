@@ -56,5 +56,10 @@
 	"twocolconflict-test-preview-submit": "Божемно зачувување на измените",
 	"twocolconflict-test-preview-hint": "Ви благодариме што го испробувате посредникот за Двостолбна спротиставеност во уредувањата! Помогнете ни да го подобриме, давајќи ни ваши мислења [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page тука].\n\nПодолу ќе го најдете исходот од решението на пробната спротиставеност.",
 	"twocolconflict-test-username": "Корисник на Проба на спротиставеност",
-	"twocolconflict-test-summary-text": "Опис уредувањето на пробата на спротиставеност"
+	"twocolconflict-test-summary-text": "Опис уредувањето на пробата на спротиставеност",
+	"twocolconflict-split-conflict-hint": "Ви благодариме што ја користите оваа бета-можност. Можете да ни помогнете да ја подобриме уште повеќе давајќи ваше мислење на [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View на оваа страница].",
+	"twocolconflict-split-your-version-header": "Ваша верзија",
+	"twocolconflict-split-current-version-header": "Спротиставена верзија од $1 (тековна)",
+	"twocolconflict-split-not-saved-at": "незачувано $1 г, $2 ч.",
+	"twocolconflict-split-saved-at": "зачувано $1 г, $2 ч."
 }

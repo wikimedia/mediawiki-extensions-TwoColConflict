@@ -60,5 +60,7 @@
 	"twocolconflict-test-preview-submit": "模拟保存更改",
 	"twocolconflict-test-preview-hint": "感谢尝试双栏编辑冲突界面！通过[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我们提供您的反馈，来帮助我们对它做出改进吧。\n\n下面是您的测试编辑冲突解决的结果。",
 	"twocolconflict-test-username": "冲突测试用户",
-	"twocolconflict-test-summary-text": "冲突测试编辑摘要"
+	"twocolconflict-test-summary-text": "冲突测试编辑摘要",
+	"twocolconflict-split-not-saved-at": "未于$1 $2保存。",
+	"twocolconflict-split-saved-at": "已于$1 $2保存。"
 }

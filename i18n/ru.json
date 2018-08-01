@@ -8,7 +8,8 @@
 			"Okras",
 			"Ләйсән",
 			"Ole Yves",
-			"Stjn"
+			"Stjn",
+			"Vlad5250"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -63,5 +64,6 @@
 	"twocolconflict-test-preview-submit": "Симулировать сохранение изменений",
 	"twocolconflict-test-preview-hint": "Спасибо за то, что попробовали пользование интерфейсом «Двухколоночного конфликта редактирования»! Помогите нам улучшить его, предоставив свои отзывы [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page здесь].\n\nНиже — результаты разрешения вашего тестового конфликта редактирования.",
 	"twocolconflict-test-username": "Участник тестового конфликта",
-	"twocolconflict-test-summary-text": "Описание тестовой конфликтной правки"
+	"twocolconflict-test-summary-text": "Описание тестовой конфликтной правки",
+	"twocolconflict-split-your-version-header": "Ваша версия"
 }
