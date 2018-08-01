@@ -42,6 +42,8 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		MWNamespace::clearCaches();
 		// and a page inside it
 		$this->insertPage( 'Dummy', '', 12312 );
+
+		$this->setMwGlobals( [ 'wgTwoColConflictUseInline' => true ] );
 	}
 
 	/**

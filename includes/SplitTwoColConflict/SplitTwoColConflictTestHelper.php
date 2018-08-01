@@ -10,25 +10,17 @@ use TwoColConflict\RandomChangesGenerator;
  */
 class SplitTwoColConflictTestHelper extends SplitTwoColConflictHelper {
 
-	/** @var string */
-	private $conflictingTestText;
-
 	/**
-	 * Generate text for mocked conflicting revision text
-	 */
-	public function setUpConflictingTestText() {
-		$this->conflictingTestText = RandomChangesGenerator::generateRandomlyChangedText(
-			$this->storedversion
-		);
-	}
-
-	/**
+	 * Generate a random fake change as currently stored text
+	 *
 	 * @param string $yourtext
 	 * @param string $storedversion
 	 */
 	public function setTextboxes( $yourtext, $storedversion ) {
-		parent::setTextboxes( $yourtext, $storedversion );
-		$this->setUpConflictingTestText();
+		parent::setTextboxes(
+			$yourtext,
+			RandomChangesGenerator::generateRandomlyChangedText( $storedversion )
+		);
 	}
 
 	/**
@@ -48,18 +40,6 @@ class SplitTwoColConflictTestHelper extends SplitTwoColConflictHelper {
 			true
 		);
 		return parent::getEditFormHtmlBeforeContent();
-	}
-
-	/**
-	 * Get unified diff from the conflicting texts
-	 *
-	 * @return array[]
-	 */
-	protected function getUnifiedDiff() {
-		$currentLines = explode( "\n", $this->conflictingTestText );
-		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
-
-		return parent::getLineBasedUnifiedDiff( $currentLines, $yourLines );
 	}
 
 }
