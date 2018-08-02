@@ -63,6 +63,7 @@ class TwoColConflictTestEditPage extends EditPage {
 	 * @return \OOUI\ButtonInputWidget[] 1-element array with the preview button only
 	 */
 	public function getEditButtons( &$tabindex ) {
+		/** @var \OOUI\ButtonInputWidget[] $buttons */
 		$buttons = parent::getEditButtons( $tabindex );
 
 		$label = $this->context->msg( 'twocolconflict-test-preview-submit' )->text();
