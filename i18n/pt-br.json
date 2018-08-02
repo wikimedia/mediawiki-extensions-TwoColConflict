@@ -62,5 +62,6 @@
 	"twocolconflict-split-your-version-header": "A sua versão",
 	"twocolconflict-split-current-version-header": "Versão em conflito de $1 (versão atual)",
 	"twocolconflict-split-not-saved-at": "não salvado $1, $2.",
-	"twocolconflict-split-saved-at": "salvado $1, $2."
+	"twocolconflict-split-saved-at": "salvado $1, $2.",
+	"twocolconflict-split-choose-version": "Por favor, selecione uma versão"
 }

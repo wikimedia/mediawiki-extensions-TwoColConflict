@@ -62,5 +62,6 @@
 	"twocolconflict-split-your-version-header": "הגרסה שלך",
 	"twocolconflict-split-current-version-header": "גרסה מתנגשת של $1 (מפורסמת כרגע)",
 	"twocolconflict-split-not-saved-at": "לא נשמרה $1, $2",
-	"twocolconflict-split-saved-at": "נשמרה $1, $2."
+	"twocolconflict-split-saved-at": "נשמרה $1, $2.",
+	"twocolconflict-split-choose-version": "נא לבחור גרסה"
 }

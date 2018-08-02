@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twocolconflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
-	"twocolconflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.",
+	"twocolconflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.<br/><br/>Bitte beachten: Die Funktion erfährt derzeit [https://phabricator.wikimedia.org/T195711 einige Änderungen]. Für die zweite Jahreshälfte 2018 ist eine neue Oberfläche geplant.",
 	"twocolconflict-explainconflict": "<strong>Warnung:</strong> Ein anderer Benutzer hat bereits diese Seite bearbeitet und gespeichert. Es gibt einen Bearbeitungskonflikt zwischen deiner und der aktuellen Version. Du musst deine Änderungen in die aktuelle Textversion einfügen. Es wird nur der Text im Editorfeld gespeichert, wenn du auf „$1“ klickst.",
 	"twocolconflict-changes-col-title": "Kollidierende Änderungen",
 	"twocolconflict-changes-col-desc-1": "Unterschiede zwischen",

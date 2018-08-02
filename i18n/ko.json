@@ -59,5 +59,6 @@
 	"twocolconflict-test-preview-submit": "변경사항 저장 모의 실험",
 	"twocolconflict-test-preview-hint": "2단 편집 충돌 인터페이스를 사용해 주셔서 감사합니다! [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 여기]에 의견을 제공하여 개선을 도와주십시오.\n\n테스트 편집 충돌 해결의 결과는 아래와 같습니다.",
 	"twocolconflict-test-username": "편집충돌테스트 사용자",
-	"twocolconflict-test-summary-text": "충돌 테스트 편집 요약"
+	"twocolconflict-test-summary-text": "충돌 테스트 편집 요약",
+	"twocolconflict-split-choose-version": "판을 선택해 주십시오"
 }

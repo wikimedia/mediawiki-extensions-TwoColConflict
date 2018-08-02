@@ -61,5 +61,6 @@
 	"twocolconflict-split-your-version-header": "Ваша верзија",
 	"twocolconflict-split-current-version-header": "Спротиставена верзија од $1 (тековна)",
 	"twocolconflict-split-not-saved-at": "незачувано $1 г, $2 ч.",
-	"twocolconflict-split-saved-at": "зачувано $1 г, $2 ч."
+	"twocolconflict-split-saved-at": "зачувано $1 г, $2 ч.",
+	"twocolconflict-split-choose-version": "Изберете верзија"
 }
