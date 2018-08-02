@@ -9,6 +9,7 @@ use Message;
 use SpecialPage;
 use Title;
 use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper;
+use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
 
 /**
  * @license GPL-2.0-or-later
@@ -146,19 +147,33 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param Article $article
 	 */
 	private function showConflict( $article ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$conflictTestEditPage = new TwoColConflictTestEditPage( $article );
 		$conflictTestEditPage->setUpFakeConflictRequest();
 
-		$conflictTestEditPage->setEditConflictHelperFactory(
-			function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
-			return new InlineTwoColConflictTestHelper(
-				$conflictTestEditPage->getTitle(),
-				$conflictTestEditPage->getContext()->getOutput(),
-				MediaWikiServices::getInstance()->getStatsdDataFactory(),
-				$submitButtonLabel
+		if ( $config->get( 'TwoColConflictUseInline' ) ) {
+			$conflictTestEditPage->setEditConflictHelperFactory(
+				function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
+					return new InlineTwoColConflictTestHelper(
+						$conflictTestEditPage->getTitle(),
+						$conflictTestEditPage->getContext()->getOutput(),
+						MediaWikiServices::getInstance()->getStatsdDataFactory(),
+						$submitButtonLabel
+					);
+				}
 			);
-		 }
-		);
+		} else {
+			$conflictTestEditPage->setEditConflictHelperFactory(
+				function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
+					return new SplitTwoColConflictTestHelper(
+						$conflictTestEditPage->getTitle(),
+						$conflictTestEditPage->getContext()->getOutput(),
+						MediaWikiServices::getInstance()->getStatsdDataFactory(),
+						$submitButtonLabel
+					);
+				}
+			);
+		}
 
 		$conflictTestEditPage->edit();
 
