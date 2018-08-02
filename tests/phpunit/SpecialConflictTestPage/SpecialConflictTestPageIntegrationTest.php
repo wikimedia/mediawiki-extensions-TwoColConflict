@@ -266,6 +266,8 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		);
 
 		$htmlAssertionCallable( $html );
+		// assertion to avoid phpunit showing hamcrest test as risky
+		$this->addToAssertionCount( 1 );
 	}
 
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
