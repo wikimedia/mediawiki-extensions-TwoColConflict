@@ -21,22 +21,8 @@
 		"@TwoColConflictUseInline": "Use the inline view for solving edit conflicts.",
 		"TwoColConflictUseInline": true
 	},
-	"AutoloadClasses": {
-		"TwoColConflict\\CollapsedTextBuilder": "includes/CollapsedTextBuilder.php",
-		"TwoColConflict\\LineBasedUnifiedDiffFormatter": "includes/LineBasedUnifiedDiffFormatter.php",
-		"TwoColConflict\\RandomChangesGenerator": "includes/RandomChangesGenerator.php",
-		"TwoColConflict\\TwoColConflictHooks": "includes/TwoColConflictHooks.php",
-		"TwoColConflict\\InlineTwoColConflict\\InlineTwoColConflictHelper": "includes/InlineTwoColConflict/InlineTwoColConflictHelper.php",
-		"TwoColConflict\\InlineTwoColConflict\\InlineTwoColConflictTestHelper": "includes/InlineTwoColConflict/InlineTwoColConflictTestHelper.php",
-		"TwoColConflict\\SpecialConflictTestPage\\HtmlSpecialTestTitleForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTitleForm.php",
-		"TwoColConflict\\SpecialConflictTestPage\\HtmlSpecialTestTextForm": "includes/SpecialConflictTestPage/HtmlSpecialTestTextForm.php",
-		"TwoColConflict\\SpecialConflictTestPage\\HtmlWikiTextEditor": "includes/SpecialConflictTestPage/HtmlWikiTextEditor.php",
-		"TwoColConflict\\SpecialConflictTestPage\\HtmlPreview": "includes/SpecialConflictTestPage/HtmlPreview.php",
-		"TwoColConflict\\SpecialConflictTestPage\\SpecialConflictTestPage": "includes/SpecialConflictTestPage/SpecialConflictTestPage.php",
-		"TwoColConflict\\SpecialConflictTestPage\\TwoColConflictTestEditPage": "includes/SpecialConflictTestPage/TwoColConflictTestEditPage.php",
-		"TwoColConflict\\SplitTwoColConflict\\HtmlSplitConflictHeader": "includes/SplitTwoColConflict/HtmlSplitConflictHeader.php",
-		"TwoColConflict\\SplitTwoColConflict\\HtmlSplitConflictView": "includes/SplitTwoColConflict/HtmlSplitConflictView.php",
-		"TwoColConflict\\SplitTwoColConflict\\SplitTwoColConflictHelper": "includes/SplitTwoColConflict/SplitTwoColConflictHelper.php"
+	"AutoloadNamespaces": {
+		"TwoColConflict\\": "includes/"
 	},
 	"Hooks": {
 		"GetBetaFeaturePreferences": [
