@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .mw-twocolconflict-split-result {
 	display: none;
 }
@@ -51,8 +53,8 @@
 
 .mw-twocolconflict-split-column {
 	flex: 1;
-	background-color: white;
-	color: black;
+	background-color: #fff;
+	color: #000;
 	position: relative;
 	border-radius: 8px;
 	border-width: 3px 7px 3px 7px;
@@ -111,6 +113,7 @@
 	}
 }
 
+/* stylelint-disable-next-line selector-max-id */
 #toolbar {
 	display: none;
 }
@@ -134,32 +137,32 @@
 		flex: 1;
 	}
 
-	div:nth-child(1) {
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:checked + span,
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:active + span,
-		.oo-ui-radioInputWidget [type="radio"] + span {
+	div:nth-child( 1 ) {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:active + span,
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
 			border-color: #ac6700;
 			background: #fef7e7;
 		}
 
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:focus + span:before,
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:active + span:before {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked:focus + span:before,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked:active + span:before {
 			border-color: #ac6700;
 		}
 	}
 
-	div:nth-child(2) {
+	div:nth-child( 2 ) {
 		text-align: right;
 
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:checked + span,
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type="radio"]:active + span,
-		.oo-ui-radioInputWidget [type="radio"] + span {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:active + span,
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
 			border-color: #2c529d;
 			background: #ebf3fe;
 		}
 
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:focus + span:before,
-		.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked:active + span:before {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked:focus + span:before,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked:active + span:before {
 			border-color: #2c529d;
 		}
 	}

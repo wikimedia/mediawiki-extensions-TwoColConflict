@@ -191,7 +191,7 @@
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less"
 			]
-	  	}
+		}
 	},
 	"EventLoggingSchemas": {
 		"TwoColConflictConflict": 18155295
