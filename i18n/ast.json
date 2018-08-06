@@ -7,7 +7,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Amosar una pantalla d'entemecer con paneles axacentes pa resolver conflictos d'edición",
 	"twocolconflict-beta-feature-message": "Conflictu d'edición a dos columnes",
-	"twocolconflict-beta-feature-description": "Amosar el conflictu d'edición con una vista más avanzada en dos columnes.",
+	"twocolconflict-beta-feature-description": "Amosar el conflictu d'edición con una vista más avanzada en dos columnes.<br/><br/>Nota: La función ta recibiendo actualmente [https://phabricator.wikimedia.org/T195711 dellos cambios]. Pa la segunda metá de 2018 ta planificada una interfaz nueva.",
 	"twocolconflict-explainconflict": "<strong>Atención:</strong> Otru usuariu ta acabante d'editar y guardar esta páxina. Hai un conflictu ente la to versión y la versión actual. Tendrás qu'entemecer los tos cambios na versión actual del testu. Sólo va guardase'l testu del campu del editor cuando faigas click en «$1».",
 	"twocolconflict-changes-col-title": "Cambios en conflictu",
 	"twocolconflict-changes-col-desc-1": "Diferencies ente",
@@ -56,5 +56,11 @@
 	"twocolconflict-test-preview-submit": "Asemeyar guardar cambeos",
 	"twocolconflict-test-preview-hint": "¡Gracies por probar la interfaz de Conflictos d'ediciones en dos columnes! Ayúdanos a ameyorala faciendo comentarios [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page equí].\n\nMás abaxo tán les resultancies del resolvimientu del conflictu de prueba.",
 	"twocolconflict-test-username": "Usuariu de ConflictTest",
-	"twocolconflict-test-summary-text": "Resume d'ediciones de prueba de conflictu"
+	"twocolconflict-test-summary-text": "Resume d'ediciones de prueba de conflictu",
+	"twocolconflict-split-conflict-hint": "Gracies por usar esta función beta. Puedes ayudar a ameyorala más si dexes comentarios [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta páxina].",
+	"twocolconflict-split-your-version-header": "La to versión",
+	"twocolconflict-split-current-version-header": "Versión de $1 en conflictu (activa actualmente)",
+	"twocolconflict-split-not-saved-at": "ensin guardar $1, $2.",
+	"twocolconflict-split-saved-at": "guardada $1, $2.",
+	"twocolconflict-split-choose-version": "Por favor, escueye una versión"
 }

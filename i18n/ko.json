@@ -10,7 +10,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "편집 충돌 해결을 위한 병렬식 편집 병합 화면을 보여줌",
 	"twocolconflict-beta-feature-message": "2단 편집 충돌",
-	"twocolconflict-beta-feature-description": "더 진보된 2단 뷰를 사용하여 편집 충돌 뷰를 표시합니다.",
+	"twocolconflict-beta-feature-description": "더 진보된 2단 뷰를 사용하여 편집 충돌 뷰를 표시합니다.<br/><br/>참고: 이 기능은 현재 [https://phabricator.wikimedia.org/T195711 일부 변경]이 진행되고 있습니다. 새로운 인터페이스는 2018년 하반기로 예정되어 있습니다.",
 	"twocolconflict-explainconflict": "<strong>경고:</strong> 다른 사용자가 방금 이 문서를 편집하고 저장했습니다. 당신의 판과 현재 판 사이에 충돌이 있습니다. 변경 사항을 현재의 텍스트 판으로 병합해야 합니다. \"$1\"를 클릭하면 편집창 영역의 텍스트만 저장됩니다.",
 	"twocolconflict-changes-col-title": "충돌하는 편집",
 	"twocolconflict-changes-col-desc-1": "다음 간 차이",
@@ -60,5 +60,6 @@
 	"twocolconflict-test-preview-hint": "2단 편집 충돌 인터페이스를 사용해 주셔서 감사합니다! [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 여기]에 의견을 제공하여 개선을 도와주십시오.\n\n테스트 편집 충돌 해결의 결과는 아래와 같습니다.",
 	"twocolconflict-test-username": "편집충돌테스트 사용자",
 	"twocolconflict-test-summary-text": "충돌 테스트 편집 요약",
+	"twocolconflict-split-conflict-hint": "이 베타 기능을 사용해 주셔서 감사합니다. [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 이 문서]에 의견을 남겨주시면 개선에 더 도움이 될 수 있습니다.",
 	"twocolconflict-split-choose-version": "판을 선택해 주십시오"
 }

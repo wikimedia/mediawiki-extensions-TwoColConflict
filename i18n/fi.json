@@ -4,13 +4,14 @@
 			"01miki10",
 			"Stryn",
 			"Nike",
-			"4shadoww"
+			"4shadoww",
+			"Surjection"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Näyttää rinnakkaisen muokkaustenyhdistämisnäytön päällekkäisten muokkausten ratkaisemiseksi.",
 	"twocolconflict-beta-feature-message": "Kaksisarakkeinen muokkausristiriita",
-	"twocolconflict-beta-feature-description": "Näytä muokkausristiriitanäkymä käyttäen kehittyneempää kaksisarakkeista näkymää.",
+	"twocolconflict-beta-feature-description": "Näytä muokkausristiriitanäkymä käyttäen kehittyneempää kaksisarakkeista näkymää.<br/><br/>Huomio: tätä ominaisuutta [https://phabricator.wikimedia.org/T195711 muokataan tällä hetkellä]. Uutta käyttöliittymää suunnitellaan vuoden 2018 jälkipuoliskolle.",
 	"twocolconflict-explainconflict": "<strong>Varoitus:</strong> Toinen käyttäjä on juuri muokannut ja tallentanut tämän sivun. Sinun versiosi ja nykyisen version välillä on ristiriita. Sinun täytyy yhdistää muutoksesi olemassa olevaan tekstiin. Vain muokkauskentässä oleva teksti tallennetaan napsauttaessasi \"$1\".",
 	"twocolconflict-changes-col-title": "Muutokset, joita ristiriita koskee",
 	"twocolconflict-changes-col-desc-1": "Eroavaisuudet välillä",

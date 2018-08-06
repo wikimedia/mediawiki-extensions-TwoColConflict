@@ -59,5 +59,6 @@
 	"twocolconflict-test-preview-submit": "Simular guardar cambios",
 	"twocolconflict-test-preview-hint": "¡Gracias por poner a prueba la interfaz de conflictos de ediciones en dos columnas! Ayúdanos a mejorarla [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page con tus comentarios].\n\nA continuación, el resultado de tu resolución de conflictos de prueba.",
 	"twocolconflict-test-summary-text": "Resumen de edición de la prueba de conflicto",
+	"twocolconflict-split-your-version-header": "Tu versión",
 	"twocolconflict-split-choose-version": "Por favor, elige una versión"
 }

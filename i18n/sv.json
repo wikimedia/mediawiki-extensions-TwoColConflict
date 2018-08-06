@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Visar en jämförelsesida för att lösa redigeringskonflikter",
 	"twocolconflict-beta-feature-message": "Redigeringskonflikter i två kolumner",
-	"twocolconflict-beta-feature-description": "Visar redigeringskonflikter i en mer avancerad tvåkolumnsvy.\n\nTips: Om du inte vill vänta tills du stöter på en riktig redigeringskonflikt kan du simulera redigeringskonflikter på vår testsida. [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Klicka här] för att ta reda på hur det fungerar.",
+	"twocolconflict-beta-feature-description": "Visar redigeringskonflikter i en mer avancerad tvåkolumnsvy.<br/><br/>Observera: Funktionen undergår för tillfället [https://phabricator.wikimedia.org/T195711 några ändringar]. Ett nytt gränssnitt planeras i 2018 under det andra halvåret.",
 	"twocolconflict-explainconflict": "<strong>Varning:</strong> En annan användare redigerade och sparade denna sida. Det har uppstått en redigeringskonflikt mellan din version och nuvarande version. Du behöver sammanfoga dina ändringar till den nuvarande textversionen. Endast texten i redigeraren kommer att sparas när du klickar på \"$1\".",
 	"twocolconflict-changes-col-title": "Motstridande ändringar",
 	"twocolconflict-changes-col-desc-1": "Skillnader mellan",
@@ -57,5 +57,11 @@
 	"twocolconflict-test-preview-submit": "Simulera att spara ändringar",
 	"twocolconflict-test-preview-hint": "Tack för att du provar tvåkolumnsgränssnittet för redigeringskonflikter! Hjälp oss förbättra det genom ge oss din återkoppling [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View här].\n\nNedan finns resultaten av lösningen på din testkonflikt.",
 	"twocolconflict-test-username": "ConflictTest-användare",
-	"twocolconflict-test-summary-text": "Redigeringssammanfattning för ConflictTest"
+	"twocolconflict-test-summary-text": "Redigeringssammanfattning för ConflictTest",
+	"twocolconflict-split-conflict-hint": "Tack för att du använder denna betafunktion. Du kan hjälpa till att förbättra den ytterligare om du lämnar återkoppling [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denna sida].",
+	"twocolconflict-split-your-version-header": "Din version",
+	"twocolconflict-split-current-version-header": "Version i konflikt från $1 (aktuell)",
+	"twocolconflict-split-not-saved-at": "sparades inte $1, kl. $2.",
+	"twocolconflict-split-saved-at": "sparades $1, kl. $2",
+	"twocolconflict-split-choose-version": "Välj en version"
 }

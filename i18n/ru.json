@@ -65,5 +65,6 @@
 	"twocolconflict-test-preview-hint": "Спасибо за то, что попробовали пользование интерфейсом «Двухколоночного конфликта редактирования»! Помогите нам улучшить его, предоставив свои отзывы [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page здесь].\n\nНиже — результаты разрешения вашего тестового конфликта редактирования.",
 	"twocolconflict-test-username": "Участник тестового конфликта",
 	"twocolconflict-test-summary-text": "Описание тестовой конфликтной правки",
-	"twocolconflict-split-your-version-header": "Ваша версия"
+	"twocolconflict-split-your-version-header": "Ваша версия",
+	"twocolconflict-split-choose-version": "Выберите версию"
 }

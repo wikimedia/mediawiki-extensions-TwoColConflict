@@ -57,5 +57,10 @@
 	"twocolconflict-test-preview-submit": "شبیه‌سازی ذخیره تغییرات",
 	"twocolconflict-test-preview-hint": "بابت استفاده از ابزار رفع تعارض ویرایشی ممنون! [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View با نظر دادن] به ما در بهبود آن کمک کنید.\n\nدر زیر نتایج آزمایش ابزار تعارض ویرایشی موجود است.",
 	"twocolconflict-test-username": "کاربر آزمایش تداخل",
-	"twocolconflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل"
+	"twocolconflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل",
+	"twocolconflict-split-your-version-header": "نسخه شما",
+	"twocolconflict-split-current-version-header": "نسخه متعارض از $1 (اکنون منتشر شده‌است)",
+	"twocolconflict-split-not-saved-at": "$1 در $2 ذخیره نشد",
+	"twocolconflict-split-saved-at": "$1 در $2 ذخیره شد",
+	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید"
 }

@@ -45,5 +45,9 @@
 	"twocolconflict-test-title-submit": "Εμφάνιση σελίδας επεξεργασίας",
 	"twocolconflict-test-no-direct-editing": "Αυτή η σελίδα δεν μπορεί να τροποποιηθεί άμεσα.",
 	"twocolconflict-test-text-submit": "Δημιουργήστε σύγκρουση",
-	"twocolconflict-test-preview-submit": "Προσομοιώστε την αποθήκευση αλλαγών"
+	"twocolconflict-test-preview-submit": "Προσομοιώστε την αποθήκευση αλλαγών",
+	"twocolconflict-split-your-version-header": "Η έκδοσή σας",
+	"twocolconflict-split-not-saved-at": "μη αποθηκευμένο $1, $2.",
+	"twocolconflict-split-saved-at": "αποθηκεύθηκε στις $1, $2.",
+	"twocolconflict-split-choose-version": "Παρακαλούμε επιλέξτε έκδοση"
 }
