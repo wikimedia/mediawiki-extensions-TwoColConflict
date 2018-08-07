@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Viser en todelt skjerm for fletting av redigeringer ved redigeringskonflikt",
 	"twocolconflict-beta-feature-message": "Tokolonners redigeringskonflikt",
-	"twocolconflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
+	"twocolconflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.<br /><br />Merk: Denne funksjonen er i ferd med [https://phabricator.wikimedia.org/T195711 å bli endret]. Et nytt grensesnitt skal komme i andre halvdel av 2018.",
 	"twocolconflict-explainconflict": "<strong>Advarsel:</strong> En annen bruker redigerte og lagret nettopp denne siden. Det er en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil lagres når du klikker på «$1».",
 	"twocolconflict-changes-col-title": "Motstridende endringer",
 	"twocolconflict-changes-col-desc-1": "Forskjeller mellom",
@@ -57,5 +57,11 @@
 	"twocolconflict-test-preview-submit": "Simuler lagring av endringer",
 	"twocolconflict-test-preview-hint": "Takk for at du prøver ut grensesnittet for tokolonners redigeringskonflikt. Hjelp oss å gjøre det bedre ved å [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View gi oss tilbakemelding om hva du syns].\n\nNedenfor er resultatet fra løsingen av testkonflikten din.",
 	"twocolconflict-test-username": "Konflikttestbruker",
-	"twocolconflict-test-summary-text": "Redigeringsforklaring for konflikttest"
+	"twocolconflict-test-summary-text": "Redigeringsforklaring for konflikttest",
+	"twocolconflict-split-conflict-hint": "Takk for at du bruker denne betafunksjonen. Du kan hjelpe til med å forbedre den videre om du gir tilbakemelding [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denne siden].",
+	"twocolconflict-split-your-version-header": "Din versjon",
+	"twocolconflict-split-current-version-header": "Konflikterende versjon av $1 (gjeldende versjon)",
+	"twocolconflict-split-not-saved-at": "ikke lagret $1 $2.",
+	"twocolconflict-split-saved-at": "lagret $1 $2.",
+	"twocolconflict-split-choose-version": "Velg en versjon"
 }
