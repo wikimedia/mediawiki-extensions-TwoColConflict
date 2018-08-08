@@ -17,6 +17,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $wikiPage;
 
 	/**
+	 * @var string[]
+	 */
+	private $yourLines;
+
+	/**
+	 * @var string[]
+	 */
+	private $storedLines;
+
+	/**
 	 * @inheritDoc
 	 */
 	public function __construct(
@@ -27,6 +37,20 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
 		$this->wikiPage = WikiPage::factory( $title );
+	}
+
+	/**
+	 * @param string $yourtext
+	 * @param string $storedversion
+	 */
+	public function setTextboxes( $yourtext, $storedversion ) {
+		parent::setTextboxes(
+			$yourtext,
+			$storedversion
+		);
+
+		$this->yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
+		$this->storedLines = explode( "\n", $this->storedversion );
 	}
 
 	/**
@@ -109,7 +133,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	private function buildEditConflictView() {
-		$unifiedDiff = $this->getUnifiedDiff();
+		$unifiedDiff = $this->getLineBasedUnifiedDiff();
 		$out = ( new HtmlSplitConflictHeader( $this ) )->getHtml();
 		$out .= ( new HtmlSplitConflictView() )->getHtml( $unifiedDiff );
 		return $out;
@@ -126,29 +150,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
-	 * Get unified diff from the conflicting texts
-	 *
-	 * @return array[]
-	 */
-	protected function getUnifiedDiff() {
-		$currentLines = explode( "\n", $this->storedversion );
-		$yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
-		return $this->getLineBasedUnifiedDiff( $currentLines, $yourLines );
-	}
-
-	/**
 	 * Get array with line based diff changes.
 	 *
-	 * @param string[] $fromTextLines
-	 * @param string[] $toTextLines
 	 * @return array[]
 	 */
-	protected function getLineBasedUnifiedDiff( $fromTextLines, $toTextLines ) {
+	protected function getLineBasedUnifiedDiff() {
 		$formatter = new LineBasedUnifiedDiffFormatter();
 		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
 		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
 		return $formatter->format(
-			new \Diff( $fromTextLines, $toTextLines )
+			new \Diff( $this->storedLines, $this->yourLines )
 		);
 	}
 
