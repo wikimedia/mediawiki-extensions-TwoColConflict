@@ -191,12 +191,53 @@
 		"ext.TwoColConflict.SplitJs": {
 			"scripts": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
+			],
+			"dependencies": [
+				"ext.TwoColConflict.Split.Tour"
 			]
 		},
 		"ext.TwoColConflict.SplitCss": {
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.editable.less"
+			]
+		},
+		"ext.TwoColConflict.Split.TourImages": {
+			"class": "ResourceLoaderImageModule",
+			"selector": ".mw-twocolconflict-split-tour-slide-{name}",
+			"images": {
+				"1": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.Split.Tour/slide1-ltr.png",
+						"rtl": "resources/ext.TwoColConflict.Split.Tour/slide1-rtl.png"
+					}
+				}
+			}
+		},
+		"ext.TwoColConflict.Split.Tour": {
+			"scripts": [
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.js"
+			],
+			"styles": [
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.less"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"oojs-ui.styles.icons-interactions",
+				"ext.TwoColConflict.Split.TourImages",
+				"ext.TwoColConflict.Settings"
+			],
+			"messages": [
+				"twocolconflict-split-tour-dialog-header",
+				"twocolconflict-split-tour-dialog-message",
+				"twocolconflict-split-tour-dialog-btn-text",
+				"twocolconflict-split-tour-popup-btn-text",
+				"twocolconflict-split-tour-popup1-header",
+				"twocolconflict-split-tour-popup1-message",
+				"twocolconflict-split-tour-popup2-header",
+				"twocolconflict-split-tour-popup2-message",
+				"twocolconflict-split-tour-popup3-header",
+				"twocolconflict-split-tour-popup3-message"
 			]
 		}
 	},
