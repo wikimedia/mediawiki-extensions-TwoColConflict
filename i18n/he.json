@@ -8,7 +8,7 @@
 	"twocolconflict": "התנגשות עריכה בשני טורים",
 	"twocolconflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
 	"twocolconflict-beta-feature-message": "התנגשות עריכה בשני טורים",
-	"twocolconflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
+	"twocolconflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.<br/><br/>לתשומת לבך: האפשרות הזאת [https://phabricator.wikimedia.org/T195711 משתנה עכשיו]. ממשק חדש מתוכנן למחצית השנייה של 2018.",
 	"twocolconflict-explainconflict": "<strong>אזהרה:</strong> משתמש אחר ערך ושמר את הדף הזה זה עתה. יש התנגשות בין הגרסה שלך לבין הגרסה הנוכחית. עליך למזג את השינויים שלך אל גרסת הטקסט הנוכחית. רק טקסט בשדה העריכה יישמר כשתלחץ על \"$1\".",
 	"twocolconflict-changes-col-title": "שינויים מתנגשים",
 	"twocolconflict-changes-col-desc-1": "הבדלים בין",
