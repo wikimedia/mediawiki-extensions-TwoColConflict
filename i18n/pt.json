@@ -10,7 +10,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Apresenta um ecrã de fusão de edições lado a lado, para resolução de conflitos de edição",
 	"twocolconflict-beta-feature-message": "Conflito entre edições em duas colunas",
-	"twocolconflict-beta-feature-description": "Mostra o conflito entre edições numa forma mais avançada em duas colunas.",
+	"twocolconflict-beta-feature-description": "Mostra o conflito entre edições numa forma mais avançada em duas colunas.<br/><br/>Note, por favor: esta funcionalidade está a sofrer [https://phabricator.wikimedia.org/T195711 algumas alterações] neste momento. Está planeada uma nova interface para a segunda metade de 2018.",
 	"twocolconflict-explainconflict": "<strong>Aviso:</strong> Um outro utilizador acaba de editar e gravar esta página. Existe um conflito entre a sua versão e a versão atual. Terá que fundir as suas alterações na versão atual do texto. Só o texto no campo de edição será gravado ao clicar \"$1\".",
 	"twocolconflict-changes-col-title": "Alterações em conflito",
 	"twocolconflict-changes-col-desc-1": "Diferenças entre",

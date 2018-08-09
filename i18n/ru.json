@@ -68,5 +68,6 @@
 	"twocolconflict-test-summary-text": "Описание тестовой конфликтной правки",
 	"twocolconflict-split-your-version-header": "Ваша версия",
 	"twocolconflict-split-not-saved-at": "не сохранено $1, $2.",
+	"twocolconflict-split-saved-at": "сохранено $1, $2.",
 	"twocolconflict-split-choose-version": "Выберите версию"
 }

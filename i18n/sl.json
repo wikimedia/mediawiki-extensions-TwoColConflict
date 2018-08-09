@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Janezdrilc"
+			"Janezdrilc",
+			"Dbc334"
 		]
 	},
 	"twocolconflict-beta-feature-message": "Dva stolpca za navzkrižna urejanja",
-	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj s pomočjo naprednejšega pogleda v dveh stolpcih."
+	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj s pomočjo naprednejšega pogleda v dveh stolpcih.<br/><br/>Opomba: Funkcionalnost je trenutno v postopku [https://phabricator.wikimedia.org/T195711 spremembe]. Nov vmesnik je načrtovan za drugo polovico leta 2018."
 }
