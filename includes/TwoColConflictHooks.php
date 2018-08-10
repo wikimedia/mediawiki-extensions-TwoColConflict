@@ -71,7 +71,7 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
-		if ( class_exists( \EventLogging::class ) ) {
+		if ( \ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
