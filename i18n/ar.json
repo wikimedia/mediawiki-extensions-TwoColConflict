@@ -11,7 +11,7 @@
 	"twocolconflict": "دمج التعديلات",
 	"twocolconflict-desc": "عرض شاشة دمج التعديلات لحل تضاربات التحرير",
 	"twocolconflict-beta-feature-message": "دمج التعديلات",
-	"twocolconflict-beta-feature-description": "عرض تضارب التحرير باستخدام طريقة العمودين الأكثر تقدما.",
+	"twocolconflict-beta-feature-description": "إظهار طريقة عرض تعارض التحرير باستخدام عرض عامودين أكثر تقدما.<br/><br/> الرجاء ملاحظة: أن الميزة حاليا قيد [https://phabricator.wikimedia.org/T195711 بعض التغييرات]، وهناك واجهة جديدة مقررة في النصف الثاني من عام 2018.",
 	"twocolconflict-explainconflict": "<strong>تحذير:</strong> لقد قام مستخدم آخر بتعديل وحفظ هذه الصفحة. هناك تضارب في التعديلات بين نسختك والنسخة الحالية. يتوجب عليك دمج تغييراتك في النسخة النصية الحالية. النص الموجود المُحرر هو الذي سيُحفظ فقط عند ضغطك على \"$1\".",
 	"twocolconflict-changes-col-title": "التغييرات المتضاربة",
 	"twocolconflict-changes-col-desc-1": "الفروقات بين",
@@ -60,5 +60,11 @@
 	"twocolconflict-test-preview-submit": "محاكاة حفظ التغييرات",
 	"twocolconflict-test-preview-hint": "شكرا لك لتجربة واجهة تعارض التعديل ذات العمودين! ساعدنا في جعلها أفضل عن طريق إعطائنا رأيك [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View هنا].\n\nبالأسفل نتيجة حل اختبار تعارض التعديل الخاص بك.",
 	"twocolconflict-test-username": "ConflictTest User",
-	"twocolconflict-test-summary-text": "ملخص تعديل اختبار التعارض"
+	"twocolconflict-test-summary-text": "ملخص تعديل اختبار التعارض",
+	"twocolconflict-split-conflict-hint": "نشكرك على استخدام هذه الميزة التجريبية، يمكنك المساعدة في تحسينها بشكل أكبر، إذا تركت تغذية راجعة [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View في هذه الصفحة].",
+	"twocolconflict-split-your-version-header": "مراجعتك",
+	"twocolconflict-split-current-version-header": "إصدار متضارب من $1 (حاليا)",
+	"twocolconflict-split-not-saved-at": "لم يتم حفظ $1، $2.",
+	"twocolconflict-split-saved-at": "تم حفظ $1، $2.",
+	"twocolconflict-split-choose-version": "يُرجَى اختيار نسخة"
 }
