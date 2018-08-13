@@ -9,6 +9,10 @@ use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
 use WikiPage;
 
+/**
+ * @license GPL-2.0-or-later
+ * @author Andrew Kostka <andrew.kostka@wikimedia.de>
+ */
 class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	/**
