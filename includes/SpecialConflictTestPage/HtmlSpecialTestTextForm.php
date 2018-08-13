@@ -9,6 +9,9 @@ use SpecialPage;
 
 /**
  * Form allowing the user to change the base text for the conflict.
+ *
+ * @license GPL-2.0-or-later
+ * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class HtmlSpecialTestTextForm {
 

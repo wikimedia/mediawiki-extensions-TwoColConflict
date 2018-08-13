@@ -11,7 +11,10 @@ use OOUI\TextInputWidget;
 use SpecialPage;
 
 /**
- * Form allowing the load an article as base version for the conflict test.
+ * Form allowing to load an article as base version for the conflict test.
+ *
+ * @license GPL-2.0-or-later
+ * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class HtmlSpecialTestTitleForm {
 

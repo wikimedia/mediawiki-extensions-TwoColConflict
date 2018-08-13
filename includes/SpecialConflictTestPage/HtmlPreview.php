@@ -9,7 +9,10 @@ use SpecialPage;
 use Title;
 
 /**
- * Html of parsed wikitext
+ * Shows a parsed preview of the changed wikitext
+ *
+ * @license GPL-2.0-or-later
+ * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class HtmlPreview {
 

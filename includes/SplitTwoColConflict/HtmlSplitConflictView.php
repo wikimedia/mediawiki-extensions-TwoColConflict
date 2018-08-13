@@ -6,6 +6,10 @@ use Html;
 use Message;
 use OOUI\RadioInputWidget;
 
+/**
+ * @license GPL-2.0-or-later
+ * @author Andrew Kostka <andrew.kostka@wikimedia.de>
+ */
 class HtmlSplitConflictView {
 
 	/**
