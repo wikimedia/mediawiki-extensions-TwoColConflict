@@ -5,13 +5,14 @@
 			"Arthur2e5",
 			"NeverBehave",
 			"LNDDYL",
-			"A2093064"
+			"A2093064",
+			"Hanyanbo98"
 		]
 	},
 	"twocolconflict": "双栏冲突",
 	"twocolconflict-desc": "显示并排的编辑合并界面，用以解决编辑冲突",
 	"twocolconflict-beta-feature-message": "双栏编辑冲突",
-	"twocolconflict-beta-feature-description": "使用更高级的双栏视图来显示编辑冲突视图。",
+	"twocolconflict-beta-feature-description": "使用更高级的双栏视图来显示编辑冲突视图。<br/><br/>请注意：该功能目前正在进行[https://phabricator.wikimedia.org/T195711 一些更改]。计划在2018年下半年推出一个新界面。",
 	"twocolconflict-explainconflict": "<strong>警告：</strong>另一位用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您将需要把您的更改合并至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
 	"twocolconflict-changes-col-title": "冲突更改",
 	"twocolconflict-changes-col-desc-1": "比较两栏之间的不同：",
@@ -61,6 +62,10 @@
 	"twocolconflict-test-preview-hint": "感谢尝试双栏编辑冲突界面！通过[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我们提供您的反馈，来帮助我们对它做出改进吧。\n\n下面是您的测试编辑冲突解决的结果。",
 	"twocolconflict-test-username": "冲突测试用户",
 	"twocolconflict-test-summary-text": "冲突测试编辑摘要",
+	"twocolconflict-split-conflict-hint": "感谢您使用此测试版功能。 如果您在[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 此页面]上留下反馈，您可以帮助进一步改进它。",
+	"twocolconflict-split-your-version-header": "你的版本",
+	"twocolconflict-split-current-version-header": "来自 $1 的冲突版本(活跃的)",
 	"twocolconflict-split-not-saved-at": "未于$1 $2保存。",
-	"twocolconflict-split-saved-at": "已于$1 $2保存。"
+	"twocolconflict-split-saved-at": "已于$1 $2保存。",
+	"twocolconflict-split-choose-version": "请选择一个版本"
 }
