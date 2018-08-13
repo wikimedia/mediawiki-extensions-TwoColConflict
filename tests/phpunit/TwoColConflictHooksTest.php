@@ -61,8 +61,11 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	/**
 	 * @dataProvider provideOnAttemptSave
 	 */
-	public function testOnAttemptSave( $sideSelection, $splitContent, $expected ) {
-		/** @var EditPage $editPage */
+	public function testOnAttemptSave(
+		array $sideSelection = null,
+		array $splitContent = null,
+		$expected
+	) {
 		$editPage = $this->createEditPage( $sideSelection, $splitContent );
 
 		TwoColConflictHooks::onAttemptSave( $editPage );
@@ -70,14 +73,20 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	}
 
 	public function testOnAttemptSaveNotTriggered() {
-		/** @var EditPage $editPage */
-		$editPage = $this->createEditPage( '', '', false );
+		$editPage = $this->createEditPage( [], [], false );
 
 		TwoColConflictHooks::onAttemptSave( $editPage );
 		$this->assertSame( '', $editPage->textbox1 );
 	}
 
-	private function createEditPage( $sideSelection, $splitContent, $submit = true ) {
+	/**
+	 * @return EditPage
+	 */
+	private function createEditPage(
+		array $sideSelection = null,
+		array $splitContent = null,
+		$submit = true
+	) {
 		$context = $this->createMock( \RequestContext::class );
 		$context->method( 'getRequest' )
 			->willReturn(
@@ -88,7 +97,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 				] )
 			);
 
-		$mock = $this->getMock( EditPage::class, 	[ 'getContext' ], [], '', false );
+		$mock = $this->getMock( EditPage::class, [ 'getContext' ], [], '', false );
 		$mock->method( 'getContext' )
 			->willReturn( $context );
 

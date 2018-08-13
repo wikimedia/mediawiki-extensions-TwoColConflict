@@ -53,11 +53,15 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$storedversion
 		);
 
+		// FIXME: This Windows line break cleanup appears awkwardly misplaced, please factor out
 		$this->yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
 		$this->storedLines = explode( "\n", $this->storedversion );
 	}
 
 	/**
+	 * FIXME: The (currently) only 2 callers of this don't need a WikiPage object, but a Revision
+	 * object. Only this should be returned.
+	 *
 	 * @return WikiPage
 	 */
 	public function getWikiPage() {
@@ -65,6 +69,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
+	 * FIXME: This also looks like it is to generic, and can be replaced with more specific getters
+	 *
 	 * @return OutputPage
 	 */
 	public function getOutput() {
@@ -85,7 +91,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * Shows the diff part in the original conflict handling. Is not
 	 * used and overwritten by a simple container for the result text.
 	 *
-	 * @param mixed[]|null $customAttribs
+	 * @param array $customAttribs
 	 * @return string HTML
 	 */
 	public function getEditConflictMainTextBox( $customAttribs = [] ) {
@@ -97,7 +103,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * used and overwritten.
 	 */
 	public function showEditFormTextAfterFooters() {
-		return;
 	}
 
 	/**
@@ -153,7 +158,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return string
 	 */
-	protected function buildRawTextsHiddenFields() {
+	private function buildRawTextsHiddenFields() {
 		return Html::input( 'mw-twocolconflict-current-text', $this->storedversion, 'hidden' ) .
 			Html::input( 'mw-twocolconflict-your-text', $this->yourtext, 'hidden' );
 	}
@@ -163,7 +168,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return array[]
 	 */
-	protected function getLineBasedUnifiedDiff() {
+	private function getLineBasedUnifiedDiff() {
 		$formatter = new LineBasedUnifiedDiffFormatter();
 		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
 		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';

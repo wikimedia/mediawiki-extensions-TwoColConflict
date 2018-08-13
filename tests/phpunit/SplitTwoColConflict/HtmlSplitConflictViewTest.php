@@ -128,7 +128,7 @@ TEXT
 	/**
 	 * @dataProvider provideGetHtml
 	 */
-	public function testGetHtmlElementOrder( $expectedElements, $diff ) {
+	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
 		$htmlResult = ( new HtmlSplitConflictView() )->getHtml(
 			$diff,
 			str_split( 'abcde' ),
@@ -141,7 +141,7 @@ TEXT
 		);
 	}
 
-	private function assertElementsPresentInOrder( $html, $expectedElements ) {
+	private function assertElementsPresentInOrder( $html, array $expectedElements ) {
 		$offset = 0;
 		foreach ( $expectedElements as $element ) {
 			switch ( $element ) {
@@ -179,19 +179,20 @@ TEXT
 	}
 
 	private function assertInputExistsWithValue( $html, $value, $startPos ) {
-		$check = '<input type="hidden" value="' . $value . '" name="mw-twocolconflict-split-content';
-		if ( $value === '' ) {
-			$check = '<input type="hidden" name="mw-twocolconflict-split-content';
+		$check = '<input type="hidden"';
+		if ( $value !== '' ) {
+			$check .= ' value="' . htmlspecialchars( $value ) . '"';
 		}
+		$check .= ' name="mw-twocolconflict-split-content[';
 
 		$pos = strpos(
 			$html,
 			$check,
 			$startPos
-			);
+		);
 		$this->assertTrue(
 			$pos !== false,
-			'Input element having value "'. $value .'" not found or in wrong position.' .$html
+			'Input element having value "' . $value . '" not found or in wrong position.' . $html
 		);
 		return $pos;
 	}
@@ -200,7 +201,7 @@ TEXT
 		$pos = strpos( $html, '<div class="' . $classValue . '"', $startPos );
 		$this->assertTrue(
 			$pos !== false,
-			'Div element with class '. $classValue .' not found or in wrong position.'
+			'Div element with class ' . $classValue . ' not found or in wrong position.'
 		);
 		return $pos;
 	}

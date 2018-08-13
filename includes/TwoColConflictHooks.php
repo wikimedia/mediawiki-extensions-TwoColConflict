@@ -11,20 +11,27 @@ use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 
 /**
- * Hooks for TwoColConflict extension
+ * Hook handlers for the TwoColConflict extension.
  *
  * @license GPL-2.0-or-later
  */
 class TwoColConflictHooks {
 
-	private static function shouldTwoColConflictBeShown( EditPage $editPage ) {
+	/**
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	private static function shouldTwoColConflictBeShown( User $user ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
-		$betaFeatureDisabled = $config->get( 'TwoColConflictBetaFeature' ) &&
-			\ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) &&
-			!\BetaFeatures::isFeatureEnabled( $editPage->getContext()->getUser(), 'twocolconflict' );
+		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
+			\ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
+		) {
+			return \BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' );
+		}
 
-		return !$betaFeatureDisabled;
+		return true;
 	}
 
 	/**
@@ -32,12 +39,12 @@ class TwoColConflictHooks {
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
 		// Skip out on the test page
-		if ( get_class( $editPage ) === TwoColConflictTestEditPage::class ) {
+		if ( $editPage instanceof TwoColConflictTestEditPage ) {
 			return;
 		}
 
 		// Skip out if the feature is disabled
-		if ( !self::shouldTwoColConflictBeShown( $editPage ) ) {
+		if ( !self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ) {
 			return;
 		}
 
@@ -65,7 +72,6 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param EditPage $editPage
-	 * @return bool
 	 */
 	public static function onAttemptSave( EditPage $editPage ) {
 		$request = $editPage->getContext()->getRequest();
@@ -74,11 +80,14 @@ class TwoColConflictHooks {
 		if ( $request->getBool( 'mw-twocolconflict-submit' ) && $sideSelection !== null ) {
 			$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
 
+			// FIXME: This code should be moved to a service, ideally to the same service that
+			// creates these arrays of textareas and radio buttons
 			$textLines = [];
 			foreach ( $contentRows as $num => $row ) {
 				if ( isset( $row['copy'] ) ) {
 					$textLines[] = $row['copy'];
 				} else {
+					// FIXME: As this is user input, we can't assume these elements are always there
 					$textLines[] = $row[ $sideSelection[ $num ] ];
 				}
 			}
@@ -104,7 +113,7 @@ class TwoColConflictHooks {
 				'TwoColConflictConflict',
 				18155295,
 				[
-					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $editPage ),
+					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $user ),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
@@ -118,7 +127,7 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param EditPage &$editPage
-	 * @param array &$buttons
+	 * @param array[] &$buttons
 	 * @param int &$tabindex
 	 */
 	public static function onEditPageBeforeEditButtons(

@@ -88,39 +88,51 @@ class HtmlSplitConflictView {
 
 	private function buildAddedLine( $text, $rawText, $rowNum ) {
 		return Html::rawElement(
-			'div', 	[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
+			'div',
+			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
 			$text
-		) . Html::input(
+		) .
+		Html::input(
 			'mw-twocolconflict-split-content[' . $rowNum . '][your]',
-			$rawText, 'hidden' );
+			$rawText,
+			'hidden'
+		);
 	}
 
 	private function buildRemovedLine( $text, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
 			$text
-		) . Html::input(
+		) .
+		Html::input(
 			'mw-twocolconflict-split-content[' . $rowNum . '][other]',
-			$rawText, 'hidden' );
+			$rawText,
+			'hidden'
+		);
 	}
 
 	private function buildCopiedLine( $text, $rowNum ) {
 		return Html::rawElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
 			$text
-		) . Html::input(
+		) .
+		Html::input(
 			'mw-twocolconflict-split-content[' . $rowNum . '][copy]',
-			$text, 'hidden' );
+			$text,
+			'hidden'
+		);
 	}
 
 	private function buildSideSelectorLabel() {
 		return Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-selector-label' ]
-			) .
-			Html::element(
-				'span', 	[], new Message( 'twocolconflict-split-choose-version' )
-			) .
-			Html::closeElement( 'div' );
+		) .
+		Html::element(
+			'span',
+			[],
+			new Message( 'twocolconflict-split-choose-version' )
+		) .
+		Html::closeElement( 'div' );
 	}
 
 	private function buildSideSelector( $rowNum ) {
@@ -143,13 +155,11 @@ class HtmlSplitConflictView {
 	 * Check if a unified diff line contains an edit conflict.
 	 *
 	 * @param array[] $currentLine
-	 * @return boolean
+	 * @return bool
 	 */
 	private function hasConflictInLine( array $currentLine ) {
-		if ( count( $currentLine ) < 2 ) {
-			return false;
-		}
-		return $currentLine[0]['action'] === 'delete' &&
+		return count( $currentLine ) > 1 &&
+			$currentLine[0]['action'] === 'delete' &&
 			$currentLine[1]['action'] === 'add';
 	}
 
