@@ -122,7 +122,7 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * @param array &$testModules
+	 * @param array[] &$testModules
 	 * @param \ResourceLoader $rl
 	 */
 	public static function onResourceLoaderTestModules( array &$testModules, \ResourceLoader $rl ) {

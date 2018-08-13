@@ -17,10 +17,10 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	/**
 	 * @param string $before
 	 * @param string $after
-	 * @param array $expectedOutput
+	 * @param array[] $expectedOutput
 	 * @dataProvider provideFormat
 	 */
-	public function testFormat( $before, $after, $expectedOutput ) {
+	public function testFormat( $before, $after, array $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );
@@ -402,10 +402,10 @@ TEXT
 	/**
 	 * @param string $before
 	 * @param string $after
-	 * @param array $expectedOutput
+	 * @param array[] $expectedOutput
 	 * @dataProvider provideFormatWithMarkup
 	 */
-	public function testMarkupFormat( $before, $after, $expectedOutput ) {
+	public function testMarkupFormat( $before, $after, array $expectedOutput ) {
 		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );

@@ -9,10 +9,10 @@ use OOUI\RadioInputWidget;
 class HtmlSplitConflictView {
 
 	/**
-	 * @param array $unifiedDiff
+	 * @param array[] $unifiedDiff
 	 * @return string
 	 */
-	public function getHtml( $unifiedDiff ) {
+	public function getHtml( array $unifiedDiff ) {
 		$out = Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
 		);
