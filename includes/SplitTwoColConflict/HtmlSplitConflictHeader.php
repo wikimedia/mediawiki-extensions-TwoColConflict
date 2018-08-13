@@ -8,6 +8,7 @@ use Linker;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use User;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * @license GPL-2.0-or-later
@@ -67,11 +68,11 @@ class HtmlSplitConflictHeader {
 		return $this->buildVersionHeader(
 			wfMessage(
 				'twocolconflict-split-current-version-header',
-				$this->getLastRevUserLink()
+				$this->getFormattedDateTime()
 			),
-			wfMessage( 'twocolconflict-split-saved-at' ),
-			'mw-twocolconflict-split-current-version-header',
-			$this->revision->getTimestamp()
+			wfMessage( 'twocolconflict-split-saved-at' )
+				->rawParams( $this->getLastRevUserLink() ),
+			'mw-twocolconflict-split-current-version-header'
 		);
 	}
 
@@ -79,29 +80,26 @@ class HtmlSplitConflictHeader {
 		return $this->buildVersionHeader(
 			wfMessage( 'twocolconflict-split-your-version-header' ),
 			wfMessage( 'twocolconflict-split-not-saved-at' ),
-			'mw-twocolconflict-split-your-version-header',
-			new \MWTimestamp()
+			'mw-twocolconflict-split-your-version-header'
 		);
 	}
 
 	/**
-	 * @param Message $headerMsg
 	 * @param Message $dateMsg
+	 * @param Message $userMsg
 	 * @param string $class
-	 * @param string|\MWTimestamp $timestamp
 	 *
 	 * @return string HTML
 	 */
 	private function buildVersionHeader(
-		Message $headerMsg,
 		Message $dateMsg,
-		$class,
-		$timestamp
+		Message $userMsg,
+		$class
 	) {
 		return Html::openElement( 'div', [ 'class' => $class ] ) .
-			Html::rawElement( 'span', [], $headerMsg->plain() ) .
+			Html::element( 'span', [], $dateMsg->text() ) .
 			Html::element( 'br' ) .
-			Html::rawElement( 'span', [], $this->getFormattedDateTime( $dateMsg, $timestamp ) ) .
+			Html::rawElement( 'span', [], $userMsg->escaped() ) .
 			Html::closeElement( 'div' );
 	}
 
@@ -109,22 +107,31 @@ class HtmlSplitConflictHeader {
 	 * @return string HTML
 	 */
 	private function getLastRevUserLink() {
-		$user = $this->revision->getUser();
-		return Linker::userLink( $user->getId(), $user->getName() );
+		/** @suppress PhanDeprecatedClass Linker::revUserTools shouldn't need a Revision, but does */
+		return Linker::revUserTools( new \Revision( $this->revision ) );
 	}
 
 	/**
-	 * @param Message $dateMsg
-	 * @param string|\MWTimestamp $timestamp
-	 *
-	 * @return string HTML
+	 * @return string
 	 */
-	private function getFormattedDateTime( Message $dateMsg, $timestamp ) {
-		$t = $this->language->userTimeAndDate( $timestamp, $this->user );
+	private function getFormattedDateTime() {
+		$timestamp = $this->revision->getTimestamp();
+		$now = new ConvertibleTimestamp();
+		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $now );
 
-		$dateMsg->params( $t );
+		if ( $diff->days || $diff->h ) {
+			return $this->language->userTimeAndDate( $timestamp, $this->user );
+		}
 
-		return $dateMsg->parse();
+		if ( $diff->i ) {
+			return wfMessage( 'minutes-ago', $diff->i )->text();
+		}
+
+		if ( $diff->s ) {
+			return wfMessage( 'seconds-ago', $diff->s )->text();
+		}
+
+		return wfMessage( 'just-now' )->text();
 	}
 
 	/**

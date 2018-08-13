@@ -40,7 +40,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		$this->assertTagExistsWithTextContents( $html, 'p',
 			'(twocolconflict-split-conflict-hint)' );
 		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-saved-at: 23:42, 21 (july) 2018)' );
+			'(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)' );
 	}
 
 	/**
