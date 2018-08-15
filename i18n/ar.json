@@ -11,7 +11,7 @@
 	"twocolconflict": "دمج التعديلات",
 	"twocolconflict-desc": "عرض شاشة دمج التعديلات لحل تضاربات التحرير",
 	"twocolconflict-beta-feature-message": "دمج التعديلات",
-	"twocolconflict-beta-feature-description": "إظهار طريقة عرض تعارض التحرير باستخدام عرض عامودين أكثر تقدما.<br/><br/> الرجاء ملاحظة: أن الميزة حاليا قيد [https://phabricator.wikimedia.org/T195711 بعض التغييرات]، وهناك واجهة جديدة مقررة في النصف الثاني من عام 2018.",
+	"twocolconflict-beta-feature-description": "إظهار تضارب التحرير باستخدام عرض العامودين الأكثر تقدمًا.<br/><br/> الرجاء ملاحظة: أن الميزة حاليًا تخضع [https://phabricator.wikimedia.org/T195711 لبعض التغييرات]، وهناك واجهة جديدة مخطط لها في النصف الثاني من عام 2018.",
 	"twocolconflict-explainconflict": "<strong>تحذير:</strong> لقد قام مستخدم آخر بتعديل وحفظ هذه الصفحة. هناك تضارب في التعديلات بين نسختك والنسخة الحالية. يتوجب عليك دمج تغييراتك في النسخة النصية الحالية. النص الموجود المُحرر هو الذي سيُحفظ فقط عند ضغطك على \"$1\".",
 	"twocolconflict-changes-col-title": "التغييرات المتضاربة",
 	"twocolconflict-changes-col-desc-1": "الفروقات بين",
