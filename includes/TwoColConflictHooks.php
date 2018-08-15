@@ -128,8 +128,9 @@ class TwoColConflictHooks {
 	) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		if ( !$config->get( 'TwoColConflictUseInline' ) &&
-			!( $editPage instanceof TwoColConflictTestEditPage )
- ) {
+			!( $editPage instanceof TwoColConflictTestEditPage ) &&
+			$editPage->isConflict === true
+		) {
 			unset( $buttons['preview'] );
 			unset( $buttons['diff'] );
 		}
