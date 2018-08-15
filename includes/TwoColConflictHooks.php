@@ -88,12 +88,19 @@ class TwoColConflictHooks {
 					$textLines[] = $row['copy'];
 				} else {
 					// FIXME: As this is user input, we can't assume these elements are always there
-					$textLines[] = $row[ $sideSelection[ $num ] ];
+					$textLines[] = self::removeEditorNewLine( $row[ $sideSelection[ $num ] ] );
 				}
 			}
 
 			$editPage->textbox1 = implode( $textLines, "\n" );
 		}
+	}
+
+	private static function removeEditorNewLine( $text ) {
+		if ( substr( $text, -1 ) !== "\n" ) {
+			return $text;
+		}
+		return substr( $text, 0, -1 );
 	}
 
 	/**

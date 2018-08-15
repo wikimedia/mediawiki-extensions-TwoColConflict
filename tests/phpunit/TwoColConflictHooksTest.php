@@ -38,9 +38,18 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 					1 => 'other',
 				],
 				[
+					1 => [ 'other' => "abc\n", 'your' => 'def' ],
+				],
+				"abc",
+			],
+			[
+				[
+					1 => 'other',
+				],
+				[
 					1 => [ 'other' => "abc\n\n", 'your' => 'def' ],
 				],
-				"abc\n\n",
+				"abc\n",
 			],
 			[
 				[

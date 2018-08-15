@@ -10,6 +10,8 @@ use OOUI\Theme;
 /**
  * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView
  *
+ * Tests to make sure essential elements are there and put in the right order.
+ *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
@@ -129,7 +131,10 @@ TEXT
 	 * @dataProvider provideGetHtml
 	 */
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
-		$htmlResult = ( new HtmlSplitConflictView() )->getHtml(
+		$htmlResult = ( new HtmlSplitConflictView(
+			\User::newFromName( 'Tester' ),
+			new \Language()
+		) )->getHtml(
 			$diff,
 			str_split( 'abcde' ),
 			str_split( '12345' )
@@ -169,7 +174,7 @@ TEXT
 					);
 					break;
 				default:
-					$offset = $this->assertInputExistsWithValue(
+					$offset = $this->assertEditorExistsWithValue(
 						$html,
 						$element,
 						$offset
@@ -178,18 +183,12 @@ TEXT
 		}
 	}
 
-	private function assertInputExistsWithValue( $html, $value, $startPos ) {
-		$check = '<input type="hidden"';
+	private function assertEditorExistsWithValue( $html, $value, $startPos ) {
 		if ( $value !== '' ) {
-			$check .= ' value="' . htmlspecialchars( $value ) . '"';
+			$value .= "\n";
 		}
-		$check .= ' name="mw-twocolconflict-split-content[';
 
-		$pos = strpos(
-			$html,
-			$check,
-			$startPos
-		);
+		$pos = strpos( $html, '>' . $value . '</textarea>', $startPos );
 		$this->assertTrue(
 			$pos !== false,
 			'Input element having value "' . $value . '" not found or in wrong position.' . $html
