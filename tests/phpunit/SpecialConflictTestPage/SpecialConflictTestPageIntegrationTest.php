@@ -110,7 +110,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 					$this->assertHiddenInputFieldAny( $html, 'mw-twocolconflict-current-text' );
 					$this->assertHintBox(
 						$html,
-						'This is the test conflict. Changes won\'t be saved but can be previewed.'
+						'This is the test conflict. Changes won\'t be published but can be previewed.'
 					);
 				},
 				'Test content'
