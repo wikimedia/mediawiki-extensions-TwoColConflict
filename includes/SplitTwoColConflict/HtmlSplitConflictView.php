@@ -26,50 +26,50 @@ class HtmlSplitConflictView {
 		$currRowNum = 1;
 		$isFirstNonCopyLine = true;
 		foreach ( $unifiedDiff as $key => $currentLine ) {
-				foreach ( $currentLine as $changeSet ) {
-					if ( $changeSet['action'] !== 'copy' && $isFirstNonCopyLine ) {
-						$out .= $this->buildSideSelectorLabel();
-						$isFirstNonCopyLine = false;
-					}
-					switch ( $changeSet['action'] ) {
-						case 'delete':
-							$out .= $this->startRow( $currRowNum );
-							$out .= $this->buildRemovedLine(
-								$changeSet['old'],
-								$storedLines[ $changeSet['oldline'] - 1 ],
-								$currRowNum
-							);
-							$out .= $this->buildSideSelector( $currRowNum );
-
-							if ( !$this->hasConflictInLine( $currentLine ) ) {
-								$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
-								$out .= $this->endRow();
-								$currRowNum++;
-							}
-							break;
-						case 'add':
-							if ( !$this->hasConflictInLine( $currentLine ) ) {
-								$out .= $this->startRow( $currRowNum );
-								$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
-								$out .= $this->buildSideSelector( $currRowNum );
-							}
-
-							$out .= $this->buildAddedLine(
-								$changeSet['new'],
-								$yourLines[ $changeSet['newline'] - 1 ],
-								$currRowNum
-							);
-							$out .= $this->endRow();
-							$currRowNum++;
-							break;
-						case 'copy':
-							$out .= $this->startRow( $currRowNum );
-							$out .= $this->buildCopiedLine( $changeSet['copy'], $currRowNum );
-							$out .= $this->endRow();
-							$currRowNum++;
-							break;
-					}
+			foreach ( $currentLine as $changeSet ) {
+				if ( $changeSet['action'] !== 'copy' && $isFirstNonCopyLine ) {
+					$out .= $this->buildSideSelectorLabel();
+					$isFirstNonCopyLine = false;
 				}
+				switch ( $changeSet['action'] ) {
+					case 'delete':
+						$out .= $this->startRow( $currRowNum );
+						$out .= $this->buildRemovedLine(
+							$changeSet['old'],
+							$storedLines[ $changeSet['oldline'] - 1 ],
+							$currRowNum
+						);
+						$out .= $this->buildSideSelector( $currRowNum );
+
+						if ( !$this->hasConflictInLine( $currentLine ) ) {
+							$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
+							$out .= $this->endRow();
+							$currRowNum++;
+						}
+						break;
+					case 'add':
+						if ( !$this->hasConflictInLine( $currentLine ) ) {
+							$out .= $this->startRow( $currRowNum );
+							$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
+							$out .= $this->buildSideSelector( $currRowNum );
+						}
+
+						$out .= $this->buildAddedLine(
+							$changeSet['new'],
+							$yourLines[ $changeSet['newline'] - 1 ],
+							$currRowNum
+						);
+						$out .= $this->endRow();
+						$currRowNum++;
+						break;
+					case 'copy':
+						$out .= $this->startRow( $currRowNum );
+						$out .= $this->buildCopiedLine( $changeSet['copy'], $currRowNum );
+						$out .= $this->endRow();
+						$currRowNum++;
+						break;
+				}
+			}
 		}
 
 		$out .= Html::closeElement( 'div' );
