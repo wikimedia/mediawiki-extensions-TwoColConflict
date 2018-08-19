@@ -8,7 +8,7 @@
 	"twocolconflict": "تعارض‌دوستونی",
 	"twocolconflict-desc": "نمایش کنارهم حل تعارض ویرایشی",
 	"twocolconflict-beta-feature-message": "تعارض ویرایشی دو ستونی",
-	"twocolconflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد.",
+	"twocolconflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد. <br/><br/>لطفا توجه کنید این قابلیت در حال [https://phabricator.wikimedia.org/T195711 تغییر] است. رابط کاربری جدید در نیمه دوم ۲۰۱۸ قابل دسترس خواهد بود.",
 	"twocolconflict-explainconflict": "<strong>هشدار:</strong> کاربری دیگر هم‌اکنون این صفحه را ویرایش و ذخیره کرده‌است. تعارض بین نسخه شما و نسخه کنونی وجود دارد. شما باید نسخه خودتان را در نسخه کنونی ادغام کنید. هنگامی که بر «$1» کلیک کنید، فقط متن بخش ویرایش ذخیره خواهد شد.",
 	"twocolconflict-changes-col-title": "تغییرات متعارض",
 	"twocolconflict-changes-col-desc-1": "تفاوت‌ها",
