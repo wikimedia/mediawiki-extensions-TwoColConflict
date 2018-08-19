@@ -3,7 +3,6 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
-use Message;
 use OOUI\RadioInputWidget;
 
 /**
@@ -130,7 +129,7 @@ class HtmlSplitConflictView {
 		Html::element(
 			'span',
 			[],
-			new Message( 'twocolconflict-split-choose-version' )
+			wfMessage( 'twocolconflict-split-choose-version' )->text()
 		) .
 		Html::closeElement( 'div' );
 	}
