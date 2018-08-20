@@ -92,7 +92,7 @@ class TwoColConflictHooks {
 				}
 			}
 
-			$editPage->textbox1 = implode( $textLines, "\n" );
+			$editPage->textbox1 = implode( "\n", $textLines );
 		}
 	}
 
