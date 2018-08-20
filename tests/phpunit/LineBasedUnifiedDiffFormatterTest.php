@@ -21,10 +21,10 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	 * @dataProvider provideFormat
 	 */
 	public function testFormat( $before, $after, array $expectedOutput ) {
-		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
+		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );
-		$this->assertEquals( $expectedOutput, $output );
+		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
 	public function provideFormat() {
@@ -52,11 +52,13 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 							'action' => 'delete',
 							'old' => 'Just text.',
 							'oldline' => 0,
+							'count' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just text<ins class="diffchange">. And more</ins>.',
 							'newline' => 0,
+							'count' => 1,
 						]
 					],
 				],
@@ -70,11 +72,13 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 							'action' => 'delete',
 							'old' => 'Just less <del class="diffchange">text</del>.',
 							'oldline' => 0,
+							'count' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just less.',
 							'newline' => 0,
+							'count' => 1,
 						]
 					]
 				],
@@ -105,6 +109,7 @@ TEXT
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 1.5.</ins>',
 							'newline' => 1,
+							'count' => 1,
 						],
 						[
 							'action' => 'copy',
@@ -139,6 +144,7 @@ TEXT
 							'action' => 'delete',
 							'old' => "<del class=\"diffchange\">\u{00A0}</del>",
 							'oldline' => 1,
+							'count' => 1,
 						],
 					],
 				],
@@ -167,6 +173,7 @@ TEXT
 							'action' => 'add',
 							'new' => "<ins class=\"diffchange\">\u{00A0}</ins>",
 							'newline' => 1,
+							'count' => 1,
 						],
 					],
 				],
@@ -192,11 +199,12 @@ TEXT
 							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'delete',
 							'old' => '<del class="diffchange">Line number 2.</del>',
 							'oldline' => 2,
+							'count' => 1,
 						]
 					]
 				],
@@ -224,11 +232,13 @@ Just multi-line <del class="diffchange">text.</del>
 TEXT
 							,
 							'oldline' => 0,
+							'count' => 2,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
 							'newline' => 0,
+							'count' => 1,
 						]
 					],
 					2 => [
@@ -244,6 +254,7 @@ TEXT
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 3.</ins>',
 							'newline' => 2,
+							'count' => 1,
 						]
 					],
 				],
@@ -272,6 +283,7 @@ Just multi-line <del class="diffchange">text</del>.
 TEXT
 							,
 							'oldline' => 0,
+							'count' => 3,
 						],
 						[
 							'action' => 'add',
@@ -282,6 +294,7 @@ Just multi-line <ins class="diffchange">test</ins>.
 TEXT
 							,
 							'newline' => 0,
+							'count' => 3,
 						]
 					],
 				],
@@ -325,6 +338,7 @@ TEXT
 // @codingStandardsIgnoreEnd
 							,
 							'oldline' => 1,
+							'count' => 3,
 						],
 						[
 							'action' => 'add',
@@ -338,6 +352,7 @@ TEXT
 // @codingStandardsIgnoreEnd
 							,
 							'newline' => 1,
+							'count' => 3,
 						]
 					],
 				],
@@ -373,6 +388,7 @@ TEXT
 							'old' => 'Line number two. This line is ' .
 								'<del class="diffchange">quite long</del>!',
 							'oldline' => 1,
+							'count' => 1,
 						],
 						[
 							'action' => 'add',
@@ -384,6 +400,7 @@ Line number two. This line is <ins class="diffchange">now a bit longer</ins>!
 TEXT
 							,
 							'newline' => 1,
+							'count' => 2,
 						],
 					],
 					2 => [
@@ -391,7 +408,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Line number three.',
 							'oldline' => 2,
-							'newline' => 5,
+							'newline' => 3,
 						]
 					],
 				],
@@ -406,10 +423,10 @@ TEXT
 	 * @dataProvider provideFormatWithMarkup
 	 */
 	public function testMarkupFormat( $before, $after, array $expectedOutput ) {
-		$diff = new Diff( explode( "\n", $before ), explode( "\n", $after ) );
+		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new LineBasedUnifiedDiffFormatter();
 		$output = $instance->format( $diff );
-		$this->assertEquals( $expectedOutput, $output );
+		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
 	public function provideFormatWithMarkup() {
@@ -429,6 +446,15 @@ TEXT
 				],
 			]
 		];
+	}
+
+	/**
+	 * @param string $text
+	 *
+	 * @return string[]
+	 */
+	private function splitText( $text ) {
+		return preg_split( '/\n(?!\n)/', $text );
 	}
 
 }

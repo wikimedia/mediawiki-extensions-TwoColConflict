@@ -68,11 +68,13 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 						'action' => 'delete',
 						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 						'oldline' => $this->oldline,
+						'count' => count( $edit->getOrig() ),
 					];
 					$this->retval[$this->oldline][] = [
 						'action' => 'add',
 						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
-						'newline' => $this->newline
+						'newline' => $this->newline,
+						'count' => count( $edit->getClosing() ),
 					];
 
 					$this->oldline += count( $edit->getOrig() );
@@ -97,6 +99,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 			'action' => 'delete',
 			'old' => "<del{$this->delClass}>" . $this->composeLines( $lines ) . '</del>',
 			'oldline' => $this->oldline,
+			'count' => count( $lines ),
 		];
 	}
 
@@ -107,7 +110,8 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 		$this->retval[$this->oldline][] = [
 			'action' => 'add',
 			'new' => "<ins{$this->insClass}>" . $this->composeLines( $lines ) . '</ins>',
-			'newline' => $this->newline
+			'newline' => $this->newline,
+			'count' => count( $lines ),
 		];
 	}
 

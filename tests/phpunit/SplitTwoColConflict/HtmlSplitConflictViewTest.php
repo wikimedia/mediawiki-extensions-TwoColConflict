@@ -49,11 +49,13 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 							'action' => 'delete',
 							'old' => 'Just text.',
 							'oldline' => 0,
+							'count' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just text<ins class="diffchange"> and more</ins>.',
 							'newline' => 0,
+							'count' => 1,
 						],
 					],
 				],
@@ -76,6 +78,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 1.5.</ins>',
 							'newline' => 1,
+							'count' => 1,
 						],
 						[
 							'action' => 'copy',
@@ -101,11 +104,13 @@ Just multi-line <del class="diffchange">text.</del>
 TEXT
 							,
 							'oldline' => 0,
+							'count' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
 							'newline' => 0,
+							'count' => 1,
 						]
 					],
 					[
@@ -119,6 +124,7 @@ TEXT
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 3.</ins>',
 							'newline' => 2,
+							'count' => 1,
 						]
 					],
 				],
@@ -184,9 +190,7 @@ TEXT
 	}
 
 	private function assertEditorExistsWithValue( $html, $value, $startPos ) {
-		if ( $value !== '' ) {
-			$value .= "\n";
-		}
+		$value .= "\n";
 
 		$pos = strpos( $html, '>' . $value . '</textarea>', $startPos );
 		$this->assertTrue(

@@ -4,7 +4,6 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use Language;
-use MediaWiki\EditPage\TextboxBuilder;
 use OOUI\RadioInputWidget;
 use User;
 
@@ -57,7 +56,7 @@ class HtmlSplitConflictView {
 						$out .= $this->startRow( $currRowNum );
 						$out .= $this->buildRemovedLine(
 							$changeSet['old'],
-							$storedLines[ $changeSet['oldline'] ],
+							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
 							$currRowNum
 						);
 						$out .= $this->buildSideSelector( $currRowNum );
@@ -77,7 +76,7 @@ class HtmlSplitConflictView {
 
 						$out .= $this->buildAddedLine(
 							$changeSet['new'],
-							$yourLines[ $changeSet['newline'] ],
+							implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['count'] ) ),
 							$currRowNum
 						);
 						$out .= $this->endRow();
@@ -169,8 +168,21 @@ class HtmlSplitConflictView {
 				'rows' => '6',
 				'autocomplete' => 'off',
 			],
-			( new TextboxBuilder() )->addNewLineAtEnd( $text )
+			rtrim( $text, "\r\n" ) . "\n"
+		) .
+		Html::hidden(
+			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
+			$this->countExtraLineFeeds( $text )
 		);
+	}
+
+	/**
+	 * @param string $text
+	 *
+	 * @return int
+	 */
+	private function countExtraLineFeeds( $text ) {
+		return substr_count( $text, "\n", strlen( rtrim( $text, "\r\n" ) ) );
 	}
 
 	private function buildSideSelector( $rowNum ) {

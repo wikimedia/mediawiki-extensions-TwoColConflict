@@ -75,28 +75,32 @@ class TwoColConflictHooks {
 
 		if ( $request->getBool( 'mw-twocolconflict-submit' ) && $sideSelection !== null ) {
 			$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
+			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' );
 
 			// FIXME: This code should be moved to a service, ideally to the same service that
 			// creates these arrays of textareas and radio buttons
 			$textLines = [];
 			foreach ( $contentRows as $num => $row ) {
-				if ( isset( $row['copy'] ) ) {
-					$textLines[] = $row['copy'];
-				} else {
-					// FIXME: As this is user input, we can't assume these elements are always there
-					$textLines[] = self::removeEditorNewLine( $row[ $sideSelection[ $num ] ] );
+				$side = isset( $sideSelection[$num] ) ? $sideSelection[$num] : 'copy';
+				// As all this is user input, we can't assume the elements are always there
+				if ( !isset( $row[$side] ) ) {
+					continue;
 				}
+
+				$line = rtrim( $row[$side], "\r\n" );
+				if ( $line === '' ) {
+					continue;
+				}
+
+				if ( isset( $extraLineFeeds[$num][$side] ) ) {
+					$line .= str_repeat( "\n", $extraLineFeeds[$num][$side] );
+				}
+
+				$textLines[] = $line;
 			}
 
 			$editPage->textbox1 = implode( "\n", $textLines );
 		}
-	}
-
-	private static function removeEditorNewLine( $text ) {
-		if ( substr( $text, -1 ) !== "\n" ) {
-			return $text;
-		}
-		return substr( $text, 0, -1 );
 	}
 
 	/**
