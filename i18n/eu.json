@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Subi",
-			"Mikel Ibaiba"
+			"Mikel Ibaiba",
+			"Iñaki LL"
 		]
 	},
+	"twocolconflict": "BiZutGatazka",
+	"twocolconflict-desc": "Ondoz ondoko aldaketen bateratze pantaila erakusten gatazka konpontzeko",
+	"twocolconflict-beta-feature-message": "Bi zutabeko aldaketa gatazka",
+	"twocolconflict-beta-feature-description": "Erakutsi aldaketa gatazka ikuspegia bi zutabeko ikuspegia aurreratuagoa erabiliz.<br/><br/>Jakizu ezaugarri honetan [https://phabricator.wikimedia.org/T195711 aldaketa batzuk] egiten ari direla. 2018ko bigarren erdialderako interfaze berri baterako asmoa dago.",
 	"twocolconflict-changes-col-desc-3": "$1 {{PLURAL:$1|aldiz}} aldatua ($2)",
 	"twocolconflict-changes-col-desc-4": "zure testua.",
 	"twocolconflict-base-selection-own-label": "Nire testua",
