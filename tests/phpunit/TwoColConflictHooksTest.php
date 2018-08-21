@@ -19,7 +19,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$this->setMwGlobals( 'wgFileImporterAccountForSuppressedUsername', '<SUPPRESSED>' );
 	}
 
-	public function provideOnAttemptSave() {
+	public function provideOnImportFormData() {
 		return [
 			[
 				null,
@@ -68,49 +68,48 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	}
 
 	/**
-	 * @dataProvider provideOnAttemptSave
+	 * @dataProvider provideOnImportFormData
 	 */
-	public function testOnAttemptSave(
+	public function testOnImportFormData(
 		array $sideSelection = null,
 		array $splitContent = null,
 		$expected
 	) {
-		$editPage = $this->createEditPage( $sideSelection, $splitContent );
+		$editPage = $this->createEditPage();
+		$request = $this->createWebRequest( $sideSelection, $splitContent );
 
-		TwoColConflictHooks::onAttemptSave( $editPage );
+		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( $expected, $editPage->textbox1 );
 	}
 
-	public function testOnAttemptSaveNotTriggered() {
-		$editPage = $this->createEditPage( [], [], false );
+	public function testOnImportFormDataNotTriggered() {
+		$editPage = $this->createEditPage();
+		$request = $this->createWebRequest( [], [], false );
 
-		TwoColConflictHooks::onAttemptSave( $editPage );
+		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( '', $editPage->textbox1 );
 	}
 
 	/**
 	 * @return EditPage
 	 */
-	private function createEditPage(
+	private function createEditPage() {
+		return $this->createMock( EditPage::class );
+	}
+
+	/**
+	 * @return \WebRequest
+	 */
+	private function createWebRequest(
 		array $sideSelection = null,
 		array $splitContent = null,
 		$submit = true
 	) {
-		$context = $this->createMock( \RequestContext::class );
-		$context->method( 'getRequest' )
-			->willReturn(
-				new \FauxRequest( [
-					'mw-twocolconflict-submit' => $submit,
-					'mw-twocolconflict-side-selector' => $sideSelection,
-					'mw-twocolconflict-split-content' => $splitContent,
-				] )
-			);
-
-		$mock = $this->getMock( EditPage::class, [ 'getContext' ], [], '', false );
-		$mock->method( 'getContext' )
-			->willReturn( $context );
-
-		return $mock;
+		return new \FauxRequest( [
+			'mw-twocolconflict-submit' => $submit,
+			'mw-twocolconflict-side-selector' => $sideSelection,
+			'mw-twocolconflict-split-content' => $splitContent,
+		] );
 	}
 
 }

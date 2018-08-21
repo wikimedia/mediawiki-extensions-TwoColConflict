@@ -31,8 +31,8 @@
 		"AlternateEdit": [
 			"TwoColConflict\\TwoColConflictHooks::onAlternateEdit"
 		],
-		"EditPage::attemptSave": [
-			"TwoColConflict\\TwoColConflictHooks::onAttemptSave"
+		"EditPage::importFormData": [
+			"TwoColConflict\\TwoColConflictHooks::onImportFormData"
 		],
 		"EditPageBeforeConflictDiff": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
