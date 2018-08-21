@@ -145,7 +145,10 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildEditConflictView() {
 		$unifiedDiff = $this->getLineBasedUnifiedDiff();
 		$out = ( new HtmlSplitConflictHeader( $this ) )->getHtml();
-		$out .= ( new HtmlSplitConflictView() )->getHtml(
+		$out .= ( new HtmlSplitConflictView(
+			$this->out->getUser(),
+			$this->out->getLanguage()
+		) )->getHtml(
 			$unifiedDiff,
 			$this->yourLines,
 			$this->storedLines

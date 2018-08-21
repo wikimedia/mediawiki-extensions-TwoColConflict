@@ -195,7 +195,8 @@
 		},
 		"ext.TwoColConflict.SplitCss": {
 			"styles": [
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.editable.less"
 			]
 		}
 	},

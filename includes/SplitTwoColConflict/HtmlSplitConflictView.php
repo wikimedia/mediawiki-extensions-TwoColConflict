@@ -3,13 +3,35 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use Language;
+use MediaWiki\EditPage\TextboxBuilder;
 use OOUI\RadioInputWidget;
+use User;
 
 /**
  * @license GPL-2.0-or-later
  * @author Andrew Kostka <andrew.kostka@wikimedia.de>
  */
 class HtmlSplitConflictView {
+
+	/**
+	 * @var User
+	 */
+	private $user;
+
+	/**
+	 * @var Language
+	 */
+	private $language;
+
+	/**
+	 * @param User $user
+	 * @param Language $language
+	 */
+	public function __construct( User $user, Language $language ) {
+		$this->user = $user;
+		$this->language = $language;
+	}
 
 	/**
 	 * @param array[] $unifiedDiff
@@ -89,36 +111,23 @@ class HtmlSplitConflictView {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
-			$text
-		) .
-		Html::input(
-			'mw-twocolconflict-split-content[' . $rowNum . '][your]',
-			$rawText,
-			'hidden'
+			$this->buildEditableTextContainer( $text, $rawText, $rowNum, 'your' )
 		);
 	}
 
 	private function buildRemovedLine( $text, $rawText, $rowNum ) {
 		return Html::rawElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
-			$text
-		) .
-		Html::input(
-			'mw-twocolconflict-split-content[' . $rowNum . '][other]',
-			$rawText,
-			'hidden'
+			'div',
+			[ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
+			$this->buildEditableTextContainer( $text, $rawText, $rowNum, 'other' )
 		);
 	}
 
 	private function buildCopiedLine( $text, $rowNum ) {
 		return Html::rawElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			$text
-		) .
-		Html::input(
-			'mw-twocolconflict-split-content[' . $rowNum . '][copy]',
-			$text,
-			'hidden'
+			'div',
+			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
+			$this->buildEditableTextContainer( $text, $text, $rowNum, 'copy' )
 		);
 	}
 
@@ -134,6 +143,36 @@ class HtmlSplitConflictView {
 		Html::closeElement( 'div' );
 	}
 
+	private function buildEditableTextContainer( $text, $rawText, $rowNum, $changeType ) {
+		return Html::rawElement(
+			'div',
+			[ 'class' => 'mw-twocolconflict-split-editable' ],
+			Html::rawElement(
+				'span',
+				[ 'class' => 'mw-twocolconflict-split-difftext' ],
+				$text
+			) .
+			$this->buildTextEditor( $rawText, $rowNum, $changeType )
+		);
+	}
+
+	private function buildTextEditor( $text, $rowNum, $changeType ) {
+		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
+
+		return Html::rawElement(
+			'textarea',
+			[
+				'class' => $class . ' mw-twocolconflict-split-editor',
+				'name' => 'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
+				'lang' => $this->language->getHtmlCode(),
+				'dir' => $this->language->getDir(),
+				'rows' => '6',
+				'autocomplete' => 'off',
+			],
+			( new TextboxBuilder() )->addNewLineAtEnd( $text )
+		);
+	}
+
 	private function buildSideSelector( $rowNum ) {
 		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
@@ -146,7 +185,7 @@ class HtmlSplitConflictView {
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'your',
 				'autocomplete' => 'off',
-			] ) ).
+			] ) ) .
 			Html::closeElement( 'div' );
 	}
 

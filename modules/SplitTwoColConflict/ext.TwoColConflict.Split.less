@@ -113,11 +113,6 @@
 	}
 }
 
-/* stylelint-disable-next-line selector-max-id */
-#toolbar {
-	display: none;
-}
-
 .mw-twocolconflict-split-selector-label {
 	margin-bottom: -15px;
 	text-align: center;
@@ -165,5 +160,12 @@
 		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked:active + span:before {
 			border-color: #2c529d;
 		}
+	}
+}
+
+.client-nojs {
+	.mw-twocolconflict-split-current-version-header span,
+	.mw-twocolconflict-split-your-version-header span {
+		background-color: transparent;
 	}
 }
