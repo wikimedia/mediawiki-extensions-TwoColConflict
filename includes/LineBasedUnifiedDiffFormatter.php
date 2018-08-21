@@ -47,8 +47,8 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 *   in the array can hold at least one delete, change or copy as well as an add action.
 	 */
 	public function format( $diff ) {
-		$this->oldline = 1;
-		$this->newline = 1;
+		$this->oldline = 0;
+		$this->newline = 0;
 		$this->retval = [];
 
 		foreach ( $diff->getEdits() as $edit ) {
