@@ -26,17 +26,17 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	/**
 	 * @var int
 	 */
-	private $oldline = 1;
+	private $oldline;
 
 	/**
 	 * @var int
 	 */
-	private $newline = 1;
+	private $newline;
 
 	/**
 	 * @var array[]
 	 */
-	private $retval = [];
+	private $retval;
 
 	/**
 	 * @param Diff $diff A Diff object.
