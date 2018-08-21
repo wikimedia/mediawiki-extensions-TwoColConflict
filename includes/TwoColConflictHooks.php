@@ -70,11 +70,7 @@ class TwoColConflictHooks {
 		}
 	}
 
-	/**
-	 * @param EditPage $editPage
-	 */
-	public static function onAttemptSave( EditPage $editPage ) {
-		$request = $editPage->getContext()->getRequest();
+	public static function onImportFormData( EditPage $editPage, \WebRequest $request ) {
 		$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' );
 
 		if ( $request->getBool( 'mw-twocolconflict-submit' ) && $sideSelection !== null ) {
