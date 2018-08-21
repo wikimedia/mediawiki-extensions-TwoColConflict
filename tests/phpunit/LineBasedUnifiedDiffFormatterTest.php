@@ -33,12 +33,12 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just text.',
 				'after' => 'Just text.',
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Just text.',
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						]
 					]
 				],
@@ -47,16 +47,16 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just text.',
 				'after' => 'Just text. And more.',
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'delete',
 							'old' => 'Just text.',
-							'oldline' => 1
+							'oldline' => 0,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just text<ins class="diffchange">. And more</ins>.',
-							'newline' => 1
+							'newline' => 0,
 						]
 					],
 				],
@@ -65,16 +65,16 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just less text.',
 				'after' => 'Just less.',
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'delete',
 							'old' => 'Just less <del class="diffchange">text</del>.',
-							'oldline' => 1
+							'oldline' => 0,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just less.',
-							'newline' => 1
+							'newline' => 0,
 						]
 					]
 				],
@@ -92,25 +92,25 @@ Line number 2.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Just multi-line text.',
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 1.5.</ins>',
-							'newline' => 2
+							'newline' => 1,
 						],
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
-							'oldline' => 2,
-							'newline' => 3
+							'oldline' => 1,
+							'newline' => 2,
 						]
 					]
 				],
@@ -126,19 +126,19 @@ Delete the empty line below.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Delete the empty line below.',
-							'oldline' => 1,
-							'newline' => 1,
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'delete',
 							'old' => "<del class=\"diffchange\">\u{00A0}</del>",
-							'oldline' => 2,
+							'oldline' => 1,
 						],
 					],
 				],
@@ -154,19 +154,19 @@ Add an empty line below.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Add an empty line below.',
-							'oldline' => 1,
-							'newline' => 1,
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'add',
 							'new' => "<ins class=\"diffchange\">\u{00A0}</ins>",
-							'newline' => 2,
+							'newline' => 1,
 						],
 					],
 				],
@@ -184,19 +184,19 @@ Line number 1.5.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => "Just multi-line text.\nLine number 1.5.",
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					3 => [
+					2 => [
 						[
 							'action' => 'delete',
 							'old' => '<del class="diffchange">Line number 2.</del>',
-							'oldline' => 3
+							'oldline' => 2,
 						]
 					]
 				],
@@ -215,7 +215,7 @@ Line number 3.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'delete',
 							'old' => <<<TEXT
@@ -223,27 +223,27 @@ Just multi-line <del class="diffchange">text.</del>
 <del class="diffchange">Line number 1.5</del>.
 TEXT
 							,
-							'oldline' => 1
+							'oldline' => 0,
 						],
 						[
 							'action' => 'add',
 							'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
-							'newline' => 1
+							'newline' => 0,
 						]
 					],
-					3 => [
+					2 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
-							'oldline' => 3,
-							'newline' => 2
+							'oldline' => 2,
+							'newline' => 1,
 						],
 					],
-					4 => [
+					3 => [
 						[
 							'action' => 'add',
 							'new' => '<ins class="diffchange">Line number 3.</ins>',
-							'newline' => 3
+							'newline' => 2,
 						]
 					],
 				],
@@ -262,7 +262,7 @@ Line number 3 also changed.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'delete',
 							'old' => <<<TEXT
@@ -271,7 +271,7 @@ Just multi-line <del class="diffchange">text</del>.
 <del class="diffchange">To change </del>number 3.
 TEXT
 							,
-							'oldline' => 1
+							'oldline' => 0,
 						],
 						[
 							'action' => 'add',
@@ -281,7 +281,7 @@ Just multi-line <ins class="diffchange">test</ins>.
 <ins class="diffchange">Line </ins>number 3 <ins class="diffchange">also changed</ins>.
 TEXT
 							,
-							'newline' => 1
+							'newline' => 0,
 						]
 					],
 				],
@@ -303,15 +303,15 @@ Add more new stuff.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'delete',
 							'old' =>
@@ -324,7 +324,7 @@ Line number two. <del class="diffchange">This </del>line <del class="diffchange"
 TEXT
 // @codingStandardsIgnoreEnd
 							,
-							'oldline' => 2
+							'oldline' => 1,
 						],
 						[
 							'action' => 'add',
@@ -337,7 +337,7 @@ Line number two. <ins class="diffchange">Now </ins>line <ins class="diffchange">
 TEXT
 // @codingStandardsIgnoreEnd
 							,
-							'newline' => 2
+							'newline' => 1,
 						]
 					],
 				],
@@ -359,20 +359,20 @@ Line number three.
 TEXT
 				,
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						],
 					],
-					2 => [
+					1 => [
 						[
 							'action' => 'delete',
 							'old' => 'Line number two. This line is ' .
 								'<del class="diffchange">quite long</del>!',
-							'oldline' => 2
+							'oldline' => 1,
 						],
 						[
 							'action' => 'add',
@@ -383,15 +383,15 @@ Line number two. This line is <ins class="diffchange">now a bit longer</ins>!
 \u{00A0}
 TEXT
 							,
-							'newline' => 2
+							'newline' => 1,
 						],
 					],
-					3 => [
+					2 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Line number three.',
-							'oldline' => 3,
-							'newline' => 6
+							'oldline' => 2,
+							'newline' => 5,
 						]
 					],
 				],
@@ -418,12 +418,12 @@ TEXT
 				'before' => 'Text with [markup] <references />.',
 				'after' => 'Text with [markup] <references />.',
 				'result' => [
-					1 => [
+					0 => [
 						[
 							'action' => 'copy',
 							'copy' => 'Text with [markup] &lt;references /&gt;.',
-							'oldline' => 1,
-							'newline' => 1
+							'oldline' => 0,
+							'newline' => 0,
 						]
 					]
 				],

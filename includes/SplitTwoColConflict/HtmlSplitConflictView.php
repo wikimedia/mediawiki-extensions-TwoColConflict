@@ -44,7 +44,7 @@ class HtmlSplitConflictView {
 			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
 		);
 
-		$currRowNum = 1;
+		$currRowNum = 0;
 		$isFirstNonCopyLine = true;
 		foreach ( $unifiedDiff as $key => $currentLine ) {
 			foreach ( $currentLine as $changeSet ) {
@@ -57,7 +57,7 @@ class HtmlSplitConflictView {
 						$out .= $this->startRow( $currRowNum );
 						$out .= $this->buildRemovedLine(
 							$changeSet['old'],
-							$storedLines[ $changeSet['oldline'] - 1 ],
+							$storedLines[ $changeSet['oldline'] ],
 							$currRowNum
 						);
 						$out .= $this->buildSideSelector( $currRowNum );
@@ -77,7 +77,7 @@ class HtmlSplitConflictView {
 
 						$out .= $this->buildAddedLine(
 							$changeSet['new'],
-							$yourLines[ $changeSet['newline'] - 1 ],
+							$yourLines[ $changeSet['newline'] ],
 							$currRowNum
 						);
 						$out .= $this->endRow();
