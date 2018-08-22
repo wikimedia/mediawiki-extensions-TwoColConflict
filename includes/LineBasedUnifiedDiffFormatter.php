@@ -62,7 +62,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 					$this->oldline += count( $edit->getOrig() );
 					break;
 				case 'change':
-					$wordLevelDiff = new WordLevelDiff( $edit->getOrig(), $edit->getClosing() );
+					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 
 					$this->retval[$this->oldline][] = [
 						'action' => 'delete',
@@ -89,6 +89,38 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 		}
 
 		return $this->retval;
+	}
+
+	/**
+	 * @param string[] $before
+	 * @param string[] $after
+	 *
+	 * @return WordLevelDiff
+	 */
+	private function rTrimmedWordLevelDiff( array $before, array $after ) {
+		end( $before );
+		end( $after );
+		$this->commonRTrim( $before[key( $before )], $after[key( $after )] );
+		return new WordLevelDiff( $before, $after );
+	}
+
+	/**
+	 * @param string $before
+	 * @param string $after
+	 */
+	private function commonRTrim( &$before, &$after ) {
+		$uncommonBefore = strlen( $before );
+		$uncommonAfter = strlen( $after );
+		while ( $uncommonBefore > 0 &&
+			$uncommonAfter > 0 &&
+			$before[$uncommonBefore - 1] === $after[$uncommonAfter - 1] &&
+			ctype_space( $after[$uncommonAfter - 1] )
+		) {
+			$uncommonBefore--;
+			$uncommonAfter--;
+		}
+		$before = substr( $before, 0, $uncommonBefore );
+		$after = substr( $after, 0, $uncommonAfter );
 	}
 
 	/**
@@ -138,7 +170,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 		$wordAccumulator = $this->getWordAccumulator();
 
 		foreach ( $diff->getEdits() as $edit ) {
-			if ( $edit->type == 'copy' ) {
+			if ( $edit->type === 'copy' ) {
 				$wordAccumulator->addWords( $edit->orig );
 			} elseif ( $edit->orig ) {
 				$wordAccumulator->addWords( $edit->orig, 'del' );
@@ -158,7 +190,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 		$wordAccumulator = $this->getWordAccumulator();
 
 		foreach ( $diff->getEdits() as $edit ) {
-			if ( $edit->type == 'copy' ) {
+			if ( $edit->type === 'copy' ) {
 				$wordAccumulator->addWords( $edit->closing );
 			} elseif ( $edit->closing ) {
 				$wordAccumulator->addWords( $edit->closing, 'ins' );
@@ -181,7 +213,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 * @param string[] $lines Lines that should be composed.
 	 * @param boolean $replaceEmptyLine
 	 *
-	 * @return string
+	 * @return string HTML
 	 */
 	private function composeLines( array $lines, $replaceEmptyLine = true ) {
 		$result = [];
