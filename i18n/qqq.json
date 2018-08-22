@@ -7,7 +7,8 @@
 			"Liuxinyu970226",
 			"Amire80",
 			"Mainframe98",
-			"Raymond"
+			"Raymond",
+			"McDutchie"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -59,7 +60,7 @@
 	"twocolconflict-test-initial-hint": "First hint shown on the conflict test page above the input field to load an article to experiment with.",
 	"twocolconflict-test-edit-hint": "Second hint shown on the conflict test page above the editor to make changes.",
 	"twocolconflict-test-conflict-hint": "Third hint shown on the conflict test page above the simulated edit conflict.",
-	"twocolconflict-test-preview-submit": "Label for the submit button to show the conflict result preview.",
+	"twocolconflict-test-preview-submit": "Label for the submit button to show the conflict result preview.\n\n{{doc-important|This should be translated as \"Simulate the publication of the changes\", and NOT as \"Simulate the changes of the publication\".}}",
 	"twocolconflict-test-preview-hint": "Last hint shown on the conflict test page above the preview of the resolved test conflict.",
 	"twocolconflict-test-username": "Username for the conflict test page's fictitious conflicting edit.",
 	"twocolconflict-test-summary-text": "Edit summary for the conflict test page's fictitious conflicting edit.",

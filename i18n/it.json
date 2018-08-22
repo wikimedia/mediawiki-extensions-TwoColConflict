@@ -12,7 +12,7 @@
 	"twocolconflict-desc": "Mostra una schermata di unione affiancata per modificare la risoluzione dei conflitti",
 	"twocolconflict-beta-feature-message": "Conflitto di modifiche su due colonne",
 	"twocolconflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.<br/><br/>Nota: la funzionalità è attualmente in [https://phabricator.wikimedia.org/T195711 fase di modifica]. Una nuova interfaccia è prevista per la seconda metà del 2018.",
-	"twocolconflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e salvato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà salvato quando cliccherai su \"$1\".",
+	"twocolconflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e pubblicato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà pubblicato quando cliccherai su \"$1\".",
 	"twocolconflict-changes-col-title": "Modifiche in conflitto",
 	"twocolconflict-changes-col-desc-1": "Differenze fra",
 	"twocolconflict-changes-col-desc-2": "la versione attualmente pubblicata",
@@ -39,7 +39,7 @@
 	"twocolconflict-label-hide-unchanged": "nascondi testo non modificato",
 	"twocolconflict-show-help-tooltip": "Mostra testo di aiuto",
 	"twocolconflict-help-dialog-slide1": "Questa pagina ti aiuta a risolvere un conflitto di edizioni. Ci sono due colonne: la prima visualizza le modifiche in conflitto e la seconda è un editor di testo il cui contenuto verrà pubblicato.\n\n[//www.mediawiki.org/wiki/help_talk:Two_Column_Edit_Conflict_View Ti invitiamo a lasciare i tuoi commenti qui].",
-	"twocolconflict-help-dialog-slide2": "La prima colonna mostra le modifiche nella tua versione e nella versione salvata. Le differenze fra le due versioni sono evidenziate.",
+	"twocolconflict-help-dialog-slide2": "La prima colonna mostra le modifiche nella tua versione e nella versione attualmente pubblicata. Le differenze fra le due versioni sono evidenziate.",
 	"twocolconflict-help-dialog-slide3": "In cima alla prima colonna, cliccare su \"{{int:twocolconflict-label-show}}\" per vedere il testo non modificato. Ciò potrebbe aiutare a capire il contesto dei cambiamenti. Per default, il testo non modificato è grigio e raggruppato.",
 	"twocolconflict-help-dialog-slide4": "La seconda colonna è un editor. Quando la pagina viene aperta c'è una casella di selezione nella parte superiore dell'editor che permette decidere quale sarà la versione presente nell'editor. Normalmente sarà la versione con più modifiche.",
 	"twocolconflict-help-dialog-slide5": "Copia e incolla le parti desiderate dell'altra versione nel testo nell'editor. Solo ciò che è nell'editor sarà pubblicato, quando si fa clic sul pulsante \"$1\".",
@@ -53,7 +53,7 @@
 	"twocolconflict-test-no-direct-editing": "Questa pagina non può essere modificata direttamente.",
 	"twocolconflict-test-text-submit": "Crea conflitto",
 	"twocolconflict-split-your-version-header": "La tua versione",
-	"twocolconflict-split-not-saved-at": "non salvata il $1 alle $2.",
-	"twocolconflict-split-saved-at": "salvata il $1 alle $2.",
+	"twocolconflict-split-not-saved-at": "non pubblicata il $1 alle $2.",
+	"twocolconflict-split-saved-at": "pubblicata il $1 alle $2.",
 	"twocolconflict-split-choose-version": "Seleziona una versione"
 }

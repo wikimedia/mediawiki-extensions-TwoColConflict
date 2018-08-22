@@ -11,7 +11,7 @@
 	"twocolconflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
 	"twocolconflict-beta-feature-message": "Dvousloupcový editační konflikt",
 	"twocolconflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.<br/><br/>Upozornění: V současné době probíhají v této funkci [https://phabricator.wikimedia.org/T195711 určité změny]. Nové rozhraní je naplánováno na druhou polovinu roku 2018.",
-	"twocolconflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a uložil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude uložen pouze text v editačním poli.",
+	"twocolconflict-explainconflict": "<strong>Upozornění:</strong> Jiný uživatel tuto stránku právě editoval a zveřejnil. Mezi vaší a stávající verzí existuje konflikt. Své změny tak budete muset začlenit do stávající verze textu. Po kliknutí na „$1“ bude zveřejněn pouze text v editačním poli.",
 	"twocolconflict-changes-col-title": "Konfliktní změny",
 	"twocolconflict-changes-col-desc-1": "Rozdíly mezi",
 	"twocolconflict-changes-col-desc-2": "aktuálně zveřejněnou verzí",
@@ -47,9 +47,9 @@
 	"twocolconflict-test-title-not-existing": "Neexistuje žádná stránka s tímto názvem.",
 	"twocolconflict-test-text-submit": "Vyrobit konflikt",
 	"twocolconflict-test-initial-hint": "Na této stránce si můžete vyzkoušet nové dvousloupcové rozhraní editačního konfliktu, aniž byste cokoli rozbili.",
-	"twocolconflict-test-edit-hint": "Níže proveďte nějaké změny. Nebudou uloženy. Budou sloužit pouze pro simulaci příkladu editačního konfliktu.",
-	"twocolconflict-test-conflict-hint": "Toto je testovací konflikt. Změny nebudou uloženy, ale lze si zobrazit jejich náhled.",
-	"twocolconflict-test-preview-submit": "Simulovat uložení změn",
+	"twocolconflict-test-edit-hint": "Níže proveďte nějaké změny. Nebudou zveřejněny. Budou sloužit pouze pro simulaci příkladu editačního konfliktu.",
+	"twocolconflict-test-conflict-hint": "Toto je testovací konflikt. Změny nebudou zveřejněny, ale lze si zobrazit jejich náhled.",
+	"twocolconflict-test-preview-submit": "Simulovat zveřejnění změn",
 	"twocolconflict-test-username": "Fiktivní uživatel TestKonflikt",
 	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace"
 }

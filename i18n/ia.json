@@ -4,7 +4,11 @@
 			"McDutchie"
 		]
 	},
-	"twoColConflict-label-mine": "le mie",
-	"twoColConflict-label-both": "ambes",
-	"twoColConflict-label-show-changes": "monstrar cambiamentos"
+	"twocolconflict-explainconflict": "<strong>Attention:</strong> Un altere usator ha justo ora modificate e publicate iste pagina. Il ha un conflicto inter tu version e le version actual. Tu debe fusionar tu modificationes in le version actual del texto. Solmente le texto in le quadro de modification essera publicate quando tu clicca sur \"$1\".",
+	"twocolconflict-help-dialog-slide2": "Le prime columna monstra le modificationes in tu version e le modificationes in le version actualmente publicate. Le differentias inter le versiones se mitte in evidentia.",
+	"twocolconflict-test-edit-hint": "Face modificationes hic infra. Illos non essera publicate. Illos essera usate solmente pro simular un conflicto de modification de exemplo.",
+	"twocolconflict-test-conflict-hint": "Isto es le conflicto de test. Le modificationes non essera publicate ma pote esser previsualisate.",
+	"twocolconflict-test-preview-submit": "Simular le publication del modificationes",
+	"twocolconflict-split-not-saved-at": "non publicate $1, $2.",
+	"twocolconflict-split-saved-at": "publicate $1, $2."
 }

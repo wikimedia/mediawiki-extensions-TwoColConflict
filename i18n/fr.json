@@ -5,7 +5,8 @@
 			"Gomoko",
 			"Wladek92",
 			"Oupsa",
-			"The RedBurn"
+			"The RedBurn",
+			"McDutchie"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -57,7 +58,7 @@
 	"twocolconflict-test-initial-hint": "Sur cette page vous pouvez essayer sur deux colonnes, le nouvel interface de résolution des conflits sans en oublier.",
 	"twocolconflict-test-edit-hint": "Faites quelques modifications ci-dessous. Elles ne seront pas publiées. Elles ne seront utilisées que pour simuler un exemple de conflit d'édition.",
 	"twocolconflict-test-conflict-hint": "Ceci est le conflit de test. Les modifications ne seront pas publiées mais peuvent être prévisualisées.",
-	"twocolconflict-test-preview-submit": "Simuler les modifications de la publication",
+	"twocolconflict-test-preview-submit": "Simuler la publication des modifications",
 	"twocolconflict-test-preview-hint": "Merci d'avoir essayé l'interface d'Edition de Conflit sur deux colonnes ! Aidez-nous à l'améliorer en nous faisant part de vos remarques [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page ici].\n\nCi-dessous, les résultats de la résolution de votre test de conflit d'édition.",
 	"twocolconflict-test-username": "Utilisateur TestdeConflit",
 	"twocolconflict-test-summary-text": "Résumé du test d'édition de conflit",

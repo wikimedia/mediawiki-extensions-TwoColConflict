@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"McDutchie"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twocolconflict-beta-feature-message": "Editor de conflitos em duas colunas",
 	"twocolconflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.<br/><br/>Por favor, note: o recurso está passando por [https://phabricator.wikimedia.org/T195711 algumas mudanças]. Uma nova interface está prevista para o segundo semestre de 2018.",
-	"twocolconflict-explainconflict": "<strong>Aviso:</strong> Outro usuário acabou de editar e salvar esta página. Existe um conflito entre sua versão e a versão atual. Você terá que mesclar suas mudanças na versão de texto atual. Somente o texto no campo do editor será salvo quando você clicar em \"$1\".",
+	"twocolconflict-explainconflict": "<strong>Aviso:</strong> Outro usuário acabou de editar e publicar esta página. Existe um conflito entre sua versão e a versão atual. Você terá que mesclar suas mudanças na versão de texto atual. Somente o texto no campo do editor será publicado  quando você clicar em \"$1\".",
 	"twocolconflict-changes-col-title": "Alterações conflitantes",
 	"twocolconflict-changes-col-desc-1": "Diferenças entre",
 	"twocolconflict-changes-col-desc-2": "a versão atualmente publicada",
@@ -36,7 +37,7 @@
 	"twocolconflict-label-hide-unchanged": "ocultar texto sem alterações",
 	"twocolconflict-show-help-tooltip": "Mostrar texto de ajuda",
 	"twocolconflict-help-dialog-slide1": "Esta página ajuda você a resolver um conflito de edição. Existem duas colunas: a primeira mostra as mudanças conflitantes e a segunda é um editor de texto, cujo conteúdo será publicado.\n\n[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View O feedback é muito apreciado aqui].",
-	"twocolconflict-help-dialog-slide2": "A primeira coluna mostra as alterações na sua versão e as alterações na versão atualmente salva. As diferenças entre as duas versões são destacadas.",
+	"twocolconflict-help-dialog-slide2": "A primeira coluna mostra as alterações na sua versão e as alterações na versão atualmente publicada. As diferenças entre as duas versões são destacadas.",
 	"twocolconflict-help-dialog-slide3": "No topo da primeira coluna, você pode clicar em \"{{int:twocolconflict-label-show}}\" para ver o texto inalterado. Isso pode ajudar a entender o contexto das mudanças. Por padrão, o texto inalterado está acinzentado e recolhido.",
 	"twocolconflict-help-dialog-slide4": "A segunda coluna é um editor. Quando a página é aberta, há uma caixa de seleção em cima do editor. Ele permite que você decida qual versão deve estar no editor. Esta é muitas vezes a versão onde mais mudanças foram feitas.",
 	"twocolconflict-help-dialog-slide5": "Copie e cole as partes desejadas da outra versão no texto no editor. Somente o que está no editor será publicado, quando você clicar no botão \"$1\".",
@@ -52,16 +53,16 @@
 	"twocolconflict-test-no-direct-editing": "Esta página não pode ser editada diretamente.",
 	"twocolconflict-test-text-submit": "Criar um conflito",
 	"twocolconflict-test-initial-hint": "Nesta página, você pode experimentar a nova interface Two Column Edit Conflict sem mexer com nada.",
-	"twocolconflict-test-edit-hint": "Faça algumas alterações abaixo. Eles não serão salvos. Eles só serão usados para simular um exemplo de conflito de edição.",
-	"twocolconflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão gravadas mas podem ser pre-visualizadas.",
-	"twocolconflict-test-preview-submit": "Simular a gravação das alterações",
+	"twocolconflict-test-edit-hint": "Faça algumas alterações abaixo. Eles não serão publicados. Eles serão usados apenas para simular um conflito de edição de exemplo.",
+	"twocolconflict-test-conflict-hint": "Este é o conflito de teste. As alterações não serão publicadas, mas podem ser visualizadas.",
+	"twocolconflict-test-preview-submit": "Simular a publicação das alterações",
 	"twocolconflict-test-preview-hint": "Obrigado por experimentar a interface de conflito de edições em duas colunas! Ajude a melhorá-la dizendo-nos o que achou, [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page aqui].\n\nEncontra abaixo os resultados da resolução do seu teste de conflito de edições.",
 	"twocolconflict-test-username": "Usuário do teste de conflito",
 	"twocolconflict-test-summary-text": "Resumo de edição do teste de conflito",
 	"twocolconflict-split-conflict-hint": "Obrigado por usar esta funcionalidade beta. Pode ajudar a melhorá-la, deixando um comentário [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta página].",
 	"twocolconflict-split-your-version-header": "A sua versão",
 	"twocolconflict-split-current-version-header": "Versão em conflito de $1 (versão atual)",
-	"twocolconflict-split-not-saved-at": "não salvado $1, $2.",
-	"twocolconflict-split-saved-at": "salvado $1, $2.",
+	"twocolconflict-split-not-saved-at": "não publicado $1, $2.",
+	"twocolconflict-split-saved-at": "publicado $1, $2.",
 	"twocolconflict-split-choose-version": "Por favor, selecione uma versão"
 }
