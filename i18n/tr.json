@@ -57,5 +57,6 @@
 	"twocolconflict-test-preview-submit": "Yeni değişiklikleri simule et",
 	"twocolconflict-test-preview-hint": "İki Sütunlu Düzenleme Çakışması arayüzünü denediğiniz için teşekkürler! [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page Buradan] geri bildirimde bulunarak eklentiyi geliştirmemizi sağlayabilirsiniz.\n\nTest değişiklik çakışma çözümünüzün sonuçları aşağıdadır.",
 	"twocolconflict-test-username": "ÇakışmaTest Kullanıcısı",
-	"twocolconflict-test-summary-text": "Çakışma test değişiklik özeti"
+	"twocolconflict-test-summary-text": "Çakışma test değişiklik özeti",
+	"twocolconflict-split-your-version-header": "Senin sürümün"
 }
