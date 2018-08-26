@@ -3,14 +3,15 @@
 		"authors": [
 			"Mirinano",
 			"Iwai.masaharu",
-			"Omotecho"
+			"Omotecho",
+			"Penn Station"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "編集競合解消のためのサイド・バイ・サイド編集統合画面の表示",
 	"twocolconflict-beta-feature-message": "2列で編集の競合を表示",
 	"twocolconflict-beta-feature-description": "進化した2列の編集画面を使用して、編集競合を表示します。",
-	"twocolconflict-explainconflict": "<strong>警告:</strong> このページを編集し始めた後に、他の利用者がこのページに変更を保存しました。あなたの版と最新版との間には競合があります。あなたの変更を最新版に統合する必要があります。「$1」をクリックすると、編集エリアにあるテキストだけが保存されます。",
+	"twocolconflict-explainconflict": "<strong>警告:</strong> このページを編集し始めた後に、他の利用者がこのページを変更しました。あなたの版と最新版との間には競合があります。あなたの変更を最新版に統合する必要があります。「$1」をクリックすると、編集エリアにあるテキストだけが保存されます。",
 	"twocolconflict-changes-col-title": "競合している変更",
 	"twocolconflict-changes-col-desc-1": "差分",
 	"twocolconflict-changes-col-desc-2": "現在公開されている版",

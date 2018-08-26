@@ -54,13 +54,13 @@
 	"twocolconflict-test-initial-hint": "در این صفحه می‌توانید دو ستون جدید تداخل ویرایش بدون به‌ریختگی مشاهده کنید.",
 	"twocolconflict-test-edit-hint": "انجام تعدادی از تغییرات در زیر. آنها ذخیره نمی‌شوند. آنها فقط برای شبیه‌سازی نمونه‌های تعارض ویرایشی نمایش داده می‌شوند.",
 	"twocolconflict-test-conflict-hint": "این یک تعارض آزمایشی‌ست. تغییرات ذخیره نمی‌شود ولی به صورت پیش‌نمایش دیده می‌شوند.",
-	"twocolconflict-test-preview-submit": "شبیه‌سازی ذخیره تغییرات",
+	"twocolconflict-test-preview-submit": "شبیه‌سازی انتشار تغییرات",
 	"twocolconflict-test-preview-hint": "بابت استفاده از ابزار رفع تعارض ویرایشی ممنون! [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View با نظر دادن] به ما در بهبود آن کمک کنید.\n\nدر زیر نتایج آزمایش ابزار تعارض ویرایشی موجود است.",
 	"twocolconflict-test-username": "کاربر آزمایش تداخل",
 	"twocolconflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل",
 	"twocolconflict-split-your-version-header": "نسخه شما",
 	"twocolconflict-split-current-version-header": "نسخه متعارض از $1 (اکنون منتشر شده‌است)",
-	"twocolconflict-split-not-saved-at": "$1 در $2 ذخیره نشد",
-	"twocolconflict-split-saved-at": "$1 در $2 ذخیره شد",
+	"twocolconflict-split-not-saved-at": "$1 در $2 منتشر نشد.",
+	"twocolconflict-split-saved-at": "$1 در $2 منتشر شد",
 	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید"
 }
