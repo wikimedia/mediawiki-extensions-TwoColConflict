@@ -6,7 +6,8 @@
 			"Wladek92",
 			"Oupsa",
 			"The RedBurn",
-			"McDutchie"
+			"McDutchie",
+			"Zarisi"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -67,5 +68,15 @@
 	"twocolconflict-split-current-version-header": "Version conflictuelle de $1 (actuellement actif)",
 	"twocolconflict-split-not-saved-at": "non publié le $1 à $2.",
 	"twocolconflict-split-saved-at": "publié le $1 à $2.",
-	"twocolconflict-split-choose-version": "Veuillez choisir une version"
+	"twocolconflict-split-choose-version": "Veuillez choisir une version",
+	"twocolconflict-split-tour-dialog-header": "Résoudre les conflits d'édition",
+	"twocolconflict-split-tour-dialog-message": "Vous êtes confronté à un conflit d’édition: lors de votre modification, un autre utilisateur a également modifié la page et l’a enregistrée. Votre version n'inclut pas les dernières modifications. Nous vous demandons de bien vouloir fusionner votre version avec la dernière version de l'autre utilisateur.",
+	"twocolconflict-split-tour-dialog-btn-text": "Démarrer la fusion",
+	"twocolconflict-split-tour-popup-btn-text": "Ok, j'ai compris.",
+	"twocolconflict-split-tour-popup1-header": "Les modifications divergentes sont présentées ligne par ligne.",
+	"twocolconflict-split-tour-popup1-message": "Quand il y a une différence entre le texte de l'autre utilisateur et le vôtre, les deux versions sont affichées côte à côte: la version de l'autre utilisateur dans la zone jaune à gauche et la vôtre dans la zone bleue à droite. </br> </br > Lorsqu'il n'y a pas de différence entre les deux versions, les lignes sont affichées dans des cases grises. Celles-ci peuvent être développées ou réduites et modifiées si nécessaire.",
+	"twocolconflict-split-tour-popup2-header": "Choisissez quels changements vous voulez garder",
+	"twocolconflict-split-tour-popup2-message": "Sélectionnez la version du texte que vous souhaitez conserver en cliquant sur l'un des deux boutons situés entre chaque paire de lignes. Lorsque vous avez sélectionné une version, vous pouvez la modifier en cliquant sur l'icône du stylo. Il est également possible de copier du texte de la version que vous n'avez pas sélectionnée en utilisant la fonction copier-coller de votre clavier ou d'un clic droit. </br></br>Vous devez sélectionner une version pour chaque ligne modifiée afin d'enregistrer le texte fusionné.",
+	"twocolconflict-split-tour-popup3-header": "Texte surligné",
+	"twocolconflict-split-tour-popup3-message": "Le texte qui a été modifié dans l'une quelconque des versions d'une ligne est mis en valeur. Après que vous aurez modifié ce texte, la mise en valeur disparaîtra."
 }
