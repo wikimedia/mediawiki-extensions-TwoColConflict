@@ -6,7 +6,8 @@
 			"Сербијана",
 			"Prevodim",
 			"Acamicamacaraca",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"twocolconflict-desc": "Упоредо приказује екран за решавање сукоба измена",
@@ -62,5 +63,12 @@
 	"twocolconflict-split-your-version-header": "Ваша верзија",
 	"twocolconflict-split-not-saved-at": "није објављено на дан $1 у $2 ч.",
 	"twocolconflict-split-saved-at": "објављено на дан $1 у $2 ч.",
-	"twocolconflict-split-choose-version": "Изаберите верзију"
+	"twocolconflict-split-choose-version": "Изаберите верзију",
+	"twocolconflict-split-tour-dialog-header": "Решавање сукоба измена",
+	"twocolconflict-split-tour-dialog-message": "Изгледа да имате искуство са сукобом измена: Током вашег уређивања други корисник је такође уредио страницу и сачувао је. Ваша верзија сада не садржи најновије измене. Молимо вас да спојите своју верзију са тренутно најновијом верзијом другог корисника.",
+	"twocolconflict-split-tour-dialog-btn-text": "Започни спајање",
+	"twocolconflict-split-tour-popup-btn-text": "У реду, разумем.",
+	"twocolconflict-split-tour-popup1-header": "Различите промене су приказане ред по ред.",
+	"twocolconflict-split-tour-popup2-header": "Одаберите промене које желите да оставите",
+	"twocolconflict-split-tour-popup3-header": "Истакнут текст"
 }
