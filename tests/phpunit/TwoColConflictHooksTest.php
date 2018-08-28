@@ -24,12 +24,16 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 			[
 				null,
 				null,
+				null,
 				'',
 			],
 			[
 				[],
 				[
 					1 => [ 'copy' => 'abc' ],
+				],
+				[
+					1 => [ 'copy' => 0 ],
 				],
 				"abc",
 			],
@@ -40,6 +44,9 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 				[
 					1 => [ 'other' => "abc\n", 'your' => 'def' ],
 				],
+				[
+					1 => [ 'other' => 0 ],
+				],
 				"abc",
 			],
 			[
@@ -48,6 +55,9 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 				],
 				[
 					1 => [ 'other' => "abc\n\n", 'your' => 'def' ],
+				],
+				[
+					1 => [ 'other' => 1 ],
 				],
 				"abc\n",
 			],
@@ -62,6 +72,9 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 					3 => [ 'copy' => 'c' ],
 					4 => [ 'other' => 'd other', 'your' => 'd your' ],
 				],
+				[
+					4 => [ 'your' => 0 ],
+				],
 				"a\nb other\nc\nd your",
 			],
 		];
@@ -73,10 +86,11 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	public function testOnImportFormData(
 		array $sideSelection = null,
 		array $splitContent = null,
+		array $splitLineFeeds = null,
 		$expected
 	) {
 		$editPage = $this->createEditPage();
-		$request = $this->createWebRequest( $sideSelection, $splitContent );
+		$request = $this->createWebRequest( $sideSelection, $splitContent, $splitLineFeeds );
 
 		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( $expected, $editPage->textbox1 );
@@ -84,7 +98,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 
 	public function testOnImportFormDataNotTriggered() {
 		$editPage = $this->createEditPage();
-		$request = $this->createWebRequest( [], [], false );
+		$request = $this->createWebRequest( null, null, null, false );
 
 		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( '', $editPage->textbox1 );
@@ -103,12 +117,14 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	private function createWebRequest(
 		array $sideSelection = null,
 		array $splitContent = null,
+		array $splitLineFeeds = null,
 		$submit = true
 	) {
 		return new \FauxRequest( [
 			'mw-twocolconflict-submit' => $submit,
 			'mw-twocolconflict-side-selector' => $sideSelection,
 			'mw-twocolconflict-split-content' => $splitContent,
+			'mw-twocolconflict-split-linefeeds' => $splitLineFeeds,
 		] );
 	}
 

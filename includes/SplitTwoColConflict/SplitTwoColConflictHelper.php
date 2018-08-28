@@ -53,9 +53,17 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$storedversion
 		);
 
-		// FIXME: This Windows line break cleanup appears awkwardly misplaced, please factor out
-		$this->yourLines = explode( "\n", str_replace( "\r\n", "\n", $this->yourtext ) );
-		$this->storedLines = explode( "\n", $this->storedversion );
+		$this->yourLines = $this->splitText( $this->yourtext );
+		$this->storedLines = $this->splitText( $this->storedversion );
+	}
+
+	/**
+	 * @param string $text
+	 *
+	 * @return string[]
+	 */
+	private function splitText( $text ) {
+		return preg_split( '/\r*\n(?![\r\n])/', $text );
 	}
 
 	/**
