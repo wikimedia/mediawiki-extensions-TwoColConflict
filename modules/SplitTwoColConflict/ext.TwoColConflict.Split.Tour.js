@@ -3,13 +3,15 @@
 	/**
 	 * Module containing the SplitTwoColConflict tour
 	 *
-	 * @param {String} header for the initial dialog window
-	 * @param {String} image class for the initial dialog window
-	 * @param {String} message for the initial dialog window
+	 * @param {string} header for the initial dialog window
+	 * @param {string} image class for the initial dialog window
+	 * @param {string} message for the initial dialog window
 	 * @constructor
 	 */
 	var Tour = function ( header, image, message ) {
-		var $closeButton, $panel, $this = this;
+		var $closeButton,
+			$panel,
+			self = this;
 
 		function TourDialog( config ) {
 			this.panel = config.panel;
@@ -54,8 +56,8 @@
 		} );
 
 		$closeButton.on( 'click', function () {
-			$this.$dialog.close();
-			$this.showButtons();
+			self.$dialog.close();
+			self.showButtons();
 		} );
 	};
 
@@ -77,28 +79,28 @@
 		buttons: [],
 
 		/**
-		 * @param {Object} $element
-		 * @return {Object}
+		 * @param {jQuery} $element
+		 * @return {jQuery}
 		 */
 		createPopupButton: function ( $element ) {
-			var stillButton = $( '<div>' ),
-				pulsatingButton = $( '<div>' ),
+			var $stillButton = $( '<div>' ),
+				$pulsatingButton = $( '<div>' ),
 				center = $element.position().left + $element.outerWidth() / 2;
 
-			pulsatingButton.addClass( 'mw-twocolconflict-split-tour-pulsating-button' );
-			stillButton.addClass( 'mw-twocolconflict-split-tour-still-button' );
-			stillButton.css( 'left', center );
-			stillButton.appendTo( $element );
-			stillButton.hide();
+			$pulsatingButton.addClass( 'mw-twocolconflict-split-tour-pulsating-button' );
+			$stillButton.addClass( 'mw-twocolconflict-split-tour-still-button' );
+			$stillButton.css( 'left', center );
+			$stillButton.appendTo( $element );
+			$stillButton.hide();
 
-			pulsatingButton.appendTo( stillButton );
-			return stillButton;
+			$pulsatingButton.appendTo( $stillButton );
+			return $stillButton;
 		},
 
 		/**
 		 * @param {String} header
 		 * @param {String} message
-		 * @param {Object} $pulsatingButton
+		 * @param {jQuery} $pulsatingButton
 		 * @return {OO.ui.PopupWidget}
 		 */
 		createPopup: function ( header, message, $pulsatingButton ) {
@@ -135,31 +137,40 @@
 		},
 
 		showButtons: function () {
-			this.buttons.forEach( function ( $button ) {
-				$button.show();
+			var self = this;
+
+			this.buttons.forEach( function ( data ) {
+				var $pulsatingButton = self.createPopupButton( data.$element ),
+					$popup = self.createPopup( data.header, data.message, $pulsatingButton );
+
+				data.$element.append( $popup.$element );
+				$pulsatingButton.show();
 			} );
+
+			this.buttons = [];
 		},
 
 		/**
 		 * Adds a tutorial step to the tour, this includes a popup and a button
 		 *
-		 * @param {String} header for the popup
-		 * @param {String} message for the popup
-		 * @param {Object} $element to which the popup should be anchored to
+		 * @param {string} header for the popup
+		 * @param {string} message for the popup
+		 * @param {jQuery} $element to which the popup should be anchored to
 		 */
 		addTourPopup: function ( header, message, $element ) {
-			var $pulsatingButton = this.createPopupButton( $element ),
-				$popup = this.createPopup( header, message, $pulsatingButton );
-
-			$element.append( $popup.$element );
-			this.buttons.push( $pulsatingButton );
+			this.buttons.push( {
+				header: header,
+				message: message,
+				$element: $element
+			} );
 		},
 
 		/**
 		 * @return {OO.ui.ButtonWidget}
 		 */
 		getHelpButton: function () {
-			var $helpButton, $this = this;
+			var $helpButton,
+				self = this;
 
 			$helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
@@ -168,7 +179,7 @@
 			} );
 
 			$helpButton.on( 'click', function () {
-				$this.showTour();
+				self.showTour();
 			} );
 
 			return $helpButton.$element;
@@ -187,9 +198,9 @@
 	/**
 	 * Initializes the tour
 	 *
-	 * @param {String} header for the initial dialog window
-	 * @param {String} image class for the initial dialog window
-	 * @param {String} message for the initial dialog window
+	 * @param {string} header for the initial dialog window
+	 * @param {string} image class for the initial dialog window
+	 * @param {string} message for the initial dialog window
 	 * @return {Tour}
 	 */
 	Tour.init = function ( header, image, message ) {
