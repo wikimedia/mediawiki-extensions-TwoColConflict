@@ -42,5 +42,6 @@
 	"twocolconflict-split-your-version-header": "Är Versioun",
 	"twocolconflict-split-not-saved-at": "net gespäichert de(n) $1 ëm $2.",
 	"twocolconflict-split-saved-at": "verëffentlecht de(n) $1 ëm $2.",
-	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus"
+	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus",
+	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen."
 }

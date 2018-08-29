@@ -69,6 +69,7 @@
 	"twocolconflict-split-saved-at": "發佈於 $1 $2。",
 	"twocolconflict-split-choose-version": "請選擇一個版本",
 	"twocolconflict-split-tour-dialog-header": "解決編輯衝突",
+	"twocolconflict-split-tour-dialog-message": "很不巧地，您遇到了編輯衝突：在您進行編輯的期間，剛好也有其他編者對頁面做出編輯並將內容給保存下來。您的版本裡，目前未包含最新一次的編輯內容。我們誠懇地請求您，請將您的版本與其他使用者的目前最新版本給一同合併。",
 	"twocolconflict-split-tour-dialog-btn-text": "開始合併",
 	"twocolconflict-split-tour-popup-btn-text": "好的，了解。",
 	"twocolconflict-split-tour-popup1-header": "逐行顯示變更分歧。",
