@@ -1,8 +1,6 @@
 var assert = require( 'assert' ),
 	VersionPage = require( '../pageobjects/version.page' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	BetaPreferencesPage = require( '../pageobjects/betapreferences.page' ),
-	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
@@ -24,15 +22,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'is showing the edit conflict split screen correctly', function () {
-		UserLoginPage.loginAdmin();
-		BetaPreferencesPage.enableTwoColConflictBetaFeature();
-		EditConflictPage.enforceSplitEditConflict();
-
-		EditConflictPage.createSimpleConflict(
-			Util.getTestString( 'conflict-title-' ),
-			conflictUser,
-			conflictUserPassword
-		);
+		EditConflictPage.showsAnEditConflictWith( conflictUser, conflictUserPassword );
 
 		assert( EditConflictPage.conflictHeader.isExisting() );
 		assert( EditConflictPage.conflictView.isExisting() );

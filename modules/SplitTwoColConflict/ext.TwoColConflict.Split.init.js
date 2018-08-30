@@ -1,6 +1,25 @@
 ( function ( mw, $ ) {
 	'use strict';
 
+	/**
+	 * @param {jQuery} $column
+	 * @return {OO.ui.Element}
+	 */
+	function getColumnEditButton( $column ) {
+		return OO.ui.ButtonWidget.static.infuse(
+			$column.find( '.mw-twocolconflict-split-edit-button' )
+		);
+	}
+
+	/**
+	 * @param {jQuery} $selectedColumn
+	 * @param {jQuery} $unselectedColumn
+	 */
+	function setColumnEditButtonState( $selectedColumn, $unselectedColumn ) {
+		getColumnEditButton( $selectedColumn ).setDisabled( false );
+		getColumnEditButton( $unselectedColumn ).setDisabled( true );
+	}
+
 	function initColumnSelection() {
 		var $switches = $( '.mw-twocolconflict-split-selection' ),
 			$radioButtons = $switches.find( 'input' );
@@ -13,9 +32,11 @@
 			if ( $switch.val() === 'your' ) {
 				$selectedColumn = $row.find( '.mw-twocolconflict-split-add' );
 				$unselectedColumn = $row.find( '.mw-twocolconflict-split-delete' );
+				setColumnEditButtonState( $selectedColumn, $unselectedColumn );
 			} else {
 				$selectedColumn = $row.find( '.mw-twocolconflict-split-delete' );
 				$unselectedColumn = $row.find( '.mw-twocolconflict-split-add' );
+				setColumnEditButtonState( $selectedColumn, $unselectedColumn );
 			}
 			$selectedColumn
 				.addClass( 'mw-twocolconflict-split-selected' )

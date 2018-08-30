@@ -79,5 +79,6 @@
 	"twocolconflict-split-tour-popup2-header": "Text for the header of the popup explaining \"Highlighted text\".",
 	"twocolconflict-split-tour-popup2-message": "Text for the message of the popup explaining \"Highlighted text\".",
 	"twocolconflict-split-tour-popup3-header": "Text for the header of the popup explaining \"Choose a base version\".",
-	"twocolconflict-split-tour-popup3-message": "Text for the message of the popup explaining \"Choose a base version\"."
+	"twocolconflict-split-tour-popup3-message": "Text for the message of the popup explaining \"Choose a base version\".",
+	"twocolconflict-split-edit-tooltip": "Label for the edit button shown on diff paragraphs."
 }

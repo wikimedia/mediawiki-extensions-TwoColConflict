@@ -193,6 +193,7 @@
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
 			],
 			"dependencies": [
+				"oojs-ui",
 				"ext.TwoColConflict.Split.Tour"
 			]
 		},

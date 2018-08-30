@@ -41,6 +41,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
 		$this->wikiPage = WikiPage::factory( $title );
+		$this->out->enableOOUI();
+		$this->getOutput()->addModuleStyles( [ 'oojs-ui.styles.icons-editing-core' ] );
 	}
 
 	/**

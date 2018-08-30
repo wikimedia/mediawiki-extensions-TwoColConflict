@@ -6,6 +6,7 @@ use Html;
 use Language;
 use OOUI\RadioInputWidget;
 use User;
+use OOUI\ButtonWidget;
 
 /**
  * @license GPL-2.0-or-later
@@ -152,6 +153,7 @@ class HtmlSplitConflictView {
 				[ 'class' => 'mw-twocolconflict-split-difftext' ],
 				$text
 			) .
+			$this->buildEditButton() .
 			$this->buildTextEditor( $rawText, $rowNum, $changeType )
 		);
 	}
@@ -175,6 +177,16 @@ class HtmlSplitConflictView {
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
 			$this->countExtraLineFeeds( $text )
 		);
+	}
+
+	private function buildEditButton() {
+		return new ButtonWidget( [
+			'infusable' => true,
+			'framed' => false,
+			'icon' => 'edit',
+			'title' => wfMessage( 'twocolconflict-split-edit-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-split-edit-button' ]
+		] );
 	}
 
 	/**
