@@ -69,5 +69,10 @@
 	"twocolconflict-split-your-version-header": "Ваша версия",
 	"twocolconflict-split-not-saved-at": "не сохранено $1, $2.",
 	"twocolconflict-split-saved-at": "опубликовано $1, $2.",
-	"twocolconflict-split-choose-version": "Выберите версию"
+	"twocolconflict-split-choose-version": "Выберите версию",
+	"twocolconflict-split-tour-dialog-header": "Разрешения конфликтов редактирования",
+	"twocolconflict-split-tour-dialog-btn-text": "Начать объединение",
+	"twocolconflict-split-tour-popup-btn-text": "Понятно",
+	"twocolconflict-split-tour-popup2-header": "Выберите, какие изменения удерживать",
+	"twocolconflict-split-tour-popup3-header": "Подчёркнутый текст"
 }

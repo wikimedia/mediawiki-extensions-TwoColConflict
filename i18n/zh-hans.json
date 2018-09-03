@@ -6,7 +6,8 @@
 			"NeverBehave",
 			"LNDDYL",
 			"A2093064",
-			"Hanyanbo98"
+			"Hanyanbo98",
+			"夢蝶葬花"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -67,5 +68,15 @@
 	"twocolconflict-split-current-version-header": "来自 $1 的冲突版本(活跃的)",
 	"twocolconflict-split-not-saved-at": "未于$1 $2保存。",
 	"twocolconflict-split-saved-at": "已于$1 $2保存。",
-	"twocolconflict-split-choose-version": "请选择一个版本"
+	"twocolconflict-split-choose-version": "请选择一个版本",
+	"twocolconflict-split-tour-dialog-header": "解决编辑冲突",
+	"twocolconflict-split-tour-dialog-message": "您当前遇到了编辑冲突：在编辑期间，其他用户也编辑了此页面并保存了该页面。您的当前版本现在不包含最新的编辑。我们恳请您将您的版本与现在最新版本的其他用户合并。",
+	"twocolconflict-split-tour-dialog-btn-text": "开始合并",
+	"twocolconflict-split-tour-popup-btn-text": "好的，明白了",
+	"twocolconflict-split-tour-popup1-header": "分散显示不同的变化。",
+	"twocolconflict-split-tour-popup1-message": "当其他用户的文本与您的文本不同时，两个版本会并排显示：左侧黄色框中的另一个用户版本，右侧蓝色框中的用户版本。<br> <br >当两个版本之间没有差异时，线条以灰色框显示。如果需要，可以展开或折叠这些内容。",
+	"twocolconflict-split-tour-popup2-header": "选择要保留的更改",
+	"twocolconflict-split-tour-popup2-message": "通过单击每对线之间的两个按钮之一，选择要保留的文本版本。选择版本后，可以通过单击笔图标进行编辑。也可以使用键盘上的复制和粘贴功能或右键单击从未选择的版本中复制文本。<br> <br>您需要为每个更改的行选择一个版本以保存合并的文本。",
+	"twocolconflict-split-tour-popup3-header": "高亮文本",
+	"twocolconflict-split-tour-popup3-message": "在任一版本的行中更改的文本都会突出显示。编辑文本后，突出显示将消失。"
 }

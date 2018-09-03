@@ -9,7 +9,7 @@
 	"twocolconflict-desc": "نمایش کنارهم حل تعارض ویرایشی",
 	"twocolconflict-beta-feature-message": "تعارض ویرایشی دو ستونی",
 	"twocolconflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد. <br/><br/>لطفا توجه کنید این قابلیت در حال [https://phabricator.wikimedia.org/T195711 تغییر] است. رابط کاربری جدید در نیمه دوم ۲۰۱۸ قابل دسترس خواهد بود.",
-	"twocolconflict-explainconflict": "<strong>هشدار:</strong> کاربری دیگر هم‌اکنون این صفحه را ویرایش و ذخیره کرده‌است. تعارض بین نسخه شما و نسخه کنونی وجود دارد. شما باید نسخه خودتان را در نسخه کنونی ادغام کنید. هنگامی که بر «$1» کلیک کنید، فقط متن بخش ویرایش ذخیره خواهد شد.",
+	"twocolconflict-explainconflict": "<strong>هشدار:</strong> کاربری دیگر هم‌اکنون این صفحه را ویرایش و منتشر کرده‌است. تعارض بین نسخه شما و نسخه کنونی وجود دارد. شما باید نسخه خودتان را در نسخه کنونی ادغام کنید. هنگامی که بر «$1» کلیک کنید، فقط متن بخش ویرایش منتشر خواهد شد.",
 	"twocolconflict-changes-col-title": "تغییرات متعارض",
 	"twocolconflict-changes-col-desc-1": "تفاوت‌ها",
 	"twocolconflict-changes-col-desc-2": "نسخه‌ای که منتشر شده‌است",
@@ -52,8 +52,8 @@
 	"twocolconflict-test-no-direct-editing": "این صفحه به صورت مستقیم نمی‌تواند ویرایش شود.",
 	"twocolconflict-test-text-submit": "ایجاد تعارض",
 	"twocolconflict-test-initial-hint": "در این صفحه می‌توانید دو ستون جدید تداخل ویرایش بدون به‌ریختگی مشاهده کنید.",
-	"twocolconflict-test-edit-hint": "انجام تعدادی از تغییرات در زیر. آنها ذخیره نمی‌شوند. آنها فقط برای شبیه‌سازی نمونه‌های تعارض ویرایشی نمایش داده می‌شوند.",
-	"twocolconflict-test-conflict-hint": "این یک تعارض آزمایشی‌ست. تغییرات ذخیره نمی‌شود ولی به صورت پیش‌نمایش دیده می‌شوند.",
+	"twocolconflict-test-edit-hint": "انجام تعدادی از تغییرات در زیر. آنها منتشر نمی‌شوند. آنها فقط برای شبیه‌سازی نمونه‌های تعارض ویرایشی نمایش داده می‌شوند.",
+	"twocolconflict-test-conflict-hint": "این یک تعارض آزمایشی‌ست. تغییرات منتشر نمی‌شود ولی به صورت پیش‌نمایش دیده می‌شوند.",
 	"twocolconflict-test-preview-submit": "شبیه‌سازی انتشار تغییرات",
 	"twocolconflict-test-preview-hint": "بابت استفاده از ابزار رفع تعارض ویرایشی ممنون! [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View با نظر دادن] به ما در بهبود آن کمک کنید.\n\nدر زیر نتایج آزمایش ابزار تعارض ویرایشی موجود است.",
 	"twocolconflict-test-username": "کاربر آزمایش تداخل",
@@ -62,5 +62,9 @@
 	"twocolconflict-split-current-version-header": "نسخه متعارض از $1 (اکنون منتشر شده‌است)",
 	"twocolconflict-split-not-saved-at": "$1 در $2 منتشر نشد.",
 	"twocolconflict-split-saved-at": "$1 در $2 منتشر شد",
-	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید"
+	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید",
+	"twocolconflict-split-tour-dialog-header": "حل تعارض‌های ویرایشی",
+	"twocolconflict-split-tour-dialog-btn-text": "شروع ادغام",
+	"twocolconflict-split-tour-popup-btn-text": "باشد، گرفتم",
+	"twocolconflict-split-tour-popup3-header": "متن برجسته"
 }
