@@ -9,6 +9,7 @@ use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
+use WebRequest;
 
 /**
  * Hook handlers for the TwoColConflict extension.
@@ -34,6 +35,13 @@ class TwoColConflictHooks {
 		return true;
 	}
 
+	private static function shouldUseSplitInterface( WebRequest $request ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		return !$config->get( 'TwoColConflictUseInline' ) ||
+			$request->getCookie( 'mw-twocolconflict-split-ui', '' );
+	}
+
 	/**
 	 * @param EditPage $editPage
 	 */
@@ -48,8 +56,7 @@ class TwoColConflictHooks {
 			return;
 		}
 
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $config->get( 'TwoColConflictUseInline' ) ) {
+		if ( !self::shouldUseSplitInterface( $editPage->getContext()->getRequest() ) ) {
 			$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
 				return new InlineTwoColConflictHelper(
 					$editPage->getTitle(),
