@@ -148,6 +148,8 @@ class SpecialConflictTestPage extends SpecialPage {
 	private function showConflict( $article ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$conflictTestEditPage = new TwoColConflictTestEditPage( $article );
+		/** @see https://phabricator.wikimedia.org/T176526 */
+		$conflictTestEditPage->setContextTitle( $this->getPageTitle() );
 		$conflictTestEditPage->setUpFakeConflictRequest();
 
 		if ( $config->get( 'TwoColConflictUseInline' ) ) {

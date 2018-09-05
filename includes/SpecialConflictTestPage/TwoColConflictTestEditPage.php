@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\SpecialConflictTestPage;
 
-use Article;
 use EditPage;
 use Status;
 
@@ -11,16 +10,6 @@ use Status;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class TwoColConflictTestEditPage extends EditPage {
-
-	/**
-	 * @param Article $article
-	 */
-	public function __construct( Article $article ) {
-		parent::__construct( $article );
-
-		/** @see https://phabricator.wikimedia.org/T176526 */
-		$this->setContextTitle( $article->getTitle() );
-	}
 
 	/**
 	 * Setup the request values to provoke a simulated edit conflict
