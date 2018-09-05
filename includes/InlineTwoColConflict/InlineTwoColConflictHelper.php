@@ -3,6 +3,7 @@
 namespace TwoColConflict\InlineTwoColConflict;
 
 use Html;
+use InvalidArgumentException;
 use Linker;
 use MediaWiki\EditPage\TextboxBuilder;
 use MediaWiki\EditPage\TextConflictHelper;
@@ -10,6 +11,7 @@ use MediaWiki\MediaWikiServices;
 use OOUI\ButtonInputWidget;
 use OOUI\FieldsetLayout;
 use OOUI\RadioSelectInputWidget;
+use Revision;
 use Title;
 use TwoColConflict\CollapsedTextBuilder;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
@@ -22,9 +24,9 @@ use WikiPage;
 class InlineTwoColConflictHelper extends TextConflictHelper {
 
 	/**
-	 * @var WikiPage
+	 * @var Revision
 	 */
-	private $wikiPage;
+	private $revision;
 
 	/**
 	 * @inheritDoc
@@ -33,7 +35,16 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$submitLabel
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
-		$this->wikiPage = WikiPage::factory( $title );
+
+		$wikiPage = WikiPage::factory( $title );
+		/** @see https://phabricator.wikimedia.org/T203085 */
+		$wikiPage->loadPageData( 'fromdbmaster' );
+		$this->revision = $wikiPage->getRevision();
+
+		if ( !$this->revision ) {
+			throw new InvalidArgumentException( 'The title "' . $title->getPrefixedText() .
+				'" does not refer to an existing page' );
+		}
 	}
 
 	/**
@@ -110,7 +121,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$out = Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
 		$out .= Html::input(
 			'mw-twocolconflict-title',
-			$this->wikiPage->getTitle()->getText(), 'hidden'
+			$this->title->getText(), 'hidden'
 		);
 		$out .= $this->buildConflictPageChangesCol();
 
@@ -304,7 +315,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	protected function buildEditSummary() {
-		$currentRev = $this->wikiPage->getRevision();
+		$currentRev = $this->revision;
 		$baseRevId = $this->out->getRequest()->getIntOrNull( 'editRevId' );
 		$nEdits = $this->title->countRevisionsBetween( $baseRevId, $currentRev, 100 );
 
@@ -414,7 +425,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	protected function getLastUserText() {
-		return $this->wikiPage->getRevision()->getUserText();
+		return $this->revision->getUserText();
 	}
 
 	/**
