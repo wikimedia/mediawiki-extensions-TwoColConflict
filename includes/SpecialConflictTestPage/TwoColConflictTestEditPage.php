@@ -40,7 +40,9 @@ class TwoColConflictTestEditPage extends EditPage {
 	/**
 	 * Attempt submission - is overwritten in case of a test conflict to avoid any real save
 	 * this will also avoid running the hook that triggers logging a resolved conflict
+	 *
 	 * @param array|bool &$resultDetails
+	 *
 	 * @return Status
 	 */
 	public function attemptSave( &$resultDetails = false ) {
@@ -51,6 +53,7 @@ class TwoColConflictTestEditPage extends EditPage {
 
 	/**
 	 * Force conflict mode
+	 *
 	 * @param callable|null $formCallback
 	 */
 	public function showEditForm( $formCallback = null ) {
@@ -60,6 +63,7 @@ class TwoColConflictTestEditPage extends EditPage {
 
 	/**
 	 * @param int &$tabindex Current tabindex
+	 *
 	 * @return \OOUI\ButtonInputWidget[] 1-element array with the preview button only
 	 */
 	public function getEditButtons( &$tabindex ) {

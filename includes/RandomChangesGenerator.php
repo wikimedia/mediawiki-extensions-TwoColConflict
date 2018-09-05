@@ -14,6 +14,7 @@ class RandomChangesGenerator {
 	 * @param string $baseText Text where random changes should be applied.
 	 * @param int $randomWordNum Number of words randomly added.
 	 * @param int $minWordLength Min length of word to find and insert.
+	 *
 	 * @return string Resulting changed base text
 	 */
 	public static function generateRandomlyChangedText(
@@ -35,6 +36,7 @@ class RandomChangesGenerator {
 	 *
 	 * @param string $originalText
 	 * @param string $textToInsert
+	 *
 	 * @return string
 	 */
 	private static function insertTextAtRandom( $originalText, $textToInsert ) {
@@ -49,6 +51,7 @@ class RandomChangesGenerator {
 	 *
 	 * @param string $text
 	 * @param int $minLength Min length of word. Will fallback to the best fit after 30 attempts.
+	 *
 	 * @return string
 	 */
 	private static function getRandomWord( $text, $minLength ) {

@@ -30,6 +30,7 @@ class HtmlSpecialTestTextForm {
 	/**
 	 * @param string $baseVersionText
 	 * @param string $titleText
+	 *
 	 * @return string
 	 */
 	public function getHtml( $baseVersionText, $titleText ) {

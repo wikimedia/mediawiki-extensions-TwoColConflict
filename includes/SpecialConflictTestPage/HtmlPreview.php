@@ -31,6 +31,7 @@ class HtmlPreview {
 	/**
 	 * @param Title $title
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	public function getHtml( $title, $wikiText ) {

@@ -100,6 +100,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * used and overwritten by a simple container for the result text.
 	 *
 	 * @param array $customAttribs
+	 *
 	 * @return string HTML
 	 */
 	public function getEditConflictMainTextBox( array $customAttribs = [] ) {

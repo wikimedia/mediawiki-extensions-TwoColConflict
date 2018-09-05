@@ -250,6 +250,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * Build HTML for the textbox with the unified diff.
 	 *
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	private function buildChangesTextbox( $wikiText ) {
@@ -279,6 +280,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * Build HTML for a hidden textbox with the marked up foreign text.
 	 *
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	private function buildHiddenChangesTextbox( $wikiText ) {
@@ -383,6 +385,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @param string[] $fromTextLines
 	 * @param string[] $toTextLines
+	 *
 	 * @return array[]
 	 */
 	protected function getLineBasedUnifiedDiff( $fromTextLines, $toTextLines ) {
@@ -418,6 +421,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * Build HTML for the content of the unified diff box.
 	 *
 	 * @param array[] $unifiedDiff
+	 *
 	 * @return string
 	 */
 	private function getMarkedUpDiffText( array $unifiedDiff ) {
@@ -488,6 +492,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * Build HTML for the marked up foreign text in the hidden textbox
 	 *
 	 * @param array[] $unifiedDiff
+	 *
 	 * @return string
 	 */
 	private function getMarkedUpForeignText( array $unifiedDiff ) {
@@ -529,6 +534,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * Check if a unified diff line contains an edit conflict.
 	 *
 	 * @param array[] $currentLine
+	 *
 	 * @return boolean
 	 */
 	private function hasConflictInLine( array $currentLine ) {
@@ -542,8 +548,9 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 
 	/**
 	 * Normalize marked up lines to editor text.
-
+	 *
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	private function normalizeMarkedUpText( $wikiText ) {
@@ -552,7 +559,9 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 
 	/**
 	 * Build HTML for the unchanged text in the unified diff box.
+	 *
 	 * @param string $text HTML
+	 *
 	 * @return string HTML
 	 */
 	private function addUnchangedText( $text ) {

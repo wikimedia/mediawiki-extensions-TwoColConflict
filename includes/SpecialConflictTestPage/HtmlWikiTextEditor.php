@@ -26,6 +26,7 @@ class HtmlWikiTextEditor {
 
 	/**
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	public function getHtml( $wikiText ) {
@@ -66,6 +67,7 @@ class HtmlWikiTextEditor {
 	 * Build editor HTML see EditPage->showTextbox()
 	 *
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	private function buildEditor( $wikiText ) {
@@ -93,6 +95,7 @@ class HtmlWikiTextEditor {
 	 * Build editor HTML see EditPage->addNewLineAtEnd()
 	 *
 	 * @param string $wikiText
+	 *
 	 * @return string
 	 */
 	private function addNewLineAtEnd( $wikiText ) {

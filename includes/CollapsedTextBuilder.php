@@ -17,6 +17,7 @@ class CollapsedTextBuilder {
 	 *
 	 * @param string $text HTML
 	 * @param int $maxLength
+	 *
 	 * @return string|false
 	 */
 	public static function buildCollapsedText( $text, $maxLength = 150 ) {
@@ -44,6 +45,7 @@ class CollapsedTextBuilder {
 	 * @param string $string
 	 * @param int $maxLength
 	 * @param boolean $trimAtEnd
+	 *
 	 * @return string
 	 */
 	private static function trimStringToFullWord( $string, $maxLength, $trimAtEnd = true ) {
@@ -75,6 +77,7 @@ class CollapsedTextBuilder {
 	 *
 	 * @param string $string
 	 * @param null|boolean $trimAtEnd
+	 *
 	 * @return string
 	 */
 	private static function trimWhiteSpaces( $string, $trimAtEnd = null ) {

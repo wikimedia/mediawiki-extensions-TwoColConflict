@@ -36,6 +36,7 @@ class HtmlSplitConflictView {
 	 * @param array[] $unifiedDiff
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
+	 *
 	 * @return string
 	 */
 	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) {
@@ -205,6 +206,7 @@ class HtmlSplitConflictView {
 	 * Check if a unified diff line contains an edit conflict.
 	 *
 	 * @param array[] $currentLine
+	 *
 	 * @return bool
 	 */
 	private function hasConflictInLine( array $currentLine ) {
