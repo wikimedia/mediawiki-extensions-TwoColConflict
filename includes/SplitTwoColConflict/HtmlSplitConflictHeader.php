@@ -3,8 +3,11 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use Language;
 use Linker;
+use MediaWiki\Storage\RevisionRecord;
 use Message;
+use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -13,15 +16,24 @@ use Message;
 class HtmlSplitConflictHeader {
 
 	/**
-	 * @var SplitTwoColConflictHelper
+	 * @var RevisionRecord
 	 */
-	private $conflictHelper;
+	private $revision;
 
 	/**
-	 * @param SplitTwoColConflictHelper $conflictHelper
+	 * @var User
 	 */
-	public function __construct( SplitTwoColConflictHelper $conflictHelper ) {
-		$this->conflictHelper = $conflictHelper;
+	private $user;
+
+	/**
+	 * @var Language
+	 */
+	private $language;
+
+	public function __construct( RevisionRecord $revision, User $user, Language $language ) {
+		$this->revision = $revision;
+		$this->user = $user;
+		$this->language = $language;
 	}
 
 	/**
@@ -59,7 +71,7 @@ class HtmlSplitConflictHeader {
 			),
 			wfMessage( 'twocolconflict-split-saved-at' ),
 			'mw-twocolconflict-split-current-version-header',
-			$this->conflictHelper->getWikiPage()->getRevision()->getTimestamp()
+			$this->revision->getTimestamp()
 		);
 	}
 
@@ -72,6 +84,14 @@ class HtmlSplitConflictHeader {
 		);
 	}
 
+	/**
+	 * @param Message $headerMsg
+	 * @param Message $dateMsg
+	 * @param string $class
+	 * @param mixed $timestamp
+	 *
+	 * @return string HTML
+	 */
 	private function buildVersionHeader(
 		Message $headerMsg,
 		Message $dateMsg,
@@ -85,23 +105,35 @@ class HtmlSplitConflictHeader {
 			Html::closeElement( 'div' );
 	}
 
+	/**
+	 * @return string HTML
+	 */
 	private function getLastRevUserLink() {
-		$currentRev = $this->conflictHelper->getWikiPage()->getRevision();
-		return Linker::userLink( $currentRev->getUser(), $currentRev->getUserText() );
+		$user = $this->revision->getUser();
+		return Linker::userLink( $user->getId(), $user->getName() );
 	}
 
+	/**
+	 * @param Message $dateMsg
+	 * @param mixed $timestamp
+	 *
+	 * @return string HTML
+	 */
 	private function getFormattedDateTime( Message $dateMsg, $timestamp ) {
-		$language = $this->conflictHelper->getOutput()->getContext()->getLanguage();
-		$user = $this->conflictHelper->getOutput()->getUser();
-
-		$d = $language->userDate( $timestamp, $user );
-		$t = $language->userTime( $timestamp, $user );
+		// FIXME: Why not use Language::userTimeAndDate?
+		$d = $this->language->userDate( $timestamp, $this->user );
+		$t = $this->language->userTime( $timestamp, $this->user );
 
 		$dateMsg->params( $d, $t );
 
 		return $dateMsg->parse();
 	}
 
+	/**
+	 * @param string $message
+	 *
+	 * @return string HTML
+	 */
 	private function getWarningMessage( $message ) {
 		return Html::rawElement(
 			'div',

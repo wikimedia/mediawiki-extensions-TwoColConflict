@@ -4,9 +4,11 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MediaWiki\EditPage\TextConflictHelper;
+use MediaWiki\Storage\RevisionRecord;
 use OutputPage;
 use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use UnexpectedValueException;
 use WikiPage;
 
 /**
@@ -14,11 +16,6 @@ use WikiPage;
  * @author Andrew Kostka <andrew.kostka@wikimedia.de>
  */
 class SplitTwoColConflictHelper extends TextConflictHelper {
-
-	/**
-	 * @var WikiPage
-	 */
-	private $wikiPage;
 
 	/**
 	 * @var string[]
@@ -40,9 +37,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$submitLabel
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
-		$this->wikiPage = WikiPage::factory( $title );
+
 		$this->out->enableOOUI();
-		$this->getOutput()->addModuleStyles( [ 'oojs-ui.styles.icons-editing-core' ] );
+		$this->out->addModuleStyles( [ 'oojs-ui.styles.icons-editing-core' ] );
 	}
 
 	/**
@@ -69,13 +66,20 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
-	 * FIXME: The (currently) only 2 callers of this don't need a WikiPage object, but a Revision
-	 * object. Only this should be returned.
-	 *
-	 * @return WikiPage
+	 * @return RevisionRecord
 	 */
-	public function getWikiPage() {
-		return $this->wikiPage;
+	public function getRevisionRecord() {
+		$wikiPage = WikiPage::factory( $this->title );
+		/** @see https://phabricator.wikimedia.org/T203085 */
+		$wikiPage->loadPageData( 'fromdbmaster' );
+		$revision = $wikiPage->getRevision();
+
+		if ( !$revision ) {
+			throw new UnexpectedValueException( 'The title "' . $this->title->getPrefixedText() .
+				'" does not refer to an existing page' );
+		}
+
+		return $revision->getRevisionRecord();
 	}
 
 	/**
@@ -126,7 +130,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$out .= Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
 		$out .= Html::input(
 			'mw-twocolconflict-title',
-			$this->wikiPage->getTitle()->getText(), 'hidden'
+			$this->title->getText(), 'hidden'
 		);
 		$out .= $this->buildEditConflictView();
 		$out .= $this->buildRawTextsHiddenFields();
@@ -155,7 +159,12 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 */
 	private function buildEditConflictView() {
 		$unifiedDiff = $this->getLineBasedUnifiedDiff();
-		$out = ( new HtmlSplitConflictHeader( $this ) )->getHtml();
+
+		$out = ( new HtmlSplitConflictHeader(
+			$this->getRevisionRecord(),
+			$this->getOutput()->getUser(),
+			$this->getOutput()->getLanguage()
+		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			$this->out->getUser(),
 			$this->out->getLanguage()

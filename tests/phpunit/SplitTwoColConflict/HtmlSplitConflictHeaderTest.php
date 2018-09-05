@@ -2,9 +2,10 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
+use Language;
+use MediaWiki\Storage\RevisionRecord;
 use MediaWikiTestCase;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictHeader;
-use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 
 /**
@@ -22,7 +23,11 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testGetHtml() {
-		$htmHeader = new HtmlSplitConflictHeader( $this->newTextConflictHelper() );
+		$htmHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord(),
+			User::newFromName( 'TestUser' ),
+			Language::factory( 'qqx' )
+		);
 		$html = $htmHeader->getHtml();
 
 		$this->assertTagExistsWithTextContents( $html, 'a', 'OtherUser' );
@@ -33,38 +38,16 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @return SplitTwoColConflictHelper
+	 * @return RevisionRecord
 	 */
-	private function newTextConflictHelper() {
+	private function newRevisionRecord() {
 		$otherUser = User::newFromName( 'OtherUser' );
-
-		$revision = $this->createMock( \Revision::class );
+		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
-			->willReturn( $otherUser->getId() );
-		$revision->method( 'getUserText' )
-			->willReturn( 'OtherUser' );
+			->willReturn( $otherUser );
 		$revision->method( 'getTimestamp' )
 			->willReturn( '20180721234200' );
-
-		$wikiPage = $this->createMock( \WikiPage::class );
-		$wikiPage->method( 'getRevision' )
-			->willReturn( $revision );
-
-		$user = User::newFromName( 'TestUser' );
-
-		$output = $this->createMock( \OutputPage::class );
-		$output->method( 'getUser' )
-			->willReturn( $user );
-		$output->method( 'getContext' )
-			->willReturn( \RequestContext::getMain() );
-
-		$mock = $this->createMock( SplitTwoColConflictHelper::class );
-		$mock->method( 'getWikiPage' )
-			->willReturn( $wikiPage );
-		$mock->method( 'getOutput' )
-			->willReturn( $output );
-
-		return $mock;
+		return $revision;
 	}
 
 	private function assertTagExistsWithTextContents( $html, $tagName, $value ) {
