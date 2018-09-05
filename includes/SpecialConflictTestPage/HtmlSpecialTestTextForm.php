@@ -5,7 +5,7 @@ namespace TwoColConflict\SpecialConflictTestPage;
 use Html;
 use Message;
 use OOUI\ButtonInputWidget;
-use SpecialPage;
+use TwoColConflict\SpecialPageHtmlFragment;
 
 /**
  * Form allowing the user to change the base text for the conflict.
@@ -13,19 +13,7 @@ use SpecialPage;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlSpecialTestTextForm {
-
-	/**
-	 * @var SpecialPage
-	 */
-	private $specialPage;
-
-	/**
-	 * @param SpecialPage $specialPage
-	 */
-	public function __construct( SpecialPage $specialPage ) {
-		$this->specialPage = $specialPage;
-	}
+class HtmlSpecialTestTextForm extends SpecialPageHtmlFragment {
 
 	/**
 	 * @param string $baseVersionText
@@ -37,18 +25,18 @@ class HtmlSpecialTestTextForm {
 		return Html::openElement(
 			'form',
 			[
-				'action' => $this->specialPage->getPageTitle()->getLocalURL(),
+				'action' => $this->getPageTitle()->getLocalURL(),
 				'method' => 'POST',
 			]
 		) .
-		( new HtmlWikiTextEditor( $this->specialPage ) )->getHtml( $baseVersionText ) .
+		( new HtmlWikiTextEditor( $this ) )->getHtml( $baseVersionText ) .
 		Html::hidden(
 			"mw-twocolconflict-test-title",
 			$titleText
 		) .
 		Html::hidden(
 			"wpEditToken",
-			$this->specialPage->getUser()->getEditToken()
+			$this->getUser()->getEditToken()
 		) .
 		( new ButtonInputWidget(
 			[
