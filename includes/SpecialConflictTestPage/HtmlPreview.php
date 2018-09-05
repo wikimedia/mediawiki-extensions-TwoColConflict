@@ -4,8 +4,8 @@ namespace TwoColConflict\SpecialConflictTestPage;
 
 use ContentHandler;
 use ParserOptions;
-use SpecialPage;
 use Title;
+use TwoColConflict\SpecialPageHtmlFragment;
 
 /**
  * Shows a parsed preview of the changed wikitext
@@ -13,19 +13,7 @@ use Title;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlPreview {
-
-	/**
-	 * @var SpecialPage
-	 */
-	private $specialPage;
-
-	/**
-	 * @param SpecialPage $specialPage
-	 */
-	public function __construct( SpecialPage $specialPage ) {
-		$this->specialPage = $specialPage;
-	}
+class HtmlPreview extends SpecialPageHtmlFragment {
 
 	/**
 	 * @param Title $title
@@ -33,21 +21,21 @@ class HtmlPreview {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( $title, $wikiText ) {
+	public function getHtml( Title $title, $wikiText ) {
 		$content = ContentHandler::makeContent( $wikiText, $title );
 
 		$parserOptions = $this->getParserOptions();
 
 		$pstContent = $content->preSaveTransform(
 			$title,
-			$this->specialPage->getUser(),
+			$this->getUser(),
 			$parserOptions
 		);
 
 		$scopedCallback = $parserOptions->setupFakeRevision(
 			$title,
 			$pstContent,
-			$this->specialPage->getUser()
+			$this->getUser()
 		);
 
 		$parseResult = $pstContent->getParserOutput(

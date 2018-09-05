@@ -126,10 +126,9 @@ class SpecialConflictTestPage extends SpecialPage {
 	}
 
 	private function showLoadTitle() {
-		$this->getOutput()->addHTML( ( new HtmlSpecialTestTitleForm(
-			$this,
+		$this->getOutput()->addHTML( ( new HtmlSpecialTestTitleForm( $this ) )->getHtml(
 			$this->getPresetPage()
-		) )->getHtml() );
+		) );
 	}
 
 	/**
@@ -216,6 +215,9 @@ class SpecialConflictTestPage extends SpecialPage {
 		return true;
 	}
 
+	/**
+	 * @return string
+	 */
 	private function getPresetPage() {
 		$dbName = MediaWikiServices::getInstance()->getMainConfig()->get( 'DBname' );
 		$defaults = $this->testSiteDefaults();

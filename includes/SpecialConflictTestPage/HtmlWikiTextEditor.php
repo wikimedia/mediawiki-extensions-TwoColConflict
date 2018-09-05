@@ -4,25 +4,13 @@ namespace TwoColConflict\SpecialConflictTestPage;
 
 use EditPage;
 use Html;
-use SpecialPage;
+use TwoColConflict\SpecialPageHtmlFragment;
 
 /**
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlWikiTextEditor {
-
-	/**
-	 * @var SpecialPage
-	 */
-	private $specialPage;
-
-	/**
-	 * @param SpecialPage $specialPage
-	 */
-	public function __construct( SpecialPage $specialPage ) {
-		$this->specialPage = $specialPage;
-	}
+class HtmlWikiTextEditor extends SpecialPageHtmlFragment {
 
 	/**
 	 * @param string $wikiText
@@ -41,8 +29,8 @@ class HtmlWikiTextEditor {
 	 * Load modules mainly related to the toolbar functions
 	 */
 	private function loadModules() {
-		$this->specialPage->getOutput()->addModules( 'mediawiki.action.edit' );
-		$this->specialPage->getOutput()->addModuleStyles( 'mediawiki.action.edit.styles' );
+		$this->getOutput()->addModules( 'mediawiki.action.edit' );
+		$this->getOutput()->addModuleStyles( 'mediawiki.action.edit.styles' );
 	}
 
 	/**
@@ -53,13 +41,13 @@ class HtmlWikiTextEditor {
 	private function runEditFormInitialHook() {
 		$editPage = new EditPage(
 			\Article::newFromTitle(
-				$this->specialPage->getPageTitle(),
-				$this->specialPage->getContext()
+				$this->getPageTitle(),
+				$this->getContext()
 			)
 		);
 
 		\Hooks::run( 'EditPage::showEditForm:initial',
-			[ &$editPage, $this->specialPage->getOutput() ]
+			[ &$editPage, $this->getOutput() ]
 		);
 	}
 
@@ -71,8 +59,8 @@ class HtmlWikiTextEditor {
 	 * @return string
 	 */
 	private function buildEditor( $wikiText ) {
-		$class = 'mw-editfont-' . $this->specialPage->getUser()->getOption( 'editfont' );
-		$pageLang = $this->specialPage->getLanguage();
+		$class = 'mw-editfont-' . $this->getUser()->getOption( 'editfont' );
+		$pageLang = $this->getLanguage();
 
 		$wikiText = $this->addNewLineAtEnd( $wikiText );
 

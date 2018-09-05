@@ -8,7 +8,7 @@ use OOUI\ButtonInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\TextInputWidget;
-use SpecialPage;
+use TwoColConflict\SpecialPageHtmlFragment;
 
 /**
  * Form allowing to load an article as base version for the conflict test.
@@ -16,35 +16,18 @@ use SpecialPage;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlSpecialTestTitleForm {
+class HtmlSpecialTestTitleForm extends SpecialPageHtmlFragment {
 
 	/**
-	 * @var SpecialPage
-	 */
-	private $specialPage;
-
-	/**
-	 * @var string
-	 */
-	private $defaultValue;
-
-	/**
-	 * @param SpecialPage $specialPage
 	 * @param string $defaultValue
-	 */
-	public function __construct( SpecialPage $specialPage, $defaultValue = '' ) {
-		$this->specialPage = $specialPage;
-		$this->defaultValue = $defaultValue;
-	}
-
-	/**
+	 *
 	 * @return string HTML
 	 */
-	public function getHtml() {
+	public function getHtml( $defaultValue ) {
 		return Html::openElement(
 			'form',
 			[
-				'action' => $this->specialPage->getPageTitle()->getLocalURL(),
+				'action' => $this->getPageTitle()->getLocalURL(),
 				'method' => 'POST',
 			]
 		) .
@@ -53,7 +36,7 @@ class HtmlSpecialTestTitleForm {
 				new TextInputWidget(
 					[
 						'name' => 'mw-twocolconflict-test-title',
-						'value' => $this->defaultValue,
+						'value' => $defaultValue,
 						'classes' => [ 'mw-twocolconflict-test-title' ],
 						'suggestions' => false,
 						'autofocus' => true,
@@ -68,7 +51,7 @@ class HtmlSpecialTestTitleForm {
 		] ) ) .
 		Html::hidden(
 			"wpEditToken",
-			$this->specialPage->getUser()->getEditToken()
+			$this->getUser()->getEditToken()
 		) .
 		( new ButtonInputWidget(
 		[
