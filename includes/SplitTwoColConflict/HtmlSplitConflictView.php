@@ -37,7 +37,7 @@ class HtmlSplitConflictView {
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
 	 *
-	 * @return string
+	 * @return string HTML
 	 */
 	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) {
 		$out = Html::openElement(

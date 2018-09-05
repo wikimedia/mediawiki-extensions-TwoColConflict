@@ -25,7 +25,7 @@ class HtmlSplitConflictHeader {
 	}
 
 	/**
-	 * @return string
+	 * @return string HTML
 	 */
 	public function getHtml() {
 		$out = $this->getWarningMessage(

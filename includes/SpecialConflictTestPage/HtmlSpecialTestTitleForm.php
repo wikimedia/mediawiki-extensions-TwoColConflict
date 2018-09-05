@@ -38,7 +38,7 @@ class HtmlSpecialTestTitleForm {
 	}
 
 	/**
-	 * @return string
+	 * @return string HTML
 	 */
 	public function getHtml() {
 		return Html::openElement(

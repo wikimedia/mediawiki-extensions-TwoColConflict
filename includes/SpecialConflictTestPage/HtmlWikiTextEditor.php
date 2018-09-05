@@ -27,7 +27,7 @@ class HtmlWikiTextEditor {
 	/**
 	 * @param string $wikiText
 	 *
-	 * @return string
+	 * @return string HTML
 	 */
 	public function getHtml( $wikiText ) {
 		$this->loadModules();

@@ -31,7 +31,7 @@ class HtmlSpecialTestTextForm {
 	 * @param string $baseVersionText
 	 * @param string $titleText
 	 *
-	 * @return string
+	 * @return string HTML
 	 */
 	public function getHtml( $baseVersionText, $titleText ) {
 		return Html::openElement(
