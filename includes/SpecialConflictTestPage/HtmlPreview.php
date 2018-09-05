@@ -3,7 +3,6 @@
 namespace TwoColConflict\SpecialConflictTestPage;
 
 use ContentHandler;
-use MWContentSerializationException;
 use ParserOptions;
 use SpecialPage;
 use Title;
@@ -35,11 +34,7 @@ class HtmlPreview {
 	 * @return string HTML
 	 */
 	public function getHtml( $title, $wikiText ) {
-		try {
-			$content = ContentHandler::makeContent( $wikiText, $title );
-		} catch ( MWContentSerializationException $ex ) {
-			die( 'failed to parse content of latest revision' );
-		}
+		$content = ContentHandler::makeContent( $wikiText, $title );
 
 		$parserOptions = $this->getParserOptions();
 
