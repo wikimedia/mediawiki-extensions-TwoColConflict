@@ -10,9 +10,15 @@ class EditConflictPage extends Page {
 	get conflictHeader() { return browser.element( '.mw-twocolconflict-split-header' ); }
 	get conflictView() { return browser.element( '.mw-twocolconflict-split-view' ); }
 
+	get otherParagraph() { return browser.element( '.mw-twocolconflict-split-delete' ); }
+	get yourParagraph() { return browser.element( '.mw-twocolconflict-split-add' ); }
+	get unchangedParagraph() { return browser.element( '.mw-twocolconflict-split-copy' ); }
 	get otherParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-edit-button' ); }
 	get yourParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-edit-button' ); }
 	get unchangedParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-edit-button' ); }
+	get otherParagraphEditor() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-editor' ); }
+	get yourParagraphEditor() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-editor' ); }
+	get unchangedParagraphEditor() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-editor' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 
 	enforceSplitEditConflict() {
