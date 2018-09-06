@@ -3,6 +3,7 @@
 namespace TwoColConflict;
 
 use IContextSource;
+use InvalidArgumentException;
 use Language;
 use Message;
 use MessageLocalizer;
@@ -31,9 +32,15 @@ abstract class SpecialPageHtmlFragment implements MessageLocalizer {
 	 * Implementations should not have a constructor, but provide whatever is needed as arguments to
 	 * their `getHtml` method.
 	 *
-	 * @param SpecialPage $specialPage
+	 * @param SpecialPage|self $specialPage
 	 */
-	final public function __construct( SpecialPage $specialPage ) {
+	final public function __construct( $specialPage ) {
+		if ( $specialPage instanceof self ) {
+			$specialPage = $specialPage->specialPage;
+		} elseif ( !( $specialPage instanceof SpecialPage ) ) {
+			throw new InvalidArgumentException( 'Invalid $specialPage' );
+		}
+
 		$this->specialPage = $specialPage;
 	}
 
