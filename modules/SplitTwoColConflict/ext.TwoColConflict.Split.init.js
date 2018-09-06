@@ -99,12 +99,14 @@
 	function initTour() {
 		var $body = $( 'body' ), $helpBtn, tour,
 			Tour = mw.libs.twoColConflict.split.Tour,
-			settings = new mw.libs.twoColConflict.Settings();
+			settings = new mw.libs.twoColConflict.Settings(),
+			windowManager = new OO.ui.WindowManager();
 
 		tour = Tour.init(
 			mw.msg( 'twocolconflict-split-tour-dialog-header' ),
 			'mw-twocolconflict-split-tour-slide-1',
-			mw.msg( 'twocolconflict-split-tour-dialog-message' )
+			mw.msg( 'twocolconflict-split-tour-dialog-message' ),
+			windowManager
 		);
 
 		tour.addTourPopup(
@@ -129,13 +131,8 @@
 		$( '.mw-twocolconflict-split-flex-header' ).prepend( $helpBtn );
 
 		if ( !settings.shouldHideHelpDialogue() ) {
-			// Delay slightly so that the first tour dialog
-			// has the correct size when it opens
-			// Todo: Look into a better fix
-			setTimeout( function () {
-				tour.showTour();
-				settings.setHideHelpDialogue( true );
-			}, 250 );
+			tour.showTour();
+			settings.setHideHelpDialogue( true );
 		}
 	}
 

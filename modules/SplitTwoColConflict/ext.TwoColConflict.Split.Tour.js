@@ -6,9 +6,10 @@
 	 * @param {string} header for the initial dialog window
 	 * @param {string} image class for the initial dialog window
 	 * @param {string} message for the initial dialog window
+	 * @param {OO.ui.WindowManager} windowManager
 	 * @constructor
 	 */
-	var Tour = function ( header, image, message ) {
+	var Tour = function ( header, image, message, windowManager ) {
 		var closeButton,
 			$panel,
 			self = this;
@@ -59,6 +60,10 @@
 			self.$dialog.close();
 			self.showButtons();
 		} );
+
+		this.windowManager = windowManager;
+		$( 'body' ).append( this.windowManager.$element );
+		this.windowManager.addWindows( [ this.$dialog ] );
 	};
 
 	$.extend( Tour.prototype, {
@@ -195,12 +200,6 @@
 
 		showTour: function () {
 			this.hideTourPopups();
-
-			if ( !this.windowManager ) {
-				this.windowManager = new OO.ui.WindowManager();
-				$( 'body' ).append( this.windowManager.$element );
-				this.windowManager.addWindows( [ this.$dialog ] );
-			}
 			this.windowManager.openWindow( this.$dialog );
 		}
 	} );
@@ -211,10 +210,11 @@
 	 * @param {string} header for the initial dialog window
 	 * @param {string} image class for the initial dialog window
 	 * @param {string} message for the initial dialog window
+	 * @param {OO.ui.WindowManager} windowManager
 	 * @return {Tour}
 	 */
-	Tour.init = function ( header, image, message ) {
-		return new Tour( header, image, message );
+	Tour.init = function ( header, image, message, windowManager ) {
+		return new Tour( header, image, message, windowManager );
 	};
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
