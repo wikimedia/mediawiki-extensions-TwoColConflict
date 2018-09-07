@@ -22,9 +22,16 @@ class EditConflictPage extends Page {
 		} );
 	}
 
+	hidesHelpDialogue() {
+		browser.execute( function () {
+			( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-help-dialogue', '1' );
+		} );
+	}
+
 	showsAnEditConflictWith( conflictUser, conflictUserPassword ) {
 		UserLoginPage.loginAdmin();
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
+		this.hidesHelpDialogue();
 		this.enforceSplitEditConflict();
 
 		this.createSimpleConflict(
