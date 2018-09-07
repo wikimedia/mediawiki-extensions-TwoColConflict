@@ -74,5 +74,6 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Начать объединение",
 	"twocolconflict-split-tour-popup-btn-text": "Понятно",
 	"twocolconflict-split-tour-popup2-header": "Выберите, какие изменения удерживать",
-	"twocolconflict-split-tour-popup3-header": "Подчёркнутый текст"
+	"twocolconflict-split-tour-popup3-header": "Подчёркнутый текст",
+	"twocolconflict-split-edit-tooltip": "Редактировать текст"
 }
