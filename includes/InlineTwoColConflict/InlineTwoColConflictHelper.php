@@ -109,7 +109,6 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 * used and overwritten.
 	 */
 	public function showEditFormTextAfterFooters() {
-		return;
 	}
 
 	/**
