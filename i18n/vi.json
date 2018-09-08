@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Quenhitran",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nhatminh01"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -47,5 +48,6 @@
 	"twocolconflict-test-title-submit": "Xem trang sửa đổi",
 	"twocolconflict-split-your-version-header": "Phiên bản của bạn",
 	"twocolconflict-split-tour-popup-btn-text": "Hiểu rồi",
-	"twocolconflict-split-tour-popup3-header": "Văn bản tô đậm"
+	"twocolconflict-split-tour-popup3-header": "Văn bản tô đậm",
+	"twocolconflict-split-edit-tooltip": "Sửa nội dung"
 }

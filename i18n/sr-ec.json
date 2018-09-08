@@ -70,5 +70,6 @@
 	"twocolconflict-split-tour-popup-btn-text": "У реду, разумем.",
 	"twocolconflict-split-tour-popup1-header": "Различите промене су приказане ред по ред.",
 	"twocolconflict-split-tour-popup2-header": "Одаберите промене које желите да оставите",
-	"twocolconflict-split-tour-popup3-header": "Истакнут текст"
+	"twocolconflict-split-tour-popup3-header": "Истакнут текст",
+	"twocolconflict-split-edit-tooltip": "Уредите текст"
 }
