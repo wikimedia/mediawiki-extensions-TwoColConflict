@@ -75,7 +75,7 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Text for the close button on the first screen of the help dialog.",
 	"twocolconflict-split-tour-popup-btn-text": "Text for the close button on any popup in the help dialog.",
 	"twocolconflict-split-tour-popup1-header": "Text for the header of the popup explaining \"Conflicting versions\".",
-	"twocolconflict-split-tour-popup1-message": "Text for the message of the popup explaining \"Conflicting versions\".",
+	"twocolconflict-split-tour-popup1-message": "Text for the message of the popup explaining \"Conflicting versions\".\n\nFor a right-to-left language, swap \"right\" and \"left\".",
 	"twocolconflict-split-tour-popup2-header": "Text for the header of the popup explaining \"Highlighted text\".",
 	"twocolconflict-split-tour-popup2-message": "Text for the message of the popup explaining \"Highlighted text\".",
 	"twocolconflict-split-tour-popup3-header": "Text for the header of the popup explaining \"Choose a base version\".",

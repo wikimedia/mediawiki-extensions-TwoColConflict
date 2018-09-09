@@ -63,5 +63,16 @@
 	"twocolconflict-split-current-version-header": "גרסה מתנגשת של $1 (מפורסמת כרגע)",
 	"twocolconflict-split-not-saved-at": "לא פורסמה $1, $2",
 	"twocolconflict-split-saved-at": "פורסמה $1, $2.",
-	"twocolconflict-split-choose-version": "נא לבחור גרסה"
+	"twocolconflict-split-choose-version": "נא לבחור גרסה",
+	"twocolconflict-split-tour-dialog-header": "פתרון התנגשויות עריכה",
+	"twocolconflict-split-tour-dialog-message": "נראה שיש לך התנגשות עריכה: בזמן שערכת, משתמש אחר ערך את הדף ושמר אותו. הגרסה שלך אינה כוללת את השינויים האחרונים. אנחנו מבקשים ממך למזג את הגרסה שלך עם הגרסה האחרונה של המשתמש האחר.",
+	"twocolconflict-split-tour-dialog-btn-text": "להתחיל למזג",
+	"twocolconflict-split-tour-popup-btn-text": "בסדר, הבנתי.",
+	"twocolconflict-split-tour-popup1-header": "ההבדלים מוצגים שורה אחר שורה.",
+	"twocolconflict-split-tour-popup1-message": "כשיש הבדל בין הטקסט של המשתמש האחר לבין הטקסט שלך, שתי הגרסאות מוצגות זו לצד זו: הגרסה של המשתמש האחר מוצגת בתיבה צהובה מימין והגרסה שלך מוצגת בתיבה כחולה משמאל.<br /><br />כשאין הבדל בין שתי הגרסאות, השורות מוצגות בתיבות אפורות. אפשר להרחיב או לצמצם אותן ולערוך אותם אם צריך.",
+	"twocolconflict-split-tour-popup2-header": "יש לבחור אילו שינויים אתם רוצים לשמור",
+	"twocolconflict-split-tour-popup2-message": "יש לבחור איזו גרסה של טקסט אתם רוצים לשמור באמצעות לחיצה על סמל העיפרון. אפשר גם להעתיק טקסט מהגרסה שלא בחרת באמצעות שימוש בפונקציית ההעתקה וההדבקה במקלדת שלך אם באמצעות לחיצה ימנית.<br /><br />יש לבחור גרסה אחת עבור כל שורה שהשתנתה כדי לשמור את הטקסט הממוזג.",
+	"twocolconflict-split-tour-popup3-header": "טקסט מודגש",
+	"twocolconflict-split-tour-popup3-message": "הטקסט ששוּנה באחת מהגרסאות מודגש. אחרי עריכת הטקסט ההדגשה תיעלם.",
+	"twocolconflict-split-edit-tooltip": "עריכת הטקסט"
 }
