@@ -73,9 +73,9 @@
 	"twocolconflict-split-tour-dialog-btn-text": "開始合併",
 	"twocolconflict-split-tour-popup-btn-text": "好的，了解。",
 	"twocolconflict-split-tour-popup1-header": "逐行顯示變更分歧。",
-	"twocolconflict-split-tour-popup1-message": "當其他使用者的文字與您的內容有差異時，該兩份版本會以並排顯示出：其他使用者的版本是在左側黃框裡，而您的版本是在右側藍框中。</br></br>當兩份版本之間沒有差異時，該行則會以灰框顯示。如有需要可做出展開或折疊、以及編輯。",
+	"twocolconflict-split-tour-popup1-message": "當其他使用者的文字與您的內容有差異時，該兩份版本會以並排顯示出：其他使用者的版本是在左側黃框裡，而您的版本是在右側藍框中。<br /><br />當兩份版本之間沒有差異時，該行則會以灰框顯示。如有需要可做出展開或折疊、以及編輯。",
 	"twocolconflict-split-tour-popup2-header": "挑選您想要保留住的變更",
-	"twocolconflict-split-tour-popup2-message": "透過點擊每組行之間兩個按鈕其一，來選擇您所要保留下來的文字版本。當您選好了版本後，您可以透過點擊筆狀圖標來進行編輯。也可以透過您的鍵盤或滑鼠右鍵，來從您未選取的版本裡複製文字。</br></br>您需要替各個更改過的行來選擇一個版本以儲存合併的文字。",
+	"twocolconflict-split-tour-popup2-message": "透過點擊每組行之間兩個按鈕其一，來選擇您所要保留下來的文字版本。當您選好了版本後，您可以透過點擊筆狀圖標來進行編輯。也可以透過您的鍵盤或滑鼠右鍵，來從您未選取的版本裡複製文字。<br /><br />您需要替各個更改過的行來選擇一個版本以儲存合併的文字。",
 	"twocolconflict-split-tour-popup3-header": "突顯文字",
 	"twocolconflict-split-tour-popup3-message": "在任一行所變更的文字會以突顯方式顯示。在您編輯完文字之後，突顯出的內容就會消失。",
 	"twocolconflict-split-edit-tooltip": "編輯文字"

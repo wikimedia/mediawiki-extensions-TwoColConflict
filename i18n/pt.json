@@ -72,9 +72,9 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Iniciar fusão",
 	"twocolconflict-split-tour-popup-btn-text": "Entendido.",
 	"twocolconflict-split-tour-popup1-header": "As mudanças divergentes são mostradas linha a linha.",
-	"twocolconflict-split-tour-popup1-message": "Quando há diferenças entre o texto do outro utilizador e o seu, as duas versões são mostradas lado a lado: a versão do outro utilizador na caixa amarela à esquerda e a sua na caixa azul à direita.</br></br>Quando não há diferenças entre as duas versões, as linhas são mostradas em caixas cinzentas. Estas podem ser expandidas ou recolhidas e editadas, se necessário.",
+	"twocolconflict-split-tour-popup1-message": "Quando há diferenças entre o texto do outro utilizador e o seu, as duas versões são mostradas lado a lado: a versão do outro utilizador na caixa amarela à esquerda e a sua na caixa azul à direita.<br /><br />Quando não há diferenças entre as duas versões, as linhas são mostradas em caixas cinzentas. Estas podem ser expandidas ou recolhidas e editadas, se necessário.",
 	"twocolconflict-split-tour-popup2-header": "Escolha as alterações que deseja manter",
-	"twocolconflict-split-tour-popup2-message": "Escolha a versão do texto que deseja manter, clicando um dos dois botões entre cada par de linhas. Depois de selecionar uma versão, pode editá-la clicando no ícone da caneta. Também é possível copiar o texto da versão que não selecionou, usando a função copiar e inserir do teclado ou o botão direito do rato.</br></br>Tem de selecionar uma versão de cada linha alterada, para gravar o texto fundido.",
+	"twocolconflict-split-tour-popup2-message": "Escolha a versão do texto que deseja manter, clicando um dos dois botões entre cada par de linhas. Depois de selecionar uma versão, pode editá-la clicando no ícone da caneta. Também é possível copiar o texto da versão que não selecionou, usando a função copiar e inserir do teclado ou o botão direito do rato.<br /><br />Tem de selecionar uma versão de cada linha alterada, para gravar o texto fundido.",
 	"twocolconflict-split-tour-popup3-header": "Texto realçado",
 	"twocolconflict-split-tour-popup3-message": "O texto que foi alterado em cada versão de uma linha aparece realçado. Depois de editar o texto, o realce desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Editar texto"

@@ -44,5 +44,6 @@
 	"twocolconflict-split-saved-at": "verëffentlecht de(n) $1 ëm $2.",
 	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus",
 	"twocolconflict-split-tour-dialog-header": "Ännerungskonflikter léisen",
-	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen."
+	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen.",
+	"twocolconflict-split-edit-tooltip": "Text änneren"
 }
