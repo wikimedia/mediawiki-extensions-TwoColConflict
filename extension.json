@@ -238,7 +238,10 @@
 				"twocolconflict-split-tour-popup2-header",
 				"twocolconflict-split-tour-popup2-message",
 				"twocolconflict-split-tour-popup3-header",
-				"twocolconflict-split-tour-popup3-message"
+				"twocolconflict-split-tour-popup3-message",
+				"twocolconflict-split-reset-warning",
+				"twocolconflict-split-reset-warning-cancel",
+				"twocolconflict-split-reset-warning-accept"
 			]
 		}
 	},

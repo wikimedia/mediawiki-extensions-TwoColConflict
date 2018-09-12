@@ -41,14 +41,59 @@
 	 * @param {jQuery} $row
 	 */
 	function disableEditing( $row ) {
+		$row.removeClass( 'mw-twocolconflict-split-editing' );
+		$row.find( '.mw-twocolconflict-split-editable' ).removeClass( getEditorFontClass() );
+	}
+
+	/**
+	 * @param {jQuery} $row
+	 */
+	function saveEditing( $row ) {
 		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
 			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
 			$editor = $selected.find( '.mw-twocolconflict-split-editor' );
 
 		$diffText.text( $editor.val() );
+		disableEditing( $row );
+	}
 
-		$row.removeClass( 'mw-twocolconflict-split-editing' );
-		$row.find( '.mw-twocolconflict-split-editable' ).removeClass( getEditorFontClass() );
+	/**
+	 * @param {jQuery} $row
+	 */
+	function resetEditing( $row ) {
+		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
+			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
+			$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' ),
+			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
+
+		$diffText.html( $resetDiffText.html() );
+		$editor.val( $resetEditorText.text() );
+		disableEditing( $row );
+	}
+
+	/**
+	 * @param {jQuery} $row
+	 */
+	function resetWarning( $row ) {
+		OO.ui.confirm(
+			mw.msg( 'twocolconflict-split-reset-warning' ), {
+				actions: [
+					{
+						label: mw.msg( 'twocolconflict-split-reset-warning-cancel' ),
+						action: 'cancel'
+					},
+					{
+						label: mw.msg( 'twocolconflict-split-reset-warning-accept' ),
+						action: 'accept'
+					}
+				]
+			}
+		).done( function ( confirmed ) {
+			if ( confirmed ) {
+				resetEditing( $row );
+			}
+		} );
 	}
 
 	function initButtonEvents() {
@@ -62,7 +107,14 @@
 		$( '.mw-twocolconflict-split-save-button' ).each( function () {
 			var button = OO.ui.ButtonWidget.static.infuse( this );
 			button.on( 'click', function () {
-				disableEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
+				saveEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
+			} );
+		} );
+
+		$( '.mw-twocolconflict-split-reset-button' ).each( function () {
+			var button = OO.ui.ButtonWidget.static.infuse( this );
+			button.on( 'click', function () {
+				resetWarning( button.$element.closest( '.mw-twocolconflict-split-row' ) );
 			} );
 		} );
 	}

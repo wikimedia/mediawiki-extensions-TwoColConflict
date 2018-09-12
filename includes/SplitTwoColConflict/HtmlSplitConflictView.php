@@ -155,8 +155,20 @@ class HtmlSplitConflictView {
 			) .
 			$this->buildEditButton() .
 			$this->buildSaveButton() .
+			$this->buildResetButton() .
+			$this->buildResetText( $text, $rawText ) .
 			$this->buildTextEditor( $rawText, $rowNum, $changeType )
 		);
+	}
+
+	private function buildResetText( $text, $rawText ) {
+		return Html::rawElement(
+				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
+				$text
+			) . Html::rawElement(
+				'span', [ 'class' => 'mw-twocolconflict-split-reset-editor-text' ],
+				$rawText
+			);
 	}
 
 	private function buildTextEditor( $text, $rowNum, $changeType ) {
@@ -197,6 +209,16 @@ class HtmlSplitConflictView {
 			'icon' => 'check',
 			'title' => wfMessage( 'twocolconflict-split-save-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-save-button' ]
+		] );
+	}
+
+	private function buildResetButton() {
+		return new ButtonWidget( [
+			'infusable' => true,
+			'framed' => false,
+			'icon' => 'undo',
+			'title' => wfMessage( 'twocolconflict-split-reset-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-split-reset-button' ]
 		] );
 	}
 
