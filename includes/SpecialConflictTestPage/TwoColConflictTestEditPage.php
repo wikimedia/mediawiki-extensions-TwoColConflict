@@ -2,8 +2,10 @@
 
 namespace TwoColConflict\SpecialConflictTestPage;
 
+use Article;
 use EditPage;
 use Status;
+use Title;
 
 /**
  * @license GPL-2.0-or-later
@@ -11,10 +13,18 @@ use Status;
  */
 class TwoColConflictTestEditPage extends EditPage {
 
-	/**
-	 * Setup the request values to provoke a simulated edit conflict
-	 */
-	public function setUpFakeConflictRequest() {
+	public function __construct(
+		Article $article,
+		Title $contextTitle,
+		callable $editConflictHelperFactory
+	) {
+		parent::__construct( $article );
+
+		/** @see https://phabricator.wikimedia.org/T176526 */
+		$this->setContextTitle( $contextTitle );
+		$this->setEditConflictHelperFactory( $editConflictHelperFactory );
+
+		// Setup the request values to provoke a simulated edit conflict
 		$request = $this->getContext()->getRequest();
 		$request->setVal( 'wpTextbox1', $request->getVal( 'mw-twocolconflict-test-text' ) );
 		$request->setVal( 'wpUltimateParam', '1' );

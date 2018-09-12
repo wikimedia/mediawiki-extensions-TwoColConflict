@@ -142,41 +142,26 @@ class SpecialConflictTestPage extends SpecialPage {
 		) );
 	}
 
-	/**
-	 * @param Article $article
-	 */
-	private function showConflict( $article ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		$conflictTestEditPage = new TwoColConflictTestEditPage( $article );
-		/** @see https://phabricator.wikimedia.org/T176526 */
-		$conflictTestEditPage->setContextTitle( $this->getPageTitle() );
-		$conflictTestEditPage->setUpFakeConflictRequest();
+	private function showConflict( Article $article ) {
+		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
+			$config = MediaWikiServices::getInstance()->getMainConfig();
+			$editConflictHelper = $config->get( 'TwoColConflictUseInline' )
+				? InlineTwoColConflictTestHelper::class
+				: SplitTwoColConflictTestHelper::class;
 
-		if ( $config->get( 'TwoColConflictUseInline' ) ) {
-			$conflictTestEditPage->setEditConflictHelperFactory(
-				function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
-					return new InlineTwoColConflictTestHelper(
-						$conflictTestEditPage->getTitle(),
-						$conflictTestEditPage->getContext()->getOutput(),
-						MediaWikiServices::getInstance()->getStatsdDataFactory(),
-						$submitButtonLabel
-					);
-				}
+			return new $editConflictHelper(
+				$article->getTitle(),
+				$article->getContext()->getOutput(),
+				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$submitButtonLabel
 			);
-		} else {
-			$conflictTestEditPage->setEditConflictHelperFactory(
-				function ( $submitButtonLabel ) use ( $conflictTestEditPage ) {
-					return new SplitTwoColConflictTestHelper(
-						$conflictTestEditPage->getTitle(),
-						$conflictTestEditPage->getContext()->getOutput(),
-						MediaWikiServices::getInstance()->getStatsdDataFactory(),
-						$submitButtonLabel
-					);
-				}
-			);
-		}
+		};
 
-		$conflictTestEditPage->edit();
+		( new TwoColConflictTestEditPage(
+			$article,
+			$this->getPageTitle(),
+			$editConflictHelperFactory
+		) )->edit();
 
 		// overwrite title set by EditPage
 		$this->getOutput()->setPageTitle( new Message( 'twocolconflict-test-page-title' ) );
