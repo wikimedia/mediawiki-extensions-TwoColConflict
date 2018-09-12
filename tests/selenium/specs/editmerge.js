@@ -118,11 +118,81 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'save button should not be visible at first', function () {
+		assert(
+			!EditConflictPage.unchangedParagraphSaveButton.isVisible(),
+			'the edit icon in the unselected unchanged text box is hidden'
+		);
+		assert(
+			!EditConflictPage.otherParagraphSaveButton.isVisible(),
+			'the edit icon in the selected text box is hidden'
+		);
+		assert(
+			!EditConflictPage.yourParagraphSaveButton.isVisible(),
+			'the edit icon in the unselected text box is hidden'
+		);
+	} );
+
+	it( 'edits of unchanged paragraphs should be saved', function () {
+		let unchangedParagraphNewText = 'Dummy Text';
+
+		EditConflictPage.unchangedParagraphEditButton.click();
+		EditConflictPage.unchangedParagraphEditor.setValue( unchangedParagraphNewText );
+		EditConflictPage.unchangedParagraphSaveButton.click();
+
+		assert.strictEqual(
+			EditConflictPage.unchangedParagraphDiffText.getText(),
+			unchangedParagraphNewText,
+			'unchanged text diff was edited'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.unchangedParagraphEditor.getValue(),
+			unchangedParagraphNewText,
+			'unchanged text editor was edited'
+		);
+	} );
+
+	it( 'edits of selected paragraphs should be saved and should not affect unselected paragraphs', function () {
+		let yourParagraphDiffText = EditConflictPage.yourParagraphDiffText.getText(),
+			yourParagraphEditorText = EditConflictPage.yourParagraphEditor.getValue(),
+			otherParagraphNewText = 'Dummy Text';
+
+		EditConflictPage.otherParagraphEditButton.click();
+		EditConflictPage.otherParagraphEditor.setValue( otherParagraphNewText );
+		EditConflictPage.otherParagraphSaveButton.click();
+
+		assert.strictEqual(
+			EditConflictPage.yourParagraphDiffText.getText(),
+			yourParagraphDiffText,
+			'unselected text diff was not edited'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.yourParagraphEditor.getValue(),
+			yourParagraphEditorText,
+			'unselected text editor was not edited'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.otherParagraphDiffText.getText(),
+			otherParagraphNewText,
+			'selected text diff was edited'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.otherParagraphEditor.getValue(),
+			otherParagraphNewText,
+			'selected text editor was edited'
+		);
+	} );
+
 	afterEach( function () {
 		// provoke and dismiss reload warning
 		browser.url( 'data:' );
 		try {
 			browser.alertAccept();
+		} catch ( e ) {
 		} finally {
 			browser.deleteCookie();
 		}

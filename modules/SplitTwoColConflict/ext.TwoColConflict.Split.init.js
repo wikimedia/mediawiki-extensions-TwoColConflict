@@ -37,11 +37,32 @@
 		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
 	}
 
+	/**
+	 * @param {jQuery} $row
+	 */
+	function disableEditing( $row ) {
+		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
+			$editor = $selected.find( '.mw-twocolconflict-split-editor' );
+
+		$diffText.text( $editor.val() );
+
+		$row.removeClass( 'mw-twocolconflict-split-editing' );
+		$row.find( '.mw-twocolconflict-split-editable' ).removeClass( getEditorFontClass() );
+	}
+
 	function initButtonEvents() {
 		$( '.mw-twocolconflict-split-edit-button' ).each( function () {
 			var button = OO.ui.ButtonWidget.static.infuse( this );
 			button.on( 'click', function () {
 				enableEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
+			} );
+		} );
+
+		$( '.mw-twocolconflict-split-save-button' ).each( function () {
+			var button = OO.ui.ButtonWidget.static.infuse( this );
+			button.on( 'click', function () {
+				disableEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
 			} );
 		} );
 	}

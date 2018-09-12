@@ -14,11 +14,17 @@ class EditConflictPage extends Page {
 	get yourParagraph() { return browser.element( '.mw-twocolconflict-split-add' ); }
 	get unchangedParagraph() { return browser.element( '.mw-twocolconflict-split-copy' ); }
 	get otherParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-edit-button' ); }
+	get otherParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-save-button' ); }
 	get yourParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-edit-button' ); }
+	get yourParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-save-button' ); }
 	get unchangedParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-edit-button' ); }
+	get unchangedParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-save-button' ); }
 	get otherParagraphEditor() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-editor' ); }
 	get yourParagraphEditor() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-editor' ); }
 	get unchangedParagraphEditor() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-editor' ); }
+	get otherParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-difftext' ); }
+	get yourParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-difftext' ); }
+	get unchangedParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-difftext' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 
 	enforceSplitEditConflict() {
