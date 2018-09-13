@@ -66,5 +66,6 @@
 	"twocolconflict-split-tour-dialog-header": "حل تعارض‌های ویرایشی",
 	"twocolconflict-split-tour-dialog-btn-text": "شروع ادغام",
 	"twocolconflict-split-tour-popup-btn-text": "باشد، گرفتم",
-	"twocolconflict-split-tour-popup3-header": "متن برجسته"
+	"twocolconflict-split-tour-popup3-header": "متن برجسته",
+	"twocolconflict-split-edit-tooltip": "ویرایش متن"
 }
