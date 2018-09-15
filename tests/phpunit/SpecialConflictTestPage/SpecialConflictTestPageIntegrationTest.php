@@ -21,6 +21,7 @@ use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
+ * @group Database
  */
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	use HamcrestPHPUnitIntegration;
