@@ -63,5 +63,8 @@
 	"twocolconflict-split-not-saved-at": "ensin espublizar $1, $2.",
 	"twocolconflict-split-saved-at": "espublizada $1, $2.",
 	"twocolconflict-split-choose-version": "Por favor, escueye una versión",
-	"twocolconflict-split-tour-dialog-header": "Iguar conflictos d'edición"
+	"twocolconflict-split-tour-dialog-header": "Iguar conflictos d'edición",
+	"twocolconflict-split-tour-popup-btn-text": "Bien, entendílo.",
+	"twocolconflict-split-tour-popup1-header": "Los cambios diverxentes s'amuesen llinia por llinia.",
+	"twocolconflict-split-edit-tooltip": "Editar testu"
 }
