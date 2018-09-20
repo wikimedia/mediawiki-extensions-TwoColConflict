@@ -67,7 +67,7 @@
 	"twocolconflict-test-username": "Участник тестового конфликта",
 	"twocolconflict-test-summary-text": "Описание тестовой конфликтной правки",
 	"twocolconflict-split-your-version-header": "Ваша версия",
-	"twocolconflict-split-not-saved-at": "не сохранено $1, $2.",
+	"twocolconflict-split-not-saved-at": "не опубликовано $1, $2.",
 	"twocolconflict-split-saved-at": "опубликовано $1, $2.",
 	"twocolconflict-split-choose-version": "Выберите версию",
 	"twocolconflict-split-tour-dialog-header": "Разрешения конфликтов редактирования",

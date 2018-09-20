@@ -78,5 +78,6 @@
 	"twocolconflict-split-tour-popup2-header": "选择要保留的更改",
 	"twocolconflict-split-tour-popup2-message": "通过单击每对线之间的两个按钮之一，选择要保留的文本版本。选择版本后，可以通过单击笔图标进行编辑。也可以使用键盘上的复制和粘贴功能或右键单击从未选择的版本中复制文本。<br> <br>您需要为每个更改的行选择一个版本以保存合并的文本。",
 	"twocolconflict-split-tour-popup3-header": "高亮文本",
-	"twocolconflict-split-tour-popup3-message": "在任一版本的行中更改的文本都会突出显示。编辑文本后，突出显示将消失。"
+	"twocolconflict-split-tour-popup3-message": "在任一版本的行中更改的文本都会突出显示。编辑文本后，突出显示将消失。",
+	"twocolconflict-split-edit-tooltip": "编辑文本"
 }
