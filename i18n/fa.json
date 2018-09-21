@@ -3,7 +3,8 @@
 		"authors": [
 			"Ladsgroup",
 			"Reza1615",
-			"Mardetanha"
+			"Mardetanha",
+			"Alifakoor"
 		]
 	},
 	"twocolconflict": "تعارض‌دوستونی",
@@ -67,7 +68,9 @@
 	"twocolconflict-split-tour-dialog-header": "حل تعارض‌های ویرایشی",
 	"twocolconflict-split-tour-dialog-btn-text": "شروع ادغام",
 	"twocolconflict-split-tour-popup-btn-text": "باشد، گرفتم",
+	"twocolconflict-split-tour-popup1-header": "تغییرات افتراقی به‌صورت خط‌به‌خط نمایش داده می‌شوند.",
 	"twocolconflict-split-tour-popup2-header": "انتخاب اینکه کدام تغییر را می‌خواهید حفظ کنید.",
 	"twocolconflict-split-tour-popup3-header": "متن برجسته",
+	"twocolconflict-split-tour-popup3-message": "متنی که در هرکدام از نسخه‌های سطر تغییر کرده‌باشد، علامت‌گذاری شده‌است. بعد از اینکه متن را ویرایش کنید، علامت‌گذاری‌ها پاک می‌شوند.",
 	"twocolconflict-split-edit-tooltip": "ویرایش متن"
 }
