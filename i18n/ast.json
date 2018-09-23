@@ -64,7 +64,14 @@
 	"twocolconflict-split-saved-at": "espublizada $1, $2.",
 	"twocolconflict-split-choose-version": "Por favor, escueye una versión",
 	"twocolconflict-split-tour-dialog-header": "Iguar conflictos d'edición",
+	"twocolconflict-split-tour-dialog-message": "Tas esperimentando un conflictu d'edición: Mentanto tabes editando, otru usuariu editó tamién la páxina y guardóla. La to versión nun incluye les últimes ediciones. Pidímoste que, por favor, entemezas la to versión cola actualmente última versión del otru usuariu.",
+	"twocolconflict-split-tour-dialog-btn-text": "Principiar la fusión",
 	"twocolconflict-split-tour-popup-btn-text": "Bien, entendílo.",
 	"twocolconflict-split-tour-popup1-header": "Los cambios diverxentes s'amuesen llinia por llinia.",
+	"twocolconflict-split-tour-popup1-message": "Cuando hai una diferencia ente'l to testu ya'l del otru usuariu, s'amuesen les dos versiones una al llau d'otra: la del otru usuariu ye'l cuadru mariellu de la izquierda y la de to ye'l cuadru azul de la drecha.<br /><br />Cuando nun hai diferencies ente les dos versiones, les llinies vense como cuadros en buxu. Estos pueden espardese o contraese y editase si fai falta.",
+	"twocolconflict-split-tour-popup2-header": "Escueyi qué cambios desees caltener",
+	"twocolconflict-split-tour-popup2-message": "Seleiciona que versión del testu desees caltenner pulsiando n'unu de los dos botones ente cada par de llinies. Cuando tengas seleicionada una versión, puedes editala pulsiando nel iconu del llápiz. Tamién ye posible copiar testu de la versión que nun seleicionasti usando la función copiar y apegar del to tecláu o col botón derechu del mur.<br /><br />Necesites seleicionar una versión pa cada llinia cambiada pa guardar el testu fusionáu.",
+	"twocolconflict-split-tour-popup3-header": "Testu resaltáu",
+	"twocolconflict-split-tour-popup3-message": "El testu que cambió en cualquier versión d'una llinia ta resaltáu. Después de qu'edites el testu, el resaltáu desapaecerá.",
 	"twocolconflict-split-edit-tooltip": "Editar testu"
 }
