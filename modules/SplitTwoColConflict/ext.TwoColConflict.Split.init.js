@@ -20,6 +20,32 @@
 		getColumnEditButton( $unselectedColumn ).setDisabled( true );
 	}
 
+	/**
+	 * @return {String}
+	 */
+	function getEditorFontClass() {
+		return $( '.mw-twocolconflict-split-editor' ).attr( 'class' )
+			.replace( 'mw-twocolconflict-split-editor', '' )
+			.trim();
+	}
+
+	/**
+	 * @param {jQuery} $row
+	 */
+	function enableEditing( $row ) {
+		$row.addClass( 'mw-twocolconflict-split-editing' );
+		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
+	}
+
+	function initButtonEvents() {
+		$( '.mw-twocolconflict-split-edit-button' ).each( function () {
+			var button = OO.ui.ButtonWidget.static.infuse( this );
+			button.on( 'click', function () {
+				enableEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
+			} );
+		} );
+	}
+
 	function initColumnSelection() {
 		var $switches = $( '.mw-twocolconflict-split-selection' ),
 			$radioButtons = $switches.find( 'input' );
@@ -94,6 +120,7 @@
 
 	$( function () {
 		initColumnSelection();
+		initButtonEvents();
 		initTour();
 	} );
 

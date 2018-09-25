@@ -23,6 +23,46 @@
 	}
 }
 
+.mw-twocolconflict-split-editing {
+	.mw-twocolconflict-split-selected,
+	.mw-twocolconflict-split-copy {
+		.mw-twocolconflict-split-editable {
+			.mw-twocolconflict-split-editor {
+				display: block;
+			}
+
+			.mw-twocolconflict-split-edit-button {
+				display: none;
+			}
+
+			.mw-twocolconflict-split-difftext {
+				display: none;
+			}
+		}
+	}
+
+	.mw-twocolconflict-split-column {
+		display: block;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		-moz-appearance: textfield-multiline;
+		-webkit-appearance: textarea;
+		-webkit-user-select: text;
+		font: medium '-moz-fixed';
+		font: '-webkit-small-control';
+		font-size: medium;
+		line-height: normal;
+		text-rendering: auto;
+		color: initial;
+		letter-spacing: normal;
+		word-spacing: normal;
+		text-transform: none;
+		text-indent: 0;
+		text-shadow: none;
+		text-align: start;
+	}
+}
+
 .client-nojs {
 	.mw-twocolconflict-split-editable {
 		.mw-twocolconflict-split-difftext {
