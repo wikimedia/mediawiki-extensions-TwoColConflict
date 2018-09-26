@@ -119,7 +119,7 @@
 			$popup = new OO.ui.PopupWidget( {
 				$content: $content,
 				padded: true,
-				width: 300,
+				width: 450,
 				classes: [ 'mw-twocolconflict-split-tour-popup' ]
 			} );
 
