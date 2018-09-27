@@ -21,19 +21,25 @@
 	padding: 5px 0 5px 0;
 }
 
+.mw-twocolconflict-diffchange,
+.mw-twocolconflict-split-your-version-header,
+.mw-twocolconflict-split-selection {
+	position: relative;
+}
+
 .mw-twocolconflict-split-tour-still-button,
 .mw-twocolconflict-split-tour-pulsating-button {
 	position: absolute;
 	z-index: 1;
 	background-color: #36c;
 	border-radius: 50%;
+	left: 50%;
+	transform: translate( -50%, 0 );
 }
 
 .mw-twocolconflict-split-tour-still-button {
 	height: 0.8em;
 	width: 0.8em;
-	margin-left: -0.4em;
-	margin-bottom: -0.4em;
 }
 
 .mw-twocolconflict-split-tour-pulsating-button {
@@ -90,4 +96,5 @@
 	font-size: 1.5em;
 	position: absolute;
 	right: 0;
+	z-index: 1;
 }
