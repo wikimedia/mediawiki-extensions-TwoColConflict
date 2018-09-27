@@ -114,6 +114,7 @@
 				.append( $( '<p>' ).html( message ) );
 
 			popup = new OO.ui.PopupWidget( {
+				position: 'above',
 				$content: $content,
 				$footer: closeButton.$element,
 				padded: true,
@@ -138,14 +139,14 @@
 			var self = this;
 
 			this.buttons.forEach( function ( data ) {
-				var $pulsatingButton = self.createPopupButton( data.$element ),
-					popup = self.createPopup( data.header, data.message, $pulsatingButton );
+				if ( !data.popup ) {
+					data.$pulsatingButton = self.createPopupButton( data.$element );
+					data.popup = self.createPopup( data.header, data.message, data.$pulsatingButton );
+					data.$element.append( data.popup.$element );
+				}
 
-				data.$element.append( popup.$element );
-				$pulsatingButton.show();
+				data.$pulsatingButton.show();
 			} );
-
-			this.buttons = [];
 		},
 
 		/**
@@ -160,6 +161,15 @@
 				header: header,
 				message: message,
 				$element: $element
+			} );
+		},
+
+		hideTourPopups: function () {
+			this.buttons.forEach( function ( data ) {
+				if ( data.popup ) {
+					data.popup.toggle( false );
+					data.$pulsatingButton.hide();
+				}
 			} );
 		},
 
@@ -184,6 +194,8 @@
 		},
 
 		showTour: function () {
+			this.hideTourPopups();
+
 			if ( !this.windowManager ) {
 				this.windowManager = new OO.ui.WindowManager();
 				$( 'body' ).append( this.windowManager.$element );
