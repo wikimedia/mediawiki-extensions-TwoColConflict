@@ -113,11 +113,11 @@
 
 			$content = $( '<div>' )
 				.append( $( '<h5>' ).text( header ) )
-				.append( $( '<p>' ).html( message ) )
-				.append( closeButton.$element );
+				.append( $( '<p>' ).html( message ) );
 
 			popup = new OO.ui.PopupWidget( {
 				$content: $content,
+				$footer: closeButton.$element,
 				padded: true,
 				width: 450,
 				classes: [ 'mw-twocolconflict-split-tour-popup' ]
