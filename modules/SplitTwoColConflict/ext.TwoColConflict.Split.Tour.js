@@ -9,7 +9,7 @@
 	 * @constructor
 	 */
 	var Tour = function ( header, image, message ) {
-		var $closeButton,
+		var closeButton,
 			$panel,
 			self = this;
 
@@ -29,7 +29,7 @@
 			this.$body.append( this.content.$element );
 		};
 
-		$closeButton = new OO.ui.ButtonWidget( {
+		closeButton = new OO.ui.ButtonWidget( {
 			label: mw.msg( 'twocolconflict-split-tour-dialog-btn-text' ),
 			flags: [ 'primary', 'progressive' ]
 		} );
@@ -48,14 +48,14 @@
 			.append(
 				$( '<p>' ).text( message )
 			)
-			.append( $closeButton.$element );
+			.append( closeButton.$element );
 
 		this.$dialog = new TourDialog( {
 			size: 'large',
 			panel: $panel
 		} );
 
-		$closeButton.on( 'click', function () {
+		closeButton.on( 'click', function () {
 			self.$dialog.close();
 			self.showButtons();
 		} );
@@ -104,9 +104,9 @@
 		 * @return {OO.ui.PopupWidget}
 		 */
 		createPopup: function ( header, message, $pulsatingButton ) {
-			var $closeButton, $content, $popup;
+			var closeButton, $content, popup;
 
-			$closeButton = new OO.ui.ButtonWidget( {
+			closeButton = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'twocolconflict-split-tour-popup-btn-text' ),
 				flags: [ 'primary', 'progressive' ]
 			} );
@@ -114,26 +114,26 @@
 			$content = $( '<div>' )
 				.append( $( '<h5>' ).text( header ) )
 				.append( $( '<p>' ).html( message ) )
-				.append( $closeButton.$element );
+				.append( closeButton.$element );
 
-			$popup = new OO.ui.PopupWidget( {
+			popup = new OO.ui.PopupWidget( {
 				$content: $content,
 				padded: true,
 				width: 450,
 				classes: [ 'mw-twocolconflict-split-tour-popup' ]
 			} );
 
-			$closeButton.on( 'click', function () {
-				$popup.toggle( false );
+			closeButton.on( 'click', function () {
+				popup.toggle( false );
 			} );
 
 			$pulsatingButton.on( 'click', function ( e ) {
 				e.preventDefault();
 				$pulsatingButton.hide();
-				$popup.toggle( true );
+				popup.toggle( true );
 			} );
 
-			return $popup;
+			return popup;
 		},
 
 		showButtons: function () {
@@ -141,9 +141,9 @@
 
 			this.buttons.forEach( function ( data ) {
 				var $pulsatingButton = self.createPopupButton( data.$element ),
-					$popup = self.createPopup( data.header, data.message, $pulsatingButton );
+					popup = self.createPopup( data.header, data.message, $pulsatingButton );
 
-				data.$element.append( $popup.$element );
+				data.$element.append( popup.$element );
 				$pulsatingButton.show();
 			} );
 
@@ -169,20 +169,20 @@
 		 * @return {OO.ui.ButtonWidget}
 		 */
 		getHelpButton: function () {
-			var $helpButton,
+			var helpButton,
 				self = this;
 
-			$helpButton = new OO.ui.ButtonWidget( {
+			helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
 				framed: false,
 				classes: [ 'mw-twocolconflict-split-tour-help-button' ]
 			} );
 
-			$helpButton.on( 'click', function () {
+			helpButton.on( 'click', function () {
 				self.showTour();
 			} );
 
-			return $helpButton.$element;
+			return helpButton.$element;
 		},
 
 		showTour: function () {
