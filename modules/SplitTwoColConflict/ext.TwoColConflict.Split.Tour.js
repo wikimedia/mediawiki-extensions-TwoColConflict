@@ -84,12 +84,10 @@
 		 */
 		createPopupButton: function ( $element ) {
 			var $stillButton = $( '<div>' ),
-				$pulsatingButton = $( '<div>' ),
-				center = $element.position().left + $element.outerWidth() / 2;
+				$pulsatingButton = $( '<div>' );
 
 			$pulsatingButton.addClass( 'mw-twocolconflict-split-tour-pulsating-button' );
 			$stillButton.addClass( 'mw-twocolconflict-split-tour-still-button' );
-			$stillButton.css( 'left', center );
 			$stillButton.appendTo( $element );
 			$stillButton.hide();
 
