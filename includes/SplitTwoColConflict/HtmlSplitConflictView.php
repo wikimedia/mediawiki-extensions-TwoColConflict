@@ -154,6 +154,7 @@ class HtmlSplitConflictView {
 				$text
 			) .
 			$this->buildEditButton() .
+			$this->buildSaveButton() .
 			$this->buildTextEditor( $rawText, $rowNum, $changeType )
 		);
 	}
@@ -186,6 +187,16 @@ class HtmlSplitConflictView {
 			'icon' => 'edit',
 			'title' => wfMessage( 'twocolconflict-split-edit-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-edit-button' ]
+		] );
+	}
+
+	private function buildSaveButton() {
+		return new ButtonWidget( [
+			'infusable' => true,
+			'framed' => false,
+			'icon' => 'check',
+			'title' => wfMessage( 'twocolconflict-split-save-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-split-save-button' ]
 		] );
 	}
 

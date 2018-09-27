@@ -73,5 +73,6 @@
 	"twocolconflict-split-tour-popup2-message": "Select which text version you want to keep by clicking on one of the two buttons between each pair of lines. When you have selected a version, you can edit it by clicking on the pen icon. It’s also possible to copy text from the version you didn’t select by using the copy and paste function on your keyboard or with a right click.<br /><br />You need to select one version for each changed line to save the merged text.",
 	"twocolconflict-split-tour-popup3-header": "Highlighted text",
 	"twocolconflict-split-tour-popup3-message": "The text that was changed in either version of a line is highlighted. After you edit the text, the highlighting will be gone.",
-	"twocolconflict-split-edit-tooltip": "Edit text"
+	"twocolconflict-split-edit-tooltip": "Edit text",
+	"twocolconflict-split-save-tooltip": "Save changes and leave editing mode."
 }
