@@ -34,16 +34,20 @@ class EditConflictPage extends Page {
 		} );
 	}
 
-	hidesHelpDialogue() {
-		browser.execute( function () {
-			( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-help-dialogue', '1' );
-		} );
+	toggleHelpDialogue( hide ) {
+		browser.pause( 300 ); // wait for mw JS to load
+		return browser.execute( function ( hide ) {
+			return ( new mediaWiki.Api() ).saveOption(
+				'userjs-twocolconflict-hide-help-dialogue',
+				hide ? '1' : '0'
+			);
+		}, hide );
 	}
 
-	showsAnEditConflictWith( conflictUser, conflictUserPassword ) {
+	showsAnEditConflictWith( conflictUser, conflictUserPassword, hideHelpDialogue = true ) {
 		UserLoginPage.loginAdmin();
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
-		this.hidesHelpDialogue();
+		this.toggleHelpDialogue( hideHelpDialogue );
 		this.enforceSplitEditConflict();
 
 		this.createSimpleConflict(
