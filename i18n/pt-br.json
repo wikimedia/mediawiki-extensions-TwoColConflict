@@ -75,5 +75,6 @@
 	"twocolconflict-split-tour-popup2-message": "Selecione qual versão de texto você deseja manter clicando em um dos dois botões entre cada par de linhas. Depois de selecionar uma versão, você pode editá-la clicando no ícone da caneta. Também é possível copiar o texto da versão que você não selecionou usando a função copiar e colar no teclado ou com o botão direito do mouse.<br /><br />Você precisa selecionar uma versão para cada linha alterada para salvar o texto mesclado.",
 	"twocolconflict-split-tour-popup3-header": "Texto destacado",
 	"twocolconflict-split-tour-popup3-message": "O texto que foi alterado em qualquer versão de uma linha é realçado. Depois de editar o texto, o realce desaparecerá.",
-	"twocolconflict-split-edit-tooltip": "Editar texto"
+	"twocolconflict-split-edit-tooltip": "Editar texto",
+	"twocolconflict-split-save-tooltip": "Salvar as alterações e sair do modo de edição."
 }

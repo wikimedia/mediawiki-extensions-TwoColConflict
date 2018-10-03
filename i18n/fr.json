@@ -79,5 +79,6 @@
 	"twocolconflict-split-tour-popup2-message": "Sélectionnez la version du texte que vous souhaitez conserver en cliquant sur l'un des deux boutons situés entre chaque paire de lignes. Lorsque vous avez sélectionné une version, vous pouvez la modifier en cliquant sur l'icône du stylo. Il est également possible de copier du texte de la version que vous n'avez pas sélectionnée en utilisant la fonction copier-coller de votre clavier ou d'un clic droit. <br /><br />Vous devez sélectionner une version pour chaque ligne modifiée afin d'enregistrer le texte fusionné.",
 	"twocolconflict-split-tour-popup3-header": "Texte surligné",
 	"twocolconflict-split-tour-popup3-message": "Le texte qui a été modifié dans l'une quelconque des versions d'une ligne est mis en valeur. Après que vous aurez modifié ce texte, la mise en valeur disparaîtra.",
-	"twocolconflict-split-edit-tooltip": "Modifier le texte"
+	"twocolconflict-split-edit-tooltip": "Modifier le texte",
+	"twocolconflict-split-save-tooltip": "Enregistrer les modifications et quitter le mode d'édition."
 }

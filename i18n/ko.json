@@ -70,5 +70,6 @@
 	"twocolconflict-split-tour-dialog-btn-text": "병합 시작",
 	"twocolconflict-split-tour-popup-btn-text": "알겠습니다.",
 	"twocolconflict-split-tour-popup2-header": "유지하고 싶은 변경사항을 선택하십시오",
-	"twocolconflict-split-edit-tooltip": "텍스트 편집"
+	"twocolconflict-split-edit-tooltip": "텍스트 편집",
+	"twocolconflict-split-save-tooltip": "변경사항을 저장하고 편집 모드를 떠납니다."
 }
