@@ -24,96 +24,96 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.yourParagraphSelection.click();
 
 		assert(
-			EditConflictPage.yourParagraphEditButton.getAttribute( 'class' )
+			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
 				.indexOf( 'oo-ui-widget-disabled' ) === -1,
 			'I see an activated edit icon on the selected "yours" paragraph'
 		);
 		assert(
-			EditConflictPage.otherParagraphEditButton.getAttribute( 'class' )
+			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
 				.indexOf( 'oo-ui-widget-disabled' ) !== -1,
 			'I see a deactivated edit icon on the selected "mine" paragraph'
 		);
 		assert(
-			EditConflictPage.unchangedParagraphEditButton.getAttribute( 'class' )
+			EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
 				.indexOf( 'oo-ui-widget-disabled' ) === -1,
 			'I see an activated edit icon on the unchanged paragraph'
 		);
 	} );
 
 	it( 'allows editing of conflict paragraphs by clicking the activated edit button', function () {
-		EditConflictPage.otherParagraphEditButton.click();
+		EditConflictPage.getEditButton( 'other' ).click();
 
 		assert(
-			EditConflictPage.otherParagraphEditor.isVisible(),
+			EditConflictPage.getEditor( 'other' ).waitForVisible(),
 			'the selected text box becomes a wikitext editor'
 		);
 		assert(
-			!EditConflictPage.yourParagraphEditor.isVisible(),
+			!EditConflictPage.getEditor( 'your' ).isVisible(),
 			'the unselected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.otherParagraphEditButton.isVisible(),
+			!EditConflictPage.getEditButton( 'other' ).isVisible(),
 			'the edit icon disappears in the selected text box'
 		);
 		assert(
-			EditConflictPage.yourParagraphEditButton.isVisible(),
+			EditConflictPage.getEditButton( 'your' ).isVisible(),
 			'the edit icon in the unselected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.unchangedParagraphEditor.isVisible(),
+			!EditConflictPage.getEditor( 'unchanged' ).isVisible(),
 			'the unselected unchanged text box stays as it is'
 		);
 		assert.strictEqual(
-			EditConflictPage.yourParagraph.getCssProperty( '-webkit-appearance' ).value,
+			EditConflictPage.getParagraph( 'your' ).getCssProperty( '-webkit-appearance' ).value,
 			'textarea',
 			'the layout changes to wikitext editor layout for both paragraphs'
 		);
 		assert.strictEqual(
-			EditConflictPage.unchangedParagraph.getCssProperty( '-webkit-appearance' ).value,
+			EditConflictPage.getParagraph( 'unchanged' ).getCssProperty( '-webkit-appearance' ).value,
 			'none',
 			'the layout stays the same for the unselected unchanged text box'
 		);
 	} );
 
 	it( 'allows editing of unchanged paragraphs by clicking the activated edit button', function () {
-		EditConflictPage.unchangedParagraphEditButton.click();
+		EditConflictPage.getEditButton( 'unchanged' ).click();
 
 		assert(
-			!EditConflictPage.otherParagraphEditor.isVisible(),
+			!EditConflictPage.getEditor( 'other' ).isVisible(),
 			'the selected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.yourParagraphEditor.isVisible(),
+			!EditConflictPage.getEditor( 'your' ).isVisible(),
 			'the unselected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.otherParagraphEditButton.isVisible(),
+			EditConflictPage.getEditButton( 'other' ).isVisible(),
 			'the edit icon in the selected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.yourParagraphEditButton.isVisible(),
+			EditConflictPage.getEditButton( 'your' ).isVisible(),
 			'the edit icon in the unselected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.unchangedParagraphEditor.isVisible(),
+			EditConflictPage.getEditor( 'unchanged' ).isVisible(),
 			'the unselected unchanged text box becomes a wikitext editor'
 		);
 		assert(
-			!EditConflictPage.unchangedParagraphEditButton.isVisible(),
+			!EditConflictPage.getEditButton( 'unchanged' ).isVisible(),
 			'the edit icon disappears in the unchanged text box'
 		);
 		assert.strictEqual(
-			EditConflictPage.otherParagraph.getCssProperty( '-webkit-appearance' ).value,
+			EditConflictPage.getParagraph( 'other' ).getCssProperty( '-webkit-appearance' ).value,
 			'none',
 			'the layout stays the same for the selected text box'
 		);
 		assert.strictEqual(
-			EditConflictPage.yourParagraph.getCssProperty( '-webkit-appearance' ).value,
+			EditConflictPage.getParagraph( 'your' ).getCssProperty( '-webkit-appearance' ).value,
 			'none',
 			'the layout stays the same for the unselected text box'
 		);
 		assert.strictEqual(
-			EditConflictPage.unchangedParagraph.getCssProperty( '-webkit-appearance' ).value,
+			EditConflictPage.getParagraph( 'unchanged' ).getCssProperty( '-webkit-appearance' ).value,
 			'textarea',
 			'the layout changes to wikitext editor layout'
 		);
@@ -121,15 +121,15 @@ describe( 'TwoColConflict', function () {
 
 	it( 'save button should not be visible at first', function () {
 		assert(
-			!EditConflictPage.unchangedParagraphSaveButton.isVisible(),
+			!EditConflictPage.getSaveButton( 'unchanged' ).isVisible(),
 			'the edit icon in the unselected unchanged text box is hidden'
 		);
 		assert(
-			!EditConflictPage.otherParagraphSaveButton.isVisible(),
+			!EditConflictPage.getSaveButton( 'other' ).isVisible(),
 			'the edit icon in the selected text box is hidden'
 		);
 		assert(
-			!EditConflictPage.yourParagraphSaveButton.isVisible(),
+			!EditConflictPage.getSaveButton( 'your' ).isVisible(),
 			'the edit icon in the unselected text box is hidden'
 		);
 	} );
@@ -137,52 +137,52 @@ describe( 'TwoColConflict', function () {
 	it( 'edits of unchanged paragraphs should be saved', function () {
 		let unchangedParagraphNewText = 'Dummy Text';
 
-		EditConflictPage.unchangedParagraphEditButton.click();
-		EditConflictPage.unchangedParagraphEditor.setValue( unchangedParagraphNewText );
-		EditConflictPage.unchangedParagraphSaveButton.click();
+		EditConflictPage.getEditButton( 'unchanged' ).click();
+		EditConflictPage.getEditor( 'unchanged' ).setValue( unchangedParagraphNewText );
+		EditConflictPage.getSaveButton( 'unchanged' ).click();
 
 		assert.strictEqual(
-			EditConflictPage.unchangedParagraphDiffText.getText(),
+			EditConflictPage.getDiffText( 'unchanged' ).getText(),
 			unchangedParagraphNewText,
 			'unchanged text diff was edited'
 		);
 
 		assert.strictEqual(
-			EditConflictPage.unchangedParagraphEditor.getValue(),
+			EditConflictPage.getEditor( 'unchanged' ).getValue(),
 			unchangedParagraphNewText,
 			'unchanged text editor was edited'
 		);
 	} );
 
 	it( 'edits of selected paragraphs should be saved and should not affect unselected paragraphs', function () {
-		let yourParagraphDiffText = EditConflictPage.yourParagraphDiffText.getText(),
-			yourParagraphEditorText = EditConflictPage.yourParagraphEditor.getValue(),
+		let yourParagraphDiffText = EditConflictPage.getDiffText( 'your' ).getText(),
+			yourParagraphEditorText = EditConflictPage.getEditor( 'your' ).getValue(),
 			otherParagraphNewText = 'Dummy Text';
 
-		EditConflictPage.otherParagraphEditButton.click();
-		EditConflictPage.otherParagraphEditor.setValue( otherParagraphNewText );
-		EditConflictPage.otherParagraphSaveButton.click();
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getEditor( 'other' ).setValue( otherParagraphNewText );
+		EditConflictPage.getSaveButton( 'other' ).click();
 
 		assert.strictEqual(
-			EditConflictPage.yourParagraphDiffText.getText(),
+			EditConflictPage.getDiffText( 'your' ).getText(),
 			yourParagraphDiffText,
 			'unselected text diff was not edited'
 		);
 
 		assert.strictEqual(
-			EditConflictPage.yourParagraphEditor.getValue(),
+			EditConflictPage.getEditor( 'your' ).getValue(),
 			yourParagraphEditorText,
 			'unselected text editor was not edited'
 		);
 
 		assert.strictEqual(
-			EditConflictPage.otherParagraphDiffText.getText(),
+			EditConflictPage.getDiffText( 'other' ).getText(),
 			otherParagraphNewText,
 			'selected text diff was edited'
 		);
 
 		assert.strictEqual(
-			EditConflictPage.otherParagraphEditor.getValue(),
+			EditConflictPage.getEditor( 'other' ).getValue(),
 			otherParagraphNewText,
 			'selected text editor was edited'
 		);
@@ -200,8 +200,8 @@ describe( 'TwoColConflict', function () {
 
 	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
 		EditConflictPage.yourParagraphSelection.click();
-		EditConflictPage.yourParagraphEditButton.click();
-		EditConflictPage.yourParagraphEditor.setValue( 'Dummy Text' );
+		EditConflictPage.getEditButton( 'your' ).click();
+		EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text' );
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(

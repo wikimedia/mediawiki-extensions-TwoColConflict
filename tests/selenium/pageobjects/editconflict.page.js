@@ -10,21 +10,12 @@ class EditConflictPage extends Page {
 	get conflictHeader() { return browser.element( '.mw-twocolconflict-split-header' ); }
 	get conflictView() { return browser.element( '.mw-twocolconflict-split-view' ); }
 
-	get otherParagraph() { return browser.element( '.mw-twocolconflict-split-delete' ); }
-	get yourParagraph() { return browser.element( '.mw-twocolconflict-split-add' ); }
-	get unchangedParagraph() { return browser.element( '.mw-twocolconflict-split-copy' ); }
-	get otherParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-edit-button' ); }
-	get otherParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-save-button' ); }
-	get yourParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-edit-button' ); }
-	get yourParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-save-button' ); }
-	get unchangedParagraphEditButton() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-edit-button' ); }
-	get unchangedParagraphSaveButton() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-save-button' ); }
-	get otherParagraphEditor() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-editor' ); }
-	get yourParagraphEditor() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-editor' ); }
-	get unchangedParagraphEditor() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-editor' ); }
-	get otherParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-delete .mw-twocolconflict-split-difftext' ); }
-	get yourParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-difftext' ); }
-	get unchangedParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-difftext' ); }
+	getParagraph( column ) { return browser.element( this.columnToClass( column ) ); }
+	getEditButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
+	getSaveButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
+	getEditor( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
+	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
+
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 	get submitButton() { return browser.element( '#wpSave' ); }
 
@@ -38,6 +29,17 @@ class EditConflictPage extends Page {
 
 	get tourDiffChangePopup() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
 	get tourDiffChangePopupCloseButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
+
+	columnToClass( column ) {
+		switch ( column ) {
+			case 'other':
+				return '.mw-twocolconflict-split-delete';
+			case 'your':
+				return '.mw-twocolconflict-split-add';
+			default:
+				return '.mw-twocolconflict-split-copy';
+		}
+	}
 
 	enforceSplitEditConflict() {
 		return browser.setCookie( {
