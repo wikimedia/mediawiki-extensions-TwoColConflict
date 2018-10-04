@@ -119,7 +119,7 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
-	it( 'save button should not be visible at first', function () {
+	it( 'certain edit specific buttons should not be visible at first', function () {
 		assert(
 			!EditConflictPage.getSaveButton( 'unchanged' ).isVisible(),
 			'the edit icon in the unselected unchanged text box is hidden'
@@ -131,6 +131,19 @@ describe( 'TwoColConflict', function () {
 		assert(
 			!EditConflictPage.getSaveButton( 'your' ).isVisible(),
 			'the edit icon in the unselected text box is hidden'
+		);
+
+		assert(
+			!EditConflictPage.getResetButton( 'unchanged' ).isVisible(),
+			'the reset icon in the unselected unchanged text box is hidden'
+		);
+		assert(
+			!EditConflictPage.getResetButton( 'other' ).isVisible(),
+			'the reset icon in the selected text box is hidden'
+		);
+		assert(
+			!EditConflictPage.getResetButton( 'your' ).isVisible(),
+			'the reset icon in the unselected text box is hidden'
 		);
 	} );
 
@@ -208,6 +221,30 @@ describe( 'TwoColConflict', function () {
 			FinishedConflictPage.pageText.getText(),
 			'Line1 Dummy Text',
 			'text was saved correctly'
+		);
+	} );
+
+	it( 'paragraph edits can be reverted', function () {
+		let otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML();
+
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getEditor( 'other' ).setValue( 'Dummy Edit #1' );
+		EditConflictPage.getSaveButton( 'other' ).click();
+
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getEditor( 'other' ).setValue( 'Dummy Edit #2' );
+		EditConflictPage.getSaveButton( 'other' ).click();
+
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getResetButton( 'other' ).click();
+		EditConflictPage.resetConfirmationPopup.waitForVisible( 1000 );
+		EditConflictPage.resetConfirmationButton.click();
+		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
+
+		assert.strictEqual(
+			EditConflictPage.getDiffText( 'other' ).getHTML(),
+			otherParagraphOriginalDiffText,
+			'edited text was reverted successfully while preserving the formatting'
 		);
 	} );
 
