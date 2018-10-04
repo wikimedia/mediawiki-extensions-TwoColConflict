@@ -27,8 +27,19 @@ class EditConflictPage extends Page {
 	get unchangedParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-difftext' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 
+	get infoButton() { return browser.element( '.mw-twocolconflict-split-tour-help-button' ); }
+	get tourDialog() { return browser.element( '.mw-twocolconflict-split-tour-intro-container' ); }
+	get tourDialogCloseButton() { return browser.element( '.mw-twocolconflict-split-tour-intro-container a' ); }
+
+	get tourDiffChangeButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-still-button' ); }
+	get tourSplitSelectionButton() { return browser.element( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-still-button' ); }
+	get tourYourVersionHeaderButton() { return browser.element( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-still-button' ); }
+
+	get tourDiffChangePopup() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
+	get tourDiffChangePopupCloseButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
+
 	enforceSplitEditConflict() {
-		browser.setCookie( {
+		return browser.setCookie( {
 			name: 'mw-twocolconflict-split-ui',
 			value: '1'
 		} );
