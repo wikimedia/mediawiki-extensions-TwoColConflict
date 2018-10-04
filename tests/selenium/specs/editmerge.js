@@ -1,5 +1,6 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
@@ -184,6 +185,29 @@ describe( 'TwoColConflict', function () {
 			EditConflictPage.otherParagraphEditor.getValue(),
 			otherParagraphNewText,
 			'selected text editor was edited'
+		);
+	} );
+
+	it( 'should resolve the conflict successfully', function () {
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 ChangeA',
+			'text was saved correctly'
+		);
+	} );
+
+	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
+		EditConflictPage.yourParagraphSelection.click();
+		EditConflictPage.yourParagraphEditButton.click();
+		EditConflictPage.yourParagraphEditor.setValue( 'Dummy Text' );
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 Dummy Text',
+			'text was saved correctly'
 		);
 	} );
 

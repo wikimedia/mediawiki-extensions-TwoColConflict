@@ -26,6 +26,7 @@ class EditConflictPage extends Page {
 	get yourParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-add .mw-twocolconflict-split-difftext' ); }
 	get unchangedParagraphDiffText() { return browser.element( '.mw-twocolconflict-split-copy .mw-twocolconflict-split-difftext' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
+	get submitButton() { return browser.element( '#wpSave' ); }
 
 	get infoButton() { return browser.element( '.mw-twocolconflict-split-tour-help-button' ); }
 	get tourDialog() { return browser.element( '.mw-twocolconflict-split-tour-intro-container' ); }
