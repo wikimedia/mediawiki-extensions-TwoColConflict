@@ -7,6 +7,7 @@ use MediaWiki\MediaWikiServices;
 use OutputPage;
 use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
+use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 use WebRequest;
@@ -81,32 +82,11 @@ class TwoColConflictHooks {
 		$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' );
 
 		if ( $request->getBool( 'mw-twocolconflict-submit' ) && $sideSelection !== null ) {
-			$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
-			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' );
-
-			// FIXME: This code should be moved to a service, ideally to the same service that
-			// creates these arrays of textareas and radio buttons
-			$textLines = [];
-			foreach ( $contentRows as $num => $row ) {
-				$side = isset( $sideSelection[$num] ) ? $sideSelection[$num] : 'copy';
-				// As all this is user input, we can't assume the elements are always there
-				if ( !isset( $row[$side] ) ) {
-					continue;
-				}
-
-				$line = rtrim( $row[$side], "\r\n" );
-				if ( $line === '' ) {
-					continue;
-				}
-
-				if ( isset( $extraLineFeeds[$num][$side] ) ) {
-					$line .= str_repeat( "\n", $extraLineFeeds[$num][$side] );
-				}
-
-				$textLines[] = $line;
-			}
-
-			$editPage->textbox1 = implode( "\n", $textLines );
+			$editPage->textbox1 = SplitConflictMerger::mergeSplitConflictResults(
+				$request->getArray( 'mw-twocolconflict-split-content' ),
+				$request->getArray( 'mw-twocolconflict-split-linefeeds' ),
+				$sideSelection
+			);
 		}
 	}
 

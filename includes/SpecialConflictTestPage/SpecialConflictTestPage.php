@@ -9,6 +9,7 @@ use Message;
 use SpecialPage;
 use Title;
 use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper;
+use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
 
 /**
@@ -45,7 +46,21 @@ class SpecialConflictTestPage extends SpecialPage {
 			$this->showHintBoxRaw( ( new Message( 'twocolconflict-test-preview-hint' ) )->parse() );
 
 			$title = Title::newFromText( $request->getVal( 'mw-twocolconflict-title' ) );
-			$this->showPreview( $title, $request->getVal( 'wpTextbox1' ) );
+
+			if ( $this->config->get( 'TwoColConflictUseInline' ) ) {
+				$this->showPreview( $title, $request->getVal( 'wpTextbox1' ) );
+				return;
+			}
+
+			$this->showPreview(
+				$title,
+				SplitConflictMerger::mergeSplitConflictResults(
+					$request->getArray( 'mw-twocolconflict-split-content' ),
+					$request->getArray( 'mw-twocolconflict-split-linefeeds' ),
+					$request->getArray( 'mw-twocolconflict-side-selector' )
+				)
+			);
+
 			return;
 		}
 
@@ -144,8 +159,7 @@ class SpecialConflictTestPage extends SpecialPage {
 
 	private function showConflict( Article $article ) {
 		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
-			$config = MediaWikiServices::getInstance()->getMainConfig();
-			$editConflictHelper = $config->get( 'TwoColConflictUseInline' )
+			$editConflictHelper = $this->config->get( 'TwoColConflictUseInline' )
 				? InlineTwoColConflictTestHelper::class
 				: SplitTwoColConflictTestHelper::class;
 
