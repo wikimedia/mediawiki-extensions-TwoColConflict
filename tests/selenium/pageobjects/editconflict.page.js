@@ -66,6 +66,8 @@ class EditConflictPage extends Page {
 			conflictUser,
 			conflictUserPassword
 		);
+
+		this.infoButton.waitForVisible(); // JS for the tour is loaded
 	}
 
 	createSimpleConflict( title, conflictUser, conflictUserPassword ) {

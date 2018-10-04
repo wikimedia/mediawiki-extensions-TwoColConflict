@@ -65,11 +65,6 @@ describe( 'TwoColConflict', function () {
 		} );
 
 		it( 'clicking the info button shows the tour', function () {
-			assert(
-				EditConflictPage.infoButton.waitForVisible(),
-				'I see an info button'
-			);
-
 			EditConflictPage.infoButton.click();
 
 			assert(
