@@ -7,6 +7,7 @@ use TwoColConflict\TwoColConflictHooks;
 
 /**
  * @covers \TwoColConflict\TwoColConflictHooks
+ * @covers \TwoColConflict\SplitTwoColConflict\SplitConflictMerger
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
