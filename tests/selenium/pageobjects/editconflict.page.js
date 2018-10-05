@@ -10,7 +10,7 @@ class EditConflictPage extends Page {
 	get conflictHeader() { return browser.element( '.mw-twocolconflict-split-header' ); }
 	get conflictView() { return browser.element( '.mw-twocolconflict-split-view' ); }
 
-	getParagraph( column ) { return browser.element( this.columnToClass( column ) ); }
+	getParagraph( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editable' ); }
 	getEditButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
 	getSaveButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
 	getResetButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }

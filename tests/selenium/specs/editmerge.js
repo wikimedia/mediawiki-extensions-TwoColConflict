@@ -63,14 +63,14 @@ describe( 'TwoColConflict', function () {
 			!EditConflictPage.getEditor( 'unchanged' ).isVisible(),
 			'the unselected unchanged text box stays as it is'
 		);
-		assert.strictEqual(
-			EditConflictPage.getParagraph( 'your' ).getCssProperty( '-webkit-appearance' ).value,
-			'textarea',
+		assert(
+			EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
+				.indexOf( 'mw-editfont-monospace' ) !== -1,
 			'the layout changes to wikitext editor layout for both paragraphs'
 		);
-		assert.strictEqual(
-			EditConflictPage.getParagraph( 'unchanged' ).getCssProperty( '-webkit-appearance' ).value,
-			'none',
+		assert(
+			EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
+				.indexOf( 'mw-editfont-monospace' ) === -1,
 			'the layout stays the same for the unselected unchanged text box'
 		);
 	} );
@@ -101,19 +101,19 @@ describe( 'TwoColConflict', function () {
 			!EditConflictPage.getEditButton( 'unchanged' ).isVisible(),
 			'the edit icon disappears in the unchanged text box'
 		);
-		assert.strictEqual(
-			EditConflictPage.getParagraph( 'other' ).getCssProperty( '-webkit-appearance' ).value,
-			'none',
+		assert(
+			EditConflictPage.getParagraph( 'other' ).getAttribute( 'class' )
+				.indexOf( 'mw-editfont-monospace' ) === -1,
 			'the layout stays the same for the selected text box'
 		);
-		assert.strictEqual(
-			EditConflictPage.getParagraph( 'your' ).getCssProperty( '-webkit-appearance' ).value,
-			'none',
+		assert(
+			EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
+				.indexOf( 'mw-editfont-monospace' ) === -1,
 			'the layout stays the same for the unselected text box'
 		);
-		assert.strictEqual(
-			EditConflictPage.getParagraph( 'unchanged' ).getCssProperty( '-webkit-appearance' ).value,
-			'textarea',
+		assert(
+			EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
+				.indexOf( 'mw-editfont-monospace' ) !== -1,
 			'the layout changes to wikitext editor layout'
 		);
 	} );
