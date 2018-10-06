@@ -56,5 +56,6 @@
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-not-saved-at": "nie zapisano $1, $2.",
 	"twocolconflict-split-saved-at": "zapisano $1, $2.",
-	"twocolconflict-split-choose-version": "Wybierz wersję"
+	"twocolconflict-split-choose-version": "Wybierz wersję",
+	"twocolconflict-split-save-tooltip": "Zapisz zmiany i wyjdź z trybu edycji."
 }

@@ -72,5 +72,6 @@
 	"twocolconflict-split-tour-popup2-header": "انتخاب اینکه کدام تغییر را می‌خواهید حفظ کنید.",
 	"twocolconflict-split-tour-popup3-header": "متن برجسته",
 	"twocolconflict-split-tour-popup3-message": "متنی که در هرکدام از نسخه‌های سطر تغییر کرده‌باشد، علامت‌گذاری شده‌است. بعد از اینکه متن را ویرایش کنید، علامت‌گذاری‌ها پاک می‌شوند.",
-	"twocolconflict-split-edit-tooltip": "ویرایش متن"
+	"twocolconflict-split-edit-tooltip": "ویرایش متن",
+	"twocolconflict-split-save-tooltip": "ذخیره تغییرات و ترک حالت ویرایش."
 }
