@@ -77,7 +77,6 @@ describe( 'TwoColConflict', function () {
 
 	it( 'allows editing of unchanged paragraphs by clicking the activated edit button', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
-
 		assert(
 			!EditConflictPage.getEditor( 'other' ).isVisible(),
 			'the selected text box stays as it is'

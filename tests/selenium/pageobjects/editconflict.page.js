@@ -21,6 +21,12 @@ class EditConflictPage extends Page {
 	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
 	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
+	get collapsedParagraph() { return browser.element( '.mw-twocolconflict-split-collapsed' ); }
+	get expandedParagraph() { return browser.element( '.mw-twocolconflict-split-expanded' ); }
+	get fadeOverlay() { return browser.element( '.mw-twocolconflict-split-fade' ); }
+	get collapseButton() { return browser.element( '.mw-twocolconflict-split-collapse-button' ); }
+	get expandButton() { return browser.element( '.mw-twocolconflict-split-expand-button' ); }
+
 	get infoButton() { return browser.element( '.mw-twocolconflict-split-tour-help-button' ); }
 	get tourDialog() { return browser.element( '.mw-twocolconflict-split-tour-intro-container' ); }
 	get tourDialogCloseButton() { return browser.element( '.mw-twocolconflict-split-tour-intro-container a' ); }
@@ -79,39 +85,54 @@ class EditConflictPage extends Page {
 	}
 
 	showSimpleConflict( conflictUser, conflictUserPassword ) {
-		this.createSimpleConflict(
+		this.createConflict(
 			Util.getTestString( 'conflict-title-' ),
 			conflictUser,
-			conflictUserPassword
+			conflictUserPassword,
+			'Line1\nLine2',
+			'Line1\nChangeA',
+			'Line1\nChangeB'
 		);
 
 		this.infoButton.waitForVisible(); // JS for the tour is loaded
 	}
 
-	createSimpleConflict( title, conflictUser, conflictUserPassword ) {
+	showBigConflict( conflictUser, conflictUserPassword ) {
+		this.createConflict(
+			Util.getTestString( 'conflict-title-' ),
+			conflictUser,
+			conflictUserPassword,
+			'Line1\nLine2\nLine3\nline4',
+			'Line1\nLine2\nLine3\nChangeA',
+			'Line1\nLine2\nLine3\nChangeB'
+		);
+
+		this.infoButton.waitForVisible(); // JS for the tour is loaded
+	}
+
+	createConflict( title, conflictUser, conflictUserPassword, startText, otherText, yourText ) {
 		browser.call( function () {
 			return Api.edit(
 				title,
-				"Line1\nLine2" // eslint-disable-line quotes
+				startText
 			);
 		} );
 
 		EditPage.openForEditing( title );
 
 		browser.call( function () {
-			let bot = new MWBot(),
-				content = "Line1\nChangeA"; // eslint-disable-line quotes
+			let bot = new MWBot();
 
 			return bot.loginGetEditToken( {
 				apiUrl: `${browser.options.baseUrl}/api.php`,
 				username: conflictUser,
 				password: conflictUserPassword
 			} ).then( function () {
-				return bot.edit( title, content, `Changed content to "${content}"` );
+				return bot.edit( title, otherText, `Changed content to "${otherText}"` );
 			} );
 		} );
 
-		EditPage.content.setValue( "Line1\nChangeB" ); // eslint-disable-line quotes
+		EditPage.content.setValue( yourText );
 		EditPage.save.click();
 	}
 }
