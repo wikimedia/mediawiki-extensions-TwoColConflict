@@ -14,10 +14,11 @@ describe( 'TwoColConflict', function () {
 		browser.call( function () {
 			Api.createAccount( conflictUser, conflictUserPassword );
 		} );
+		EditConflictPage.prepareEditConflict();
 	} );
 
 	beforeEach( function () {
-		EditConflictPage.showsAnEditConflictWith( conflictUser, conflictUserPassword );
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 	} );
 
 	it( 'has edit buttons that toggle availability depending on side selection', function () {
@@ -253,10 +254,10 @@ describe( 'TwoColConflict', function () {
 		browser.url( 'data:' );
 		try {
 			browser.alertAccept();
-		} catch ( e ) {
-		} finally {
-			browser.deleteCookie();
-		}
+		} catch ( e ) {}
 	} );
 
+	after( function () {
+		browser.deleteCookie();
+	} );
 } );

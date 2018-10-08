@@ -14,6 +14,7 @@ describe( 'TwoColConflict', function () {
 		browser.call( function () {
 			Api.createAccount( conflictUser, conflictUserPassword );
 		} );
+		EditConflictPage.prepareEditConflict();
 	} );
 
 	it( 'is configured correctly', function () {
@@ -22,14 +23,13 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'is showing the edit conflict split screen correctly', function () {
-		EditConflictPage.showsAnEditConflictWith( conflictUser, conflictUserPassword );
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
 		assert( EditConflictPage.conflictHeader.isExisting() );
 		assert( EditConflictPage.conflictView.isExisting() );
 	} );
 
-	afterEach( function () {
+	after( function () {
 		browser.deleteCookie();
 	} );
-
 } );
