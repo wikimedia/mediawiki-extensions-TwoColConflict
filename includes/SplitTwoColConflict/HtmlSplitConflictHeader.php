@@ -37,22 +37,30 @@ class HtmlSplitConflictHeader {
 	private $now;
 
 	/**
+	 * @var string
+	 */
+	private $newEditSummary;
+
+	/**
 	 * @param RevisionRecord $revision
 	 * @param User $user
 	 * @param Language $language
 	 * @param string|int|false $now Any value the ConvertibleTimestamp class accepts. False for the
 	 *  current time
+	 * @param string $newEditSummary
 	 */
 	public function __construct(
 		RevisionRecord $revision,
 		User $user,
 		Language $language,
-		$now
+		$now,
+		$newEditSummary
 	) {
 		$this->revision = $revision;
 		$this->user = $user;
 		$this->language = $language;
 		$this->now = new ConvertibleTimestamp( $now );
+		$this->newEditSummary = $newEditSummary;
 	}
 
 	/**
@@ -83,6 +91,9 @@ class HtmlSplitConflictHeader {
 	}
 
 	private function buildCurrentVersionHeader() {
+		$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );
+		$summary = $comment ? $comment->text : '';
+
 		return $this->buildVersionHeader(
 			wfMessage(
 				'twocolconflict-split-current-version-header',
@@ -90,6 +101,7 @@ class HtmlSplitConflictHeader {
 			),
 			wfMessage( 'twocolconflict-split-saved-at' )
 				->rawParams( $this->getLastRevUserLink() ),
+			$summary,
 			'mw-twocolconflict-split-current-version-header'
 		);
 	}
@@ -98,6 +110,7 @@ class HtmlSplitConflictHeader {
 		return $this->buildVersionHeader(
 			wfMessage( 'twocolconflict-split-your-version-header' ),
 			wfMessage( 'twocolconflict-split-not-saved-at' ),
+			$this->newEditSummary,
 			'mw-twocolconflict-split-your-version-header'
 		);
 	}
@@ -105,6 +118,7 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @param Message $dateMsg
 	 * @param Message $userMsg
+	 * @param string $summary
 	 * @param string $class
 	 *
 	 * @return string HTML
@@ -112,13 +126,22 @@ class HtmlSplitConflictHeader {
 	private function buildVersionHeader(
 		Message $dateMsg,
 		Message $userMsg,
+		$summary,
 		$class
 	) {
-		return Html::openElement( 'div', [ 'class' => $class ] ) .
-			Html::element( 'span', [], $dateMsg->text() ) .
+		$html = Html::element( 'span', [], $dateMsg->text() ) .
 			Html::element( 'br' ) .
-			Html::rawElement( 'span', [], $userMsg->escaped() ) .
-			Html::closeElement( 'div' );
+			Html::rawElement( 'span', [], $userMsg->escaped() );
+
+		if ( $summary !== '' ) {
+			$title = $this->revision->getPageAsLinkTarget();
+			$summaryMsg = wfMessage( 'parentheses' )
+				->rawParams( Linker::formatComment( $summary, $title ) );
+			$html .= Html::element( 'br' ) .
+				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
+		}
+
+		return Html::rawElement( 'div', [ 'class' => $class ], $html );
 	}
 
 	/**

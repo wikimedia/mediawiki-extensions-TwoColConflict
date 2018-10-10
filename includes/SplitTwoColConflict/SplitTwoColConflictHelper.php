@@ -28,15 +28,27 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $storedLines;
 
 	/**
-	 * @inheritDoc
+	 * @var string
+	 */
+	private $newEditSummary;
+
+	/**
+	 * @param Title $title
+	 * @param OutputPage $out
+	 * @param \IBufferingStatsdDataFactory $stats
+	 * @param string $submitLabel
+	 * @param string $newEditSummary
 	 */
 	public function __construct(
 		Title $title,
 		OutputPage $out,
 		\IBufferingStatsdDataFactory $stats,
-		$submitLabel
+		$submitLabel,
+		$newEditSummary
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel );
+
+		$this->newEditSummary = $newEditSummary;
 
 		$this->out->enableOOUI();
 		$this->out->addModuleStyles( [
@@ -169,7 +181,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->getRevisionRecord(),
 			$this->getOutput()->getUser(),
 			$this->getOutput()->getLanguage(),
-			false
+			false,
+			$this->newEditSummary
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			$this->out->getUser(),
