@@ -78,5 +78,9 @@
 	"twocolconflict-split-tour-popup3-header": "Texto realçado",
 	"twocolconflict-split-tour-popup3-message": "O texto que foi alterado em cada versão de uma linha aparece realçado. Depois de editar o texto, o realce desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Editar texto",
-	"twocolconflict-split-save-tooltip": "Gravar alterações e sair do modo de edição."
+	"twocolconflict-split-save-tooltip": "Gravar alterações e sair do modo de edição.",
+	"twocolconflict-split-reset-tooltip": "Repor texto",
+	"twocolconflict-split-reset-warning": "Descartar as alterações? O seu texto ficará tal como estava quando o conflito de edições ocorreu.",
+	"twocolconflict-split-reset-warning-cancel": "Cancelar",
+	"twocolconflict-split-reset-warning-accept": "Descartar"
 }

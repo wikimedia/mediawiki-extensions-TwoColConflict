@@ -75,5 +75,9 @@
 	"twocolconflict-split-tour-popup3-header": "טקסט מודגש",
 	"twocolconflict-split-tour-popup3-message": "הטקסט ששוּנה באחת מהגרסאות מודגש. אחרי עריכת הטקסט ההדגשה תיעלם.",
 	"twocolconflict-split-edit-tooltip": "עריכת הטקסט",
-	"twocolconflict-split-save-tooltip": "שמירת השינויים ועזיבת מצב העריכה."
+	"twocolconflict-split-save-tooltip": "שמירת השינויים ועזיבת מצב העריכה.",
+	"twocolconflict-split-reset-tooltip": "איפוס טקסט",
+	"twocolconflict-split-reset-warning": "לזרוק את השינויים הטקסט שלך יאופס למה שהוא היה לפני שאירעה התנגשות העריכה.",
+	"twocolconflict-split-reset-warning-cancel": "ביטול",
+	"twocolconflict-split-reset-warning-accept": "לזרוק"
 }
