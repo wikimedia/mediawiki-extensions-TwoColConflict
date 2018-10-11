@@ -4,7 +4,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MediaWiki\EditPage\TextConflictHelper;
-use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Revision\RevisionRecord;
 use OutputPage;
 use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;

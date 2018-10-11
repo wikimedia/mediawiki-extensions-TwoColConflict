@@ -3,7 +3,7 @@
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use Language;
-use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWikiTestCase;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictHeader;
 use User;

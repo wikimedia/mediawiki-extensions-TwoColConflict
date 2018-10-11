@@ -5,7 +5,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 use Html;
 use Language;
 use Linker;
-use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Revision\RevisionRecord;
 use Message;
 use User;
 
