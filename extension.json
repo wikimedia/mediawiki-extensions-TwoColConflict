@@ -37,9 +37,6 @@
 		"EditPageBeforeConflictDiff": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
 		],
-		"EditPageBeforeEditButtons": [
-			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons"
-		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
 		]
