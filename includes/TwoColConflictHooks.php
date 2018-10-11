@@ -120,6 +120,22 @@ class TwoColConflictHooks {
 		}
 	}
 
+	public static function onEditPageShowEditFormInitial(
+		EditPage $editPage,
+		OutputPage $outputPage
+	) {
+		if ( $editPage instanceof TwoColConflictTestEditPage ||
+			!self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ||
+			!self::shouldUseSplitInterface( $editPage->getContext()->getRequest() )
+		) {
+			return;
+		}
+
+		if ( $editPage->formtype === 'preview' || $editPage->formtype === 'diff' ) {
+			$editPage->isConflict = true;
+		}
+	}
+
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
 	 *

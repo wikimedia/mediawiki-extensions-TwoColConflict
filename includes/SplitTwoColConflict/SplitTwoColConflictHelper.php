@@ -62,13 +62,23 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param string $storedversion
 	 */
 	public function setTextboxes( $yourtext, $storedversion ) {
-		parent::setTextboxes(
-			$yourtext,
-			$storedversion
-		);
+		$contentRows = $this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' );
+		$extraLineFeeds = $this->out->getRequest()->getArray( 'mw-twocolconflict-split-linefeeds' );
 
-		$this->yourLines = $this->splitText( $this->yourtext );
-		$this->storedLines = $this->splitText( $this->storedversion );
+		// The incoming $yourtext is already merged, possibly containing paragraphs from both sides.
+		// If we can, we restore the users original submission.
+		if ( $contentRows && $extraLineFeeds ) {
+			$yourtext = SplitConflictMerger::mergeSplitConflictResults(
+				$contentRows,
+				$extraLineFeeds,
+				'your'
+			);
+		}
+
+		$this->yourLines = $this->splitText( $yourtext );
+		$this->storedLines = $this->splitText( $storedversion );
+
+		parent::setTextboxes( $yourtext, $storedversion );
 	}
 
 	/**
@@ -186,7 +196,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			$this->out->getUser(),
-			$this->out->getLanguage()
+			$this->out->getLanguage(),
+			$this->out->getRequest()->getArray( 'mw-twocolconflict-side-selector' ) ?: []
 		) )->getHtml(
 			$unifiedDiff,
 			$this->yourLines,

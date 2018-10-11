@@ -7,17 +7,25 @@ class SplitConflictMerger {
 	/**
 	 * @param array[] $contentRows
 	 * @param array[] $extraLineFeeds
-	 * @param string[] $sideSelection
-	 * @return string
+	 * @param string[]|string $sideSelection Either an array of side identifiers per row ("copy",
+	 *  "other", or "your"). Or one side identifier for all rows (either "other" or "your").
+	 *
+	 * @return string Wikitext
 	 */
 	public static function mergeSplitConflictResults(
 		array $contentRows,
 		array $extraLineFeeds,
-		array $sideSelection
+		$sideSelection
 	) {
 		$textLines = [];
+
 		foreach ( $contentRows as $num => $row ) {
-			$side = isset( $sideSelection[$num] ) ? $sideSelection[$num] : 'copy';
+			if ( is_array( $sideSelection ) ) {
+				$side = isset( $sideSelection[$num] ) ? $sideSelection[$num] : 'copy';
+			} else {
+				$side = isset( $row['copy'] ) ? 'copy' : $sideSelection;
+			}
+
 			// As all this is user input, we can't assume the elements are always there
 			if ( !isset( $row[$side] ) ) {
 				continue;

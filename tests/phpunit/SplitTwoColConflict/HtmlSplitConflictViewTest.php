@@ -139,7 +139,8 @@ TEXT
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
 		$htmlResult = ( new HtmlSplitConflictView(
 			$this->getTestUser()->getUser(),
-			new \Language()
+			new \Language(),
+			[]
 		) )->getHtml(
 			$diff,
 			str_split( 'abcde' ),
