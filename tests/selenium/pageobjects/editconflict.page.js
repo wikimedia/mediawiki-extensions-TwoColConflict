@@ -13,11 +13,14 @@ class EditConflictPage extends Page {
 	getParagraph( column ) { return browser.element( this.columnToClass( column ) ); }
 	getEditButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
 	getSaveButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
+	getResetButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
 	getEditor( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
 	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
 
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 	get submitButton() { return browser.element( '#wpSave' ); }
+	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
+	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
 	get infoButton() { return browser.element( '.mw-twocolconflict-split-tour-help-button' ); }
 	get tourDialog() { return browser.element( '.mw-twocolconflict-split-tour-intro-container' ); }
