@@ -1,5 +1,6 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	PreviewPage = require( '../pageobjects/preview.page' ),
 	DiffPage = require( '../pageobjects/diff.page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
@@ -20,6 +21,29 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+	} );
+
+	it( 'should resolve the conflict successfully', function () {
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 ChangeA',
+			'text was saved correctly'
+		);
+	} );
+
+	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
+		EditConflictPage.yourParagraphSelection.click();
+		EditConflictPage.getEditButton( 'your' ).click();
+		EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text' );
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 Dummy Text',
+			'text was saved correctly'
+		);
 	} );
 
 	it( 'should show a preview page', function () {
