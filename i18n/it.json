@@ -56,5 +56,7 @@
 	"twocolconflict-split-not-saved-at": "non pubblicata il $1 alle $2.",
 	"twocolconflict-split-saved-at": "pubblicata il $1 alle $2.",
 	"twocolconflict-split-choose-version": "Seleziona una versione",
-	"twocolconflict-split-tour-popup-btn-text": "Ok, capito."
+	"twocolconflict-split-tour-popup-btn-text": "Ok, capito.",
+	"twocolconflict-split-reset-warning-cancel": "Annulla",
+	"twocolconflict-split-reset-warning-accept": "Cancella"
 }

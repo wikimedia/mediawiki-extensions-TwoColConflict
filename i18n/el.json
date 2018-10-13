@@ -50,5 +50,8 @@
 	"twocolconflict-split-not-saved-at": "μη δημοσιευμένο $1, $2.",
 	"twocolconflict-split-saved-at": "δημοσιεύτηκε στις $1, $2.",
 	"twocolconflict-split-choose-version": "Παρακαλούμε επιλέξτε έκδοση",
-	"twocolconflict-split-edit-tooltip": "Επεξεργασία κειμένου"
+	"twocolconflict-split-edit-tooltip": "Επεξεργασία κειμένου",
+	"twocolconflict-split-reset-tooltip": "Επαναφορά κειμένου",
+	"twocolconflict-split-reset-warning-cancel": "Ακύρωση",
+	"twocolconflict-split-reset-warning-accept": "Απόρριψη"
 }

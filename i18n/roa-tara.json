@@ -14,5 +14,8 @@
 	"twocolconflict-label-show": "fà 'ndrucà",
 	"twocolconflict-label-hide": "scunne",
 	"twocolconflict-label-unchanged": "teste non cangiate",
-	"twocolconflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate"
+	"twocolconflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate",
+	"twocolconflict-split-reset-tooltip": "Pulizze 'u teste",
+	"twocolconflict-split-reset-warning-cancel": "Annulle",
+	"twocolconflict-split-reset-warning-accept": "Scitte"
 }

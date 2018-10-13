@@ -47,5 +47,6 @@
 	"twocolconflict-test-preview-submit": "Simulēt izmaiņu saglabāšanu",
 	"twocolconflict-test-username": "Konflikta testa lietotājs",
 	"twocolconflict-test-summary-text": "Konflikta testa labojuma kopsavilkums",
-	"twocolconflict-split-your-version-header": "Tava versija"
+	"twocolconflict-split-your-version-header": "Tava versija",
+	"twocolconflict-split-reset-warning-cancel": "Atcelt"
 }

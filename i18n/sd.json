@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Indus Asia",
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Saraiki"
 		]
 	},
 	"twocolconflict-previous-dialog": "گذريل",
-	"twocolconflict-close-dialog": "بند ڪريو"
+	"twocolconflict-close-dialog": "بند ڪريو",
+	"twocolconflict-split-reset-warning-cancel": "رد"
 }
