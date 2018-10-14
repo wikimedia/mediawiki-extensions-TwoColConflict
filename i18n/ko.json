@@ -73,6 +73,7 @@
 	"twocolconflict-split-edit-tooltip": "텍스트 편집",
 	"twocolconflict-split-save-tooltip": "변경사항을 저장하고 편집 모드를 떠납니다.",
 	"twocolconflict-split-reset-tooltip": "텍스트 재설정",
+	"twocolconflict-split-reset-warning": "변경사항을 버리시겠습니까? 편집 충돌이 발생했던 시점으로 텍스트가 초기화됩니다.",
 	"twocolconflict-split-reset-warning-cancel": "취소",
 	"twocolconflict-split-reset-warning-accept": "버리기"
 }

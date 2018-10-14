@@ -51,5 +51,6 @@
 	"twocolconflict-test-edit-hint": "Maak de wijzigingen hier beneden. Ze zullen niet worden opgeslagen en worden alleen gebruikt om een bewerkingsconflict te simuleren.",
 	"twocolconflict-test-username": "ConflictTest gebruiker",
 	"twocolconflict-test-summary-text": "Conflict test bewerkingssamenvatting",
-	"twocolconflict-split-edit-tooltip": "Bewerk tekst"
+	"twocolconflict-split-edit-tooltip": "Bewerk tekst",
+	"twocolconflict-split-reset-warning-cancel": "Annuleren"
 }

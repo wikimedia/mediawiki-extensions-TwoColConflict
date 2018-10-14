@@ -5,7 +5,8 @@
 			"Dvorapa",
 			"JAn Dudík",
 			"Matěj Suchánek",
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Martin Urbanec"
 		]
 	},
 	"twocolconflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
@@ -51,5 +52,8 @@
 	"twocolconflict-test-conflict-hint": "Toto je testovací konflikt. Změny nebudou zveřejněny, ale lze si zobrazit jejich náhled.",
 	"twocolconflict-test-preview-submit": "Simulovat zveřejnění změn",
 	"twocolconflict-test-username": "Fiktivní uživatel TestKonflikt",
-	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace"
+	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace",
+	"twocolconflict-split-reset-warning": "Zahodit změny? Tedxt se vrátí do okamžiku, kdy se editační konflikt stal.",
+	"twocolconflict-split-reset-warning-cancel": "Storno",
+	"twocolconflict-split-reset-warning-accept": "Zahodit"
 }

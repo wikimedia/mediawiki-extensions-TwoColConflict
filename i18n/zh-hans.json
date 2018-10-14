@@ -7,7 +7,8 @@
 			"LNDDYL",
 			"A2093064",
 			"Hanyanbo98",
-			"夢蝶葬花"
+			"夢蝶葬花",
+			"A Chinese Wikipedian"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -80,5 +81,9 @@
 	"twocolconflict-split-tour-popup3-header": "高亮文本",
 	"twocolconflict-split-tour-popup3-message": "在任一版本的行中更改的文本都会突出显示。编辑文本后，突出显示将消失。",
 	"twocolconflict-split-edit-tooltip": "编辑文本",
-	"twocolconflict-split-save-tooltip": "保存更改并离开编辑模式。"
+	"twocolconflict-split-save-tooltip": "保存更改并离开编辑模式。",
+	"twocolconflict-split-reset-tooltip": "重置文本",
+	"twocolconflict-split-reset-warning": "放弃更改？您的文本将被重置为编辑冲突发生时的内容。",
+	"twocolconflict-split-reset-warning-cancel": "取消",
+	"twocolconflict-split-reset-warning-accept": "舍弃"
 }
