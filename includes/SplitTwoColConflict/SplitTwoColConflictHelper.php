@@ -62,7 +62,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string[]
 	 */
 	private function splitText( $text ) {
-		return preg_split( '/\r*\n(?![\r\n])/', $text );
+		return preg_split( '/\n(?!\n)/',
+			str_replace( "\r\n", "\n", $text )
+		);
 	}
 
 	/**
