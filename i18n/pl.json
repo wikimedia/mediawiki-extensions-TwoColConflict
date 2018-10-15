@@ -59,5 +59,6 @@
 	"twocolconflict-split-not-saved-at": "nie opublikowano $1, $2.",
 	"twocolconflict-split-saved-at": "opublikowano $1, $2.",
 	"twocolconflict-split-choose-version": "Wybierz wersję",
-	"twocolconflict-split-save-tooltip": "Zapisz zmiany i wyjdź z trybu edycji."
+	"twocolconflict-split-save-tooltip": "Zapisz zmiany i wyjdź z trybu edycji.",
+	"twocolconflict-split-reset-warning-cancel": "Anuluj"
 }

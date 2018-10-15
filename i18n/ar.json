@@ -78,5 +78,9 @@
 	"twocolconflict-split-tour-popup3-header": "نص مميز",
 	"twocolconflict-split-tour-popup3-message": "يتم تمييز النص الذي تم تغييره في أي إصدار سطر، بعد تحرير النص، سيتم اختفاء التمييز.",
 	"twocolconflict-split-edit-tooltip": "تحرير النص",
-	"twocolconflict-split-save-tooltip": "حفظ التغييرات والخروج من نمط التحرير"
+	"twocolconflict-split-save-tooltip": "حفظ التغييرات والخروج من نمط التحرير",
+	"twocolconflict-split-reset-tooltip": "إعادة ضبط النص",
+	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين نصك إلى ما كان عليه عند حدوث تعارض التحرير.",
+	"twocolconflict-split-reset-warning-cancel": "إلغاء",
+	"twocolconflict-split-reset-warning-accept": "تجاهل"
 }

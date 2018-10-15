@@ -45,5 +45,7 @@
 	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus",
 	"twocolconflict-split-tour-dialog-header": "Ännerungskonflikter léisen",
 	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen.",
-	"twocolconflict-split-edit-tooltip": "Text änneren"
+	"twocolconflict-split-edit-tooltip": "Text änneren",
+	"twocolconflict-split-reset-tooltip": "Text zrécksetzen",
+	"twocolconflict-split-reset-warning-cancel": "Ofbriechen"
 }

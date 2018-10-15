@@ -4,7 +4,8 @@
 			"Mirinano",
 			"Iwai.masaharu",
 			"Omotecho",
-			"Penn Station"
+			"Penn Station",
+			"Shirayuki"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -44,5 +45,6 @@
 	"twocolconflict-tutorial": "編集競合解決チュートリアル",
 	"twocolconflict-previous-dialog": "戻る",
 	"twocolconflict-next-dialog": "次",
-	"twocolconflict-close-dialog": "閉じる"
+	"twocolconflict-close-dialog": "閉じる",
+	"twocolconflict-split-reset-warning-cancel": "キャンセル"
 }
