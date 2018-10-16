@@ -120,26 +120,6 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * @param EditPage &$editPage
-	 * @param array[] &$buttons
-	 * @param int &$tabindex
-	 */
-	public static function onEditPageBeforeEditButtons(
-		EditPage &$editPage,
-		array &$buttons,
-		&$tabindex
-	) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( !$config->get( 'TwoColConflictUseInline' ) &&
-			!( $editPage instanceof TwoColConflictTestEditPage ) &&
-			$editPage->isConflict === true
-		) {
-			unset( $buttons['preview'] );
-			unset( $buttons['diff'] );
-		}
-	}
-
-	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
 	 *
 	 * @param User $user

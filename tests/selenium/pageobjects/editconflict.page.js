@@ -18,7 +18,6 @@ class EditConflictPage extends Page {
 	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
 
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
-	get submitButton() { return browser.element( '#wpSave' ); }
 	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
 	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
@@ -32,6 +31,10 @@ class EditConflictPage extends Page {
 
 	get tourDiffChangePopup() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
 	get tourDiffChangePopupCloseButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
+
+	get submitButton() { return browser.element( '#wpSave' ); }
+	get previewButton() { return browser.element( '#wpPreview' ); }
+	get diffButton() { return browser.element( '#wpDiff' ); }
 
 	columnToClass( column ) {
 		switch ( column ) {
