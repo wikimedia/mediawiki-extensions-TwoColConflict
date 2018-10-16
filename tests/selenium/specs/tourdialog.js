@@ -19,7 +19,7 @@ describe( 'TwoColConflict', function () {
 	describe( 'initial viewing', function () {
 
 		before( function () {
-			EditConflictPage.toggleHelpDialogue( false );
+			EditConflictPage.toggleHelpDialog( true );
 			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 		} );
 
@@ -43,7 +43,7 @@ describe( 'TwoColConflict', function () {
 
 		before( function () {
 			browser.url( browser.options.baseUrl );
-			EditConflictPage.toggleHelpDialogue( true );
+			EditConflictPage.toggleHelpDialog( false );
 			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 		} );
 

@@ -51,8 +51,15 @@ class EditConflictPage extends Page {
 		} );
 	}
 
-	toggleHelpDialogue( hide ) {
+	/**
+	 * @param {boolean} [show] Defaults to true.
+     * @return {Promise} Promise from the mw.Api request
+	 */
+	toggleHelpDialog( show ) {
+		var hide = show === false;
+
 		browser.pause( 300 ); // wait for mw JS to load
+
 		return browser.execute( function ( hide ) {
 			return ( new mediaWiki.Api() ).saveOption(
 				'userjs-twocolconflict-hide-help-dialogue',
@@ -64,7 +71,7 @@ class EditConflictPage extends Page {
 	prepareEditConflict() {
 		UserLoginPage.loginAdmin();
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
-		this.toggleHelpDialogue( true );
+		this.toggleHelpDialog( false );
 		this.enforceSplitEditConflict();
 	}
 
