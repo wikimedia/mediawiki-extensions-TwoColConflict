@@ -61,12 +61,14 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	showsAnEditConflictWith( conflictUser, conflictUserPassword, hideHelpDialogue = true ) {
+	prepareEditConflict() {
 		UserLoginPage.loginAdmin();
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
-		this.toggleHelpDialogue( hideHelpDialogue );
+		this.toggleHelpDialogue( true );
 		this.enforceSplitEditConflict();
+	}
 
+	showSimpleConflict( conflictUser, conflictUserPassword ) {
 		this.createSimpleConflict(
 			Util.getTestString( 'conflict-title-' ),
 			conflictUser,

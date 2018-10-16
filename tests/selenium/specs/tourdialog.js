@@ -13,23 +13,14 @@ describe( 'TwoColConflict', function () {
 		browser.call( function () {
 			Api.createAccount( conflictUser, conflictUserPassword );
 		} );
+		EditConflictPage.prepareEditConflict();
 	} );
 
 	describe( 'initial viewing', function () {
 
 		before( function () {
-			EditConflictPage.showsAnEditConflictWith( conflictUser, conflictUserPassword, false );
-		} );
-
-		after( function () {
-			// provoke and dismiss reload warning
-			browser.url( 'data:' );
-			try {
-				browser.alertAccept();
-			} catch ( e ) {
-			} finally {
-				browser.deleteCookie();
-			}
+			EditConflictPage.toggleHelpDialogue( false );
+			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 		} );
 
 		it( 'shows the tour', function () {
@@ -38,23 +29,22 @@ describe( 'TwoColConflict', function () {
 				'I see an info tour'
 			);
 		} );
-	} );
-
-	describe( 'subsequent viewing', function () {
-
-		before( function () {
-			EditConflictPage.showsAnEditConflictWith( conflictUser, conflictUserPassword );
-		} );
 
 		after( function () {
 			// provoke and dismiss reload warning
 			browser.url( 'data:' );
 			try {
 				browser.alertAccept();
-			} catch ( e ) {
-			} finally {
-				browser.deleteCookie();
-			}
+			} catch ( e ) {}
+		} );
+	} );
+
+	describe( 'subsequent viewing', function () {
+
+		before( function () {
+			browser.url( browser.options.baseUrl );
+			EditConflictPage.toggleHelpDialogue( true );
+			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 		} );
 
 		it( 'hides the tour', function () {
@@ -122,5 +112,16 @@ describe( 'TwoColConflict', function () {
 				'Diff change popup has disappeared'
 			);
 		} );
+	} );
+
+	after( function () {
+		// provoke and dismiss reload warning
+		browser.url( 'data:' );
+		try {
+			browser.alertAccept();
+		} catch ( e ) {
+		} finally {
+			browser.deleteCookie();
+		}
 	} );
 } );
