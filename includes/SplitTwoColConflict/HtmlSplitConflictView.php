@@ -145,6 +145,9 @@ class HtmlSplitConflictView {
 	}
 
 	private function buildEditableTextContainer( $text, $rawText, $rowNum, $changeType ) {
+		$text = rtrim( $text, "\r\n\u{00A0}" );
+		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
+
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-editable' ],
@@ -156,22 +159,23 @@ class HtmlSplitConflictView {
 			$this->buildEditButton() .
 			$this->buildSaveButton() .
 			$this->buildResetButton() .
-			$this->buildResetText( $text, $rawText ) .
-			$this->buildTextEditor( $rawText, $rowNum, $changeType )
+			$this->buildResetText( $text, $editorText ) .
+			$this->buildTextEditor( $editorText, $rowNum, $changeType ) .
+			$this->buildLineFeedField( $rawText, $rowNum, $changeType )
 		);
 	}
 
-	private function buildResetText( $text, $rawText ) {
+	private function buildResetText( $text, $editorText ) {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
 				$text
 			) . Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-editor-text' ],
-				$rawText
+				$editorText
 			);
 	}
 
-	private function buildTextEditor( $text, $rowNum, $changeType ) {
+	private function buildTextEditor( $editorText, $rowNum, $changeType ) {
 		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
 
 		return Html::rawElement(
@@ -184,11 +188,14 @@ class HtmlSplitConflictView {
 				'rows' => '6',
 				'autocomplete' => 'off',
 			],
-			rtrim( $text, "\r\n" ) . "\n"
-		) .
-		Html::hidden(
+			$editorText
+		);
+	}
+
+	private function buildLineFeedField( $rawText, $rowNum, $changeType ) {
+		return Html::hidden(
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
-			$this->countExtraLineFeeds( $text )
+			$this->countExtraLineFeeds( $rawText )
 		);
 	}
 
