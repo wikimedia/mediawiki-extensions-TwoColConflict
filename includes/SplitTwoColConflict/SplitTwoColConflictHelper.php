@@ -39,7 +39,10 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		parent::__construct( $title, $out, $stats, $submitLabel );
 
 		$this->out->enableOOUI();
-		$this->out->addModuleStyles( [ 'oojs-ui.styles.icons-editing-core' ] );
+		$this->out->addModuleStyles( [
+			'oojs-ui.styles.icons-editing-core',
+			'oojs-ui.styles.icons-movement'
+		] );
 	}
 
 	/**

@@ -78,5 +78,7 @@
 	"twocolconflict-split-reset-tooltip": "Reset text",
 	"twocolconflict-split-reset-warning": "Discard changes? Your text will be reset to what it was when the edit conflict occurred.",
 	"twocolconflict-split-reset-warning-cancel": "Cancel",
-	"twocolconflict-split-reset-warning-accept": "Discard"
+	"twocolconflict-split-reset-warning-accept": "Discard",
+	"twocolconflict-split-collapse-tooltip": "Collapse text",
+	"twocolconflict-split-expand-tooltip": "Expand text"
 }

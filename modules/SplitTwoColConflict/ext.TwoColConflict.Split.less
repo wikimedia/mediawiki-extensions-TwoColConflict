@@ -60,6 +60,7 @@
 	border-width: 3px 3px 3px 7px;
 	border-style: solid;
 	padding: 5px 40px 5px 20px;
+	min-height: 50px;
 	white-space: pre-line;
 	/* Non standard for webkit */
 	word-break: break-word;
@@ -136,6 +137,43 @@
 	.mw-twocolconflict-split-reset-editor-text {
 		display: none;
 	}
+
+	.mw-twocolconflict-split-collapse-button,
+	.mw-twocolconflict-split-expand-button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	.mw-twocolconflict-split-collapsed {
+		max-height: 80px;
+		overflow: hidden;
+
+		.mw-twocolconflict-split-fade {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			margin: 0;
+			padding: 50px 0;
+			background-image: linear-gradient( to bottom, transparent 50%, #fafafa );
+		}
+
+		.mw-twocolconflict-split-collapse-button {
+			display: none;
+		}
+	}
+
+	.mw-twocolconflict-split-expanded {
+		.mw-twocolconflict-split-expand-button {
+			display: none;
+		}
+	}
+
+	.mw-twocolconflict-split-expand-button:last-child {
+		// OOUI default override
+		margin-right: 0.5em;
+	}
 }
 
 .mw-twocolconflict-split-selector-label {
@@ -197,5 +235,11 @@
 
 	.mw-twocolconflict-split-edit-button {
 		display: none;
+	}
+
+	.mw-twocolconflict-split-column {
+		.mw-twocolconflict-split-expand-button {
+			display: none;
+		}
 	}
 }

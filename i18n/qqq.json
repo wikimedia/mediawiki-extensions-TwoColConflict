@@ -85,5 +85,7 @@
 	"twocolconflict-split-reset-tooltip": "Label for the reset button shown on diff paragraphs.",
 	"twocolconflict-split-reset-warning": "Message for the warning shown to the user when the reset button was pressed. This message confirms whether or not the user wants to discard their changes.",
 	"twocolconflict-split-reset-warning-cancel": "Label for the cancel button of the reset warning.\n{{Identical|Cancel}}",
-	"twocolconflict-split-reset-warning-accept": "Label for the accept button of the reset warning."
+	"twocolconflict-split-reset-warning-accept": "Label for the accept button of the reset warning.",
+	"twocolconflict-split-collapse-tooltip": "Label for the collapse button to collapse an unchanged text paragraph.",
+	"twocolconflict-split-expand-tooltip": "Label for the expand button to expand an unchanged text paragraph."
 }

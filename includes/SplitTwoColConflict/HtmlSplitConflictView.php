@@ -5,8 +5,8 @@ namespace TwoColConflict\SplitTwoColConflict;
 use Html;
 use Language;
 use OOUI\RadioInputWidget;
-use User;
 use OOUI\ButtonWidget;
+use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -147,22 +147,29 @@ class HtmlSplitConflictView {
 	private function buildEditableTextContainer( $text, $rawText, $rowNum, $changeType ) {
 		$text = rtrim( $text, "\r\n\u{00A0}" );
 		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
+		$classes = [ 'mw-twocolconflict-split-editable' ];
 
-		return Html::rawElement(
-			'div',
-			[ 'class' => 'mw-twocolconflict-split-editable' ],
-			Html::rawElement(
-				'span',
-				[ 'class' => 'mw-twocolconflict-split-difftext' ],
-				$text
-			) .
-			$this->buildEditButton() .
-			$this->buildSaveButton() .
-			$this->buildResetButton() .
-			$this->buildResetText( $text, $editorText ) .
-			$this->buildTextEditor( $editorText, $rowNum, $changeType ) .
-			$this->buildLineFeedField( $rawText, $rowNum, $changeType )
+		$innerHtml = Html::rawElement(
+			'span',
+			[ 'class' => 'mw-twocolconflict-split-difftext' ],
+			$text
 		);
+		$innerHtml .= Html::element( 'div', [ 'class' => 'mw-twocolconflict-split-fade' ] );
+		$innerHtml .= $this->buildEditButton();
+		$innerHtml .= $this->buildSaveButton();
+		$innerHtml .= $this->buildResetButton();
+
+		if ( $changeType === 'copy' ) {
+			$innerHtml .= $this->buildCollapseButton();
+			$innerHtml .= $this->buildExpandButton();
+			$classes[] = 'mw-twocolconflict-split-collapsed';
+		}
+
+		$innerHtml .= $this->buildResetText( $text, $editorText );
+		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType );
+		$innerHtml .= $this->buildLineFeedField( $rawText, $rowNum, $changeType );
+
+		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
 
 	private function buildResetText( $text, $editorText ) {
@@ -226,6 +233,26 @@ class HtmlSplitConflictView {
 			'icon' => 'undo',
 			'title' => wfMessage( 'twocolconflict-split-reset-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-reset-button' ]
+		] );
+	}
+
+	private function buildExpandButton() {
+		return new ButtonWidget( [
+			'infusable' => true,
+			'framed' => false,
+			'icon' => 'expand',
+			'title' => wfMessage( 'twocolconflict-split-expand-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-split-expand-button' ]
+		] );
+	}
+
+	private function buildCollapseButton() {
+		return new ButtonWidget( [
+			'infusable' => true,
+			'framed' => false,
+			'icon' => 'collapse',
+			'title' => wfMessage( 'twocolconflict-split-collapse-tooltip' )->text(),
+			'classes' => [ 'mw-twocolconflict-split-collapse-button' ]
 		] );
 	}
 

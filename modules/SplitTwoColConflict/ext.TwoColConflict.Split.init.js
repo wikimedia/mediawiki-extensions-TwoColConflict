@@ -29,10 +29,23 @@
 			.trim();
 	}
 
+	function expandText( $row ) {
+		$row.find( '.mw-twocolconflict-split-collapsed' )
+			.toggleClass( 'mw-twocolconflict-split-collapsed' )
+			.toggleClass( 'mw-twocolconflict-split-expanded' );
+	}
+
+	function collapseText( $row ) {
+		$row.find( '.mw-twocolconflict-split-expanded' )
+			.toggleClass( 'mw-twocolconflict-split-expanded' )
+			.toggleClass( 'mw-twocolconflict-split-collapsed' );
+	}
+
 	/**
 	 * @param {jQuery} $row
 	 */
 	function enableEditing( $row ) {
+		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
 		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
 	}
@@ -97,24 +110,25 @@
 	}
 
 	function initButtonEvents() {
-		$( '.mw-twocolconflict-split-edit-button' ).each( function () {
-			var button = OO.ui.ButtonWidget.static.infuse( this );
-			button.on( 'click', function () {
-				enableEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
-			} );
-		} );
+		var buttons = [
+			[ '.mw-twocolconflict-split-edit-button', enableEditing ],
+			[ '.mw-twocolconflict-split-save-button', saveEditing ],
+			[ '.mw-twocolconflict-split-reset-button', resetWarning ],
+			[ '.mw-twocolconflict-split-expand-button', expandText ],
+			[ '.mw-twocolconflict-split-collapse-button', collapseText ]
+		];
 
-		$( '.mw-twocolconflict-split-save-button' ).each( function () {
-			var button = OO.ui.ButtonWidget.static.infuse( this );
-			button.on( 'click', function () {
-				saveEditing( button.$element.closest( '.mw-twocolconflict-split-row' ) );
-			} );
-		} );
+		buttons.forEach( function ( mapping ) {
+			var cssClass = mapping[ 0 ],
+				func = mapping[ 1 ];
 
-		$( '.mw-twocolconflict-split-reset-button' ).each( function () {
-			var button = OO.ui.ButtonWidget.static.infuse( this );
-			button.on( 'click', function () {
-				resetWarning( button.$element.closest( '.mw-twocolconflict-split-row' ) );
+			$( cssClass ).each( function () {
+				var button = OO.ui.ButtonWidget.static.infuse( this ),
+					$row = button.$element.closest( '.mw-twocolconflict-split-row' );
+
+				button.on( 'click', function () {
+					func( $row );
+				} );
 			} );
 		} );
 	}
