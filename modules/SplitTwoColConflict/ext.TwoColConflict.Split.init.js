@@ -31,14 +31,14 @@
 
 	function expandText( $row ) {
 		$row.find( '.mw-twocolconflict-split-collapsed' )
-			.toggleClass( 'mw-twocolconflict-split-collapsed' )
-			.toggleClass( 'mw-twocolconflict-split-expanded' );
+			.removeClass( 'mw-twocolconflict-split-collapsed' )
+			.addClass( 'mw-twocolconflict-split-expanded' );
 	}
 
 	function collapseText( $row ) {
 		$row.find( '.mw-twocolconflict-split-expanded' )
-			.toggleClass( 'mw-twocolconflict-split-expanded' )
-			.toggleClass( 'mw-twocolconflict-split-collapsed' );
+			.removeClass( 'mw-twocolconflict-split-expanded' )
+			.addClass( 'mw-twocolconflict-split-collapsed' );
 	}
 
 	/**
@@ -110,24 +110,19 @@
 	}
 
 	function initButtonEvents() {
-		var buttons = [
-			[ '.mw-twocolconflict-split-edit-button', enableEditing ],
-			[ '.mw-twocolconflict-split-save-button', saveEditing ],
-			[ '.mw-twocolconflict-split-reset-button', resetWarning ],
-			[ '.mw-twocolconflict-split-expand-button', expandText ],
-			[ '.mw-twocolconflict-split-collapse-button', collapseText ]
-		];
+		[
+			{ selector: '.mw-twocolconflict-split-edit-button', onclick: enableEditing },
+			{ selector: '.mw-twocolconflict-split-save-button', onclick: saveEditing },
+			{ selector: '.mw-twocolconflict-split-reset-button', onclick: resetWarning },
+			{ selector: '.mw-twocolconflict-split-expand-button', onclick: expandText },
+			{ selector: '.mw-twocolconflict-split-collapse-button', onclick: collapseText }
+		].forEach( function ( button ) {
+			$( button.selector ).each( function () {
+				var widget = OO.ui.ButtonWidget.static.infuse( this ),
+					$row = widget.$element.closest( '.mw-twocolconflict-split-row' );
 
-		buttons.forEach( function ( mapping ) {
-			var cssClass = mapping[ 0 ],
-				func = mapping[ 1 ];
-
-			$( cssClass ).each( function () {
-				var button = OO.ui.ButtonWidget.static.infuse( this ),
-					$row = button.$element.closest( '.mw-twocolconflict-split-row' );
-
-				button.on( 'click', function () {
-					func( $row );
+				widget.on( 'click', function () {
+					button.onclick( $row );
 				} );
 			} );
 		} );
@@ -163,12 +158,13 @@
 	}
 
 	function initTour() {
-		var $body = $( 'body' ), $helpBtn, tour,
-			Tour = mw.libs.twoColConflict.split.Tour,
+		var $body = $( 'body' ),
+			$helpBtn,
+			tour,
 			settings = new mw.libs.twoColConflict.Settings(),
 			windowManager = new OO.ui.WindowManager();
 
-		tour = Tour.init(
+		tour = mw.libs.twoColConflict.split.Tour.init(
 			mw.msg( 'twocolconflict-split-tour-dialog-header' ),
 			'mw-twocolconflict-split-tour-slide-1',
 			mw.msg( 'twocolconflict-split-tour-dialog-message' ),

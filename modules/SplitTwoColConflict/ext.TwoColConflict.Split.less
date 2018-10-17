@@ -140,8 +140,8 @@
 
 	.mw-twocolconflict-split-collapse-button,
 	.mw-twocolconflict-split-expand-button {
-		position: absolute;
 		bottom: 0;
+		position: absolute;
 		right: 0;
 	}
 
@@ -150,13 +150,14 @@
 		overflow: hidden;
 
 		.mw-twocolconflict-split-fade {
+			background-image: linear-gradient( transparent, #fafafa );
+			border-radius: 8px;
+			bottom: 0;
+			height: 50px;
+			left: 0;
+			pointer-events: none; // Allows clicking "through" the element
 			position: absolute;
 			width: 100%;
-			bottom: 0;
-			left: 0;
-			margin: 0;
-			padding: 50px 0;
-			background-image: linear-gradient( to bottom, transparent 50%, #fafafa );
 		}
 
 		.mw-twocolconflict-split-collapse-button {
