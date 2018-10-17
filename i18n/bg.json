@@ -14,5 +14,6 @@
 	"twocolconflict-label-hide": "скриване",
 	"twocolconflict-label-unchanged": "непроменен текст",
 	"twocolconflict-show-help-tooltip": "Показване на помощна информация",
-	"twocolconflict-close-dialog": "Затваряне"
+	"twocolconflict-close-dialog": "Затваряне",
+	"twocolconflict-split-reset-warning-cancel": "Отказ"
 }

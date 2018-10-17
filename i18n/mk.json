@@ -74,5 +74,9 @@
 	"twocolconflict-split-tour-popup3-header": "Истакнат текст",
 	"twocolconflict-split-tour-popup3-message": "Кога ќе има изменет текст во една од верзиите, редот ќе се истакне. Откако ќе го уредите, истакнувањето ќе го снема.",
 	"twocolconflict-split-edit-tooltip": "Уреди текст",
-	"twocolconflict-split-save-tooltip": "Зачувај ги промените и напушти во уредувачкиот режим."
+	"twocolconflict-split-save-tooltip": "Зачувај ги промените и напушти во уредувачкиот режим.",
+	"twocolconflict-split-reset-tooltip": "Отповикај текст",
+	"twocolconflict-split-reset-warning": "Да ги отфрлам промените? Вашиот текст ќе биде повратен на содржината пред појавувањето на спротиставеноста.",
+	"twocolconflict-split-reset-warning-cancel": "Откажи",
+	"twocolconflict-split-reset-warning-accept": "Отфрли"
 }

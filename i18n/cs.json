@@ -53,7 +53,7 @@
 	"twocolconflict-test-preview-submit": "Simulovat zveřejnění změn",
 	"twocolconflict-test-username": "Fiktivní uživatel TestKonflikt",
 	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace",
-	"twocolconflict-split-reset-warning": "Zahodit změny? Tedxt se vrátí do okamžiku, kdy se editační konflikt stal.",
+	"twocolconflict-split-reset-warning": "Zahodit změny? Text se vrátí do okamžiku, kdy se editační konflikt stal.",
 	"twocolconflict-split-reset-warning-cancel": "Storno",
 	"twocolconflict-split-reset-warning-accept": "Zahodit"
 }
