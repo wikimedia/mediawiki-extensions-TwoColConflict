@@ -15,21 +15,25 @@
 			slides: [
 				{
 					message: 'twocolconflict-help-dialog-slide1',
+					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-1',
 					imageMode: 'landscape'
 				},
 				{
 					message: 'twocolconflict-help-dialog-slide2',
+					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-2',
 					imageMode: 'landscape'
 				},
 				{
 					message: 'twocolconflict-help-dialog-slide3',
+					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-3',
 					imageMode: 'landscape'
 				},
 				{
 					message: 'twocolconflict-help-dialog-slide4',
+					parameters: [],
 					imageClass: 'mw-twocolconflict-help-dialog-slide-4',
 					imageMode: 'landscape'
 				}
