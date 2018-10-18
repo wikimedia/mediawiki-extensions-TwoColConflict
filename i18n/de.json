@@ -80,5 +80,7 @@
 	"twocolconflict-split-reset-tooltip": "Text zurücksetzen",
 	"twocolconflict-split-reset-warning": "Änderungen verwerfen? Dein Text wird auf den Zeitpunkt zurückgesetzt, an dem der Bearbeitungskonflikt aufgetreten ist.",
 	"twocolconflict-split-reset-warning-cancel": "Abbrechen",
-	"twocolconflict-split-reset-warning-accept": "Verwerfen"
+	"twocolconflict-split-reset-warning-accept": "Verwerfen",
+	"twocolconflict-split-collapse-tooltip": "Text einklappen",
+	"twocolconflict-split-expand-tooltip": "Text ausklappen"
 }
