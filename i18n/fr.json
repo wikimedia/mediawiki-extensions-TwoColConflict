@@ -84,5 +84,7 @@
 	"twocolconflict-split-reset-tooltip": "Réinitialiser le texte",
 	"twocolconflict-split-reset-warning": "Abandonner les modifications ? Votre texte sera réinitialisé à ce qu’il était quand s’est produit le conflit d’édition.",
 	"twocolconflict-split-reset-warning-cancel": "Annuler",
-	"twocolconflict-split-reset-warning-accept": "Abandonner"
+	"twocolconflict-split-reset-warning-accept": "Abandonner",
+	"twocolconflict-split-collapse-tooltip": "Replier le texte",
+	"twocolconflict-split-expand-tooltip": "Déplier le texte"
 }

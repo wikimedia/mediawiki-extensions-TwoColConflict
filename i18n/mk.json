@@ -78,5 +78,7 @@
 	"twocolconflict-split-reset-tooltip": "Отповикај текст",
 	"twocolconflict-split-reset-warning": "Да ги отфрлам промените? Вашиот текст ќе биде повратен на содржината пред појавувањето на спротиставеноста.",
 	"twocolconflict-split-reset-warning-cancel": "Откажи",
-	"twocolconflict-split-reset-warning-accept": "Отфрли"
+	"twocolconflict-split-reset-warning-accept": "Отфрли",
+	"twocolconflict-split-collapse-tooltip": "Склопи текст",
+	"twocolconflict-split-expand-tooltip": "Расклопи текст"
 }
