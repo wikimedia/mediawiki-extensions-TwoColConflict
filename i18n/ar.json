@@ -82,5 +82,7 @@
 	"twocolconflict-split-reset-tooltip": "إعادة ضبط النص",
 	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين نصك إلى ما كان عليه عند حدوث تعارض التحرير.",
 	"twocolconflict-split-reset-warning-cancel": "إلغاء",
-	"twocolconflict-split-reset-warning-accept": "تجاهل"
+	"twocolconflict-split-reset-warning-accept": "تجاهل",
+	"twocolconflict-split-collapse-tooltip": "تصغير النص",
+	"twocolconflict-split-expand-tooltip": "توسيع النص"
 }

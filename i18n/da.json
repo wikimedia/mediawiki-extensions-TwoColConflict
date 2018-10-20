@@ -23,5 +23,8 @@
 	"twocolconflict-test-title-submit": "Vis redigeringside",
 	"twocolconflict-test-no-direct-editing": "Denne side kan ikke redigeres direkte.",
 	"twocolconflict-split-your-version-header": "Din version",
-	"twocolconflict-split-edit-tooltip": "Rediger tekst"
+	"twocolconflict-split-edit-tooltip": "Rediger tekst",
+	"twocolconflict-split-reset-tooltip": "Nulstil tekst",
+	"twocolconflict-split-reset-warning-cancel": "Annullér",
+	"twocolconflict-split-expand-tooltip": "Udvid tekst"
 }
