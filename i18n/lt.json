@@ -16,5 +16,7 @@
 	"twocolconflict-show-help-tooltip": "Rodyti pagalbos tekstą",
 	"twocolconflict-previous-dialog": "Ankstesnis",
 	"twocolconflict-next-dialog": "Kitas",
-	"twocolconflict-close-dialog": "Uždaryti"
+	"twocolconflict-close-dialog": "Uždaryti",
+	"twocolconflict-split-collapse-tooltip": "Suskleisti tekstą",
+	"twocolconflict-split-expand-tooltip": "Išskleisti tekstą"
 }

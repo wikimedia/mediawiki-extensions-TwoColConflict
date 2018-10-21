@@ -10,5 +10,6 @@
 	"twocolconflict-diffchange-unchanged-title": "անփոփոխ տեքստ",
 	"twocolconflict-label-show": "ցուցադրել",
 	"twocolconflict-label-hide": "թաքցնել",
-	"twocolconflict-label-unchanged": "անփոփոխ տեքստը"
+	"twocolconflict-label-unchanged": "անփոփոխ տեքստը",
+	"twocolconflict-split-reset-warning-cancel": "Չեղարկել"
 }

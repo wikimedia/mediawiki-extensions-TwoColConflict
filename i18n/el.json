@@ -53,5 +53,7 @@
 	"twocolconflict-split-edit-tooltip": "Επεξεργασία κειμένου",
 	"twocolconflict-split-reset-tooltip": "Επαναφορά κειμένου",
 	"twocolconflict-split-reset-warning-cancel": "Ακύρωση",
-	"twocolconflict-split-reset-warning-accept": "Απόρριψη"
+	"twocolconflict-split-reset-warning-accept": "Απόρριψη",
+	"twocolconflict-split-collapse-tooltip": "Σύμπτυξη κειμένου",
+	"twocolconflict-split-expand-tooltip": "Επέκταση κειμένου"
 }
