@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'mediawiki_selenium', '~> 1.8.1'
 gem 'require_all', '~> 1.3', '>= 1.3.3'
