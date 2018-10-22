@@ -50,5 +50,7 @@
 	"twocolconflict-split-your-version-header": "Tava versija",
 	"twocolconflict-split-choose-version": "Lūdzu, izvēlies versiju",
 	"twocolconflict-split-tour-popup-btn-text": "Labi, sapratu.",
-	"twocolconflict-split-reset-warning-cancel": "Atcelt"
+	"twocolconflict-split-reset-warning-cancel": "Atcelt",
+	"twocolconflict-split-collapse-tooltip": "Sakļaut tekstu",
+	"twocolconflict-split-expand-tooltip": "Izvērst tekstu"
 }

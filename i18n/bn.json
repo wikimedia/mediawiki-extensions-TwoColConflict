@@ -33,5 +33,7 @@
 	"twocolconflict-split-your-version-header": "আপনার সংস্করণ",
 	"twocolconflict-split-choose-version": "দয়া করে একটি সংস্করণ নির্বাচন করুন",
 	"twocolconflict-split-tour-dialog-btn-text": "একত্রীকরণ শুরু করুন",
-	"twocolconflict-split-tour-popup-btn-text": "ঠিক আছে, বুঝেছি।"
+	"twocolconflict-split-tour-popup-btn-text": "ঠিক আছে, বুঝেছি।",
+	"twocolconflict-split-reset-warning-cancel": "বাতিল",
+	"twocolconflict-split-reset-warning-accept": "বাতিল"
 }

@@ -58,5 +58,7 @@
 	"twocolconflict-split-choose-version": "Seleziona una versione",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, capito.",
 	"twocolconflict-split-reset-warning-cancel": "Annulla",
-	"twocolconflict-split-reset-warning-accept": "Cancella"
+	"twocolconflict-split-reset-warning-accept": "Cancella",
+	"twocolconflict-split-collapse-tooltip": "Comprimi testo",
+	"twocolconflict-split-expand-tooltip": "Espandi testo"
 }
