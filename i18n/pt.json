@@ -82,5 +82,7 @@
 	"twocolconflict-split-reset-tooltip": "Repor texto",
 	"twocolconflict-split-reset-warning": "Descartar as alterações? O seu texto ficará tal como estava quando o conflito de edições ocorreu.",
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
-	"twocolconflict-split-reset-warning-accept": "Descartar"
+	"twocolconflict-split-reset-warning-accept": "Descartar",
+	"twocolconflict-split-collapse-tooltip": "Minimizar texto",
+	"twocolconflict-split-expand-tooltip": "Expandir texto"
 }
