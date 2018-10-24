@@ -94,7 +94,7 @@ class EditConflictPage extends Page {
 			'Line1\nChangeB'
 		);
 
-		this.infoButton.waitForVisible(); // JS for the tour is loaded
+		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
 
 	showBigConflict( conflictUser, conflictUserPassword ) {
@@ -107,7 +107,7 @@ class EditConflictPage extends Page {
 			'Line1\nLine2\nLine3\nChangeB'
 		);
 
-		this.infoButton.waitForVisible(); // JS for the tour is loaded
+		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
 
 	createConflict( title, conflictUser, conflictUserPassword, startText, otherText, yourText ) {
