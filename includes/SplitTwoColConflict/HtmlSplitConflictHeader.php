@@ -100,7 +100,7 @@ class HtmlSplitConflictHeader {
 	) {
 		return Html::openElement( 'div', [ 'class' => $class ] ) .
 			Html::rawElement( 'span', [], $headerMsg->plain() ) .
-			Html::Element( 'br' ) .
+			Html::element( 'br' ) .
 			Html::rawElement( 'span', [], $this->getFormattedDateTime( $dateMsg, $timestamp ) ) .
 			Html::closeElement( 'div' );
 	}
