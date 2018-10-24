@@ -60,7 +60,7 @@
 	"twocolconflict-split-conflict-hint": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
 	"twocolconflict-split-your-version-header": "Your revision",
 	"twocolconflict-split-current-version-header": "Conflicting revision from $1 (currently live)",
-	"twocolconflict-split-not-saved-at": "not published $1, $2.",
+	"twocolconflict-split-not-saved-at": "Not published yet",
 	"twocolconflict-split-saved-at": "published $1, $2.",
 	"twocolconflict-split-choose-version": "Please select a version",
 	"twocolconflict-split-tour-dialog-header": "Solve edit conflicts",
