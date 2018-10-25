@@ -15,6 +15,9 @@
 	"twocolconflict-label-hide": "scunne",
 	"twocolconflict-label-unchanged": "teste non cangiate",
 	"twocolconflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate",
+	"twocolconflict-split-your-version-header": "'A revisiona toje",
+	"twocolconflict-split-not-saved-at": "Angore none pubblecate",
+	"twocolconflict-split-saved-at": "Pubblecate $1",
 	"twocolconflict-split-reset-tooltip": "Pulizze 'u teste",
 	"twocolconflict-split-reset-warning-cancel": "Annulle",
 	"twocolconflict-split-reset-warning-accept": "Scitte"

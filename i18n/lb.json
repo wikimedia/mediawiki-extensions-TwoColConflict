@@ -47,5 +47,6 @@
 	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen.",
 	"twocolconflict-split-edit-tooltip": "Text änneren",
 	"twocolconflict-split-reset-tooltip": "Text zrécksetzen",
-	"twocolconflict-split-reset-warning-cancel": "Ofbriechen"
+	"twocolconflict-split-reset-warning-cancel": "Ofbriechen",
+	"twocolconflict-split-collapse-tooltip": "Text zesummeklappen"
 }

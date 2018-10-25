@@ -49,8 +49,20 @@
 	"twocolconflict-test-no-direct-editing": "Deze pagina kan niet direct worden bewerkt.",
 	"twocolconflict-test-text-submit": "Conflict creëeren",
 	"twocolconflict-test-edit-hint": "Maak de wijzigingen hier beneden. Ze zullen niet worden opgeslagen en worden alleen gebruikt om een bewerkingsconflict te simuleren.",
+	"twocolconflict-test-preview-submit": "Wijzigingen publiceren simuleren",
 	"twocolconflict-test-username": "ConflictTest gebruiker",
 	"twocolconflict-test-summary-text": "Conflict test bewerkingssamenvatting",
+	"twocolconflict-split-your-version-header": "Uw versie",
+	"twocolconflict-split-choose-version": "Kies een versie",
+	"twocolconflict-split-tour-dialog-header": "Bewerkingsconflicten oplossen",
+	"twocolconflict-split-tour-dialog-btn-text": "Begin met samenvoegen",
+	"twocolconflict-split-tour-popup-btn-text": "Oké, ik snap het.",
+	"twocolconflict-split-tour-popup1-header": "Afwijkende wijzigingen worden regel voor regel getoond.",
+	"twocolconflict-split-tour-popup2-header": "Kies welke wijzigingen u wilt behouden",
+	"twocolconflict-split-tour-popup3-header": "Gemarkeerde tekst",
 	"twocolconflict-split-edit-tooltip": "Bewerk tekst",
-	"twocolconflict-split-reset-warning-cancel": "Annuleren"
+	"twocolconflict-split-save-tooltip": "Wijzigingen opslaan en de bewerkingsmodus verlaten.",
+	"twocolconflict-split-reset-warning-cancel": "Annuleren",
+	"twocolconflict-split-collapse-tooltip": "Tekst samenvouwen",
+	"twocolconflict-split-expand-tooltip": "Tekst uitvouwen"
 }
