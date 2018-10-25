@@ -88,7 +88,7 @@ class HtmlSplitConflictHeader {
 	 * @param Message $headerMsg
 	 * @param Message $dateMsg
 	 * @param string $class
-	 * @param mixed $timestamp
+	 * @param string|\MWTimestamp $timestamp
 	 *
 	 * @return string HTML
 	 */
@@ -115,16 +115,14 @@ class HtmlSplitConflictHeader {
 
 	/**
 	 * @param Message $dateMsg
-	 * @param mixed $timestamp
+	 * @param string|\MWTimestamp $timestamp
 	 *
 	 * @return string HTML
 	 */
 	private function getFormattedDateTime( Message $dateMsg, $timestamp ) {
-		// FIXME: Why not use Language::userTimeAndDate?
-		$d = $this->language->userDate( $timestamp, $this->user );
-		$t = $this->language->userTime( $timestamp, $this->user );
+		$t = $this->language->userTimeAndDate( $timestamp, $this->user );
 
-		$dateMsg->params( $d, $t );
+		$dateMsg->params( $t );
 
 		return $dateMsg->parse();
 	}
