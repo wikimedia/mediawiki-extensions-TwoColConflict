@@ -138,7 +138,7 @@ TEXT
 	 */
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
 		$htmlResult = ( new HtmlSplitConflictView(
-			\User::newFromName( 'Tester' ),
+			$this->getTestUser()->getUser(),
 			new \Language()
 		) )->getHtml(
 			$diff,

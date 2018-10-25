@@ -16,21 +16,27 @@ use User;
  */
 class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
+	/**
+	 * @var User
+	 */
+	private $otherUser;
+
 	public function setUp() {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
+		$this->otherUser = $this->getTestUser()->getUser();
 	}
 
 	public function testGetHtml() {
 		$htmHeader = new HtmlSplitConflictHeader(
 			$this->newRevisionRecord(),
-			User::newFromName( 'TestUser' ),
+			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' )
 		);
 		$html = $htmHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'a', 'OtherUser' );
+		$this->assertTagExistsWithTextContents( $html, 'a', $this->otherUser->getName() );
 		$this->assertTagExistsWithTextContents( $html, 'p',
 			'(twocolconflict-split-conflict-hint)' );
 		$this->assertTagExistsWithTextContents( $html, 'span',
@@ -41,10 +47,9 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	 * @return RevisionRecord
 	 */
 	private function newRevisionRecord() {
-		$otherUser = User::newFromName( 'OtherUser' );
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
-			->willReturn( $otherUser );
+			->willReturn( $this->otherUser );
 		$revision->method( 'getTimestamp' )
 			->willReturn( '20180721234200' );
 		return $revision;
