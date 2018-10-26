@@ -45,7 +45,8 @@
 	 * @param {jQuery} $row
 	 */
 	function enableEditing( $row ) {
-		var maxHeight = 0;
+		var maxHeight = 0,
+			$selected;
 
 		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
@@ -61,7 +62,8 @@
 			}
 		} );
 
-		$row.find( '.mw-twocolconflict-split-editor' ).focus();
+		$selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' );
+		$selected.find( '.mw-twocolconflict-split-editor' ).focus();
 	}
 
 	/**
