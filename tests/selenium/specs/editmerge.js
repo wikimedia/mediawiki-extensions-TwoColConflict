@@ -224,6 +224,14 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'clicking edit should automatically focus the text editor', function () {
+		EditConflictPage.getEditButton( 'unchanged' ).click();
+		assert(
+			EditConflictPage.getEditor( 'unchanged' ).hasFocus(),
+			'text editor is focused'
+		);
+	} );
+
 	afterEach( function () {
 		// provoke and dismiss reload warning
 		browser.url( 'data:' );

@@ -48,6 +48,7 @@
 		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
 		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
+		$row.find( '.mw-twocolconflict-split-editor' ).focus();
 	}
 
 	/**
