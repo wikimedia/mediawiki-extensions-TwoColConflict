@@ -78,7 +78,6 @@
 
 .mw-twocolconflict-changes-editor,
 .mw-twocolconflict-hidden-editor {
-	word-wrap: break-word;
 	overflow-wrap: break-word;
 	flex-direction: column;
 	resize: vertical;
