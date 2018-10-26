@@ -23,6 +23,8 @@
 	"twocolconflict-test-title-submit": "Vis redigeringside",
 	"twocolconflict-test-no-direct-editing": "Denne side kan ikke redigeres direkte.",
 	"twocolconflict-split-your-version-header": "Din revision",
+	"twocolconflict-split-not-saved-at": "Endnu ikke offentliggjort",
+	"twocolconflict-split-saved-at": "Offentliggjort d. $1",
 	"twocolconflict-split-edit-tooltip": "Rediger tekst",
 	"twocolconflict-split-reset-tooltip": "Nulstil tekst",
 	"twocolconflict-split-reset-warning-cancel": "Annullér",
