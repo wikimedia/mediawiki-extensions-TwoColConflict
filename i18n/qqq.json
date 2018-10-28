@@ -68,7 +68,7 @@
 	"twocolconflict-split-your-version-header": "Header for the diff column showing the users changes.",
 	"twocolconflict-split-current-version-header": "Header for the diff column showing the current conflicting changes.",
 	"twocolconflict-split-not-saved-at": "Header for the diff column showing the conflicting, not yet published revision the current user aims to save.",
-	"twocolconflict-split-saved-at": "Header for the diff columns showing the time and date when the current conflicting content was modified.\n\nParameters:\n* $1 - date\n* $2 - time",
+	"twocolconflict-split-saved-at": "Header for the diff columns showing the time and date when the current conflicting content was modified.\n\nParameters:\n* $1 - date",
 	"twocolconflict-split-choose-version": "Label for the version selection on conflicting paragraphs.",
 	"twocolconflict-split-tour-dialog-header": "Text for the header on the first screen of the help dialog.",
 	"twocolconflict-split-tour-dialog-message": "Text for the message on the first screen of the help dialog.",

@@ -59,6 +59,9 @@
 	"twocolconflict-test-preview-hint": "Дякуємо за те, що випробували інтерфейс вирішення конфліктів редагувань! Допоможіть нам покращити його, залишивши свій відгук [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page тут].\n\nНижче показано результати Вашого тестового вирішення конфлікту редагувань.",
 	"twocolconflict-test-username": "Користувач тестування конфлікту",
 	"twocolconflict-test-summary-text": "Опис редагування при тестуванні конфлікту",
+	"twocolconflict-split-your-version-header": "Ваша версія",
+	"twocolconflict-split-not-saved-at": "Ще не опубліковано",
+	"twocolconflict-split-saved-at": "Опубліковано $1",
 	"twocolconflict-split-choose-version": "Виберіть версію",
 	"twocolconflict-split-edit-tooltip": "Редагувати текст"
 }
