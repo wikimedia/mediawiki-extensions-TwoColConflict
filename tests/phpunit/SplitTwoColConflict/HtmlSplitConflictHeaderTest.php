@@ -21,18 +21,25 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	 */
 	private $otherUser;
 
+	/**
+	 * @var int
+	 */
+	private $now;
+
 	public function setUp() {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
 		$this->otherUser = $this->getTestUser()->getUser();
+		$this->now = 1000000000;
 	}
 
-	public function testGetHtml() {
+	public function testGetHtmlMoreThan59MinutesAgo() {
 		$htmHeader = new HtmlSplitConflictHeader(
-			$this->newRevisionRecord(),
+			$this->newRevisionRecord( '20180721234200' ),
 			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' )
+			Language::factory( 'qqx' ),
+			$this->now
 		);
 		$html = $htmHeader->getHtml();
 
@@ -43,15 +50,45 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			'(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)' );
 	}
 
+	public function testGetHtml2MinutesAgo() {
+		$ninetySecondsAgo = $this->now - 90;
+		$htmlHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord( $ninetySecondsAgo ),
+			User::newFromName( 'TestUser' ),
+			Language::factory( 'qqx' ),
+			$this->now
+		);
+		$html = $htmlHeader->getHtml();
+
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(twocolconflict-split-current-version-header: (minutes-ago: 2))' );
+	}
+
+	public function testGetHtml2SecondsAgo() {
+		$twoSecondsAgo = $this->now - 2;
+		$htmlHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord( $twoSecondsAgo ),
+			User::newFromName( 'TestUser' ),
+			Language::factory( 'qqx' ),
+			$this->now
+		);
+		$html = $htmlHeader->getHtml();
+
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(twocolconflict-split-current-version-header: (seconds-ago: 2))' );
+	}
+
 	/**
+	 * @param int|string $timestamp
+	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord() {
+	private function newRevisionRecord( $timestamp ) {
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
 			->willReturn( $this->otherUser );
 		$revision->method( 'getTimestamp' )
-			->willReturn( '20180721234200' );
+			->willReturn( $timestamp );
 		return $revision;
 	}
 

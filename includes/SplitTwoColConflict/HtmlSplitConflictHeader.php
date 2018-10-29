@@ -31,10 +31,28 @@ class HtmlSplitConflictHeader {
 	 */
 	private $language;
 
-	public function __construct( RevisionRecord $revision, User $user, Language $language ) {
+	/**
+	 * @var ConvertibleTimestamp
+	 */
+	private $now;
+
+	/**
+	 * @param RevisionRecord $revision
+	 * @param User $user
+	 * @param Language $language
+	 * @param string|int|false $now Any value the ConvertibleTimestamp class accepts. False for the
+	 *  current time
+	 */
+	public function __construct(
+		RevisionRecord $revision,
+		User $user,
+		Language $language,
+		$now
+	) {
 		$this->revision = $revision;
 		$this->user = $user;
 		$this->language = $language;
+		$this->now = new ConvertibleTimestamp( $now );
 	}
 
 	/**
@@ -116,15 +134,14 @@ class HtmlSplitConflictHeader {
 	 */
 	private function getFormattedDateTime() {
 		$timestamp = $this->revision->getTimestamp();
-		$now = new ConvertibleTimestamp();
-		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $now );
+		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $this->now );
 
 		if ( $diff->days || $diff->h ) {
 			return $this->language->userTimeAndDate( $timestamp, $this->user );
 		}
 
 		if ( $diff->i ) {
-			return wfMessage( 'minutes-ago', $diff->i )->text();
+			return wfMessage( 'minutes-ago', round( $diff->i + $diff->s / 60 ) )->text();
 		}
 
 		if ( $diff->s ) {
