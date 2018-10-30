@@ -62,7 +62,6 @@
 				self.close().closed.then(
 					self.closeCallback
 				);
-
 			} );
 
 			fieldset = new OO.ui.FieldsetLayout();

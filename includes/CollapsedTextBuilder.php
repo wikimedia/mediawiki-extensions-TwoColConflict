@@ -59,7 +59,6 @@ class CollapsedTextBuilder {
 				'',
 				mb_substr( $string, 0, $maxLength )
 			);
-
 		} else {
 			$result = preg_replace(
 				'/^[^' . self::WHITESPACES . ']+?[' . self::WHITESPACES . ']+?/u',
