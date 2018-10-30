@@ -62,7 +62,6 @@
 	"twocolconflict-split-your-version-header": "Din sidversion",
 	"twocolconflict-split-current-version-header": "Sidversion i konflikt från $1 (aktuell)",
 	"twocolconflict-split-not-saved-at": "Ännu inte publicerad",
-	"twocolconflict-split-saved-at": "Publicerades $1",
 	"twocolconflict-split-choose-version": "Välj en version",
 	"twocolconflict-split-tour-dialog-header": "Lös redigeringskonflikter",
 	"twocolconflict-split-tour-dialog-message": "Du upplevde en redigeringskonflikt: Under din redigering redigerade en annan användare sidan och sparade den. Din version innehåller nu inte de senaste ändringarna. Vi ber dig att sammanfoga din version med den nu senaste versionen av den andra användaren.",

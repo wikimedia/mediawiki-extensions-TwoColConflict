@@ -57,8 +57,9 @@
 	"twocolconflict-split-conflict-hint": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-not-saved-at": "nie opublikowano $1, $2.",
-	"twocolconflict-split-saved-at": "opublikowano $1, $2.",
 	"twocolconflict-split-choose-version": "Wybierz wersję",
 	"twocolconflict-split-save-tooltip": "Zapisz zmiany i wyjdź z trybu edycji.",
-	"twocolconflict-split-reset-warning-cancel": "Anuluj"
+	"twocolconflict-split-reset-warning-cancel": "Anuluj",
+	"twocolconflict-split-collapse-tooltip": "Zwiń tekst",
+	"twocolconflict-split-expand-tooltip": "Rozwiń tekst"
 }

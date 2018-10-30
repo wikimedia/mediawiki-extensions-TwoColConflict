@@ -61,7 +61,6 @@
 	"twocolconflict-split-your-version-header": "La to versión",
 	"twocolconflict-split-current-version-header": "Versión de $1 en conflictu (activa actualmente)",
 	"twocolconflict-split-not-saved-at": "ensin espublizar $1, $2.",
-	"twocolconflict-split-saved-at": "espublizada $1, $2.",
 	"twocolconflict-split-choose-version": "Por favor, escueye una versión",
 	"twocolconflict-split-tour-dialog-header": "Iguar conflictos d'edición",
 	"twocolconflict-split-tour-dialog-message": "Tas esperimentando un conflictu d'edición: Mentanto tabes editando, otru usuariu editó tamién la páxina y guardóla. La to versión nun incluye les últimes ediciones. Pidímoste que, por favor, entemezas la to versión cola actualmente última versión del otru usuariu.",

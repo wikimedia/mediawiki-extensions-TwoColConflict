@@ -64,7 +64,6 @@
 	"twocolconflict-split-your-version-header": "나의 판",
 	"twocolconflict-split-current-version-header": "$1의 충돌 판 (현재 존재함)",
 	"twocolconflict-split-not-saved-at": "아직 게시되지 않음",
-	"twocolconflict-split-saved-at": "$1에 게시됨",
 	"twocolconflict-split-choose-version": "판을 선택해 주십시오",
 	"twocolconflict-split-tour-dialog-header": "편집 충돌 해결",
 	"twocolconflict-split-tour-dialog-btn-text": "병합 시작",

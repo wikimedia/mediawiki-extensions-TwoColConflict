@@ -65,7 +65,6 @@
 	"twocolconflict-split-your-version-header": "مراجعتك",
 	"twocolconflict-split-current-version-header": "مراجعة متضاربة من $1 (حاليا)",
 	"twocolconflict-split-not-saved-at": "لم يتم النشر بعد",
-	"twocolconflict-split-saved-at": "تم نشر $1،.",
 	"twocolconflict-split-choose-version": "يُرجَى اختيار نسخة",
 	"twocolconflict-split-tour-dialog-header": "حل تضاربات التحرير",
 	"twocolconflict-split-tour-dialog-message": "حدث أنك تواجه مشكلة تعارض في التعديل: أثناء التعديل، قام مستخدم آخر أيضا بتحرير الصفحة وحفظها; إصدارك الآن لا يتضمن أحدث التعديلات; نطلب منك دمج إصدارك مع الإصدار الأحدث الآن من المستخدم الآخر.",

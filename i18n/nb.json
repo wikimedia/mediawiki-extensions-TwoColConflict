@@ -62,7 +62,6 @@
 	"twocolconflict-split-your-version-header": "Din versjon",
 	"twocolconflict-split-current-version-header": "Konflikterende versjon av $1 (gjeldende versjon)",
 	"twocolconflict-split-not-saved-at": "ikke publisert $1 $2.",
-	"twocolconflict-split-saved-at": "publisert $1 $2.",
 	"twocolconflict-split-choose-version": "Velg en versjon",
 	"twocolconflict-split-tour-dialog-header": "Løs redigeringskonflikter",
 	"twocolconflict-split-tour-dialog-message": "Du opplever en redigeringskonflikt: Mens du redigerte redigerte også en annen bruker siden og lagret den. Din versjon inkluderer derfor ikke de nyeste redigeringene. Vi ber deg derfor om å flette inn din versjon med den siste versjonen fra den andre brukeren.",

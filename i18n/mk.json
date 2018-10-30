@@ -61,7 +61,6 @@
 	"twocolconflict-split-your-version-header": "Ваша верзија",
 	"twocolconflict-split-current-version-header": "Спротиставена верзија од $1 (тековна)",
 	"twocolconflict-split-not-saved-at": "необјавено $1 г, $2 ч.",
-	"twocolconflict-split-saved-at": "објавено $1 г, $2 ч.",
 	"twocolconflict-split-choose-version": "Изберете верзија",
 	"twocolconflict-split-tour-dialog-header": "Разрешувања на спротиставени уредувања",
 	"twocolconflict-split-tour-dialog-message": "Се јави спротиставеност во уредувањата. Некој ја измени и зачува страницата додека вие ја уредувавте. Вашата верзија не ги содржи најновите уредувања. Спојте ја вашата верзија со новоизменетата на другиот корисник.",

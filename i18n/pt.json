@@ -65,7 +65,6 @@
 	"twocolconflict-split-your-version-header": "A sua versão",
 	"twocolconflict-split-current-version-header": "Versão em conflito de $1 (versão atual)",
 	"twocolconflict-split-not-saved-at": "não publicado $1, $2.",
-	"twocolconflict-split-saved-at": "publicado $1, $2.",
 	"twocolconflict-split-choose-version": "Selecione uma versão, por favor",
 	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edição",
 	"twocolconflict-split-tour-dialog-message": "Ocorreu um conflito entre edições: durante a sua edição, um outro utilizador também editou a mesma página e gravou a edição. A sua versão atual não inclui as edições mais recentes. Solicitamos que funda a sua versão atual com a versão do outro utilizador que é agora a mais recente.",

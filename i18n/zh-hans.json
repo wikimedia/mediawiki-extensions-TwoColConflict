@@ -68,7 +68,6 @@
 	"twocolconflict-split-your-version-header": "你的版本",
 	"twocolconflict-split-current-version-header": "来自 $1 的冲突版本(活跃的)",
 	"twocolconflict-split-not-saved-at": "未于$1 $2保存。",
-	"twocolconflict-split-saved-at": "已于$1 $2保存。",
 	"twocolconflict-split-choose-version": "请选择一个版本",
 	"twocolconflict-split-tour-dialog-header": "解决编辑冲突",
 	"twocolconflict-split-tour-dialog-message": "您当前遇到了编辑冲突：在编辑期间，其他用户也编辑了此页面并保存了该页面。您的当前版本现在不包含最新的编辑。我们恳请您将您的版本与现在最新版本的其他用户合并。",

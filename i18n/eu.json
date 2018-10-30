@@ -63,6 +63,5 @@
 	"twocolconflict-split-your-version-header": "Zure bertsioa",
 	"twocolconflict-split-current-version-header": "$1ekin (une honetan erabilgarri) gatazkan den bertsioa",
 	"twocolconflict-split-not-saved-at": "$1, $2 gorde gabe",
-	"twocolconflict-split-saved-at": "$1, $2 gordeta",
 	"twocolconflict-split-choose-version": "Aukeratu mesedez bertsio bat"
 }
