@@ -168,7 +168,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$out = ( new HtmlSplitConflictHeader(
 			$this->getRevisionRecord(),
 			$this->getOutput()->getUser(),
-			$this->getOutput()->getLanguage()
+			$this->getOutput()->getLanguage(),
+			false
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			$this->out->getUser(),
