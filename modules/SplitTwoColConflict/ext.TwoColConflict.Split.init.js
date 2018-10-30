@@ -45,9 +45,22 @@
 	 * @param {jQuery} $row
 	 */
 	function enableEditing( $row ) {
+		var maxHeight = 0;
+
 		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
 		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
+
+		$row.find( '.mw-twocolconflict-split-editable' ).each( function () {
+			maxHeight = Math.max( maxHeight, $( this ).height() );
+		} );
+		$row.find( 'textarea' ).each( function () {
+			var $editor = $( this );
+			if ( $editor.height() < maxHeight ) {
+				$editor.height( maxHeight );
+			}
+		} );
+
 		$row.find( '.mw-twocolconflict-split-editor' ).focus();
 	}
 
