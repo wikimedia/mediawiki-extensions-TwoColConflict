@@ -109,7 +109,7 @@
 			$editorColHeader = $( '.mw-twocolconflict-editor-col .mw-twocolconflict-col-header' ),
 			$changesEditor = $( '.mw-twocolconflict-changes-editor' ),
 			$wikiEditorToolbar = $( '#wikiEditor-ui-toolbar' ),
-			toolbarHeight = null;
+			toolbarHeight;
 
 		if ( $isInit ) {
 			toolbarHeight = mw.config.get( 'wgTwoColConflictWikiEditor' ) ? 32 : $( '#toolbar' ).height();

@@ -10,9 +10,7 @@
 	 * @constructor
 	 */
 	var Tour = function ( header, image, message, windowManager ) {
-		var closeButton,
-			$panel,
-			self = this;
+		var self = this;
 
 		function TourDialog( config ) {
 			this.panel = config.panel;
@@ -30,12 +28,12 @@
 			this.$body.append( this.content.$element );
 		};
 
-		closeButton = new OO.ui.ButtonWidget( {
+		var closeButton = new OO.ui.ButtonWidget( {
 			label: mw.msg( 'twocolconflict-split-tour-dialog-btn-text' ),
 			flags: [ 'primary', 'progressive' ]
 		} );
 
-		$panel = $( '<div>' )
+		var $panel = $( '<div>' )
 			.append(
 				$( '<h5>' )
 					.text( header )
@@ -107,18 +105,16 @@
 		 * @return {OO.ui.PopupWidget}
 		 */
 		createPopup: function ( header, message, $pulsatingButton ) {
-			var closeButton, $content, popup;
-
-			closeButton = new OO.ui.ButtonWidget( {
+			var closeButton = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'twocolconflict-split-tour-popup-btn-text' ),
 				flags: [ 'primary', 'progressive' ]
 			} );
 
-			$content = $( '<div>' )
+			var $content = $( '<div>' )
 				.append( $( '<h5>' ).text( header ) )
 				.append( $( '<p>' ).html( message ) );
 
-			popup = new OO.ui.PopupWidget( {
+			var popup = new OO.ui.PopupWidget( {
 				position: 'above',
 				$content: $content,
 				$footer: closeButton.$element,
@@ -182,10 +178,9 @@
 		 * @return {OO.ui.ButtonWidget}
 		 */
 		getHelpButton: function () {
-			var helpButton,
-				self = this;
+			var self = this;
 
-			helpButton = new OO.ui.ButtonWidget( {
+			var helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
 				framed: false,
 				classes: [ 'mw-twocolconflict-split-tour-help-button' ]
