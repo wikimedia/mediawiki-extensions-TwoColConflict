@@ -246,8 +246,8 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	 * @dataProvider provideTestData
 	 */
 	public function testSpecialPageExecutionWithVariousInputs(
-		$request,
-		$htmlAssertionCallable,
+		\WebRequest $request,
+		callable $htmlAssertionCallable,
 		$presetText = ''
 	) {
 		// @codingStandardsIgnoreLine MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle

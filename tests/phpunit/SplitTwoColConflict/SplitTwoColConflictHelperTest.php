@@ -50,7 +50,7 @@ class SplitTwoColConflictHelperTest extends MediaWikiTestCase {
 	 * @param string[] $expectedOutput
 	 * @dataProvider provideSplitText
 	 */
-	public function testSplitText( $input, $expectedOutput ) {
+	public function testSplitText( $input, array $expectedOutput ) {
 		$helper = $this->createHelper();
 
 		$this->assertSame(
