@@ -200,11 +200,11 @@ TEXT
 		return $pos;
 	}
 
-	private function assertDivExistsWithClassValue( $html, $classValue, $startPos ) {
-		$pos = strpos( $html, '<div class="' . $classValue . '"', $startPos );
+	private function assertDivExistsWithClassValue( $html, $class, $startPos ) {
+		$pos = strpos( $html, '<div class="' . $class . '"', $startPos );
 		$this->assertTrue(
 			$pos !== false,
-			'Div element with class ' . $classValue . ' not found or in wrong position.'
+			'Div element with class ' . $class . ' not found or in wrong position.'
 		);
 		return $pos;
 	}
