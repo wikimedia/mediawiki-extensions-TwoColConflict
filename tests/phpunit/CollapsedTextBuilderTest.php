@@ -36,7 +36,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testBuildCollapsedText_cutWhenSingleLineOverLimit() {
 		$collapsedTextBuilder = new CollapsedTextBuilder();
-		$this->assertEquals(
+		$this->assertSame(
 			'<span class="mw-twocolconflict-diffchange-fadeout-end">One</span>' .
 			wfMessage( 'word-separator' ) .
 			'<span class="mw-twocolconflict-diffchange-fadeout-start">even.</span>',
@@ -53,7 +53,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testBuildCollapsedText_cutWhenTwoLinesOverLimit() {
 		$collapsedTextBuilder = new CollapsedTextBuilder();
-		$this->assertEquals(
+		$this->assertSame(
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One</span>\n" .
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Four.</span>",
 			$collapsedTextBuilder->buildCollapsedText( "One Two\nThree Four.", 10 )
@@ -62,7 +62,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testBuildCollapsedText_cutWhenMultipleLinesInLimit() {
 		$collapsedTextBuilder = new CollapsedTextBuilder();
-		$this->assertEquals(
+		$this->assertSame(
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-end\">One Two</span>\n" .
 			"<span class=\"mw-twocolconflict-diffchange-fadeout-start\">Six Seven.</span>",
 			$collapsedTextBuilder->buildCollapsedText( "One Two\nThree Four\nFive Six Seven.", 25 )
@@ -71,11 +71,11 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testTrimStringToFullWord_noCutWhenInLimit() {
 		$collapsedTextBuilder = $this->newInstance();
-		$this->assertEquals(
+		$this->assertSame(
 			'One Two Three.',
 			$collapsedTextBuilder->trimStringToFullWord( 'One Two Three.', 14 )
 		);
-		$this->assertEquals(
+		$this->assertSame(
 			'واحد اثنين ثلاثة',
 			$collapsedTextBuilder->trimStringToFullWord( 'واحد اثنين ثلاثة', 16 )
 		);
@@ -83,7 +83,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testTrimStringToFullWord_trimWhiteSpaceAtEndOfResult() {
 		$collapsedTextBuilder = $this->newInstance();
-		$this->assertEquals(
+		$this->assertSame(
 			'One Two',
 			$collapsedTextBuilder->trimStringToFullWord( 'One Two Three.', 8, true )
 		);
@@ -91,7 +91,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 
 	public function testTrimStringToFullWord_trimWhiteSpaceAtStartOfResult() {
 		$collapsedTextBuilder = $this->newInstance();
-		$this->assertEquals(
+		$this->assertSame(
 			'Three.',
 			$collapsedTextBuilder->trimStringToFullWord( 'One Two. And Three.', 7, false )
 		);
@@ -105,7 +105,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 */
 	public function testTrimStringToFullWord_atEnd( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = $this->newInstance();
-		self::assertEquals(
+		$this->assertSame(
 			$result,
 			$collapsedTextBuilder->trimStringToFullWord( $input, $maxLength, true )
 		);
@@ -139,7 +139,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 */
 	public function testTrimStringToFullWord_atStart( $input, $maxLength, $result ) {
 		$collapsedTextBuilder = $this->newInstance();
-		self::assertEquals(
+		$this->assertSame(
 			$result,
 			$collapsedTextBuilder->trimStringToFullWord( $input, $maxLength, false )
 		);
@@ -173,7 +173,7 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 	 */
 	public function testTrimWhiteSpaces( $input, $trimAtEnd, $result ) {
 		$collapsedTextBuilder = $this->newInstance();
-		self::assertEquals(
+		$this->assertSame(
 			$result,
 			$collapsedTextBuilder->trimWhiteSpaces( $input, $trimAtEnd )
 		);
