@@ -199,6 +199,9 @@ class CollapsedTextBuilderTest extends MediaWikiTestCase {
 		];
 	}
 
+	/**
+	 * @return CollapsedTextBuilder
+	 */
 	private function newInstance() {
 		return TestingAccessWrapper::newFromClass( CollapsedTextBuilder::class );
 	}
