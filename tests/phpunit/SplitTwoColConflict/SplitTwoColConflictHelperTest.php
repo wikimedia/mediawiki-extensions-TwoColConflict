@@ -59,6 +59,9 @@ class SplitTwoColConflictHelperTest extends MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @return SplitTwoColConflictHelper
+	 */
 	private function createHelper() {
 		$helper = new SplitTwoColConflictHelper(
 			Title::newFromText( 'TestTitle' ),
