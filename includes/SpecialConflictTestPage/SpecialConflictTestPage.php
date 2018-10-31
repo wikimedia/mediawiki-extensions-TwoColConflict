@@ -159,16 +159,22 @@ class SpecialConflictTestPage extends SpecialPage {
 
 	private function showConflict( Article $article ) {
 		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
-			$editConflictHelper = $this->config->get( 'TwoColConflictUseInline' )
-				? InlineTwoColConflictTestHelper::class
-				: SplitTwoColConflictTestHelper::class;
-
-			return new $editConflictHelper(
-				$article->getTitle(),
-				$article->getContext()->getOutput(),
-				MediaWikiServices::getInstance()->getStatsdDataFactory(),
-				$submitButtonLabel
-			);
+			if ( $this->config->get( 'TwoColConflictUseInline' ) ) {
+				return new InlineTwoColConflictTestHelper(
+					$article->getTitle(),
+					$article->getContext()->getOutput(),
+					MediaWikiServices::getInstance()->getStatsdDataFactory(),
+					$submitButtonLabel
+				);
+			} else {
+				return new SplitTwoColConflictTestHelper(
+					$article->getTitle(),
+					$article->getContext()->getOutput(),
+					MediaWikiServices::getInstance()->getStatsdDataFactory(),
+					$submitButtonLabel,
+					''
+				);
+			}
 		};
 
 		( new TwoColConflictTestEditPage(

@@ -35,13 +35,14 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testGetHtmlMoreThan59MinutesAgo() {
-		$htmHeader = new HtmlSplitConflictHeader(
-			$this->newRevisionRecord( '20180721234200' ),
+		$htmlHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord( '20180721234200', '' ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now
+			$this->now,
+			''
 		);
-		$html = $htmHeader->getHtml();
+		$html = $htmlHeader->getHtml();
 
 		$this->assertTagExistsWithTextContents( $html, 'a', $this->otherUser->getName() );
 		$this->assertTagExistsWithTextContents( $html, 'p',
@@ -53,10 +54,11 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	public function testGetHtml2MinutesAgo() {
 		$ninetySecondsAgo = $this->now - 90;
 		$htmlHeader = new HtmlSplitConflictHeader(
-			$this->newRevisionRecord( $ninetySecondsAgo ),
+			$this->newRevisionRecord( $ninetySecondsAgo, '' ),
 			User::newFromName( 'TestUser' ),
 			Language::factory( 'qqx' ),
-			$this->now
+			$this->now,
+			''
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -67,10 +69,11 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	public function testGetHtml2SecondsAgo() {
 		$twoSecondsAgo = $this->now - 2;
 		$htmlHeader = new HtmlSplitConflictHeader(
-			$this->newRevisionRecord( $twoSecondsAgo ),
+			$this->newRevisionRecord( $twoSecondsAgo, '' ),
 			User::newFromName( 'TestUser' ),
 			Language::factory( 'qqx' ),
-			$this->now
+			$this->now,
+			''
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -78,17 +81,40 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			'(twocolconflict-split-current-version-header: (seconds-ago: 2))' );
 	}
 
+	public function testGetHtmlWithEditSummaries() {
+		$htmlHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord( $this->now, 'Latest revision summary' ),
+			User::newFromName( 'TestUser' ),
+			Language::factory( 'qqx' ),
+			$this->now,
+			'Conflicting edit summary'
+		);
+		$html = $htmlHeader->getHtml();
+
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(parentheses: Latest revision summary)' );
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(parentheses: Conflicting edit summary)' );
+	}
+
 	/**
 	 * @param int|string $timestamp
+	 * @param string $editSummary
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( $timestamp ) {
+	private function newRevisionRecord( $timestamp, $editSummary ) {
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
 			->willReturn( $this->otherUser );
 		$revision->method( 'getTimestamp' )
 			->willReturn( $timestamp );
+
+		$comment = $this->createMock( \CommentStoreComment::class );
+		$comment->text = $editSummary;
+		$revision->method( 'getComment' )
+			->willReturn( $comment );
+
 		return $revision;
 	}
 
