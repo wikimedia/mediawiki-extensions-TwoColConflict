@@ -10,6 +10,8 @@
 		"OO": false
 	},
 	"rules": {
-		"dot-notation": [ "error", { "allowKeywords": true } ]
+		"dot-notation": [ "error", { "allowKeywords": true } ],
+		"vars-on-top": "off",
+		"one-var": "off"
 	}
 }

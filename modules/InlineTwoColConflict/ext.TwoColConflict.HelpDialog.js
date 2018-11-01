@@ -29,11 +29,9 @@
 		slidePointer: 0,
 
 		initialize: function () {
-			var i;
-
 			HelpDialog.super.prototype.initialize.call( this );
 
-			for ( i = 0; i < this.config.slides.length; i++ ) {
+			for ( var i = 0; i < this.config.slides.length; i++ ) {
 				this.slides.push(
 					this.getSlide(
 						this.config.slides[ i ].message,

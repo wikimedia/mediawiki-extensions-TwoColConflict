@@ -35,10 +35,9 @@
 		},
 
 		composeForm: function () {
-			var self = this,
-				radioSelect, submit, fieldset, form;
+			var self = this;
 
-			radioSelect = new OO.ui.RadioSelectInputWidget( {
+			var radioSelect = new OO.ui.RadioSelectInputWidget( {
 				name: 'mw-twocolconflict-base-version',
 				classes: [ 'mw-twocolconflict-base-dialog-radio' ],
 				options: [
@@ -53,7 +52,7 @@
 				]
 			} );
 
-			submit = new OO.ui.ButtonWidget( {
+			var submit = new OO.ui.ButtonWidget( {
 				label: mw.msg( 'twocolconflict-base-selection-submit-label' ),
 				flags: [ 'primary', 'progressive' ]
 			} );
@@ -64,13 +63,13 @@
 				);
 			} );
 
-			fieldset = new OO.ui.FieldsetLayout();
+			var fieldset = new OO.ui.FieldsetLayout();
 			fieldset.addItems( [
 				radioSelect,
 				submit
 			] );
 
-			form = new OO.ui.FormLayout( {
+			var form = new OO.ui.FormLayout( {
 				items: [ fieldset ],
 				action: '/api/formhandler',
 				method: 'get'

@@ -1,6 +1,5 @@
 ( function ( mw, $ ) {
-	var autoScroll = new mw.libs.twoColConflict.AutoScroll(),
-		expandBtn, collapseBtn;
+	var autoScroll = new mw.libs.twoColConflict.AutoScroll();
 
 	$( function () {
 		$( 'input[name="mw-twocolconflict-show-changes"]' ).change( function () {
@@ -17,10 +16,9 @@
 		 * @param {boolean} show
 		 */
 		function surroundingText( show ) {
-			var $changeDiv = autoScroll.getFirstVisibleChangesElement(),
-				manualOffset;
+			var $changeDiv = autoScroll.getFirstVisibleChangesElement();
 
-			manualOffset = autoScroll.getDivTopOffset(
+			var manualOffset = autoScroll.getDivTopOffset(
 				$changeDiv,
 				$( '.mw-twocolconflict-changes-editor' )
 			);
@@ -43,7 +41,7 @@
 			surroundingText( $( this ).val() === 'show' );
 		} );
 
-		expandBtn = new OO.ui.ButtonInputWidget( {
+		var expandBtn = new OO.ui.ButtonInputWidget( {
 			indicator: 'down',
 			value: 0,
 			name: 'mw-twocolconflict-expand-collapse',
@@ -55,7 +53,7 @@
 			'aria-expanded': false
 		} );
 
-		collapseBtn = new OO.ui.ButtonInputWidget( {
+		var collapseBtn = new OO.ui.ButtonInputWidget( {
 			indicator: 'up',
 			value: 1,
 			name: 'mw-twocolconflict-expand-collapse',

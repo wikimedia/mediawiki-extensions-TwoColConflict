@@ -175,12 +175,10 @@
 
 	function initTour() {
 		var $body = $( 'body' ),
-			$helpBtn,
-			tour,
 			settings = new mw.libs.twoColConflict.Settings(),
 			windowManager = new OO.ui.WindowManager();
 
-		tour = mw.libs.twoColConflict.split.Tour.init(
+		var tour = mw.libs.twoColConflict.split.Tour.init(
 			mw.msg( 'twocolconflict-split-tour-dialog-header' ),
 			'mw-twocolconflict-split-tour-slide-1',
 			mw.msg( 'twocolconflict-split-tour-dialog-message' ),
@@ -205,7 +203,7 @@
 			$body.find( '.mw-twocolconflict-diffchange' ).first()
 		);
 
-		$helpBtn = tour.getHelpButton();
+		var $helpBtn = tour.getHelpButton();
 		$( '.mw-twocolconflict-split-flex-header' ).prepend( $helpBtn );
 
 		if ( !settings.shouldHideHelpDialogue() ) {
