@@ -45,16 +45,16 @@
 	 * @param {jQuery} $row
 	 */
 	function enableEditing( $row ) {
-		var maxHeight = 0,
-			$selected;
+		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+			maxHeight = $selected.find( '.mw-twocolconflict-split-editable' ).height();
 
 		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
-		$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
-
-		$row.find( '.mw-twocolconflict-split-editable' ).each( function () {
-			maxHeight = Math.max( maxHeight, $( this ).height() );
-		} );
+		$row.find( '.mw-twocolconflict-split-editable' )
+			.addClass( getEditorFontClass() )
+			.each( function () {
+				maxHeight = Math.max( maxHeight, $( this ).height() );
+			} );
 		$row.find( 'textarea' ).each( function () {
 			var $editor = $( this );
 			if ( $editor.height() < maxHeight ) {
@@ -62,7 +62,6 @@
 			}
 		} );
 
-		$selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' );
 		$selected.find( '.mw-twocolconflict-split-editor' ).focus();
 	}
 
