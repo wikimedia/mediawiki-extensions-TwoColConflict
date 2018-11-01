@@ -34,7 +34,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		$this->now = 1000000000;
 	}
 
-	public function testGetHtmlMoreThan59MinutesAgo() {
+	public function testGetHtmlMoreThan23HoursAgo() {
 		$htmlHeader = new HtmlSplitConflictHeader(
 			$this->newRevisionRecord( '20180721234200', '' ),
 			$this->getTestUser()->getUser(),
@@ -49,6 +49,21 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			'(twocolconflict-split-conflict-hint)' );
 		$this->assertTagExistsWithTextContents( $html, 'span',
 			'(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)' );
+	}
+
+	public function testGetHtml2HoursAgo() {
+		$ninetyMinutesAgo = $this->now - 90 * 60;
+		$htmlHeader = new HtmlSplitConflictHeader(
+			$this->newRevisionRecord( $ninetyMinutesAgo, '' ),
+			User::newFromName( 'TestUser' ),
+			Language::factory( 'qqx' ),
+			$this->now,
+			''
+		);
+		$html = $htmlHeader->getHtml();
+
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(twocolconflict-split-current-version-header: (hours-ago: 2))' );
 	}
 
 	public function testGetHtml2MinutesAgo() {
