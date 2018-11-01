@@ -64,7 +64,7 @@
 	"twocolconflict-test-summary-text": "衝突測試編輯摘要",
 	"twocolconflict-split-conflict-hint": "感謝您使用此測試功能。若您願意[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 在此頁面]留下意見回饋，就能協助這個功能可以變得更好。",
 	"twocolconflict-split-your-version-header": "您的修訂",
-	"twocolconflict-split-current-version-header": "自 $1 的衝突修訂（現仍存在）",
+	"twocolconflict-split-current-version-header": "自 $1 的最新修訂",
 	"twocolconflict-split-not-saved-at": "尚未發布",
 	"twocolconflict-split-choose-version": "請選擇一個版本",
 	"twocolconflict-split-tour-dialog-header": "解決編輯衝突",

@@ -61,7 +61,7 @@
 	"twocolconflict-test-summary-text": "Resumo de edição do teste de conflito",
 	"twocolconflict-split-conflict-hint": "Obrigado por usar esta funcionalidade beta. Pode ajudar a melhorá-la, deixando um comentário [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta página].",
 	"twocolconflict-split-your-version-header": "A sua revisão",
-	"twocolconflict-split-current-version-header": "Revisão em conflito de $1 (versão atual)",
+	"twocolconflict-split-current-version-header": "Edição atual tal como às $1",
 	"twocolconflict-split-not-saved-at": "Ainda não publicado",
 	"twocolconflict-split-choose-version": "Por favor, selecione uma versão",
 	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edição",

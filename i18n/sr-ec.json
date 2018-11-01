@@ -61,6 +61,7 @@
 	"twocolconflict-test-preview-submit": "Симулирај објављивање промена",
 	"twocolconflict-test-summary-text": "Опис измене пробног сукоба",
 	"twocolconflict-split-your-version-header": "Ваша измена",
+	"twocolconflict-split-current-version-header": "Најновија измена у $1",
 	"twocolconflict-split-not-saved-at": "Још није објављено",
 	"twocolconflict-split-choose-version": "Изаберите верзију",
 	"twocolconflict-split-tour-dialog-header": "Решавање сукоба измена",

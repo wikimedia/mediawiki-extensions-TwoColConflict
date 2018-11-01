@@ -79,6 +79,7 @@
 	"twocolconflict-split-edit-tooltip": "Редактировать текст",
 	"twocolconflict-split-save-tooltip": "Сохранить изменения и покинуть режим редактирования.",
 	"twocolconflict-split-reset-tooltip": "Сбросить текст",
+	"twocolconflict-split-reset-warning-cancel": "Отмена",
 	"twocolconflict-split-reset-warning-accept": "Сбросить",
 	"twocolconflict-split-collapse-tooltip": "Свернуть текст",
 	"twocolconflict-split-expand-tooltip": "Развернуть текст"
