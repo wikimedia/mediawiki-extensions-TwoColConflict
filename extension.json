@@ -19,7 +19,7 @@
 		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
 		"TwoColConflictBetaFeature": true,
 		"@TwoColConflictUseInline": "Use the inline view for solving edit conflicts.",
-		"TwoColConflictUseInline": true
+		"TwoColConflictUseInline": false
 	},
 	"AutoloadNamespaces": {
 		"TwoColConflict\\": "includes/"
