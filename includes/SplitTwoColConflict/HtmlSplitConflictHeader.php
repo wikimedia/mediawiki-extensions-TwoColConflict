@@ -159,8 +159,13 @@ class HtmlSplitConflictHeader {
 		$timestamp = $this->revision->getTimestamp();
 		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $this->now );
 
-		if ( $diff->days || $diff->h ) {
+		if ( $diff->days ) {
 			return $this->language->userTimeAndDate( $timestamp, $this->user );
+		}
+
+		if ( $diff->h ) {
+			$minutes = $diff->i + $diff->s / 60;
+			return wfMessage( 'hours-ago', round( $diff->h + $minutes / 60 ) )->text();
 		}
 
 		if ( $diff->i ) {
