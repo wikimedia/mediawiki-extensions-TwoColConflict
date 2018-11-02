@@ -37,6 +37,9 @@
 		"EditPageBeforeConflictDiff": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
 		],
+		"EditPage::showEditForm:initial": [
+			"TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial"
+		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
 		]
