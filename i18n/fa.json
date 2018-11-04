@@ -61,8 +61,8 @@
 	"twocolconflict-test-username": "کاربر آزمایش تداخل",
 	"twocolconflict-test-summary-text": "خلاصه ویرایش آزمایش تداخل",
 	"twocolconflict-split-your-version-header": "نسخه شما",
-	"twocolconflict-split-current-version-header": "نسخه متعارض از $1 (اکنون منتشر شده‌است)",
-	"twocolconflict-split-not-saved-at": "$1 در $2 منتشر نشد.",
+	"twocolconflict-split-current-version-header": "جدیدترین نسخه $1",
+	"twocolconflict-split-not-saved-at": "هنوز منتشر نشده‌است",
 	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید",
 	"twocolconflict-split-tour-dialog-header": "حل تعارض‌های ویرایشی",
 	"twocolconflict-split-tour-dialog-btn-text": "شروع ادغام",
@@ -75,5 +75,6 @@
 	"twocolconflict-split-save-tooltip": "ذخیره تغییرات و ترک حالت ویرایش.",
 	"twocolconflict-split-reset-tooltip": "بازنشانی متن",
 	"twocolconflict-split-reset-warning-cancel": "لغو",
-	"twocolconflict-split-reset-warning-accept": "دور انداختن"
+	"twocolconflict-split-reset-warning-accept": "دور انداختن",
+	"twocolconflict-split-collapse-tooltip": "نهفتن متن"
 }

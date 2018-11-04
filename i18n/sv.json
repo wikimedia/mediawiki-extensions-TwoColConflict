@@ -60,7 +60,7 @@
 	"twocolconflict-test-summary-text": "Redigeringssammanfattning för ConflictTest",
 	"twocolconflict-split-conflict-hint": "Tack för att du använder denna betafunktion. Du kan hjälpa till att förbättra den ytterligare om du lämnar återkoppling [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denna sida].",
 	"twocolconflict-split-your-version-header": "Din sidversion",
-	"twocolconflict-split-current-version-header": "Sidversion i konflikt från $1 (aktuell)",
+	"twocolconflict-split-current-version-header": "Senaste sidversion från och med $1",
 	"twocolconflict-split-not-saved-at": "Ännu inte publicerad",
 	"twocolconflict-split-choose-version": "Välj en version",
 	"twocolconflict-split-tour-dialog-header": "Lös redigeringskonflikter",
