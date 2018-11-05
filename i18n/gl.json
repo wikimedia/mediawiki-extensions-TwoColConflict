@@ -58,5 +58,18 @@
 	"twocolconflict-test-preview-submit": "Simular gardar cambios",
 	"twocolconflict-test-preview-hint": "Grazas por poñer a proba a interface de conflitos de edicións en dúas columnas! Axude a mellorala [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page cos seus comentarios].\n\nA continuación, o resultado da resolución da súa proba de conflito de edición.",
 	"twocolconflict-test-username": "Usuario de proba de conflito",
-	"twocolconflict-test-summary-text": "Resumo de edición da proba de conflito"
+	"twocolconflict-test-summary-text": "Resumo de edición da proba de conflito",
+	"twocolconflict-split-your-version-header": "A súa revisión",
+	"twocolconflict-split-not-saved-at": "Sen publicar aínda",
+	"twocolconflict-split-choose-version": "Por favor, escolla unha versión",
+	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edición",
+	"twocolconflict-split-tour-dialog-btn-text": "Comezar fusión",
+	"twocolconflict-split-tour-popup-btn-text": "Entendido.",
+	"twocolconflict-split-tour-popup3-header": "Texto resaltado",
+	"twocolconflict-split-edit-tooltip": "Editar texto",
+	"twocolconflict-split-reset-tooltip": "Inicializar o texto",
+	"twocolconflict-split-reset-warning-cancel": "Cancelar",
+	"twocolconflict-split-reset-warning-accept": "Desbotar",
+	"twocolconflict-split-collapse-tooltip": "Minimizar texto",
+	"twocolconflict-split-expand-tooltip": "Expandir texto"
 }
