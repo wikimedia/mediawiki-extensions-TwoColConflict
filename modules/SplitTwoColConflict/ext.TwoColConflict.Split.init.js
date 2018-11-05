@@ -46,10 +46,16 @@
 	 */
 	function enableEditing( $row ) {
 		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
-			maxHeight = $selected.find( '.mw-twocolconflict-split-editable' ).height();
+			maxHeight = Math.min(
+				// Keep the current height of the column, but not when it spans multiple screens
+				$selected.find( '.mw-twocolconflict-split-editable' ).height(),
+				window.innerHeight
+			);
 
 		expandText( $row );
 		$row.addClass( 'mw-twocolconflict-split-editing' );
+
+		// Measure the two monospaced columns again *after* switching to editing mode
 		$row.find( '.mw-twocolconflict-split-editable' )
 			.addClass( getEditorFontClass() )
 			.each( function () {
