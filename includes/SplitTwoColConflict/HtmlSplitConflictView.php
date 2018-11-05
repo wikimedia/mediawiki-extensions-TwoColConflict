@@ -284,13 +284,11 @@ class HtmlSplitConflictView {
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'other',
-				'autocomplete' => 'off',
 				'selected' => $side !== 'your',
 			] ) ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'your',
-				'autocomplete' => 'off',
 				'selected' => $side === 'your',
 			] ) ) .
 			Html::closeElement( 'div' );
