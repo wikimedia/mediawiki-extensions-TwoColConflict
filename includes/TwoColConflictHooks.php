@@ -166,6 +166,8 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @codeCoverageIgnore
+	 *
 	 * @param array[] &$testModules
 	 * @param \ResourceLoader $rl
 	 */
