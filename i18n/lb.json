@@ -40,6 +40,7 @@
 	"twocolconflict-test-username": "KonfliktTest-Benotzer",
 	"twocolconflict-test-summary-text": "Resumé vun der Ännerung vum Konflikt-Test",
 	"twocolconflict-split-your-version-header": "Är Versioun",
+	"twocolconflict-split-current-version-header": "Aktuell Versioun $1",
 	"twocolconflict-split-not-saved-at": "Nach net verëffentlecht",
 	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus",
 	"twocolconflict-split-tour-dialog-header": "Ännerungskonflikter léisen",
