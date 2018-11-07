@@ -232,6 +232,44 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'hovering over a disabled edit button should display a popup for that button only', function () {
+		EditConflictPage.hoverEditButton( 'your' );
+		assert(
+			EditConflictPage.getEditDisabledEditButtonPopup( 'your' ).isVisible(),
+			'popup is now visible for the disabled edit button'
+		);
+		assert(
+			!EditConflictPage.getEditDisabledEditButtonPopup( 'other' ).isVisible(),
+			'popup is still hidden for the enabled edit button'
+		);
+	} );
+
+	it( 'hovering away from a disabled edit button should hide the popup', function () {
+		EditConflictPage.hoverEditButton( 'your' );
+		assert(
+			EditConflictPage.getEditDisabledEditButtonPopup( 'your' ).isVisible(),
+			'popup is now visible for the disabled edit button'
+		);
+
+		EditConflictPage.hoverEditButton( 'other' );
+		assert(
+			!EditConflictPage.getEditDisabledEditButtonPopup( 'your' ).isVisible(),
+			'popup is now hidden for the disabled edit button'
+		);
+	} );
+
+	it( 'hovering over an enabled edit button should not display a popup', function () {
+		EditConflictPage.hoverEditButton( 'other' );
+		assert(
+			!EditConflictPage.getEditDisabledEditButtonPopup( 'your' ).isVisible(),
+			'edit button popup is not visible'
+		);
+		assert(
+			!EditConflictPage.getEditDisabledEditButtonPopup( 'other' ).isVisible(),
+			'edit button popup is not visible'
+		);
+	} );
+
 	afterEach( function () {
 		// provoke and dismiss reload warning
 		browser.url( 'data:' );

@@ -16,6 +16,7 @@ class EditConflictPage extends Page {
 	getResetButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
 	getEditor( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
 	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
+	getEditDisabledEditButtonPopup( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-disabled-edit-button-popup' ); }
 
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
@@ -41,6 +42,10 @@ class EditConflictPage extends Page {
 	get submitButton() { return browser.element( '#wpSave' ); }
 	get previewButton() { return browser.element( '#wpPreview' ); }
 	get diffButton() { return browser.element( '#wpDiff' ); }
+
+	hoverEditButton( column ) {
+		browser.moveToObject( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' );
+	}
 
 	columnToClass( column ) {
 		switch ( column ) {

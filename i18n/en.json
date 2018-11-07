@@ -74,6 +74,7 @@
 	"twocolconflict-split-tour-popup3-header": "Highlighted text",
 	"twocolconflict-split-tour-popup3-message": "The text that was changed in either version of a line is highlighted. After you edit the text, the highlighting will be gone.",
 	"twocolconflict-split-edit-tooltip": "Edit text",
+	"twocolconflict-split-disabled-edit-tooltip": "Before you can edit this version, select it by clicking on the corresponding button in the middle.",
 	"twocolconflict-split-save-tooltip": "Save changes and leave editing mode.",
 	"twocolconflict-split-reset-tooltip": "Reset text",
 	"twocolconflict-split-reset-warning": "Discard changes? Your text will be reset to what it was when the edit conflict occurred.",

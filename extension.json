@@ -195,6 +195,9 @@
 			"dependencies": [
 				"oojs-ui",
 				"ext.TwoColConflict.Split.Tour"
+			],
+			"messages": [
+				"twocolconflict-split-disabled-edit-tooltip"
 			]
 		},
 		"ext.TwoColConflict.SplitCss": {
