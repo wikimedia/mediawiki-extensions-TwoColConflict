@@ -125,6 +125,7 @@ class TwoColConflictHooks {
 		OutputPage $outputPage
 	) {
 		if ( $editPage instanceof TwoColConflictTestEditPage ||
+			$outputPage->getRequest()->getArray( 'mw-twocolconflict-side-selector' ) === null ||
 			!self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ||
 			!self::shouldUseSplitInterface( $editPage->getContext()->getRequest() )
 		) {
