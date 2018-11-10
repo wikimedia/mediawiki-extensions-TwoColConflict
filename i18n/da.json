@@ -28,5 +28,6 @@
 	"twocolconflict-split-reset-tooltip": "Nulstil tekst",
 	"twocolconflict-split-reset-warning-cancel": "Annullér",
 	"twocolconflict-split-reset-warning-accept": "Kasser",
+	"twocolconflict-split-collapse-tooltip": "Sammenfold tekst",
 	"twocolconflict-split-expand-tooltip": "Udvid tekst"
 }
