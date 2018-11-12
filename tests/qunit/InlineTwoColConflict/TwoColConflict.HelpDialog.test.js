@@ -55,25 +55,25 @@
 			return $container.html();
 		}
 
-		assert.equal( dialog.slides.length, 4 );
-		assert.equal( dialog.slidePointer, 0 );
-		assert.equal(
+		assert.strictEqual( dialog.slides.length, 4 );
+		assert.strictEqual( dialog.slidePointer, 0 );
+		assert.strictEqual(
 			getSlideTextHtml( dialog.slides[ 0 ] ),
 			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide1' ).parse() )
 		);
-		assert.equal(
+		assert.strictEqual(
 			getSlideTextHtml( dialog.slides[ 1 ] ),
 			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide2' ).parse() )
 		);
-		assert.equal(
+		assert.strictEqual(
 			getSlideTextHtml( dialog.slides[ 2 ] ),
 			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide3' ).parse() )
 		);
-		assert.equal(
+		assert.strictEqual(
 			getSlideTextHtml( dialog.slides[ 3 ] ),
 			addLinkTargets( mw.message( 'twocolconflict-help-dialog-slide4' ).parse() )
 		);
-		assert.equal( dialog.getCssPrefix(), 'mw-twocolconflict' );
+		assert.strictEqual( dialog.getCssPrefix(), 'mw-twocolconflict' );
 		assert.ok( dialog.slides[ 0 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-1' ) );
 		assert.ok( dialog.slides[ 1 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-2' ) );
 		assert.ok( dialog.slides[ 2 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-3' ) );
