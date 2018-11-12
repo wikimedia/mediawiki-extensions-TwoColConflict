@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var helpDialog = mw.libs.twoColConflict.HelpDialog,
 		dialog;
 
@@ -80,4 +80,4 @@
 		assert.ok( dialog.slides[ 3 ].$element.find( 'div' ).hasClass( 'mw-twocolconflict-help-dialog-slide-4' ) );
 	} );
 
-}( mediaWiki ) );
+}() );

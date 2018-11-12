@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 
 	/**
 	 * @constructor
@@ -177,4 +177,4 @@
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
 	mw.libs.twoColConflict.AutoScroll = AutoScroll;
-}( mediaWiki, jQuery ) );
+}() );

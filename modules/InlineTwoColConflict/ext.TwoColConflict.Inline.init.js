@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var settings = new mw.libs.twoColConflict.Settings(),
 		autoScroll = new mw.libs.twoColConflict.AutoScroll(),
 		helpDialog = mw.libs.twoColConflict.HelpDialog,
@@ -210,4 +210,4 @@
 			settings.setHideHelpDialogue( true );
 		}
 	} );
-}( mediaWiki, jQuery ) );
+}() );

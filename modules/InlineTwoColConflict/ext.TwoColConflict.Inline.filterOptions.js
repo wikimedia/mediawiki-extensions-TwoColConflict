@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var autoScroll = new mw.libs.twoColConflict.AutoScroll();
 
 	$( function () {
@@ -75,4 +75,4 @@
 		// select 'hide' as the default option
 		$( 'input[name="mw-twocolconflict-same"]' )[ 1 ].click();
 	} );
-}( mediaWiki, jQuery ) );
+}() );

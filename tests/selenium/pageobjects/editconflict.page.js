@@ -70,7 +70,7 @@ class EditConflictPage extends Page {
 		browser.pause( 300 ); // wait for mw JS to load
 
 		return browser.execute( function ( hide ) {
-			return ( new mediaWiki.Api() ).saveOption(
+			return ( new mw.Api() ).saveOption(
 				'userjs-twocolconflict-hide-help-dialogue',
 				hide ? '1' : '0'
 			);
