@@ -1,3 +1,7 @@
+Given(/^TwoColConflict is using the inline interface$/) do
+	browser.cookies.add 'mw-twocolconflict-inline-ui', '1'
+end
+
 Then(/^TwoColConflict is enabled as a beta feature$/) do
   visit(SpecialPreferencesPage).enable_twocolconflict
 end

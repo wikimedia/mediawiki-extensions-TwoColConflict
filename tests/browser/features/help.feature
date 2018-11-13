@@ -4,6 +4,7 @@ Feature: Two column edit conflict help
     Given I am logged in
     And I have reset my preferences
     And TwoColConflict is enabled as a beta feature
+	And TwoColConflict is using the inline interface
     And I handle an edit conflict
 
   Scenario: Two column edit conflict tutorial is present on first load

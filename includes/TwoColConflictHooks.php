@@ -39,8 +39,9 @@ class TwoColConflictHooks {
 	private static function shouldUseSplitInterface( WebRequest $request ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
-		return !$config->get( 'TwoColConflictUseInline' ) ||
-			$request->getCookie( 'mw-twocolconflict-split-ui', '' );
+		return ( !$config->get( 'TwoColConflictUseInline' ) ||
+			$request->getCookie( 'mw-twocolconflict-split-ui', '' ) ) &&
+			!$request->getCookie( 'mw-twocolconflict-inline-ui', '' );
 	}
 
 	/**
