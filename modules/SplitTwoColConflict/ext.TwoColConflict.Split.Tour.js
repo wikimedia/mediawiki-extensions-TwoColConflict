@@ -49,25 +49,25 @@
 			)
 			.append( closeButton.$element );
 
-		this.$dialog = new TourDialog( {
+		this.dialog = new TourDialog( {
 			size: 'large',
 			panel: $panel
 		} );
 
 		closeButton.on( 'click', function () {
-			self.$dialog.close();
+			self.dialog.close();
 			self.showButtons();
 		} );
 
 		this.windowManager = windowManager;
 		$( 'body' ).append( this.windowManager.$element );
-		this.windowManager.addWindows( [ this.$dialog ] );
+		this.windowManager.addWindows( [ this.dialog ] );
 	};
 
 	$.extend( Tour.prototype, {
 
 		/**
-		 * @type {TourDialog}
+		 * @type {OO.ui.Dialog}
 		 */
 		dialog: null,
 
@@ -197,7 +197,7 @@
 
 		showTour: function () {
 			this.hideTourPopups();
-			this.windowManager.openWindow( this.$dialog );
+			this.windowManager.openWindow( this.dialog );
 		}
 	} );
 
