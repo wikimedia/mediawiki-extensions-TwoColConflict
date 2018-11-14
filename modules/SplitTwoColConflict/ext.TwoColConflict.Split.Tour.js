@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 
 	/**
 	 * Module containing the SplitTwoColConflict tour
@@ -99,8 +99,8 @@
 		},
 
 		/**
-		 * @param {String} header
-		 * @param {String} message
+		 * @param {string} header
+		 * @param {string} message
 		 * @param {jQuery} $pulsatingButton
 		 * @return {OO.ui.PopupWidget}
 		 */
@@ -215,4 +215,4 @@
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
 	mw.libs.twoColConflict.split = mw.libs.twoColConflict.split || {};
 	mw.libs.twoColConflict.split.Tour = Tour;
-}( mediaWiki, jQuery ) );
+}() );

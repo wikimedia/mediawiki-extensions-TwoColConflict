@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * @constructor
 	 */
@@ -82,4 +82,4 @@
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
 	mw.libs.twoColConflict.Settings = Settings;
-}( mediaWiki, jQuery ) );
+}() );

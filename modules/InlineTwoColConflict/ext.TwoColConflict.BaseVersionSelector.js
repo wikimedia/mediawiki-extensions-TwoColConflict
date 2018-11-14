@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing the TwoColConflict selector for the base version
 	 *
@@ -95,4 +95,4 @@
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
 	mw.libs.twoColConflict.BaseVersionSelector = BaseVersionSelector;
-}( mediaWiki, jQuery ) );
+}() );

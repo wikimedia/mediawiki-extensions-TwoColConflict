@@ -2,16 +2,17 @@
 	"extends": "wikimedia",
 	"env": {
 		"browser": true,
-		"jquery": true,
 		"qunit": true
 	},
 	"globals": {
-		"mediaWiki": false,
+		"mw": false,
+		"$": false,
 		"OO": false
 	},
 	"rules": {
 		"dot-notation": [ "error", { "allowKeywords": true } ],
 		"vars-on-top": "off",
-		"one-var": "off"
+		"one-var": "off",
+		"max-len": "off"
 	}
 }

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing the TwoColConflict tutorial
 	 *
@@ -180,4 +180,4 @@
 
 	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
 	mw.libs.twoColConflict.HelpDialog = HelpDialog;
-}( mediaWiki, jQuery ) );
+}() );

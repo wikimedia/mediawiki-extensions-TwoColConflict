@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	/**
@@ -21,7 +21,7 @@
 	}
 
 	/**
-	 * @return {String}
+	 * @return {string}
 	 */
 	function getEditorFontClass() {
 		return $( '.mw-twocolconflict-split-editor' ).attr( 'class' )
@@ -214,4 +214,4 @@
 		initTour();
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );
