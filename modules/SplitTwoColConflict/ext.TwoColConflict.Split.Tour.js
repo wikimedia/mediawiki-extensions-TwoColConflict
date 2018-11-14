@@ -142,7 +142,9 @@
 			this.buttons.forEach( function ( data ) {
 				if ( !data.popup ) {
 					data.$pulsatingButton = self.createPopupButton( data.$element );
-					data.popup = self.createPopup( data.header, data.message, data.$pulsatingButton );
+					data.popup = self.createPopup(
+						data.header, data.message, data.$pulsatingButton
+					);
 					data.$element.append( data.popup.$element );
 				}
 

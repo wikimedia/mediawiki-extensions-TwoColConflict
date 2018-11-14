@@ -97,8 +97,8 @@
 	 * the changes column
 	 *
 	 * When called for the first time and if the WikiEditor is enabled the WikiEditor's toolbar
-	 * height will be hardcoded in case the WikiEditor wasn't loaded yet, any subsequent calls will fetch
-	 * the height dynamically
+	 * height will be hardcoded in case the WikiEditor wasn't loaded yet, any subsequent calls will
+	 * fetch the height dynamically
 	 *
 	 *  @param {boolean} $isInit
 	 */
