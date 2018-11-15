@@ -18,6 +18,7 @@ use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
  * @covers \TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper
  * @covers \TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage
  * @covers \TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage
+ * @covers \TwoColConflict\SpecialPageHtmlFragment
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
