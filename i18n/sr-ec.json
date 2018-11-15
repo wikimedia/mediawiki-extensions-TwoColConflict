@@ -72,6 +72,7 @@
 	"twocolconflict-split-tour-popup2-header": "Одаберите промене које желите да оставите",
 	"twocolconflict-split-tour-popup3-header": "Истакнут текст",
 	"twocolconflict-split-edit-tooltip": "Уредите текст",
+	"twocolconflict-split-disabled-edit-tooltip": "Пре него што уредите ову верзију, изаберите је кликом на одговарајуће дугме у средини.",
 	"twocolconflict-split-save-tooltip": "Сачувај промене и напусти режим уређивања",
 	"twocolconflict-split-reset-tooltip": "Ресетуј текст",
 	"twocolconflict-split-reset-warning": "Одбацити промене? Ваш текст ће се ресетовати на оно што је био када се десио сукоб измена.",

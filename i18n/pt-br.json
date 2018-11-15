@@ -75,6 +75,7 @@
 	"twocolconflict-split-tour-popup3-header": "Texto destacado",
 	"twocolconflict-split-tour-popup3-message": "O texto que foi alterado em qualquer versão de uma linha é realçado. Depois de editar o texto, o realce desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Editar texto",
+	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versão, selecione-a clicando no botão correspondente no meio.",
 	"twocolconflict-split-save-tooltip": "Salvar as alterações e sair do modo de edição.",
 	"twocolconflict-split-reset-tooltip": "Repor texto",
 	"twocolconflict-split-reset-warning": "Descartar as alterações? O seu texto ficará tal como estava quando o conflito de edições ocorreu.",

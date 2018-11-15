@@ -75,6 +75,7 @@
 	"twocolconflict-split-tour-popup3-header": "Hervorgehobener Text",
 	"twocolconflict-split-tour-popup3-message": "Der in beiden Versionen einer Zeile geänderte Text wurde hervorgehoben. Nachdem du den Text bearbeitet hast, verschwindet die Hervorhebung.",
 	"twocolconflict-split-edit-tooltip": "Text bearbeiten",
+	"twocolconflict-split-disabled-edit-tooltip": "Bevor du diese Version bearbeiten kannst, wähle sie aus, indem du auf die entsprechende Schaltfläche in der Mitte klickst.",
 	"twocolconflict-split-save-tooltip": "Änderungen speichern und Bearbeitungsmodus verlassen.",
 	"twocolconflict-split-reset-tooltip": "Text zurücksetzen",
 	"twocolconflict-split-reset-warning": "Änderungen verwerfen? Dein Text wird auf den Zeitpunkt zurückgesetzt, an dem der Bearbeitungskonflikt aufgetreten ist.",

@@ -7,5 +7,6 @@
 	"twocolconflict-beta-feature-message": "Двухслупковы канфлікт рэдагавання",
 	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе.",
 	"twocolconflict-show-help-tooltip": "Паказаць тэкст даведкі",
-	"twocolconflict-close-dialog": "Закрыць"
+	"twocolconflict-close-dialog": "Закрыць",
+	"twocolconflict-split-tour-popup-btn-text": "Так, зразумела."
 }
