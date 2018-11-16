@@ -58,6 +58,7 @@
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-not-saved-at": "Jeszcze nie opublikowano",
 	"twocolconflict-split-choose-version": "Wybierz wersję",
+	"twocolconflict-split-tour-popup-btn-text": "Ok, rozumiem.",
 	"twocolconflict-split-save-tooltip": "Zapisz zmiany i wyjdź z trybu edycji.",
 	"twocolconflict-split-reset-warning-cancel": "Anuluj",
 	"twocolconflict-split-collapse-tooltip": "Zwiń tekst",

@@ -77,6 +77,7 @@
 	"twocolconflict-split-tour-popup3-header": "نص مميز",
 	"twocolconflict-split-tour-popup3-message": "يتم تمييز النص الذي تم تغييره في أي إصدار سطر، بعد تحرير النص، سيتم اختفاء التمييز.",
 	"twocolconflict-split-edit-tooltip": "تحرير النص",
+	"twocolconflict-split-disabled-edit-tooltip": "قبل تعديل هذه النسخة، اخترها عن طريق الضغط على الزر المقابل في المنتصف.",
 	"twocolconflict-split-save-tooltip": "حفظ التغييرات والخروج من نمط التحرير",
 	"twocolconflict-split-reset-tooltip": "إعادة ضبط النص",
 	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين نصك إلى ما كان عليه عند حدوث تعارض التحرير.",

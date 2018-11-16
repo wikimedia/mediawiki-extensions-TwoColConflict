@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Muhammad Shuaib"
+			"Muhammad Shuaib",
+			"BukhariSaeed"
 		]
 	},
 	"twocolconflict": "دوکالمی‌تنازع‌ترمیم",
 	"twocolconflict-beta-feature-message": "دو کالمی تنازع ترمیم",
 	"twocolconflict-beta-feature-description": "تنازع ترمیم کے وقت مزید بہتر اور اضافی خصوصیات سے مزین دو کالمی نمائش دیکھیں",
-	"twocolconflict-explainconflict": "<strong>انتباہ:</strong> کسی دوسرے صارف نے ابھی اس صفحے میں ترمیم کرکے اسے محفوظ کیا ہے جس کی بنا پر آپ کے نسخے اور حالیہ نسخے میں تعارض پیدا ہوگیا ہے۔ اب آپ کو اپنی تبدیلیاں موجودہ نسخے میں ضم کرنا ہوگا۔ واضح رہے کہ «$1» پر کلک کرنے سے خانہ ترمیم میں موجود متن ہی محفوظ ہوگا۔",
+	"twocolconflict-explainconflict": "<strong>انتباہ:</strong> کسی دوسرے صارف نے ابھی اس صفحے میں ترمیم کر کے اسے محفوظ کیا ہے جس کی بنا پر آپ کے نسخے اور حالیہ نسخے میں تعارض پیدا ہوگیا ہے۔ اب آپ کو اپنی تبدیلیاں موجودہ نسخے میں ضم کرنا ہوگا۔ واضح رہے کہ «$1» پر کلک کرنے سے خانہ ترمیم میں موجود متن ہی محفوظ ہوگا۔",
 	"twocolconflict-changes-col-title": "متنازع ترامیم",
 	"twocolconflict-changes-col-desc-1": "فرق",
 	"twocolconflict-changes-col-desc-2": "حالیہ شائع شدہ نسخہ",
@@ -46,10 +47,17 @@
 	"twocolconflict-test-title-not-existing": "اس عنوان سے کوئی صفحہ نہیں ملا۔",
 	"twocolconflict-test-text-submit": "تنازع تخلیق کریں",
 	"twocolconflict-test-initial-hint": "اس صفحے میں آپ دو کالمی تنازع ترمیم کے نئے انٹرفیس کو آزما سکتے ہیں۔",
-	"twocolconflict-test-edit-hint": "ذیل کے خانے میں موجود متن میں کچھ تبدیلیاں کریں، یہ محفوظ نہیں ہونگی۔ انہیں محض تنازع ترمیم کی نقل بنانے کے لیے استعمال کیا جائے گا۔",
-	"twocolconflict-test-conflict-hint": "یہ آزمائشی تنازع ہے۔ تبدیلیاں محفوظ نہیں ہونگی البتہ انہیں دیکھا جا سکتا ہے۔",
+	"twocolconflict-test-edit-hint": "ذیل کے خانے میں موجود متن میں کچھ تبدیلیاں کریں، یہ محفوظ نہیں ہوں گی۔ انہیں محض تنازع ترمیم کی نقل بنانے کے لیے استعمال کیا جائے گا۔",
+	"twocolconflict-test-conflict-hint": "یہ آزمائشی تنازع ہے۔ تبدیلیاں محفوظ نہیں ہوں گی البتہ انہیں دیکھا جا سکتا ہے۔",
 	"twocolconflict-test-preview-submit": "نقل بنائیں",
 	"twocolconflict-test-preview-hint": "دو کالمی تنازع ترمیم کے انٹرفیس کو آزمانے کا شکریہ! اسے مزید بہتر بنانے کے لیے ہم آپ کی آرا اور تاثرات کی ضرورت ہے۔ آپ اپنی رائے [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page یہاں] درج کر سکتے ہیں۔\n\nذیل میں آپ کے آزمائشی تنازع ترمیم کے نتائج ملاحظہ فرمائیں۔",
 	"twocolconflict-test-username": "تنازع پڑتالگر",
-	"twocolconflict-test-summary-text": "آزمائشی تنازع ترمیم کا خلاصہ"
+	"twocolconflict-test-summary-text": "آزمائشی تنازع ترمیم کا خلاصہ",
+	"twocolconflict-split-conflict-hint": "اِس بِیٹا فیچر کا استعمال کرنے کا شکریہ۔ [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View اس صفحہ پر] فیڈ بیک دے کر آپ بھی اس کی مزید بہتری میں مدد کر سکتے ہیں۔",
+	"twocolconflict-split-not-saved-at": "اب تک شائع نہیں ہوا",
+	"twocolconflict-split-choose-version": "براہ مہربانی ایک نسخہ چُنیں",
+	"twocolconflict-split-edit-tooltip": "متن میں ترمیم",
+	"twocolconflict-split-reset-tooltip": "متن ری سیٹ کریں",
+	"twocolconflict-split-reset-warning-cancel": "منسوخ",
+	"twocolconflict-split-reset-warning-accept": "مسترد"
 }
