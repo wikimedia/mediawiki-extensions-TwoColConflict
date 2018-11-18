@@ -76,5 +76,6 @@
 	"twocolconflict-split-reset-tooltip": "بازنشانی متن",
 	"twocolconflict-split-reset-warning-cancel": "لغو",
 	"twocolconflict-split-reset-warning-accept": "دور انداختن",
-	"twocolconflict-split-collapse-tooltip": "نهفتن متن"
+	"twocolconflict-split-collapse-tooltip": "نهفتن متن",
+	"twocolconflict-split-expand-tooltip": "نمایش متن بیشتر"
 }
