@@ -80,6 +80,7 @@
 	"twocolconflict-split-tour-popup3-header": "Texte surligné",
 	"twocolconflict-split-tour-popup3-message": "Le texte qui a été modifié dans l'une quelconque des versions d'une ligne est mis en valeur. Après que vous aurez modifié ce texte, la mise en valeur disparaîtra.",
 	"twocolconflict-split-edit-tooltip": "Modifier le texte",
+	"twocolconflict-split-disabled-edit-tooltip": "Avant de pouvoir modifier cette version, la sélectionner en cliquant sur le bouton correspondant au milieu.",
 	"twocolconflict-split-save-tooltip": "Enregistrer les modifications et quitter le mode d'édition.",
 	"twocolconflict-split-reset-tooltip": "Réinitialiser le texte",
 	"twocolconflict-split-reset-warning": "Abandonner les modifications ? Votre texte sera réinitialisé à ce qu’il était quand s’est produit le conflit d’édition.",

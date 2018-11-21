@@ -60,8 +60,8 @@
 	"twocolconflict-test-summary-text": "Redigeringsforklaring for konflikttest",
 	"twocolconflict-split-conflict-hint": "Takk for at du bruker denne betafunksjonen. Du kan hjelpe til med å forbedre den videre om du gir tilbakemelding [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denne siden].",
 	"twocolconflict-split-your-version-header": "Din versjon",
-	"twocolconflict-split-current-version-header": "Konflikterende versjon av $1 (gjeldende versjon)",
-	"twocolconflict-split-not-saved-at": "ikke publisert $1 $2.",
+	"twocolconflict-split-current-version-header": "Konflikterende versjon per $1 (gjeldende versjon)",
+	"twocolconflict-split-not-saved-at": "Upublisert",
 	"twocolconflict-split-choose-version": "Velg en versjon",
 	"twocolconflict-split-tour-dialog-header": "Løs redigeringskonflikter",
 	"twocolconflict-split-tour-dialog-message": "Du opplever en redigeringskonflikt: Mens du redigerte redigerte også en annen bruker siden og lagret den. Din versjon inkluderer derfor ikke de nyeste redigeringene. Vi ber deg derfor om å flette inn din versjon med den siste versjonen fra den andre brukeren.",
@@ -73,5 +73,13 @@
 	"twocolconflict-split-tour-popup2-message": "Velg hvilken tekstversjon du ønsker å beholde ved å klikke på én av de to knappene mellom hvert par av linjer. Når du har valgt en versjon kan du redigere den ved å klikke på ikonet med en penn. Det er også mulig å kopiere tekst fra versjonen du ikke valgte ved å bruke kopieringsfunksjonen på tastaturet ditt eller ved å høyreklikke.<br /><br />Du må velge én versjon for hver endrede linje for å lagre den flettede teksten.",
 	"twocolconflict-split-tour-popup3-header": "Markert tekst",
 	"twocolconflict-split-tour-popup3-message": "Teksten som er forskjellig i hver versjon av ei linje er markert. Etter at du redigerer teksten vil markeringen forsvinne.",
-	"twocolconflict-split-edit-tooltip": "Rediger tekst"
+	"twocolconflict-split-edit-tooltip": "Rediger tekst",
+	"twocolconflict-split-disabled-edit-tooltip": "Før du kan redigere denne versjonen må du velge den ved å klikke på den relevante knappen i midten.",
+	"twocolconflict-split-save-tooltip": "Lagre endringer og forlag redigeringsmodus.",
+	"twocolconflict-split-reset-tooltip": "Nullstill tekst",
+	"twocolconflict-split-reset-warning": "Forkaste endringer? Teksten din vil bli nullstilt til slik den var da redigeringskonflikten oppsto.",
+	"twocolconflict-split-reset-warning-cancel": "Avbryt",
+	"twocolconflict-split-reset-warning-accept": "Forkast",
+	"twocolconflict-split-collapse-tooltip": "Skjul tekst",
+	"twocolconflict-split-expand-tooltip": "Vis tekst"
 }
