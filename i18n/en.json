@@ -7,7 +7,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twocolconflict-beta-feature-message": "Two column edit conflict",
-	"twocolconflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.<br/><br/>Please note: The feature is currently undergoing [https://phabricator.wikimedia.org/T195711 some changes]. A new interface is planned for the second half of 2018.",
+	"twocolconflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.",
 	"twocolconflict-explainconflict": "<strong>Warning:</strong> Another user just edited and published this page. There is a conflict between your version and the current version. You will have to merge your changes into the current text version. Only the text in the editor field will be published when you click on \"$1\".",
 	"twocolconflict-changes-col-title": "Conflicting changes",
 	"twocolconflict-changes-col-desc-1": "Differences between",
