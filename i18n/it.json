@@ -11,7 +11,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Mostra una schermata di unione affiancata per modificare la risoluzione dei conflitti",
 	"twocolconflict-beta-feature-message": "Conflitto di modifiche su due colonne",
-	"twocolconflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.<br/><br/>Nota: la funzionalità è attualmente in [https://phabricator.wikimedia.org/T195711 fase di modifica]. Una nuova interfaccia è prevista per la seconda metà del 2018.",
+	"twocolconflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.",
 	"twocolconflict-explainconflict": "<strong>Attenzione:</strong> un altro utente ha appena modificato e pubblicato questa pagina. C'è un conflitto tra la tua versione e quella attuale. Dovrai unire le tue modifiche nell'attuale versione del testo. Solo il testo nel campo dell'editor verrà pubblicato quando cliccherai su \"$1\".",
 	"twocolconflict-changes-col-title": "Modifiche in conflitto",
 	"twocolconflict-changes-col-desc-1": "Differenze fra",

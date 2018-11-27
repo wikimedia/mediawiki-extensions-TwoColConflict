@@ -4,13 +4,14 @@
 			"Chrumps",
 			"Woytecr",
 			"Tar Lócesilion",
-			"Railfail536"
+			"Railfail536",
+			"CiaPan"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Pokazuje pola tekstowe obok siebie podczas konfliktu zapisu edycji, aby ułatwić jego rozwiązanie",
 	"twocolconflict-beta-feature-message": "Dwukolumnowe wyświetlanie konfliktu edycji",
-	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.<br /><br />Uwaga: Obecnie trwają [https://phabricator.wikimedia.org/T195711 prace] nad modernizacją tej funkcji. Nowy interfejs jest planowany na drugą połowę 2018 roku.",
+	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.",
 	"twocolconflict-explainconflict": "<strong>Ostrzeżenie:</strong> Ktoś inny zmienił treść tej strony i opublikował podczas Twojej edycji. Spowodowało to konflikt między Twoją wersją a najnowsza wersją edytowanej strony. Należy dołączyć swoje zmiany do wersji bieżącej. Tylko tekst w polu edycji zostanie opublikowany po kliknięciu na „$1”.",
 	"twocolconflict-changes-col-title": "Konfliktowe zmiany",
 	"twocolconflict-changes-col-desc-1": "Różnice pomiędzy",

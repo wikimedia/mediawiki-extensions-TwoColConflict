@@ -10,7 +10,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "편집 충돌 해결을 위한 병렬식 편집 병합 화면을 보여줌",
 	"twocolconflict-beta-feature-message": "2단 편집 충돌",
-	"twocolconflict-beta-feature-description": "더 진보된 2단 뷰를 사용하여 편집 충돌 뷰를 표시합니다.<br/><br/>참고: 이 기능은 현재 [https://phabricator.wikimedia.org/T195711 일부 변경]이 진행되고 있습니다. 새로운 인터페이스는 2018년 하반기로 예정되어 있습니다.",
+	"twocolconflict-beta-feature-description": "더 진보된 2단 뷰를 사용하여 편집 충돌 뷰를 표시합니다.",
 	"twocolconflict-explainconflict": "<strong>경고:</strong> 다른 사용자가 방금 이 문서를 편집하고 게시했습니다. 당신의 판과 현재 판 사이에 충돌이 있습니다. 변경 사항을 현재의 텍스트 판으로 병합해야 합니다. \"$1\"를 클릭하면 편집창 영역의 텍스트만 게시됩니다.",
 	"twocolconflict-changes-col-title": "충돌하는 편집",
 	"twocolconflict-changes-col-desc-1": "다음 간 차이",

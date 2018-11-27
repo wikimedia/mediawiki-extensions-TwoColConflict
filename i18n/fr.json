@@ -14,7 +14,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Affichage d’un écran de fusion des modifications côte-à-côte pour résoudre les conflits de modification",
 	"twocolconflict-beta-feature-message": "Conflit de modification sur deux colonnes",
-	"twocolconflict-beta-feature-description": "Afficher le conflit de modification en utilisant une version plus avancée de la vue sur deux colonnes.<br/><br/>Veuillez noter: la fonctionalité subit actuellement [https://phabricator.wikimedia.org/T195711 quelques changements]. Une nouvelle interface est prévue pour la seconde moitié de 2018.",
+	"twocolconflict-beta-feature-description": "Afficher le conflit de modification en utilisant une version plus avancée de la vue sur deux colonnes.",
 	"twocolconflict-explainconflict": "<strong>Avertissement:</strong> un autre utilisateur vient de modifier et de publier cette page. Il y a un conflit entre votre version et la version actuelle. Vous devrez fusionner vos modifications dans la version actuelle du texte. Seul le texte présent dans le champ de l'éditeur sera publié lorsque vous cliquerez sur « $1 ».",
 	"twocolconflict-changes-col-title": "Modifications contradictoires",
 	"twocolconflict-changes-col-desc-1": "Différences entre",
