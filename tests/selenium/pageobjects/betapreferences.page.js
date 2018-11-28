@@ -1,12 +1,16 @@
 const Page = require( 'wdio-mediawiki/Page' );
 
 class BetaPreferencesPage extends Page {
+	get betaFeaturesLink() { return browser.element( '#pt-betafeatures a' ); }
 	get twoColCheckbox() { return browser.element( 'input[name=wptwocolconflict]' ); }
 	get twoColLabel() { return browser.element( '//*[@name="wptwocolconflict"]//parent::span' ); }
 	get submit() { return browser.element( '#prefcontrol button' ); }
 
 	open() {
 		super.openTitle( 'Special:Preferences', {}, 'mw-prefsection-betafeatures' );
+		// The additional click should not be necessary because of the fragment provided above, but
+		// it seems this doesn't work all the time.
+		this.betaFeaturesLink.click();
 	}
 
 	enableTwoColConflictBetaFeature() {

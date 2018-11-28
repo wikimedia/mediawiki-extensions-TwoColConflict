@@ -95,8 +95,8 @@ class EditConflictPage extends Page {
 			conflictUser,
 			conflictUserPassword,
 			'Line1\nLine2',
-			'Line1\nChangeA',
-			'Line1\nChangeB'
+			'Line1\nChange <span lang="de">A</span>',
+			'Line1\nChange <span lang="en">B</span>'
 		);
 
 		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
@@ -108,8 +108,8 @@ class EditConflictPage extends Page {
 			conflictUser,
 			conflictUserPassword,
 			'Line1\nLine2\nLine3\nline4',
-			'Line1\nLine2\nLine3\nChangeA',
-			'Line1\nLine2\nLine3\nChangeB'
+			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
+			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
 		);
 
 		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded

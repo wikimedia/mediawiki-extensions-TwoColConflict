@@ -28,7 +28,7 @@ describe( 'TwoColConflict', function () {
 
 		assert.strictEqual(
 			FinishedConflictPage.pageText.getText(),
-			'Line1 ChangeA',
+			'Line1 Change A',
 			'text was saved correctly'
 		);
 	} );
@@ -56,7 +56,7 @@ describe( 'TwoColConflict', function () {
 
 		assert.strictEqual(
 			PreviewPage.previewText.getText(),
-			'Line1 ChangeA',
+			'Line1 Change A',
 			'text preview shows correctly'
 		);
 	} );
