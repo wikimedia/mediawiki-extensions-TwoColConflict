@@ -183,7 +183,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
 				$text
-			) . Html::rawElement(
+			) . Html::element(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-editor-text' ],
 				$editorText
 			);

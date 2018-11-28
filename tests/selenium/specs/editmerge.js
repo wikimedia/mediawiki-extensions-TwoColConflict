@@ -201,7 +201,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'paragraph edits can be reverted', function () {
-		let otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML();
+		let otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML(),
+			otherParagraphOriginalText = EditConflictPage.getEditor( 'other' ).getValue();
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getEditor( 'other' ).setValue( 'Dummy Edit #1' );
@@ -221,6 +222,12 @@ describe( 'TwoColConflict', function () {
 			EditConflictPage.getDiffText( 'other' ).getHTML(),
 			otherParagraphOriginalDiffText,
 			'edited text was reverted successfully while preserving the formatting'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.getEditor( 'other' ).getValue(),
+			otherParagraphOriginalText,
+			'plain text in editor was reverted successfully'
 		);
 	} );
 
