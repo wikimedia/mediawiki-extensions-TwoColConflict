@@ -12,7 +12,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "使用並排合併介面解決編輯衝突",
 	"twocolconflict-beta-feature-message": "兩欄編輯衝突",
-	"twocolconflict-beta-feature-description": "使用更先進的兩欄介面顯示編輯衝突。<br/><br/>備註：功能目前在進行[https://phabricator.wikimedia.org/T195711 一些更改]。新介面預計在 2018 下半年推出。",
+	"twocolconflict-beta-feature-description": "使用更先進的兩欄介面來顯示編輯衝突。",
 	"twocolconflict-explainconflict": "<strong>警告：</strong> 另一位使用者剛才編輯並發佈了本頁面，您的版本與目前版本之間存在衝突，您將必須把您的變更合併至目前的文字版本內。在您點選 \"$1\" 之時，只有編輯器欄位內的文字將會儲存。",
 	"twocolconflict-changes-col-title": "變更衝突",
 	"twocolconflict-changes-col-desc-1": "兩者的差異",

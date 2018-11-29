@@ -9,7 +9,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twocolconflict-beta-feature-message": "Editor de conflitos em duas colunas",
-	"twocolconflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.<br/><br/>Por favor, note: o recurso está passando por [https://phabricator.wikimedia.org/T195711 algumas mudanças]. Uma nova interface está prevista para o segundo semestre de 2018.",
+	"twocolconflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.",
 	"twocolconflict-explainconflict": "<strong>Aviso:</strong> Outro usuário acabou de editar e publicar esta página. Existe um conflito entre sua versão e a versão atual. Você terá que mesclar suas mudanças na versão de texto atual. Somente o texto no campo do editor será publicado  quando você clicar em \"$1\".",
 	"twocolconflict-changes-col-title": "Alterações conflitantes",
 	"twocolconflict-changes-col-desc-1": "Diferenças entre",

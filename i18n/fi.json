@@ -5,7 +5,8 @@
 			"Stryn",
 			"Nike",
 			"4shadoww",
-			"Surjection"
+			"Surjection",
+			"Valtlait"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -20,10 +21,10 @@
 	"twocolconflict-changes-col-desc-4": "sinun tekstisi.",
 	"twocolconflict-history-link": "muutoshistoria",
 	"twocolconflict-editor-col-title": "Muokkain, jossa oleva versio julkaistaan",
-	"twocolconflict-editor-col-desc-2": "Lisää muutoksesi editorissa olevaan tekstiin ja klikkaa \"$1\".",
+	"twocolconflict-editor-col-desc-2": "Lisää muutoksesi editorissa olevaan tekstiin ja klikkaa ”$1”.",
 	"twocolconflict-base-selection-desc-1": "1) Valitse versio mihin verrataan, popup-ikkunasta alhaalta.",
 	"twocolconflict-base-selection-desc-2": "2) Muokkaa tekstiä yhdistääksesi molemmat versiot.",
-	"twocolconflict-base-selection-desc-3": "3) Klikkaa \"$1\". Vain editorissa oleva teksti julkaistaan.",
+	"twocolconflict-base-selection-desc-3": "3) Klikkaa ”$1”. Vain editorissa oleva teksti julkaistaan.",
 	"twocolconflict-base-selection-own-label": "Minun teksti",
 	"twocolconflict-base-selection-foreign-label": "Tällä hetkellä julkaistu versio",
 	"twocolconflict-base-selection-submit-label": "OK",

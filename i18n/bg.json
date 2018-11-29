@@ -4,11 +4,12 @@
 			"Kareyac",
 			"Vodnokon4e",
 			"ShockD",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"twocolconflict-beta-feature-message": "Конфликт на редакциите в две колони",
-	"twocolconflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед в две колони.<br/><br/>Моля, забележете: Тази функционалност в момента е обект на [https://phabricator.wikimedia.org/T195711 промяна]. Нов интерфейс е планиран за втората половина на 2018 година.",
+	"twocolconflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед в две колони.",
 	"twocolconflict-base-selection-submit-label": "Добре",
 	"twocolconflict-label-show": "показване",
 	"twocolconflict-label-hide": "скриване",
