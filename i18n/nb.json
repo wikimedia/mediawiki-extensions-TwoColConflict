@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Viser en todelt skjerm for fletting av redigeringer ved redigeringskonflikt",
 	"twocolconflict-beta-feature-message": "Tokolonners redigeringskonflikt",
-	"twocolconflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.<br /><br />Merk: Denne funksjonen er i ferd med [https://phabricator.wikimedia.org/T195711 å bli endret]. Et nytt grensesnitt skal komme i andre halvdel av 2018.",
+	"twocolconflict-beta-feature-description": "Vis redigeringskonflikten med en mer avansert tokolonners visning.",
 	"twocolconflict-explainconflict": "<strong>Advarsel:</strong> En annen bruker redigerte og publiserte nettopp denne siden. Det er en konflikt mellom din versjon og den nåværende versjonen. Du må manuelt legge til endringene dine i versjonen for den nåværende teksten. Kun tekst i editorfeltet vil publiseres når du klikker på «$1».",
 	"twocolconflict-changes-col-title": "Motstridende endringer",
 	"twocolconflict-changes-col-desc-1": "Forskjeller mellom",
