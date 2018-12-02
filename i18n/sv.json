@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Visar en jämförelsesida för att lösa redigeringskonflikter",
 	"twocolconflict-beta-feature-message": "Redigeringskonflikter i två kolumner",
-	"twocolconflict-beta-feature-description": "Visar redigeringskonflikter i en mer avancerad tvåkolumnsvy.<br/><br/>Observera: Funktionen undergår för tillfället [https://phabricator.wikimedia.org/T195711 några ändringar]. Ett nytt gränssnitt planeras i 2018 under det andra halvåret.",
+	"twocolconflict-beta-feature-description": "Visar redigeringskonflikter i en mer avancerad tvåkolumnsvy.",
 	"twocolconflict-explainconflict": "<strong>Varning:</strong> En annan användare redigerade och publicerade denna sida. Det har uppstått en redigeringskonflikt mellan din version och nuvarande version. Du behöver sammanfoga dina ändringar till den nuvarande textversionen. Endast texten i redigeraren kommer att publiceras när du klickar på \"$1\".",
 	"twocolconflict-changes-col-title": "Motstridande ändringar",
 	"twocolconflict-changes-col-desc-1": "Skillnader mellan",
