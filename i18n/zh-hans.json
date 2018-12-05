@@ -14,7 +14,7 @@
 	"twocolconflict": "双栏冲突",
 	"twocolconflict-desc": "显示并排的编辑合并界面，用以解决编辑冲突",
 	"twocolconflict-beta-feature-message": "双栏编辑冲突",
-	"twocolconflict-beta-feature-description": "使用更高级的双栏视图来显示编辑冲突视图。<br/><br/>请注意：该功能目前正在进行[https://phabricator.wikimedia.org/T195711 一些更改]。计划在2018年下半年推出一个新界面。",
+	"twocolconflict-beta-feature-description": "使用更高级的双栏视图来显示编辑冲突视图。",
 	"twocolconflict-explainconflict": "<strong>警告：</strong>另一位用户刚刚编辑并保存了此页面。这里是您的版本和当前版本之间的冲突。您将需要把您的更改合并至当前文本版本。当您点击“$1”时，只有编辑器字段中的文本将会被保存。",
 	"twocolconflict-changes-col-title": "冲突更改",
 	"twocolconflict-changes-col-desc-1": "比较两栏之间的不同：",
