@@ -279,7 +279,7 @@ describe( 'TwoColConflict', function () {
 
 	afterEach( function () {
 		// provoke and dismiss reload warning
-		browser.url( 'data:' );
+		browser.url( 'data:text/html,Done' );
 		try {
 			browser.alertAccept();
 		} catch ( e ) {}
