@@ -5,6 +5,7 @@
 			"Saederup92"
 		]
 	},
+	"twocolconflict-beta-feature-message": "Tokolonners redigeringskonflikt",
 	"twocolconflict-changes-col-desc-1": "Forskelle mellem",
 	"twocolconflict-changes-col-desc-4": "din tekst.",
 	"twocolconflict-base-selection-own-label": "Min tekst",
@@ -24,6 +25,7 @@
 	"twocolconflict-test-no-direct-editing": "Denne side kan ikke redigeres direkte.",
 	"twocolconflict-split-your-version-header": "Din revision",
 	"twocolconflict-split-not-saved-at": "Endnu ikke offentliggjort",
+	"twocolconflict-split-tour-popup-btn-text": "Okay, modtaget.",
 	"twocolconflict-split-edit-tooltip": "Rediger tekst",
 	"twocolconflict-split-reset-tooltip": "Nulstil tekst",
 	"twocolconflict-split-reset-warning-cancel": "Annullér",
