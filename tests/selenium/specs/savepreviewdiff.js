@@ -2,7 +2,6 @@ var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	PreviewPage = require( '../pageobjects/preview.page' ),
-	DiffPage = require( '../pageobjects/diff.page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
@@ -76,20 +75,6 @@ describe( 'TwoColConflict', function () {
 			PreviewPage.previewText.getText(),
 			'Line1 Dummy Text',
 			'text was saved correctly'
-		);
-	} );
-
-	it( 'should show a diff page', function () {
-		EditConflictPage.diffButton.click();
-
-		assert(
-			DiffPage.diffView.waitForVisible(),
-			'I see a diff page for my changes'
-		);
-
-		assert(
-			DiffPage.diffEmpty.isVisible(),
-			'per default the diff is empty'
 		);
 	} );
 

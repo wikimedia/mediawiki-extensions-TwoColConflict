@@ -18,6 +18,10 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
+		assert( EditConflictPage.submitButton.isVisible(), 'submit button exists' );
+		assert( EditConflictPage.previewButton.isVisible(), 'preview button exists' );
+		assert( !EditConflictPage.diffButton.isVisible(), 'no diff button' );
 	} );
 
 	it( 'has edit buttons that toggle availability depending on side selection', function () {

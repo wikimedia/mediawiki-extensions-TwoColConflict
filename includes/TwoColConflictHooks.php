@@ -145,6 +145,24 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @param EditPage &$editPage
+	 * @param array[] &$buttons
+	 * @param int &$tabindex
+	 */
+	public static function onEditPageBeforeEditButtons(
+		EditPage &$editPage,
+		array &$buttons,
+		&$tabindex
+	) {
+		if ( self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) &&
+			!( $editPage instanceof TwoColConflictTestEditPage ) &&
+			$editPage->isConflict === true
+		) {
+			unset( $buttons['diff'] );
+		}
+	}
+
+	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetBetaFeaturePreferences
 	 *
 	 * @param User $user

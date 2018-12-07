@@ -37,6 +37,9 @@
 		"EditPageBeforeConflictDiff": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
 		],
+		"EditPageBeforeEditButtons": [
+			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons"
+		],
 		"EditPage::showEditForm:initial": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial"
 		],
