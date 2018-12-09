@@ -79,7 +79,8 @@
 				"mediawiki.user",
 				"mediawiki.storage",
 				"mediawiki.cookie",
-				"mediawiki.api"
+				"mediawiki.api",
+				"user.options"
 			]
 		},
 		"ext.TwoColConflict.Inline.filterOptionsJs": {
