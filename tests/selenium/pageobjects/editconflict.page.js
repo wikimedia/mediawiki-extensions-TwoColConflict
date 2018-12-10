@@ -75,6 +75,7 @@ class EditConflictPage extends Page {
 		browser.pause( 300 ); // wait for mw JS to load
 
 		return browser.execute( function ( hide ) {
+			// eslint-disable-next-line no-undef
 			return ( new mw.Api() ).saveOption(
 				'userjs-twocolconflict-hide-help-dialogue',
 				hide ? '1' : '0'

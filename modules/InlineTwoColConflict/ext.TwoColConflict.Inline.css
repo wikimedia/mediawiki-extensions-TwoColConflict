@@ -3,7 +3,6 @@
 	display: -moz-flex;
 	display: -ms-flex;
 	display: flex;
-
 	-webkit-flex-flow: row wrap;
 	-moz-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
@@ -85,7 +84,9 @@
 	-webkit-user-select: text;
 	border: 1px solid #c0c0c0;
 	box-sizing: border-box;
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font: medium '-moz-fixed';
+	/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
 	font: '-webkit-small-control';
 	font-size: medium;
 	font-family: monospace;

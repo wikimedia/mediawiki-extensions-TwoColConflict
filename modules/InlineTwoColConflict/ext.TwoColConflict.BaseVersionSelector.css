@@ -62,9 +62,11 @@ See also T163885
 	/* T166232 */
 	width: initial !important;  /* stylelint-disable-line declaration-no-important */
 }
+
 .oo-ui-windowManager > .oo-ui-dialog.oo-ui-window-setup {
 	opacity: 1;
 }
+
 .oo-ui-windowManager > .oo-ui-dialog.oo-ui-window-ready > .oo-ui-window-frame {
 	opacity: 1;
 	-webkit-transform: scale( 1 );

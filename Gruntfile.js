@@ -36,7 +36,7 @@ module.exports = function ( grunt ) {
 		svgmin: {
 			options: {
 				js2svg: {
-					indent: '	',
+					indent: '\t',
 					pretty: true
 				},
 				multipass: true,
@@ -59,11 +59,11 @@ module.exports = function ( grunt ) {
 			all: {
 				files: [ {
 					expand: true,
-					cwd: '	resources/ext.TwoColConflict.helpDialog',
+					cwd: 'resources/ext.TwoColConflict.helpDialog',
 					src: [
 						'**/*.svg'
 					],
-					dest: '	resources/ext.TwoColConflict.helpDialog/',
+					dest: 'resources/ext.TwoColConflict.helpDialog/',
 					ext: '.svg'
 				} ]
 			}
