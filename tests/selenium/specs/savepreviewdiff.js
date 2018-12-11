@@ -78,6 +78,29 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'should be possible to edit and preview the left ("other") side', function () {
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getEditor( 'other' ).setValue( 'Other, but improved' );
+		EditConflictPage.previewButton.click();
+
+		assert(
+			PreviewPage.previewView.waitForVisible(),
+			'The preview appears'
+		);
+
+		assert.strictEqual(
+			PreviewPage.previewText.getText(),
+			'Line1 Other, but improved',
+			'My edit appears in the preview'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.getEditor( 'other' ).getValue(),
+			'Other, but improved\n',
+			'I can continue the edit I started'
+		);
+	} );
+
 	afterEach( function () {
 		// provoke and dismiss reload warning
 		browser.url( 'data:text/html,Done' );

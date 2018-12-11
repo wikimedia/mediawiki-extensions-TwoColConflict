@@ -109,6 +109,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 				$extraLineFeeds,
 				'your'
 			);
+			$storedversion = SplitConflictMerger::mergeSplitConflictResults(
+				$contentRows,
+				$extraLineFeeds,
+				'other'
+			);
 		}
 
 		$this->yourLines = $this->splitText( $yourtext );
