@@ -6,6 +6,7 @@
 		]
 	},
 	"twocolconflict-beta-feature-message": "کێشەی دەستکاریی دوو ڕیز",
+	"twocolconflict-beta-feature-description": "ڕووکاری کێشەی دەستکاری بە دوو ڕیزی پێشکەوتوو پیشان بدە.",
 	"twocolconflict-explainconflict": "<strong>ئاگاداری:</strong> بەکارھێنەرێکی تر ھەر ئێستا پەڕەکەی دەستکاری کردووە و پاشەکەوتی کردووە، ئەمەش وادەکات کە کێشە دروست ببێت لە پاشەکەوتکردنی گۆڕانکارییەکانی تۆ. دەبێت ئێستا گۆڕانکارییەکانت لەگەڵ دەقی ھەنووکەیی تێکەڵ بکەیت.",
 	"twocolconflict-changes-col-title": "گۆڕانکارییەکانی کێشەی دەستکاری",
 	"twocolconflict-changes-col-desc-1": "جیاوازییەکانی نێوان",
