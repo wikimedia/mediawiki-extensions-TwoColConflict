@@ -128,10 +128,8 @@
 		var popup = new OO.ui.PopupWidget( {
 			$content: $( '<p>' ).html( mw.msg( 'twocolconflict-split-disabled-edit-tooltip' ) ),
 			classes: [ 'mw-twocolconflict-split-disabled-edit-button-popup' ],
-			anchor: true,
 			padded: true,
-			align: 'center',
-			position: 'before'
+			position: 'above'
 		} );
 
 		button.$element.append( popup.$element );
