@@ -115,27 +115,28 @@ class HtmlSplitConflictView {
 		return Html::closeElement( 'div' );
 	}
 
-	private function buildAddedLine( $text, $rawText, $rowNum ) {
+	private function buildAddedLine( $diffHtml, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $text, $rawText, $rowNum, 'your' )
+			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'your' )
 		);
 	}
 
-	private function buildRemovedLine( $text, $rawText, $rowNum ) {
+	private function buildRemovedLine( $diffHtml, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $text, $rawText, $rowNum, 'other' )
+			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'other' )
 		);
 	}
 
-	private function buildCopiedLine( $text, $rowNum ) {
+	private function buildCopiedLine( $diffHtml, $rowNum ) {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $text, $text, $rowNum, 'copy' )
+			// FIXME: Why does this get an HTML espaced string in the $rawText field?
+			$this->buildEditableTextContainer( $diffHtml, $diffHtml, $rowNum, 'copy' )
 		);
 	}
 
@@ -151,15 +152,15 @@ class HtmlSplitConflictView {
 		Html::closeElement( 'div' );
 	}
 
-	private function buildEditableTextContainer( $text, $rawText, $rowNum, $changeType ) {
-		$text = rtrim( $text, "\r\n\u{00A0}" );
+	private function buildEditableTextContainer( $diffHtml, $rawText, $rowNum, $changeType ) {
+		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
 		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
 		$classes = [ 'mw-twocolconflict-split-editable' ];
 
 		$innerHtml = Html::rawElement(
 			'span',
 			[ 'class' => 'mw-twocolconflict-split-difftext' ],
-			$text
+			$diffHtml
 		);
 		$innerHtml .= Html::element( 'div', [ 'class' => 'mw-twocolconflict-split-fade' ] );
 		$innerHtml .= $this->buildEditButton();
@@ -172,17 +173,17 @@ class HtmlSplitConflictView {
 			$classes[] = 'mw-twocolconflict-split-collapsed';
 		}
 
-		$innerHtml .= $this->buildResetText( $text, $editorText );
+		$innerHtml .= $this->buildResetText( $diffHtml, $editorText );
 		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType );
 		$innerHtml .= $this->buildLineFeedField( $rawText, $rowNum, $changeType );
 
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
 
-	private function buildResetText( $text, $editorText ) {
+	private function buildResetText( $diffHtml, $editorText ) {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
-				$text
+				$diffHtml
 			) . Html::element(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-editor-text' ],
 				$editorText
