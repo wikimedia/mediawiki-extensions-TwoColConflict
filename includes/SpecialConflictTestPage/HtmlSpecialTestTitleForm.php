@@ -3,7 +3,6 @@
 namespace TwoColConflict\SpecialConflictTestPage;
 
 use Html;
-use Message;
 use OOUI\ButtonInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -45,7 +44,7 @@ class HtmlSpecialTestTitleForm extends SpecialPageHtmlFragment {
 				),
 				[
 					'align' => 'top',
-					'label' => ( new Message( 'twocolconflict-test-title-label' ) )->plain(),
+					'label' => $this->msg( 'twocolconflict-test-title-label' )->plain(),
 				]
 			) ]
 		] ) ) .
@@ -55,7 +54,7 @@ class HtmlSpecialTestTitleForm extends SpecialPageHtmlFragment {
 		) .
 		( new ButtonInputWidget(
 		[
-			'label' => ( new Message( 'twocolconflict-test-title-submit' ) )->plain(),
+			'label' => $this->msg( 'twocolconflict-test-title-submit' )->plain(),
 			'type' => 'submit',
 			'flags' => [ 'primary', 'progressive' ],
 		]
