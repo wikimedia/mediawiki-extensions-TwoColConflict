@@ -3,7 +3,6 @@
 namespace TwoColConflict;
 
 use Diff;
-use DiffFormatter;
 use MediaWiki\Diff\WordAccumulator;
 use WordLevelDiff;
 
@@ -11,17 +10,7 @@ use WordLevelDiff;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class LineBasedUnifiedDiffFormatter extends DiffFormatter {
-
-	/**
-	 * @var string String added to <ins> tags.
-	 */
-	public $insClass = ' class="diffchange"';
-
-	/**
-	 * @var string String added to <del> tags.
-	 */
-	public $delClass = ' class="diffchange"';
+class LineBasedUnifiedDiffFormatter {
 
 	/**
 	 * @var int
@@ -46,7 +35,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 *   left side of the diff. Since the right side can hold more lines than the left, one line
 	 *   in the array can hold at least one delete, change or copy as well as an add action.
 	 */
-	public function format( $diff ) {
+	public function format( Diff $diff ) {
 		$this->oldline = 0;
 		$this->newline = 0;
 		$this->retval = [];
@@ -129,7 +118,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	private function deleteLines( array $lines ) {
 		$this->retval[$this->oldline][] = [
 			'action' => 'delete',
-			'old' => "<del{$this->delClass}>" . $this->composeLines( $lines ) . '</del>',
+			'old' => '<del class="mw-twocolconflict-diffchange">' . $this->composeLines( $lines ) . '</del>',
 			'oldline' => $this->oldline,
 			'count' => count( $lines ),
 		];
@@ -141,7 +130,7 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	private function addLines( array $lines ) {
 		$this->retval[$this->oldline][] = [
 			'action' => 'add',
-			'new' => "<ins{$this->insClass}>" . $this->composeLines( $lines ) . '</ins>',
+			'new' => '<ins class="mw-twocolconflict-diffchange">' . $this->composeLines( $lines ) . '</ins>',
 			'newline' => $this->newline,
 			'count' => count( $lines ),
 		];
@@ -204,8 +193,8 @@ class LineBasedUnifiedDiffFormatter extends DiffFormatter {
 	 */
 	private function getWordAccumulator() {
 		$wordAccumulator = new WordAccumulator;
-		$wordAccumulator->insClass = $this->insClass;
-		$wordAccumulator->delClass = $this->delClass;
+		$wordAccumulator->insClass = ' class="mw-twocolconflict-diffchange"';
+		$wordAccumulator->delClass = ' class="mw-twocolconflict-diffchange"';
 		return $wordAccumulator;
 	}
 
