@@ -54,7 +54,7 @@ class HtmlSplitConflictView {
 
 		$currRowNum = 0;
 		$isFirstNonCopyLine = true;
-		foreach ( $unifiedDiff as $key => $currentLine ) {
+		foreach ( $unifiedDiff as $currentLine ) {
 			foreach ( $currentLine as $changeSet ) {
 				if ( $changeSet['action'] !== 'copy' && $isFirstNonCopyLine ) {
 					$out .= $this->buildSideSelectorLabel();
