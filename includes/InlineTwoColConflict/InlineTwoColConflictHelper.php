@@ -400,8 +400,6 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 */
 	protected function getLineBasedUnifiedDiff( $fromTextLines, $toTextLines ) {
 		$formatter = new LineBasedUnifiedDiffFormatter();
-		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
-		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
 
 		return $formatter->format(
 			new \Diff( $fromTextLines, $toTextLines )

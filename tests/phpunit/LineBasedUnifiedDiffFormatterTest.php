@@ -56,7 +56,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 						],
 						[
 							'action' => 'add',
-							'new' => 'Just text<ins class="diffchange">. And more</ins>.',
+							'new' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
 							'newline' => 0,
 							'count' => 1,
 						]
@@ -70,7 +70,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 					0 => [
 						[
 							'action' => 'delete',
-							'old' => 'Just less <del class="diffchange">text</del>.',
+							'old' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
 							'oldline' => 0,
 							'count' => 1,
 						],
@@ -107,7 +107,7 @@ TEXT
 					1 => [
 						[
 							'action' => 'add',
-							'new' => '<ins class="diffchange">Line number 1.5.</ins>',
+							'new' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
 							'newline' => 1,
 							'count' => 1,
 						],
@@ -142,7 +142,7 @@ TEXT
 					1 => [
 						[
 							'action' => 'delete',
-							'old' => "<del class=\"diffchange\">\u{00A0}</del>",
+							'old' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
 							'oldline' => 1,
 							'count' => 1,
 						],
@@ -171,7 +171,7 @@ TEXT
 					1 => [
 						[
 							'action' => 'add',
-							'new' => "<ins class=\"diffchange\">\u{00A0}</ins>",
+							'new' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
 							'newline' => 1,
 							'count' => 1,
 						],
@@ -202,7 +202,7 @@ TEXT
 					1 => [
 						[
 							'action' => 'delete',
-							'old' => '<del class="diffchange">Line number 2.</del>',
+							'old' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
 							'oldline' => 2,
 							'count' => 1,
 						]
@@ -227,8 +227,8 @@ TEXT
 						[
 							'action' => 'delete',
 							'old' => <<<TEXT
-Just multi-line <del class="diffchange">text.</del>
-<del class="diffchange">Line number 1.5</del>.
+Just multi-line <del class="mw-twocolconflict-diffchange">text.</del>
+<del class="mw-twocolconflict-diffchange">Line number 1.5</del>.
 TEXT
 							,
 							'oldline' => 0,
@@ -236,7 +236,7 @@ TEXT
 						],
 						[
 							'action' => 'add',
-							'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
+							'new' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
 							'newline' => 0,
 							'count' => 1,
 						]
@@ -252,7 +252,7 @@ TEXT
 					3 => [
 						[
 							'action' => 'add',
-							'new' => '<ins class="diffchange">Line number 3.</ins>',
+							'new' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
 							'newline' => 2,
 							'count' => 1,
 						]
@@ -277,9 +277,9 @@ TEXT
 						[
 							'action' => 'delete',
 							'old' => <<<TEXT
-Just multi-line <del class="diffchange">text</del>.
-<del class="diffchange">To change </del>number 2.
-<del class="diffchange">To change </del>number 3.
+Just multi-line <del class="mw-twocolconflict-diffchange">text</del>.
+<del class="mw-twocolconflict-diffchange">To change </del>number 2.
+<del class="mw-twocolconflict-diffchange">To change </del>number 3.
 TEXT
 							,
 							'oldline' => 0,
@@ -287,11 +287,14 @@ TEXT
 						],
 						[
 							'action' => 'add',
-							'new' => <<<TEXT
-Just multi-line <ins class="diffchange">test</ins>.
-<ins class="diffchange">Line </ins>number 2 <ins class="diffchange">changed</ins>.
-<ins class="diffchange">Line </ins>number 3 <ins class="diffchange">also changed</ins>.
+							'new' =>
+// @codingStandardsIgnoreStart
+<<<TEXT
+Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
+<ins class="mw-twocolconflict-diffchange">Line </ins>number 2 <ins class="mw-twocolconflict-diffchange">changed</ins>.
+<ins class="mw-twocolconflict-diffchange">Line </ins>number 3 <ins class="mw-twocolconflict-diffchange">also changed</ins>.
 TEXT
+// @codingStandardsIgnoreEnd
 							,
 							'newline' => 0,
 							'count' => 3,
@@ -330,10 +333,10 @@ TEXT
 							'old' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
-Line number two. <del class="diffchange">This </del>line <del class="diffchange">is </del>quite long!
-<del class="diffchange">And that's line number three - even longer than the line before.</del>
+Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del class="mw-twocolconflict-diffchange">is </del>quite long!
+<del class="mw-twocolconflict-diffchange">And that's line number three - even longer than the line before.</del>
 \u{00A0}
-<del class="diffchange">Just another line with an empty line above</del>.
+<del class="mw-twocolconflict-diffchange">Just another line with an empty line above</del>.
 TEXT
 // @codingStandardsIgnoreEnd
 							,
@@ -345,9 +348,9 @@ TEXT
 							'new' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
-<ins class="diffchange">Add something new.</ins>
-Line number two. <ins class="diffchange">Now </ins>line <ins class="diffchange">number three and </ins>quite long!
-<ins class="diffchange">Add more new stuff</ins>.
+<ins class="mw-twocolconflict-diffchange">Add something new.</ins>
+Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins class="mw-twocolconflict-diffchange">number three and </ins>quite long!
+<ins class="mw-twocolconflict-diffchange">Add more new stuff</ins>.
 TEXT
 // @codingStandardsIgnoreEnd
 							,
@@ -386,16 +389,16 @@ TEXT
 						[
 							'action' => 'delete',
 							'old' => 'Line number two. This line is ' .
-								'<del class="diffchange">quite long</del>!',
+								'<del class="mw-twocolconflict-diffchange">quite long</del>!',
 							'oldline' => 1,
 							'count' => 1,
 						],
 						[
 							'action' => 'add',
 							'new' => <<<TEXT
-Line number two. This line is <ins class="diffchange">now a bit longer</ins>!
+Line number two. This line is <ins class="mw-twocolconflict-diffchange">now a bit longer</ins>!
 \u{00A0}
-<ins class="diffchange">And it gets even longer.</ins>
+<ins class="mw-twocolconflict-diffchange">And it gets even longer.</ins>
 \u{00A0}
 TEXT
 							,

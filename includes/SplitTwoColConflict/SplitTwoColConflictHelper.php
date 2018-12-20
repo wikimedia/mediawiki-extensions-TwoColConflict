@@ -264,8 +264,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 */
 	private function getLineBasedUnifiedDiff() {
 		$formatter = new LineBasedUnifiedDiffFormatter();
-		$formatter->insClass = ' class="mw-twocolconflict-diffchange"';
-		$formatter->delClass = ' class="mw-twocolconflict-diffchange"';
+
 		return $formatter->format(
 			new \Diff( $this->storedLines, $this->yourLines )
 		);
