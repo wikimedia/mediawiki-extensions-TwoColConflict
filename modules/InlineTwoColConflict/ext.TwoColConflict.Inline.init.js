@@ -148,7 +148,7 @@
 		}
 		OO.ui.infuse( $( '#wpSaveWidget' ) ).setDisabled( true );
 		OO.ui.infuse( $( '#wpPreviewWidget' ) ).setDisabled( true );
-		OO.ui.infuse( $( '#wpDiffWidget' ) ).setDisabled( true );
+		// OO.ui.infuse( $( '#wpDiffWidget' ) ).setDisabled( true );
 	}
 
 	function enableEditButtons() {
@@ -158,7 +158,7 @@
 		}
 		OO.ui.infuse( $( '#wpSaveWidget' ) ).setDisabled( false );
 		OO.ui.infuse( $( '#wpPreviewWidget' ) ).setDisabled( false );
-		OO.ui.infuse( $( '#wpDiffWidget' ) ).setDisabled( false );
+		// OO.ui.infuse( $( '#wpDiffWidget' ) ).setDisabled( false );
 	}
 
 	function beforeBaseVersionSelection() {
