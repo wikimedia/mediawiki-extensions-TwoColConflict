@@ -3,7 +3,6 @@
 namespace TwoColConflict\SpecialConflictTestPage;
 
 use Html;
-use Message;
 use OOUI\ButtonInputWidget;
 use TwoColConflict\SpecialPageHtmlFragment;
 
@@ -40,7 +39,7 @@ class HtmlSpecialTestTextForm extends SpecialPageHtmlFragment {
 		) .
 		( new ButtonInputWidget(
 			[
-				'label' => ( new Message( 'twocolconflict-test-text-submit' ) )->plain(),
+				'label' => $this->msg( 'twocolconflict-test-text-submit' )->plain(),
 				'type' => 'submit',
 				'flags' => [ 'primary', 'progressive' ],
 				'tabIndex' => 4
