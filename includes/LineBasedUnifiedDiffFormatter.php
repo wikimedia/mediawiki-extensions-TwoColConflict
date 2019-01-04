@@ -13,21 +13,6 @@ use WordLevelDiff;
 class LineBasedUnifiedDiffFormatter {
 
 	/**
-	 * @var int
-	 */
-	private $oldline;
-
-	/**
-	 * @var int
-	 */
-	private $newline;
-
-	/**
-	 * @var array[]
-	 */
-	private $retval;
-
-	/**
 	 * @param Diff $diff A Diff object.
 	 *
 	 * @return array[] Associative array showing lists of changes in lines of the original text.
@@ -36,48 +21,67 @@ class LineBasedUnifiedDiffFormatter {
 	 *   in the array can hold at least one delete, change or copy as well as an add action.
 	 */
 	public function format( Diff $diff ) {
-		$this->oldline = 0;
-		$this->newline = 0;
-		$this->retval = [];
+		$changes = [];
+		$oldLine = 0;
+		$newLine = 0;
 
 		foreach ( $diff->getEdits() as $edit ) {
 			switch ( $edit->getType() ) {
 				case 'add':
-					$this->addLines( $edit->getClosing() );
-					$this->newline += count( $edit->getClosing() );
+					$this->trackAdd(
+						$changes,
+						$oldLine,
+						$newLine,
+						count( $edit->getClosing() ),
+						'<ins class="mw-twocolconflict-diffchange">' .
+						$this->composeLines( $edit->getClosing() ) . '</ins>'
+					);
 					break;
+
 				case 'delete':
-					$this->deleteLines( $edit->getOrig() );
-					$this->oldline += count( $edit->getOrig() );
+					$this->trackDelete(
+						$changes,
+						$oldLine,
+						count( $edit->getOrig() ),
+						'<del class="mw-twocolconflict-diffchange">' .
+							$this->composeLines( $edit->getOrig() ) . '</del>'
+					);
 					break;
+
 				case 'change':
+					// Required because trackDelete() will (and should) increase $oldLine.
+					$originalLineNumber = $oldLine;
 					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 
-					$this->retval[$this->oldline][] = [
-						'action' => 'delete',
-						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
-						'oldline' => $this->oldline,
-						'count' => count( $edit->getOrig() ),
-					];
-					$this->retval[$this->oldline][] = [
-						'action' => 'add',
-						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
-						'newline' => $this->newline,
-						'count' => count( $edit->getClosing() ),
-					];
-
-					$this->oldline += count( $edit->getOrig() );
-					$this->newline += count( $edit->getClosing() );
+					$this->trackDelete(
+						$changes,
+						$oldLine,
+						count( $edit->getOrig() ),
+						$this->getOriginalInlineDiff( $wordLevelDiff )
+					);
+					$this->trackAdd(
+						$changes,
+						$originalLineNumber,
+						$newLine,
+						count( $edit->getClosing() ),
+						$this->getClosingInlineDiff( $wordLevelDiff )
+					);
 					break;
+
 				case 'copy':
-					$this->copyLines( $edit->getOrig() );
-					$this->oldline += count( $edit->getOrig() );
-					$this->newline += count( $edit->getOrig() );
+					$changes[$oldLine][] = [
+						'action' => 'copy',
+						'copy' => $this->composeLines( $edit->getOrig(), false ),
+						'oldline' => $oldLine,
+						'newline' => $newLine
+					];
+					$oldLine += count( $edit->getOrig() );
+					$newLine += count( $edit->getOrig() );
 					break;
 			}
 		}
 
-		return $this->retval;
+		return $changes;
 	}
 
 	/**
@@ -113,39 +117,42 @@ class LineBasedUnifiedDiffFormatter {
 	}
 
 	/**
-	 * @param string[] $lines Lines that should be marked deleted.
+	 * @param array[] &$changes
+	 * @param int &$oldLineNumber Will be increased by $lineCount
+	 * @param int $lineCount Number of source code lines in the $diffHtml
+	 * @param string $diffHtml HTML
 	 */
-	private function deleteLines( array $lines ) {
-		$this->retval[$this->oldline][] = [
+	private function trackDelete( array &$changes, &$oldLineNumber, $lineCount, $diffHtml ) {
+		$changes[$oldLineNumber][] = [
 			'action' => 'delete',
-			'old' => '<del class="mw-twocolconflict-diffchange">' . $this->composeLines( $lines ) . '</del>',
-			'oldline' => $this->oldline,
-			'count' => count( $lines ),
+			'old' => $diffHtml,
+			'oldline' => $oldLineNumber,
+			'count' => $lineCount,
 		];
+		$oldLineNumber += $lineCount;
 	}
 
 	/**
-	 * @param string[] $lines Lines that should be marked as added.
+	 * @param array[] &$changes
+	 * @param int $oldLineNumber
+	 * @param int &$newLineNumber Will be increased by $lineCount
+	 * @param int $lineCount Number of source code lines in the $diffHtml
+	 * @param string $diffHtml HTML
 	 */
-	private function addLines( array $lines ) {
-		$this->retval[$this->oldline][] = [
+	private function trackAdd(
+		array &$changes,
+		$oldLineNumber,
+		&$newLineNumber,
+		$lineCount,
+		$diffHtml
+	) {
+		$changes[$oldLineNumber][] = [
 			'action' => 'add',
-			'new' => '<ins class="mw-twocolconflict-diffchange">' . $this->composeLines( $lines ) . '</ins>',
-			'newline' => $this->newline,
-			'count' => count( $lines ),
+			'new' => $diffHtml,
+			'newline' => $newLineNumber,
+			'count' => $lineCount,
 		];
-	}
-
-	/**
-	 * @param string[] $lines Lines that should be copied.
-	 */
-	private function copyLines( array $lines ) {
-		$this->retval[$this->oldline][] = [
-			'action' => 'copy',
-			'copy' => $this->composeLines( $lines, false ),
-			'oldline' => $this->oldline,
-			'newline' => $this->newline
-		];
+		$newLineNumber += $lineCount;
 	}
 
 	/**
