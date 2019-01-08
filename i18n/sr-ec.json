@@ -12,7 +12,7 @@
 	},
 	"twocolconflict-desc": "Упоредо приказује екран за решавање сукоба измена",
 	"twocolconflict-beta-feature-message": "Сукобљене измене у две колоне",
-	"twocolconflict-beta-feature-description": "Приказ сукоба измена коришћењем напреднијег приказа у две колоне.",
+	"twocolconflict-beta-feature-description": "Приказује сукоб измена коришћењем напреднијег приказа у две колоне.",
 	"twocolconflict-explainconflict": "<strong>Упозорење:</strong> други корисник је управо уредио и објавио ову страницу. Дошло је до сукоба између Ваше и тренутне верзије. Мораћете да спојите своје промене у тренутну верзију текста. Кад кликнете на „$1“ једино ће да се објави текст који се налази у пољу уређивача.",
 	"twocolconflict-changes-col-title": "Сукобљене измене",
 	"twocolconflict-changes-col-desc-1": "Међуразлике",
