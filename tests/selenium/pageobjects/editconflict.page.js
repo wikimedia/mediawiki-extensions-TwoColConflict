@@ -43,6 +43,9 @@ class EditConflictPage extends Page {
 	get previewButton() { return browser.element( '#wpPreview' ); }
 	get diffButton() { return browser.element( '#wpDiff' ); }
 
+	get previewView() { return browser.element( '#wikiPreview' ); }
+	get previewText() { return browser.element( '#wikiPreview .mw-parser-output' ); }
+
 	hoverEditButton( column ) {
 		browser.moveToObject( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' );
 	}

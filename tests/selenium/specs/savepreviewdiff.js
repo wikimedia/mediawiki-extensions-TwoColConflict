@@ -1,7 +1,6 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
-	PreviewPage = require( '../pageobjects/preview.page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
@@ -49,12 +48,12 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			PreviewPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForVisible(),
 			'I see a preview page for my changes'
 		);
 
 		assert.strictEqual(
-			PreviewPage.previewText.getText(),
+			EditConflictPage.previewText.getText(),
 			'Line1 Change A',
 			'text preview shows correctly'
 		);
@@ -67,12 +66,12 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			PreviewPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForVisible(),
 			'I see a preview page for my changes'
 		);
 
 		assert.strictEqual(
-			PreviewPage.previewText.getText(),
+			EditConflictPage.previewText.getText(),
 			'Line1 Dummy Text',
 			'text was saved correctly'
 		);
@@ -84,19 +83,19 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			PreviewPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForVisible(),
 			'The preview appears'
 		);
 
 		assert.strictEqual(
-			PreviewPage.previewText.getText(),
+			EditConflictPage.previewText.getText(),
 			'Line1 Other, but improved',
 			'My edit appears in the preview'
 		);
 
 		assert.strictEqual(
 			EditConflictPage.getEditor( 'other' ).getValue(),
-			'Other, but improved\n',
+			'Other, but improved',
 			'I can continue the edit I started'
 		);
 	} );

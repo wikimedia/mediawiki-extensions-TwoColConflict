@@ -236,9 +236,74 @@
 		}
 	}
 
+	function showPreview( $parsed ) {
+		$( '#wikiPreview' ).remove();
+		var $html = $( 'html' );
+		var arrow = $html.attr( 'dir' ) === 'rtl' ? '←' : '→';
+
+		var $note = $( '<div>' )
+			.addClass( 'previewnote' )
+			.append(
+				$( '<h2>' )
+					.attr( 'id', 'mw-previewheader' )
+					.append( mw.msg( 'preview' ) ),
+				$( '<p>' )
+					.append(
+						mw.msg( 'previewnote' ),
+						$( '<span>' )
+							.addClass( 'mw-continue-editing' )
+							.append(
+								$( '<a>' )
+									.attr( 'href', '#editform' )
+									.append( ' ' + arrow + mw.msg( 'continue-editing' ) )
+							)
+					),
+				$( '<hr>' )
+			);
+
+		var $content = $( '<div>' )
+			.addClass( 'mw-content-' + $html.attr( 'dir' ) )
+			.attr( 'dir', $html.attr( 'dir' ) )
+			.attr( 'lang', $html.attr( 'lang' ) )
+			.append( $parsed );
+
+		var $preview = $( '<div>' )
+			.attr( 'id', 'wikiPreview' )
+			.addClass( 'ontop' );
+
+		$( '#mw-content-text' ).prepend(
+			$preview.append( $note, $content )
+		);
+
+		$( 'html, body' ).animate( { scrollTop: $( '#top' ).offset().top }, 500 );
+	}
+
+	function initPreview() {
+		var api = new mw.Api();
+		if ( api ) {
+			OO.ui.infuse( $( '#wpPreviewWidget' ) )
+				.setDisabled( false );
+
+			$( '#wpPreview' )
+				.click( function ( e ) {
+					e.preventDefault();
+
+					api.parse(
+						mw.libs.twoColConflict.split.merger(
+							$( '.mw-twocolconflict-split-row' )
+						),
+						null
+					).done( function ( $html ) {
+						showPreview( $html );
+					} );
+				} );
+		}
+	}
+
 	$( function () {
 		initColumnSelection();
 		initButtonEvents();
+		initPreview();
 		initTour();
 	} );
 
