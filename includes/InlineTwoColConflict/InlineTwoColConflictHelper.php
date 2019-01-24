@@ -142,8 +142,8 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 */
 	public function getEditFormHtmlAfterContent() {
 		// Use this time to add all of our stuff to OutputPage
-		$this->addCSS();
-		$this->addJS();
+		$this->addStyles();
+		$this->addJs();
 		$this->deactivateWikEd();
 
 		// this div is opened when encapsulating the default editor in getEditFormTextBeforeContent.
@@ -593,14 +593,14 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 		$this->out->addMeta( 'wikEdStartupFlag', '' );
 	}
 
-	private function addCSS() {
+	private function addStyles() {
 		$this->out->addModuleStyles( [
 			'ext.TwoColConflict.InlineCss',
 			'ext.TwoColConflict.Inline.HelpDialogCss',
 		] );
 	}
 
-	private function addJS() {
+	private function addJs() {
 		$this->out->addJsConfigVars( 'wgTwoColConflict', 'true' );
 		$this->out->addJsConfigVars( 'wgTwoColConflictWikiEditor', $this->wikiEditorIsEnabled() );
 		$this->out->addJsConfigVars( 'wgTwoColConflictSubmitLabel',
