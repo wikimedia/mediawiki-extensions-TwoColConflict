@@ -7,7 +7,7 @@
 	},
 	"twocolconflict": "دوکالمی‌تنازع‌ترمیم",
 	"twocolconflict-beta-feature-message": "دو کالمی تنازع ترمیم",
-	"twocolconflict-beta-feature-description": "تنازع ترمیم کے وقت مزید بہتر اور اضافی خصوصیات سے مزین دو کالمی نمائش دیکھیں",
+	"twocolconflict-beta-feature-description": "تنازع ترمیم کے وقت مزید بہتر اور اضافی خصوصیات سے مزین دو کالمی نمائش دیکھیں۔",
 	"twocolconflict-explainconflict": "<strong>انتباہ:</strong> کسی دوسرے صارف نے ابھی اس صفحے میں ترمیم کر کے اسے محفوظ کیا ہے جس کی بنا پر آپ کے نسخے اور حالیہ نسخے میں تعارض پیدا ہوگیا ہے۔ اب آپ کو اپنی تبدیلیاں موجودہ نسخے میں ضم کرنا ہوگا۔ واضح رہے کہ «$1» پر کلک کرنے سے خانہ ترمیم میں موجود متن ہی محفوظ ہوگا۔",
 	"twocolconflict-changes-col-title": "متنازع ترامیم",
 	"twocolconflict-changes-col-desc-1": "فرق",
@@ -54,10 +54,16 @@
 	"twocolconflict-test-username": "تنازع پڑتالگر",
 	"twocolconflict-test-summary-text": "آزمائشی تنازع ترمیم کا خلاصہ",
 	"twocolconflict-split-conflict-hint": "اِس بِیٹا فیچر کا استعمال کرنے کا شکریہ۔ [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View اس صفحہ پر] فیڈ بیک دے کر آپ بھی اس کی مزید بہتری میں مدد کر سکتے ہیں۔",
+	"twocolconflict-split-your-version-header": "آپ کا نسخہ",
+	"twocolconflict-split-current-version-header": "حالیہ نسخہ بمطابق $1",
 	"twocolconflict-split-not-saved-at": "اب تک شائع نہیں ہوا",
 	"twocolconflict-split-choose-version": "براہ مہربانی ایک نسخہ چُنیں",
+	"twocolconflict-split-tour-popup3-header": "نمایاں عبارت",
 	"twocolconflict-split-edit-tooltip": "متن میں ترمیم",
+	"twocolconflict-split-save-tooltip": "تبدیلیاں شائع کرکے خانہ ترمیم سے باہر نکلیں۔",
 	"twocolconflict-split-reset-tooltip": "متن ری سیٹ کریں",
 	"twocolconflict-split-reset-warning-cancel": "منسوخ",
-	"twocolconflict-split-reset-warning-accept": "مسترد"
+	"twocolconflict-split-reset-warning-accept": "مسترد",
+	"twocolconflict-split-collapse-tooltip": "عبارت چھپائیں",
+	"twocolconflict-split-expand-tooltip": "مکمل عبارت دکھائیں"
 }
