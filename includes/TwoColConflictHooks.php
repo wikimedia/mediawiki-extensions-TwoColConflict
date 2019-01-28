@@ -127,23 +127,6 @@ class TwoColConflictHooks {
 		}
 	}
 
-	public static function onEditPageShowEditFormInitial(
-		EditPage $editPage,
-		OutputPage $outputPage
-	) {
-		if ( $editPage instanceof TwoColConflictTestEditPage ||
-			$outputPage->getRequest()->getArray( 'mw-twocolconflict-side-selector' ) === null ||
-			!self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ||
-			!self::shouldUseSplitInterface( $editPage->getContext()->getRequest() )
-		) {
-			return;
-		}
-
-		if ( $editPage->formtype === 'preview' || $editPage->formtype === 'diff' ) {
-			$editPage->isConflict = true;
-		}
-	}
-
 	/**
 	 * @param EditPage &$editPage
 	 * @param array[] &$buttons
@@ -159,6 +142,7 @@ class TwoColConflictHooks {
 			$editPage->isConflict === true
 		) {
 			unset( $buttons['diff'] );
+			$buttons['preview']->setDisabled( true );
 		}
 	}
 
@@ -200,10 +184,12 @@ class TwoColConflictHooks {
 	public static function onResourceLoaderTestModules( array &$testModules, \ResourceLoader $rl ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
 			'scripts' => [
-				'tests/qunit/InlineTwoColConflict/TwoColConflict.HelpDialog.test.js'
+				'tests/qunit/InlineTwoColConflict/TwoColConflict.HelpDialog.test.js',
+				'tests/qunit/SplitTwoColConflict/TwoColConflict.Merger.test.js'
 			],
 			'dependencies' => [
-				'ext.TwoColConflict.Inline.HelpDialog'
+				'ext.TwoColConflict.Inline.HelpDialog',
+				'ext.TwoColConflict.Split.Merger'
 			],
 			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'TwoColConflict',

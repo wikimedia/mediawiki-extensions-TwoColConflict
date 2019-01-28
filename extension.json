@@ -40,9 +40,6 @@
 		"EditPageBeforeEditButtons": [
 			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons"
 		],
-		"EditPage::showEditForm:initial": [
-			"TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial"
-		],
 		"ResourceLoaderTestModules": [
 			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
 		]
@@ -197,10 +194,15 @@
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
 			],
 			"dependencies": [
+				"mediawiki.api",
 				"oojs-ui",
+				"ext.TwoColConflict.Split.Merger",
 				"ext.TwoColConflict.Split.Tour"
 			],
 			"messages": [
+				"continue-editing",
+				"preview",
+				"previewnote",
 				"twocolconflict-split-disabled-edit-tooltip"
 			]
 		},
@@ -249,6 +251,11 @@
 				"twocolconflict-split-reset-warning",
 				"twocolconflict-split-reset-warning-cancel",
 				"twocolconflict-split-reset-warning-accept"
+			]
+		},
+		"ext.TwoColConflict.Split.Merger": {
+			"scripts": [
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js"
 			]
 		}
 	},
