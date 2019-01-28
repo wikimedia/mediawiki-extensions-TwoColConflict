@@ -8,13 +8,18 @@
 		/**
 		 * @param {string} content
 		 * @param {number} lines
-		 * @param {boolean} isCopy
-		 * @param {boolean} isSelected
+		 * @param {boolean|string} selectionClass
 		 * @return {jQuery}
 		 */
-		buildColumn: function ( content, lines, isCopy, isSelected ) {
-			var $column = $( '<div>' )
-				.addClass( 'mw-twocolconflict-split-column' )
+		buildColumn: function ( content, lines, selectionClass ) {
+			if ( typeof selectionClass !== 'string' ) {
+				selectionClass = selectionClass ?
+					'mw-twocolconflict-split-selected' :
+					'mw-twocolconflict-split-unselected';
+			}
+
+			return $( '<div>' )
+				.addClass( 'mw-twocolconflict-split-column ' + selectionClass )
 				.append(
 					$( '<textarea>' )
 						.addClass( 'mw-twocolconflict-split-editor' )
@@ -25,17 +30,6 @@
 						.attr( 'name', 'mw-twocolconflict-split-linefeeds' )
 						.val( lines )
 				);
-
-			if ( isCopy === true ) {
-				$column.addClass( 'mw-twocolconflict-split-copy' );
-			} else {
-				if ( isSelected === true ) {
-					$column.addClass( 'mw-twocolconflict-split-selected' );
-				} else {
-					$column.addClass( 'mw-twocolconflict-split-unselected' );
-				}
-			}
-			return $column;
 		},
 
 		/**
@@ -59,7 +53,7 @@
 		 */
 		addRowCopy: function ( content, lines ) {
 			this.$rows.append( this.buildRow( [
-				this.buildColumn( content, lines, true, false )
+				this.buildColumn( content, lines, 'mw-twocolconflict-split-copy' )
 			] ) );
 			return this;
 		},
@@ -74,8 +68,8 @@
 		 */
 		addRowChange: function ( contentOther, contentYours, selectedOther, linesOther, linesYours ) {
 			this.$rows.append( this.buildRow( [
-				this.buildColumn( contentOther, linesOther, false, selectedOther ),
-				this.buildColumn( contentYours, linesYours, false, !selectedOther )
+				this.buildColumn( contentOther, linesOther, selectedOther ),
+				this.buildColumn( contentYours, linesYours, !selectedOther )
 			] ) );
 			return this;
 		},

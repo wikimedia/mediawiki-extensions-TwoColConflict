@@ -7,7 +7,7 @@
 	 */
 	function repeat( str, num ) {
 		var out = '';
-		for ( var i = 0; i < num; i++ ) {
+		while ( num-- ) {
 			out += str;
 		}
 		return out;
@@ -31,10 +31,10 @@
 
 					if ( line !== '' ) {
 						var $extraLineFeeds = $( $column ).find(
-							'[name^=\'mw-twocolconflict-split-linefeeds\']'
+							'[name^="mw-twocolconflict-split-linefeeds"]'
 						);
 
-						if ( $extraLineFeeds !== null ) {
+						if ( $extraLineFeeds.length ) {
 							line += repeat( '\n', $extraLineFeeds.val() );
 						}
 
