@@ -6,9 +6,11 @@
 			"JAn Dudík",
 			"Matěj Suchánek",
 			"Ilimanaq29",
-			"Martin Urbanec"
+			"Martin Urbanec",
+			"Patriccck"
 		]
 	},
+	"twocolconflict": "Dvousloupcový editační konflikt",
 	"twocolconflict-desc": "Při řešení editačního konfliktu zobrazuje slučovací obrazovku s verzemi vedle sebe",
 	"twocolconflict-beta-feature-message": "Dvousloupcový editační konflikt",
 	"twocolconflict-beta-feature-description": "Zobrazovat obrazovku editačního konfliktu pomocí vylepšeného dvousloupcového vzhledu.",
@@ -53,6 +55,12 @@
 	"twocolconflict-test-preview-submit": "Simulovat zveřejnění změn",
 	"twocolconflict-test-username": "Fiktivní uživatel TestKonflikt",
 	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace",
+	"twocolconflict-split-conflict-hint": "Děkujeme vám za používání tohoto beta nástroje. Ve vývoji můžete přispět odesláním zpětné vazby [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na této stránce].",
+	"twocolconflict-split-current-version-header": "Aktuální verze zveřejněná $1",
+	"twocolconflict-split-not-saved-at": "Zatím nezveřejněno",
+	"twocolconflict-split-choose-version": "Prosíme, vyberte verzi",
+	"twocolconflict-split-tour-dialog-header": "Vyřešit editační konflikt",
+	"twocolconflict-split-tour-dialog-message": "Nastal editační konflikt: Během vaší editace jiný uživatel stránku také upravil a zveřejnil. Stránka nyní neobsahuje vaši editaci, ale editaci jiného uživatele. Žádáme vás, abyste svou verzi sloučili s nejnovější verzí jiného uživatele.",
 	"twocolconflict-split-reset-warning": "Zahodit změny? Text se vrátí do okamžiku, kdy se editační konflikt stal.",
 	"twocolconflict-split-reset-warning-cancel": "Storno",
 	"twocolconflict-split-reset-warning-accept": "Zahodit"
