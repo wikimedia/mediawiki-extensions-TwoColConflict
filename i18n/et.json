@@ -52,7 +52,7 @@
 	"twocolconflict-split-tour-popup-btn-text": "Hästi, sain aru",
 	"twocolconflict-split-tour-popup1-header": "Lahknevaid muudatusi näidatakse ridade kaupa.",
 	"twocolconflict-split-tour-popup1-message": "Kui sinu tekst ja teise kasutaja tekst erinevad, siis näidatakse kaht versiooni kõrvuti: teise kasutaja versioon vasakul kollases kastis ja sinu versioon paremal sinises kastis.<br /><br />Kui erinevused puuduvad, siis näidatakse ridu hallis kastis. Neid saab avada või sulgeda ning redigeerida, kui vaja.",
-	"twocolconflict-split-tour-popup2-header": "Vali, millsed muudatused alles jätta",
+	"twocolconflict-split-tour-popup2-header": "Vali, millised muudatused alles jätta",
 	"twocolconflict-split-tour-popup2-message": "Vali, milline versioon tekstist alles jätta. Selleks klõpsa iga reapaari juures üht kahest nupust. Pärast versiooni valimist saad seda redigeerida, kui klõpsad pliiatsiikooni. Samuti on võimalik kopeerida teksti versioonist, mida sa ei valinud, kui kasutad kopeerimiseks ja kleepimiseks klaviatuuri kiirklahve või paremat hiireklahvi.<br /><br />Pead iga muudetud rea kohta valima ühe versiooni, et liidetud tekst salvestada.",
 	"twocolconflict-split-tour-popup3-header": "Esiletõstetud tekst",
 	"twocolconflict-split-tour-popup3-message": "Emmas-kummas versioonis muudetud tekst on esile tõstetud. Pärast redigeerimist kaob esiletõst.",
