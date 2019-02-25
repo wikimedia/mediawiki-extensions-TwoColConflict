@@ -8,7 +8,8 @@
 			"A2093064",
 			"Hanyanbo98",
 			"夢蝶葬花",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"Yfdyh000"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -67,7 +68,7 @@
 	"twocolconflict-split-conflict-hint": "感谢您使用此测试版功能。 如果您在[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 此页面]上留下反馈，您可以帮助进一步改进它。",
 	"twocolconflict-split-your-version-header": "您的更改",
 	"twocolconflict-split-current-version-header": "$1的最新版本",
-	"twocolconflict-split-not-saved-at": "尚未出版",
+	"twocolconflict-split-not-saved-at": "尚未发布",
 	"twocolconflict-split-choose-version": "请选择一个版本",
 	"twocolconflict-split-tour-dialog-header": "解决编辑冲突",
 	"twocolconflict-split-tour-dialog-message": "您当前遇到了编辑冲突：在编辑期间，其他用户也编辑了此页面并保存了该页面。您的当前版本现在不包含最新的编辑。我们恳请您将您的版本与现在最新版本的其他用户合并。",
