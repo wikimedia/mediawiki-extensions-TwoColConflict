@@ -13,5 +13,10 @@
 	"twocolconflict-label-hide": "قام کردن",
 	"twocolconflict-previous-dialog": "دیندایی",
 	"twocolconflict-next-dialog": "نیایی",
-	"twocolconflict-close-dialog": "بٱسدن"
+	"twocolconflict-close-dialog": "بٱسدن",
+	"twocolconflict-test-title-submit": "دیاری کردن آلشدکاری بٱلگاْ",
+	"twocolconflict-test-title-not-existing": "چونو بٱلگاْیی ڤا چونو داسونی نیڌ",
+	"twocolconflict-split-your-version-header": "ڤانیٱری ایسا",
+	"twocolconflict-split-tour-popup-btn-text": "خوئاْ، گرهڌوم.",
+	"twocolconflict-split-edit-tooltip": "آلشدکاری متن"
 }
