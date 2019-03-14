@@ -48,6 +48,7 @@
 	"twocolconflict-next-dialog": "Następny",
 	"twocolconflict-close-dialog": "Zamknij",
 	"twocolconflict-test-needsbeta": "Musisz włączyć funkcję eksperymentalną „Dwukolumnowe wyświetlanie konfliktu edycji” w swoich preferencjach, aby móc użyć tej strony specjalnej.",
+	"twocolconflict-test-page-title": "Konflikt edycji: Symulacja",
 	"twocolconflict-test-title-submit": "Pokaż stronę edycji",
 	"twocolconflict-test-title-not-existing": "Nie ma strony o tym tytule.",
 	"twocolconflict-test-no-direct-editing": "Tej strony nie można edytować bezpośrednio.",
