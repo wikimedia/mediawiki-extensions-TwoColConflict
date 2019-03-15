@@ -75,14 +75,14 @@ class EditConflictPage extends Page {
 	toggleHelpDialog( show ) {
 		var hide = show === false;
 
-		browser.pause( 300 ); // wait for mw JS to load
-
 		return browser.execute( function ( hide ) {
-			// eslint-disable-next-line no-undef
-			return ( new mw.Api() ).saveOption(
-				'userjs-twocolconflict-hide-help-dialogue',
-				hide ? '1' : '0'
-			);
+			/* global mw */
+			return mw.loader.using( 'mediawiki.api' ).then( function () {
+				return new mw.Api().saveOption(
+					'userjs-twocolconflict-hide-help-dialogue',
+					hide ? '1' : '0'
+				);
+			} );
 		}, hide );
 	}
 
