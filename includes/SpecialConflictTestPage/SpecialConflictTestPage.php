@@ -90,7 +90,7 @@ class SpecialConflictTestPage extends SpecialPage {
 			return;
 		}
 
-		if ( $request->getVal( 'mw-twocolconflict-test-text' ) === null ) {
+		if ( !$request->getCheck( 'mw-twocolconflict-test-text' ) ) {
 			$this->showHintBox( $this->msg( 'twocolconflict-test-edit-hint' )->parse() );
 
 			$this->showChangeText(
