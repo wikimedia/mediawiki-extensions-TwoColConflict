@@ -25,7 +25,7 @@ class SplitConflictMerger {
 
 		foreach ( $contentRows as $num => $row ) {
 			if ( is_array( $sideSelection ) ) {
-				$side = isset( $sideSelection[$num] ) ? $sideSelection[$num] : 'copy';
+				$side = $sideSelection[$num] ?? 'copy';
 			} else {
 				$side = isset( $row['copy'] ) ? 'copy' : $sideSelection;
 			}
