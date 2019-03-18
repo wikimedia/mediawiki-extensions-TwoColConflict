@@ -64,6 +64,9 @@
 			"scripts": [
 				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.init.js"
 			],
+			"styles": [
+				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.css"
+			],
 			"dependencies": [
 				"ext.TwoColConflict.Settings",
 				"ext.TwoColConflict.Inline.AutoScroll",
@@ -113,11 +116,6 @@
 			],
 			"dependencies": [
 				"oojs-ui"
-			]
-		},
-		"ext.TwoColConflict.Inline.BaseVersionSelectorCss": {
-			"styles": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.css"
 			]
 		},
 		"ext.TwoColConflict.Inline.HelpDialog": {
