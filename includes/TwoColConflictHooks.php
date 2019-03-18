@@ -119,8 +119,8 @@ class TwoColConflictHooks {
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
-					'baseRevisionId' => ( $baseRevision ? $baseRevision->getId() : 0 ),
-					'latestRevisionId' => ( $latestRevision ? $latestRevision->getId() : 0 ),
+					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
+					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
 					'textUser' => $editPage->textbox2,
 				]
 			);
@@ -128,12 +128,12 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * @param EditPage &$editPage
+	 * @param EditPage $editPage
 	 * @param array[] &$buttons
 	 * @param int &$tabindex
 	 */
 	public static function onEditPageBeforeEditButtons(
-		EditPage &$editPage,
+		EditPage $editPage,
 		array &$buttons,
 		&$tabindex
 	) {
