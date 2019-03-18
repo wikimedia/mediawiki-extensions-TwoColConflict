@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Fitoschido"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -72,5 +73,6 @@
 	"twocolconflict-split-tour-popup2-message": "Seleiciona que versión del testu desees caltenner pulsiando n'unu de los dos botones ente cada par de llinies. Cuando tengas seleicionada una versión, puedes editala pulsiando nel iconu del llápiz. Tamién ye posible copiar testu de la versión que nun seleicionasti usando la función copiar y apegar del to tecláu o col botón derechu del mur.<br /><br />Necesites seleicionar una versión pa cada llinia cambiada pa guardar el testu fusionáu.",
 	"twocolconflict-split-tour-popup3-header": "Testu resaltáu",
 	"twocolconflict-split-tour-popup3-message": "El testu que cambió en cualquier versión d'una llinia ta resaltáu. Después de qu'edites el testu, el resaltáu desapaecerá.",
-	"twocolconflict-split-edit-tooltip": "Editar testu"
+	"twocolconflict-split-edit-tooltip": "Editar testu",
+	"twocolconflict-split-reset-warning-cancel": "Encaboxar"
 }
