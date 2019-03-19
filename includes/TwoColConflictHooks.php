@@ -129,7 +129,7 @@ class TwoColConflictHooks {
 
 	/**
 	 * @param EditPage $editPage
-	 * @param array[] &$buttons
+	 * @param array &$buttons
 	 * @param int &$tabindex
 	 */
 	public static function onEditPageBeforeEditButtons(

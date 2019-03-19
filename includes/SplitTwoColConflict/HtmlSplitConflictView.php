@@ -279,7 +279,7 @@ class HtmlSplitConflictView {
 	 * @return string HTML
 	 */
 	private function buildSideSelector( $rowNum ) {
-		$side = isset( $this->sideSelection[$rowNum] ) ? $this->sideSelection[$rowNum] : '';
+		$side = $this->sideSelection[$rowNum] ?? '';
 
 		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
