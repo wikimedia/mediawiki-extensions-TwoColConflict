@@ -62,16 +62,23 @@
 		},
 		"ext.TwoColConflict.Inline.initJs": {
 			"scripts": [
+				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.js",
 				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.init.js"
 			],
 			"styles": [
 				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.css"
 			],
+			"messages": [
+				"twocolconflict-base-selection-dialog-text",
+				"twocolconflict-base-selection-foreign-label",
+				"twocolconflict-base-selection-own-label",
+				"twocolconflict-base-selection-submit-label"
+			],
 			"dependencies": [
 				"ext.TwoColConflict.Settings",
 				"ext.TwoColConflict.Inline.AutoScroll",
-				"ext.TwoColConflict.Inline.BaseVersionSelector",
-				"ext.TwoColConflict.Inline.HelpDialog"
+				"ext.TwoColConflict.Inline.HelpDialog",
+				"oojs-ui"
 			]
 		},
 		"ext.TwoColConflict.Settings": {
@@ -102,20 +109,6 @@
 		"ext.TwoColConflict.Inline.AutoScroll": {
 			"scripts": [
 				"modules/InlineTwoColConflict/ext.TwoColConflict.AutoScroll.js"
-			]
-		},
-		"ext.TwoColConflict.Inline.BaseVersionSelector": {
-			"scripts": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.js"
-			],
-			"messages": [
-				"twocolconflict-base-selection-dialog-text",
-				"twocolconflict-base-selection-own-label",
-				"twocolconflict-base-selection-foreign-label",
-				"twocolconflict-base-selection-submit-label"
-			],
-			"dependencies": [
-				"oojs-ui"
 			]
 		},
 		"ext.TwoColConflict.Inline.HelpDialog": {
