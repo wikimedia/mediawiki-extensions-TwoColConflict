@@ -41,7 +41,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		$this->getOutput()->setPageTitle( $this->msg( 'twocolconflict-test-page-title' ) );
 		$request = $this->getRequest();
 
-		if ( $request->getVal( 'wpPreview' ) != null || $request->getVal( 'wpDiff' ) != null ) {
+		if ( $request->getCheck( 'wpPreview' ) || $request->getCheck( 'wpDiff' ) ) {
 			$this->showHintBoxRaw( $this->msg( 'twocolconflict-test-preview-hint' )->parse() );
 
 			$title = Title::newFromText( $request->getVal( 'mw-twocolconflict-title' ) );

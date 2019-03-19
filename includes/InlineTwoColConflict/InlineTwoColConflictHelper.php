@@ -90,18 +90,17 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 	 */
 	public function getExplainHeader() {
 		// don't show conflict message when coming from VisualEditor
-		if ( $this->out->getRequest()->getVal( 'veswitched' ) !== "1" ) {
-			return Html::rawElement(
-				'div',
-				[ 'class' => 'mw-twocolconflict-explainconflict warningbox' ],
-				$this->out->msg(
-					'twocolconflict-explainconflict',
-					$this->out->msg( $this->submitLabel )->text()
-				)->parse()
-			);
-		} else {
+		if ( $this->out->getRequest()->getRawVal( 'veswitched' ) === '1' ) {
 			return '';
 		}
+
+		return Html::rawElement(
+			'div',
+			[ 'class' => 'mw-twocolconflict-explainconflict warningbox' ],
+			$this->out->msg( 'twocolconflict-explainconflict' )
+				->plaintextParams( $this->out->msg( $this->submitLabel )->text() )
+				->parse()
+		);
 	}
 
 	/**
