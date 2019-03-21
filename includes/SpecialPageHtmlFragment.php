@@ -83,6 +83,7 @@ abstract class SpecialPageHtmlFragment implements MessageLocalizer {
 
 	/**
 	 * @see MessageLocalizer::msg
+	 * @suppress PhanCommentParamWithoutRealParam issue with $params
 	 *
 	 * @param string|string[]|\MessageSpecifier $key
 	 * @param mixed $params,... Any number of message parameters
