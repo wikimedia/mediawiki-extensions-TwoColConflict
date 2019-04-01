@@ -86,7 +86,10 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	prepareEditConflict() {
+	prepareEditConflict( conflictUser, conflictUserPassword ) {
+		browser.call( function () {
+			return Api.createAccount( conflictUser, conflictUserPassword );
+		} );
 		UserLoginPage.loginAdmin();
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );

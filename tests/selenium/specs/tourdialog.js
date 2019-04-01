@@ -1,19 +1,15 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 describe( 'TwoColConflict', function () {
-	var conflictUser,
+	let conflictUser,
 		conflictUserPassword;
 
 	before( function () {
 		conflictUser = Util.getTestString( 'User-' );
 		conflictUserPassword = Util.getTestString();
-		browser.call( function () {
-			Api.createAccount( conflictUser, conflictUserPassword );
-		} );
-		EditConflictPage.prepareEditConflict();
+		EditConflictPage.prepareEditConflict( conflictUser, conflictUserPassword );
 	} );
 
 	describe( 'initial viewing', function () {
