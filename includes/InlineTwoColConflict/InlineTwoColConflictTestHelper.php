@@ -17,7 +17,7 @@ class InlineTwoColConflictTestHelper extends InlineTwoColConflictHelper {
 	/**
 	 * Generate text for mocked conflicting revision text
 	 */
-	public function setUpConflictingTestText() {
+	private function setUpConflictingTestText() {
 		$this->conflictingTestText = RandomChangesGenerator::generateRandomlyChangedText(
 			$this->storedversion
 		);

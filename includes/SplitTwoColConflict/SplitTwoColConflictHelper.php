@@ -136,7 +136,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @return RevisionRecord
 	 */
-	public function getRevisionRecord() {
+	private function getRevisionRecord() {
 		$wikiPage = WikiPage::factory( $this->title );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( 'fromdbmaster' );
@@ -155,7 +155,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return OutputPage
 	 */
-	public function getOutput() {
+	private function getOutput() {
 		return $this->out;
 	}
 
