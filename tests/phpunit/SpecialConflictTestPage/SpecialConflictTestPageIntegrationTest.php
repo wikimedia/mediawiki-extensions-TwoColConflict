@@ -4,7 +4,6 @@ namespace TwoColConflict\Tests\SpecialConflictTestPage;
 
 use FauxRequest;
 use HamcrestPHPUnitIntegration;
-use MWNamespace;
 use SpecialPage;
 use SpecialPageTestBase;
 use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
@@ -41,7 +40,6 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		$this->mergeMwGlobalArrayValue( 'wgContentHandlers', [
 			'testing' => 'DummyContentHandlerForTesting',
 		] );
-		MWNamespace::clearCaches();
 		// and a page inside it
 		$this->insertPage( 'Dummy', '', 12312 );
 
