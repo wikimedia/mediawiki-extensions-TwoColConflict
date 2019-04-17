@@ -249,8 +249,6 @@ del.mw-twocolconflict-diffchange {
 	right: 0;
 	background-image: -webkit-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 	background-image: -moz-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
-	background-image: -ms-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
-	background-image: -o-linear-gradient( right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 	background-image: linear-gradient( to left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 }
 
@@ -258,8 +256,6 @@ del.mw-twocolconflict-diffchange {
 	left: 0;
 	background-image: -webkit-linear-gradient( left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 	background-image: -moz-linear-gradient( left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
-	background-image: -ms-linear-gradient( left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
-	background-image: -o-linear-gradient( left, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 	background-image: linear-gradient( to right, rgba( 226, 226, 226, 1 ), rgba( 226, 226, 226, 0 ) );
 }
 
