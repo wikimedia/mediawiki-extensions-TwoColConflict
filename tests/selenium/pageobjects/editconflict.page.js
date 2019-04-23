@@ -129,9 +129,9 @@ class EditConflictPage extends Page {
 				startText
 			);
 		} );
-		browser.pause( 300 ); // make sure Api edit is finished
 
 		EditPage.openForEditing( title );
+		EditPage.content.waitForVisible();
 
 		browser.call( function () {
 			let bot = new MWBot();
@@ -144,7 +144,6 @@ class EditConflictPage extends Page {
 				return bot.edit( title, otherText, `Changed content to "${otherText}"` );
 			} );
 		} );
-		browser.pause( 300 ); // make sure bot edit is finished
 
 		EditPage.content.setValue( yourText );
 		EditPage.save.click();
