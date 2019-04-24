@@ -13,11 +13,9 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.prepareEditConflict( conflictUser, conflictUserPassword );
 	} );
 
-	beforeEach( function () {
-		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
-	} );
-
 	it( 'should resolve the conflict successfully', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
@@ -28,6 +26,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
 		EditConflictPage.yourParagraphSelection.click();
 		EditConflictPage.getEditButton( 'your' ).click();
 		EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text' );
@@ -41,6 +41,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'should show a preview page', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
 		EditConflictPage.previewButton.click();
 
 		assert(
@@ -56,6 +58,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'should show a correct preview page when unsaved edits in selected paragraphs are present', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
 		EditConflictPage.yourParagraphSelection.click();
 		EditConflictPage.getEditButton( 'your' ).click();
 		EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text' );
@@ -74,6 +78,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'should be possible to edit and preview the left ("other") side', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getEditor( 'other' ).setValue( 'Other, but improved' );
 		EditConflictPage.previewButton.click();
@@ -93,6 +99,30 @@ describe( 'TwoColConflict', function () {
 			EditConflictPage.getEditor( 'other' ).getValue(),
 			'Other, but improved',
 			'I can continue the edit I started'
+		);
+	} );
+
+	it( 'editor should not decode html entities', function () {
+		EditConflictPage.createConflict(
+			conflictUser,
+			conflictUserPassword,
+			'α\n&beta;',
+			'α\n&gamma; <span lang="de">A</span>',
+			'α\n&gamma; <span lang="en">B</span>'
+		);
+
+		EditConflictPage.getEditButton( 'other' ).click();
+
+		assert.strictEqual(
+			EditConflictPage.getEditor().getValue(),
+			'α\n',
+			'unchanged text editor did not decode html entities'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.getEditor( 'other' ).getValue(),
+			'&gamma; <span lang="de">A</span>\n',
+			'selectable text editor did not decode html entities'
 		);
 	} );
 

@@ -31,18 +31,20 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		// inputs inspired by the LineBasedUnifiedDiffFormatterTest
 		return [
 			[
-				[ 'row', 'copy', 'Just text.' ],
+				[ 'row', 'copy', 'Old 1' ],
 				[
 					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just text.',
+							'oldline' => 0,
+							'count' => 1,
 						]
 					],
 				],
 			],
 			[
-				[ 'row', 'delete', '1', 'select', 'add', 'a' ],
+				[ 'row', 'delete', 'Old 1', 'select', 'add', 'New 1' ],
 				[
 					[
 						[
@@ -62,15 +64,17 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 			],
 			[
 				[
-					'row', 'copy', 'Just multi-line text.',
-					'row', 'delete', '', 'select', 'add', 'b',
-					'row', 'copy', 'Line number 2.'
+					'row', 'copy', 'Old 1',
+					'row', 'delete', '', 'select', 'add', 'New 2',
+					'row', 'copy', 'Old 2'
 				],
 				[
 					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just multi-line text.',
+							'oldline' => 0,
+							'count' => 1,
 						]
 					],
 					[
@@ -83,15 +87,17 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
+							'oldline' => 1,
+							'count' => 1,
 						]
 					]
 				],
 			],
 			[
 				[
-					'row', 'delete', '1', 'select', 'add', 'a',
-					'row', 'copy', 'Line number 2.',
-					'row', 'delete', '', 'select', 'add', 'c'
+					'row', 'delete', 'Old 1', 'select', 'add', 'New 1',
+					'row', 'copy', 'Old 2',
+					'row', 'delete', '', 'select', 'add', 'New 3'
 				],
 				[
 					[
@@ -117,6 +123,8 @@ TEXT
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
+							'oldline' => 1,
+							'count' => 1,
 						]
 					],
 					[
@@ -143,8 +151,8 @@ TEXT
 			[]
 		) )->getHtml(
 			$diff,
-			str_split( 'abcde' ),
-			str_split( '12345' )
+			[ 'New 1', 'New 2', 'New 3', 'New 4', 'New 5' ],
+			[ 'Old 1', 'Old 2', 'Old 3', 'Old 4', 'Old 5' ]
 		);
 
 		$this->assertElementsPresentInOrder(

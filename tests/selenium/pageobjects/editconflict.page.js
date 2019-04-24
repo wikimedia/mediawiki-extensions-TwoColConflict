@@ -98,31 +98,27 @@ class EditConflictPage extends Page {
 
 	showSimpleConflict( conflictUser, conflictUserPassword ) {
 		this.createConflict(
-			Util.getTestString( 'conflict-title-' ),
 			conflictUser,
 			conflictUserPassword,
 			'Line1\nLine2',
 			'Line1\nChange <span lang="de">A</span>',
 			'Line1\nChange <span lang="en">B</span>'
 		);
-
-		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
 
 	showBigConflict( conflictUser, conflictUserPassword ) {
 		this.createConflict(
-			Util.getTestString( 'conflict-title-' ),
 			conflictUser,
 			conflictUserPassword,
 			'Line1\nLine2\nLine3\nline4',
 			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
 		);
-
-		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
 
-	createConflict( title, conflictUser, conflictUserPassword, startText, otherText, yourText ) {
+	createConflict( conflictUser, conflictUserPassword, startText, otherText, yourText ) {
+		const title = Util.getTestString( 'conflict-title-' );
+
 		browser.call( function () {
 			return Api.edit(
 				title,
@@ -147,6 +143,8 @@ class EditConflictPage extends Page {
 
 		EditPage.content.setValue( yourText );
 		EditPage.save.click();
+
+		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
 }
 
