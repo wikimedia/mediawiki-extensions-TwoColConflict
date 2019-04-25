@@ -43,7 +43,7 @@ class LineBasedUnifiedDiffFormatter {
 						$this->oldLine,
 						count( $edit->getClosing() ),
 						'<ins class="mw-twocolconflict-diffchange">' .
-						$this->composeLines( $edit->getClosing() ) . '</ins>'
+							$this->composeLines( $edit->getClosing() ) . '</ins>'
 					);
 					break;
 
@@ -79,7 +79,9 @@ class LineBasedUnifiedDiffFormatter {
 				case 'copy':
 					$changes[$this->oldLine][] = [
 						'action' => 'copy',
-						'copy' => $this->composeLines( $edit->getOrig(), false ),
+						// TODO: The "copy" element is not used in split mode, and can be removed
+						// when the inline mode is gone.
+						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
 						'oldline' => $this->oldLine,
 						'count' => count( $edit->getOrig() ),
 					];
@@ -217,32 +219,17 @@ class LineBasedUnifiedDiffFormatter {
 
 	/**
 	 * @param string[] $lines Lines that should be composed.
-	 * @param boolean $replaceEmptyLine
 	 *
 	 * @return string HTML
 	 */
-	private function composeLines( array $lines, $replaceEmptyLine = true ) {
-		$result = [];
-		foreach ( $lines as $line ) {
-			$line = htmlspecialchars( $line );
-			$result[] = $this->replaceEmptyLine( $line, $replaceEmptyLine );
-		}
-		return implode( "\n", $result );
-	}
-
-	/**
-	 * Replace empty lines with a no-break space
-	 *
-	 * @param string $line Lines that should be altered.
-	 * @param boolean $replaceEmptyLine
-	 *
-	 * @return string
-	 */
-	private function replaceEmptyLine( $line, $replaceEmptyLine = true ) {
-		if ( $line === '' && $replaceEmptyLine ) {
-			$line = "\u{00A0}";
-		}
-		return $line;
+	private function composeLines( array $lines ) {
+		return htmlspecialchars( implode( "\n", array_map(
+			function ( $line ) {
+				// Replace empty lines with a non-breaking space
+				return $line === '' ? "\u{00A0}" : $line;
+			},
+			$lines
+		) ) );
 	}
 
 }
