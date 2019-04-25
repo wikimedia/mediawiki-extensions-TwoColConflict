@@ -98,8 +98,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param string $storedversion
 	 */
 	public function setTextboxes( $yourtext, $storedversion ) {
-		$contentRows = $this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' );
-		$extraLineFeeds = $this->out->getRequest()->getArray( 'mw-twocolconflict-split-linefeeds' );
+		$request = $this->out->getRequest();
+		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
+		$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' );
 
 		// The incoming $yourtext is already merged, possibly containing paragraphs from both sides.
 		// If we can, we restore the users original submission.
@@ -148,15 +149,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		}
 
 		return $revision->getRevisionRecord();
-	}
-
-	/**
-	 * FIXME: This also looks like it is to generic, and can be replaced with more specific getters
-	 *
-	 * @return OutputPage
-	 */
-	private function getOutput() {
-		return $this->out;
 	}
 
 	/**
@@ -211,12 +203,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	public function getEditFormHtmlAfterContent() {
-		$this->out->addModuleStyles( [
-			'ext.TwoColConflict.SplitCss',
-		] );
-		$this->out->addModules( [
-			'ext.TwoColConflict.SplitJs',
-		] );
+		$this->out->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
+		$this->out->addModules( 'ext.TwoColConflict.SplitJs' );
 		return '';
 	}
 
@@ -226,21 +214,22 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	private function buildEditConflictView() {
-		$unifiedDiff = $this->getLineBasedUnifiedDiff();
+		$user = $this->out->getUser();
+		$language = $this->out->getLanguage();
 
 		$out = ( new HtmlSplitConflictHeader(
 			$this->getRevisionRecord(),
-			$this->getOutput()->getUser(),
-			$this->getOutput()->getLanguage(),
+			$user,
+			$language,
 			false,
 			$this->newEditSummary
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
-			$this->out->getUser(),
-			$this->out->getLanguage(),
+			$user,
+			$language,
 			$this->out->getRequest()->getArray( 'mw-twocolconflict-side-selector' ) ?: []
 		) )->getHtml(
-			$unifiedDiff,
+			$this->getLineBasedUnifiedDiff(),
 			$this->yourLines,
 			$this->storedLines
 		);
