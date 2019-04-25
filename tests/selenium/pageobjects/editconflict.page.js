@@ -130,6 +130,8 @@ class EditConflictPage extends Page {
 			);
 		} );
 
+		browser.pause( 500 ); // make sure Api edit is finished
+
 		EditPage.openForEditing( title );
 		EditPage.content.waitForVisible();
 
@@ -144,6 +146,7 @@ class EditConflictPage extends Page {
 				return bot.edit( title, otherText, `Changed content to "${otherText}"` );
 			} );
 		} );
+		browser.pause( 500 ); // make sure Api edit is finished
 
 		EditPage.content.setValue( yourText );
 		EditPage.save.click();
