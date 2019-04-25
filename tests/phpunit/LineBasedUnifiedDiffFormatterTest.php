@@ -434,16 +434,84 @@ TEXT
 
 	public function provideFormatWithMarkup() {
 		return [
-			[
+			'copy' => [
 				'before' => 'Text with [markup] <references />.',
 				'after' => 'Text with [markup] <references />.',
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Text with [markup] &lt;references /&gt;.',
 							'oldline' => 0,
 							'newline' => 0,
+						]
+					]
+				],
+			],
+			'delete' => [
+				'before' => "Copied <b>text</b>.\nText with [markup] <references />.",
+				'after' => 'Copied <b>text</b>.',
+				'result' => [
+					[
+						[
+							'action' => 'copy',
+							'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+							'oldline' => 0,
+							'newline' => 0,
+						]
+					],
+					[
+						[
+							'action' => 'delete',
+							'old' => '<del class="mw-twocolconflict-diffchange">' .
+								'Text with [markup] &lt;references /&gt;.</del>',
+							'oldline' => 1,
+							'count' => 1,
+						]
+					]
+				],
+			],
+			'add' => [
+				'before' => 'Copied <b>text</b>.',
+				'after' => "Copied <b>text</b>.\nText with [markup] <references />.",
+				'result' => [
+					[
+						[
+							'action' => 'copy',
+							'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+							'oldline' => 0,
+							'newline' => 0,
+						]
+					],
+					[
+						[
+							'action' => 'add',
+							'new' => '<ins class="mw-twocolconflict-diffchange">' .
+								'Text with [markup] &lt;references /&gt;.</ins>',
+							'newline' => 1,
+							'count' => 1,
+						]
+					]
+				],
+			],
+			'change' => [
+				'before' => 'Test with [markup] <references />.',
+				'after' => 'Text with [markup] <references />.',
+				'result' => [
+					[
+						[
+							'action' => 'delete',
+							'old' => '<del class="mw-twocolconflict-diffchange">' .
+								'Test </del>with [markup] &lt;references /&gt;.',
+							'oldline' => 0,
+							'count' => 1,
+						],
+						[
+							'action' => 'add',
+							'new' => '<ins class="mw-twocolconflict-diffchange">' .
+								'Text </ins>with [markup] &lt;references /&gt;.',
+							'newline' => 0,
+							'count' => 1,
 						]
 					]
 				],
