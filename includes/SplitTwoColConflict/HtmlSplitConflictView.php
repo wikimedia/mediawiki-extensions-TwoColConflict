@@ -98,7 +98,7 @@ class HtmlSplitConflictView {
 						);
 
 						$out .= $this->startRow( $currRowNum );
-						$out .= $this->buildCopiedLine( $changeSet['copy'], $rawText, $currRowNum );
+						$out .= $this->buildCopiedLine( $rawText, $currRowNum );
 						$out .= $this->endRow();
 						$currRowNum++;
 						break;
@@ -136,11 +136,11 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildCopiedLine( $diffHtml, $rawText, $rowNum ) {
+	private function buildCopiedLine( $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'copy' )
+			$this->buildEditableTextContainer( htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy' )
 		);
 	}
 
