@@ -65,7 +65,7 @@
 	"twocolconflict-split-not-saved-at": "Noch nicht veröffentlicht",
 	"twocolconflict-split-choose-version": "Bitte eine Version auswählen",
 	"twocolconflict-split-tour-dialog-header": "Bearbeitungskonflikte auflösen",
-	"twocolconflict-split-tour-dialog-message": "Es gibt einen Bearbeitungskonflikt: Während deiner Bearbeitung hat ein anderer Benutzer ebenfalls die Seite bearbeitet und gespeichert. Deine Version enthält nicht die aktuellsten Bearbeitungen. Wir bitten dich daher, deine Version mit der derzeit aktuellen Version des anderen Benutzers zusammenzuführen.",
+	"twocolconflict-split-tour-dialog-message": "Leider bist du in einen Bearbeitungskonflikt geraten: Während deiner Bearbeitung hat ein anderer Benutzer ebenfalls die Seite bearbeitet und abgespeichert. Deine Version ist jetzt veraltet, da sie nicht die Bearbeitungen des anderen Benutzers enthält. Führe bitte deine Bearbeitungen auf der nächsten Seite zusammen.",
 	"twocolconflict-split-tour-dialog-btn-text": "Mit der Zusammenführung beginnen",
 	"twocolconflict-split-tour-popup-btn-text": "Okay, verstanden.",
 	"twocolconflict-split-tour-popup1-header": "Unterschiedliche Änderungen werden Zeile für Zeile angezeigt.",
