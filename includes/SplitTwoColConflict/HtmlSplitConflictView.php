@@ -92,8 +92,13 @@ class HtmlSplitConflictView {
 						$currRowNum++;
 						break;
 					case 'copy':
+						$rawText = implode(
+							"\n",
+							array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] )
+						);
+
 						$out .= $this->startRow( $currRowNum );
-						$out .= $this->buildCopiedLine( $changeSet['copy'], $currRowNum );
+						$out .= $this->buildCopiedLine( $changeSet['copy'], $rawText, $currRowNum );
 						$out .= $this->endRow();
 						$currRowNum++;
 						break;
@@ -131,12 +136,11 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildCopiedLine( $diffHtml, $rowNum ) {
+	private function buildCopiedLine( $diffHtml, $rawText, $rowNum ) {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			// FIXME: Why does this get an HTML espaced string in the $rawText field?
-			$this->buildEditableTextContainer( $diffHtml, $diffHtml, $rowNum, 'copy' )
+			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'copy' )
 		);
 	}
 
@@ -193,7 +197,7 @@ class HtmlSplitConflictView {
 	private function buildTextEditor( $editorText, $rowNum, $changeType ) {
 		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
 
-		return Html::rawElement(
+		return Html::element(
 			'textarea',
 			[
 				'class' => $class . ' mw-twocolconflict-split-editor',

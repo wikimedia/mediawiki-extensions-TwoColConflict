@@ -38,7 +38,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 							'action' => 'copy',
 							'copy' => 'Just text.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						]
 					]
 				],
@@ -101,7 +101,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Just multi-line text.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						],
 					],
 					1 => [
@@ -115,7 +115,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
 							'oldline' => 1,
-							'newline' => 2,
+							'count' => 1,
 						]
 					]
 				],
@@ -136,7 +136,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Delete the empty line below.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						],
 					],
 					1 => [
@@ -165,7 +165,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Add an empty line below.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						],
 					],
 					1 => [
@@ -196,7 +196,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => "Just multi-line text.\nLine number 1.5.",
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 2,
 						],
 					],
 					1 => [
@@ -246,7 +246,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
 							'oldline' => 2,
-							'newline' => 1,
+							'count' => 1,
 						],
 					],
 					3 => [
@@ -324,7 +324,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						],
 					],
 					1 => [
@@ -382,7 +382,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						],
 					],
 					1 => [
@@ -411,7 +411,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Line number three.',
 							'oldline' => 2,
-							'newline' => 3,
+							'count' => 1,
 						]
 					],
 				],
@@ -443,7 +443,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Text with [markup] &lt;references /&gt;.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						]
 					]
 				],
@@ -457,7 +457,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						]
 					],
 					[
@@ -480,7 +480,7 @@ TEXT
 							'action' => 'copy',
 							'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
 							'oldline' => 0,
-							'newline' => 0,
+							'count' => 1,
 						]
 					],
 					[

@@ -81,7 +81,7 @@ class LineBasedUnifiedDiffFormatter {
 						'action' => 'copy',
 						'copy' => $this->composeLines( $edit->getOrig(), false ),
 						'oldline' => $this->oldLine,
-						'newline' => $this->newLine
+						'count' => count( $edit->getOrig() ),
 					];
 					$this->oldLine += count( $edit->getOrig() );
 					$this->newLine += count( $edit->getOrig() );
