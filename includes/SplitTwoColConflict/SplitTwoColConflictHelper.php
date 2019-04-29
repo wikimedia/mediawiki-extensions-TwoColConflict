@@ -4,12 +4,9 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MediaWiki\EditPage\TextConflictHelper;
-use MediaWiki\Revision\RevisionRecord;
 use OutputPage;
 use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
-use UnexpectedValueException;
-use WikiPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -135,23 +132,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
-	 * @return RevisionRecord
-	 */
-	private function getRevisionRecord() {
-		$wikiPage = WikiPage::factory( $this->title );
-		/** @see https://phabricator.wikimedia.org/T203085 */
-		$wikiPage->loadPageData( 'fromdbmaster' );
-		$revision = $wikiPage->getRevision();
-
-		if ( !$revision ) {
-			throw new UnexpectedValueException( 'The title "' . $this->title->getPrefixedText() .
-				'" does not refer to an existing page' );
-		}
-
-		return $revision->getRevisionRecord();
-	}
-
-	/**
 	 * Replace default header for explaining the conflict screen.
 	 *
 	 * @return string
@@ -218,7 +198,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$language = $this->out->getLanguage();
 
 		$out = ( new HtmlSplitConflictHeader(
-			$this->getRevisionRecord(),
+			$this->title,
 			$user,
 			$language,
 			false,

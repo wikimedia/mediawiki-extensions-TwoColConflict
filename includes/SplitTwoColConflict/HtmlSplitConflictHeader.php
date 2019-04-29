@@ -5,6 +5,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 use Html;
 use Language;
 use Linker;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use User;
@@ -17,7 +18,12 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class HtmlSplitConflictHeader {
 
 	/**
-	 * @var RevisionRecord
+	 * @var LinkTarget
+	 */
+	private $linkTarget;
+
+	/**
+	 * @var RevisionRecord|null
 	 */
 	private $revision;
 
@@ -42,25 +48,40 @@ class HtmlSplitConflictHeader {
 	private $newEditSummary;
 
 	/**
-	 * @param RevisionRecord $revision
+	 * @param LinkTarget $linkTarget
 	 * @param User $user
 	 * @param Language $language
 	 * @param string|int|false $now Any value the ConvertibleTimestamp class accepts. False for the
 	 *  current time
 	 * @param string $newEditSummary
+	 * @param RevisionRecord|null $revision Latest revision for testing, derived from the
+	 *  $linkTarget otherwise.
 	 */
 	public function __construct(
-		RevisionRecord $revision,
+		LinkTarget $linkTarget,
 		User $user,
 		Language $language,
 		$now,
-		$newEditSummary
+		$newEditSummary,
+		RevisionRecord $revision = null
 	) {
-		$this->revision = $revision;
+		$this->linkTarget = $linkTarget;
+		$this->revision = $revision ?? $this->getLatestRevision();
 		$this->user = $user;
 		$this->language = $language;
 		$this->now = new ConvertibleTimestamp( $now );
 		$this->newEditSummary = $newEditSummary;
+	}
+
+	/**
+	 * @return RevisionRecord|null
+	 */
+	private function getLatestRevision() {
+		$wikiPage = \WikiPage::factory( \Title::newFromLinkTarget( $this->linkTarget ) );
+		/** @see https://phabricator.wikimedia.org/T203085 */
+		$wikiPage->loadPageData( 'fromdbmaster' );
+		$revision = $wikiPage->getRevision();
+		return $revision ? $revision->getRevisionRecord() : null;
 	}
 
 	/**
@@ -91,16 +112,23 @@ class HtmlSplitConflictHeader {
 	}
 
 	private function buildCurrentVersionHeader() {
-		$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );
-		$summary = $comment ? $comment->text : '';
+		$dateTime = wfMessage( 'just-now' )->text();
+		$userTools = '';
+		$summary = '';
+
+		if ( $this->revision ) {
+			$dateTime = $this->getFormattedDateTime( $this->revision->getTimestamp() );
+			$userTools = Linker::revUserTools( new \Revision( $this->revision ) );
+
+			$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );
+			if ( $comment ) {
+				$summary = $comment->text;
+			}
+		}
 
 		return $this->buildVersionHeader(
-			wfMessage(
-				'twocolconflict-split-current-version-header',
-				$this->getFormattedDateTime()
-			),
-			wfMessage( 'twocolconflict-split-saved-at' )
-				->rawParams( $this->getLastRevUserLink() ),
+			wfMessage( 'twocolconflict-split-current-version-header', $dateTime ),
+			wfMessage( 'twocolconflict-split-saved-at' )->rawParams( $userTools ),
 			$summary,
 			'mw-twocolconflict-split-current-version-header'
 		);
@@ -134,9 +162,8 @@ class HtmlSplitConflictHeader {
 			Html::rawElement( 'span', [], $userMsg->escaped() );
 
 		if ( $summary !== '' ) {
-			$title = $this->revision->getPageAsLinkTarget();
 			$summaryMsg = wfMessage( 'parentheses' )
-				->rawParams( Linker::formatComment( $summary, $title ) );
+				->rawParams( Linker::formatComment( $summary, $this->linkTarget ) );
 			$html .= Html::element( 'br' ) .
 				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
 		}
@@ -145,18 +172,11 @@ class HtmlSplitConflictHeader {
 	}
 
 	/**
-	 * @return string HTML
-	 */
-	private function getLastRevUserLink() {
-		/** @suppress PhanDeprecatedClass Linker::revUserTools shouldn't need a Revision, but does */
-		return Linker::revUserTools( new \Revision( $this->revision ) );
-	}
-
-	/**
+	 * @param string $timestamp
+	 *
 	 * @return string
 	 */
-	private function getFormattedDateTime() {
-		$timestamp = $this->revision->getTimestamp();
+	private function getFormattedDateTime( $timestamp ) {
 		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $this->now );
 
 		if ( $diff->days ) {
