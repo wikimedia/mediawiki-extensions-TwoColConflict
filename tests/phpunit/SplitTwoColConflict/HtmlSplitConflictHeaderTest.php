@@ -49,6 +49,10 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			'(twocolconflict-split-current-version-header: (just-now))' );
 		$this->assertTagExistsWithTextContents( $html, 'span',
 			'(twocolconflict-split-saved-at: )' );
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(twocolconflict-split-your-version-header)' );
+		$this->assertTagExistsWithTextContents( $html, 'span',
+			'(twocolconflict-split-not-saved-at)' );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
@@ -58,7 +62,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Language::factory( 'qqx' ),
 			$this->now,
 			'',
-			$this->newRevisionRecord( '20180721234200', '' )
+			$this->newRevisionRecord( '20180721234200' )
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -77,7 +81,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Language::factory( 'qqx' ),
 			$this->now,
 			'',
-			$this->newRevisionRecord( $ninetyMinutesAgo, '' )
+			$this->newRevisionRecord( $ninetyMinutesAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -93,7 +97,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Language::factory( 'qqx' ),
 			$this->now,
 			'',
-			$this->newRevisionRecord( $ninetySecondsAgo, '' )
+			$this->newRevisionRecord( $ninetySecondsAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -109,7 +113,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Language::factory( 'qqx' ),
 			$this->now,
 			'',
-			$this->newRevisionRecord( $twoSecondsAgo, '' )
+			$this->newRevisionRecord( $twoSecondsAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
@@ -140,18 +144,14 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( $timestamp, $editSummary ) {
+	private function newRevisionRecord( $timestamp, $editSummary = '' ) {
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
 			->willReturn( $this->otherUser );
 		$revision->method( 'getTimestamp' )
 			->willReturn( $timestamp );
-
-		$comment = $this->createMock( \CommentStoreComment::class );
-		$comment->text = $editSummary;
 		$revision->method( 'getComment' )
-			->willReturn( $comment );
-
+			->willReturn( $editSummary ? (object)[ 'text' => $editSummary ] : null );
 		return $revision;
 	}
 
