@@ -17,22 +17,18 @@ use User;
  */
 class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
+	const NOW = 1000000000;
+
 	/**
 	 * @var User
 	 */
 	private $otherUser;
-
-	/**
-	 * @var int
-	 */
-	private $now;
 
 	public function setUp() {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
 		$this->otherUser = $this->getTestUser()->getUser();
-		$this->now = 1000000000;
 	}
 
 	public function testConflictOnNewPage() {
@@ -40,7 +36,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			''
 		);
 		$html = $htmlHeader->getHtml();
@@ -60,7 +56,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			'',
 			$this->newRevisionRecord( '20180721234200' )
 		);
@@ -74,12 +70,12 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testGetHtml2HoursAgo() {
-		$ninetyMinutesAgo = $this->now - 90 * 60;
+		$ninetyMinutesAgo = self::NOW - 90 * 60;
 		$htmlHeader = new HtmlSplitConflictHeader(
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			'',
 			$this->newRevisionRecord( $ninetyMinutesAgo )
 		);
@@ -90,12 +86,12 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testGetHtml2MinutesAgo() {
-		$ninetySecondsAgo = $this->now - 90;
+		$ninetySecondsAgo = self::NOW - 90;
 		$htmlHeader = new HtmlSplitConflictHeader(
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			'',
 			$this->newRevisionRecord( $ninetySecondsAgo )
 		);
@@ -106,12 +102,12 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testGetHtml2SecondsAgo() {
-		$twoSecondsAgo = $this->now - 2;
+		$twoSecondsAgo = self::NOW - 2;
 		$htmlHeader = new HtmlSplitConflictHeader(
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			'',
 			$this->newRevisionRecord( $twoSecondsAgo )
 		);
@@ -126,9 +122,9 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			Language::factory( 'qqx' ),
-			$this->now,
+			self::NOW,
 			'Conflicting edit summary',
-			$this->newRevisionRecord( $this->now, 'Latest revision summary' )
+			$this->newRevisionRecord( self::NOW, 'Latest revision summary' )
 		);
 		$html = $htmlHeader->getHtml();
 
