@@ -67,7 +67,7 @@
 	"twocolconflict-split-not-saved-at": "Ainda não publicada",
 	"twocolconflict-split-choose-version": "Selecione uma versão, por favor",
 	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edição",
-	"twocolconflict-split-tour-dialog-message": "Ocorreu um conflito entre edições: durante a sua edição, um outro utilizador também editou a mesma página e gravou a edição. A sua versão atual não inclui as edições mais recentes. Solicitamos que funda a sua versão atual com a versão do outro utilizador que é agora a mais recente.",
+	"twocolconflict-split-tour-dialog-message": "Infelizmente, ocorreu um conflito entre edições: durante a sua edição, outro utilizador também editou a mesma página e gravou a edição. A sua versão está agora desatualizada porque não inclui as edições do outro utilizador. Funda a sua edição na página seguinte, por favor.",
 	"twocolconflict-split-tour-dialog-btn-text": "Iniciar fusão",
 	"twocolconflict-split-tour-popup-btn-text": "Entendido.",
 	"twocolconflict-split-tour-popup1-header": "As mudanças divergentes são mostradas linha a linha.",

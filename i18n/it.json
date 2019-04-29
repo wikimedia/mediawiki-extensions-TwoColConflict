@@ -5,7 +5,8 @@
 			"Selven",
 			"Fringio",
 			"Ontsed",
-			"Martinligabue"
+			"Martinligabue",
+			"Senpremì"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -67,7 +68,7 @@
 	"twocolconflict-split-not-saved-at": "Non ancora pubblicato",
 	"twocolconflict-split-choose-version": "Seleziona una versione",
 	"twocolconflict-split-tour-dialog-header": "Risolvi i conflitti di modifiche",
-	"twocolconflict-split-tour-dialog-message": "Sembra che tu abbia avuto un conflitto di modifiche: durante la tua modifica un altro utente ha modificato la pagina e ha salvato le sue modifiche. Ora la tua versione non include le ultime modifiche. Ti chiediamo di unire la tua versione con quella attuale.",
+	"twocolconflict-split-tour-dialog-message": "Sembra che tu abbia avuto un conflitto di modifiche: durante la tua modifica un altro utente ha apportato delle modifiche alla pagina e le ha salvate. Ora la tua versione non è aggiornata perché non include le modifiche dell'altro utente. Ti chiediamo di unire le tue modifiche nella pagina successiva.",
 	"twocolconflict-split-tour-dialog-btn-text": "Inizia l'unione",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, capito.",
 	"twocolconflict-split-tour-popup1-header": "Le modifiche differenti vengono mostrate linea per linea.",

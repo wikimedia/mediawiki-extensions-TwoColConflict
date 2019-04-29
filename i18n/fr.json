@@ -70,7 +70,7 @@
 	"twocolconflict-split-not-saved-at": "Non encore publié",
 	"twocolconflict-split-choose-version": "Veuillez choisir une version",
 	"twocolconflict-split-tour-dialog-header": "Résoudre les conflits d'édition",
-	"twocolconflict-split-tour-dialog-message": "Vous êtes confronté à un conflit d’édition: lors de votre modification, un autre utilisateur a également modifié la page et l’a enregistrée. Votre version n'inclut pas les dernières modifications. Nous vous demandons de bien vouloir fusionner votre version avec la dernière version de l'autre utilisateur.",
+	"twocolconflict-split-tour-dialog-message": "Malheureusement, vous êtes confronté à un conflit d’édition: lors de votre modification, un autre utilisateur a également modifié la page et l’a enregistrée. Votre version est donc obsolète car elle n'inclut pas les modifications des autres utilisateurs. Veuillez fusionner vos modifications sur la page suivante.",
 	"twocolconflict-split-tour-dialog-btn-text": "Démarrer la fusion",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, j'ai compris.",
 	"twocolconflict-split-tour-popup1-header": "Les modifications divergentes sont présentées ligne par ligne.",

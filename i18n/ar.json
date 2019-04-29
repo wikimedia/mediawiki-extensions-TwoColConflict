@@ -67,7 +67,7 @@
 	"twocolconflict-split-not-saved-at": "لم يتم النشر بعد",
 	"twocolconflict-split-choose-version": "يُرجَى اختيار نسخة",
 	"twocolconflict-split-tour-dialog-header": "حل تضاربات التحرير",
-	"twocolconflict-split-tour-dialog-message": "حدث أنك تواجه مشكلة تعارض في التعديل: أثناء التعديل، قام مستخدم آخر أيضا بتحرير الصفحة وحفظها; إصدارك الآن لا يتضمن أحدث التعديلات; نطلب منك دمج إصدارك مع الإصدار الأحدث الآن من المستخدم الآخر.",
+	"twocolconflict-split-tour-dialog-message": "لسوء الحظ، واجهت تعارضا في التعديل: أثناء التعديل، قام مستخدم آخر أيضا بتحرير الصفحة وحفظها، إصدارك الآن قديم لأنه لا يتضمن تعديلات المستخدم الآخر، يُرجَى دمج تعديلاتك في الصفحة التالية.",
 	"twocolconflict-split-tour-dialog-btn-text": "بدء الدمج",
 	"twocolconflict-split-tour-popup-btn-text": "فهمت",
 	"twocolconflict-split-tour-popup1-header": "يتم عرض التغييرات المتباينة سطرا سطرا.",
