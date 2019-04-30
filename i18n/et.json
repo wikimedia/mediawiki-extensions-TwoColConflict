@@ -47,7 +47,7 @@
 	"twocolconflict-split-not-saved-at": "Pole veel avaldatud",
 	"twocolconflict-split-choose-version": "Palun vali versioon",
 	"twocolconflict-split-tour-dialog-header": "Redigeerimiskonflikti lahendamine",
-	"twocolconflict-split-tour-dialog-message": "Sattusid redigeerimiskonflikti. Sel ajal, kui lehekülge redigeerisid, tegi muudatusi ka teine kasutaja, kes salvestas enda muudatused. Sinu versioonist puuduvad nüüd viimased muudatused. Palun liida enda versioon teise kasutaja viimaseid muudatusi sisaldava versiooniga.",
+	"twocolconflict-split-tour-dialog-message": "Kahjuks sattusid redigeerimiskonflikti. Sel ajal, kui lehekülge redigeerisid, tegi muudatusi ka teine kasutaja, kes salvestas enda muudatused. Sinu versioon on nüüd vananenud, sest sellest puuduvad teise kasutaja muudatused. Palun liida enda muudatused järgmisel leheküljel.",
 	"twocolconflict-split-tour-dialog-btn-text": "Alustan liitmist",
 	"twocolconflict-split-tour-popup-btn-text": "Hästi, sain aru",
 	"twocolconflict-split-tour-popup1-header": "Lahknevaid muudatusi näidatakse ridade kaupa.",
