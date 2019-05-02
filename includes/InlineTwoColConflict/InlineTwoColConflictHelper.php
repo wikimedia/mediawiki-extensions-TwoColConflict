@@ -38,7 +38,7 @@ class InlineTwoColConflictHelper extends TextConflictHelper {
 
 		$wikiPage = WikiPage::factory( $title );
 		/** @see https://phabricator.wikimedia.org/T203085 */
-		$wikiPage->loadPageData( 'fromdbmaster' );
+		$wikiPage->loadPageData( WikiPage::READ_LATEST );
 		$this->revision = $wikiPage->getRevision();
 
 		if ( !$this->revision ) {

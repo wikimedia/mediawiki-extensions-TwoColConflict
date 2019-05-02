@@ -79,7 +79,7 @@ class HtmlSplitConflictHeader {
 	private function getLatestRevision() {
 		$wikiPage = \WikiPage::factory( \Title::newFromLinkTarget( $this->linkTarget ) );
 		/** @see https://phabricator.wikimedia.org/T203085 */
-		$wikiPage->loadPageData( 'fromdbmaster' );
+		$wikiPage->loadPageData( \WikiPage::READ_LATEST );
 		$revision = $wikiPage->getRevision();
 		return $revision ? $revision->getRevisionRecord() : null;
 	}
