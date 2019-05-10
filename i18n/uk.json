@@ -3,7 +3,8 @@
 		"authors": [
 			"Piramidion",
 			"Movses",
-			"Vlad5250"
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -65,7 +66,7 @@
 	"twocolconflict-split-not-saved-at": "Ще не опубліковано",
 	"twocolconflict-split-choose-version": "Виберіть версію",
 	"twocolconflict-split-tour-dialog-header": "Вирішуйте конфлікти редагувань",
-	"twocolconflict-split-tour-dialog-message": "Схоже, що у Вас виник конфлікт редагувань: поки Ви редагували, інший користувач теж відредагував цю сторінку та зберіг її. Тепер Ваша версія не містить останніх змін. Ми дуже Вас просимо об'єднати Вашу версію з тепер вже найновішою версією того іншого користувача.",
+	"twocolconflict-split-tour-dialog-message": "На жаль, ви наткнулися на конфлікт редагувань: поки Ви редагували, інший користувач теж відредагував цю сторінку та зберіг її. Тепер Ваша версія застаріла, бо не містить змін іншого користувача. Будь ласка, об'єднайте свої редагування на наступній сторінці.",
 	"twocolconflict-split-tour-dialog-btn-text": "Почати об'єднання",
 	"twocolconflict-split-tour-popup-btn-text": "Гаразд, зрозуміло.",
 	"twocolconflict-split-tour-popup1-header": "Відмінності між версіями показано рядок у рядок.",
