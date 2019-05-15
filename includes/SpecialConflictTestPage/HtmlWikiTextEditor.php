@@ -7,6 +7,9 @@ use Html;
 use TwoColConflict\SpecialPageHtmlFragment;
 
 /**
+ * TODO: It might be worth extracting this class to a library or MediaWiki core, because a duplicate
+ * already exists in \FileImporter\Html\WikitextEditor.
+ *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
