@@ -9,7 +9,8 @@
 			"Hanyanbo98",
 			"夢蝶葬花",
 			"A Chinese Wikipedian",
-			"Yfdyh000"
+			"Yfdyh000",
+			"科劳"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -71,7 +72,7 @@
 	"twocolconflict-split-not-saved-at": "尚未发布",
 	"twocolconflict-split-choose-version": "请选择一个版本",
 	"twocolconflict-split-tour-dialog-header": "解决编辑冲突",
-	"twocolconflict-split-tour-dialog-message": "您当前遇到了编辑冲突：在编辑期间，其他用户也编辑了此页面并保存了该页面。您的当前版本现在不包含最新的编辑。我们恳请您将您的版本与现在最新版本的其他用户合并。",
+	"twocolconflict-split-tour-dialog-message": "编辑冲突：在编辑期间，其他用户已经编辑并保存了此页面；因此，您刚刚完成编辑的版本，并未包含其他用户的更改。请在更新后的页面上合并您的更改。",
 	"twocolconflict-split-tour-dialog-btn-text": "开始合并",
 	"twocolconflict-split-tour-popup-btn-text": "好的，明白了",
 	"twocolconflict-split-tour-popup1-header": "分散显示不同的变化。",
