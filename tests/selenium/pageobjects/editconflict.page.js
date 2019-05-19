@@ -94,6 +94,13 @@ class EditConflictPage extends Page {
 		BetaPreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );
 		this.enforceSplitEditConflict();
+
+		browser.execute( function () {
+			/* global mw */
+			return mw.loader.using( 'mediawiki.api' ).then( function () {
+				return new mw.Api().saveOption( 'visualeditor-hidebetawelcome', '1' );
+			} );
+		} );
 	}
 
 	showSimpleConflict( conflictUser, conflictUserPassword ) {
