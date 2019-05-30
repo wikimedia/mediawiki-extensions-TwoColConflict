@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"twocolconflict-changes-col-title": "Konfliktantaj ŝanĝoj",
+	"twocolconflict-changes-col-desc-1": "Diferenco inter",
+	"twocolconflict-history-link": "historio de redaktoj",
+	"twocolconflict-base-selection-own-label": "Mia teksto",
+	"twocolconflict-base-selection-foreign-label": "La aktuala publikigita versio",
+	"twocolconflict-base-selection-submit-label": "Bone",
+	"twocolconflict-diffchange-own-title": "en via versio",
+	"twocolconflict-diffchange-foreign-title": "en versio far $1",
+	"twocolconflict-label-show": "montri",
+	"twocolconflict-label-hide": "kaŝi",
+	"twocolconflict-label-show-unchanged": "montri neŝanĝitan tekston",
+	"twocolconflict-label-hide-unchanged": "kaŝi neŝanĝitan tekston",
+	"twocolconflict-show-help-tooltip": "Montri helpan tekston",
+	"twocolconflict-previous-dialog": "Antaŭen",
+	"twocolconflict-next-dialog": "Sekven",
+	"twocolconflict-close-dialog": "Fermi",
+	"twocolconflict-test-title-submit": "Montri redaktan paĝon",
+	"twocolconflict-test-title-not-existing": "Estas neniu paĝo kun tiu titolo.",
+	"twocolconflict-test-text-submit": "Krei konflikton",
+	"twocolconflict-split-your-version-header": "Via ŝanĝo",
+	"twocolconflict-split-not-saved-at": "Ne jam publikigita",
+	"twocolconflict-split-choose-version": "Bonvolu elekti version",
+	"twocolconflict-split-reset-warning-cancel": "Nuligi",
+	"twocolconflict-split-reset-warning-accept": "Forĵeti"
+}
