@@ -68,13 +68,27 @@ class EditConflictPage extends Page {
 		} );
 	}
 
+	waitForMediawiki() {
+		// Word of caution: browser.waitUntil returns a Timer class NOT a Promise.
+		// Webdriver IO will run waitUntil synchronously so not returning it will
+		// block JavaScript execution while returning it will not.
+		// http://webdriver.io/api/utility/waitUntil.html
+		// https://github.com/webdriverio/webdriverio/blob/master/lib/utils/Timer.js
+		browser.waitUntil( () => {
+			const result = browser.execute( () => {
+				return typeof mw !== 'undefined';
+			} );
+			return result.value;
+		}, 10000, 'mediawiki module did not load' );
+	}
+
 	/**
 	 * @param {boolean} [show] Defaults to true.
      * @return {Promise} Promise from the mw.Api request
 	 */
 	toggleHelpDialog( show ) {
 		var hide = show === false;
-
+		this.waitForMediawiki();
 		return browser.execute( function ( hide ) {
 			/* global mw */
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
