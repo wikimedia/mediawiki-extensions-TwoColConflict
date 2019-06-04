@@ -68,18 +68,20 @@ class EditConflictPage extends Page {
 		} );
 	}
 
-	waitForMediawiki() {
-		// Word of caution: browser.waitUntil returns a Timer class NOT a Promise.
-		// Webdriver IO will run waitUntil synchronously so not returning it will
-		// block JavaScript execution while returning it will not.
-		// http://webdriver.io/api/utility/waitUntil.html
-		// https://github.com/webdriverio/webdriverio/blob/master/lib/utils/Timer.js
+	/**
+	 * Wait for a given module to reach a specific state
+	 * @param {string} moduleName The name of the module to wait for
+	 * @param {string} moduleStatus 'registered', 'loaded', 'loading', 'ready', 'error', 'missing'
+	 * @param {int} timeout The wait time in milliseconds before the wait fails
+	 */
+	waitForModuleState( moduleName, moduleStatus = 'ready', timeout = 2000 ) {
 		browser.waitUntil( () => {
-			const result = browser.execute( () => {
-				return typeof mw !== 'undefined';
-			} );
+			const result = browser.execute( ( module ) => {
+				return typeof mw !== 'undefined' &&
+					mw.loader.getState( module.name ) === module.status;
+			}, { status: moduleStatus, name: moduleName } );
 			return result.value;
-		}, 10000, 'mediawiki module did not load' );
+		}, timeout, 'Failed to wait for ' + moduleName + ' to be ' + moduleStatus + ' after ' + timeout + ' ms.' );
 	}
 
 	/**
@@ -88,7 +90,8 @@ class EditConflictPage extends Page {
 	 */
 	toggleHelpDialog( show ) {
 		var hide = show === false;
-		this.waitForMediawiki();
+		this.waitForModuleState( 'mediawiki.base' );
+
 		return browser.execute( function ( hide ) {
 			/* global mw */
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
