@@ -9,8 +9,12 @@
 		"OO": false
 	},
 	"rules": {
+		// TODO recheck with the old interface code gone
+		"no-jquery/no-slide": "off",
+		"no-jquery/no-animate": "off",
+		"no-jquery/no-event-shorthand": "off",
+		"no-jquery/no-global-selector": "off",
 		"vars-on-top": "off",
-		"one-var": "off",
-		"max-len": "off"
+		"one-var": "off"
 	}
 }

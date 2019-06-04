@@ -66,7 +66,13 @@
 		 * @param {number} linesYours
 		 * @return {ConflictBuilder}
 		 */
-		addRowChange: function ( contentOther, contentYours, selectedOther, linesOther, linesYours ) {
+		addRowChange: function (
+			contentOther,
+			contentYours,
+			selectedOther,
+			linesOther,
+			linesYours
+		) {
 			this.$rows.append( this.buildRow( [
 				this.buildColumn( contentOther, linesOther, selectedOther ),
 				this.buildColumn( contentYours, linesYours, !selectedOther )
