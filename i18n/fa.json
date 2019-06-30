@@ -66,7 +66,7 @@
 	"twocolconflict-split-not-saved-at": "هنوز منتشر نشده‌است",
 	"twocolconflict-split-choose-version": "لطفا یک نسخه را انتخاب کنید",
 	"twocolconflict-split-tour-dialog-header": "حل تعارض‌های ویرایشی",
-	"twocolconflict-split-tour-dialog-message": "تعارض ویرایشی رخ داده‌است: در زمان ویرایش شما یک کاربر دیگر صفحه را ویرایش و ذخیره کرده‌است. نسخهٔ شما آخرین تغییرات را ندارد. از شما درخواست می‌کنیم که لطفاً تغییراتتان را با نسخهٔ موجود ادغام کنید.",
+	"twocolconflict-split-tour-dialog-message": "متاسفانه تعارض ویرایشی رخ داده‌است: در زمان ویرایش شما یک کاربر دیگر صفحه را ویرایش و ذخیره کرده‌است. نسخهٔ شما آخرین تغییرات را ندارد چون تغییرات کاربران دیگر در آن دیده نمی‌شود. از شما درخواست می‌کنیم که لطفاً تغییراتتان را با نسخهٔ موجود ادغام کنید.",
 	"twocolconflict-split-tour-dialog-btn-text": "شروع ادغام",
 	"twocolconflict-split-tour-popup-btn-text": "باشد، گرفتم",
 	"twocolconflict-split-tour-popup1-header": "تغییرات افتراقی به‌صورت خط‌به‌خط نمایش داده می‌شوند.",

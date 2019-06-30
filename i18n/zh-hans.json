@@ -10,7 +10,8 @@
 			"夢蝶葬花",
 			"A Chinese Wikipedian",
 			"Yfdyh000",
-			"科劳"
+			"科劳",
+			"神樂坂秀吉"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -87,5 +88,7 @@
 	"twocolconflict-split-reset-tooltip": "重置文本",
 	"twocolconflict-split-reset-warning": "放弃更改？您的文本将被重置为编辑冲突发生时的内容。",
 	"twocolconflict-split-reset-warning-cancel": "取消",
-	"twocolconflict-split-reset-warning-accept": "舍弃"
+	"twocolconflict-split-reset-warning-accept": "舍弃",
+	"twocolconflict-split-collapse-tooltip": "折叠文字",
+	"twocolconflict-split-expand-tooltip": "展开文字"
 }
