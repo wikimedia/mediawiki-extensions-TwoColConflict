@@ -32,7 +32,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	 */
 	public function execute( $subPage ) {
 		if ( !$this->isInBetaAndEnabled() ) {
-			$this->showWarningBox( $this->msg( 'twocolconflict-test-needsbeta' )->parse() );
+			$this->showWarningBox( $this->msg( 'twocolconflict-test-needsbeta' )->text() );
 			return;
 		}
 
@@ -75,7 +75,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		if ( $testTitle === null || !$testTitle->exists() ) {
 			$this->showHintBox( $this->msg( 'twocolconflict-test-initial-hint' )->parse() );
 
-			$this->showWarningBox( $this->msg( 'twocolconflict-test-title-not-existing' ) );
+			$this->showWarningBox( $this->msg( 'twocolconflict-test-title-not-existing' )->text() );
 			$this->showLoadTitle();
 			return;
 		}
@@ -85,7 +85,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		if ( !$testArticle->getContentHandler()->supportsDirectEditing() ) {
 			$this->showHintBox( $this->msg( 'twocolconflict-test-initial-hint' )->parse() );
 
-			$this->showWarningBox( $this->msg( 'twocolconflict-test-no-direct-editing' ) );
+			$this->showWarningBox( $this->msg( 'twocolconflict-test-no-direct-editing' )->text() );
 			$this->showLoadTitle();
 			return;
 		}
