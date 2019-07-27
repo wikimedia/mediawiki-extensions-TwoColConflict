@@ -15,6 +15,7 @@
 	"twocolconflict-label-hide": "скриване",
 	"twocolconflict-label-unchanged": "непроменен текст",
 	"twocolconflict-show-help-tooltip": "Показване на помощна информация",
+	"twocolconflict-next-dialog": "Следваща",
 	"twocolconflict-close-dialog": "Затваряне",
 	"twocolconflict-split-tour-popup1-message": "Когато има разлики между текста Ви и този на другия потребител, двете версии се показват един до друг (Вашата в синята кутия дясно, а другата в жълтата ляво).<br /><br />Когато няма разлики между двете версии, редовете се показват в сиви полета. Те могат да бъдат разгръщани и свивани и, ако е необходимо, редактирани.",
 	"twocolconflict-split-tour-popup2-header": "Изберете кои промени да запазите",
