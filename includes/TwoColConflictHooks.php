@@ -121,7 +121,10 @@ class TwoColConflictHooks {
 			$editPage->isConflict === true
 		) {
 			unset( $buttons['diff'] );
-			$buttons['preview']->setDisabled( true );
+			// T230152
+			if ( isset( $buttons['preview'] ) ) {
+				$buttons['preview']->setDisabled( true );
+			}
 		}
 	}
 
