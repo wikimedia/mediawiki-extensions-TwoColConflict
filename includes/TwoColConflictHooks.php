@@ -5,12 +5,10 @@ namespace TwoColConflict;
 use EditPage;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
-use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictHelper;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
-use WebRequest;
 
 /**
  * Hook handlers for the TwoColConflict extension.
@@ -36,14 +34,6 @@ class TwoColConflictHooks {
 		return true;
 	}
 
-	private static function shouldUseSplitInterface( WebRequest $request ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		return ( !$config->get( 'TwoColConflictUseInline' ) ||
-			$request->getCookie( 'mw-twocolconflict-split-ui', '' ) ) &&
-			!$request->getCookie( 'mw-twocolconflict-inline-ui', '' );
-	}
-
 	/**
 	 * @param EditPage $editPage
 	 */
@@ -58,26 +48,15 @@ class TwoColConflictHooks {
 			return;
 		}
 
-		if ( !self::shouldUseSplitInterface( $editPage->getContext()->getRequest() ) ) {
-			$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-				return new InlineTwoColConflictHelper(
-					$editPage->getTitle(),
-					$editPage->getContext()->getOutput(),
-					MediaWikiServices::getInstance()->getStatsdDataFactory(),
-					$submitButtonLabel
-				);
-			} );
-		} else {
-			$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-				return new SplitTwoColConflictHelper(
-					$editPage->getTitle(),
-					$editPage->getContext()->getOutput(),
-					MediaWikiServices::getInstance()->getStatsdDataFactory(),
-					$submitButtonLabel,
-					$editPage->summary
-				);
-			} );
-		}
+		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+			return new SplitTwoColConflictHelper(
+				$editPage->getTitle(),
+				$editPage->getContext()->getOutput(),
+				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$submitButtonLabel,
+				$editPage->summary
+			);
+		} );
 	}
 
 	public static function onImportFormData( EditPage $editPage, \WebRequest $request ) {
@@ -184,11 +163,9 @@ class TwoColConflictHooks {
 	public static function onResourceLoaderTestModules( array &$testModules, \ResourceLoader $rl ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
 			'scripts' => [
-				'tests/qunit/InlineTwoColConflict/TwoColConflict.HelpDialog.test.js',
 				'tests/qunit/SplitTwoColConflict/TwoColConflict.Merger.test.js'
 			],
 			'dependencies' => [
-				'ext.TwoColConflict.Inline.HelpDialog',
 				'ext.TwoColConflict.Split.Merger'
 			],
 			'localBasePath' => dirname( __DIR__ ),

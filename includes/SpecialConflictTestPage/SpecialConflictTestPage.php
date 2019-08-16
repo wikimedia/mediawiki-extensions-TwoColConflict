@@ -7,7 +7,6 @@ use Html;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Title;
-use TwoColConflict\InlineTwoColConflict\InlineTwoColConflictTestHelper;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
 
@@ -45,11 +44,6 @@ class SpecialConflictTestPage extends SpecialPage {
 			$this->showHintBoxRaw( $this->msg( 'twocolconflict-test-preview-hint' )->parse() );
 
 			$title = Title::newFromText( $request->getVal( 'mw-twocolconflict-title' ) );
-
-			if ( $this->config->get( 'TwoColConflictUseInline' ) ) {
-				$this->showPreview( $title, $request->getVal( 'wpTextbox1' ) );
-				return;
-			}
 
 			$this->showPreview(
 				$title,
@@ -158,22 +152,13 @@ class SpecialConflictTestPage extends SpecialPage {
 
 	private function showConflict( Article $article ) {
 		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
-			if ( $this->config->get( 'TwoColConflictUseInline' ) ) {
-				return new InlineTwoColConflictTestHelper(
-					$article->getTitle(),
-					$article->getContext()->getOutput(),
-					MediaWikiServices::getInstance()->getStatsdDataFactory(),
-					$submitButtonLabel
-				);
-			} else {
-				return new SplitTwoColConflictTestHelper(
-					$article->getTitle(),
-					$article->getContext()->getOutput(),
-					MediaWikiServices::getInstance()->getStatsdDataFactory(),
-					$submitButtonLabel,
-					''
-				);
-			}
+			return new SplitTwoColConflictTestHelper(
+				$article->getTitle(),
+				$article->getContext()->getOutput(),
+				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$submitButtonLabel,
+				''
+			);
 		};
 
 		( new TwoColConflictTestEditPage(

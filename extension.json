@@ -17,9 +17,7 @@
 	},
 	"config": {
 		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
-		"TwoColConflictBetaFeature": true,
-		"@TwoColConflictUseInline": "Use the inline view for solving edit conflicts.",
-		"TwoColConflictUseInline": false
+		"TwoColConflictBetaFeature": true
 	},
 	"AutoloadNamespaces": {
 		"TwoColConflict\\": "includes/"
@@ -53,34 +51,6 @@
 		"TwoColConflictAlias": "TwoColConflict.alias.php"
 	},
 	"ResourceModules": {
-		"ext.TwoColConflict.InlineCss": {
-			"styles": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.css"
-			],
-			"messages": [],
-			"dependencies": []
-		},
-		"ext.TwoColConflict.Inline.initJs": {
-			"scripts": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.js",
-				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.init.js"
-			],
-			"styles": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.BaseVersionSelector.css"
-			],
-			"messages": [
-				"twocolconflict-base-selection-dialog-text",
-				"twocolconflict-base-selection-foreign-label",
-				"twocolconflict-base-selection-own-label",
-				"twocolconflict-base-selection-submit-label"
-			],
-			"dependencies": [
-				"ext.TwoColConflict.Settings",
-				"ext.TwoColConflict.Inline.AutoScroll",
-				"ext.TwoColConflict.Inline.HelpDialog",
-				"oojs-ui"
-			]
-		},
 		"ext.TwoColConflict.Settings": {
 			"scripts": [
 				"modules/ext.TwoColConflict.Settings.js"
@@ -92,88 +62,6 @@
 				"mediawiki.api",
 				"user.options"
 			]
-		},
-		"ext.TwoColConflict.Inline.filterOptionsJs": {
-			"scripts": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.Inline.filterOptions.js"
-			],
-			"messages": [
-				"twocolconflict-label-show-unchanged",
-				"twocolconflict-label-hide-unchanged"
-			],
-			"dependencies": [
-				"ext.TwoColConflict.Inline.AutoScroll",
-				"oojs-ui"
-			]
-		},
-		"ext.TwoColConflict.Inline.AutoScroll": {
-			"scripts": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.AutoScroll.js"
-			]
-		},
-		"ext.TwoColConflict.Inline.HelpDialog": {
-			"scripts": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.HelpDialog.js"
-			],
-			"dependencies": [
-				"oojs-ui",
-				"oojs-ui.styles.icons-interactions",
-				"ext.TwoColConflict.Inline.HelpDialogImages"
-			],
-			"messages": [
-				"twocolconflict-show-help-tooltip",
-				"twocolconflict-help-dialog-slide1",
-				"twocolconflict-help-dialog-slide2",
-				"twocolconflict-help-dialog-slide3",
-				"twocolconflict-help-dialog-slide4",
-				"twocolconflict-help-dialog-slide5",
-				"twocolconflict-label-show",
-				"twocolconflict-tutorial",
-				"twocolconflict-previous-dialog",
-				"twocolconflict-next-dialog",
-				"twocolconflict-close-dialog"
-			]
-		},
-		"ext.TwoColConflict.Inline.HelpDialogCss": {
-			"styles": [
-				"modules/InlineTwoColConflict/ext.TwoColConflict.HelpDialog.css"
-			]
-		},
-		"ext.TwoColConflict.Inline.HelpDialogImages": {
-			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-twocolconflict-help-dialog-slide-{name}",
-			"images": {
-				"1": {
-					"file": {
-						"ltr": "resources/ext.TwoColConflict.helpDialog/slide1-ltr.svg",
-						"rtl": "resources/ext.TwoColConflict.helpDialog/slide1-rtl.svg"
-					}
-				},
-				"2": {
-					"file": {
-						"ltr": "resources/ext.TwoColConflict.helpDialog/slide2-ltr.svg",
-						"rtl": "resources/ext.TwoColConflict.helpDialog/slide2-rtl.svg"
-					}
-				},
-				"3": {
-					"file": {
-						"ltr": "resources/ext.TwoColConflict.helpDialog/slide3-ltr.svg",
-						"rtl": "resources/ext.TwoColConflict.helpDialog/slide3-rtl.svg"
-					}
-				},
-				"4": {
-					"file": {
-						"ltr": "resources/ext.TwoColConflict.helpDialog/slide4-ltr.svg",
-						"rtl": "resources/ext.TwoColConflict.helpDialog/slide4-rtl.svg"
-					}
-				},
-				"5": {
-					"file": {
-						"ltr": "resources/ext.TwoColConflict.helpDialog/slide5-ltr.svg",
-						"rtl": "resources/ext.TwoColConflict.helpDialog/slide5-rtl.svg"
-					}
-				}
-			}
 		},
 		"ext.TwoColConflict.SpecialConflictTestPageCss": {
 			"styles": [
