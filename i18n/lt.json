@@ -8,15 +8,6 @@
 	},
 	"twocolconflict-beta-feature-message": "Dviejų stulpelių redagavimo konfliktas",
 	"twocolconflict-beta-feature-description": "Rodyti redagavimo konflikto puslapį naudojant tobulesnį dviejų stulpelių rodinį.",
-	"twocolconflict-label-show": "rodyti",
-	"twocolconflict-label-hide": "slėpti",
-	"twocolconflict-label-unchanged": "nepakeistas tekstas",
-	"twocolconflict-label-show-unchanged": "rodyti nepakeistą tekstą",
-	"twocolconflict-label-hide-unchanged": "slėpti nepakeistą tekstą",
-	"twocolconflict-show-help-tooltip": "Rodyti pagalbos tekstą",
-	"twocolconflict-previous-dialog": "Ankstesnis",
-	"twocolconflict-next-dialog": "Kitas",
-	"twocolconflict-close-dialog": "Uždaryti",
 	"twocolconflict-split-collapse-tooltip": "Suskleisti tekstą",
 	"twocolconflict-split-expand-tooltip": "Išskleisti tekstą"
 }

@@ -7,21 +7,5 @@
 			"Rajatkatiyar10"
 		]
 	},
-	"twocolconflict-changes-col-desc-2": "वर्तमान प्रकाशित संस्करण",
-	"twocolconflict-changes-col-desc-3": "$1 {{PLURAL:$1|बार}} बदला गया ($2)",
-	"twocolconflict-changes-col-desc-4": "आपका पाठ।",
-	"twocolconflict-history-link": "अवतरण का इतिहास",
-	"twocolconflict-base-selection-own-label": "मेरा पाठ",
-	"twocolconflict-base-selection-foreign-label": "वर्तमान प्रकाशित संस्करण",
-	"twocolconflict-base-selection-submit-label": "ठीक है",
-	"twocolconflict-diffchange-own-title": "आपके संस्करण में",
-	"twocolconflict-diffchange-foreign-title": "$1 जी के संस्करण में",
-	"twocolconflict-label-show": "दिखाएँ",
-	"twocolconflict-label-hide": "छुपाएँ",
-	"twocolconflict-label-show-unchanged": "अपरिवर्तित पाठ दिखाएँ",
-	"twocolconflict-label-hide-unchanged": "अपरिवर्तित पाठ छुपाएँ",
-	"twocolconflict-previous-dialog": "पिछला",
-	"twocolconflict-next-dialog": "अगला",
-	"twocolconflict-close-dialog": "बंद करें",
 	"twocolconflict-test-no-direct-editing": "यह पृष्ठ सीधे नहीं बदला जा सकता है|"
 }

@@ -7,11 +7,5 @@
 		]
 	},
 	"twocolconflict-beta-feature-message": "Kétoszlopos nézet szerkesztési ütközésnél",
-	"twocolconflict-beta-feature-description": "Szerkesztési ütközés esetén egy fejlettebb, kétoszlopos nézet megjelenítése.",
-	"twocolconflict-base-selection-foreign-label": "A jelenleg közzétett verzió",
-	"twocolconflict-base-selection-submit-label": "OK",
-	"twocolconflict-show-help-tooltip": "Súgószöveg megjelenítése",
-	"twocolconflict-previous-dialog": "Előző",
-	"twocolconflict-next-dialog": "Következő",
-	"twocolconflict-close-dialog": "Bezárás"
+	"twocolconflict-beta-feature-description": "Szerkesztési ütközés esetén egy fejlettebb, kétoszlopos nézet megjelenítése."
 }
