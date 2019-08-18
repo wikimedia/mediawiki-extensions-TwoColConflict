@@ -29,7 +29,7 @@
 	"twocolconflict-split-not-saved-at": "Сè уште необјавено",
 	"twocolconflict-split-choose-version": "Изберете верзија",
 	"twocolconflict-split-tour-dialog-header": "Разрешувања на спротиставени уредувања",
-	"twocolconflict-split-tour-dialog-message": "Се јави спротиставеност во уредувањата. Некој ја измени и зачува страницата додека вие ја уредувавте. Вашата верзија не ги содржи најновите уредувања. Спојте ја вашата верзија со новоизменетата на другиот корисник.",
+	"twocolconflict-split-tour-dialog-message": "За жал, се јави спротиставеност во уредувањата. Додека уредувавте, некој друг уредник ја уредил страницата и ја зачувал. Вашата верзија сега е застарена бидејќи не ги содржи уредувањата на тој корисник. Спојте ги уредувањата на следната страница.",
 	"twocolconflict-split-tour-dialog-btn-text": "Почни со спојување",
 	"twocolconflict-split-tour-popup-btn-text": "Јасно",
 	"twocolconflict-split-tour-popup1-header": "Разликите во промените се прикажани ред по ред.",
