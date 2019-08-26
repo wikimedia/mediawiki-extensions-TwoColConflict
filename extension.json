@@ -51,18 +51,6 @@
 		"TwoColConflictAlias": "TwoColConflict.alias.php"
 	},
 	"ResourceModules": {
-		"ext.TwoColConflict.Settings": {
-			"scripts": [
-				"modules/ext.TwoColConflict.Settings.js"
-			],
-			"dependencies": [
-				"mediawiki.user",
-				"mediawiki.storage",
-				"mediawiki.cookie",
-				"mediawiki.api",
-				"user.options"
-			]
-		},
 		"ext.TwoColConflict.SpecialConflictTestPageCss": {
 			"styles": [
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
@@ -105,6 +93,7 @@
 		},
 		"ext.TwoColConflict.Split.Tour": {
 			"scripts": [
+				"modules/ext.TwoColConflict.Settings.js",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.js"
 			],
 			"styles": [
@@ -114,7 +103,11 @@
 				"oojs-ui",
 				"oojs-ui.styles.icons-interactions",
 				"ext.TwoColConflict.Split.TourImages",
-				"ext.TwoColConflict.Settings"
+				"mediawiki.user",
+				"mediawiki.storage",
+				"mediawiki.cookie",
+				"mediawiki.api",
+				"user.options"
 			],
 			"messages": [
 				"twocolconflict-split-tour-dialog-header",
