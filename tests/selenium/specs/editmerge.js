@@ -147,7 +147,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'edits of unchanged paragraphs should be saved', function () {
-		let unchangedParagraphNewText = 'Dummy Text';
+		const unchangedParagraphNewText = 'Dummy Text';
 
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		EditConflictPage.getEditor( 'unchanged' ).setValue( unchangedParagraphNewText );
@@ -167,7 +167,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'edits of selected paragraphs should be saved and should not affect unselected paragraphs', function () {
-		let yourParagraphDiffText = EditConflictPage.getDiffText( 'your' ).getText(),
+		const yourParagraphDiffText = EditConflictPage.getDiffText( 'your' ).getText(),
 			yourParagraphEditorText = EditConflictPage.getEditor( 'your' ).getValue(),
 			otherParagraphNewText = 'Dummy Text';
 
@@ -201,7 +201,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'paragraph edits can be reverted', function () {
-		let otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML(),
+		const otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML(),
 			otherParagraphOriginalText = EditConflictPage.getEditor( 'other' ).getValue();
 
 		EditConflictPage.getEditButton( 'other' ).click();

@@ -113,7 +113,6 @@ class EditConflictPage extends Page {
 		this.enforceSplitEditConflict();
 
 		browser.execute( function () {
-			/* global mw */
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption( 'visualeditor-hidebetawelcome', '1' );
 			} );
@@ -156,7 +155,7 @@ class EditConflictPage extends Page {
 		EditPage.content.waitForVisible();
 
 		browser.call( function () {
-			let bot = new MWBot();
+			const bot = new MWBot();
 
 			return bot.loginGetEditToken( {
 				apiUrl: `${browser.options.baseUrl}/api.php`,

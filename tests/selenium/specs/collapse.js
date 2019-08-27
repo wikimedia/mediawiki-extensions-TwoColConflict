@@ -65,7 +65,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'expands edited collapsed paragraphs and allows re-collapsing', function () {
-		let unchangedParagraphNewText = 'Dummy Text';
+		const unchangedParagraphNewText = 'Dummy Text';
 
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		EditConflictPage.getEditor( 'unchanged' ).setValue( unchangedParagraphNewText );
