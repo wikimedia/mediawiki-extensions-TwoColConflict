@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iwan Novirion"
+		]
+	},
+	"twocolconflict-beta-feature-message": "Konflik penyuntingan dua kolom",
+	"twocolconflict-beta-feature-description": "Tampilkan tampilan konflik penyuntingan menggunakan tampilan dua kolom yang lebih canggih."
+}
