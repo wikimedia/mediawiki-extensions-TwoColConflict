@@ -86,16 +86,13 @@
 		 * @return {jQuery}
 		 */
 		createPopupButton: function ( $element ) {
-			var $stillButton = $( '<div>' ),
-				$pulsatingButton = $( '<div>' );
+			var $pulsatingButton = $( '<div>' ).addClass( 'mw-pulsating-dot' );
 
 			$pulsatingButton.addClass( 'mw-twocolconflict-split-tour-pulsating-button' );
-			$stillButton.addClass( 'mw-twocolconflict-split-tour-still-button' );
-			$stillButton.appendTo( $element );
-			$stillButton.hide();
+			$pulsatingButton.appendTo( $element );
+			$pulsatingButton.hide();
 
-			$pulsatingButton.appendTo( $stillButton );
-			return $stillButton;
+			return $pulsatingButton;
 		},
 
 		/**

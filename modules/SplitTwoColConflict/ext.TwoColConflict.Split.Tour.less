@@ -27,57 +27,14 @@
 	position: relative;
 }
 
-.mw-twocolconflict-split-tour-still-button,
 .mw-twocolconflict-split-tour-pulsating-button {
 	position: absolute;
 	z-index: 1;
-	background-color: #36c;
-	border-radius: 50%;
 	left: 50%;
-	transform: translate( -50%, 0 );
-}
-
-.mw-twocolconflict-split-tour-still-button {
-	height: 0.8em;
-	width: 0.8em;
-}
-
-.mw-twocolconflict-split-tour-pulsating-button {
-	height: 2.5em;
-	width: 2.5em;
-	opacity: 0;
-	bottom: 50%;
-	left: 50%;
-	margin-bottom: -1.25em;
-	margin-left: -1.25em;
-	animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-	0% {
-		transform: scale( 0 );
-		opacity: 0;
-	}
-
-	25% {
-		transform: scale( 0 );
-		opacity: 0.1;
-	}
-
-	50% {
-		transform: scale( 0.1 );
-		opacity: 0.3;
-	}
-
-	75% {
-		transform: scale( 0.5 );
-		opacity: 0.5;
-	}
-
-	100% {
-		transform: scale( 1 );
-		opacity: 0;
-	}
+	margin-top: 0.5em;
+	// The element must have non-zero dimensions for Selenium tests to "see" it.
+	width: 1px;
+	height: 1px;
 }
 
 .mw-twocolconflict-split-tour-popup {

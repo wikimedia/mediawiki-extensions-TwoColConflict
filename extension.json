@@ -13,7 +13,7 @@
 	"type": "other",
 	"manifest_version": 1,
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.34.0"
 	},
 	"config": {
 		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
@@ -100,6 +100,7 @@
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.less"
 			],
 			"dependencies": [
+				"mediawiki.pulsatingdot",
 				"oojs-ui",
 				"oojs-ui.styles.icons-interactions",
 				"ext.TwoColConflict.Split.TourImages",
