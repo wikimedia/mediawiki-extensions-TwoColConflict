@@ -2,13 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Jameela P.",
-			"Praveenp"
+			"Praveenp",
+			"Adithyak1997"
 		]
 	},
 	"twocolconflict": "സമരസപ്പെടായ്കഇരട്ടനിരയിൽ",
 	"twocolconflict-desc": "തിരുത്ത് സമരസപ്പെടായ്കയുടെ പരിഹാരത്തിനായി തിരുത്തുകൾ അരികിൽ-അരികിൽ പ്രദർശിപ്പിക്കുന്നു",
 	"twocolconflict-beta-feature-message": "തിരുത്തൽ സമരസപ്പെടായ്ക രണ്ട് നിരയിൽ",
 	"twocolconflict-beta-feature-description": "തിരുത്തൽ സമരസപ്പെടായ്ക കാണിക്കൽ കൂടുതൽ നവീനമായ ഇരട്ട നിര രീതിയിൽ പ്രദർശിപ്പിക്കുക.",
+	"twocolconflict-test-title-submit": "തിരുത്തൽ താൾ കാണിക്കുക",
+	"twocolconflict-test-title-not-existing": "ഈ തലക്കെട്ടുമായി ഒരു താളും ഇല്ല.",
+	"twocolconflict-test-no-direct-editing": "ഈ താൾ നേരിട്ട് തിരുത്തുവാൻ സാധിക്കില്ല.",
 	"twocolconflict-split-conflict-hint": "പരീക്ഷണാടിസ്ഥാനത്തിലുള്ള ഈ സവിശേഷത ഉപയോഗിക്കുന്നതിന് നന്ദി. [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View ഈ താളിൽ] അഭിപ്രായം ചേർത്ത് ഇത് മെച്ചപ്പെടുത്താനുള്ള പ്രയത്നത്തിൽ താങ്കൾക് ഇനിയും പങ്ക് ചേരാവുന്നതാണ്.",
 	"twocolconflict-split-your-version-header": "താങ്കളുടെ നാൾപ്പതിപ്പ്",
 	"twocolconflict-split-current-version-header": "$1-ന് നിലവിലുള്ള രൂപം",
