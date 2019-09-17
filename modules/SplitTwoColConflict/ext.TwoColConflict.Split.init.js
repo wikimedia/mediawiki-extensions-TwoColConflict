@@ -248,6 +248,7 @@
 					.attr( 'id', 'mw-previewheader' )
 					.append( mw.msg( 'preview' ) ),
 				$( '<p>' )
+					.addClass( 'warningbox' )
 					.append(
 						mw.msg( 'previewnote' ),
 						$( '<span>' )
@@ -257,8 +258,7 @@
 									.attr( 'href', '#editform' )
 									.append( ' ' + arrow + mw.msg( 'continue-editing' ) )
 							)
-					),
-				$( '<hr>' )
+					)
 			);
 
 		var $content = $( '<div>' )
