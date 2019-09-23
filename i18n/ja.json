@@ -32,7 +32,7 @@
 	"twocolconflict-split-not-saved-at": "まだ公開していません",
 	"twocolconflict-split-choose-version": "特定版を選んでください",
 	"twocolconflict-split-tour-dialog-header": "編集の競合を解決する",
-	"twocolconflict-split-tour-dialog-message": "編集の競合が発生しました。あなたの編集作業中にほかの利用者も同時に編集をして保存したようです。そのため、ページの最新版があなたの編集内容に反映されていません。どうかあなたが編集された内容を、ほかの利用者が保存した現在の版と統合させるため、ご協力いただけませんでしょうか。",
+	"twocolconflict-split-tour-dialog-message": "あいにく編集の競合が発生しました。あなたの編集作業中にほかの利用者も同時に編集をして保存したようです。先方の編集が反映されていないため、あなたの編集内容は最新版ではなくなりました。次のページであなたの編集内容を統合してください。",
 	"twocolconflict-split-tour-dialog-btn-text": "統合作業を開始する",
 	"twocolconflict-split-tour-popup-btn-text": "了承ました。",
 	"twocolconflict-split-tour-popup1-header": "差分は行ごとに表示されます。",
