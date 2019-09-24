@@ -5,7 +5,9 @@
 		]
 	},
 	"twocolconflict": "TwoColConflict",
+	"twocolconflict-beta-feature-message": "Conflitte de cangiamende sus a doje culonne",
 	"twocolconflict-test-title-submit": "Fà 'ndrucà 'a pàgena cangiate",
+	"twocolconflict-test-text-submit": "Ccreje conflitte",
 	"twocolconflict-split-your-version-header": "'A revisiona toje",
 	"twocolconflict-split-not-saved-at": "Angore none pubblecate",
 	"twocolconflict-split-tour-popup-btn-text": "Apposte, pigghiate.",
