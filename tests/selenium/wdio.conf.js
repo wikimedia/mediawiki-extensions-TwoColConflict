@@ -8,7 +8,7 @@ exports.config = {
 	// ======
 	// Custom WDIO config specific to MediaWiki
 	// ======
-	// Use in a test as `browser.options.<key>`.
+	// Use in a test as `browser.config.<key>`.
 	// Defaults are for convenience with MediaWiki-Vagrant
 
 	// Wiki admin

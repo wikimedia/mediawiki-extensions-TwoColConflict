@@ -1,10 +1,9 @@
 const Page = require( 'wdio-mediawiki/Page' ),
-	EditPage = require( '../../../../../tests/selenium/pageobjects/edit.page' ),
+	EditPage = require( '../pageobjects/edit.page' ),
 	BetaPreferencesPage = require( '../pageobjects/betapreferences.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	Api = require( 'wdio-mediawiki/Api' ),
-	Util = require( 'wdio-mediawiki/Util' ),
-	MWBot = require( 'mwbot' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class EditConflictPage extends Page {
 	get conflictHeader() { return browser.element( '.mw-twocolconflict-split-header' ); }
@@ -155,15 +154,12 @@ class EditConflictPage extends Page {
 		EditPage.content.waitForVisible();
 
 		browser.call( function () {
-			const bot = new MWBot();
-
-			return bot.loginGetEditToken( {
-				apiUrl: `${browser.options.baseUrl}/api.php`,
-				username: conflictUser,
-				password: conflictUserPassword
-			} ).then( function () {
-				return bot.edit( title, otherText, `Changed content to "${otherText}"` );
-			} );
+			return Api.edit(
+				title,
+				otherText,
+				conflictUser,
+				conflictUserPassword
+			);
 		} );
 		browser.pause( 500 ); // make sure Api edit is finished
 

@@ -38,7 +38,7 @@ describe( 'TwoColConflict', function () {
 	describe( 'subsequent viewing', function () {
 
 		before( function () {
-			browser.url( browser.options.baseUrl );
+			EditConflictPage.openTitle( '' );
 			EditConflictPage.toggleHelpDialog( false );
 			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 		} );
