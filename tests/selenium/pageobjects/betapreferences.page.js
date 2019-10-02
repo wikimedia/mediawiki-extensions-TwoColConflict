@@ -17,6 +17,7 @@ class BetaPreferencesPage extends Page {
 		this.open();
 		this.twoColLabel.waitForVisible();
 		if ( !this.twoColCheckbox.getAttribute( 'checked' ) ) {
+			browser.moveTo( this.twoColLabel.value.ELEMENT );
 			this.twoColLabel.click();
 			this.submit.click();
 		}
