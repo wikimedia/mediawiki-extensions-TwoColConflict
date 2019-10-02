@@ -41,14 +41,13 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-current-version-header: (just-now))' );
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-saved-at: )' );
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-your-version-header)' );
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-not-saved-at)' );
+		$this->assertContains(
+			'>(twocolconflict-split-current-version-header: (just-now))<',
+			$html
+		);
+		$this->assertContains( '>(twocolconflict-split-saved-at: )<', $html );
+		$this->assertContains( '>(twocolconflict-split-your-version-header)<', $html );
+		$this->assertContains( '>(twocolconflict-split-not-saved-at)<', $html );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
@@ -62,11 +61,13 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'a', $this->otherUser->getName() );
-		$this->assertTagExistsWithTextContents( $html, 'p',
-			'(twocolconflict-split-conflict-hint)' );
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)' );
+		$this->assertContains( '>' . $this->otherUser->getName() . '<', $html
+		);
+		$this->assertContains( '>(twocolconflict-split-conflict-hint)<', $html );
+		$this->assertContains(
+			'>(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)<',
+			$html
+		);
 	}
 
 	public function testGetHtml2HoursAgo() {
@@ -81,8 +82,10 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-current-version-header: (hours-ago: 2))' );
+		$this->assertContains(
+			'>(twocolconflict-split-current-version-header: (hours-ago: 2))<',
+			$html
+		);
 	}
 
 	public function testGetHtml2MinutesAgo() {
@@ -97,8 +100,10 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-current-version-header: (minutes-ago: 2))' );
+		$this->assertContains(
+			'>(twocolconflict-split-current-version-header: (minutes-ago: 2))<',
+			$html
+		);
 	}
 
 	public function testGetHtml2SecondsAgo() {
@@ -113,8 +118,10 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(twocolconflict-split-current-version-header: (seconds-ago: 2))' );
+		$this->assertContains(
+			'>(twocolconflict-split-current-version-header: (seconds-ago: 2))<',
+			$html
+		);
 	}
 
 	public function testGetHtmlWithEditSummaries() {
@@ -128,10 +135,8 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(parentheses: Latest revision summary)' );
-		$this->assertTagExistsWithTextContents( $html, 'span',
-			'(parentheses: Conflicting edit summary)' );
+		$this->assertContains( '>(parentheses: Latest revision summary)<', $html );
+		$this->assertContains( '>(parentheses: Conflicting edit summary)<', $html );
 	}
 
 	/**
@@ -149,17 +154,6 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		$revision->method( 'getComment' )
 			->willReturn( $editSummary ? (object)[ 'text' => $editSummary ] : null );
 		return $revision;
-	}
-
-	private function assertTagExistsWithTextContents( $html, $tagName, $value ) {
-		assertThat(
-			$html,
-			is( htmlPiece( havingChild( both(
-				withTagName( $tagName ) )
-				->andAlso( havingTextContents( $value ) )
-			) ) )
-		);
-		$this->addToAssertionCount( 1 );
 	}
 
 }
