@@ -17,8 +17,19 @@ class BetaPreferencesPage extends Page {
 		this.open();
 		this.twoColLabel.waitForVisible();
 		if ( !this.twoColCheckbox.getAttribute( 'checked' ) ) {
-			browser.moveTo( this.twoColLabel.value.ELEMENT );
-			this.twoColLabel.click();
+			this.twoColLabel.waitForVisible();
+			const saveBar = browser.element( '.mw-prefs-buttons' );
+			// This workaround is needed when the preferences save bar
+			// might obscure the feature's label and checkbox.
+			browser.execute(
+				( twoColCheckbox, saveBar ) => {
+					saveBar.style.visibility = 'hidden';
+					twoColCheckbox.click();
+					saveBar.style.visibility = '';
+				},
+				this.twoColCheckbox.value,
+				saveBar.value
+			);
 			this.submit.click();
 		}
 	}
