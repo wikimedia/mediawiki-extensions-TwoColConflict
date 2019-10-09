@@ -113,7 +113,10 @@ class EditConflictPage extends Page {
 
 		browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOption( 'visualeditor-hidebetawelcome', '1' );
+				return new mw.Api().saveOptions( {
+					'visualeditor-hidebetawelcome': '1',
+					'visualeditor-betatempdisable': '1'
+				} );
 			} );
 		} );
 	}
@@ -151,7 +154,7 @@ class EditConflictPage extends Page {
 		browser.pause( 500 ); // make sure Api edit is finished
 
 		EditPage.openForEditing( title );
-		EditPage.content.waitForVisible();
+		EditPage.content.waitForExist();
 
 		browser.call( function () {
 			return Api.edit(
