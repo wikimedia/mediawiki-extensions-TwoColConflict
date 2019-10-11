@@ -17,7 +17,7 @@ use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	use HamcrestPHPUnitIntegration;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		// register a namespace with non-editable content model to test T182668

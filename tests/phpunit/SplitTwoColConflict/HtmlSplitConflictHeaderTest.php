@@ -24,7 +24,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	 */
 	private $otherUser;
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
