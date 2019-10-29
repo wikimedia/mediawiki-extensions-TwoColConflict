@@ -30,7 +30,7 @@
 	"twocolconflict-split-not-saved-at": "Још није објављено",
 	"twocolconflict-split-choose-version": "Изаберите верзију",
 	"twocolconflict-split-tour-dialog-header": "Решавање сукоба измена",
-	"twocolconflict-split-tour-dialog-message": "Изгледа да имате искуство са сукобом измена: Током вашег уређивања други корисник је такође уредио страницу и сачувао је. Ваша верзија сада не садржи најновије измене. Молимо вас да спојите своју верзију са тренутно најновијом верзијом другог корисника.",
+	"twocolconflict-split-tour-dialog-message": "Нажалост, наишли сте на сукоб око уређивања: Током ваше измене други корисник је такође уређивао страницу и сачувао је. Ваша верзија је застарела јер не садржи измене другог корисника. Спојите своје измене на следећој страници.",
 	"twocolconflict-split-tour-dialog-btn-text": "Започни спајање",
 	"twocolconflict-split-tour-popup-btn-text": "У реду, разумем.",
 	"twocolconflict-split-tour-popup1-header": "Различите промене су приказане ред по ред.",
