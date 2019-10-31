@@ -3,6 +3,7 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use TwoColConflict\RandomChangesGenerator;
+use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -25,8 +26,16 @@ class SplitTwoColConflictTestHelper extends SplitTwoColConflictHelper {
 
 	/**
 	 * Do not log conflicts in the test mode
+	 * @inheritDoc
 	 */
-	public function incrementConflictStats() {
+	public function incrementConflictStats( User $user = null ) {
+	}
+
+	/**
+	 * Do not log conflicts in the test mode
+	 * @inheritDoc
+	 */
+	public function incrementResolvedStats( User $user = null ) {
 	}
 
 	/**

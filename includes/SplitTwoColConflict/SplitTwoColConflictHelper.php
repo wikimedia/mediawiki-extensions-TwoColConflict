@@ -7,6 +7,7 @@ use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
 use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -57,8 +58,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @inheritDoc
 	 */
-	public function incrementConflictStats() {
-		parent::incrementConflictStats();
+	public function incrementConflictStats( User $user = null ) {
+		parent::incrementConflictStats( $user );
 		$this->stats->increment( 'TwoColConflict.conflict' );
 		// XXX This is copied directly from core and we may be able to refactor something here.
 		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
@@ -70,13 +71,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 				'TwoColConflict.conflict.byNamespaceId.' . $this->title->getNamespace()
 			);
 		}
+		if ( $user ) {
+			$this->incrementStatsByUserEdits( $user->getEditCount(), 'TwoColConflict.conflict' );
+		}
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function incrementResolvedStats() {
-		parent::incrementResolvedStats();
+	public function incrementResolvedStats( User $user = null ) {
+		parent::incrementResolvedStats( $user );
 		$this->stats->increment( 'TwoColConflict.conflict.resolved' );
 		// XXX This is copied directly from core and we may be able to refactor something here.
 		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
@@ -86,6 +90,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) {
 			$this->stats->increment(
 				'TwoColConflict.conflict.resolved.byNamespaceId.' . $this->title->getNamespace()
+			);
+		}
+		if ( $user ) {
+			$this->incrementStatsByUserEdits(
+				$user->getEditCount(), 'TwoColConflict.conflict.resolved'
 			);
 		}
 	}
