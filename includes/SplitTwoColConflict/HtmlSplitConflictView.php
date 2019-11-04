@@ -41,7 +41,7 @@ class HtmlSplitConflictView {
 	}
 
 	/**
-	 * @param array[] $unifiedDiff
+	 * @param array[][] $unifiedDiff
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
 	 *
