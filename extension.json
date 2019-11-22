@@ -25,24 +25,12 @@
 		"TwoColConflict\\": "includes/"
 	},
 	"Hooks": {
-		"GetBetaFeaturePreferences": [
-			"TwoColConflict\\TwoColConflictHooks::onGetBetaFeaturePreferences"
-		],
-		"AlternateEdit": [
-			"TwoColConflict\\TwoColConflictHooks::onAlternateEdit"
-		],
-		"EditPage::importFormData": [
-			"TwoColConflict\\TwoColConflictHooks::onImportFormData"
-		],
-		"EditPageBeforeConflictDiff": [
-			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff"
-		],
-		"EditPageBeforeEditButtons": [
-			"TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons"
-		],
-		"ResourceLoaderTestModules": [
-			"TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
-		]
+		"GetBetaFeaturePreferences": "TwoColConflict\\TwoColConflictHooks::onGetBetaFeaturePreferences",
+		"AlternateEdit": "TwoColConflict\\TwoColConflictHooks::onAlternateEdit",
+		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
+		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
+		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
+		"ResourceLoaderTestModules": "TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
 	},
 	"MessagesDirs": {
 		"TwoColConflict": [
