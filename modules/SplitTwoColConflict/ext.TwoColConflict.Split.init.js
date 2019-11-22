@@ -236,10 +236,9 @@
 		}
 	}
 
-	function showPreview( $parsed ) {
+	function showPreview( parsedContent, parsedNote ) {
 		$( '#wikiPreview' ).remove();
 		var $html = $( 'html' );
-		var arrow = $html.attr( 'dir' ) === 'rtl' ? '←' : '→';
 
 		var $note = $( '<div>' )
 			.addClass( 'previewnote' )
@@ -247,25 +246,16 @@
 				$( '<h2>' )
 					.attr( 'id', 'mw-previewheader' )
 					.append( mw.msg( 'preview' ) ),
-				$( '<p>' )
+				$( '<div>' )
 					.addClass( 'warningbox' )
-					.append(
-						mw.msg( 'previewnote' ),
-						$( '<span>' )
-							.addClass( 'mw-continue-editing' )
-							.append(
-								$( '<a>' )
-									.attr( 'href', '#editform' )
-									.append( ' ' + arrow + mw.msg( 'continue-editing' ) )
-							)
-					)
+					.append( $( parsedNote ).children() )
 			);
 
 		var $content = $( '<div>' )
 			.addClass( 'mw-content-' + $html.attr( 'dir' ) )
 			.attr( 'dir', $html.attr( 'dir' ) )
 			.attr( 'lang', $html.attr( 'lang' ) )
-			.append( $parsed );
+			.append( parsedContent );
 
 		var $preview = $( '<div>' )
 			.attr( 'id', 'wikiPreview' )
@@ -288,13 +278,22 @@
 				.click( function ( e ) {
 					e.preventDefault();
 
-					api.parse(
-						mw.libs.twoColConflict.split.merger(
-							$( '.mw-twocolconflict-split-row' )
+					var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→';
+
+					$.when(
+						api.parse(
+							mw.libs.twoColConflict.split.merger(
+								$( '.mw-twocolconflict-split-row' )
+							),
+							{ prop: 'text', pst: true }
 						),
-						{ pst: true }
-					).done( function ( $html ) {
-						showPreview( $html );
+						api.parse(
+							'{{int:previewnote}} <span class="mw-continue-editing">[[#editform|' +
+								arrow + ' {{int:continue-editing}}]]</span>',
+							{ prop: 'text' }
+						)
+					).done( function ( parsedContent, parsedNote ) {
+						showPreview( parsedContent, parsedNote );
 					} );
 				} );
 		}

@@ -67,9 +67,7 @@
 				"ext.TwoColConflict.Split.Tour"
 			],
 			"messages": [
-				"continue-editing",
 				"preview",
-				"previewnote",
 				"twocolconflict-split-disabled-edit-tooltip"
 			]
 		},
