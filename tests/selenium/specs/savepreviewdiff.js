@@ -77,6 +77,26 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'should show a correct preview page when using pre-save transforms', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
+		EditConflictPage.yourParagraphSelection.click();
+		EditConflictPage.getEditButton( 'your' ).click();
+		EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text [[title (topic)|]]' );
+		EditConflictPage.previewButton.click();
+
+		assert(
+			EditConflictPage.previewView.waitForVisible(),
+			'I see a preview page for my changes'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.previewText.getText(),
+			'Line1 Dummy Text title',
+			'text was saved correctly'
+		);
+	} );
+
 	it( 'should be possible to edit and preview the left ("other") side', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 

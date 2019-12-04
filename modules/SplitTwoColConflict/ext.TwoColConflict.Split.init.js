@@ -292,7 +292,7 @@
 						mw.libs.twoColConflict.split.merger(
 							$( '.mw-twocolconflict-split-row' )
 						),
-						null
+						{ pst: true }
 					).done( function ( $html ) {
 						showPreview( $html );
 					} );
