@@ -76,9 +76,16 @@
 	function saveEditing( $row ) {
 		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
 			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
-			$editor = $selected.find( '.mw-twocolconflict-split-editor' );
+			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
+			$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' ),
+			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
 
-		$diffText.text( $editor.val() );
+		if ( $editor.val() === $resetEditorText.text() ) {
+			$diffText.html( $resetDiffText.html() );
+		} else {
+			$diffText.text( $editor.val() );
+		}
+
 		disableEditing( $row );
 	}
 

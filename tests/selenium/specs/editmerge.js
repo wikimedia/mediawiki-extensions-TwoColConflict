@@ -277,6 +277,19 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'saving an editor with no changes will preserve the highlight portions', function () {
+		const otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML();
+
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getSaveButton( 'other' ).click();
+
+		assert.strictEqual(
+			EditConflictPage.getDiffText( 'other' ).getHTML(),
+			otherParagraphOriginalDiffText,
+			'edited text was unchanged hence the formatting was preserved'
+		);
+	} );
+
 	afterEach( function () {
 		// provoke and dismiss reload warning
 		browser.url( 'data:text/html,Done' );
