@@ -42,7 +42,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "לפני שיהיה אפשר לערוך את הגרסה הזאת, יש לבחור אותה באמצעות לחיצה על הכפתור המתאים באמצע.",
 	"twocolconflict-split-save-tooltip": "שמירת השינויים ועזיבת מצב העריכה.",
 	"twocolconflict-split-reset-tooltip": "איפוס טקסט",
-	"twocolconflict-split-reset-warning": "לזרוק את השינויים הטקסט שלך יאופס למה שהוא היה לפני שאירעה התנגשות העריכה.",
+	"twocolconflict-split-reset-warning": "לזרוק את השינויים? הטקסט בתיבה הזאת יאופס למה שהוא היה לפני שאירעה התנגשות העריכה.",
 	"twocolconflict-split-reset-warning-cancel": "ביטול",
 	"twocolconflict-split-reset-warning-accept": "לזרוק",
 	"twocolconflict-split-collapse-tooltip": "הסתרת טקסט",

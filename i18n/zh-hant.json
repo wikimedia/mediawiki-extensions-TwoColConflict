@@ -46,7 +46,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "在您可編輯此修訂之前，透過點擊在中間的對應按鈕來選擇它。",
 	"twocolconflict-split-save-tooltip": "保存更改並離開編輯模式。",
 	"twocolconflict-split-reset-tooltip": "重新設定文字",
-	"twocolconflict-split-reset-warning": "捨棄更改？您的文字將會被重新設定成在編輯衝突發生時內容。",
+	"twocolconflict-split-reset-warning": "捨棄更改？此方框裡文字將會被重新設定成在編輯衝突發生時的內容。",
 	"twocolconflict-split-reset-warning-cancel": "取消",
 	"twocolconflict-split-reset-warning-accept": "捨棄",
 	"twocolconflict-split-collapse-tooltip": "折疊文字",

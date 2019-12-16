@@ -42,7 +42,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Før du kan redigere denne versjonen må du velge den ved å klikke på den relevante knappen i midten.",
 	"twocolconflict-split-save-tooltip": "Lagre endringer og forlag redigeringsmodus.",
 	"twocolconflict-split-reset-tooltip": "Nullstill tekst",
-	"twocolconflict-split-reset-warning": "Forkaste endringer? Teksten din vil bli nullstilt til slik den var da redigeringskonflikten oppsto.",
+	"twocolconflict-split-reset-warning": "Forkaste endringer? Teksten i denne bosen vil bli nullstilt til slik den var da redigeringskonflikten oppsto.",
 	"twocolconflict-split-reset-warning-cancel": "Avbryt",
 	"twocolconflict-split-reset-warning-accept": "Forkast",
 	"twocolconflict-split-collapse-tooltip": "Skjul tekst",

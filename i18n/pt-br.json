@@ -43,7 +43,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versão, selecione-a clicando no botão correspondente no meio.",
 	"twocolconflict-split-save-tooltip": "Salvar as alterações e sair do modo de edição.",
 	"twocolconflict-split-reset-tooltip": "Repor texto",
-	"twocolconflict-split-reset-warning": "Descartar as alterações? O seu texto ficará tal como estava quando o conflito de edições ocorreu.",
+	"twocolconflict-split-reset-warning": "Descartar mudanças?  O texto nesta caixa será redefinido para o que era quando ocorreu o conflito de edição.",
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Recolher texto",

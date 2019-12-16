@@ -45,7 +45,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "قبل تعديل هذه النسخة، اخترها عن طريق الضغط على الزر المقابل في المنتصف.",
 	"twocolconflict-split-save-tooltip": "حفظ التغييرات والخروج من نمط التحرير",
 	"twocolconflict-split-reset-tooltip": "إعادة ضبط النص",
-	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين نصك إلى ما كان عليه عند حدوث تعارض التحرير.",
+	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين النص في هذا الصندوق إلى ما كان عليه عندما حدث تعارض التحرير.",
 	"twocolconflict-split-reset-warning-cancel": "إلغاء",
 	"twocolconflict-split-reset-warning-accept": "تجاهل",
 	"twocolconflict-split-collapse-tooltip": "تصغير النص",

@@ -8,7 +8,8 @@
 			"The RedBurn",
 			"McDutchie",
 			"Zarisi",
-			"Alacabe"
+			"Alacabe",
+			"Thibaut120094"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -48,7 +49,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Avant de pouvoir modifier cette version, la sélectionner en cliquant sur le bouton correspondant au milieu.",
 	"twocolconflict-split-save-tooltip": "Enregistrer les modifications et quitter le mode d'édition.",
 	"twocolconflict-split-reset-tooltip": "Réinitialiser le texte",
-	"twocolconflict-split-reset-warning": "Abandonner les modifications ? Votre texte sera réinitialisé à ce qu’il était quand s’est produit le conflit d’édition.",
+	"twocolconflict-split-reset-warning": "Abandonner les modifications ? Votre texte sera réinitialisé à ce qu’il était quand s’est produit le conflit d’édition.",
 	"twocolconflict-split-reset-warning-cancel": "Annuler",
 	"twocolconflict-split-reset-warning-accept": "Abandonner",
 	"twocolconflict-split-collapse-tooltip": "Replier le texte",
