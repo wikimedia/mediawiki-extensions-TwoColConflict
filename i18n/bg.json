@@ -26,7 +26,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Преди да редактирате тази версия, изберете я, като кликнете върху съответния бутон в средата.",
 	"twocolconflict-split-save-tooltip": "Запазване на промените и оставяне в режим на редактиране.",
 	"twocolconflict-split-reset-tooltip": "Зануляване на текста",
-	"twocolconflict-split-reset-warning": "Отхвърляне на промените? Вашият текст ще бъде възстановен до съдържанието преди появата на конфликта.",
+	"twocolconflict-split-reset-warning": "Отхвърляне на промените? Текстът в това поле ще бъде възстановен до съдържанието преди появата на конфликта.",
 	"twocolconflict-split-reset-warning-cancel": "Отказ",
 	"twocolconflict-split-reset-warning-accept": "Отхвърляне",
 	"twocolconflict-split-collapse-tooltip": "Свиване на текста",
