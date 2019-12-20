@@ -11,13 +11,15 @@
 	"descriptionmsg": "twocolconflict-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "other",
-	"manifest_version": 1,
+	"manifest_version": 2,
 	"requires": {
 		"MediaWiki": ">= 1.34.0"
 	},
 	"config": {
-		"@TwoColConflictBetaFeature": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
-		"TwoColConflictBetaFeature": true
+		"TwoColConflictBetaFeature": {
+			"description": "Make the TwoColConflict feature a BetaFeature. Setting this requires the BetaFeature extension and requires each user to enable the BetaFeature.",
+			"value": true
+		}
 	},
 	"AutoloadNamespaces": {
 		"TwoColConflict\\": "includes/"
@@ -118,8 +120,12 @@
 			]
 		}
 	},
-	"EventLoggingSchemas": {
-		"TwoColConflictConflict": 18155295
+	"attributes": {
+		"EventLogging": {
+			"Schemas": {
+					"TwoColConflictConflict": 18155295
+			}
+		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
