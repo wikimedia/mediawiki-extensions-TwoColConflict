@@ -43,7 +43,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Bevor du diese Version bearbeiten kannst, wähle sie aus, indem du auf die entsprechende Schaltfläche in der Mitte klickst.",
 	"twocolconflict-split-save-tooltip": "Änderungen speichern und Bearbeitungsmodus verlassen.",
 	"twocolconflict-split-reset-tooltip": "Text zurücksetzen",
-	"twocolconflict-split-reset-warning": "Änderungen verwerfen? Dein Text wird auf den Zeitpunkt zurückgesetzt, an dem der Bearbeitungskonflikt aufgetreten ist.",
+	"twocolconflict-split-reset-warning": "Änderungen verwerfen? Der Text in diesem Kasten wird auf den Zeitpunkt zurückgesetzt, an dem der Bearbeitungskonflikt aufgetreten ist.",
 	"twocolconflict-split-reset-warning-cancel": "Abbrechen",
 	"twocolconflict-split-reset-warning-accept": "Verwerfen",
 	"twocolconflict-split-collapse-tooltip": "Text einklappen",
