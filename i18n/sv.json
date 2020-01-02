@@ -42,7 +42,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Innan du kan redigera denna version, välj den genom att klicka på motsvarande knapp i mitten.",
 	"twocolconflict-split-save-tooltip": "Spara ändringar och lämna redigeringsläget.",
 	"twocolconflict-split-reset-tooltip": "Återställ text",
-	"twocolconflict-split-reset-warning": "Släng ändringarna? Din text kommer att återställas till vad den var när redigeringskonflikten inträffade.",
+	"twocolconflict-split-reset-warning": "Släng ändringarna? Texten i detta fält kommer att återställas till vad den var när redigeringskonflikten inträffade.",
 	"twocolconflict-split-reset-warning-cancel": "Avbryt",
 	"twocolconflict-split-reset-warning-accept": "Släng",
 	"twocolconflict-split-collapse-tooltip": "Dölj text",

@@ -26,7 +26,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Enne kui saad seda versiooni redigeerida, klõpsa selle valimiseks keskel vastavat nuppu.",
 	"twocolconflict-split-save-tooltip": "Salvesta muudatused ja lahku redigeerimisrežiimist.",
 	"twocolconflict-split-reset-tooltip": "Lähtesta tekst",
-	"twocolconflict-split-reset-warning": "Kas hülgad muudatused? Sinu tekst lähtestatakse kujule, mis esines redigeerimiskonflikti sattumise hetkel.",
+	"twocolconflict-split-reset-warning": "Kas hülgad muudatused? Tekst selles kastis lähtestatakse kujule, mis esines redigeerimiskonflikti sattumise hetkel.",
 	"twocolconflict-split-reset-warning-cancel": "Loobu",
 	"twocolconflict-split-reset-warning-accept": "Hülga",
 	"twocolconflict-split-collapse-tooltip": "Peida tekst",
