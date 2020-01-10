@@ -7,6 +7,7 @@ use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
+use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
@@ -36,13 +37,19 @@ class TwoColConflictHooks {
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-			return new SplitTwoColConflictHelper(
+				$baseRevision = $editPage->getBaseRevision();
+
+				return new SplitTwoColConflictHelper(
 				$editPage->getTitle(),
 				$editPage->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
 				$editPage->summary,
-				MediaWikiServices::getInstance()->getContentHandlerFactory()
+				MediaWikiServices::getInstance()->getContentHandlerFactory(),
+				new ResolutionSuggester(
+					$baseRevision ? $baseRevision->getRevisionRecord() : null,
+					$editPage->getArticle()->getContentHandler()->getDefaultFormat()
+				)
 			);
 		} );
 
