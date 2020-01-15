@@ -3,9 +3,9 @@
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use MediaWikiTestCase;
-use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
 use OOUI\BlankTheme;
 use OOUI\Theme;
+use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView

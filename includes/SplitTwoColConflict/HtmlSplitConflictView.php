@@ -4,8 +4,8 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use Language;
-use OOUI\RadioInputWidget;
 use OOUI\ButtonWidget;
+use OOUI\RadioInputWidget;
 use User;
 
 /**
