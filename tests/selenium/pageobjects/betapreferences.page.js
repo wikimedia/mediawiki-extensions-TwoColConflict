@@ -10,6 +10,7 @@ class BetaPreferencesPage extends Page {
 		super.openTitle( 'Special:Preferences', {}, 'mw-prefsection-betafeatures' );
 		// The additional click should not be necessary because of the fragment provided above, but
 		// it seems this doesn't work all the time.
+		this.betaFeaturesLink.waitForVisible();
 		this.betaFeaturesLink.click();
 	}
 
