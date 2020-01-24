@@ -182,6 +182,7 @@
 			var helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
 				framed: false,
+				title: mw.msg( 'twocolconflict-split-help-tooltip' ),
 				classes: [ 'mw-twocolconflict-split-tour-help-button' ]
 			} );
 

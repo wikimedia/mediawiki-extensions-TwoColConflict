@@ -53,5 +53,8 @@
 	"twocolconflict-split-reset-warning-cancel": "Label for the cancel button of the reset warning.\n{{Identical|Cancel}}",
 	"twocolconflict-split-reset-warning-accept": "Label for the accept button of the reset warning.",
 	"twocolconflict-split-collapse-tooltip": "Label for the collapse button to collapse an unchanged text paragraph.",
-	"twocolconflict-split-expand-tooltip": "Label for the expand button to expand an unchanged text paragraph."
+	"twocolconflict-split-expand-tooltip": "Label for the expand button to expand an unchanged text paragraph.",
+	"twocolconflict-split-selected-version-tooltip": "Label for the selected radio button used to choose a conflicting paragraph.",
+	"twocolconflict-split-unselected-version-tooltip": "Label for the unselected radio button used to choose a conflicting paragraph.",
+	"twocolconflict-split-help-tooltip": "Label for the help button."
 }
