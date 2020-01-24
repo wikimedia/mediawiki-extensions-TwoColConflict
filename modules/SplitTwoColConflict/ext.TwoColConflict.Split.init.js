@@ -285,19 +285,31 @@
 				.click( function ( e ) {
 					e.preventDefault();
 
-					var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→';
+					var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→',
+						title = mw.config.get( 'wgPageName' );
 
 					$.when(
 						api.parse(
 							mw.libs.twoColConflict.split.merger(
 								$( '.mw-twocolconflict-split-row' )
 							),
-							{ prop: 'text', pst: true }
+							{
+								title: title,
+								prop: 'text',
+								pst: true,
+								disablelimitreport: true,
+								disableeditsection: true
+							}
 						),
 						api.parse(
 							'{{int:previewnote}} <span class="mw-continue-editing">[[#editform|' +
 								arrow + ' {{int:continue-editing}}]]</span>',
-							{ prop: 'text' }
+							{
+								title: title,
+								prop: 'text',
+								disablelimitreport: true,
+								disableeditsection: true
+							}
 						)
 					).done( function ( parsedContent, parsedNote ) {
 						showPreview( parsedContent, parsedNote );
