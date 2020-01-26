@@ -182,7 +182,15 @@
 		$radioButtons.on( 'change', function () {
 			var $switch = $( this ),
 				$row = $switch.closest( '.mw-twocolconflict-split-row' ),
+				$selection = $row.find( '.mw-twocolconflict-split-selection' ),
 				$selectedColumn, $unselectedColumn;
+
+			$selection.find( '.oo-ui-inputWidget-input' ).each( function () {
+				$( this ).prop( 'title', mw.msg(
+					( $( this ).is( ':checked' ) ) ? 'twocolconflict-split-selected-version-tooltip' :
+						'twocolconflict-split-unselected-version-tooltip'
+				) );
+			} );
 
 			if ( $switch.val() === 'your' ) {
 				$selectedColumn = $row.find( '.mw-twocolconflict-split-add' );

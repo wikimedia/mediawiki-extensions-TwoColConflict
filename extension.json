@@ -58,7 +58,9 @@
 			],
 			"messages": [
 				"preview",
-				"twocolconflict-split-disabled-edit-tooltip"
+				"twocolconflict-split-disabled-edit-tooltip",
+				"twocolconflict-split-selected-version-tooltip",
+				"twocolconflict-split-unselected-version-tooltip"
 			]
 		},
 		"ext.TwoColConflict.SplitCss": {
@@ -111,7 +113,8 @@
 				"twocolconflict-split-tour-popup3-message",
 				"twocolconflict-split-reset-warning",
 				"twocolconflict-split-reset-warning-cancel",
-				"twocolconflict-split-reset-warning-accept"
+				"twocolconflict-split-reset-warning-accept",
+				"twocolconflict-split-help-tooltip"
 			]
 		},
 		"ext.TwoColConflict.Split.Merger": {
