@@ -47,5 +47,6 @@
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Recolher texto",
-	"twocolconflict-split-expand-tooltip": "Expandir texto"
+	"twocolconflict-split-expand-tooltip": "Expandir texto",
+	"twocolconflict-split-help-tooltip": "Mostrar ajuda"
 }

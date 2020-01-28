@@ -38,13 +38,16 @@
 	"twocolconflict-split-tour-popup2-message": "יש לבחור איזו גרסה של טקסט אתם רוצים לשמור באמצעות לחיצה על סמל העיפרון. אפשר גם להעתיק טקסט מהגרסה שלא בחרת באמצעות שימוש בפונקציית ההעתקה וההדבקה במקלדת שלך אם באמצעות לחיצה ימנית.<br /><br />יש לבחור גרסה אחת עבור כל שורה שהשתנתה כדי לשמור את הטקסט הממוזג.",
 	"twocolconflict-split-tour-popup3-header": "טקסט מודגש",
 	"twocolconflict-split-tour-popup3-message": "הטקסט ששוּנה באחת מהגרסאות מודגש. אחרי עריכת הטקסט ההדגשה תיעלם.",
-	"twocolconflict-split-edit-tooltip": "עריכת הטקסט",
+	"twocolconflict-split-edit-tooltip": "יש ללחוץ כאן כדי לערוך את הטקסט",
 	"twocolconflict-split-disabled-edit-tooltip": "לפני שיהיה אפשר לערוך את הגרסה הזאת, יש לבחור אותה באמצעות לחיצה על הכפתור המתאים באמצע.",
-	"twocolconflict-split-save-tooltip": "שמירת השינויים ועזיבת מצב העריכה.",
-	"twocolconflict-split-reset-tooltip": "איפוס טקסט",
+	"twocolconflict-split-save-tooltip": "החלת השינויים שלך על הטקסט הזה",
+	"twocolconflict-split-reset-tooltip": "מחיקת כל השינויים שעשית לטקסט הזה",
 	"twocolconflict-split-reset-warning": "לזרוק את השינויים? הטקסט בתיבה הזאת יאופס למה שהוא היה לפני שאירעה התנגשות העריכה.",
 	"twocolconflict-split-reset-warning-cancel": "ביטול",
 	"twocolconflict-split-reset-warning-accept": "לזרוק",
-	"twocolconflict-split-collapse-tooltip": "הסתרת טקסט",
-	"twocolconflict-split-expand-tooltip": "הצגת טקסט"
+	"twocolconflict-split-collapse-tooltip": "הסתרת טקסט שלא שוּנה",
+	"twocolconflict-split-expand-tooltip": "הצגת טקסט שלא שוּנה",
+	"twocolconflict-split-selected-version-tooltip": "הגרסה שנבחרה",
+	"twocolconflict-split-unselected-version-tooltip": "יש ללחוץ כאן כדי לבחור את הגרסה הזאת",
+	"twocolconflict-split-help-tooltip": "הצגת עזרה"
 }

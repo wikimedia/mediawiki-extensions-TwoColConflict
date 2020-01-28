@@ -38,13 +38,16 @@
 	"twocolconflict-split-tour-popup2-message": "Изберете која верзија сакате да ја задржите стискајќи на едно од двете копчиња помеѓу секој пар редови. Кога ќе ја изберете верзијата, можете да ја уредите стискајќи на моливчето. Можете и да ископирате текст од верзијата која не сте ја избрале со функцијата за прекопирање на тастатурата, или пак со десен стисок на глушецот.<br /><br />За да зачувате споен текст, ќе треба да изберете по една верзија за секој изменет ред.",
 	"twocolconflict-split-tour-popup3-header": "Истакнат текст",
 	"twocolconflict-split-tour-popup3-message": "Кога ќе има изменет текст во една од верзиите, редот ќе се истакне. Откако ќе го уредите, истакнувањето ќе го снема.",
-	"twocolconflict-split-edit-tooltip": "Уреди текст",
+	"twocolconflict-split-edit-tooltip": "Стиснете за да го уредите текстов",
 	"twocolconflict-split-disabled-edit-tooltip": "Пред да ја уредите овааа верзија, одберете ја стискајќи на соодветното копче во средината.",
-	"twocolconflict-split-save-tooltip": "Зачувај ги промените и напушти во уредувачкиот режим.",
-	"twocolconflict-split-reset-tooltip": "Отповикај текст",
+	"twocolconflict-split-save-tooltip": "Примени ги промените во текстов",
+	"twocolconflict-split-reset-tooltip": "Отфрли ги сите промени во текстов",
 	"twocolconflict-split-reset-warning": "Да ги отфрлам промените? Текстот во ова поле ќе биде повратен на содржината пред појавувањето на спротиставеноста.",
 	"twocolconflict-split-reset-warning-cancel": "Откажи",
 	"twocolconflict-split-reset-warning-accept": "Отфрли",
-	"twocolconflict-split-collapse-tooltip": "Склопи текст",
-	"twocolconflict-split-expand-tooltip": "Расклопи текст"
+	"twocolconflict-split-collapse-tooltip": "Склопи непроменет текст",
+	"twocolconflict-split-expand-tooltip": "Расклопи непроменет текст",
+	"twocolconflict-split-selected-version-tooltip": "Избрана верзија",
+	"twocolconflict-split-unselected-version-tooltip": "Стиснете за да изберете верзија",
+	"twocolconflict-split-help-tooltip": "Дај помош"
 }

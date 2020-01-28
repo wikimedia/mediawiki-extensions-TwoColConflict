@@ -39,13 +39,16 @@
 	"twocolconflict-split-tour-popup2-message": "Her bir satır çifti arasındaki iki düğmeden birine tıklayarak hangi metin sürümünü korumak istediğinizi seçin. Bir sürüm seçtiğinizde, kalem simgesini tıklayarak onu düzenleyebilirsiniz. Klavyenizdeki kopyala ve yapıştır işlevini kullanarak veya sağ tıklamayla seçmediğiniz sürümden metin kopyalamak da mümkündür.<br /><br />Kaydetmek için değiştirilen her satır için bir sürüm seçmeniz gerekiyor birleştirilen metin.",
 	"twocolconflict-split-tour-popup3-header": "Vurgulanan metin",
 	"twocolconflict-split-tour-popup3-message": "Satırın her iki sürümünde de değiştirilen metin vurgulanır. Metni düzenledikten sonra vurgulama kaybolacaktır.",
-	"twocolconflict-split-edit-tooltip": "Metni düzenle",
+	"twocolconflict-split-edit-tooltip": "Bu metni düzenlemek için tıklayın",
 	"twocolconflict-split-disabled-edit-tooltip": "Bu sürümü düzenlemeden önce, ortadaki ilgili düğmeyi tıklayarak sürümü seçin.",
-	"twocolconflict-split-save-tooltip": "Değişiklikleri kaydedin ve düzenleme modundan çıkın.",
-	"twocolconflict-split-reset-tooltip": "Metni sıfırla",
+	"twocolconflict-split-save-tooltip": "Değişikliklerinizi bu metne uygulayın",
+	"twocolconflict-split-reset-tooltip": "Bu metindeki tüm değişikliklerinizi atın",
 	"twocolconflict-split-reset-warning": "Değişiklikleri gözardı edilsin mi? Bu kutudaki metin, düzenleme çakışması oluştuğu zamanki haline sıfırlanacaktır.",
 	"twocolconflict-split-reset-warning-cancel": "İptal",
 	"twocolconflict-split-reset-warning-accept": "Sil",
-	"twocolconflict-split-collapse-tooltip": "Metni daralt",
-	"twocolconflict-split-expand-tooltip": "Metni genişlet"
+	"twocolconflict-split-collapse-tooltip": "Değişmeyen metni daralt",
+	"twocolconflict-split-expand-tooltip": "Değişmeyen metni genişlet",
+	"twocolconflict-split-selected-version-tooltip": "Seçilen sürüm",
+	"twocolconflict-split-unselected-version-tooltip": "Bu sürümü seçmek için tıklayın",
+	"twocolconflict-split-help-tooltip": "Yardımı gör"
 }

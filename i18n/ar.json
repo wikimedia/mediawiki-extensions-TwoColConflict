@@ -5,7 +5,8 @@
 			"زكريا",
 			"Mido",
 			"ديفيد",
-			"علاء"
+			"علاء",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"twocolconflict": "دمج التعديلات",
@@ -49,5 +50,7 @@
 	"twocolconflict-split-reset-warning-cancel": "إلغاء",
 	"twocolconflict-split-reset-warning-accept": "تجاهل",
 	"twocolconflict-split-collapse-tooltip": "تصغير النص",
-	"twocolconflict-split-expand-tooltip": "توسيع النص"
+	"twocolconflict-split-expand-tooltip": "توسيع النص",
+	"twocolconflict-split-selected-version-tooltip": "المراجعة المحددة",
+	"twocolconflict-split-unselected-version-tooltip": "انقر لتحديد هذه المراجعة"
 }
