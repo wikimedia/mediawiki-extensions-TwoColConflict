@@ -54,7 +54,8 @@ class TwoColConflictHooks {
 				$editPage->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
-				$editPage->summary
+				$editPage->summary,
+				MediaWikiServices::getInstance()->getContentHandlerFactory()
 			);
 		} );
 	}
