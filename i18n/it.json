@@ -41,6 +41,6 @@
 	"twocolconflict-split-tour-popup2-header": "Scegli quali modifiche vuoi mantenere",
 	"twocolconflict-split-reset-warning-cancel": "Annulla",
 	"twocolconflict-split-reset-warning-accept": "Cancella",
-	"twocolconflict-split-collapse-tooltip": "Comprimi testo",
-	"twocolconflict-split-expand-tooltip": "Espandi testo"
+	"twocolconflict-split-collapse-tooltip": "Comprimi testo non modificato",
+	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato"
 }

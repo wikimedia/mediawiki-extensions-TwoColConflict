@@ -6,7 +6,8 @@
 			"Macofe",
 			"RicardoSGZ",
 			"Jelou",
-			"Carlosmg.dg"
+			"Carlosmg.dg",
+			"DannyS712"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -49,6 +50,6 @@
 	"twocolconflict-split-reset-warning": "¿Descartar cambios? Se restablecerá tu texto a como estaba cuando se produjo el conflicto de ediciones.",
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Descartar",
-	"twocolconflict-split-collapse-tooltip": "Replegar texto",
-	"twocolconflict-split-expand-tooltip": "Expandir texto"
+	"twocolconflict-split-collapse-tooltip": "Replegar texto sin cambios",
+	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios"
 }
