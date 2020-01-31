@@ -46,8 +46,7 @@ class SplitConflictMerger {
 
 			$textLines[] = $line;
 		}
-
-		return implode( "\n", $textLines );
+		return str_replace( [ "\r\n", "\r" ], "\n", implode( "\n", $textLines ) );
 	}
 
 }
