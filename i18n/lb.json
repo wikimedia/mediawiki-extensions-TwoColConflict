@@ -28,5 +28,6 @@
 	"twocolconflict-split-reset-tooltip": "Text zrécksetzen",
 	"twocolconflict-split-reset-warning-cancel": "Ofbriechen",
 	"twocolconflict-split-collapse-tooltip": "Text zesummeklappen",
-	"twocolconflict-split-expand-tooltip": "Text opklappen"
+	"twocolconflict-split-expand-tooltip": "Text opklappen",
+	"twocolconflict-split-help-tooltip": "Hëllef weisen"
 }
