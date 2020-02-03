@@ -22,13 +22,16 @@
 	"twocolconflict-split-tour-popup2-message": "Vali, milline versioon tekstist alles jätta. Selleks klõpsa iga reapaari juures üht kahest nupust. Pärast versiooni valimist saad seda redigeerida, kui klõpsad pliiatsiikooni. Samuti on võimalik kopeerida teksti versioonist, mida sa ei valinud, kui kasutad kopeerimiseks ja kleepimiseks klaviatuuri kiirklahve või paremat hiireklahvi.<br /><br />Pead iga muudetud rea kohta valima ühe versiooni, et liidetud tekst salvestada.",
 	"twocolconflict-split-tour-popup3-header": "Esiletõstetud tekst",
 	"twocolconflict-split-tour-popup3-message": "Emmas-kummas versioonis muudetud tekst on esile tõstetud. Pärast redigeerimist kaob esiletõst.",
-	"twocolconflict-split-edit-tooltip": "Redigeeri teksti",
+	"twocolconflict-split-edit-tooltip": "Klõpsa, et seda teksti redigeerida",
 	"twocolconflict-split-disabled-edit-tooltip": "Enne kui saad seda versiooni redigeerida, klõpsa selle valimiseks keskel vastavat nuppu.",
-	"twocolconflict-split-save-tooltip": "Salvesta muudatused ja lahku redigeerimisrežiimist.",
-	"twocolconflict-split-reset-tooltip": "Lähtesta tekst",
+	"twocolconflict-split-save-tooltip": "Rakenda selles tekstis enda muudatused",
+	"twocolconflict-split-reset-tooltip": "Hülga kõik enda muudatused selles tekstis",
 	"twocolconflict-split-reset-warning": "Kas hülgad muudatused? Tekst selles kastis lähtestatakse kujule, mis esines redigeerimiskonflikti sattumise hetkel.",
 	"twocolconflict-split-reset-warning-cancel": "Loobu",
 	"twocolconflict-split-reset-warning-accept": "Hülga",
-	"twocolconflict-split-collapse-tooltip": "Peida tekst",
-	"twocolconflict-split-expand-tooltip": "Näita teksti"
+	"twocolconflict-split-collapse-tooltip": "Peida muutmata tekst",
+	"twocolconflict-split-expand-tooltip": "Näita muutmata teksti",
+	"twocolconflict-split-selected-version-tooltip": "Valitud versioon",
+	"twocolconflict-split-unselected-version-tooltip": "Klõpsa, et valida see versioon",
+	"twocolconflict-split-help-tooltip": "Näita abi"
 }

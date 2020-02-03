@@ -4,7 +4,8 @@
 			"MaGa",
 			"Wumbolo",
 			"Bugoslav",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Neptune, the Mystic"
 		]
 	},
 	"twocolconflict": "Dvostupačni sukob uređivanja",
@@ -40,7 +41,7 @@
 	"twocolconflict-split-tour-popup2-message": "Klikom na jedan od dva gumba između svakog para redaka označite inačicu teksta koju želite zadržati. Kada odaberete inačicu, možete je urediti klikom na ikonu olovke. Moguće je i kopirati tekst iz inačice koju niste odabrali pomoću funkcije kopiranja i lijepljenja na tipkovnici ili desnim klikom.<br /> <br />Za svaku promijenjenu liniju morate odabrati jednu inačicu da biste spremili spojeni tekst.",
 	"twocolconflict-split-tour-popup3-header": "Označeni tekst",
 	"twocolconflict-split-tour-popup3-message": "Tekst koji je mijenjan u obje inačice je označen. Nakon uređivanja teksta isticanje će nestati.",
-	"twocolconflict-split-edit-tooltip": "Uredi tekst",
+	"twocolconflict-split-edit-tooltip": "Pritisnite da biste uredili ovaj tekst",
 	"twocolconflict-split-disabled-edit-tooltip": "Prije nego mognete uređivati ovu inačicu, iznačite je klikom na odgovarajući gumb u sredini.",
 	"twocolconflict-split-save-tooltip": "Spremi izmjene i napusti uređivanje.",
 	"twocolconflict-split-reset-tooltip": "Ponovno postavi tekst",
@@ -48,5 +49,5 @@
 	"twocolconflict-split-reset-warning-cancel": "Odustani",
 	"twocolconflict-split-reset-warning-accept": "Odbaci",
 	"twocolconflict-split-collapse-tooltip": "Sažmi tekst",
-	"twocolconflict-split-expand-tooltip": "Proširi tekst"
+	"twocolconflict-split-expand-tooltip": "Proširi nepromijenjeni tekst"
 }

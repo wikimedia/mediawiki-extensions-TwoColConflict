@@ -5,7 +5,8 @@
 			"Vodnokon4e",
 			"ShockD",
 			"StanProg",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -22,13 +23,13 @@
 	"twocolconflict-split-tour-popup2-header": "Изберете кои промени да запазите",
 	"twocolconflict-split-tour-popup2-message": "Изберете коя версия искате да запазите, като кликнете върху един от двата бутона между всяка двойка редове. Когато изберете версията, можете да я редактирате, като кликнете върху молива. Можете също да копирате текст от версията, която не сте избрали с функцията за копиране на клавиатурата, или като кликнете с десен бутон на мишката.<br /><br />За да запазите смесен текст, трябва да изберете една версия за всеки променен ред.",
 	"twocolconflict-split-tour-popup3-message": "Когато има променен текст в една от версиите, редът ще бъде осветлен. След като го редактирате, осветяването ще изчезне.",
-	"twocolconflict-split-edit-tooltip": "Редактиране на текста",
+	"twocolconflict-split-edit-tooltip": "Щракнете за редактиране на текста",
 	"twocolconflict-split-disabled-edit-tooltip": "Преди да редактирате тази версия, изберете я, като кликнете върху съответния бутон в средата.",
-	"twocolconflict-split-save-tooltip": "Запазване на промените и оставяне в режим на редактиране.",
-	"twocolconflict-split-reset-tooltip": "Зануляване на текста",
+	"twocolconflict-split-save-tooltip": "Приложете Вашите промени към текста",
+	"twocolconflict-split-reset-tooltip": "Отхвърляне на всички Ваши промени по текста",
 	"twocolconflict-split-reset-warning": "Отхвърляне на промените? Текстът в това поле ще бъде възстановен до съдържанието преди появата на конфликта.",
 	"twocolconflict-split-reset-warning-cancel": "Отказ",
 	"twocolconflict-split-reset-warning-accept": "Отхвърляне",
-	"twocolconflict-split-collapse-tooltip": "Свиване на текста",
-	"twocolconflict-split-expand-tooltip": "Разгръщане на текста"
+	"twocolconflict-split-collapse-tooltip": "Свиване на непроменения текст",
+	"twocolconflict-split-expand-tooltip": "Разгръщане на непроменения текст"
 }
