@@ -30,7 +30,7 @@ class LineBasedUnifiedDiffFormatter {
 	 *   left side of the diff. Since the right side can hold more lines than the left, one line
 	 *   in the array can hold at least one delete, change or copy as well as an add action.
 	 */
-	public function format( Diff $diff ) {
+	public function format( Diff $diff ) : array {
 		$changes = [];
 		$this->oldLine = 0;
 		$this->newLine = 0;
@@ -100,7 +100,7 @@ class LineBasedUnifiedDiffFormatter {
 	 *
 	 * @return WordLevelDiff
 	 */
-	private function rTrimmedWordLevelDiff( array $before, array $after ) {
+	private function rTrimmedWordLevelDiff( array $before, array $after ) : WordLevelDiff {
 		end( $before );
 		end( $after );
 		$this->commonRTrim( $before[key( $before )], $after[key( $after )] );
@@ -111,7 +111,7 @@ class LineBasedUnifiedDiffFormatter {
 	 * @param string &$before
 	 * @param string &$after
 	 */
-	private function commonRTrim( &$before, &$after ) {
+	private function commonRTrim( string &$before, string &$after ) {
 		$uncommonBefore = strlen( $before );
 		$uncommonAfter = strlen( $after );
 		while ( $uncommonBefore > 0 &&
@@ -134,7 +134,7 @@ class LineBasedUnifiedDiffFormatter {
 	 * @param int $lineCount Number of source code lines in the $diffHtml
 	 * @param string $diffHtml HTML
 	 */
-	private function trackDelete( array &$changes, $index, $lineCount, $diffHtml ) {
+	private function trackDelete( array &$changes, int $index, int $lineCount, string $diffHtml ) {
 		$changes[$index][] = [
 			'action' => 'delete',
 			'old' => $diffHtml,
@@ -154,9 +154,9 @@ class LineBasedUnifiedDiffFormatter {
 	 */
 	private function trackAdd(
 		array &$changes,
-		$index,
-		$lineCount,
-		$diffHtml
+		int $index,
+		int $lineCount,
+		string $diffHtml
 	) {
 		$changes[$index][] = [
 			'action' => 'add',
@@ -174,7 +174,7 @@ class LineBasedUnifiedDiffFormatter {
 	 *
 	 * @return string Composed string with marked lines.
 	 */
-	private function getOriginalInlineDiff( WordLevelDiff $diff ) {
+	private function getOriginalInlineDiff( WordLevelDiff $diff ) : string {
 		$wordAccumulator = $this->getWordAccumulator();
 
 		foreach ( $diff->getEdits() as $edit ) {
@@ -194,7 +194,7 @@ class LineBasedUnifiedDiffFormatter {
 	 *
 	 * @return string Composed string with marked lines.
 	 */
-	private function getClosingInlineDiff( WordLevelDiff $diff ) {
+	private function getClosingInlineDiff( WordLevelDiff $diff ) : string {
 		$wordAccumulator = $this->getWordAccumulator();
 
 		foreach ( $diff->getEdits() as $edit ) {
@@ -210,7 +210,7 @@ class LineBasedUnifiedDiffFormatter {
 	/**
 	 * @return WordAccumulator
 	 */
-	private function getWordAccumulator() {
+	private function getWordAccumulator() : WordAccumulator {
 		$wordAccumulator = new WordAccumulator;
 		$wordAccumulator->insClass = ' class="mw-twocolconflict-diffchange"';
 		$wordAccumulator->delClass = ' class="mw-twocolconflict-diffchange"';
@@ -222,7 +222,7 @@ class LineBasedUnifiedDiffFormatter {
 	 *
 	 * @return string HTML
 	 */
-	private function composeLines( array $lines ) {
+	private function composeLines( array $lines ) : string {
 		return htmlspecialchars( implode( "\n", array_map(
 			function ( $line ) {
 				// Replace empty lines with a non-breaking space

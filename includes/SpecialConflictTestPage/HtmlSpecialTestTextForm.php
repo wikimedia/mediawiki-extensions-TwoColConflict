@@ -20,7 +20,7 @@ class HtmlSpecialTestTextForm extends SpecialPageHtmlFragment {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( $baseVersionText, $titleText ) {
+	public function getHtml( string $baseVersionText, string $titleText ) : string {
 		return Html::openElement(
 			'form',
 			[

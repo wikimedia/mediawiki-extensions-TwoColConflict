@@ -20,7 +20,7 @@ class HtmlWikiTextEditor extends SpecialPageHtmlFragment {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( $wikiText ) {
+	public function getHtml( string $wikiText ) : string {
 		$this->loadModules();
 		$this->runEditFormInitialHook();
 
@@ -62,7 +62,7 @@ class HtmlWikiTextEditor extends SpecialPageHtmlFragment {
 	 *
 	 * @return string
 	 */
-	private function buildEditor( $wikiText ) {
+	private function buildEditor( string $wikiText ) : string {
 		$class = 'mw-editfont-' . $this->getUser()->getOption( 'editfont' );
 		$pageLang = $this->getLanguage();
 
@@ -90,16 +90,8 @@ class HtmlWikiTextEditor extends SpecialPageHtmlFragment {
 	 *
 	 * @return string
 	 */
-	private function addNewLineAtEnd( $wikiText ) {
-		if ( strval( $wikiText ) !== '' ) {
-			// Ensure there's a newline at the end, otherwise adding lines
-			// is awkward.
-			// But don't add a newline if the text is empty, or Firefox in XHTML
-			// mode will show an extra newline. A bit annoying.
-			$wikiText .= "\n";
-			return $wikiText;
-		}
-		return $wikiText;
+	private function addNewLineAtEnd( string $wikiText ) : string {
+		return $wikiText === '' ? '' : $wikiText . "\n";
 	}
 
 }

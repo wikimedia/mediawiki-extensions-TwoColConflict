@@ -20,7 +20,7 @@ class SplitConflictMerger {
 		array $contentRows,
 		array $extraLineFeeds,
 		$sideSelection
-	) {
+	) : string {
 		$textLines = [];
 
 		foreach ( $contentRows as $num => $row ) {

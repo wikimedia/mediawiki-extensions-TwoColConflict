@@ -62,7 +62,7 @@ class HtmlSplitConflictHeader {
 		User $user,
 		Language $language,
 		$now,
-		$newEditSummary,
+		string $newEditSummary,
 		RevisionRecord $revision = null
 	) {
 		$this->linkTarget = $linkTarget;
@@ -76,7 +76,7 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @return RevisionRecord|null
 	 */
-	private function getLatestRevision() {
+	private function getLatestRevision() : ?RevisionRecord {
 		$wikiPage = \WikiPage::factory( \Title::newFromLinkTarget( $this->linkTarget ) );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( \WikiPage::READ_LATEST );
@@ -87,7 +87,7 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @return string HTML
 	 */
-	public function getHtml() {
+	public function getHtml() : string {
 		$out = $this->getWarningMessage(
 			wfMessage( 'twocolconflict-split-conflict-hint' )->parse()
 		);
@@ -111,7 +111,7 @@ class HtmlSplitConflictHeader {
 		return $out;
 	}
 
-	private function buildCurrentVersionHeader() {
+	private function buildCurrentVersionHeader() : string {
 		$dateTime = wfMessage( 'just-now' )->text();
 		$userTools = '';
 		$summary = '';
@@ -134,7 +134,7 @@ class HtmlSplitConflictHeader {
 		);
 	}
 
-	private function buildYourVersionHeader() {
+	private function buildYourVersionHeader() : string {
 		return $this->buildVersionHeader(
 			wfMessage( 'twocolconflict-split-your-version-header' ),
 			wfMessage( 'twocolconflict-split-not-saved-at' ),
@@ -154,9 +154,9 @@ class HtmlSplitConflictHeader {
 	private function buildVersionHeader(
 		Message $dateMsg,
 		Message $userMsg,
-		$summary,
-		$class
-	) {
+		string $summary,
+		string $class
+	) : string {
 		$html = Html::element( 'span', [], $dateMsg->text() ) .
 			Html::element( 'br' ) .
 			Html::rawElement( 'span', [], $userMsg->escaped() );
@@ -172,12 +172,12 @@ class HtmlSplitConflictHeader {
 	}
 
 	/**
-	 * @param string $timestamp
+	 * @param string|null $timestamp
 	 *
 	 * @return string
 	 */
-	private function getFormattedDateTime( $timestamp ) {
-		$diff = ( new ConvertibleTimestamp( $timestamp ) )->diff( $this->now );
+	private function getFormattedDateTime( ?string $timestamp ) : string {
+		$diff = ( new ConvertibleTimestamp( $timestamp ?: false ) )->diff( $this->now );
 
 		if ( $diff->days ) {
 			return $this->language->userTimeAndDate( $timestamp, $this->user );
@@ -204,7 +204,7 @@ class HtmlSplitConflictHeader {
 	 *
 	 * @return string HTML
 	 */
-	private function getWarningMessage( $message ) {
+	private function getWarningMessage( string $message ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-warningbox' ],

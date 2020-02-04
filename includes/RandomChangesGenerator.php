@@ -18,10 +18,10 @@ class RandomChangesGenerator {
 	 * @return string Resulting changed base text
 	 */
 	public static function generateRandomlyChangedText(
-		$baseText,
-		$randomWordNum = 1,
-		$minWordLength = 5
-	) {
+		string $baseText,
+		int $randomWordNum = 1,
+		int $minWordLength = 5
+	) : string {
 		for ( $i = 0; $i < $randomWordNum; $i++ ) {
 			$randomWord = self::getRandomWord( $baseText, $minWordLength );
 			$baseText = self::insertTextAtRandom( $baseText, $randomWord );
@@ -39,7 +39,7 @@ class RandomChangesGenerator {
 	 *
 	 * @return string
 	 */
-	private static function insertTextAtRandom( $originalText, $textToInsert ) {
+	private static function insertTextAtRandom( string $originalText, string $textToInsert ) : string {
 		preg_match_all( '#[^\pL\pN]+#u', $originalText, $spaces, PREG_OFFSET_CAPTURE );
 		$match = $spaces[0][ array_rand( $spaces[0] ) ];
 		return substr_replace( $originalText, $match[0] . $textToInsert, $match[1], 0 );
@@ -54,7 +54,7 @@ class RandomChangesGenerator {
 	 *
 	 * @return string
 	 */
-	private static function getRandomWord( $text, $minLength ) {
+	private static function getRandomWord( string $text, int $minLength ) : string {
 		$randomWord = '';
 		$attempts = 0;
 		$words = preg_split( '#[^\pL\pN]+#u', $text, -1, PREG_SPLIT_NO_EMPTY );
