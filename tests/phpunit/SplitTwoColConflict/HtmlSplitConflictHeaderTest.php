@@ -17,7 +17,7 @@ use User;
  */
 class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
-	const NOW = 1000000000;
+	private const NOW = 1000000000;
 
 	/**
 	 * @var User

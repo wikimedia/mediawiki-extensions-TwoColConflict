@@ -3,12 +3,14 @@
 namespace TwoColConflict;
 
 use EditPage;
+use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
+use WebRequest;
 
 /**
  * Hook handlers for the TwoColConflict extension.
@@ -26,7 +28,7 @@ class TwoColConflictHooks {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
-			\ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
 		) {
 			return \BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' );
 		}
@@ -35,6 +37,8 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/AlternateEdit
+	 *
 	 * @param EditPage $editPage
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
@@ -59,7 +63,13 @@ class TwoColConflictHooks {
 		} );
 	}
 
-	public static function onImportFormData( EditPage $editPage, \WebRequest $request ) {
+	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::importFormData
+	 *
+	 * @param EditPage $editPage
+	 * @param WebRequest $request
+	 */
+	public static function onImportFormData( EditPage $editPage, WebRequest $request ) {
 		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
 		$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' );
 		$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' );
@@ -78,6 +88,8 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeConflictDiff
+	 *
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
 	 */
@@ -85,7 +97,7 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
-		if ( \ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
@@ -107,6 +119,8 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeEditButtons
+	 *
 	 * @param EditPage $editPage
 	 * @param array &$buttons
 	 * @param int &$tabindex
@@ -134,7 +148,7 @@ class TwoColConflictHooks {
 	 * @param User $user
 	 * @param array[] &$prefs
 	 */
-	public static function onGetBetaFeaturePreferences( User $user, array &$prefs ) {
+	public static function onGetBetaFeaturePreferences( $user, array &$prefs ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
@@ -158,12 +172,13 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderTestModules
 	 * @codeCoverageIgnore
 	 *
 	 * @param array[] &$testModules
-	 * @param \ResourceLoader $rl
+	 * @param \ResourceLoader $resourceLoader
 	 */
-	public static function onResourceLoaderTestModules( array &$testModules, \ResourceLoader $rl ) {
+	public static function onResourceLoaderTestModules( array &$testModules, $resourceLoader ) {
 		$testModules['qunit']['ext.TwoColConflict.tests'] = [
 			'scripts' => [
 				'tests/qunit/SplitTwoColConflict/TwoColConflict.Merger.test.js'

@@ -13,6 +13,11 @@ use Title;
  */
 class TwoColConflictTestEditPage extends EditPage {
 
+	/**
+	 * @param Article $article
+	 * @param Title $contextTitle
+	 * @param callable $editConflictHelperFactory
+	 */
 	public function __construct(
 		Article $article,
 		Title $contextTitle,
