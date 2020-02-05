@@ -43,11 +43,14 @@
 	"twocolconflict-split-tour-popup3-message": "Tekst koji je mijenjan u obje inačice je označen. Nakon uređivanja teksta isticanje će nestati.",
 	"twocolconflict-split-edit-tooltip": "Pritisnite da biste uredili ovaj tekst",
 	"twocolconflict-split-disabled-edit-tooltip": "Prije nego mognete uređivati ovu inačicu, iznačite je klikom na odgovarajući gumb u sredini.",
-	"twocolconflict-split-save-tooltip": "Spremi izmjene i napusti uređivanje.",
-	"twocolconflict-split-reset-tooltip": "Ponovno postavi tekst",
-	"twocolconflict-split-reset-warning": "Zanemariti izmjene? Vaš će tekst biti vraćen na stanje kada se dogodio sukob uređivanja.",
+	"twocolconflict-split-save-tooltip": "Primijeni promjene ovoga teksta.",
+	"twocolconflict-split-reset-tooltip": "Otkažite sve Vaše promjene ovoga teksta",
+	"twocolconflict-split-reset-warning": "Zanemariti izmjene? Tekst u ovome okviru bit će vraćen na stanje u kom je bio kada se dogodio sukob uređivanja.",
 	"twocolconflict-split-reset-warning-cancel": "Odustani",
 	"twocolconflict-split-reset-warning-accept": "Odbaci",
-	"twocolconflict-split-collapse-tooltip": "Sažmi tekst",
-	"twocolconflict-split-expand-tooltip": "Proširi nepromijenjeni tekst"
+	"twocolconflict-split-collapse-tooltip": "Sklopi nepromijenjeni tekst",
+	"twocolconflict-split-expand-tooltip": "Proširi nepromijenjeni tekst",
+	"twocolconflict-split-selected-version-tooltip": "Izabrana inačica",
+	"twocolconflict-split-unselected-version-tooltip": "Klikni za odabir inačice",
+	"twocolconflict-split-help-tooltip": "Prikaži pomoć"
 }
