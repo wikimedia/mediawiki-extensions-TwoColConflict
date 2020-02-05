@@ -16,8 +16,12 @@
 	 * @param {jQuery} $unselectedColumn
 	 */
 	function setColumnEditButtonState( $selectedColumn, $unselectedColumn ) {
-		getColumnEditButton( $selectedColumn ).setDisabled( false );
-		getColumnEditButton( $unselectedColumn ).setDisabled( true );
+		getColumnEditButton( $selectedColumn )
+			.setDisabled( false )
+			.setTitle( mw.msg( 'twocolconflict-split-edit-tooltip' ) );
+		getColumnEditButton( $unselectedColumn )
+			.setDisabled( true )
+			.setTitle( mw.msg( 'twocolconflict-split-disabled-edit-tooltip' ) );
 	}
 
 	/**
@@ -128,30 +132,6 @@
 		} );
 	}
 
-	/**
-	 * @param {OO.ui.ButtonWidget} button
-	 */
-	function addDisabledEditButtonToolTip( button ) {
-		var popup = new OO.ui.PopupWidget( {
-			$content: $( '<p>' ).html( mw.msg( 'twocolconflict-split-disabled-edit-tooltip' ) ),
-			classes: [ 'mw-twocolconflict-split-disabled-edit-button-popup' ],
-			padded: true,
-			position: 'above'
-		} );
-
-		button.$element.append( popup.$element );
-		button.$element.on( {
-			mouseenter: function () {
-				if ( $( this ).attr( 'aria-disabled' ) === 'true' ) {
-					popup.toggle( true );
-				}
-			},
-			mouseleave: function () {
-				popup.toggle( false );
-			}
-		} );
-	}
-
 	function initButtonEvents() {
 		[
 			{ selector: '.mw-twocolconflict-split-edit-button', onclick: enableEditing },
@@ -167,10 +147,6 @@
 				widget.on( 'click', function () {
 					button.onclick( $row );
 				} );
-
-				if ( button.selector === '.mw-twocolconflict-split-edit-button' ) {
-					addDisabledEditButtonToolTip( widget );
-				}
 			} );
 		} );
 	}
