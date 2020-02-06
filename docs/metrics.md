@@ -36,6 +36,3 @@
 * **{PREFIX}.conflict.resolved.byUserEdits.over100.{AGGREGATION}** - Number of edit conflicts resolved by users with 101-200 edits
 * **{PREFIX}.conflict.resolved.byUserEdits.over10.{AGGREGATION}** - Number of edit conflicts resolved by users with 11-100 edits
 * **{PREFIX}.conflict.resolved.byUserEdits.under11.{AGGREGATION}** - Number of edit conflicts resolved by users with 0-10 edits
-
-* **{PREFIX}.event.baseSelection.your.{AGGREGATION}** - Number of times a user selects their own text in the base selection dialog
-* **{PREFIX}.event.baseSelection.current.{AGGREGATION}** - Number of times a user selects the current saved text in the base selection dialog
