@@ -58,6 +58,7 @@
 			"messages": [
 				"preview",
 				"twocolconflict-split-disabled-edit-tooltip",
+				"twocolconflict-split-edit-tooltip",
 				"twocolconflict-split-selected-version-tooltip",
 				"twocolconflict-split-unselected-version-tooltip"
 			]
