@@ -204,7 +204,7 @@ class HtmlSplitConflictView {
 				'name' => 'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
 				'lang' => $this->language->getHtmlCode(),
 				'dir' => $this->language->getDir(),
-				'rows' => '6',
+				'rows' => $this->rowsForText( $editorText ),
 				'autocomplete' => 'off',
 			],
 			$editorText
@@ -310,6 +310,29 @@ class HtmlSplitConflictView {
 		return count( $currentLine ) > 1 &&
 			$currentLine[0]['action'] === 'delete' &&
 			$currentLine[1]['action'] === 'add';
+	}
+
+	/**
+	 * Estimate the appropriate size textbox to use for a given text.
+	 * @param string $text Contents of the textbox
+	 * @return int Suggested number of rows
+	 */
+	private function rowsForText( string $text ) : int {
+		$thresholds = [
+			80 * 10 => 18,
+			80 * 4 => 6,
+			0 => 3,
+		];
+		$numChars = function_exists( 'grapheme_strlen' )
+			? grapheme_strlen( $text ) : mb_strlen( $text );
+		$numLines = substr_count( $text, "\n" ) + 1;
+		foreach ( $thresholds as $minChars => $rows ) {
+			if ( $numChars >= $minChars ) {
+				return max( $rows, $numLines );
+			}
+		}
+		// Should be unreachable.
+		return $numLines;
 	}
 
 }
