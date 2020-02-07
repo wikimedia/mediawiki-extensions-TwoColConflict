@@ -7,7 +7,8 @@
 			"RicardoSGZ",
 			"Jelou",
 			"Carlosmg.dg",
-			"DannyS712"
+			"DannyS712",
+			"Joanmp17"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -43,7 +44,7 @@
 	"twocolconflict-split-tour-popup2-message": "Selecciona la versión que desees conservar haciendo clic en uno de los dos botones entre cada par de líneas. Cuando hayas seleccionado una versión, podrás editarla haciendo clic en el icono del lápiz. También es posible copiar texto de la versión que no hayas seleccionado usando la función de copiar y pegar con el teclado o con un clic derecho.<br /><br />Es necesario seleccionar una de las dos versiones para cada línea cambiada para poder guardar el texto fusionado.",
 	"twocolconflict-split-tour-popup3-header": "Texto resaltado",
 	"twocolconflict-split-tour-popup3-message": "El texto que haya cambiado en cualquier versión de una línea quedará resaltado. Cuando hayas editado el texto, el resaltado desaparecerá.",
-	"twocolconflict-split-edit-tooltip": "Editar texto",
+	"twocolconflict-split-edit-tooltip": "Haz clic para editar este texto",
 	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versión, selecciónala haciendo clic en el botón correspondiente en el centro.",
 	"twocolconflict-split-save-tooltip": "Guardar cambios y salir del modo de edición.",
 	"twocolconflict-split-reset-tooltip": "Restablecer texto",
