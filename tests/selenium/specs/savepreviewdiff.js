@@ -25,6 +25,39 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'should resolve the ongoing conflict successfully when another user edits a different section in the meantime', function () {
+		const title = Util.getTestString( 'conflict-title-' );
+
+		// an initial conflict in a specific section
+		EditConflictPage.createConflict(
+			conflictUser,
+			conflictUserPassword,
+			'==A==\nSectionA\n==B==\nSectionB',
+			'==A==\nSectionA\n==B==\nEdit1 <span lang="de">Other</span>',
+			'==B==\nEdit2\\r <span lang="en">Your</span>',
+			title,
+			2
+		);
+
+		// a user editing a different section while the initial conflict is still being resolved
+		EditConflictPage.editPage(
+			title,
+			'==A==\nEdit3\n==B==\nEdit1 <span lang="de">Other</span>',
+			conflictUser,
+			conflictUserPassword
+		);
+
+		EditConflictPage.yourParagraphSelection.click();
+		EditConflictPage.getEditButton( 'your' ).click();
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'A[edit]\nEdit3\nB[edit]\nEdit2\\r Your',
+			'text was saved correctly'
+		);
+	} );
+
 	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 

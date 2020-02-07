@@ -125,8 +125,28 @@ class EditConflictPage extends Page {
 		);
 	}
 
-	createConflict( conflictUser, conflictUserPassword, startText, otherText, yourText ) {
-		const title = Util.getTestString( 'conflict-title-' );
+	editPage( title, text, conflictUser, conflictUserPassword ) {
+		browser.call( function () {
+			return Api.edit(
+				title,
+				text,
+				conflictUser,
+				conflictUserPassword
+			);
+		} );
+		browser.pause( 500 );
+	}
+
+	createConflict(
+		conflictUser,
+		conflictUserPassword,
+		startText,
+		otherText,
+		yourText,
+		title = null,
+		section = null
+	) {
+		title = ( title !== null ) ? title : Util.getTestString( 'conflict-title-' );
 
 		browser.call( function () {
 			return Api.edit(
@@ -137,7 +157,12 @@ class EditConflictPage extends Page {
 
 		browser.pause( 500 ); // make sure Api edit is finished
 
-		EditPage.openForEditing( title );
+		if ( section !== null ) {
+			EditPage.openSectionForEditing( title, section );
+		} else {
+			EditPage.openForEditing( title );
+		}
+
 		EditPage.content.waitForExist();
 
 		browser.call( function () {
