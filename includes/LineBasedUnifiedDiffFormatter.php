@@ -108,8 +108,8 @@ class LineBasedUnifiedDiffFormatter {
 	}
 
 	/**
-	 * @param string $before
-	 * @param string $after
+	 * @param string &$before
+	 * @param string &$after
 	 */
 	private function commonRTrim( &$before, &$after ) {
 		$uncommonBefore = strlen( $before );
