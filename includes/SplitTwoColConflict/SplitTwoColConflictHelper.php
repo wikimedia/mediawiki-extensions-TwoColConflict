@@ -175,15 +175,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	public function getEditFormHtmlBeforeContent() {
-		$out = Html::input( 'wpTextbox1', $this->storedversion, 'hidden' );
-		$out .= Html::input( 'mw-twocolconflict-submit', 'true', 'hidden' );
-		$out .= Html::input(
-			'mw-twocolconflict-title',
-			$this->title->getText(), 'hidden'
-		);
-		$out .= $this->buildEditConflictView();
-		$out .= $this->buildRawTextsHiddenFields();
-		return $out;
+		return Html::input( 'wpTextbox1', $this->storedversion, 'hidden' ) .
+			Html::input( 'mw-twocolconflict-submit', '1', 'hidden' ) .
+			Html::input( 'mw-twocolconflict-title', $this->title->getPrefixedText(), 'hidden' ) .
+			$this->buildEditConflictView() .
+			$this->buildRawTextsHiddenFields();
 	}
 
 	/**
