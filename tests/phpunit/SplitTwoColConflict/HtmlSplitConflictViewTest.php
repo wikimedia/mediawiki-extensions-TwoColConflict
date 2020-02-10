@@ -148,8 +148,7 @@ TEXT
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
 		$htmlResult = ( new HtmlSplitConflictView(
 			$this->getTestUser()->getUser(),
-			new \Language(),
-			[]
+			new \Language()
 		) )->getHtml(
 			$diff,
 			[ 'New 1', 'New 2', 'New 3', 'New 4', 'New 5' ],
@@ -187,8 +186,7 @@ TEXT
 		$view = TestingAccessWrapper::newFromObject(
 			new HtmlSplitConflictView(
 				$this->getTestUser()->getUser(),
-				new \Language(),
-				[]
+				new \Language()
 			)
 		);
 

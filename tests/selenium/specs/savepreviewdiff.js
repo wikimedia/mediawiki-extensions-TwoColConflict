@@ -58,6 +58,49 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'should trigger a new conflict when another user edits in the same lines in the meantime', function () {
+		const title = Util.getTestString( 'conflict-title-' );
+
+		// an initial conflict
+		EditConflictPage.createConflict(
+			conflictUser,
+			conflictUserPassword,
+			'Line1\nLine2',
+			'Line1\nChange A',
+			'Line1\nChange B',
+			title
+		);
+
+		// a user editing in a line affected by the conflict above
+		EditConflictPage.editPage(
+			title,
+			'Line1\nThird Change C',
+			conflictUser,
+			conflictUserPassword
+		);
+
+		EditConflictPage.yourParagraphSelection.click();
+		EditConflictPage.getEditButton( 'your' ).click();
+		EditConflictPage.getEditor( 'your' ).setValue( 'Merged AB' );
+		EditConflictPage.submitButton.click();
+
+		assert(
+			EditConflictPage.conflictHeader.isExisting() && EditConflictPage.conflictView.isExisting(),
+			'there will be another edit conflict'
+		);
+		assert.strictEqual(
+			EditConflictPage.getDiffText( 'other' ).getText(),
+			'Third Change C',
+			'the other text will be the text of the third edit'
+
+		);
+		assert.strictEqual(
+			EditConflictPage.getDiffText( 'your' ).getText(),
+			'Merged AB',
+			'your text will be the result of the first merge'
+		);
+	} );
+
 	it( 'should resolve the conflict successfully when unsaved edits in selected paragraphs are present', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
