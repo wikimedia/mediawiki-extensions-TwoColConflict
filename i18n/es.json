@@ -52,5 +52,7 @@
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Replegar texto sin cambios",
-	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios"
+	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios",
+	"twocolconflict-split-selected-version-tooltip": "Versión seleccionada",
+	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión"
 }
