@@ -3,6 +3,7 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
 use Title;
@@ -36,15 +37,19 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param \IBufferingStatsdDataFactory $stats
 	 * @param string $submitLabel
 	 * @param string $newEditSummary
+	 * @param IContentHandlerFactory|null $contentHandlerFactory
+	 *
+	 * @throws \MWUnknownContentModelException
 	 */
 	public function __construct(
 		Title $title,
 		OutputPage $out,
 		\IBufferingStatsdDataFactory $stats,
 		$submitLabel,
-		$newEditSummary
+		$newEditSummary,
+		IContentHandlerFactory $contentHandlerFactory = null
 	) {
-		parent::__construct( $title, $out, $stats, $submitLabel );
+		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
 		$this->newEditSummary = $newEditSummary;
 

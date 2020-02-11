@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use OutputPage;
 use Title;
@@ -68,10 +69,10 @@ class SplitTwoColConflictHelperTest extends MediaWikiTestCase {
 			$this->createMock( OutputPage::class ),
 			new \NullStatsdDataFactory(),
 			'',
-			''
+			'',
+			MediaWikiServices::getInstance()->getContentHandlerFactory()
 		);
 
 		return TestingAccessWrapper::newFromObject( $helper );
 	}
-
 }
