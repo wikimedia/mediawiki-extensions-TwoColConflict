@@ -242,7 +242,7 @@ class HtmlSplitConflictView {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
-			'icon' => 'undo',
+			'icon' => 'close',
 			'title' => wfMessage( 'twocolconflict-split-reset-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-reset-button' ]
 		] );
