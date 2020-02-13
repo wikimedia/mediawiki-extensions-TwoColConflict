@@ -30,11 +30,11 @@
 	"twocolconflict-split-not-saved-at": "Noch nicht veröffentlicht",
 	"twocolconflict-split-choose-version": "Bitte eine Version auswählen",
 	"twocolconflict-split-tour-dialog-header": "Bearbeitungskonflikte auflösen",
-	"twocolconflict-split-tour-dialog-message": "Leider bist du in einen Bearbeitungskonflikt geraten: Während deiner Bearbeitung hat ein anderer Benutzer ebenfalls die Seite bearbeitet und abgespeichert. Deine Version ist jetzt veraltet, da sie nicht die Bearbeitungen des anderen Benutzers enthält. Führe bitte deine Bearbeitungen auf der nächsten Seite zusammen.",
+	"twocolconflict-split-tour-dialog-message": "Leider bist du in einen Bearbeitungskonflikt geraten: Während deiner Bearbeitung hat jemand anderes ebenfalls die Seite bearbeitet und abgespeichert. Deine Version ist jetzt veraltet, da sie nicht die Bearbeitungen des Anderen enthält. Führe bitte deine Bearbeitungen auf der nächsten Seite zusammen.",
 	"twocolconflict-split-tour-dialog-btn-text": "Mit der Zusammenführung beginnen",
 	"twocolconflict-split-tour-popup-btn-text": "Okay, verstanden.",
 	"twocolconflict-split-tour-popup1-header": "Unterschiedliche Änderungen werden Zeile für Zeile angezeigt.",
-	"twocolconflict-split-tour-popup1-message": "Wenn es einen Unterschied zwischen dem Text des anderen Benutzers und von dir gibt, werden die zwei Versionen nebeneinander angezeigt: Die Version des anderen Benutzers im linken gelben Kasten und deine im rechten blauen Kasten.<br /><br />Falls es keinen Unterschied zwischen den beiden Versionen gibt, werden die Zeilen in grauen Kästen angezeigt. Diese können aus- oder eingeklappt und gegebenenfalls bearbeitet werden.",
+	"twocolconflict-split-tour-popup1-message": "Wenn es einen Unterschied zwischen dem Text des Anderen und von dir gibt, werden die zwei Versionen nebeneinander angezeigt: Die Version des Anderen im linken gelben Kasten und deine im rechten blauen Kasten.<br /><br />Falls es keinen Unterschied zwischen den beiden Versionen gibt, werden die Zeilen in grauen Kästen angezeigt. Diese können aus- oder eingeklappt und gegebenenfalls bearbeitet werden.",
 	"twocolconflict-split-tour-popup2-header": "Wähle aus, welche Änderungen du behalten möchtest.",
 	"twocolconflict-split-tour-popup2-message": "Wähle aus, welche Textversion du behalten möchtest, indem du eine der zwei Schaltflächen zwischen jedem Zeilenpaar anklickst. Wenn du eine Version ausgewählt hast, kannst du sie mit Klick auf das Stiftsymbol bearbeiten. Es ist auch möglich, Text von der Version zu kopieren, die du nicht ausgewählt hast, indem du die Kopieren-und-einfügen-Funktion auf deiner Tastatur oder einen Rechtsklick benutzt.<br /><br />Du musst eine Version für jede geänderte Zeile auswählen, um den zusammengeführten Text zu speichern.",
 	"twocolconflict-split-tour-popup3-header": "Hervorgehobener Text",
@@ -48,5 +48,7 @@
 	"twocolconflict-split-reset-warning-accept": "Verwerfen",
 	"twocolconflict-split-collapse-tooltip": "Unveränderten Text ausblenden",
 	"twocolconflict-split-expand-tooltip": "Unveränderten Text einblenden",
-	"twocolconflict-split-selected-version-tooltip": "Ausgewählte Version"
+	"twocolconflict-split-selected-version-tooltip": "Ausgewählte Version",
+	"twocolconflict-split-unselected-version-tooltip": "Klicke zum wählen dieser Version",
+	"twocolconflict-split-help-tooltip": "Hilfe anzeigen"
 }
