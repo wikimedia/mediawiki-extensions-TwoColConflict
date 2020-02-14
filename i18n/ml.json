@@ -22,12 +22,12 @@
 	"twocolconflict-split-tour-dialog-btn-text": "ലയിപ്പിക്കൽ തുടങ്ങുക",
 	"twocolconflict-split-tour-popup-btn-text": "ശരി, മനസ്സിലായി.",
 	"twocolconflict-split-tour-popup3-header": "പ്രമുഖമാക്കി കാണിക്കുന്ന എഴുത്ത്",
-	"twocolconflict-split-edit-tooltip": "എഴുത്ത് തിരുത്തുക",
-	"twocolconflict-split-save-tooltip": "മാറ്റങ്ങൾ സേവ് ചെയ്യുക, തിരുത്തൽ രൂപത്തിൽ നിന്ന് പുറത്ത് കടക്കുക.",
-	"twocolconflict-split-reset-tooltip": "എഴുത്ത് പുനഃസജ്ജീകരിക്കുക",
+	"twocolconflict-split-edit-tooltip": "ഈ എഴുത്ത് തിരുത്താൻ ഞെക്കുക",
+	"twocolconflict-split-save-tooltip": "ഈ എഴുത്തിൽ താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ ബാധകമാക്കുക",
+	"twocolconflict-split-reset-tooltip": "ഈ എഴുത്തിൽ താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ ഒഴിവാക്കുക",
 	"twocolconflict-split-reset-warning": "മാറ്റങ്ങൾ ഒഴിവാക്കണോ? ഈ പെട്ടിയിലെ എഴുത്ത്, തിരുത്ത് സമരസപ്പെടായ്ക ഉണ്ടായപ്പോഴത്തെ അവസ്ഥയിലേക്ക് പുനഃസജ്ജീകരിക്കപ്പെടുന്നതാണ്.",
 	"twocolconflict-split-reset-warning-cancel": "റദ്ദാക്കുക",
 	"twocolconflict-split-reset-warning-accept": "ഒഴിവാക്കുക",
-	"twocolconflict-split-collapse-tooltip": "എഴുത്ത് ചുരുക്കുക",
-	"twocolconflict-split-expand-tooltip": "എഴുത്ത് വികസിപ്പിക്കുക"
+	"twocolconflict-split-collapse-tooltip": "മാറ്റമില്ലാത്ത എഴുത്ത് ചുരുക്കുക",
+	"twocolconflict-split-expand-tooltip": "മാറ്റമില്ലാത്ത എഴുത്ത് വികസിപ്പിക്കുക"
 }

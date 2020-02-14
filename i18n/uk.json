@@ -40,13 +40,16 @@
 	"twocolconflict-split-tour-popup2-message": "Виберіть, яку версію Ви хотіли б зберегти, клацнувши на одну з двох кнопок між кожною парою рядків. Після вибору версії Ви зможете відредагувати її, клацнувши на іконку з олівцем. Можна також копіювати текст із версії, яку Ви не вибрали, просто користуючись функцією копіювання і вставляння через клавіатуру, або через натискання правої кнопки миші.<br /><br />Вам треба зберегти одну версію для кожного зміненого рядка, щоб зберегти об'єднаний текст.",
 	"twocolconflict-split-tour-popup3-header": "Виділений текст",
 	"twocolconflict-split-tour-popup3-message": "Текст, який було змінено в будь-якій із версії рядка, буде виділеним. Після редагування такого тексту виділення зникне.",
-	"twocolconflict-split-edit-tooltip": "Редагувати текст",
+	"twocolconflict-split-edit-tooltip": "Клацніть, щоб редагувати цей текст",
 	"twocolconflict-split-disabled-edit-tooltip": "Перш ніж редагувати цю версію, виберіть її кліком на відповідну кнопку у середині.",
-	"twocolconflict-split-save-tooltip": "Зберегти зміни й покинути режим редагування.",
-	"twocolconflict-split-reset-tooltip": "Скинути текст",
-	"twocolconflict-split-reset-warning": "Відхилити зміни? Ваш текст буде скинуто до того стану, в якому він був тоді, коли стався конфлікт редагувань.",
+	"twocolconflict-split-save-tooltip": "Застосувати Ваші зміни до цього тексту",
+	"twocolconflict-split-reset-tooltip": "Скинути всі Ваші зміни до цього тексту",
+	"twocolconflict-split-reset-warning": "Відхилити зміни? Текст у цьому блоці буде скинуто до того стану, в якому він був тоді, коли стався конфлікт редагувань.",
 	"twocolconflict-split-reset-warning-cancel": "Скасувати",
 	"twocolconflict-split-reset-warning-accept": "Відхилити",
-	"twocolconflict-split-collapse-tooltip": "Згорнути текст",
-	"twocolconflict-split-expand-tooltip": "Розгорнути текст"
+	"twocolconflict-split-collapse-tooltip": "Згорнути незмінений текст",
+	"twocolconflict-split-expand-tooltip": "Розгорнути незмінений текст",
+	"twocolconflict-split-selected-version-tooltip": "Вибрана версія",
+	"twocolconflict-split-unselected-version-tooltip": "Клацніть, щоб вибрати цю версію",
+	"twocolconflict-split-help-tooltip": "Показати довідку"
 }
