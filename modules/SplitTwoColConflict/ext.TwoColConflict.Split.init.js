@@ -260,9 +260,10 @@
 	}
 
 	function initPreview() {
-		var api = new mw.Api();
-		if ( api ) {
-			OO.ui.infuse( $( '#wpPreviewWidget' ) )
+		var api = new mw.Api(),
+			$previewBtn = $( '#wpPreviewWidget' );
+		if ( api && $previewBtn.length ) {
+			OO.ui.infuse( $previewBtn )
 				.setDisabled( false );
 
 			$( '#wpPreview' )
