@@ -167,6 +167,7 @@ class HtmlSplitConflictView {
 			$diffHtml
 		);
 		$innerHtml .= Html::element( 'div', [ 'class' => 'mw-twocolconflict-split-fade' ] );
+		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType );
 		$innerHtml .= $this->buildEditButton();
 		$innerHtml .= $this->buildSaveButton();
 		$innerHtml .= $this->buildResetButton();
@@ -178,7 +179,6 @@ class HtmlSplitConflictView {
 		}
 
 		$innerHtml .= $this->buildResetText( $diffHtml, $editorText );
-		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType );
 		$innerHtml .= $this->buildLineFeedField( $rawText, $rowNum, $changeType );
 
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
