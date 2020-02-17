@@ -34,12 +34,14 @@
 	"twocolconflict-split-tour-dialog-btn-text": "병합 시작",
 	"twocolconflict-split-tour-popup-btn-text": "알겠습니다.",
 	"twocolconflict-split-tour-popup2-header": "유지하고 싶은 변경사항을 선택하십시오",
-	"twocolconflict-split-edit-tooltip": "텍스트 편집",
+	"twocolconflict-split-edit-tooltip": "이 텍스트를 편집하려면 클릭",
 	"twocolconflict-split-save-tooltip": "변경사항을 저장하고 편집 모드를 떠납니다.",
-	"twocolconflict-split-reset-tooltip": "텍스트 재설정",
+	"twocolconflict-split-reset-tooltip": "이 텍스트의 모든 변경 사항 버림",
 	"twocolconflict-split-reset-warning": "변경사항을 버리시겠습니까? 편집 충돌이 발생했던 시점으로 텍스트가 초기화됩니다.",
 	"twocolconflict-split-reset-warning-cancel": "취소",
 	"twocolconflict-split-reset-warning-accept": "버리기",
 	"twocolconflict-split-collapse-tooltip": "텍스트 접기",
-	"twocolconflict-split-expand-tooltip": "텍스트 펼치기"
+	"twocolconflict-split-expand-tooltip": "텍스트 펼치기",
+	"twocolconflict-split-unselected-version-tooltip": "이 판을 선택하려면 클릭",
+	"twocolconflict-split-help-tooltip": "도움말 보기"
 }
