@@ -229,6 +229,24 @@ describe( 'TwoColConflict', function () {
 			otherParagraphOriginalText,
 			'plain text in editor was reverted successfully'
 		);
+		assert(
+			!EditConflictPage.getEditor( 'other' ).isVisible(),
+			'the editor is hidden again and we left editing mode'
+		);
+	} );
+
+	it( 'revert confirmation will not show if nothing changed', function () {
+		EditConflictPage.getEditButton( 'other' ).click();
+		EditConflictPage.getResetButton( 'other' ).click();
+		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
+		assert(
+			!EditConflictPage.resetConfirmationButton.isVisible(),
+			'there is no confirmation box for the reset visible'
+		);
+		assert(
+			!EditConflictPage.getEditor( 'other' ).isVisible(),
+			'the editor is hidden again and we left editing mode'
+		);
 	} );
 
 	it( 'clicking edit should automatically focus the text editor', function () {

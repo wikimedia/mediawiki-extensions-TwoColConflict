@@ -112,6 +112,15 @@
 	 * @param {jQuery} $row
 	 */
 	function resetWarning( $row ) {
+		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
+			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
+
+		if ( $editor.val() === $resetEditorText.text() ) {
+			disableEditing( $row );
+			return;
+		}
+
 		OO.ui.confirm(
 			mw.msg( 'twocolconflict-split-reset-warning' ), {
 				actions: [
