@@ -166,8 +166,14 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildEditConflictView() : string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
+
 		$storedLines = $this->splitText( $this->storedversion );
 		$yourLines = $this->splitText( $this->yourtext );
+
+		$content = new \WikitextContent( $this->yourtext );
+		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$previewWikitext = $content->preSaveTransform( $this->title, $user, $parserOptions )->getText();
 
 		$out = ( new HtmlSplitConflictHeader(
 			$this->title,
@@ -180,7 +186,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$user,
 			$language
 		) )->getHtml(
-			$this->getLineBasedUnifiedDiff( $storedLines, $yourLines ),
+			$this->getLineBasedUnifiedDiff( $storedLines, $this->splitText( $previewWikitext ) ),
 			$yourLines,
 			$storedLines
 		);
