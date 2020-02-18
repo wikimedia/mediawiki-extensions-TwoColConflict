@@ -22,7 +22,7 @@ class HtmlSpecialTestTitleForm extends SpecialPageHtmlFragment {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( $defaultValue ) {
+	public function getHtml( string $defaultValue ) : string {
 		return Html::openElement(
 			'form',
 			[

@@ -21,7 +21,7 @@ class HtmlPreview extends SpecialPageHtmlFragment {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( Title $title, $wikiText ) {
+	public function getHtml( Title $title, string $wikiText ) : string {
 		$content = ContentHandler::makeContent( $wikiText, $title );
 
 		$parserOptions = $this->getParserOptions();
@@ -51,7 +51,7 @@ class HtmlPreview extends SpecialPageHtmlFragment {
 		] );
 	}
 
-	private function getParserOptions() {
+	private function getParserOptions() : ParserOptions {
 		$parserOptions = new ParserOptions();
 		$parserOptions->setIsPreview( true );
 		return $parserOptions;

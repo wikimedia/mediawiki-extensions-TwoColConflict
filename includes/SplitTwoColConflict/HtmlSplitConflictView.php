@@ -47,7 +47,7 @@ class HtmlSplitConflictView {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) {
+	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) : string {
 		$out = Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
 		);
@@ -110,17 +110,17 @@ class HtmlSplitConflictView {
 		return $out;
 	}
 
-	private function startRow( $rowNum ) {
+	private function startRow( int $rowNum ) : string {
 		return Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-row', 'data-line-number' => $rowNum ]
 		);
 	}
 
-	private function endRow() {
+	private function endRow() : string {
 		return Html::closeElement( 'div' );
 	}
 
-	private function buildAddedLine( $diffHtml, $rawText, $rowNum ) {
+	private function buildAddedLine( string $diffHtml, string $rawText, int $rowNum ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
@@ -128,7 +128,7 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildRemovedLine( $diffHtml, $rawText, $rowNum ) {
+	private function buildRemovedLine( string $diffHtml, string $rawText, int $rowNum ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
@@ -136,7 +136,7 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildCopiedLine( $rawText, $rowNum ) {
+	private function buildCopiedLine( string $rawText, int $rowNum ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
@@ -144,7 +144,7 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildSideSelectorLabel() {
+	private function buildSideSelectorLabel() : string {
 		return Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-selector-label' ]
 		) .
@@ -156,7 +156,12 @@ class HtmlSplitConflictView {
 		Html::closeElement( 'div' );
 	}
 
-	private function buildEditableTextContainer( $diffHtml, $rawText, $rowNum, $changeType ) {
+	private function buildEditableTextContainer(
+		string $diffHtml,
+		string $rawText,
+		int $rowNum,
+		string $changeType
+	) : string {
 		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
 		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
 		$classes = [ 'mw-twocolconflict-split-editable' ];
@@ -184,7 +189,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
 
-	private function buildResetText( $diffHtml, $editorText ) {
+	private function buildResetText( string $diffHtml, string $editorText ) : string {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
 				$diffHtml
@@ -194,7 +199,7 @@ class HtmlSplitConflictView {
 			);
 	}
 
-	private function buildTextEditor( $editorText, $rowNum, $changeType ) {
+	private function buildTextEditor( string $editorText, int $rowNum, string $changeType ) : string {
 		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
 
 		return Html::element(
@@ -211,7 +216,7 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildLineFeedField( $rawText, $rowNum, $changeType ) {
+	private function buildLineFeedField( string $rawText, int $rowNum, string $changeType ) : string {
 		return Html::hidden(
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
 			$this->countExtraLineFeeds( $rawText )
@@ -273,7 +278,7 @@ class HtmlSplitConflictView {
 	 *
 	 * @return int
 	 */
-	private function countExtraLineFeeds( $text ) {
+	private function countExtraLineFeeds( string $text ) : int {
 		return substr_count( $text, "\n", strlen( rtrim( $text, "\r\n" ) ) );
 	}
 
@@ -282,7 +287,7 @@ class HtmlSplitConflictView {
 	 *
 	 * @return string HTML
 	 */
-	private function buildSideSelector( $rowNum ) {
+	private function buildSideSelector( int $rowNum ) : string {
 		$side = $this->sideSelection[$rowNum] ?? '';
 
 		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
@@ -306,7 +311,7 @@ class HtmlSplitConflictView {
 	 *
 	 * @return bool
 	 */
-	private function hasConflictInLine( array $currentLine ) {
+	private function hasConflictInLine( array $currentLine ) : bool {
 		return count( $currentLine ) > 1 &&
 			$currentLine[0]['action'] === 'delete' &&
 			$currentLine[1]['action'] === 'add';

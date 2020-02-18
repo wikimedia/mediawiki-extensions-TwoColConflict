@@ -49,35 +49,35 @@ abstract class SpecialPageHtmlFragment implements MessageLocalizer {
 	/**
 	 * @return Title
 	 */
-	protected function getPageTitle() {
+	protected function getPageTitle() : Title {
 		return $this->specialPage->getPageTitle();
 	}
 
 	/**
 	 * @return IContextSource
 	 */
-	protected function getContext() {
+	protected function getContext() : IContextSource {
 		return $this->specialPage->getContext();
 	}
 
 	/**
 	 * @return OutputPage
 	 */
-	protected function getOutput() {
+	protected function getOutput() : OutputPage {
 		return $this->specialPage->getOutput();
 	}
 
 	/**
 	 * @return User
 	 */
-	protected function getUser() {
+	protected function getUser() : User {
 		return $this->specialPage->getUser();
 	}
 
 	/**
 	 * @return Language
 	 */
-	protected function getLanguage() {
+	protected function getLanguage() : Language {
 		return $this->specialPage->getLanguage();
 	}
 

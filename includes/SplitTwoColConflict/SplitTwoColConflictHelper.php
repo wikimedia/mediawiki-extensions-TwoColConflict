@@ -37,7 +37,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param \IBufferingStatsdDataFactory $stats
 	 * @param string $submitLabel
 	 * @param string $newEditSummary
-	 * @param IContentHandlerFactory|null $contentHandlerFactory
+	 * @param IContentHandlerFactory $contentHandlerFactory
 	 *
 	 * @throws \MWUnknownContentModelException
 	 */
@@ -45,9 +45,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		Title $title,
 		OutputPage $out,
 		\IBufferingStatsdDataFactory $stats,
-		$submitLabel,
-		$newEditSummary,
-		IContentHandlerFactory $contentHandlerFactory = null
+		string $submitLabel,
+		string $newEditSummary,
+		IContentHandlerFactory $contentHandlerFactory
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
@@ -203,7 +203,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return string
 	 */
-	private function buildEditConflictView() {
+	private function buildEditConflictView() : string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
 
@@ -231,7 +231,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return string
 	 */
-	private function buildRawTextsHiddenFields() {
+	private function buildRawTextsHiddenFields() : string {
 		return Html::input( 'mw-twocolconflict-current-text', $this->storedversion, 'hidden' ) .
 			Html::input( 'mw-twocolconflict-your-text', $this->yourtext, 'hidden' );
 	}
@@ -241,7 +241,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return array[]
 	 */
-	private function getLineBasedUnifiedDiff() {
+	private function getLineBasedUnifiedDiff() : array {
 		$formatter = new LineBasedUnifiedDiffFormatter();
 
 		return $formatter->format(

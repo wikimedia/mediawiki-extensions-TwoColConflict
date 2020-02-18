@@ -106,11 +106,11 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param string $message
 	 * @param string $additionalClass
 	 */
-	private function showHintBox( $message, $additionalClass = '' ) {
+	private function showHintBox( string $message, string $additionalClass = '' ) {
 		$this->showHintBoxRaw( Html::rawElement( 'p', [], $message ), $additionalClass );
 	}
 
-	private function showHintBoxRaw( $message, $additionalClass = '' ) {
+	private function showHintBoxRaw( string $message, string $additionalClass = '' ) {
 		$this->getOutput()->addHTML(
 			Html::rawElement(
 				'div',
@@ -123,7 +123,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	/**
 	 * @param string $message
 	 */
-	private function showWarningBox( $message ) {
+	private function showWarningBox( string $message ) {
 		$this->getOutput()->addHTML(
 			Html::rawElement(
 				'div',
@@ -143,7 +143,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param string $baseVersionText
 	 * @param string $titleText
 	 */
-	private function showChangeText( $baseVersionText, $titleText ) {
+	private function showChangeText( string $baseVersionText, string $titleText ) {
 		$this->getOutput()->addHTML( ( new HtmlSpecialTestTextForm( $this ) )->getHtml(
 			$baseVersionText,
 			$titleText
@@ -157,7 +157,8 @@ class SpecialConflictTestPage extends SpecialPage {
 				$article->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
-				''
+				'',
+				MediaWikiServices::getInstance()->getContentHandlerFactory()
 			);
 		};
 
@@ -175,7 +176,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	 * @param Title $title
 	 * @param string $wikiText
 	 */
-	private function showPreview( $title, $wikiText ) {
+	private function showPreview( Title $title, string $wikiText ) {
 		$this->getOutput()->addHTML( ( new HtmlPreview( $this ) )->getHtml(
 			$title,
 			$wikiText
@@ -188,7 +189,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		] );
 	}
 
-	private function isInBetaAndEnabled() {
+	private function isInBetaAndEnabled() : bool {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		/**
@@ -209,7 +210,7 @@ class SpecialConflictTestPage extends SpecialPage {
 	/**
 	 * @return string
 	 */
-	private function getPresetPage() {
+	private function getPresetPage() : string {
 		$dbName = MediaWikiServices::getInstance()->getMainConfig()->get( 'DBname' );
 		$defaults = $this->testSiteDefaults();
 
@@ -220,7 +221,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		return $defaults[ $dbName ];
 	}
 
-	private function testSiteDefaults() {
+	private function testSiteDefaults() : array {
 		return [
 			'testwiki' => 'Page023',
 			'metawiki' => 'WMDE_Technical_Wishes/Edit_Conflicts',

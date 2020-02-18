@@ -24,7 +24,7 @@ class TwoColConflictHooks {
 	 *
 	 * @return bool
 	 */
-	private static function shouldTwoColConflictBeShown( User $user ) {
+	private static function shouldTwoColConflictBeShown( User $user ) : bool {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
 		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
