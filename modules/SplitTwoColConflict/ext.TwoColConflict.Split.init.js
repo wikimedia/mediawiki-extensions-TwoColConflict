@@ -272,6 +272,24 @@
 		$( 'html, body' ).animate( { scrollTop: $( '#top' ).offset().top }, 500 );
 	}
 
+	function validateForm() {
+		var isFormValid = true;
+
+		$( '.mw-twocolconflict-split-selection' ).each( function () {
+			var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
+				$checked = $row.find( 'input:checked' );
+
+			if ( $checked.length ) {
+				$row.removeClass( 'mw-twocolconflict-no-selection' );
+			} else {
+				$row.addClass( 'mw-twocolconflict-no-selection' );
+				isFormValid = false;
+			}
+		} );
+
+		return isFormValid;
+	}
+
 	function initPreview() {
 		var api = new mw.Api(),
 			$previewBtn = $( '#wpPreviewWidget' );
@@ -282,6 +300,10 @@
 			$( '#wpPreview' )
 				.click( function ( e ) {
 					e.preventDefault();
+
+					if ( !validateForm() ) {
+						return;
+					}
 
 					var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→',
 						title = mw.config.get( 'wgPageName' );
@@ -316,10 +338,20 @@
 		}
 	}
 
+	function initSubmit() {
+		$( '#wpSave, #wpTestPreviewWidget #wpPreview' )
+			.click( function ( e ) {
+				if ( !validateForm() ) {
+					e.preventDefault();
+				}
+			} );
+	}
+
 	$( function () {
 		initColumnSelection();
 		initButtonEvents();
 		initPreview();
+		initSubmit();
 		initTour();
 	} );
 
