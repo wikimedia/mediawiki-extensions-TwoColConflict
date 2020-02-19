@@ -178,8 +178,8 @@ class HtmlSplitConflictView {
 		$innerHtml .= $this->buildResetButton();
 
 		if ( $changeType === 'copy' ) {
-			$innerHtml .= $this->buildCollapseButton();
 			$innerHtml .= $this->buildExpandButton();
+			$innerHtml .= $this->buildCollapseButton();
 			$classes[] = 'mw-twocolconflict-split-collapsed';
 		}
 
@@ -211,6 +211,7 @@ class HtmlSplitConflictView {
 				'dir' => $this->language->getDir(),
 				'rows' => $this->rowsForText( $editorText ),
 				'autocomplete' => 'off',
+				'tabindex' => '1',
 			],
 			$editorText
 		);
@@ -229,7 +230,8 @@ class HtmlSplitConflictView {
 			'framed' => false,
 			'icon' => 'edit',
 			'title' => wfMessage( 'twocolconflict-split-edit-tooltip' )->text(),
-			'classes' => [ 'mw-twocolconflict-split-edit-button' ]
+			'classes' => [ 'mw-twocolconflict-split-edit-button' ],
+			'tabIndex' => '1',
 		] );
 	}
 
@@ -239,7 +241,8 @@ class HtmlSplitConflictView {
 			'framed' => false,
 			'icon' => 'check',
 			'title' => wfMessage( 'twocolconflict-split-save-tooltip' )->text(),
-			'classes' => [ 'mw-twocolconflict-split-save-button' ]
+			'classes' => [ 'mw-twocolconflict-split-save-button' ],
+			'tabIndex' => '1',
 		] );
 	}
 
@@ -249,7 +252,8 @@ class HtmlSplitConflictView {
 			'framed' => false,
 			'icon' => 'close',
 			'title' => wfMessage( 'twocolconflict-split-reset-tooltip' )->text(),
-			'classes' => [ 'mw-twocolconflict-split-reset-button' ]
+			'classes' => [ 'mw-twocolconflict-split-reset-button' ],
+			'tabIndex' => '1',
 		] );
 	}
 
@@ -259,7 +263,8 @@ class HtmlSplitConflictView {
 			'framed' => false,
 			'icon' => 'expand',
 			'title' => wfMessage( 'twocolconflict-split-expand-tooltip' )->text(),
-			'classes' => [ 'mw-twocolconflict-split-expand-button' ]
+			'classes' => [ 'mw-twocolconflict-split-expand-button' ],
+			'tabIndex' => '1',
 		] );
 	}
 
@@ -269,7 +274,8 @@ class HtmlSplitConflictView {
 			'framed' => false,
 			'icon' => 'collapse',
 			'title' => wfMessage( 'twocolconflict-split-collapse-tooltip' )->text(),
-			'classes' => [ 'mw-twocolconflict-split-collapse-button' ]
+			'classes' => [ 'mw-twocolconflict-split-collapse-button' ],
+			'tabIndex' => '1',
 		] );
 	}
 
@@ -295,11 +301,13 @@ class HtmlSplitConflictView {
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'other',
 				'selected' => $side !== 'your',
+				'tabIndex' => '1',
 			] ) ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'your',
 				'selected' => $side === 'your',
+				'tabIndex' => '1',
 			] ) ) .
 			Html::closeElement( 'div' );
 	}
