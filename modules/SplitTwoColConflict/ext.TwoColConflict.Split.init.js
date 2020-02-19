@@ -79,32 +79,17 @@
 	 */
 	function saveEditing( $row ) {
 		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
-			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
 			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-			$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' ),
-			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
+			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' ),
+			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
 
 		if ( $editor.val() === $resetEditorText.text() ) {
+			var $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 			$diffText.html( $resetDiffText.html() );
 		} else {
 			$diffText.text( $editor.val() );
 		}
 
-		disableEditing( $row );
-	}
-
-	/**
-	 * @param {jQuery} $row
-	 */
-	function resetEditing( $row ) {
-		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
-			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
-			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-			$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' ),
-			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
-
-		$diffText.html( $resetDiffText.html() );
-		$editor.val( $resetEditorText.text() );
 		disableEditing( $row );
 	}
 
@@ -122,7 +107,8 @@
 		}
 
 		OO.ui.confirm(
-			mw.msg( 'twocolconflict-split-reset-warning' ), {
+			mw.msg( 'twocolconflict-split-reset-warning' ),
+			{
 				actions: [
 					{
 						label: mw.msg( 'twocolconflict-split-reset-warning-cancel' ),
@@ -136,7 +122,12 @@
 			}
 		).done( function ( confirmed ) {
 			if ( confirmed ) {
-				resetEditing( $row );
+				var $diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
+					$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
+
+				$editor.val( $resetEditorText.text() );
+				$diffText.html( $resetDiffText.html() );
+				disableEditing( $row );
 			}
 		} );
 	}
