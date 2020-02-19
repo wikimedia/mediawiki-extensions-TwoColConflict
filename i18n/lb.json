@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Soued031"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -21,7 +22,7 @@
 	"twocolconflict-split-your-version-header": "Är Versioun",
 	"twocolconflict-split-current-version-header": "Aktuell Versioun $1",
 	"twocolconflict-split-not-saved-at": "Nach net verëffentlecht",
-	"twocolconflict-split-choose-version": "Sicht w.e.g. eng Versioun eraus",
+	"twocolconflict-split-choose-version": "Sicht wgl. eng Versioun eraus",
 	"twocolconflict-split-tour-dialog-header": "Ännerungskonflikter léisen",
 	"twocolconflict-split-tour-popup-btn-text": "OK, verstanen.",
 	"twocolconflict-split-edit-tooltip": "Klickt fir dësen Text z'änneren",
