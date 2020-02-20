@@ -49,10 +49,6 @@ class HtmlSplitConflictView {
 		$isFirstNonCopyLine = true;
 		foreach ( $unifiedDiff as $currentLine ) {
 			foreach ( $currentLine as $changeSet ) {
-				if ( $changeSet['action'] !== 'copy' && $isFirstNonCopyLine ) {
-					$out .= $this->buildSideSelectorLabel();
-					$isFirstNonCopyLine = false;
-				}
 				switch ( $changeSet['action'] ) {
 					case 'delete':
 						$out .= $this->startRow( $currRowNum );
@@ -61,7 +57,7 @@ class HtmlSplitConflictView {
 							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
 							$currRowNum
 						);
-						$out .= $this->buildSideSelector( $currRowNum );
+						$out .= $this->buildSideSelector( $currRowNum, $isFirstNonCopyLine );
 
 						if ( !$this->hasConflictInLine( $currentLine ) ) {
 							$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
@@ -73,7 +69,7 @@ class HtmlSplitConflictView {
 						if ( !$this->hasConflictInLine( $currentLine ) ) {
 							$out .= $this->startRow( $currRowNum );
 							$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
-							$out .= $this->buildSideSelector( $currRowNum );
+							$out .= $this->buildSideSelector( $currRowNum, $isFirstNonCopyLine );
 						}
 
 						$out .= $this->buildAddedLine(
@@ -282,12 +278,18 @@ class HtmlSplitConflictView {
 	}
 
 	/**
-	 * @param int $rowNum
+	 * @param int $rowNum Identifier for this line.
+	 * @param bool &$isFirstNonCopyLine If true, then show a legend above the selector.
 	 *
 	 * @return string HTML
 	 */
-	private function buildSideSelector( int $rowNum ) : string {
-		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
+	private function buildSideSelector( int $rowNum, bool &$isFirstNonCopyLine ) : string {
+		$label = $isFirstNonCopyLine ? $this->buildSideSelectorLabel() : '';
+		$isFirstNonCopyLine = false;
+
+		return Html::openElement( 'div' ) .
+			$label .
+			Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'other',
@@ -299,6 +301,7 @@ class HtmlSplitConflictView {
 				'value' => 'your',
 				'tabIndex' => '1',
 			] ) ) .
+			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
 	}
 
