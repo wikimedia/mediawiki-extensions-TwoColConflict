@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use Language;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiTestCase;
 use Title;
@@ -32,39 +32,31 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	public function testConflictOnNewPage() {
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			''
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: (just-now))<',
 			$html
 		);
-		$this->assertContains( '>(twocolconflict-split-saved-at: )<', $html );
-		$this->assertContains( '>(twocolconflict-split-your-version-header)<', $html );
-		$this->assertContains( '>(twocolconflict-split-not-saved-at)<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-split-saved-at: )<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-split-your-version-header)<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-split-not-saved-at)<', $html );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			'',
 			$this->newRevisionRecord( '20180721234200' )
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains( '>' . $this->otherUser->getName() . '<', $html
+		$this->assertStringContainsString( '>' . $this->otherUser->getName() . '<', $html
 		);
-		$this->assertContains( '>(twocolconflict-split-conflict-hint)<', $html );
-		$this->assertContains(
+		$this->assertStringContainsString( '>(twocolconflict-split-conflict-hint)<', $html );
+		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)<',
 			$html
 		);
@@ -72,17 +64,13 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
 	public function testGetHtml2HoursAgo() {
 		$ninetyMinutesAgo = self::NOW - 90 * 60;
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			'',
 			$this->newRevisionRecord( $ninetyMinutesAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: (hours-ago: 2))<',
 			$html
 		);
@@ -90,17 +78,13 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
 	public function testGetHtml2MinutesAgo() {
 		$ninetySecondsAgo = self::NOW - 90;
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			'',
 			$this->newRevisionRecord( $ninetySecondsAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: (minutes-ago: 2))<',
 			$html
 		);
@@ -108,35 +92,38 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
 	public function testGetHtml2SecondsAgo() {
 		$twoSecondsAgo = self::NOW - 2;
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			'',
 			$this->newRevisionRecord( $twoSecondsAgo )
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: (seconds-ago: 2))<',
 			$html
 		);
 	}
 
 	public function testGetHtmlWithEditSummaries() {
-		$htmlHeader = new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
-			$this->getTestUser()->getUser(),
-			Language::factory( 'qqx' ),
-			self::NOW,
+		$htmlHeader = $this->newConflictHeader(
 			'Conflicting edit summary',
 			$this->newRevisionRecord( self::NOW, 'Latest revision summary' )
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertContains( '>(parentheses: Latest revision summary)<', $html );
-		$this->assertContains( '>(parentheses: Conflicting edit summary)<', $html );
+		$this->assertStringContainsString( '>(parentheses: Latest revision summary)<', $html );
+		$this->assertStringContainsString( '>(parentheses: Conflicting edit summary)<', $html );
+	}
+
+	private function newConflictHeader( $summary, $revision = null ) {
+		return new HtmlSplitConflictHeader(
+			Title::newFromText( __METHOD__ ),
+			$this->getTestUser()->getUser(),
+			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'qqx' ),
+			self::NOW,
+			$summary,
+			$revision
+		);
 	}
 
 	/**
