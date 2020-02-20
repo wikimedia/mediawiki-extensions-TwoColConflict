@@ -12,16 +12,27 @@
 	}
 
 	/**
-	 * @param {jQuery} $selectedColumn
-	 * @param {jQuery} $unselectedColumn
+	 * @param {jQuery} $column
 	 */
-	function setColumnEditButtonState( $selectedColumn, $unselectedColumn ) {
-		getColumnEditButton( $selectedColumn )
-			.setDisabled( false )
-			.setTitle( mw.msg( 'twocolconflict-split-edit-tooltip' ) );
-		getColumnEditButton( $unselectedColumn )
+	function disableColumn( $column ) {
+		getColumnEditButton( $column )
 			.setDisabled( true )
 			.setTitle( mw.msg( 'twocolconflict-split-disabled-edit-tooltip' ) );
+		$column
+			.removeClass( 'mw-twocolconflict-split-selected' )
+			.addClass( 'mw-twocolconflict-split-unselected' );
+	}
+
+	/**
+	 * @param {jQuery} $column
+	 */
+	function enableColumn( $column ) {
+		getColumnEditButton( $column )
+			.setDisabled( false )
+			.setTitle( mw.msg( 'twocolconflict-split-edit-tooltip' ) );
+		$column
+			.addClass( 'mw-twocolconflict-split-selected' )
+			.removeClass( 'mw-twocolconflict-split-unselected' );
 	}
 
 	/**
@@ -151,41 +162,43 @@
 		} );
 	}
 
+	function handleSelectColumn() {
+		var $group = $( this ).closest( '.mw-twocolconflict-split-selection' ),
+			$checked = $group.find( 'input:checked' ),
+			$row = $group.closest( '.mw-twocolconflict-split-row' ),
+			$selection = $row.find( '.mw-twocolconflict-split-selection' ),
+			// TODO: Rename classes, "add" should be "your", etc.
+			$yourColumn = $row.find( '.mw-twocolconflict-split-add' ),
+			$otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
+
+		$selection.find( '.oo-ui-inputWidget-input' ).each( function () {
+			$( this ).prop( 'title', mw.msg(
+				( $( this ).is( ':checked' ) ) ? 'twocolconflict-split-selected-version-tooltip' :
+					'twocolconflict-split-unselected-version-tooltip'
+			) );
+		} );
+
+		if ( $checked.val() === 'your' ) {
+			disableColumn( $otherColumn );
+			enableColumn( $yourColumn );
+			$row.removeClass( 'mw-twocolconflict-no-selection' );
+		} else if ( $checked.val() === 'other' ) {
+			enableColumn( $otherColumn );
+			disableColumn( $yourColumn );
+			$row.removeClass( 'mw-twocolconflict-no-selection' );
+		} else {
+			disableColumn( $otherColumn );
+			disableColumn( $yourColumn );
+		}
+	}
+
 	function initColumnSelection() {
 		var $switches = $( '.mw-twocolconflict-split-selection' ),
 			$radioButtons = $switches.find( 'input' );
 
-		$radioButtons.on( 'change', function () {
-			var $switch = $( this ),
-				$row = $switch.closest( '.mw-twocolconflict-split-row' ),
-				$selection = $row.find( '.mw-twocolconflict-split-selection' ),
-				$selectedColumn, $unselectedColumn;
+		$radioButtons.on( 'change', handleSelectColumn );
 
-			$selection.find( '.oo-ui-inputWidget-input' ).each( function () {
-				$( this ).prop( 'title', mw.msg(
-					( $( this ).is( ':checked' ) ) ? 'twocolconflict-split-selected-version-tooltip' :
-						'twocolconflict-split-unselected-version-tooltip'
-				) );
-			} );
-
-			if ( $switch.val() === 'your' ) {
-				$selectedColumn = $row.find( '.mw-twocolconflict-split-add' );
-				$unselectedColumn = $row.find( '.mw-twocolconflict-split-delete' );
-				setColumnEditButtonState( $selectedColumn, $unselectedColumn );
-			} else {
-				$selectedColumn = $row.find( '.mw-twocolconflict-split-delete' );
-				$unselectedColumn = $row.find( '.mw-twocolconflict-split-add' );
-				setColumnEditButtonState( $selectedColumn, $unselectedColumn );
-			}
-			$selectedColumn
-				.addClass( 'mw-twocolconflict-split-selected' )
-				.removeClass( 'mw-twocolconflict-split-unselected' );
-			$unselectedColumn
-				.removeClass( 'mw-twocolconflict-split-selected' )
-				.addClass( 'mw-twocolconflict-split-unselected' );
-		} );
-
-		$switches.find( 'input:checked' ).trigger( 'change' );
+		$switches.find( 'input:first-of-type' ).trigger( 'change' );
 	}
 
 	function initTour() {
