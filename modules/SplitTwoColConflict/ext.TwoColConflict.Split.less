@@ -1,5 +1,8 @@
 /* stylelint-disable no-descending-specificity */
 
+@error-border-color: #ff1f1f;
+@error-background-color: #ffe7e7;
+
 .mw-twocolconflict-split-result {
 	display: none;
 }
@@ -50,6 +53,15 @@
 	display: flex;
 	align-items: flex-start;
 	margin: 10px 0;
+
+	&.mw-twocolconflict-no-selection {
+		background-color: @error-background-color;
+		padding: 3px;
+		border-color: @error-border-color;
+		border-style: solid;
+		border-width: 2px;
+		margin: 5px -5px;
+	}
 }
 
 .mw-twocolconflict-split-column {
@@ -186,6 +198,10 @@
 		line-height: 1.2em;
 		width: 110px;
 	}
+
+	.mw-twocolconflict-no-selection & {
+		color: @error-border-color;
+	}
 }
 
 .mw-twocolconflict-split-selection {
@@ -195,6 +211,12 @@
 
 	> div {
 		flex: 1;
+	}
+
+	.mw-twocolconflict-split-row.mw-twocolconflict-no-selection & > div {
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
+			border-color: @error-border-color;
+		}
 	}
 
 	> div:nth-child( 1 ) {
