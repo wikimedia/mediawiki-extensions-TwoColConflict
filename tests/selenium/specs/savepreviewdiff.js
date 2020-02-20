@@ -16,6 +16,8 @@ describe( 'TwoColConflict', function () {
 	it( 'should resolve the conflict successfully', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
@@ -119,6 +121,8 @@ describe( 'TwoColConflict', function () {
 	it( 'should show a preview page', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.previewButton.click();
 
 		assert(
@@ -176,6 +180,8 @@ describe( 'TwoColConflict', function () {
 	it( 'should be possible to edit and preview the left ("other") side', function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getEditor( 'other' ).setValue( 'Other, but improved' );
 		EditConflictPage.previewButton.click();
@@ -206,6 +212,8 @@ describe( 'TwoColConflict', function () {
 			'α\n&gamma; <span lang="de">A</span>',
 			'α\n&gamma; <span lang="en">B</span>'
 		);
+
+		EditConflictPage.otherParagraphSelection.click();
 
 		EditConflictPage.getEditButton( 'other' ).click();
 

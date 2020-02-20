@@ -41,6 +41,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'allows editing of conflict paragraphs by clicking the activated edit button', function () {
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.getEditButton( 'other' ).click();
 
 		assert(
@@ -171,6 +173,8 @@ describe( 'TwoColConflict', function () {
 			yourParagraphEditorText = EditConflictPage.getEditor( 'your' ).getValue(),
 			otherParagraphNewText = 'Dummy Text';
 
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getEditor( 'other' ).setValue( otherParagraphNewText );
 		EditConflictPage.getSaveButton( 'other' ).click();
@@ -204,6 +208,8 @@ describe( 'TwoColConflict', function () {
 		const otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML(),
 			otherParagraphOriginalText = EditConflictPage.getEditor( 'other' ).getValue();
 
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getEditor( 'other' ).setValue( 'Dummy Edit #1' );
 		EditConflictPage.getSaveButton( 'other' ).click();
@@ -236,6 +242,8 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'revert confirmation will not show if nothing changed', function () {
+		EditConflictPage.otherParagraphSelection.click();
+
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
 		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
@@ -259,6 +267,8 @@ describe( 'TwoColConflict', function () {
 
 	it( 'saving an editor with no changes will preserve the highlight portions', function () {
 		const otherParagraphOriginalDiffText = EditConflictPage.getDiffText( 'other' ).getHTML();
+
+		EditConflictPage.otherParagraphSelection.click();
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getSaveButton( 'other' ).click();
