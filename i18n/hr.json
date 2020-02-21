@@ -45,7 +45,7 @@
 	"twocolconflict-split-disabled-edit-tooltip": "Prije nego mognete uređivati ovu inačicu, iznačite je klikom na odgovarajući gumb u sredini.",
 	"twocolconflict-split-save-tooltip": "Primijeni promjene ovoga teksta.",
 	"twocolconflict-split-reset-tooltip": "Otkažite sve Vaše promjene ovoga teksta",
-	"twocolconflict-split-reset-warning": "Zanemariti izmjene? Tekst u ovome okviru bit će vraćen na stanje u kom je bio kada se dogodio sukob uređivanja.",
+	"twocolconflict-split-reset-warning": "Zanemariti izmjene? Tekst u ovome okviru bit će vraćen na stanje u kojem je bio kada se dogodio sukob uređivanja.",
 	"twocolconflict-split-reset-warning-cancel": "Odustani",
 	"twocolconflict-split-reset-warning-accept": "Odbaci",
 	"twocolconflict-split-collapse-tooltip": "Sklopi nepromijenjeni tekst",
