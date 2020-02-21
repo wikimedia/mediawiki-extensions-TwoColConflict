@@ -17,16 +17,6 @@ use User;
 class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	/**
-	 * @var string[]
-	 */
-	private $yourLines;
-
-	/**
-	 * @var string[]
-	 */
-	private $storedLines;
-
-	/**
 	 * @var string
 	 */
 	private $newEditSummary;
@@ -105,17 +95,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
-	 * @param string $yourtext
-	 * @param string $storedversion
-	 */
-	public function setTextboxes( $yourtext, $storedversion ) {
-		$this->yourLines = $this->splitText( $yourtext );
-		$this->storedLines = $this->splitText( $storedversion );
-
-		parent::setTextboxes( $yourtext, $storedversion );
-	}
-
-	/**
 	 * @param string $text
 	 *
 	 * @return string[]
@@ -187,6 +166,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildEditConflictView() : string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
+		$storedLines = $this->splitText( $this->storedversion );
+		$yourLines = $this->splitText( $this->yourtext );
 
 		$out = ( new HtmlSplitConflictHeader(
 			$this->title,
@@ -199,9 +180,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$user,
 			$language
 		) )->getHtml(
-			$this->getLineBasedUnifiedDiff(),
-			$this->yourLines,
-			$this->storedLines
+			$this->getLineBasedUnifiedDiff( $storedLines, $yourLines ),
+			$yourLines,
+			$storedLines
 		);
 		return $out;
 	}
@@ -219,14 +200,14 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * Get array with line based diff changes.
 	 *
+	 * @param string[] $fromLines
+	 * @param string[] $toLines
+	 *
 	 * @return array[]
 	 */
-	private function getLineBasedUnifiedDiff() : array {
+	private function getLineBasedUnifiedDiff( array $fromLines, array $toLines ) : array {
 		$formatter = new LineBasedUnifiedDiffFormatter();
-
-		return $formatter->format(
-			new \Diff( $this->storedLines, $this->yourLines )
-		);
+		return $formatter->format( new \Diff( $fromLines, $toLines ) );
 	}
 
 }
