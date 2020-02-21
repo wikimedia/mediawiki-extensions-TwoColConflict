@@ -25,19 +25,12 @@ class HtmlSplitConflictView {
 	private $language;
 
 	/**
-	 * @var string[]
-	 */
-	private $sideSelection;
-
-	/**
 	 * @param User $user
 	 * @param Language $language
-	 * @param string[] $sideSelection
 	 */
-	public function __construct( User $user, Language $language, array $sideSelection ) {
+	public function __construct( User $user, Language $language ) {
 		$this->user = $user;
 		$this->language = $language;
-		$this->sideSelection = $sideSelection;
 	}
 
 	/**
@@ -294,19 +287,16 @@ class HtmlSplitConflictView {
 	 * @return string HTML
 	 */
 	private function buildSideSelector( int $rowNum ) : string {
-		$side = $this->sideSelection[$rowNum] ?? '';
-
 		return Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'other',
-				'selected' => $side !== 'your',
+				'selected' => true,
 				'tabIndex' => '1',
 			] ) ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'your',
-				'selected' => $side === 'your',
 				'tabIndex' => '1',
 			] ) ) .
 			Html::closeElement( 'div' );
