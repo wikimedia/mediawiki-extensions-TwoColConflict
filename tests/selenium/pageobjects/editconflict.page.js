@@ -17,6 +17,7 @@ class EditConflictPage extends Page {
 	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
 	getEditDisabledEditButtonPopup( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-disabled-edit-button-popup' ); }
 
+	get selectionLabel() { return browser.element( '.mw-twocolconflict-split-selector-label span' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
 	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }

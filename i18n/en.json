@@ -28,6 +28,8 @@
 	"twocolconflict-split-not-saved-at": "Not published yet",
 	"twocolconflict-split-saved-at": "$1",
 	"twocolconflict-split-choose-version": "Please select a version",
+	"twocolconflict-split-other-version-chosen": "Other version",
+	"twocolconflict-split-your-version-chosen": "Your version",
 	"twocolconflict-split-tour-dialog-header": "Solve edit conflicts",
 	"twocolconflict-split-tour-dialog-message": "Unfortunately, you've run into an edit conflict: During your edit another user also edited the page and saved it. Your version is now out of date because it doesn't include the other user's edits. Please merge your edits on the next page.",
 	"twocolconflict-split-tour-dialog-btn-text": "Start merging",
