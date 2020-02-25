@@ -72,14 +72,9 @@ class TwoColConflictHooks {
 	 */
 	public static function onImportFormData( EditPage $editPage, WebRequest $request ) {
 		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
-		$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' );
-		$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' );
-
-		if ( $request->getBool( 'mw-twocolconflict-submit' ) &&
-			$contentRows !== null &&
-			$extraLineFeeds !== null &&
-			$sideSelection !== null
-		) {
+		if ( $contentRows ) {
+			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds', [] );
+			$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector', [] );
 			$editPage->textbox1 = SplitConflictMerger::mergeSplitConflictResults(
 				$contentRows,
 				$extraLineFeeds,

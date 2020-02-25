@@ -122,7 +122,6 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$submit = true
 	) {
 		return new \FauxRequest( [
-			'mw-twocolconflict-submit' => $submit,
 			'mw-twocolconflict-side-selector' => $sideSelection,
 			'mw-twocolconflict-split-content' => $splitContent,
 			'mw-twocolconflict-split-linefeeds' => $splitLineFeeds,
