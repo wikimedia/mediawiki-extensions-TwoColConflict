@@ -37,10 +37,16 @@ class HtmlSplitConflictView {
 	 * @param array[][] $unifiedDiff
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
+	 * @param bool $markAllAsIncomplete
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( array $unifiedDiff, array $yourLines, array $storedLines ) : string {
+	public function getHtml(
+		array $unifiedDiff,
+		array $yourLines,
+		array $storedLines,
+		bool $markAllAsIncomplete
+	) : string {
 		$out = Html::openElement(
 			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
 		);
@@ -51,7 +57,7 @@ class HtmlSplitConflictView {
 			foreach ( $currentLine as $changeSet ) {
 				switch ( $changeSet['action'] ) {
 					case 'delete':
-						$out .= $this->startRow( $currRowNum );
+						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 						$out .= $this->buildRemovedLine(
 							$changeSet['old'],
 							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
@@ -67,7 +73,7 @@ class HtmlSplitConflictView {
 						break;
 					case 'add':
 						if ( !$this->hasConflictInLine( $currentLine ) ) {
-							$out .= $this->startRow( $currRowNum );
+							$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 							$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
 							$out .= $this->buildSideSelector( $currRowNum, $isFirstNonCopyLine );
 						}
@@ -99,10 +105,12 @@ class HtmlSplitConflictView {
 		return $out;
 	}
 
-	private function startRow( int $rowNum ) : string {
-		return Html::openElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-row', 'data-line-number' => $rowNum ]
-		);
+	private function startRow( int $rowNum, bool $markAsIncomplete = false ) : string {
+		$class = 'mw-twocolconflict-split-row';
+		if ( $markAsIncomplete ) {
+			$class .= ' mw-twocolconflict-no-selection';
+		}
+		return Html::openElement( 'div', [ 'class' => $class, 'data-line-number' => $rowNum ] );
 	}
 
 	private function endRow() : string {
