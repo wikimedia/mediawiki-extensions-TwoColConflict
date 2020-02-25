@@ -40,12 +40,14 @@
 	"twocolconflict-split-tour-popup3-message": "Texten som ändrades i varje version har markerade rader. Efter att du har redigerat texten kommer markeringen försvinna.",
 	"twocolconflict-split-edit-tooltip": "Klicka för att redigera denna text",
 	"twocolconflict-split-disabled-edit-tooltip": "Innan du kan redigera denna version, välj den genom att klicka på motsvarande knapp i mitten.",
-	"twocolconflict-split-save-tooltip": "Spara ändringar och lämna redigeringsläget.",
-	"twocolconflict-split-reset-tooltip": "Återställ text",
+	"twocolconflict-split-save-tooltip": "Verkställ dina ändringar i denna text",
+	"twocolconflict-split-reset-tooltip": "Släng alla dina ändringar i denna text",
 	"twocolconflict-split-reset-warning": "Släng ändringarna? Texten i detta fält kommer att återställas till vad den var när redigeringskonflikten inträffade.",
 	"twocolconflict-split-reset-warning-cancel": "Avbryt",
 	"twocolconflict-split-reset-warning-accept": "Släng",
-	"twocolconflict-split-collapse-tooltip": "Dölj text",
-	"twocolconflict-split-expand-tooltip": "Visa text",
+	"twocolconflict-split-collapse-tooltip": "Dölj oförändrad text",
+	"twocolconflict-split-expand-tooltip": "Visa oförändrad text",
+	"twocolconflict-split-selected-version-tooltip": "Vald alternativ",
+	"twocolconflict-split-unselected-version-tooltip": "Klicka för att välja denna version",
 	"twocolconflict-split-help-tooltip": "Visa hjälp"
 }
