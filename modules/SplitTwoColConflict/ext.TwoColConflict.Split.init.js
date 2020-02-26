@@ -166,6 +166,7 @@
 		var $group = $( this ).closest( '.mw-twocolconflict-split-selection' ),
 			$checked = $group.find( 'input:checked' ),
 			$row = $group.closest( '.mw-twocolconflict-split-row' ),
+			$label = $row.find( '.mw-twocolconflict-split-selector-label span' ),
 			$selection = $row.find( '.mw-twocolconflict-split-selection' ),
 			// TODO: Rename classes, "add" should be "your", etc.
 			$yourColumn = $row.find( '.mw-twocolconflict-split-add' ),
@@ -182,13 +183,16 @@
 			disableColumn( $otherColumn );
 			enableColumn( $yourColumn );
 			$row.removeClass( 'mw-twocolconflict-no-selection' );
+			$label.text( mw.msg( 'twocolconflict-split-your-version-chosen' ) );
 		} else if ( $checked.val() === 'other' ) {
 			enableColumn( $otherColumn );
 			disableColumn( $yourColumn );
 			$row.removeClass( 'mw-twocolconflict-no-selection' );
+			$label.text( mw.msg( 'twocolconflict-split-other-version-chosen' ) );
 		} else {
 			disableColumn( $otherColumn );
 			disableColumn( $yourColumn );
+			$label.text( mw.msg( 'twocolconflict-split-choose-version' ) );
 		}
 	}
 

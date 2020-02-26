@@ -19,6 +19,18 @@ describe( 'TwoColConflict', function () {
 		assert( EditConflictPage.conflictView.isExisting() );
 	} );
 
+	it( 'label changes according to selected column', function () {
+		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+
+		const initialText = EditConflictPage.selectionLabel.getText();
+
+		EditConflictPage.yourParagraphSelection.click();
+
+		const updatedText = EditConflictPage.selectionLabel.getText();
+
+		assert( initialText !== updatedText );
+	} );
+
 	after( function () {
 		browser.deleteCookie();
 	} );
