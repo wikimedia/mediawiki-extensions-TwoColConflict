@@ -32,6 +32,7 @@ class SplitConflictMerger {
 
 			// As all this is user input, we can't assume the elements are always there
 			if ( !isset( $row[$side] ) ) {
+				// Warning, this deletes a row, which might or might not cause another conflict
 				continue;
 			}
 
