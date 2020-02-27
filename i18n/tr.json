@@ -29,6 +29,8 @@
 	"twocolconflict-split-current-version-header": "$1 itibarı ile sayfanın şu anki hâli",
 	"twocolconflict-split-not-saved-at": "Henüz yayınlanmadı",
 	"twocolconflict-split-choose-version": "Lütfen bir sürüm seçin",
+	"twocolconflict-split-other-version-chosen": "Diğer sürüm",
+	"twocolconflict-split-your-version-chosen": "Sürümünüz",
 	"twocolconflict-split-tour-dialog-header": "Düzenleme çakışmalarını çözme",
 	"twocolconflict-split-tour-dialog-message": "Maalesef bir düzenleme çakışması yaşadınız: Düzenleme sırasında başka bir kullanıcı da sayfayı düzenledi ve kaydetti. Diğer kullanıcının düzenlemelerini içermediği için sürümünüz artık güncel değil. Lütfen düzenlemelerinizi bir sonraki sayfada birleştirin.",
 	"twocolconflict-split-tour-dialog-btn-text": "Birleştirmeye başla",

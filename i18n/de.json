@@ -30,6 +30,8 @@
 	"twocolconflict-split-current-version-header": "Aktuelle Version von $1",
 	"twocolconflict-split-not-saved-at": "Noch nicht veröffentlicht",
 	"twocolconflict-split-choose-version": "Bitte eine Version auswählen",
+	"twocolconflict-split-other-version-chosen": "Andere Version",
+	"twocolconflict-split-your-version-chosen": "Deine Version",
 	"twocolconflict-split-tour-dialog-header": "Bearbeitungskonflikte auflösen",
 	"twocolconflict-split-tour-dialog-message": "Leider bist du in einen Bearbeitungskonflikt geraten: Während deiner Bearbeitung hat jemand anderes ebenfalls die Seite bearbeitet und abgespeichert. Deine Version ist jetzt veraltet, da sie nicht die Bearbeitungen des anderen enthält. Führe bitte deine Bearbeitungen auf der nächsten Seite zusammen.",
 	"twocolconflict-split-tour-dialog-btn-text": "Mit der Zusammenführung beginnen",
