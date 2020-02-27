@@ -25,14 +25,6 @@ describe( 'TwoColConflict', function () {
 				'I see an info tour'
 			);
 		} );
-
-		after( function () {
-			// provoke and dismiss reload warning
-			browser.url( 'data:text/html,Done' );
-			try {
-				browser.alertAccept();
-			} catch ( e ) {}
-		} );
 	} );
 
 	describe( 'subsequent viewing', function () {
