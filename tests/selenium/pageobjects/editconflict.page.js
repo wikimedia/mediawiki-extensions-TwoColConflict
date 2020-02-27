@@ -1,6 +1,6 @@
 const Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
-	BetaPreferencesPage = require( '../pageobjects/betapreferences.page' ),
+	PreferencesPage = require( '../pageobjects/preferences.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
@@ -92,7 +92,8 @@ class EditConflictPage extends Page {
 			return Api.createAccount( conflictUser, conflictUserPassword );
 		} );
 		UserLoginPage.loginAdmin();
-		BetaPreferencesPage.enableTwoColConflictBetaFeature();
+		PreferencesPage.disableEditWarning();
+		PreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );
 		this.enforceSplitEditConflict();
 
