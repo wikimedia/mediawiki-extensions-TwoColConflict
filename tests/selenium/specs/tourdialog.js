@@ -111,13 +111,6 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	after( function () {
-		// provoke and dismiss reload warning
-		browser.url( 'data:text/html,Done' );
-		try {
-			browser.alertAccept();
-		} catch ( e ) {
-		} finally {
-			browser.deleteCookie();
-		}
+		browser.deleteCookie();
 	} );
 } );
