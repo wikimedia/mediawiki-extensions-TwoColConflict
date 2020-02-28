@@ -28,6 +28,8 @@
 	"twocolconflict-split-current-version-header": "גרסה אחרונה מ־$1",
 	"twocolconflict-split-not-saved-at": "עדיין לא פורסמה",
 	"twocolconflict-split-choose-version": "נא לבחור גרסה",
+	"twocolconflict-split-other-version-chosen": "גרסה אחרת",
+	"twocolconflict-split-your-version-chosen": "הגרסה שלך",
 	"twocolconflict-split-tour-dialog-header": "פתרון התנגשויות עריכה",
 	"twocolconflict-split-tour-dialog-message": "למרבה הצער יש לך התנגשות עריכה: בזמן שערכת, משתמש אחר ערך את הדף ושמר אותו. הגרסה שלך אינה עדכנית עכשיו כי אינה כוללת את העריכות של המשתמש האחר. נא למזג את העריכות שלך בדף הבא.",
 	"twocolconflict-split-tour-dialog-btn-text": "להתחיל למזג",

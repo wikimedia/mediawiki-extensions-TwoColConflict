@@ -32,6 +32,8 @@
 	"twocolconflict-split-current-version-header": "Versione attuale delle $1",
 	"twocolconflict-split-not-saved-at": "Non ancora pubblicato",
 	"twocolconflict-split-choose-version": "Seleziona una versione",
+	"twocolconflict-split-other-version-chosen": "Altra versione",
+	"twocolconflict-split-your-version-chosen": "La tua versione",
 	"twocolconflict-split-tour-dialog-header": "Risolvi i conflitti di modifiche",
 	"twocolconflict-split-tour-dialog-message": "Sembra che tu abbia avuto un conflitto di modifiche: durante la tua modifica un altro utente ha apportato delle modifiche alla pagina e le ha salvate. Ora la tua versione non è aggiornata perché non include le modifiche dell'altro utente. Ti chiediamo di unire le tue modifiche nella pagina successiva.",
 	"twocolconflict-split-tour-dialog-btn-text": "Inizia l'unione",

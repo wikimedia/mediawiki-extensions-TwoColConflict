@@ -32,6 +32,8 @@
 	"twocolconflict-split-current-version-header": "آخر مراجعة اعتبارا من $1",
 	"twocolconflict-split-not-saved-at": "لم يتم النشر بعد",
 	"twocolconflict-split-choose-version": "يُرجَى اختيار نسخة",
+	"twocolconflict-split-other-version-chosen": "النسخة الأخرى",
+	"twocolconflict-split-your-version-chosen": "نسختك",
 	"twocolconflict-split-tour-dialog-header": "حل تضاربات التحرير",
 	"twocolconflict-split-tour-dialog-message": "لسوء الحظ، واجهت تعارضا في التعديل: أثناء التعديل، قام مستخدم آخر أيضا بتحرير الصفحة وحفظها، إصدارك الآن قديم لأنه لا يتضمن تعديلات المستخدم الآخر، يُرجَى دمج تعديلاتك في الصفحة التالية.",
 	"twocolconflict-split-tour-dialog-btn-text": "بدء الدمج",

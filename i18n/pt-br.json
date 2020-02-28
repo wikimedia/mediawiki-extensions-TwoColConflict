@@ -29,6 +29,8 @@
 	"twocolconflict-split-current-version-header": "Edição atual tal como às $1",
 	"twocolconflict-split-not-saved-at": "Ainda não publicado",
 	"twocolconflict-split-choose-version": "Por favor, selecione uma versão",
+	"twocolconflict-split-other-version-chosen": "Outra versão",
+	"twocolconflict-split-your-version-chosen": "Sua revisão",
 	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edição",
 	"twocolconflict-split-tour-dialog-message": "Infelizmente, você se deparou com um conflito de edição: durante sua edição, outro usuário também editou a página e a salvou. Sua versão está desatualizada porque não inclui as edições do outro usuário. Por favor, mescle suas edições na próxima página.",
 	"twocolconflict-split-tour-dialog-btn-text": "Começar a mesclar",

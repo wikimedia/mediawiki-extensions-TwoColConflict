@@ -28,6 +28,8 @@
 	"twocolconflict-split-current-version-header": "Последна преработка од $1",
 	"twocolconflict-split-not-saved-at": "Сè уште необјавено",
 	"twocolconflict-split-choose-version": "Изберете верзија",
+	"twocolconflict-split-other-version-chosen": "Други верзии",
+	"twocolconflict-split-your-version-chosen": "Вашата верзија",
 	"twocolconflict-split-tour-dialog-header": "Разрешувања на спротиставени уредувања",
 	"twocolconflict-split-tour-dialog-message": "За жал, се јави спротиставеност во уредувањата. Додека уредувавте, некој друг уредник ја уредил страницата и ја зачувал. Вашата верзија сега е застарена бидејќи не ги содржи уредувањата на тој корисник. Спојте ги уредувањата на следната страница.",
 	"twocolconflict-split-tour-dialog-btn-text": "Почни со спојување",

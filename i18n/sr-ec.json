@@ -33,6 +33,8 @@
 	"twocolconflict-split-current-version-header": "Најновија измена од $1",
 	"twocolconflict-split-not-saved-at": "Још није објављено",
 	"twocolconflict-split-choose-version": "Изаберите верзију",
+	"twocolconflict-split-other-version-chosen": "Остале верзије",
+	"twocolconflict-split-your-version-chosen": "Ваша верзија",
 	"twocolconflict-split-tour-dialog-header": "Решавање сукоба измена",
 	"twocolconflict-split-tour-dialog-message": "Наишли сте на сукоб измена: Током ваше измене други корисник је такође уређивао страницу и сачувао је. Ваша верзија је сада застарела јер не садржи измене другог корисника. Обједините измене на следећој страници.",
 	"twocolconflict-split-tour-dialog-btn-text": "Почни са спајањем",

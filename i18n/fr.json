@@ -9,7 +9,8 @@
 			"McDutchie",
 			"Zarisi",
 			"Alacabe",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Eneelk"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -35,6 +36,8 @@
 	"twocolconflict-split-current-version-header": "Version actuelle datée du $1",
 	"twocolconflict-split-not-saved-at": "Non encore publié",
 	"twocolconflict-split-choose-version": "Veuillez choisir une version",
+	"twocolconflict-split-other-version-chosen": "Autre version",
+	"twocolconflict-split-your-version-chosen": "Votre version",
 	"twocolconflict-split-tour-dialog-header": "Résoudre les conflits d'édition",
 	"twocolconflict-split-tour-dialog-message": "Malheureusement, vous êtes confronté à un conflit d’édition: lors de votre modification, un autre utilisateur a également modifié la page et l’a enregistrée. Votre version est donc obsolète car elle n'inclut pas les modifications des autres utilisateurs. Veuillez fusionner vos modifications sur la page suivante.",
 	"twocolconflict-split-tour-dialog-btn-text": "Démarrer la fusion",
