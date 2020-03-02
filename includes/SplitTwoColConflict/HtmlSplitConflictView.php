@@ -46,7 +46,6 @@ class HtmlSplitConflictView {
 		);
 
 		$currRowNum = 0;
-		$isFirstNonCopyLine = true;
 		foreach ( $unifiedDiff as $currentLine ) {
 			foreach ( $currentLine as $changeSet ) {
 				switch ( $changeSet['action'] ) {
@@ -57,7 +56,7 @@ class HtmlSplitConflictView {
 							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
 							$currRowNum
 						);
-						$out .= $this->buildSideSelector( $currRowNum, $isFirstNonCopyLine );
+						$out .= $this->buildSideSelector( $currRowNum );
 
 						if ( !$this->hasConflictInLine( $currentLine ) ) {
 							$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
@@ -69,7 +68,7 @@ class HtmlSplitConflictView {
 						if ( !$this->hasConflictInLine( $currentLine ) ) {
 							$out .= $this->startRow( $currRowNum );
 							$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
-							$out .= $this->buildSideSelector( $currRowNum, $isFirstNonCopyLine );
+							$out .= $this->buildSideSelector( $currRowNum );
 						}
 
 						$out .= $this->buildAddedLine(
@@ -279,16 +278,12 @@ class HtmlSplitConflictView {
 
 	/**
 	 * @param int $rowNum Identifier for this line.
-	 * @param bool &$isFirstNonCopyLine If true, then show a legend above the selector.
 	 *
 	 * @return string HTML
 	 */
-	private function buildSideSelector( int $rowNum, bool &$isFirstNonCopyLine ) : string {
-		$label = $isFirstNonCopyLine ? $this->buildSideSelectorLabel() : '';
-		$isFirstNonCopyLine = false;
-
+	private function buildSideSelector( int $rowNum ) : string {
 		return Html::openElement( 'div' ) .
-			$label .
+			$this->buildSideSelectorLabel() .
 			Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
