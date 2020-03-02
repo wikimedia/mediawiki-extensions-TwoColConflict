@@ -62,13 +62,6 @@ class EditConflictPage extends Page {
 		}
 	}
 
-	enforceSplitEditConflict() {
-		return browser.setCookie( {
-			name: 'mw-twocolconflict-split-ui',
-			value: '1'
-		} );
-	}
-
 	/**
 	 * @param {boolean} [show] Defaults to true.
      * @return {Promise} Promise from the mw.Api request
@@ -96,7 +89,6 @@ class EditConflictPage extends Page {
 		PreferencesPage.disableEditWarning();
 		PreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );
-		this.enforceSplitEditConflict();
 
 		browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
