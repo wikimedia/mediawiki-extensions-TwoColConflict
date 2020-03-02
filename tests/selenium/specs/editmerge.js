@@ -15,6 +15,14 @@ describe( 'TwoColConflict', function () {
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
 
+		assert(
+			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
+				.indexOf( 'oo-ui-widget-disabled' ) !== -1 &&
+			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
+				.indexOf( 'oo-ui-widget-disabled' ) !== -1,
+			'neither side is activated'
+		);
+
 		assert( EditConflictPage.submitButton.isVisible(), 'submit button exists' );
 		assert( EditConflictPage.previewButton.isVisible(), 'preview button exists' );
 		assert( !EditConflictPage.diffButton.isVisible(), 'no diff button' );
