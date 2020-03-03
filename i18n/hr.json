@@ -31,6 +31,7 @@
 	"twocolconflict-split-current-version-header": "Posljednja izmjena, načinjena $1",
 	"twocolconflict-split-not-saved-at": "Još nije objavljeno",
 	"twocolconflict-split-choose-version": "Molimo označite inačicu",
+	"twocolconflict-split-your-version-chosen": "Vaša inačica",
 	"twocolconflict-split-tour-dialog-header": "Riješi sukob uređivanja",
 	"twocolconflict-split-tour-dialog-message": "Nažalost, dogodio Vam se sukob uređivanja: za vrijeme Vašega uređivanja drugi je suradnik također uređivao stranicu i spremio je. Vaša je inačica trenutačno zastarjela, jer ne sadrži uređivanja drugoga suradnika. Ljubazno Vas molimo da spojite vaša uređivanja na sljedećoj stranici.",
 	"twocolconflict-split-tour-dialog-btn-text": "Počni spajanje",

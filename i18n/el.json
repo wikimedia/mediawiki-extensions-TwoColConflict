@@ -21,6 +21,8 @@
 	"twocolconflict-split-current-version-header": "Τελευταία αναθεώρηση της $1",
 	"twocolconflict-split-not-saved-at": "Μη δημοσιευμένο ακόμη",
 	"twocolconflict-split-choose-version": "Παρακαλούμε επιλέξτε έκδοση",
+	"twocolconflict-split-other-version-chosen": "Άλλη έκδοση",
+	"twocolconflict-split-your-version-chosen": "Η δική σας έκδοση",
 	"twocolconflict-split-tour-dialog-header": "Επίλυση συγκρούσεων επεξεργασίας",
 	"twocolconflict-split-tour-dialog-message": "Δυστυχώς, πέσατε σε μια σύγκρουση επεξεργασίας: Κατά τη διάρκεια της επεξεργασίας σας ένας άλλος χρήστης επίσης επεξεργάστηκε τη σελίδα και την αποθήκευσε. Η έκδοσή σας τώρα είναι παρωχυμένη επειδή δεν περιλαμβάνει τις επεξεργασίες του άλλου χρήστη. Παρακαλούμε συγχωνεύστε τις επεξεργασίες σας στην επόμενη σελίδα.",
 	"twocolconflict-split-tour-dialog-btn-text": "Εκκίνηση συγχώνευσης",
