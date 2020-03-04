@@ -52,7 +52,7 @@ class HtmlPreview extends SpecialPageHtmlFragment {
 	}
 
 	private function getParserOptions() : ParserOptions {
-		$parserOptions = new ParserOptions();
+		$parserOptions = new ParserOptions( $this->getUser() );
 		$parserOptions->setIsPreview( true );
 		return $parserOptions;
 	}
