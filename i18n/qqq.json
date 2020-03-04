@@ -15,6 +15,7 @@
 	"twocolconflict-desc": "{{desc|name=TwoColConflict|url=https://www.mediawiki.org/wiki/Extension:TwoColConflict}}",
 	"twocolconflict-beta-feature-message": "Label for the TwoColConflict Beta Feature.",
 	"twocolconflict-beta-feature-description": "Description for the TwoColConflict Beta Feature, describing the feature that will be enabled.",
+	"twocolconflict-preference-enabled": "Label for the user preference that enables the two column edit conflict interface.",
 	"twocolconflict-test-needsbeta": "Error message show on the conflict test page if the beta feature is not enabled.",
 	"twocolconflict-test-page-title": "Page title when simulating edit conflicts on the conflict test pages.",
 	"twocolconflict-test-title-label": "Label for the conflict test page input box to load an article.",

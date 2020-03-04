@@ -19,6 +19,8 @@ use WebRequest;
  */
 class TwoColConflictHooks {
 
+	private const OPTOUT_PREFERENCE_NAME = 'twocolconflict-enabled';
+
 	/**
 	 * @param User $user
 	 *
@@ -33,7 +35,7 @@ class TwoColConflictHooks {
 			return \BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' );
 		}
 
-		return true;
+		return $user->getBoolOption( self::OPTOUT_PREFERENCE_NAME );
 	}
 
 	/**
@@ -165,6 +167,34 @@ class TwoColConflictHooks {
 				],
 			];
 		}
+	}
+
+	/**
+	 * @param User $user
+	 * @param array[] &$preferences
+	 */
+	public static function onGetPreferences( User $user, array &$preferences ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
+		) {
+			return;
+		}
+
+		$preferences[self::OPTOUT_PREFERENCE_NAME] = [
+			'type' => 'toggle',
+			'label-message' => 'twocolconflict-preference-enabled',
+			'section' => 'editing/advancedediting',
+		];
+	}
+
+	/**
+	 * Called whenever a user wants to reset their preferences.
+	 *
+	 * @param array &$defaultOptions
+	 */
+	public static function onUserGetDefaultOptions( array &$defaultOptions ) {
+		$defaultOptions[self::OPTOUT_PREFERENCE_NAME] = 1;
 	}
 
 	/**
