@@ -120,9 +120,23 @@ class TwoColConflictHooks {
 			$baseRevision = $editPage->getBaseRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
 
-			// TODO: implement complexity metrics
 			$conflictChunks = 0;
 			$conflictChars = 0;
+			if ( $baseRevision && $latestRevision ) {
+				// Attempt the automatic merge, to measure the number of actual conflicts.
+				/** @var ThreeWayMerge $merge */
+				$merge = MediaWikiServices::getInstance()->getService( 'TwoColConflictThreeWayMerge' );
+				$result = $merge->merge3(
+					$baseRevision->getContent()->serialize(),
+					$latestRevision->getContent()->serialize(),
+					$editPage->textbox2
+				);
+
+				if ( !$result->isCleanMerge() ) {
+					$conflictChunks = $result->getOverlappingChunkCount();
+					$conflictChars = $result->getOverlappingChunkSize();
+				}
+			}
 
 			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19872073
 			\EventLogging::logEvent(

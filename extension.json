@@ -153,6 +153,9 @@
 		"localBasePath": "",
 		"remoteExtPath": "TwoColConflict"
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"SpecialPages": {
 		"SimulateTwoColEditConflict": "TwoColConflict\\SpecialConflictTestPage\\SpecialConflictTestPage"
 	}
