@@ -152,7 +152,8 @@ TEXT
 		) )->getHtml(
 			$diff,
 			[ 'New 1', 'New 2', 'New 3', 'New 4', 'New 5' ],
-			[ 'Old 1', 'Old 2', 'Old 3', 'Old 4', 'Old 5' ]
+			[ 'Old 1', 'Old 2', 'Old 3', 'Old 4', 'Old 5' ],
+			false
 		);
 
 		$this->assertElementsPresentInOrder(

@@ -35,27 +35,26 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testMixedSideSelection() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
-			[
-				[ 'other' => 'A', 'your' => 'B' ],
-				[ 'other' => 'C', 'your' => 'D' ],
-			],
-			[],
-			[ 'your', 'other' ]
-		);
+		$rows = [
+			[ 'other' => 'A', 'your' => 'B' ],
+			[ 'other' => 'C', 'your' => 'D' ],
+		];
+		$sides = [ 'your', 'other' ];
+
+		$this->assertTrue( SplitConflictMerger::validateSideSelection( $rows, $sides ) );
+		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
 		$this->assertSame( "B\nC", $result );
 	}
 
 	public function testInvalidSideSelection() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
-			[
-				[ 'other' => 'A', 'your' => 'B' ],
-			],
-			[],
-			[ 1 => 'your' ]
-		);
-		// FIXME: Is this a good idea? Shouldn't we pick at least one side? But which?
-		$this->assertSame( '', $result );
+		$rows = [
+			[ 'other' => 'A', 'your' => 'B' ],
+		];
+		$sides = [ 1 => 'your' ];
+
+		$this->assertFalse( SplitConflictMerger::validateSideSelection( $rows, $sides ) );
+		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
+		$this->assertSame( 'B', $result );
 	}
 
 	public function testExtraLineFeedsAreAdded() {

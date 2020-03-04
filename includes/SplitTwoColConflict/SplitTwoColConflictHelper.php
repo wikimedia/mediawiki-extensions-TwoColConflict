@@ -185,7 +185,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) )->getHtml(
 			$this->getLineBasedUnifiedDiff( $storedLines, $this->splitText( $previewWikitext ) ),
 			$yourLines,
-			$storedLines
+			$storedLines,
+			// Note: Can't use getBool() because that discards arrays
+			(bool)$this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' )
 		);
 		return $out;
 	}

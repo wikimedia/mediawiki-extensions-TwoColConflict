@@ -62,6 +62,21 @@ class TwoColConflictHooks {
 				MediaWikiServices::getInstance()->getContentHandlerFactory()
 			);
 		} );
+
+		$request = $editPage->getContext()->getRequest();
+		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
+		if ( $contentRows ) {
+			$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector', [] );
+			if ( !SplitConflictMerger::validateSideSelection( $contentRows, $sideSelection ) ) {
+				// Mark the conflict as *not* being resolved to trigger it again. This works because
+				// EditPage uses editRevId to decide if it's even possible to run into a conflict.
+				// If editRevId reflects the most recent revision, it can't be a conflict (again),
+				// and the user's input is stored, even if it reverts everything.
+				// Warning, this is particularly fragile! This assumes EditPage was not reading the
+				// WebRequest values before!
+				$request->setVal( 'editRevId', $request->getInt( 'parentRevId' ) );
+			}
+		}
 	}
 
 	/**
