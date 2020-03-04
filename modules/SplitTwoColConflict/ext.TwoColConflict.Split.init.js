@@ -200,6 +200,8 @@
 		var $switches = $( '.mw-twocolconflict-split-selection' ),
 			$radioButtons = $switches.find( 'input' );
 
+		// TODO remove when having no selection is the default
+		$radioButtons.prop( 'checked', false );
 		$radioButtons.on( 'change', handleSelectColumn );
 
 		$switches.find( 'input:first-of-type' ).trigger( 'change' );
