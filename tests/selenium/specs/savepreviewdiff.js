@@ -40,6 +40,7 @@ describe( 'TwoColConflict', function () {
 			title,
 			2
 		);
+		EditConflictPage.waitForUiToLoad();
 
 		// a user editing a different section while the initial conflict is still being resolved
 		EditConflictPage.editPage(
@@ -72,6 +73,7 @@ describe( 'TwoColConflict', function () {
 			'Line1\nChange B',
 			title
 		);
+		EditConflictPage.waitForUiToLoad();
 
 		// a user editing in a line affected by the conflict above
 		EditConflictPage.editPage(
@@ -212,6 +214,7 @@ describe( 'TwoColConflict', function () {
 			'α\n&gamma; <span lang="de">A</span>',
 			'α\n&gamma; <span lang="en">B</span>'
 		);
+		EditConflictPage.waitForUiToLoad();
 
 		EditConflictPage.otherParagraphSelection.click();
 

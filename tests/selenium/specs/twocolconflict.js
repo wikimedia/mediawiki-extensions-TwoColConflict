@@ -1,5 +1,6 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	PreferencesPage = require( '../pageobjects/preferences.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 describe( 'TwoColConflict', function () {
@@ -29,6 +30,31 @@ describe( 'TwoColConflict', function () {
 		const updatedText = EditConflictPage.selectionLabel.getText();
 
 		assert( initialText !== updatedText );
+	} );
+
+	it( 'is not used when it is not enabled in the preferences', function () {
+		PreferencesPage.openEditPreferences();
+		if ( !this.hasOptOutUserSetting ) {
+			this.skip();
+		}
+		PreferencesPage.shouldUseTwoColConflict( false );
+		EditConflictPage.createConflict(
+			conflictUser,
+			conflictUserPassword,
+			'A',
+			'B',
+			'C'
+		);
+
+		assert(
+			EditConflictPage.wpTextbox2.isVisible(),
+			'the editor for the core conflict UI is shown'
+		);
+		assert(
+			!EditConflictPage.conflictHeader.isExisting() &&
+			!EditConflictPage.conflictView.isExisting(),
+			'the two column UI is not loaded'
+		);
 	} );
 
 	after( function () {

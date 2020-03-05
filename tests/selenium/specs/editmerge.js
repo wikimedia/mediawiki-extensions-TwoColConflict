@@ -14,6 +14,7 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.waitForUiToLoad();
 
 		assert(
 			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )

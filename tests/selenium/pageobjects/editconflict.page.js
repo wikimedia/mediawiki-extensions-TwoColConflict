@@ -47,6 +47,8 @@ class EditConflictPage extends Page {
 	get previewView() { return browser.element( '#wikiPreview' ); }
 	get previewText() { return browser.element( '#wikiPreview .mw-parser-output' ); }
 
+	get wpTextbox2() { return browser.element( '#wpTextbox2' ); }
+
 	hoverEditButton( column ) {
 		browser.moveToObject( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' );
 	}
@@ -87,6 +89,7 @@ class EditConflictPage extends Page {
 		} );
 		UserLoginPage.loginAdmin();
 		PreferencesPage.disableEditWarning();
+		PreferencesPage.shouldUseTwoColConflict( true );
 		PreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );
 
@@ -108,6 +111,7 @@ class EditConflictPage extends Page {
 			'Line1\nChange <span lang="de">A</span>',
 			'Line1\nChange <span lang="en">B</span>'
 		);
+		this.waitForUiToLoad();
 	}
 
 	showBigConflict( conflictUser, conflictUserPassword ) {
@@ -118,6 +122,7 @@ class EditConflictPage extends Page {
 			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
 		);
+		this.waitForUiToLoad();
 	}
 
 	editPage( title, text, conflictUser, conflictUserPassword ) {
@@ -172,9 +177,12 @@ class EditConflictPage extends Page {
 
 		EditPage.content.setValue( yourText );
 		EditPage.save.click();
+	}
 
+	waitForUiToLoad() {
 		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
 	}
+
 }
 
 module.exports = new EditConflictPage();

@@ -1,10 +1,12 @@
 const Page = require( 'wdio-mediawiki/Page' );
 
 class PreferencesPage extends Page {
-	get twoColCheckbox() { return browser.element( 'input[name=wptwocolconflict]' ); }
-	get twoColLabel() { return browser.element( '//*[@name="wptwocolconflict"]//parent::span' ); }
+	get twoColBetaCheckbox() { return browser.element( 'input[name=wptwocolconflict]' ); }
+	get twoColBetaLabel() { return browser.element( '//*[@name="wptwocolconflict"]//parent::span' ); }
 	get editWarnCheckbox() { return browser.element( 'input[name=wpuseeditwarning]' ); }
 	get editWarnLabel() { return browser.element( '#mw-input-wpuseeditwarning' ); }
+	get twoColCheckbox() { return browser.element( 'input[name=wptwocolconflict-enabled]' ); }
+	get twoColLabel() { return browser.element( '#mw-input-wptwocolconflict-enabled' ); }
 	get submit() { return browser.element( '#prefcontrol button' ); }
 
 	openBetaPreferences() {
@@ -23,16 +25,24 @@ class PreferencesPage extends Page {
 		}
 	}
 
-	enableTwoColConflictBetaFeature() {
-		this.openBetaPreferences();
-		try {
-			// don't fail hard when not used as beta feature
-			this.twoColLabel.waitForVisible( 3000 );
-		} catch ( e ) {
+	shouldUseTwoColConflict( shouldUse ) {
+		this.openEditPreferences();
+		if ( !this.hasOptOutUserSetting() ) {
 			return;
 		}
-		if ( !this.twoColCheckbox.getAttribute( 'checked' ) ) {
+		if ( !this.twoColCheckbox.getAttribute( 'checked' ) === shouldUse ) {
 			this.clickCheckBoxAndSave( this.twoColCheckbox );
+		}
+	}
+
+	enableTwoColConflictBetaFeature() {
+		this.openBetaPreferences();
+		if ( !this.hasBetaFeatureSetting() ) {
+			return;
+		}
+		this.hasBetaFeatureSetting();
+		if ( !this.twoColBetaCheckbox.getAttribute( 'checked' ) ) {
+			this.clickCheckBoxAndSave( this.twoColBetaCheckbox );
 		}
 	}
 
@@ -50,6 +60,24 @@ class PreferencesPage extends Page {
 			saveBar.value
 		);
 		this.submit.click();
+	}
+
+	hasBetaFeatureSetting() {
+		try {
+			this.twoColBetaLabel.waitForVisible( 2000 );
+			return true;
+		} catch ( e ) {
+			return false;
+		}
+	}
+
+	hasOptOutUserSetting() {
+		try {
+			this.twoColLabel.waitForVisible( 2000 );
+			return true;
+		} catch ( e ) {
+			return false;
+		}
 	}
 }
 
