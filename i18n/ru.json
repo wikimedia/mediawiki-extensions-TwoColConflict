@@ -40,6 +40,7 @@
 	"twocolconflict-split-not-saved-at": "Не опубликовано",
 	"twocolconflict-split-choose-version": "Выберите версию",
 	"twocolconflict-split-other-version-chosen": "Другая версия",
+	"twocolconflict-split-your-version-chosen": "Ваша версия",
 	"twocolconflict-split-tour-dialog-header": "Разрешения конфликтов редактирования",
 	"twocolconflict-split-tour-dialog-btn-text": "Начать объединение",
 	"twocolconflict-split-tour-popup-btn-text": "Понятно",
@@ -54,5 +55,6 @@
 	"twocolconflict-split-reset-warning-cancel": "Отмена",
 	"twocolconflict-split-reset-warning-accept": "Сбросить",
 	"twocolconflict-split-collapse-tooltip": "Свернуть текст",
-	"twocolconflict-split-expand-tooltip": "Развернуть текст"
+	"twocolconflict-split-expand-tooltip": "Развернуть текст",
+	"twocolconflict-split-selected-version-tooltip": "Выбранная версия"
 }
