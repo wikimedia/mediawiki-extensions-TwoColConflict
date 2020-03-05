@@ -1,0 +1,9 @@
+( function () {
+	'use strict';
+
+	$( '<input>' ).attr( {
+		type: 'hidden',
+		name: 'mw-twocolconflict-js',
+		value: true
+	} ).prependTo( '#editform' );
+}() );

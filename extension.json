@@ -29,7 +29,8 @@
 		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
 		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
-		"ResourceLoaderTestModules": "TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules"
+		"ResourceLoaderTestModules": "TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules",
+		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormInitial"
 	},
 	"MessagesDirs": {
 		"TwoColConflict": [
@@ -124,12 +125,17 @@
 			"scripts": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js"
 			]
-		}
+		},
+		"ext.TwoColConflict.JSCheck": {
+			"scripts": [
+				"modules/ext.TwoColConflict.JSCheck.js"
+			]
+	  }
 	},
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"TwoColConflictConflict": 19866753
+				"TwoColConflictConflict": 19872073
 			}
 		}
 	},

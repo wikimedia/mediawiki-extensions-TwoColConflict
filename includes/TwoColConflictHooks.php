@@ -99,6 +99,21 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::showEditForm:initial
+	 *
+	 * @param EditPage $editPage
+	 * @param OutputPage $outputPage
+	 */
+	public static function onEditPageshowEditFormInitial(
+		EditPage $editPage,
+		OutputPage $outputPage
+	) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
+			$outputPage->addModules( 'ext.TwoColConflict.JSCheck' );
+		}
+	}
+
+	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeConflictDiff
 	 *
 	 * @param EditPage $editPage
@@ -108,6 +123,8 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
+		$request = $editPage->getContext()->getRequest();
+
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
@@ -117,10 +134,10 @@ class TwoColConflictHooks {
 			$conflictChunks = 0;
 			$conflictChars = 0;
 
-			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19866753
+			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19872073
 			\EventLogging::logEvent(
 				'TwoColConflictConflict',
-				19866753,
+				19872073,
 				[
 					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $user ),
 					'isAnon' => $user->isAnon(),
@@ -135,6 +152,7 @@ class TwoColConflictHooks {
 					'startTime' => $editPage->starttime,
 					'editTime' => $editPage->edittime,
 					'pageTitle' => $editPage->getTitle()->getText(),
+					'hasJavascript' => $request->getBool( 'mw-twocolconflict-js' )
 				]
 			);
 		}
