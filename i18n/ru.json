@@ -51,7 +51,7 @@
 	"twocolconflict-split-edit-tooltip": "Редактировать текст",
 	"twocolconflict-split-disabled-edit-tooltip": "Прежде чем редактировать эту версию, выберите её кликом на соответствующую кнопку в середине.",
 	"twocolconflict-split-save-tooltip": "Сохранить изменения и покинуть режим редактирования.",
-	"twocolconflict-split-reset-tooltip": "Сбросить текст",
+	"twocolconflict-split-reset-tooltip": "Отменить все изменения в этом тексте",
 	"twocolconflict-split-reset-warning-cancel": "Отмена",
 	"twocolconflict-split-reset-warning-accept": "Сбросить",
 	"twocolconflict-split-collapse-tooltip": "Свернуть текст",

@@ -10,6 +10,8 @@
 	"twocolconflict-test-no-direct-editing": "Denne side kan ikke redigeres direkte.",
 	"twocolconflict-split-your-version-header": "Din revision",
 	"twocolconflict-split-not-saved-at": "Endnu ikke offentliggjort",
+	"twocolconflict-split-other-version-chosen": "Anden version",
+	"twocolconflict-split-your-version-chosen": "Din version",
 	"twocolconflict-split-tour-popup-btn-text": "Okay, modtaget.",
 	"twocolconflict-split-edit-tooltip": "Rediger tekst",
 	"twocolconflict-split-reset-tooltip": "Nulstil tekst",
