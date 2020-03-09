@@ -112,10 +112,15 @@ class TwoColConflictHooks {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getBaseRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
-			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=18155295
+
+			// TODO: implement complexity metrics
+			$conflictChunks = 0;
+			$conflictChars = 0;
+
+			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19866753
 			\EventLogging::logEvent(
 				'TwoColConflictConflict',
-				18155295,
+				19866753,
 				[
 					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $user ),
 					'isAnon' => $user->isAnon(),
@@ -124,6 +129,12 @@ class TwoColConflictHooks {
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
 					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
 					'textUser' => $editPage->textbox2,
+					'summary' => $editPage->summary,
+					'conflictChunks' => $conflictChunks,
+					'conflictChars' => $conflictChars,
+					'startTime' => $editPage->starttime,
+					'editTime' => $editPage->edittime,
+					'pageTitle' => $editPage->getTitle()->getText(),
 				]
 			);
 		}
