@@ -153,6 +153,7 @@ class TwoColConflictHooks {
 					'editTime' => $editPage->edittime,
 					'pageTitle' => $editPage->getTitle()->getText(),
 					'hasJavascript' => $request->getBool( 'mw-twocolconflict-js' )
+						|| $request->getBool( 'veswitched' ),
 				]
 			);
 		}
