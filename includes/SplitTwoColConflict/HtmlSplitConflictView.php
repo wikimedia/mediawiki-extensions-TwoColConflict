@@ -296,12 +296,12 @@ class HtmlSplitConflictView {
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'other',
-				'selected' => true,
 				'tabIndex' => '1',
 			] ) ) .
 			Html::rawElement( 'div', [], new RadioInputWidget( [
 				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
 				'value' => 'your',
+				'selected' => true,
 				'tabIndex' => '1',
 			] ) ) .
 			Html::closeElement( 'div' ) .
