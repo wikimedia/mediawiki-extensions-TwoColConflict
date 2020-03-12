@@ -8,6 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Weist en Ecran wou op 2 Säiten zwou Versioune gewise gi fir en Ännerungskonflikt ze léisen",
 	"twocolconflict-beta-feature-message": "Zwou-Kolonnen Ännerungskonflikt",
+	"twocolconflict-preference-enabled": "Den [[mw:Help:Two_Column_Edit_Conflict_View|Zwee-Kolonnen-Änneurngskonflikt-Interface]] aktivéiere fir Ännerungskonflikter ze léisen",
 	"twocolconflict-test-page-title": "Ännerungskonflikt: Simulatioun",
 	"twocolconflict-test-title-label": "Gitt den Titel vun enger net gespaarter Wikisäit an, fir déi de Wiki-Konflikt simuléiert gi soll:",
 	"twocolconflict-test-title-submit": "Ännerungssäit weisen",
