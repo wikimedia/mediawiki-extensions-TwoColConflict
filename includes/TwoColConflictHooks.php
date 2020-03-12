@@ -19,25 +19,6 @@ use WebRequest;
  */
 class TwoColConflictHooks {
 
-	private const OPTOUT_PREFERENCE_NAME = 'twocolconflict-enabled';
-
-	/**
-	 * @param User $user
-	 *
-	 * @return bool
-	 */
-	private static function shouldTwoColConflictBeShown( User $user ) : bool {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
-		) {
-			return \BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' );
-		}
-
-		return $user->getBoolOption( self::OPTOUT_PREFERENCE_NAME );
-	}
-
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/AlternateEdit
 	 *
@@ -50,7 +31,7 @@ class TwoColConflictHooks {
 		}
 
 		// Skip out if the feature is disabled
-		if ( !self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ) {
+		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ) {
 			return;
 		}
 
@@ -141,7 +122,7 @@ class TwoColConflictHooks {
 				'TwoColConflictConflict',
 				19872073,
 				[
-					'twoColConflictShown' => self::shouldTwoColConflictBeShown( $user ),
+					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown( $user ),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
@@ -173,7 +154,7 @@ class TwoColConflictHooks {
 		array &$buttons,
 		&$tabindex
 	) {
-		if ( self::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) &&
+		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) &&
 			!( $editPage instanceof TwoColConflictTestEditPage ) &&
 			$editPage->isConflict === true
 		) {
@@ -226,7 +207,7 @@ class TwoColConflictHooks {
 			return;
 		}
 
-		$preferences[self::OPTOUT_PREFERENCE_NAME] = [
+		$preferences[TwoColConflictContext::OPTOUT_PREFERENCE_NAME] = [
 			'type' => 'toggle',
 			'label-message' => 'twocolconflict-preference-enabled',
 			'section' => 'editing/advancedediting',
@@ -239,7 +220,7 @@ class TwoColConflictHooks {
 	 * @param array &$defaultOptions
 	 */
 	public static function onUserGetDefaultOptions( array &$defaultOptions ) {
-		$defaultOptions[self::OPTOUT_PREFERENCE_NAME] = 1;
+		$defaultOptions[TwoColConflictContext::OPTOUT_PREFERENCE_NAME] = 1;
 	}
 
 	/**
