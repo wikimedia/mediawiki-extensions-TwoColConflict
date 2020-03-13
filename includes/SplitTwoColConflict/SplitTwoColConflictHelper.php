@@ -95,15 +95,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	/**
-	 * @param string $text
-	 *
-	 * @return string[]
-	 */
-	private function splitText( $text ) {
-		return preg_split( '/\n(?!\n)/', str_replace( [ "\r\n", "\r" ], "\n", $text ) );
-	}
-
-	/**
 	 * Replace default header for explaining the conflict screen.
 	 *
 	 * @return string
@@ -164,8 +155,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
 
-		$storedLines = $this->splitText( $this->storedversion );
-		$yourLines = $this->splitText( $this->yourtext );
+		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
+		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
 
 		$content = new \WikitextContent( $this->yourtext );
 		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
@@ -183,7 +174,10 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$user,
 			$language
 		) )->getHtml(
-			$this->getLineBasedUnifiedDiff( $storedLines, $this->splitText( $previewWikitext ) ),
+			$this->getLineBasedUnifiedDiff(
+				$storedLines,
+				SplitConflictUtils::splitText( $previewWikitext )
+			),
 			$yourLines,
 			$storedLines,
 			// Note: Can't use getBool() because that discards arrays

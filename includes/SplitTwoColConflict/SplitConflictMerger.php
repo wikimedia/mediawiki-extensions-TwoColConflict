@@ -72,7 +72,7 @@ class SplitConflictMerger {
 
 			$textLines[] = $line;
 		}
-		return str_replace( [ "\r\n", "\r" ], "\n", implode( "\n", $textLines ) );
+		return SplitConflictUtils::mergeTextLines( $textLines );
 	}
 
 }

@@ -2,20 +2,16 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
-use OutputPage;
-use Title;
-use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
-use Wikimedia\TestingAccessWrapper;
+use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper
+ * @covers \TwoColConflict\SplitTwoColConflict\SplitConflictUtils
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class SplitTwoColConflictHelperTest extends MediaWikiTestCase {
+class SplitConflictUtilsTest extends MediaWikiTestCase {
 
 	public function provideSplitText() {
 		return [
@@ -52,27 +48,9 @@ class SplitTwoColConflictHelperTest extends MediaWikiTestCase {
 	 * @dataProvider provideSplitText
 	 */
 	public function testSplitText( $input, array $expectedOutput ) {
-		$helper = $this->createHelper();
-
 		$this->assertSame(
 			$expectedOutput,
-			$result = $helper->splitText( $input )
+			$result = SplitConflictUtils::splitText( $input )
 		);
-	}
-
-	/**
-	 * @return SplitTwoColConflictHelper
-	 */
-	private function createHelper() {
-		$helper = new SplitTwoColConflictHelper(
-			Title::newFromText( 'TestTitle' ),
-			$this->createMock( OutputPage::class ),
-			new \NullStatsdDataFactory(),
-			'',
-			'',
-			MediaWikiServices::getInstance()->getContentHandlerFactory()
-		);
-
-		return TestingAccessWrapper::newFromObject( $helper );
 	}
 }
