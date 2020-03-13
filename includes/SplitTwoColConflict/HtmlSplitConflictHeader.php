@@ -8,6 +8,7 @@ use Linker;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
+use TwoColConflict\TwoColConflictContext;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -88,8 +89,11 @@ class HtmlSplitConflictHeader {
 	 * @return string HTML
 	 */
 	public function getHtml() : string {
+		$hintMsg = TwoColConflictContext::isUsedAsBetaFeature() ?
+			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
+
 		$out = $this->getWarningMessage(
-			wfMessage( 'twocolconflict-split-header-hint-beta' )->parse()
+			wfMessage( $hintMsg )->parse()
 		);
 
 		$out .= Html::openElement(

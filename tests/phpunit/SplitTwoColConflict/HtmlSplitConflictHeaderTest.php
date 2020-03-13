@@ -28,6 +28,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$this->otherUser = $this->getTestUser()->getUser();
 	}
 
@@ -55,7 +56,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 
 		$this->assertStringContainsString( '>' . $this->otherUser->getName() . '<', $html
 		);
-		$this->assertStringContainsString( '>(twocolconflict-split-header-hint-beta)<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-split-header-hint)<', $html );
 		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)<',
 			$html

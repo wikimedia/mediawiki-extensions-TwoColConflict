@@ -9,6 +9,7 @@ use SpecialPage;
 use Title;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
+use TwoColConflict\TwoColConflictContext;
 
 /**
  * @license GPL-2.0-or-later
@@ -94,8 +95,11 @@ class SpecialConflictTestPage extends SpecialPage {
 			return;
 		}
 
+		$hintMsg = TwoColConflictContext::isUsedAsBetaFeature() ?
+			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
+
 		$this->showHintBox(
-			$this->msg( 'twocolconflict-test-header-hint-beta' )->parse(),
+			$this->msg( $hintMsg )->parse(),
 			'mw-twocolconflict-test-conflict-hint'
 		);
 
