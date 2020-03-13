@@ -89,7 +89,7 @@ class HtmlSplitConflictHeader {
 	 */
 	public function getHtml() : string {
 		$out = $this->getWarningMessage(
-			wfMessage( 'twocolconflict-split-conflict-hint' )->parse()
+			wfMessage( 'twocolconflict-split-header-hint-beta' )->parse()
 		);
 
 		$out .= Html::openElement(

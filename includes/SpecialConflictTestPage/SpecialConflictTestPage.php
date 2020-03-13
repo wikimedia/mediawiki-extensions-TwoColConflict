@@ -95,7 +95,7 @@ class SpecialConflictTestPage extends SpecialPage {
 		}
 
 		$this->showHintBox(
-			$this->msg( 'twocolconflict-test-conflict-hint' )->parse(),
+			$this->msg( 'twocolconflict-test-header-hint-beta' )->parse(),
 			'mw-twocolconflict-test-conflict-hint'
 		);
 

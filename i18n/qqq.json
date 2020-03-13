@@ -30,7 +30,7 @@
 	"twocolconflict-test-preview-hint": "Last hint shown on the conflict test page above the preview of the resolved test conflict.",
 	"twocolconflict-test-username": "Username for the conflict test page's fictitious conflicting edit.",
 	"twocolconflict-test-summary-text": "Edit summary for the conflict test page's fictitious conflicting edit.",
-	"twocolconflict-split-conflict-hint": "General hint shown during an edit conflict.",
+	"twocolconflict-split-header-hint-beta": "General hint shown during an edit conflict.",
 	"twocolconflict-split-your-version-header": "Header for the diff column showing the users changes.",
 	"twocolconflict-split-current-version-header": "Header for the diff column showing the latest successfully saved revision.\n\nParameters:\n* $1 - Relative (e.g. \"1 second ago\") or absolute time and date the revision was saved",
 	"twocolconflict-split-not-saved-at": "Header for the diff column showing the conflicting, not yet published revision the current user aims to save.",
