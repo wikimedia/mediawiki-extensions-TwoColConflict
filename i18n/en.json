@@ -23,7 +23,7 @@
 	"twocolconflict-test-preview-hint": "Thanks for trying out the Two Column Edit Conflict interface! Help us make improvements by providing us with your feedback [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page here].\n\nBelow are the results of your test edit conflict resolution.",
 	"twocolconflict-test-username": "ConflictTest User",
 	"twocolconflict-test-summary-text": "Conflict test edit summary",
-	"twocolconflict-split-conflict-hint": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
+	"twocolconflict-split-header-hint-beta": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
 	"twocolconflict-split-your-version-header": "Your revision",
 	"twocolconflict-split-current-version-header": "Latest revision as of $1",
 	"twocolconflict-split-not-saved-at": "Not published yet",
