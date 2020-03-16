@@ -19,7 +19,9 @@ class EditConflictPage extends Page {
 
 	get selectionLabel() { return browser.element( '.mw-twocolconflict-split-selector-label span' ); }
 	get otherParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(1) span' ); }
+	get otherParagraphRadio() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(1) input' ); }
 	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
+	get yourParagraphRadio() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) input' ); }
 	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
 	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
@@ -181,6 +183,13 @@ class EditConflictPage extends Page {
 
 	waitForUiToLoad() {
 		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
+	}
+
+	testNoJs() {
+		return browser.setCookie( {
+			name: 'mw-twocolconflict-test-nojs',
+			value: '1'
+		} );
 	}
 
 }
