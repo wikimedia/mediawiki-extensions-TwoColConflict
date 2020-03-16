@@ -14,6 +14,7 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showBigConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.waitForUiToLoad();
 	} );
 
 	it( 'collapses long unchanged paragraphs', function () {
