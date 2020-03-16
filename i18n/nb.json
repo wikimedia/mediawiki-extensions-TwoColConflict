@@ -23,7 +23,7 @@
 	"twocolconflict-test-preview-hint": "Takk for at du prøver ut grensesnittet for tokolonners redigeringskonflikt. Hjelp oss å gjøre det bedre ved å [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View gi oss tilbakemelding om hva du syns].\n\nNedenfor er resultatet fra løsingen av testkonflikten din.",
 	"twocolconflict-test-username": "Konflikttestbruker",
 	"twocolconflict-test-summary-text": "Redigeringsforklaring for konflikttest",
-	"twocolconflict-split-conflict-hint": "Takk for at du bruker denne betafunksjonen. Du kan hjelpe til med å forbedre den videre om du gir tilbakemelding [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denne siden].",
+	"twocolconflict-split-header-hint-beta": "Takk for at du bruker denne betafunksjonen. Du kan hjelpe til med å forbedre den videre om du gir tilbakemelding [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View på denne siden].",
 	"twocolconflict-split-your-version-header": "Din versjon",
 	"twocolconflict-split-current-version-header": "Konflikterende versjon per $1 (gjeldende versjon)",
 	"twocolconflict-split-not-saved-at": "Upublisert",

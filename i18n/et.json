@@ -7,7 +7,7 @@
 	"twocolconflict-desc": "Näitab redigeerimiskonflikti lahendamise tarbeks kaheküljelist muudatuste liitmise vaadet.",
 	"twocolconflict-beta-feature-message": "Kaheveeruline redigeerimiskonflikt",
 	"twocolconflict-beta-feature-description": "Kuvab redigeerimiskonflikti vaadet edasi arendatud kaheveerulises versioonis.",
-	"twocolconflict-split-conflict-hint": "Aitäh, et kasutad seda beetafunktsiooni. Saad aidata seda paremaks teha, kui annad tagasisidet [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View siin leheküljel].",
+	"twocolconflict-split-header-hint-beta": "Aitäh, et kasutad seda beetafunktsiooni. Saad aidata seda paremaks teha, kui annad tagasisidet [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View siin leheküljel].",
 	"twocolconflict-split-your-version-header": "Sinu redaktsioon",
 	"twocolconflict-split-current-version-header": "Viimane redaktsioon seisuga $1",
 	"twocolconflict-split-not-saved-at": "Pole veel avaldatud",

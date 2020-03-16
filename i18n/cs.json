@@ -27,7 +27,7 @@
 	"twocolconflict-test-preview-submit": "Simulovat zveřejnění změn",
 	"twocolconflict-test-username": "Fiktivní uživatel TestKonflikt",
 	"twocolconflict-test-summary-text": "Shrnutí fiktivní konfliktní editace",
-	"twocolconflict-split-conflict-hint": "Děkujeme vám za používání tohoto beta nástroje. Ve vývoji můžete přispět odesláním zpětné vazby [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na této stránce].",
+	"twocolconflict-split-header-hint-beta": "Děkujeme vám za používání tohoto beta nástroje. Ve vývoji můžete přispět odesláním zpětné vazby [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na této stránce].",
 	"twocolconflict-split-your-version-header": "Vaše revize",
 	"twocolconflict-split-current-version-header": "Aktuální verze zveřejněná $1",
 	"twocolconflict-split-not-saved-at": "Zatím nezveřejněno",

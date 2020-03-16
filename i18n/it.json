@@ -27,7 +27,7 @@
 	"twocolconflict-test-preview-hint": "Grazie per aver provato l'interfaccia del Conflitto di modifiche su due colonne! Aiutaci a migliorarla dando il tuo parere [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page qui].",
 	"twocolconflict-test-username": "Utente ConflictTest",
 	"twocolconflict-test-summary-text": "Oggetto della modifica del conflitto di prova",
-	"twocolconflict-split-conflict-hint": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorala lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View su questa pagina].",
+	"twocolconflict-split-header-hint-beta": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorala lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View su questa pagina].",
 	"twocolconflict-split-your-version-header": "La tua versione",
 	"twocolconflict-split-current-version-header": "Versione attuale delle $1",
 	"twocolconflict-split-not-saved-at": "Non ancora pubblicato",

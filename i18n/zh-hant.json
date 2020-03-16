@@ -10,7 +10,7 @@
 		]
 	},
 	"twocolconflict": "TwoColConflict",
-	"twocolconflict-desc": "使用並排合併介面解決編輯衝突",
+	"twocolconflict-desc": "顯示並排的編輯合併畫面來解決編輯衝突",
 	"twocolconflict-beta-feature-message": "雙欄編輯衝突",
 	"twocolconflict-beta-feature-description": "使用更先進的雙欄介面來顯示編輯衝突。",
 	"twocolconflict-preference-enabled": "啟用[[mw:Help:Two_Column_Edit_Conflict_View|雙欄編輯衝突檢視]]來解決編輯衝突",
@@ -28,7 +28,8 @@
 	"twocolconflict-test-preview-hint": "感謝嘗試雙欄編輯衝突介面！通過[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我們提供您的反饋，來幫助我們對它做出改進吧。\n\n下面是您的測試編輯衝突解決的結果。",
 	"twocolconflict-test-username": "衝突測試用戶",
 	"twocolconflict-test-summary-text": "衝突測試編輯摘要",
-	"twocolconflict-split-conflict-hint": "感謝您使用此測試功能。若您願意[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 在此頁面]留下意見回饋，就能協助這個功能可以變得更好。",
+	"twocolconflict-split-header-hint": "若您有在[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 此頁面]留下意見回饋，您可以協助讓此功能變得更好。",
+	"twocolconflict-split-header-hint-beta": "感謝您使用此測試功能。若您願意[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 在此頁面]留下意見回饋，就能協助這個功能可以變得更好。",
 	"twocolconflict-split-your-version-header": "您的修訂",
 	"twocolconflict-split-current-version-header": "自 $1 的最新修訂",
 	"twocolconflict-split-not-saved-at": "尚未發布",

@@ -16,7 +16,7 @@
 	"twocolconflict-test-no-direct-editing": "Αυτή η σελίδα δεν μπορεί να τροποποιηθεί άμεσα.",
 	"twocolconflict-test-text-submit": "Δημιουργήστε σύγκρουση",
 	"twocolconflict-test-preview-submit": "Προσομοιώστε την δημοσίευση αλλαγών",
-	"twocolconflict-split-conflict-hint": "Σας ευχαριστούμε επειδή χρησιμοποιήσατε αυτό το δοκιμαστικό χαρακτηριστικό. Μπορείτε να βοηθήσετε στην περαιτέρω βελτίωσή του, εάν αφήσετε ανατροφοδότηση στο [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_Βλέπε σε αυτή τη σελίδα].",
+	"twocolconflict-split-header-hint-beta": "Σας ευχαριστούμε επειδή χρησιμοποιήσατε αυτό το δοκιμαστικό χαρακτηριστικό. Μπορείτε να βοηθήσετε στην περαιτέρω βελτίωσή του, εάν αφήσετε ανατροφοδότηση στο [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_Βλέπε σε αυτή τη σελίδα].",
 	"twocolconflict-split-your-version-header": "Η δική σας αναθεώρηση",
 	"twocolconflict-split-current-version-header": "Τελευταία αναθεώρηση της $1",
 	"twocolconflict-split-not-saved-at": "Μη δημοσιευμένο ακόμη",

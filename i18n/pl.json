@@ -26,7 +26,7 @@
 	"twocolconflict-test-preview-submit": "Symuluj publikowanie zmian",
 	"twocolconflict-test-preview-hint": "Dziękujemy za wypróbowanie interfejsu Dwukolumnowe Rozwiązywanie Konfliktów Edycji! Pomóż nam go ulepszyć poprzez dostarczenie nam swojej opinii [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page tutaj].\n\nPoniżej są wyniki testu rozwiązywania konfliktu edycji.",
 	"twocolconflict-test-summary-text": "Opis zmian edycji konfliktowej",
-	"twocolconflict-split-conflict-hint": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
+	"twocolconflict-split-header-hint-beta": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-current-version-header": "Najnowsza wersja na dzień $1",
 	"twocolconflict-split-not-saved-at": "Jeszcze nie opublikowano",

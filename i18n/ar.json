@@ -27,7 +27,7 @@
 	"twocolconflict-test-preview-hint": "شكرا لك لتجربة واجهة تعارض التعديل ذات العمودين! ساعدنا في جعلها أفضل عن طريق إعطائنا رأيك [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View هنا].\n\nبالأسفل نتيجة حل اختبار تعارض التعديل الخاص بك.",
 	"twocolconflict-test-username": "ConflictTest User",
 	"twocolconflict-test-summary-text": "ملخص تعديل اختبار التعارض",
-	"twocolconflict-split-conflict-hint": "نشكرك على استخدام هذه الميزة التجريبية، يمكنك المساعدة في تحسينها بشكل أكبر، إذا تركت تغذية راجعة [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View في هذه الصفحة].",
+	"twocolconflict-split-header-hint-beta": "نشكرك على استخدام هذه الميزة التجريبية، يمكنك المساعدة في تحسينها بشكل أكبر، إذا تركت تغذية راجعة [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View في هذه الصفحة].",
 	"twocolconflict-split-your-version-header": "مراجعتك",
 	"twocolconflict-split-current-version-header": "آخر مراجعة اعتبارا من $1",
 	"twocolconflict-split-not-saved-at": "لم يتم النشر بعد",

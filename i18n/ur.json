@@ -21,7 +21,7 @@
 	"twocolconflict-test-preview-hint": "دو کالمی تنازع ترمیم کے انٹرفیس کو آزمانے کا شکریہ! اسے مزید بہتر بنانے کے لیے ہم آپ کی آرا اور تاثرات کی ضرورت ہے۔ آپ اپنی رائے [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page یہاں] درج کر سکتے ہیں۔\n\nذیل میں آپ کے آزمائشی تنازع ترمیم کے نتائج ملاحظہ فرمائیں۔",
 	"twocolconflict-test-username": "تنازع پڑتالگر",
 	"twocolconflict-test-summary-text": "آزمائشی تنازع ترمیم کا خلاصہ",
-	"twocolconflict-split-conflict-hint": "اِس بِیٹا فیچر کا استعمال کرنے کا شکریہ۔ [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View اس صفحہ پر] فیڈ بیک دے کر آپ بھی اس کی مزید بہتری میں مدد کر سکتے ہیں۔",
+	"twocolconflict-split-header-hint-beta": "اِس بِیٹا فیچر کا استعمال کرنے کا شکریہ۔ [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View اس صفحہ پر] فیڈ بیک دے کر آپ بھی اس کی مزید بہتری میں مدد کر سکتے ہیں۔",
 	"twocolconflict-split-your-version-header": "آپ کا نسخہ",
 	"twocolconflict-split-current-version-header": "حالیہ نسخہ بمطابق $1",
 	"twocolconflict-split-not-saved-at": "اب تک شائع نہیں ہوا",

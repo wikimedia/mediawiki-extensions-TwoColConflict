@@ -26,7 +26,7 @@
 	"twocolconflict-test-preview-hint": "編集競合の2列表示インターフェースを試用していただき、ありがとうございます！ ぜひ[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page こちらに]フィードバックを投稿して、改善作業にご協力ください。\n\n以下に、いまあなたがテストした編集競合の解決結果を表示します。",
 	"twocolconflict-test-username": "編集競合のテスト利用者",
 	"twocolconflict-test-summary-text": "編集競合テストの編集の要約",
-	"twocolconflict-split-conflict-hint": "このベータ機能をご使用いただきありがとうございます。さらに改善するためご協力いただけるようでしたら、ぜひフィードバックを[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View こちらのページ]に投稿してください。",
+	"twocolconflict-split-header-hint-beta": "このベータ機能をご使用いただきありがとうございます。さらに改善するためご協力いただけるようでしたら、ぜひフィードバックを[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View こちらのページ]に投稿してください。",
 	"twocolconflict-split-your-version-header": "あなたが修正した版",
 	"twocolconflict-split-current-version-header": "$1時点の最終版",
 	"twocolconflict-split-not-saved-at": "まだ公開していません",

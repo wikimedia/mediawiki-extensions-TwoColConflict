@@ -9,7 +9,8 @@
 			"Carlosmg.dg",
 			"DannyS712",
 			"Joanmp17",
-			"Ihojose"
+			"Ihojose",
+			"Canaan9801"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -30,7 +31,8 @@
 	"twocolconflict-test-preview-hint": "¡Gracias por poner a prueba la interfaz de conflictos de ediciones en dos columnas! Ayúdanos a mejorarla [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page con tus comentarios].\n\nA continuación, el resultado de tu resolución de conflictos de prueba.",
 	"twocolconflict-test-username": "Usuario de ConflictTest",
 	"twocolconflict-test-summary-text": "Resumen de edición de la prueba de conflicto",
-	"twocolconflict-split-conflict-hint": "Gracias por usar esta funcionalidad beta. Puedes ayudar a mejorarla dejando un comentario [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View en esta página].",
+	"twocolconflict-split-header-hint": "Puedes ayudar a mejorar más esta función, si dejas comentarios en [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
+	"twocolconflict-split-header-hint-beta": "Gracias por usar esta funcionalidad beta. Puedes ayudar a mejorarla dejando un comentario [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View en esta página].",
 	"twocolconflict-split-your-version-header": "Tu revisión",
 	"twocolconflict-split-current-version-header": "Última revisión de $1",
 	"twocolconflict-split-not-saved-at": "Aún sin publicar",

@@ -34,7 +34,7 @@
 	"twocolconflict-test-preview-hint": "感谢尝试双栏编辑冲突界面！通过[//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page 在此]向我们提供您的反馈，来帮助我们对它做出改进吧。\n\n下面是您的测试编辑冲突解决的结果。",
 	"twocolconflict-test-username": "冲突测试用户",
 	"twocolconflict-test-summary-text": "冲突测试编辑摘要",
-	"twocolconflict-split-conflict-hint": "感谢您使用此测试版功能。 如果您在[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 此页面]上留下反馈，您可以帮助进一步改进它。",
+	"twocolconflict-split-header-hint-beta": "感谢您使用此测试版功能。 如果您在[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View 此页面]上留下反馈，您可以帮助进一步改进它。",
 	"twocolconflict-split-your-version-header": "您的更改",
 	"twocolconflict-split-current-version-header": "$1的最新版本",
 	"twocolconflict-split-not-saved-at": "尚未发布",

@@ -23,7 +23,7 @@
 	"twocolconflict-test-preview-hint": "¡Gracies por probar la interfaz de Conflictos d'ediciones en dos columnes! Ayúdanos a ameyorala faciendo comentarios [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page equí].\n\nMás abaxo tán les resultancies del resolvimientu del conflictu de prueba.",
 	"twocolconflict-test-username": "Usuariu de ConflictTest",
 	"twocolconflict-test-summary-text": "Resume d'ediciones de prueba de conflictu",
-	"twocolconflict-split-conflict-hint": "Gracies por usar esta función beta. Puedes ayudar a ameyorala más si dexes comentarios [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta páxina].",
+	"twocolconflict-split-header-hint-beta": "Gracies por usar esta función beta. Puedes ayudar a ameyorala más si dexes comentarios [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View nesta páxina].",
 	"twocolconflict-split-your-version-header": "La to revisión",
 	"twocolconflict-split-current-version-header": "Revisión actual a fecha de $1",
 	"twocolconflict-split-not-saved-at": "Inda ensin espublizar",
