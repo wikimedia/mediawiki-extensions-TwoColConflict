@@ -22,12 +22,18 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $newEditSummary;
 
 	/**
+	 * @var ResolutionSuggester
+	 */
+	private $resolutionSuggester;
+
+	/**
 	 * @param Title $title
 	 * @param OutputPage $out
 	 * @param \IBufferingStatsdDataFactory $stats
 	 * @param string $submitLabel
 	 * @param string $newEditSummary
 	 * @param IContentHandlerFactory $contentHandlerFactory
+	 * @param ResolutionSuggester $resolutionSuggester
 	 *
 	 * @throws \MWUnknownContentModelException
 	 */
@@ -37,11 +43,13 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		\IBufferingStatsdDataFactory $stats,
 		string $submitLabel,
 		string $newEditSummary,
-		IContentHandlerFactory $contentHandlerFactory
+		IContentHandlerFactory $contentHandlerFactory,
+		ResolutionSuggester $resolutionSuggester
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
 		$this->newEditSummary = $newEditSummary;
+		$this->resolutionSuggester = $resolutionSuggester;
 
 		$this->out->enableOOUI();
 		$this->out->addModuleStyles( [
@@ -129,9 +137,26 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	public function getEditFormHtmlBeforeContent() {
+		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
+		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
+
+		$suggestion = false;
+		if ( $this->resolutionSuggester->canSuggestResolution( $this->title ) ) {
+			$suggestion = $this->resolutionSuggester->getResolutionSuggestion(
+				$storedLines,
+				$yourLines
+			);
+		}
+
+		if ( $suggestion ) {
+			$conflictView = $this->buildResolutionSuggestionView( $suggestion );
+		} else {
+			$conflictView = $this->buildEditConflictView( $storedLines, $yourLines );
+		}
+
 		return Html::input( 'wpTextbox1', $this->storedversion, 'hidden' ) .
 			Html::input( 'mw-twocolconflict-title', $this->title->getPrefixedText(), 'hidden' ) .
-			$this->buildEditConflictView() .
+			$conflictView .
 			$this->buildRawTextsHiddenFields();
 	}
 
@@ -149,14 +174,14 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * Build HTML that will add the textbox with the unified diff.
 	 *
+	 * @param string[] $storedLines
+	 * @param string[] $yourLines
+	 *
 	 * @return string
 	 */
-	private function buildEditConflictView() : string {
+	private function buildEditConflictView( array $storedLines, array $yourLines ) : string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
-
-		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
-		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
 
 		$content = new \WikitextContent( $this->yourtext );
 		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
@@ -184,6 +209,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			(bool)$this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' )
 		);
 		return $out;
+	}
+
+	private function buildResolutionSuggestionView( $suggestion ) : string {
+		// TODO implement interface for the suggested resolution
+		return 'Resolution suggestion goes here.';
 	}
 
 	/**

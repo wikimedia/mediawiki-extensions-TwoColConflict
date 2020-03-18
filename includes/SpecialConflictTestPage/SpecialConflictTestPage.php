@@ -7,6 +7,7 @@ use Html;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Title;
+use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
 use TwoColConflict\TwoColConflictContext;
@@ -156,13 +157,19 @@ class SpecialConflictTestPage extends SpecialPage {
 
 	private function showConflict( Article $article ) {
 		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
+			$baseRevision = $article->getRevision()->getPrevious();
+
 			return new SplitTwoColConflictTestHelper(
 				$article->getTitle(),
 				$article->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
 				'',
-				MediaWikiServices::getInstance()->getContentHandlerFactory()
+				MediaWikiServices::getInstance()->getContentHandlerFactory(),
+				new ResolutionSuggester(
+					$baseRevision ? $baseRevision->getRevisionRecord() : null,
+					$article->getContentHandler()->getDefaultFormat()
+				)
 			);
 		};
 
