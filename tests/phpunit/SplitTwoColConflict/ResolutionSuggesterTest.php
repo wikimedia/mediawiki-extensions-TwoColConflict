@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
+use Content;
 use MediaWiki\Revision\RevisionRecord;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use Wikimedia\TestingAccessWrapper;
@@ -13,6 +14,14 @@ use Wikimedia\TestingAccessWrapper;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
+
+	protected function setUp() : void {
+		global $wgTwoColConflictSuggestResolution;
+
+		parent::setUp();
+
+		$wgTwoColConflictSuggestResolution = true;
+	}
 
 	public function provideSuggestion() {
 		return [
@@ -98,18 +107,20 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @param string $base
-	 * @param string $your
-	 * @param string $stored
-	 * @param bool $expectedOutput
 	 * @dataProvider provideSuggestion
 	 */
-	public function testSuggestion( $base, $your, $stored, $expectedOutput ) {
+	public function testSuggestion(
+		string $base,
+		string $your,
+		string $stored,
+		bool $expectedOutput
+	) {
 		$suggester = $this->createResolutionSuggester( new \WikitextContent( $base ) );
 
 		$this->assertSame(
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
+				\Title::makeTitle( NS_TALK, __FUNCTION__ ),
 				$this->splitText( $your ),
 				$this->splitText( $stored )
 			)
@@ -127,6 +138,7 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testGetBaseRevisionLinesNoBaseRevision() {
+		/** @var ResolutionSuggester $suggester */
 		$suggester = TestingAccessWrapper::newFromObject(
 			new ResolutionSuggester( null, '' )
 		);
@@ -134,11 +146,11 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @param \Content $content
+	 * @param ?Content $content
 	 *
 	 * @return ResolutionSuggester
 	 */
-	private function createResolutionSuggester( $content ) {
+	private function createResolutionSuggester( ?Content $content ) {
 		$baseRevisionMock = $this->createMock( RevisionRecord::class );
 		$baseRevisionMock->method( 'getContent' )
 			->willReturn( $content );
@@ -152,7 +164,7 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 	 *
 	 * @return string[]
 	 */
-	private function splitText( $text ) {
+	private function splitText( string $text ) : array {
 		return preg_split( '/\n(?!\n)/', $text );
 	}
 
