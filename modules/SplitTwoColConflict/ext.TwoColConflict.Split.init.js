@@ -354,6 +354,12 @@
 	}
 
 	$( function () {
+		// disable all javascript from this feature when testing the nojs implementation
+		if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
+			// set CSS class so nojs CSS rules are applied
+			$( 'html' ).removeClass( 'client-js' ).addClass( 'client-nojs' );
+			return;
+		}
 		initColumnSelection();
 		initButtonEvents();
 		initPreview();
