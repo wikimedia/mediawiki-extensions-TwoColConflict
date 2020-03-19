@@ -58,7 +58,8 @@
 		},
 		"ext.TwoColConflict.SplitJs": {
 			"scripts": [
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
@@ -145,7 +146,8 @@
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"TwoColConflictConflict": 19872073
+				"TwoColConflictConflict": 19872073,
+				"TwoColConflictExit": 19905420
 			}
 		}
 	},
