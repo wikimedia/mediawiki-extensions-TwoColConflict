@@ -5,6 +5,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use Title;
 use TwoColConflict\LineBasedUnifiedDiffFormatter;
 
 /**
@@ -45,21 +46,33 @@ class ResolutionSuggester {
 	}
 
 	/**
+	 * @param Title $title
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
 	 * @return bool
 	 */
-	public function getResolutionSuggestion( array $yourLines, array $storedLines ) {
+	public function getResolutionSuggestion(
+		Title $title,
+		array $yourLines,
+		array $storedLines
+	) : bool {
+		$services = MediaWikiServices::getInstance();
+		if ( !$services->getMainConfig()->get( 'TwoColConflictSuggestResolution' ) ||
+			!$services->getNamespaceInfo()->isTalk( $title->getNamespace() )
+		) {
+			return false;
+		}
+
 		$baseLines = $this->getBaseRevisionLines();
 		// if the base version is empty there's an addition from both sides
 		// we should be able to suggest a resolution then
 		if ( $baseLines === [] ) {
 			return true;
 		}
+
 		$diffYourLines = ( new LineBasedUnifiedDiffFormatter() )->format(
 			new \Diff( $baseLines, $yourLines )
 		);
-
 		$diffStoredLines = ( new LineBasedUnifiedDiffFormatter() )->format(
 			new \Diff( $baseLines, $storedLines )
 		);
@@ -104,8 +117,8 @@ class ResolutionSuggester {
 		}
 
 		// we are only suggesting a resolution if we have two additions in the same line
-		if (
-			$yourLine[0]['action'] !== 'add' || $storedLine[0]['action'] !== 'add' ||
+		if ( $yourLine[0]['action'] !== 'add' ||
+			$storedLine[0]['action'] !== 'add' ||
 			$yourLine[0]['newline'] !== $storedLine[0]['newline']
 		) {
 			return false;
@@ -134,18 +147,6 @@ class ResolutionSuggester {
 		}
 
 		return SplitConflictUtils::splitText( $baseText );
-	}
-
-	/**
-	 * Check pre-conditions for suggesting a resolution.
-	 *
-	 * @param \Title $title
-	 * @return bool
-	 */
-	public function canSuggestResolution( \Title $title ) {
-		$services = MediaWikiServices::getInstance();
-		return $services->getMainConfig()->get( 'TwoColConflictSuggestResolution' ) &&
-			$services->getNamespaceInfo()->isTalk( $title->getNamespace() );
 	}
 
 }

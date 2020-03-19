@@ -140,14 +140,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
 		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
 
-		$suggestion = false;
-		if ( $this->resolutionSuggester->canSuggestResolution( $this->title ) ) {
-			$suggestion = $this->resolutionSuggester->getResolutionSuggestion(
-				$storedLines,
-				$yourLines
-			);
-		}
-
+		$suggestion = $this->resolutionSuggester->getResolutionSuggestion(
+			$this->title,
+			$storedLines,
+			$yourLines
+		);
 		if ( $suggestion ) {
 			$conflictView = $this->buildResolutionSuggestionView( $suggestion );
 		} else {
