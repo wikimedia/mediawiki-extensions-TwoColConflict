@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\Tests\SpecialConflictTestPage;
 
-use HamcrestPHPUnitIntegration;
 use SpecialPage;
 use SpecialPageTestBase;
 use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
@@ -15,10 +14,10 @@ use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
 class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
-	use HamcrestPHPUnitIntegration;
 
 	protected function setUp() : void {
 		parent::setUp();
+		$this->setUserLang( 'qqx' );
 
 		// register a namespace with non-editable content model to test T182668
 		$this->mergeMwGlobalArrayValue( 'wgExtraNamespaces', [
@@ -42,31 +41,14 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 		return new SpecialConflictTestPage();
 	}
 
-	private function assertWarningBox( $html, $text ) {
-		$this->assertThatHamcrest(
-			$html,
-			is( htmlPiece( havingChild(
-				both( withTagName( 'div' ) )
-					->andAlso( withClass( 'warningbox' ) )
-					->andAlso( havingChild(
-						both( withTagName( 'p' ) )
-							->andAlso( havingTextContents( $text ) )
-					) )
-			) ) )
-		);
-	}
-
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
-		/** @var string $html */
-		/** @var \WebResponse $response */
-		list( $html, $response ) = $this->executeSpecialPage();
+		[ $html, ] = $this->executeSpecialPage();
 
-		$this->assertWarningBox(
-			$html,
-			'You must enable the \'Two column edit conflict\' ' .
-			'beta feature in your preferences to use this special page.'
+		$this->assertStringContainsString(
+			'<div class="warningbox"><p>(twocolconflict-test-needsbeta)</p></div>',
+			$html
 		);
 	}
 
