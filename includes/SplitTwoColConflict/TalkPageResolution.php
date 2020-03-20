@@ -24,4 +24,25 @@ class TalkPageResolution {
 		$this->otherIndex = $otherIndex;
 		$this->yourIndex = $yourIndex;
 	}
+
+	/**
+	 * @return array
+	 */
+	public function getDiff(): array {
+		return $this->diff;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOtherIndex(): int {
+		return $this->otherIndex;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getYourIndex(): int {
+		return $this->yourIndex;
+	}
 }

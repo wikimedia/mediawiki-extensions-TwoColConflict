@@ -38,6 +38,7 @@
 
 	function getSelectedColumn( $element ) {
 		return $element.find(
+			'.mw-twocolconflict-single-column, ' +
 			'.mw-twocolconflict-split-column.mw-twocolconflict-split-copy, ' +
 			'.mw-twocolconflict-split-column.mw-twocolconflict-split-selected' );
 	}
@@ -160,7 +161,7 @@
 		].forEach( function ( button ) {
 			$( button.selector ).each( function () {
 				var widget = OO.ui.ButtonWidget.static.infuse( this ),
-					$row = widget.$element.closest( '.mw-twocolconflict-split-row' );
+					$row = widget.$element.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
 				widget.on( 'click', function () {
 					button.onclick( $row );
