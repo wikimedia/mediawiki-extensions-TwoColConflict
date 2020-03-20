@@ -6,7 +6,6 @@ use MediaWikiTestCase;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
-use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView
@@ -160,38 +159,6 @@ TEXT
 			$htmlResult,
 			$expectedElements
 		);
-	}
-
-	public function provideRowsForText() {
-		return [
-			[ "a", 3 ],
-			[ "a\nb", 3 ],
-			[ "a\nb\nc\nd", 4 ],
-			[ "01234567890123456789012345678901234567890123456789012345678901234567890123456789"
-				. "01234567890123456789012345678901234567890123456789012345678901234567890123456789"
-				. "01234567890123456789012345678901234567890123456789012345678901234567890123456789"
-				. "01234567890123456789012345678901234567890123456789012345678901234567890123456789",
-				6
- ],
-			[ "㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳"
-				. "㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳㠳",
-				3
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider provideRowsForText
-	 */
-	public function testRowsForText( $input, $rows ) {
-		$view = TestingAccessWrapper::newFromObject(
-			new HtmlSplitConflictView(
-				$this->getTestUser()->getUser(),
-				new \Language()
-			)
-		);
-
-		$this->assertSame( $rows, $view->rowsForText( $input ) );
 	}
 
 	private function assertElementsPresentInOrder( $html, array $expectedElements ) {
