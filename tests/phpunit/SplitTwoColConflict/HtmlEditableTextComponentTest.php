@@ -3,6 +3,8 @@
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use MediaWikiTestCase;
+use OOUI\BlankTheme;
+use OOUI\Theme;
 use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
@@ -10,6 +12,27 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent
  */
 class HtmlEditableTextComponentTest extends MediaWikiTestCase {
+
+	public function setUp() : void {
+		parent::setUp();
+		Theme::setSingleton( new BlankTheme() );
+	}
+
+	public function testEnabledElement() {
+		$html = ( new HtmlEditableTextComponent(
+			$this->getTestUser()->getUser(),
+			new \Language()
+		) )->getHtml( '', '', 0, 'copy', false );
+		$this->assertStringNotContainsString( 'readonly', $html );
+	}
+
+	public function testDisabledElement() {
+		$html = ( new HtmlEditableTextComponent(
+			$this->getTestUser()->getUser(),
+			new \Language()
+		) )->getHtml( '', '', 0, 'copy', true );
+		$this->assertStringContainsString( 'readonly', $html );
+	}
 
 	public function provideRowsForText() {
 		return [
