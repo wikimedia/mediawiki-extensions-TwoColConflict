@@ -5,6 +5,7 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 use Content;
 use MediaWiki\Revision\RevisionRecord;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
+use TwoColConflict\SplitTwoColConflict\TalkPageResolution;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -26,88 +27,245 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 	public function provideSuggestion() {
 		return [
 			[
-				"",
-				"B",
-				"C",
-				true,
+				'base' => '',
+				'your' => 'B',
+				'stored' => 'C',
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">C</ins>',
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">B</ins>',
+							'newtext' => 'B',
+						],
+					],
+					0,
+					1
+				),
 			],
 			[
-				"",
-				"B\nB",
-				"C\nC",
-				true,
+				'base' => "",
+				'your' => "B\nB",
+				'stored' => "C\nC",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C\nC</ins>",
+							'newtext' => "C\nC",
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B\nB</ins>",
+							'newtext' => "B\nB",
+						],
+					],
+					0,
+					1
+				),
 			],
 			[
-				"A",
-				"A\nB",
-				"A\nC",
-				true,
+				'base' => "A",
+				'your' => "A\nB",
+				'stored' => "A\nC",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'copy',
+							'copytext' => 'A',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C</ins>",
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B</ins>",
+							'newtext' => 'B',
+						],
+					],
+					1,
+					2
+				),
 			],
 			[
-				"A\n\nA",
-				"A\n\nA\nB",
-				"A\n\nA\nC",
-				true,
+				'base' => "A\n\nA",
+				'your' => "A\n\nA\nB",
+				'stored' => "A\n\nA\nC",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'copy',
+							'copytext' => "A\n\nA",
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C</ins>",
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B</ins>",
+							'newtext' => 'B',
+						],
+					],
+					1,
+					2
+				),
 			],
 			[
-				"A",
-				"A\nB\nB",
-				"A\nC",
-				true,
+				'base' => "A",
+				'your' => "A\nB\nB",
+				'stored' => "A\nC",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'copy',
+							'copytext' => 'A',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C</ins>",
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B\nB</ins>",
+							'newtext' => "B\nB",
+						],
+					],
+					1,
+					2
+				),
 			],
 			[
-				"A",
-				"B\nA",
-				"C\nA",
-				true,
+				'base' => "A",
+				'your' => "B\nA",
+				'stored' => "C\nA",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C</ins>",
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B</ins>",
+							'newtext' => 'B',
+						],
+						[
+							'action' => 'copy',
+							'copytext' => 'A',
+						],
+					],
+					0,
+					1
+				)
 			],
 			[
-				"A\nA",
-				"A\nB\nA",
-				"A\nC\nA",
-				true,
+				'base' => "A\nA",
+				'your' => "A\nB\nA",
+				'stored' => "A\nC\nA",
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'copy',
+							'copytext' => 'A',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">C</ins>",
+							'newtext' => 'C',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">B</ins>",
+							'newtext' => 'B',
+						],
+						[
+							'action' => 'copy',
+							'copytext' => 'A',
+						],
+					],
+					1,
+					2
+				)
 			],
 			[
-				"A\nA",
-				"A\nB\nA",
-				"A\nA\nC",
-				false,
+				'base' => "A\nA",
+				'your' => "A\nB\nA",
+				'stored' => "A\nA\nC",
+				'expected' => null,
 			],
 			[
-				"A\nA",
-				"B\nB\nA",
-				"A\nC\nA",
-				false,
+				'base' => "A\nA",
+				'your' => "B\nB\nA",
+				'stored' => "A\nC\nA",
+				'expected' => null,
 			],
 			[
-				"A\nA",
-				"A\nB",
-				"A\nC\nA",
-				false,
+				'base' => "A\nA",
+				'your' => "A\nB",
+				'stored' => "A\nC\nA",
+				'expected' => null,
 			],
 			[
-				"A",
-				"A\nB",
-				"C\nC",
-				false,
+				'base' => "A",
+				'your' => "A\nB",
+				'stored' => "C\nC",
+				'expected' => null,
 			],
 			[
-				"A\nA",
-				"A\nB\nA\nD",
-				"A\nC\nA",
-				false,
+				'base' => "A\nA",
+				'your' => "A\nB\nA\nD",
+				'stored' => "A\nC\nA",
+				'expected' => null,
 			],
 			[
-				"A\nA\nA",
-				"A\nA\nD",
-				"A\nC\nA",
-				false,
+				'base' => "A\nA\nA",
+				'your' => "A\nA\nD",
+				'stored' => "A\nC\nA",
+				'expected' => null,
 			],
 			'incompatible 3-row diff' => [
-				"A\nB\nC",
-				"1\nB\n1",
-				"2\nB\n2",
-				false,
+				'base' => "A\nB\nC",
+				'your' => "1\nB\n1",
+				'stored' => "2\nB\n2",
+				'expected' => null,
 			],
 		];
 	}
@@ -119,11 +277,11 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 		string $base,
 		string $your,
 		string $stored,
-		bool $expectedOutput
+		?TalkPageResolution $expectedOutput
 	) {
 		$suggester = $this->createResolutionSuggester( new \WikitextContent( $base ) );
 
-		$this->assertSame(
+		$this->assertEquals(
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
 				\Title::makeTitle( NS_TALK, __FUNCTION__ ),
