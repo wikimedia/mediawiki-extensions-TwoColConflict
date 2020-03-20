@@ -168,14 +168,18 @@ function initButtonEvents() {
 	} );
 }
 
+function isEditableSingleColumn( $column ) {
+	return $column.is( '.mw-twocolconflict-single-column.mw-twocolconflict-split-add' );
+}
+
 function initColumnClickEvent() {
-	$( '.mw-twocolconflict-split-column' ).each( function () {
+	$( '.mw-twocolconflict-split-column, .mw-twocolconflict-single-column' ).each( function () {
 		var $column = $( this ),
 			$row = $column.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
 		$column.on( 'click', function () {
 			if (
-				$column.is( '.mw-twocolconflict-split-selected' ) &&
+				( $column.is( '.mw-twocolconflict-split-selected' ) || isEditableSingleColumn( $column ) ) &&
 				!$row.is( '.mw-twocolconflict-split-editing' )
 			) {
 				enableEditing( $row );
@@ -326,6 +330,32 @@ function initPreview() {
 	}
 }
 
+function initResolutionSuggestion() {
+	var $view = $( '.mw-twocolconflict-single-column-view' ),
+		$draggableSection = $view.find( '.mw-twocolconflict-suggestion-draggable' ),
+		DraggableAdditionWidget, OrderSelectionWidget, orderSelection;
+
+	if ( !$draggableSection.length ) {
+		return;
+	}
+
+	DraggableAdditionWidget = require( './ext.TwoColConflict.DraggableAdditionWidget.js' );
+	OrderSelectionWidget = require( './ext.TwoColConflict.OrderSelectionWidget.js' );
+
+	orderSelection = new OrderSelectionWidget( {
+		items: [
+			new DraggableAdditionWidget( {
+				// FIXME: Couple to the ancestor's class, not exact structure.
+				$rowElement: $view.find( '.mw-twocolconflict-split-delete' ).first().parent()
+			} ),
+			new DraggableAdditionWidget( {
+				$rowElement: $view.find( '.mw-twocolconflict-split-add' ).first().parent()
+			} )
+		]
+	} );
+	$draggableSection.replaceWith( orderSelection.$element );
+}
+
 function initSubmit() {
 	$( '#wpSave, #wpTestPreviewWidget #wpPreview' )
 		.click( function ( e ) {
@@ -345,6 +375,8 @@ $( function () {
 		$( 'html' ).removeClass( 'client-js' ).addClass( 'client-nojs' );
 		return;
 	}
+
+	initResolutionSuggestion();
 	initColumnSelection();
 	initColumnClickEvent();
 	initButtonEvents();

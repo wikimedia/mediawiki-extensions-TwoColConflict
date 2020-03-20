@@ -62,5 +62,7 @@
 	"twocolconflict-split-help-tooltip": "Label for the help button.",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Text for the header on the first screen of the help dialog when using the single column view.",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Text for the message on the first screen of the help dialog when using the single column view.",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Text for the close button on the first screen of the help dialog when using the single column view."
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Text for the close button on the first screen of the help dialog when using the single column view.",
+	"twocolconflict-talk-your": "Label for your entry when solving a conflict with two talk page entries.",
+	"twocolconflict-talk-conflicting": "Label for the conflicting entry when solving a conflict with two talk page entries."
 }

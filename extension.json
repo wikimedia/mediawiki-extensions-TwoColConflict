@@ -57,7 +57,9 @@
 		},
 		"ext.TwoColConflict.SplitJs": {
 			"packageFiles": [
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.DraggableAdditionWidget.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.OrderSelectionWidget.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
