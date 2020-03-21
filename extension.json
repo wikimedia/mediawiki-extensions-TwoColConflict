@@ -141,7 +141,7 @@
 			"scripts": [
 				"modules/ext.TwoColConflict.JSCheck.js"
 			]
-	  }
+		}
 	},
 	"attributes": {
 		"EventLogging": {
