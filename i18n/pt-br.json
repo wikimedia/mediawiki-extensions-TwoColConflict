@@ -10,6 +10,7 @@
 	"twocolconflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twocolconflict-beta-feature-message": "Editor de conflitos em duas colunas",
 	"twocolconflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.",
+	"twocolconflict-preference-enabled": "Ative o [[mw:Help:Two_Column_Edit_Conflict_View|Exibição de conflito de edição de duas colunas]] para resolver conflitos de edição",
 	"twocolconflict-test-needsbeta": "Para usar esta página especial tem de ativar a funcionalidade beta 'Conflito de edições em duas colunas' nas suas preferências.",
 	"twocolconflict-test-page-title": "Conflito de Edições: Simulação",
 	"twocolconflict-test-title-label": "Introduza o título de uma página da wiki que não esteja protegida, para a qual o conflito de edições deve ser simulado:",
