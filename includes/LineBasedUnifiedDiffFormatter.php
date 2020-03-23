@@ -79,8 +79,6 @@ class LineBasedUnifiedDiffFormatter {
 				case 'copy':
 					$changes[$this->oldLine][] = [
 						'action' => 'copy',
-						// TODO: The "copy" element is not used in split mode, and can be removed
-						// when the inline mode is gone.
 						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
 						'oldline' => $this->oldLine,
 						'count' => count( $edit->getOrig() ),
