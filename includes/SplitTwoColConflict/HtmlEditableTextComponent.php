@@ -33,13 +33,15 @@ class HtmlEditableTextComponent {
 	 * @param string $rawText
 	 * @param int $rowNum
 	 * @param string $changeType
+	 * @param bool $isDisabled
 	 * @return string
 	 */
 	public function getHtml(
 		string $diffHtml,
 		string $rawText,
 		int $rowNum,
-		string $changeType
+		string $changeType,
+		bool $isDisabled = false
 	) : string {
 		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
 		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
@@ -51,10 +53,12 @@ class HtmlEditableTextComponent {
 			$diffHtml
 		);
 		$innerHtml .= Html::element( 'div', [ 'class' => 'mw-twocolconflict-split-fade' ] );
-		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType );
-		$innerHtml .= $this->buildEditButton();
-		$innerHtml .= $this->buildSaveButton();
-		$innerHtml .= $this->buildResetButton();
+		$innerHtml .= $this->buildTextEditor( $editorText, $rowNum, $changeType, $isDisabled );
+		if ( !$isDisabled ) {
+			$innerHtml .= $this->buildEditButton();
+			$innerHtml .= $this->buildSaveButton();
+			$innerHtml .= $this->buildResetButton();
+		}
 
 		if ( $changeType === 'copy' ) {
 			$innerHtml .= $this->buildExpandButton();
@@ -78,22 +82,27 @@ class HtmlEditableTextComponent {
 			);
 	}
 
-	private function buildTextEditor( string $editorText, int $rowNum, string $changeType ) : string {
+	private function buildTextEditor(
+		string $editorText,
+		int $rowNum,
+		string $changeType,
+		bool $isDisabled
+	) : string {
 		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
+		$attributes = [
+			'class' => $class . ' mw-twocolconflict-split-editor',
+			'name' => 'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
+			'lang' => $this->language->getHtmlCode(),
+			'dir' => $this->language->getDir(),
+			'rows' => $this->rowsForText( $editorText ),
+			'autocomplete' => 'off',
+			'tabindex' => '1',
+		];
+		if ( $isDisabled ) {
+			$attributes['readonly'] = 'readonly';
+		}
 
-		return Html::element(
-			'textarea',
-			[
-				'class' => $class . ' mw-twocolconflict-split-editor',
-				'name' => 'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
-				'lang' => $this->language->getHtmlCode(),
-				'dir' => $this->language->getDir(),
-				'rows' => $this->rowsForText( $editorText ),
-				'autocomplete' => 'off',
-				'tabindex' => '1',
-			],
-			$editorText
-		);
+		return Html::element( 'textarea', $attributes, $editorText );
 	}
 
 	private function buildLineFeedField( string $rawText, int $rowNum, string $changeType ) : string {
