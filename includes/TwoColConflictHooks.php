@@ -77,6 +77,19 @@ class TwoColConflictHooks {
 		if ( $contentRows ) {
 			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds', [] );
 			$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector', [] );
+
+			if ( $request->getBool( 'mw-twocolconflict-single-column-view' )
+				&& !( new ConflictFormValidator() )->validateRequest( $request )
+			) {
+				// When the request is invalid, drop the "other" row to force the original conflict
+				// to be re-created, and not silently resolved or corrupted.
+				foreach ( $contentRows as $num => &$row ) {
+					if ( array_key_exists( 'other', $row ) ) {
+						$row['other'] = '';
+					}
+				}
+			}
+
 			$editPage->textbox1 = SplitConflictMerger::mergeSplitConflictResults(
 				$contentRows,
 				$extraLineFeeds,

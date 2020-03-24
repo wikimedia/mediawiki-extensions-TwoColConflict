@@ -42,6 +42,79 @@ class ConflictFormValidatorTest extends MediaWikiIntegrationTestCase {
 				],
 				'expected' => false,
 			],
+			'Good single-column content' => [
+				'params' => [
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						0 => [
+							'copy' => 'text1',
+						],
+						1 => [
+							'your' => 'text2',
+						],
+						2 => [
+							'other' => 'text3',
+						]
+					],
+				],
+				'expected' => true,
+			],
+			'Single-column content missing row' => [
+				'params' => [
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						0 => [
+							'copy' => 'text1',
+						],
+						1 => [],
+						2 => [
+							'other' => 'text3',
+						]
+					],
+				],
+				'expected' => false,
+			],
+			'Single-column content too many values' => [
+				'params' => [
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						0 => [
+							'copy' => 'text1',
+						],
+						1 => [
+							'other' => 'text4',
+							'your' => 'text2',
+						],
+						2 => [
+							'other' => 'text3',
+						],
+					],
+					'mw-twocolconflict-side-selector' => [
+						1 => 'your',
+					],
+				],
+				'expected' => false,
+			],
+			'Single-column content bad type' => [
+				'params' => [
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						0 => [
+							'copy' => 'text1',
+						],
+						1 => [
+							'other' => [ 'text4' ],
+						],
+						2 => [
+							'other' => 'text3',
+						],
+					],
+					'mw-twocolconflict-side-selector' => [
+						1 => 'your',
+					],
+				],
+				'expected' => false,
+			],
 			'Good split-column content' => [
 				'params' => [
 					'mw-twocolconflict-split-content' => [

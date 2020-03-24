@@ -55,6 +55,8 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame( 'B', $result );
 	}
 
+	// TODO: public function testTalkPageSpecialCase()
+
 	public function testExtraLineFeedsAreAdded() {
 		$result = SplitConflictMerger::mergeSplitConflictResults(
 			[
