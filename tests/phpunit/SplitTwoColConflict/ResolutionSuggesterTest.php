@@ -103,6 +103,12 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 				"A\nC\nA",
 				false,
 			],
+			'incompatible 3-row diff' => [
+				"A\nB\nC",
+				"1\nB\n1",
+				"2\nB\n2",
+				false,
+			],
 		];
 	}
 

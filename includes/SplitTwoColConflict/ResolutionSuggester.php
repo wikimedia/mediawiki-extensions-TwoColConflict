@@ -70,29 +70,21 @@ class ResolutionSuggester {
 			return true;
 		}
 
-		$diffYourLines = ( new LineBasedUnifiedDiffFormatter() )->format(
-			new \Diff( $baseLines, $yourLines )
-		);
-		$diffStoredLines = ( new LineBasedUnifiedDiffFormatter() )->format(
-			new \Diff( $baseLines, $storedLines )
-		);
+		$diffYourLines = $this->diff( $baseLines, $yourLines );
+		$diffStoredLines = $this->diff( $baseLines, $storedLines );
 
-		$diffYourLinesSize = count( $diffYourLines );
-		$diffStoredLinesSize = count( $diffStoredLines );
+		$count = count( $diffYourLines );
+		if ( $count !== count( $diffStoredLines ) ) {
+			return false;
+		}
 
 		// only diffs that contain exactly one addition that is optionally
 		// preceded or succeeded by one identical copy line at a time are
 		// candidates for the resolution suggestion
-		if ( $diffYourLinesSize !== $diffStoredLinesSize || $diffYourLinesSize > 3 ) {
-			return false;
-		}
-
-		// for each case identify the lines on both sides that should be
-		// part of the suggestion
-		if ( $diffYourLinesSize === 1 ) {
+		if ( $count === 1 ) {
 			$yourLine = $diffYourLines[0];
 			$storedLine = $diffStoredLines[0];
-		} elseif ( $diffYourLinesSize === 2 ) {
+		} elseif ( $count === 2 ) {
 			// if the diffs contain only two action either the first or the second
 			// action must be identical copies
 			if ( self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) ) {
@@ -104,7 +96,7 @@ class ResolutionSuggester {
 			} else {
 				return false;
 			}
-		} elseif ( $diffYourLinesSize === 3 &&
+		} elseif ( $count === 3 &&
 			// if the diffs contain three actions the preceding and succeeding
 			// actions must be identical copies
 			self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) &&
@@ -147,6 +139,17 @@ class ResolutionSuggester {
 		}
 
 		return SplitConflictUtils::splitText( $baseText );
+	}
+
+	/**
+	 * @param string[] $fromLines
+	 * @param string[] $toLines
+	 *
+	 * @return array[]
+	 */
+	private function diff( array $fromLines, array $toLines ) : array {
+		$formatter = new LineBasedUnifiedDiffFormatter();
+		return $formatter->format( new \Diff( $fromLines, $toLines ) );
 	}
 
 }
