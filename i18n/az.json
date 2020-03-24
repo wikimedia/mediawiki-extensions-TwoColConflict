@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toghrul Rahimli"
+		]
+	},
+	"twocolconflict-beta-feature-message": "İki sütunlu dəyişiklik toqquşması",
+	"twocolconflict-beta-feature-description": "Dəyişiklik toqquşmasını daha müasir və ikili sütun formasında göstər."
+}
