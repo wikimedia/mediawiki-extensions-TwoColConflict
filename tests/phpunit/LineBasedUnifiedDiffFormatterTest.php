@@ -49,17 +49,14 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'result' => [
 					0 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => 'Just text.',
-							'oldline' => 0,
-							'count' => 1,
-						],
-						[
-							'action' => 'add',
 							'new' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
+							'oldline' => 0,
 							'newline' => 0,
-							'count' => 1,
-						]
+							'oldcount' => 1,
+							'newcount' => 1,
+						],
 					],
 				],
 			],
@@ -69,16 +66,13 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'result' => [
 					0 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
-							'oldline' => 0,
-							'count' => 1,
-						],
-						[
-							'action' => 'add',
 							'new' => 'Just less.',
+							'oldline' => 0,
 							'newline' => 0,
-							'count' => 1,
+							'oldcount' => 1,
+							'newcount' => 1,
 						]
 					]
 				],
@@ -225,20 +219,17 @@ TEXT
 				'result' => [
 					0 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => <<<TEXT
 Just multi-line <del class="mw-twocolconflict-diffchange">text.</del>
 <del class="mw-twocolconflict-diffchange">Line number 1.5</del>.
 TEXT
 							,
-							'oldline' => 0,
-							'count' => 2,
-						],
-						[
-							'action' => 'add',
 							'new' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
+							'oldline' => 0,
 							'newline' => 0,
-							'count' => 1,
+							'oldcount' => 2,
+							'newcount' => 1,
 						]
 					],
 					2 => [
@@ -275,18 +266,13 @@ TEXT
 				'result' => [
 					0 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => <<<TEXT
 Just multi-line <del class="mw-twocolconflict-diffchange">text</del>.
 <del class="mw-twocolconflict-diffchange">To change </del>number 2.
 <del class="mw-twocolconflict-diffchange">To change </del>number 3.
 TEXT
 							,
-							'oldline' => 0,
-							'count' => 3,
-						],
-						[
-							'action' => 'add',
 							'new' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
@@ -296,8 +282,10 @@ Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
 TEXT
 // @codingStandardsIgnoreEnd
 							,
+							'oldline' => 0,
 							'newline' => 0,
-							'count' => 3,
+							'oldcount' => 3,
+							'newcount' => 3,
 						]
 					],
 				],
@@ -329,7 +317,7 @@ TEXT
 					],
 					1 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
@@ -340,11 +328,6 @@ Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del 
 TEXT
 // @codingStandardsIgnoreEnd
 							,
-							'oldline' => 1,
-							'count' => 3,
-						],
-						[
-							'action' => 'add',
 							'new' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
@@ -354,8 +337,10 @@ Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins c
 TEXT
 // @codingStandardsIgnoreEnd
 							,
+							'oldline' => 1,
 							'newline' => 1,
-							'count' => 3,
+							'oldcount' => 3,
+							'newcount' => 3,
 						]
 					],
 				],
@@ -387,14 +372,9 @@ TEXT
 					],
 					1 => [
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => 'Line number two. This line is ' .
 								'<del class="mw-twocolconflict-diffchange">quite long</del>!',
-							'oldline' => 1,
-							'count' => 1,
-						],
-						[
-							'action' => 'add',
 							'new' => <<<TEXT
 Line number two. This line is <ins class="mw-twocolconflict-diffchange">now a bit longer</ins>!
 \u{00A0}
@@ -402,8 +382,10 @@ Line number two. This line is <ins class="mw-twocolconflict-diffchange">now a bi
 \u{00A0}
 TEXT
 							,
+							'oldline' => 1,
 							'newline' => 1,
-							'count' => 2,
+							'oldcount' => 1,
+							'newcount' => 2,
 						],
 					],
 					2 => [
@@ -500,18 +482,15 @@ TEXT
 				'result' => [
 					[
 						[
-							'action' => 'delete',
+							'action' => 'change',
 							'old' => '<del class="mw-twocolconflict-diffchange">' .
 								'Test </del>with [markup] &lt;references /&gt;.',
-							'oldline' => 0,
-							'count' => 1,
-						],
-						[
-							'action' => 'add',
 							'new' => '<ins class="mw-twocolconflict-diffchange">' .
 								'Text </ins>with [markup] &lt;references /&gt;.',
+							'oldline' => 0,
 							'newline' => 0,
-							'count' => 1,
+							'oldcount' => 1,
+							'newcount' => 1,
 						]
 					]
 				],

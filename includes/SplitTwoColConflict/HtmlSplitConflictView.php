@@ -61,20 +61,19 @@ class HtmlSplitConflictView {
 							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
 							$currRowNum
 						);
+
 						$out .= $this->buildSideSelector( $currRowNum );
 
-						if ( !$this->hasConflictInLine( $currentLine ) ) {
-							$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
-							$out .= $this->endRow();
-							$currRowNum++;
-						}
+						$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
+						$out .= $this->endRow();
+						$currRowNum++;
 						break;
+
 					case 'add':
-						if ( !$this->hasConflictInLine( $currentLine ) ) {
-							$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-							$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
-							$out .= $this->buildSideSelector( $currRowNum );
-						}
+						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
+						$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
+
+						$out .= $this->buildSideSelector( $currRowNum );
 
 						$out .= $this->buildAddedLine(
 							$changeSet['new'],
@@ -84,6 +83,26 @@ class HtmlSplitConflictView {
 						$out .= $this->endRow();
 						$currRowNum++;
 						break;
+
+					case 'change':
+						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
+						$out .= $this->buildRemovedLine(
+							$changeSet['old'],
+							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
+							$currRowNum
+						);
+
+						$out .= $this->buildSideSelector( $currRowNum );
+
+						$out .= $this->buildAddedLine(
+							$changeSet['new'],
+							implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
+							$currRowNum
+						);
+						$out .= $this->endRow();
+						$currRowNum++;
+						break;
+
 					case 'copy':
 						$rawText = implode(
 							"\n",
@@ -186,19 +205,6 @@ class HtmlSplitConflictView {
 			] ) ) .
 			Html::closeElement( 'div' ) .
 			Html::closeElement( 'div' );
-	}
-
-	/**
-	 * Check if a unified diff line contains an edit conflict.
-	 *
-	 * @param array[] $currentLine
-	 *
-	 * @return bool
-	 */
-	private function hasConflictInLine( array $currentLine ) : bool {
-		return count( $currentLine ) > 1 &&
-			$currentLine[0]['action'] === 'delete' &&
-			$currentLine[1]['action'] === 'add';
 	}
 
 }

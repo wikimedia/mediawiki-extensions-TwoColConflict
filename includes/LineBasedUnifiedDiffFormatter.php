@@ -58,22 +58,19 @@ class LineBasedUnifiedDiffFormatter {
 					break;
 
 				case 'change':
-					// Required because trackDelete() will (and should) increase $this->oldLine.
-					$originalLineNumber = $this->oldLine;
 					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 
-					$this->trackDelete(
-						$changes,
-						$originalLineNumber,
-						$edit->norig(),
-						$this->getOriginalInlineDiff( $wordLevelDiff )
-					);
-					$this->trackAdd(
-						$changes,
-						$originalLineNumber,
-						$edit->nclosing(),
-						$this->getClosingInlineDiff( $wordLevelDiff )
-					);
+					$changes[$this->oldLine][] = [
+						'action' => 'change',
+						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
+						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
+						'oldline' => $this->oldLine,
+						'newline' => $this->newLine,
+						'oldcount' => $edit->norig(),
+						'newcount' => $edit->nclosing(),
+					];
+					$this->oldLine += $edit->norig();
+					$this->newLine += $edit->nclosing();
 					break;
 
 				case 'copy':
