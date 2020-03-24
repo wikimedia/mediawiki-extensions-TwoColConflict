@@ -33,7 +33,7 @@ class HtmlSplitConflictView {
 	}
 
 	/**
-	 * @param array[][] $unifiedDiff
+	 * @param array[] $unifiedDiff
 	 * @param string[] $yourLines
 	 * @param string[] $storedLines
 	 * @param bool $markAllAsIncomplete
@@ -51,70 +51,65 @@ class HtmlSplitConflictView {
 		);
 
 		$currRowNum = 0;
-		foreach ( $unifiedDiff as $currentLine ) {
-			foreach ( $currentLine as $changeSet ) {
-				switch ( $changeSet['action'] ) {
-					case 'delete':
-						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-						$out .= $this->buildRemovedLine(
-							$changeSet['old'],
-							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
-							$currRowNum
-						);
+		foreach ( $unifiedDiff as $changeSet ) {
+			switch ( $changeSet['action'] ) {
+				case 'delete':
+					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
+					$out .= $this->buildRemovedLine(
+						$changeSet['old'],
+						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
+						$currRowNum
+					);
 
-						$out .= $this->buildSideSelector( $currRowNum );
+					$out .= $this->buildSideSelector( $currRowNum );
 
-						$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
-						$out .= $this->endRow();
-						$currRowNum++;
-						break;
+					$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
+					$out .= $this->endRow();
+					$currRowNum++;
+					break;
+				case 'add':
+					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
+					$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
 
-					case 'add':
-						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-						$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
+					$out .= $this->buildSideSelector( $currRowNum );
 
-						$out .= $this->buildSideSelector( $currRowNum );
+					$out .= $this->buildAddedLine(
+						$changeSet['new'],
+						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['count'] ) ),
+						$currRowNum
+					);
+					$out .= $this->endRow();
+					$currRowNum++;
+					break;
+				case 'change':
+					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
+					$out .= $this->buildRemovedLine(
+						$changeSet['old'],
+						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
+						$currRowNum
+					);
 
-						$out .= $this->buildAddedLine(
-							$changeSet['new'],
-							implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['count'] ) ),
-							$currRowNum
-						);
-						$out .= $this->endRow();
-						$currRowNum++;
-						break;
+					$out .= $this->buildSideSelector( $currRowNum );
 
-					case 'change':
-						$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-						$out .= $this->buildRemovedLine(
-							$changeSet['old'],
-							implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
-							$currRowNum
-						);
+					$out .= $this->buildAddedLine(
+						$changeSet['new'],
+						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
+						$currRowNum
+					);
+					$out .= $this->endRow();
+					$currRowNum++;
+					break;
+				case 'copy':
+					$rawText = implode(
+						"\n",
+						array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] )
+					);
 
-						$out .= $this->buildSideSelector( $currRowNum );
-
-						$out .= $this->buildAddedLine(
-							$changeSet['new'],
-							implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
-							$currRowNum
-						);
-						$out .= $this->endRow();
-						$currRowNum++;
-						break;
-
-					case 'copy':
-						$rawText = implode(
-							"\n",
-							array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] )
-						);
-
-						$out .= $this->startRow( $currRowNum );
-						$out .= $this->buildCopiedLine( $rawText, $currRowNum );
-						$out .= $this->endRow();
-						$currRowNum++;
-						break;
-				}
+					$out .= $this->startRow( $currRowNum );
+					$out .= $this->buildCopiedLine( $rawText, $currRowNum );
+					$out .= $this->endRow();
+					$currRowNum++;
+					break;
 			}
 		}
 

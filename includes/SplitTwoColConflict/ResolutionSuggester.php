@@ -42,7 +42,7 @@ class ResolutionSuggester {
 	private static function identicalCopyBlock( $idx, $diffALines, $diffBLines ) {
 		$a = array_slice( $diffALines, $idx, 1 )[0];
 		$b = array_slice( $diffBLines, $idx, 1 )[0];
-		return isset( $a[0] ) && $a[0]['action'] === 'copy' && $a === $b;
+		return $a['action'] === 'copy' && $a === $b;
 	}
 
 	/**
@@ -117,9 +117,9 @@ class ResolutionSuggester {
 		}
 
 		// we are only suggesting a resolution if we have two additions in the same line
-		if ( $yourLine[0]['action'] !== 'add' ||
-			$storedLine[0]['action'] !== 'add' ||
-			$yourLine[0]['newline'] !== $storedLine[0]['newline']
+		if ( $yourLine['action'] !== 'add' ||
+			$storedLine['action'] !== 'add' ||
+			$yourLine['newline'] !== $storedLine['newline']
 		) {
 			return false;
 		}
