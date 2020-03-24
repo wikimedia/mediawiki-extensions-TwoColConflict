@@ -13,16 +13,6 @@ use WordLevelDiff;
 class LineBasedUnifiedDiffFormatter {
 
 	/**
-	 * @var int
-	 */
-	private $oldLine;
-
-	/**
-	 * @var int
-	 */
-	private $newLine;
-
-	/**
 	 * @param Diff $diff A Diff object.
 	 *
 	 * @return array[] List of changes, formatted to include an HTML representation and line
@@ -30,43 +20,48 @@ class LineBasedUnifiedDiffFormatter {
 	 */
 	public function format( Diff $diff ) : array {
 		$changes = [];
-		$this->oldLine = 0;
-		$this->newLine = 0;
+		$oldLine = 0;
+		$newLine = 0;
 
 		foreach ( $diff->getEdits() as $edit ) {
 			switch ( $edit->getType() ) {
 				case 'add':
-					$this->trackAdd(
-						$changes,
-						$edit->nclosing(),
-						'<ins class="mw-twocolconflict-diffchange">' .
-							$this->composeLines( $edit->getClosing() ) . '</ins>'
-					);
+					$count = $edit->nclosing();
+					$changes[] = [
+						'action' => 'add',
+						'new' => '<ins class="mw-twocolconflict-diffchange">' .
+							$this->composeLines( $edit->getClosing() ) . '</ins>',
+						'newline' => $newLine,
+						'count' => $count,
+					];
+					$newLine += $count;
 					break;
 
 				case 'delete':
-					$this->trackDelete(
-						$changes,
-						$edit->norig(),
-						'<del class="mw-twocolconflict-diffchange">' .
-							$this->composeLines( $edit->getOrig() ) . '</del>'
-					);
+					$count = $edit->norig();
+					$changes[] = [
+						'action' => 'delete',
+						'old' => '<del class="mw-twocolconflict-diffchange">' .
+							$this->composeLines( $edit->getOrig() ) . '</del>',
+						'oldline' => $oldLine,
+						'count' => $count,
+					];
+					$oldLine += $count;
 					break;
 
 				case 'change':
 					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
-
 					$changes[] = [
 						'action' => 'change',
 						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
-						'oldline' => $this->oldLine,
-						'newline' => $this->newLine,
+						'oldline' => $oldLine,
+						'newline' => $newLine,
 						'oldcount' => $edit->norig(),
 						'newcount' => $edit->nclosing(),
 					];
-					$this->oldLine += $edit->norig();
-					$this->newLine += $edit->nclosing();
+					$oldLine += $edit->norig();
+					$newLine += $edit->nclosing();
 					break;
 
 				case 'copy':
@@ -74,11 +69,11 @@ class LineBasedUnifiedDiffFormatter {
 					$changes[] = [
 						'action' => 'copy',
 						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
-						'oldline' => $this->oldLine,
+						'oldline' => $oldLine,
 						'count' => $count,
 					];
-					$this->oldLine += $count;
-					$this->newLine += $count;
+					$oldLine += $count;
+					$newLine += $count;
 					break;
 			}
 		}
@@ -116,44 +111,6 @@ class LineBasedUnifiedDiffFormatter {
 		}
 		$before = substr( $before, 0, $uncommonBefore );
 		$after = substr( $after, 0, $uncommonAfter );
-	}
-
-	/**
-	 * Will increase $this->oldLine by $lineCount.
-	 *
-	 * @param array &$changes
-	 * @param int $lineCount Number of source code lines in the $diffHtml
-	 * @param string $diffHtml HTML
-	 */
-	private function trackDelete( array &$changes, int $lineCount, string $diffHtml ) {
-		$changes[] = [
-			'action' => 'delete',
-			'old' => $diffHtml,
-			'oldline' => $this->oldLine,
-			'count' => $lineCount,
-		];
-		$this->oldLine += $lineCount;
-	}
-
-	/**
-	 * Will increase $this->newLine by $lineCount.
-	 *
-	 * @param array &$changes
-	 * @param int $lineCount Number of source code lines in the $diffHtml
-	 * @param string $diffHtml HTML
-	 */
-	private function trackAdd(
-		array &$changes,
-		int $lineCount,
-		string $diffHtml
-	) {
-		$changes[] = [
-			'action' => 'add',
-			'new' => $diffHtml,
-			'newline' => $this->newLine,
-			'count' => $lineCount,
-		];
-		$this->newLine += $lineCount;
 	}
 
 	/**
