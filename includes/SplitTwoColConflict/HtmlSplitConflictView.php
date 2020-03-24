@@ -115,11 +115,11 @@ class HtmlSplitConflictView {
 		return Html::closeElement( 'div' );
 	}
 
-	private function buildAddedLine( string $diffHtml, string $rawText, int $rowNum ) : string {
+	private function buildAddedLine( string $diffHtml, string $text, int $rowNum ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'your' )
+			$this->buildEditableTextContainer( $diffHtml, $text, $rowNum, 'your' )
 		);
 	}
 
@@ -131,11 +131,11 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildCopiedLine( string $rawText, int $rowNum ) : string {
+	private function buildCopiedLine( string $text, int $rowNum ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy' )
+			$this->buildEditableTextContainer( htmlspecialchars( $text ), $text, $rowNum, 'copy' )
 		);
 	}
 
@@ -153,14 +153,14 @@ class HtmlSplitConflictView {
 
 	private function buildEditableTextContainer(
 		string $diffHtml,
-		string $rawText,
+		string $text,
 		int $rowNum,
 		string $changeType
 	) : string {
 		return ( new HtmlEditableTextComponent(
 			$this->user, $this->language
 		) )->getHtml(
-			$diffHtml, $rawText, $rowNum, $changeType
+			$diffHtml, $text, $rowNum, $changeType
 		);
 	}
 

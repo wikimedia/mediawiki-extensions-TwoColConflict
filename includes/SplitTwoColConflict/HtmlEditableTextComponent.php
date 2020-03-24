@@ -30,7 +30,7 @@ class HtmlEditableTextComponent {
 
 	/**
 	 * @param string $diffHtml
-	 * @param string $rawText
+	 * @param string $text
 	 * @param int $rowNum
 	 * @param string $changeType
 	 * @param bool $isDisabled
@@ -38,13 +38,13 @@ class HtmlEditableTextComponent {
 	 */
 	public function getHtml(
 		string $diffHtml,
-		string $rawText,
+		string $text,
 		int $rowNum,
 		string $changeType,
 		bool $isDisabled = false
 	) : string {
 		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
-		$editorText = rtrim( $rawText, "\r\n" ) . "\n";
+		$editorText = rtrim( $text, "\r\n" ) . "\n";
 		$classes = [ 'mw-twocolconflict-split-editable' ];
 
 		$innerHtml = Html::rawElement(
@@ -67,7 +67,7 @@ class HtmlEditableTextComponent {
 		}
 
 		$innerHtml .= $this->buildResetText( $diffHtml, $editorText );
-		$innerHtml .= $this->buildLineFeedField( $rawText, $rowNum, $changeType );
+		$innerHtml .= $this->buildLineFeedField( $text, $rowNum, $changeType );
 
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
@@ -105,10 +105,10 @@ class HtmlEditableTextComponent {
 		return Html::element( 'textarea', $attributes, $editorText );
 	}
 
-	private function buildLineFeedField( string $rawText, int $rowNum, string $changeType ) : string {
+	private function buildLineFeedField( string $text, int $rowNum, string $changeType ) : string {
 		return Html::hidden(
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
-			$this->countExtraLineFeeds( $rawText )
+			$this->countExtraLineFeeds( $text )
 		);
 	}
 
