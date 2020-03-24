@@ -40,8 +40,8 @@ class ResolutionSuggester {
 	 * @return bool
 	 */
 	private static function identicalCopyBlock( $idx, $diffALines, $diffBLines ) {
-		$a = array_slice( $diffALines, $idx, 1 )[0];
-		$b = array_slice( $diffBLines, $idx, 1 )[0];
+		$a = $diffALines[$idx];
+		$b = $diffBLines[$idx];
 		return $a['action'] === 'copy' && $a === $b;
 	}
 
@@ -90,17 +90,17 @@ class ResolutionSuggester {
 		// for each case identify the lines on both sides that should be
 		// part of the suggestion
 		if ( $diffYourLinesSize === 1 ) {
-			$yourLine = array_pop( $diffYourLines );
-			$storedLine = array_pop( $diffStoredLines );
+			$yourLine = $diffYourLines[0];
+			$storedLine = $diffStoredLines[0];
 		} elseif ( $diffYourLinesSize === 2 ) {
 			// if the diffs contain only two action either the first or the second
 			// action must be identical copies
 			if ( self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) ) {
-				$yourLine = array_pop( $diffYourLines );
-				$storedLine = array_pop( $diffStoredLines );
+				$yourLine = $diffYourLines[1];
+				$storedLine = $diffStoredLines[1];
 			} elseif ( self::identicalCopyBlock( 1, $diffYourLines, $diffStoredLines ) ) {
-				$yourLine = array_shift( $diffYourLines );
-				$storedLine = array_shift( $diffStoredLines );
+				$yourLine = $diffYourLines[0];
+				$storedLine = $diffStoredLines[0];
 			} else {
 				return false;
 			}
@@ -110,8 +110,8 @@ class ResolutionSuggester {
 			self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) &&
 			self::identicalCopyBlock( 2, $diffYourLines, $diffStoredLines )
 		) {
-			$yourLine = array_slice( $diffYourLines, 1, 1 )[0];
-			$storedLine = array_slice( $diffStoredLines, 1, 1 )[0];
+			$yourLine = $diffYourLines[1];
+			$storedLine = $diffStoredLines[1];
 		} else {
 			return false;
 		}
