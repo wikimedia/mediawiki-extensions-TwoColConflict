@@ -29,6 +29,7 @@ class AnnotatedHtmlDiffFormatter {
 					$count = $edit->nclosing();
 					$changes[] = [
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getClosing() ) . '</ins>',
 						'newline' => $newLine,
@@ -43,6 +44,7 @@ class AnnotatedHtmlDiffFormatter {
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getOrig() ) . '</del>',
+						'newhtml' => "\u{00A0}",
 						'oldline' => $oldLine,
 						'oldcount' => $count,
 					];

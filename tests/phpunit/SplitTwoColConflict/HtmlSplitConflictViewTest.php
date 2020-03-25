@@ -114,6 +114,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="diffchange">Line number 1.5.</ins>',
 						'newline' => 1,
 						'newcount' => 1,
@@ -154,6 +155,7 @@ TEXT
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="diffchange">Line number 3.</ins>',
 						'newline' => 2,
 						'newcount' => 1,

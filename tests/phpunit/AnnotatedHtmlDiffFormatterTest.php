@@ -92,6 +92,7 @@ TEXT
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
 						'newline' => 1,
 						'newcount' => 1,
@@ -124,6 +125,7 @@ TEXT
 					[
 						'action' => 'delete',
 						'oldhtml' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
+						'newhtml' => "\u{00A0}",
 						'oldline' => 1,
 						'oldcount' => 1,
 					],
@@ -148,6 +150,7 @@ TEXT
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
 						'newline' => 1,
 						'newcount' => 1,
@@ -176,6 +179,7 @@ TEXT
 					[
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
+						'newhtml' => "\u{00A0}",
 						'oldline' => 2,
 						'oldcount' => 1,
 					],
@@ -216,6 +220,7 @@ TEXT
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
 						'newline' => 2,
 						'newcount' => 1,
@@ -402,10 +407,11 @@ TEXT
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</del>',
+						'newhtml' => "\u{00A0}",
 						'oldline' => 1,
 						'oldcount' => 1,
 					],
-				]
+				],
 			],
 			'add' => [
 				'before' => 'Copied <b>text</b>.',
@@ -419,6 +425,7 @@ TEXT
 					],
 					[
 						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</ins>',
 						'newline' => 1,
