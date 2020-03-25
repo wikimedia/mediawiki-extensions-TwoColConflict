@@ -41,7 +41,7 @@ class LineBasedUnifiedDiffFormatter {
 					$this->trackAdd(
 						$changes,
 						$this->oldLine,
-						count( $edit->getClosing() ),
+						$edit->nclosing(),
 						'<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getClosing() ) . '</ins>'
 					);
@@ -51,7 +51,7 @@ class LineBasedUnifiedDiffFormatter {
 					$this->trackDelete(
 						$changes,
 						$this->oldLine,
-						count( $edit->getOrig() ),
+						$edit->norig(),
 						'<del class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getOrig() ) . '</del>'
 					);
@@ -65,26 +65,27 @@ class LineBasedUnifiedDiffFormatter {
 					$this->trackDelete(
 						$changes,
 						$originalLineNumber,
-						count( $edit->getOrig() ),
+						$edit->norig(),
 						$this->getOriginalInlineDiff( $wordLevelDiff )
 					);
 					$this->trackAdd(
 						$changes,
 						$originalLineNumber,
-						count( $edit->getClosing() ),
+						$edit->nclosing(),
 						$this->getClosingInlineDiff( $wordLevelDiff )
 					);
 					break;
 
 				case 'copy':
+					$count = $edit->norig();
 					$changes[$this->oldLine][] = [
 						'action' => 'copy',
 						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
 						'oldline' => $this->oldLine,
-						'count' => count( $edit->getOrig() ),
+						'count' => $count,
 					];
-					$this->oldLine += count( $edit->getOrig() );
-					$this->newLine += count( $edit->getOrig() );
+					$this->oldLine += $count;
+					$this->newLine += $count;
 					break;
 			}
 		}
