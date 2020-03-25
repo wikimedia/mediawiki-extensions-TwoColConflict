@@ -38,8 +38,6 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 					[
 						'action' => 'copy',
 						'copytext' => 'Just text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 				],
 			],
@@ -53,10 +51,6 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 						'oldtext' => 'Just text.',
 						'newhtml' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
 						'newtext' => 'Just text. And more.',
-						'oldline' => 0,
-						'newline' => 0,
-						'oldcount' => 1,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -70,10 +64,6 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 						'oldtext' => 'Just less text.',
 						'newhtml' => 'Just less.',
 						'newtext' => 'Just less.',
-						'oldline' => 0,
-						'newline' => 0,
-						'oldcount' => 1,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -93,8 +83,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Just multi-line text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -102,14 +90,10 @@ TEXT
 						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
 						'newtext' => 'Line number 1.5.',
-						'newline' => 1,
-						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
 						'copytext' => 'Line number 2.',
-						'oldline' => 1,
-						'count' => 1,
 					],
 				],
 			],
@@ -127,8 +111,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Delete the empty line below.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'delete',
@@ -136,8 +118,6 @@ TEXT
 						'oldtext' => '',
 						'newhtml' => "\u{00A0}",
 						'newtext' => '',
-						'oldline' => 1,
-						'oldcount' => 1,
 					],
 				],
 			],
@@ -155,8 +135,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Add an empty line below.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -164,8 +142,6 @@ TEXT
 						'oldtext' => '',
 						'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
 						'newtext' => '',
-						'newline' => 1,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -185,8 +161,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => "Just multi-line text.\nLine number 1.5.",
-						'oldline' => 0,
-						'count' => 2,
 					],
 					[
 						'action' => 'delete',
@@ -194,8 +168,6 @@ TEXT
 						'oldtext' => 'Line number 2.',
 						'newhtml' => "\u{00A0}",
 						'newtext' => '',
-						'oldline' => 2,
-						'oldcount' => 1,
 					],
 				],
 			],
@@ -227,16 +199,10 @@ TEXT
 						,
 						'newhtml' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
 						'newtext' => 'Just multi-line test.',
-						'oldline' => 0,
-						'newline' => 0,
-						'oldcount' => 2,
-						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
 						'copytext' => 'Line number 2.',
-						'oldline' => 2,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -244,8 +210,6 @@ TEXT
 						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
 						'newtext' => 'Line number 3.',
-						'newline' => 2,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -292,10 +256,6 @@ Line number 2 changed.
 Line number 3 also changed.
 TEXT
 						,
-						'oldline' => 0,
-						'newline' => 0,
-						'oldcount' => 3,
-						'newcount' => 3,
 					],
 				],
 			],
@@ -319,8 +279,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Just a multi-line text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'change',
@@ -356,10 +314,6 @@ Line number two. Now line number three and quite long!
 Add more new stuff.
 TEXT
 						,
-						'oldline' => 1,
-						'newline' => 1,
-						'oldcount' => 3,
-						'newcount' => 3,
 					],
 				],
 			],
@@ -383,8 +337,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Just a multi-line text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'change',
@@ -405,16 +357,10 @@ And it gets even longer.
 
 TEXT
 						,
-						'oldline' => 1,
-						'newline' => 1,
-						'oldcount' => 1,
-						'newcount' => 2,
 					],
 					[
 						'action' => 'copy',
 						'copytext' => 'Line number three.',
-						'oldline' => 2,
-						'count' => 1,
 					],
 				],
 			],
@@ -446,8 +392,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Text with [markup] &lt;references /&gt;.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 				],
 			],
@@ -458,8 +402,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'delete',
@@ -468,8 +410,6 @@ TEXT
 						'oldtext' => 'Text with [markup] <references />.',
 						'newhtml' => "\u{00A0}",
 						'newtext' => '',
-						'oldline' => 1,
-						'oldcount' => 1,
 					],
 				],
 			],
@@ -480,8 +420,6 @@ TEXT
 					[
 						'action' => 'copy',
 						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -490,8 +428,6 @@ TEXT
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</ins>',
 						'newtext' => 'Text with [markup] <references />.',
-						'newline' => 1,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -507,10 +443,6 @@ TEXT
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text </ins>with [markup] &lt;references /&gt;.',
 						'newtext' => 'Text with [markup] <references />.',
-						'oldline' => 0,
-						'newline' => 0,
-						'oldcount' => 1,
-						'newcount' => 1,
 					],
 				],
 			],

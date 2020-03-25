@@ -34,7 +34,6 @@ class AnnotatedHtmlDiffFormatter {
 		foreach ( $diff->getEdits() as $edit ) {
 			switch ( $edit->getType() ) {
 				case 'add':
-					$count = $edit->nclosing();
 					$changes[] = [
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
@@ -42,24 +41,19 @@ class AnnotatedHtmlDiffFormatter {
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getClosing() ) . '</ins>',
 						'newtext' => implode( "\n",
-							array_slice( $newLines, $newLine, $count ) ),
-						'newline' => $newLine,
-						'newcount' => $count,
+							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
 					];
 					break;
 
 				case 'delete':
-					$count = $edit->norig();
 					$changes[] = [
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getOrig() ) . '</del>',
 						'oldtext' => implode( "\n",
-							array_slice( $oldLines, $oldLine, $count ) ),
+							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
 						'newhtml' => "\u{00A0}",
 						'newtext' => '',
-						'oldline' => $oldLine,
-						'oldcount' => $count,
 					];
 					break;
 
@@ -73,20 +67,13 @@ class AnnotatedHtmlDiffFormatter {
 							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
 						'newtext' => implode( "\n",
 							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
-						'oldline' => $oldLine,
-						'newline' => $newLine,
-						'oldcount' => $edit->norig(),
-						'newcount' => $edit->nclosing(),
 					];
 					break;
 
 				case 'copy':
-					$count = $edit->norig();
 					$changes[] = [
 						'action' => 'copy',
 						'copytext' => $this->composeLines( $edit->getOrig() ),
-						'oldline' => $oldLine,
-						'count' => $count,
 					];
 					break;
 			}

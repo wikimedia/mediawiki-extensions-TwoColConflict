@@ -75,8 +75,6 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 					[
 						'action' => 'copy',
 						'copytext' => 'Just text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 				],
 			],
@@ -87,12 +85,8 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 						'action' => 'change',
 						'oldhtml' => 'Just text.',
 						'oldtext' => 'Just text.',
-						'oldline' => 0,
-						'oldcount' => 1,
 						'newhtml' => 'Just text<ins class="diffchange"> and more</ins>.',
 						'newtext' => 'Just text and more.',
-						'newline' => 0,
-						'newcount' => 1,
 					],
 				],
 			],
@@ -106,8 +100,6 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 					[
 						'action' => 'copy',
 						'copytext' => 'Just multi-line text.',
-						'oldline' => 0,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -115,14 +107,10 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 						'oldtext' => '',
 						'newhtml' => '<ins class="diffchange">Line number 1.5.</ins>',
 						'newtext' => 'Line number 1.5.',
-						'newline' => 1,
-						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
 						'copytext' => 'Line number 2.',
-						'oldline' => 1,
-						'count' => 1,
 					],
 				]
 			],
@@ -141,8 +129,6 @@ Just multi-line <del class="diffchange">text.</del>
 <del class="diffchange">Line number 1.5</del>.
 TEXT
 						,
-						'oldline' => 0,
-						'oldcount' => 1,
 						'oldtext' => <<<TEXT
 Just multi-line text.
 Line number 1.5.
@@ -150,14 +136,10 @@ TEXT
 						,
 						'newhtml' => 'Just multi-line <ins class="diffchange">test</ins>.',
 						'newtext' => 'Just multi-line test.',
-						'newline' => 0,
-						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
 						'copytext' => 'Line number 2.',
-						'oldline' => 1,
-						'count' => 1,
 					],
 					[
 						'action' => 'add',
@@ -165,8 +147,6 @@ TEXT
 						'oldtext' => '',
 						'newhtml' => '<ins class="diffchange">Line number 3.</ins>',
 						'newtext' => 'Line number 3.',
-						'newline' => 2,
-						'newcount' => 1,
 					],
 				],
 			],
