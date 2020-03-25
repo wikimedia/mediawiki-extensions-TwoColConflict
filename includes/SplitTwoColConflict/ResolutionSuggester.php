@@ -47,14 +47,14 @@ class ResolutionSuggester {
 
 	/**
 	 * @param Title $title
-	 * @param string[] $yourLines
 	 * @param string[] $storedLines
+	 * @param string[] $yourLines
 	 * @return bool
 	 */
 	public function getResolutionSuggestion(
 		Title $title,
-		array $yourLines,
-		array $storedLines
+		array $storedLines,
+		array $yourLines
 	) : bool {
 		$services = MediaWikiServices::getInstance();
 		if ( !$services->getMainConfig()->get( 'TwoColConflictSuggestResolution' ) ||

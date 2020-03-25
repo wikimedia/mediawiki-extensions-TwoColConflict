@@ -127,8 +127,8 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
 				\Title::makeTitle( NS_TALK, __FUNCTION__ ),
-				$this->splitText( $your ),
-				$this->splitText( $stored )
+				$this->splitText( $stored ),
+				$this->splitText( $your )
 			)
 		);
 	}
