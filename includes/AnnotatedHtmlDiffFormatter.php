@@ -10,7 +10,7 @@ use WordLevelDiff;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class LineBasedUnifiedDiffFormatter {
+class AnnotatedHtmlDiffFormatter {
 
 	/**
 	 * @param Diff $diff A Diff object.

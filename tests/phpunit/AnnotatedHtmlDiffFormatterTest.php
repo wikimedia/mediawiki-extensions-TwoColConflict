@@ -4,15 +4,15 @@ namespace TwoColConflict\Tests;
 
 use Diff;
 use MediaWikiTestCase;
-use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use TwoColConflict\AnnotatedHtmlDiffFormatter;
 
 /**
- * @covers \TwoColConflict\LineBasedUnifiedDiffFormatter
+ * @covers \TwoColConflict\AnnotatedHtmlDiffFormatter
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
+class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 
 	/**
 	 * @param string $before
@@ -22,7 +22,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 	 */
 	public function testFormat( $before, $after, array $expectedOutput ) {
 		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
-		$instance = new LineBasedUnifiedDiffFormatter();
+		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format( $diff );
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
@@ -369,7 +369,7 @@ TEXT
 	 */
 	public function testMarkupFormat( $before, $after, array $expectedOutput ) {
 		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
-		$instance = new LineBasedUnifiedDiffFormatter();
+		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format( $diff );
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}

@@ -6,7 +6,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use Title;
-use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use TwoColConflict\AnnotatedHtmlDiffFormatter;
 
 /**
  * @license GPL-2.0-or-later
@@ -148,8 +148,8 @@ class ResolutionSuggester {
 	 * @return array[]
 	 */
 	private function diff( array $fromLines, array $toLines ) : array {
-		$formatter = new LineBasedUnifiedDiffFormatter();
-		return $formatter->format( new \Diff( $fromLines, $toLines ) );
+		return ( new AnnotatedHtmlDiffFormatter() )->format(
+			new \Diff( $fromLines, $toLines ) );
 	}
 
 }

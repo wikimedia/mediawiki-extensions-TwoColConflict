@@ -7,7 +7,7 @@ use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
 use Title;
-use TwoColConflict\LineBasedUnifiedDiffFormatter;
+use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use User;
 
 /**
@@ -232,7 +232,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return array[]
 	 */
 	private function getLineBasedUnifiedDiff( array $fromLines, array $toLines ) : array {
-		$formatter = new LineBasedUnifiedDiffFormatter();
+		$formatter = new AnnotatedHtmlDiffFormatter();
 		return $formatter->format( new \Diff( $fromLines, $toLines ) );
 	}
 
