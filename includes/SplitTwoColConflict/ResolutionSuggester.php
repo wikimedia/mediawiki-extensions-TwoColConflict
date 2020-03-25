@@ -34,14 +34,11 @@ class ResolutionSuggester {
 	}
 
 	/**
-	 * @param int $idx
-	 * @param array $diffALines
-	 * @param array $diffBLines
+	 * @param array $a
+	 * @param array $b
 	 * @return bool
 	 */
-	private static function identicalCopyBlock( $idx, $diffALines, $diffBLines ) {
-		$a = $diffALines[$idx];
-		$b = $diffBLines[$idx];
+	private static function identicalCopyBlock( $a, $b ) {
 		return $a['action'] === 'copy' && $a === $b;
 	}
 
@@ -87,10 +84,10 @@ class ResolutionSuggester {
 		} elseif ( $count === 2 ) {
 			// if the diffs contain only two action either the first or the second
 			// action must be identical copies
-			if ( self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) ) {
+			if ( self::identicalCopyBlock( $diffYourLines[0], $diffStoredLines[0] ) ) {
 				$yourLine = $diffYourLines[1];
 				$storedLine = $diffStoredLines[1];
-			} elseif ( self::identicalCopyBlock( 1, $diffYourLines, $diffStoredLines ) ) {
+			} elseif ( self::identicalCopyBlock( $diffYourLines[1], $diffStoredLines[1] ) ) {
 				$yourLine = $diffYourLines[0];
 				$storedLine = $diffStoredLines[0];
 			} else {
@@ -99,8 +96,8 @@ class ResolutionSuggester {
 		} elseif ( $count === 3 &&
 			// if the diffs contain three actions the preceding and succeeding
 			// actions must be identical copies
-			self::identicalCopyBlock( 0, $diffYourLines, $diffStoredLines ) &&
-			self::identicalCopyBlock( 2, $diffYourLines, $diffStoredLines )
+			self::identicalCopyBlock( $diffYourLines[0], $diffStoredLines[0] ) &&
+			self::identicalCopyBlock( $diffYourLines[2], $diffStoredLines[2] )
 		) {
 			$yourLine = $diffYourLines[1];
 			$storedLine = $diffStoredLines[1];
