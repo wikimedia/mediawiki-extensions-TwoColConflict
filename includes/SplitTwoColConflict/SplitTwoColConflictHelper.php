@@ -205,8 +205,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$language
 		) )->getHtml(
 			$diff,
-			$yourLines,
-			$storedLines,
 			// Note: Can't use getBool() because that discards arrays
 			(bool)$this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' )
 		);

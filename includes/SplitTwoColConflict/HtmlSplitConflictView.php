@@ -34,16 +34,12 @@ class HtmlSplitConflictView {
 
 	/**
 	 * @param array[] $unifiedDiff
-	 * @param string[] $yourLines
-	 * @param string[] $storedLines
 	 * @param bool $markAllAsIncomplete
 	 *
 	 * @return string HTML
 	 */
 	public function getHtml(
 		array $unifiedDiff,
-		array $yourLines,
-		array $storedLines,
 		bool $markAllAsIncomplete
 	) : string {
 		$out = Html::openElement(
@@ -57,7 +53,7 @@ class HtmlSplitConflictView {
 					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 					$out .= $this->buildRemovedLine(
 						$changeSet['oldhtml'],
-						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
+						$changeSet['oldtext'],
 						$currRowNum
 					);
 
@@ -75,7 +71,7 @@ class HtmlSplitConflictView {
 
 					$out .= $this->buildAddedLine(
 						$changeSet['newhtml'],
-						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
+						$changeSet['newtext'],
 						$currRowNum
 					);
 					$out .= $this->endRow();
@@ -85,7 +81,7 @@ class HtmlSplitConflictView {
 					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 					$out .= $this->buildRemovedLine(
 						$changeSet['oldhtml'],
-						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
+						$changeSet['oldtext'],
 						$currRowNum
 					);
 
@@ -93,20 +89,15 @@ class HtmlSplitConflictView {
 
 					$out .= $this->buildAddedLine(
 						$changeSet['newhtml'],
-						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
+						$changeSet['newtext'],
 						$currRowNum
 					);
 					$out .= $this->endRow();
 					$currRowNum++;
 					break;
 				case 'copy':
-					$rawText = implode(
-						"\n",
-						array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] )
-					);
-
 					$out .= $this->startRow( $currRowNum );
-					$out .= $this->buildCopiedLine( $rawText, $currRowNum );
+					$out .= $this->buildCopiedLine( $changeSet['copytext'], $currRowNum );
 					$out .= $this->endRow();
 					$currRowNum++;
 					break;

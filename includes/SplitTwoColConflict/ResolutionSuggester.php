@@ -108,10 +108,7 @@ class ResolutionSuggester {
 		}
 
 		// we are only suggesting a resolution if we have two additions in the same line
-		if ( $yourLine['action'] !== 'add' ||
-			$storedLine['action'] !== 'add' ||
-			$yourLine['newline'] !== $storedLine['newline']
-		) {
+		if ( $yourLine['action'] !== 'add' || $storedLine['action'] !== 'add' ) {
 			return false;
 		}
 

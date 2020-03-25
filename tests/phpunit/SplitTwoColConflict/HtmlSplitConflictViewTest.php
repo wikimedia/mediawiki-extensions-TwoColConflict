@@ -58,12 +58,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 			$this->getTestUser()->getUser(),
 			$this->createMock( Language::class )
 		);
-		$html = $view->getHtml(
-			$diff,
-			$yourLines,
-			$storedLines,
-			false
-		);
+		$html = $view->getHtml( $diff, false );
 
 		// All we effectively care about is that no "undefined index" are triggered
 		$this->assertIsString( $html );
@@ -75,7 +70,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		// inputs inspired by the AnnotatedHtmlDiffFormatterTest
 		return [
 			[
-				[ 'row', 'copy', 'Old 1' ],
+				[ 'row', 'copy', 'Just text.' ],
 				[
 					[
 						'action' => 'copy',
@@ -86,7 +81,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 			],
 			[
-				[ 'row', 'delete', 'Old 1', 'select', 'add', 'New 1' ],
+				[ 'row', 'delete', 'Just text.', 'select', 'add', 'Just text and more.' ],
 				[
 					[
 						'action' => 'change',
@@ -103,9 +98,9 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 			],
 			[
 				[
-					'row', 'copy', 'Old 1',
-					'row', 'delete', '', 'select', 'add', 'New 2',
-					'row', 'copy', 'Old 2'
+					'row', 'copy', 'Just multi-line text.',
+					'row', 'delete', '', 'select', 'add', 'Line number 1.5.',
+					'row', 'copy', 'Line number 2.',
 				],
 				[
 					[
@@ -133,9 +128,10 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 			],
 			[
 				[
-					'row', 'delete', 'Old 1', 'select', 'add', 'New 1',
-					'row', 'copy', 'Old 2',
-					'row', 'delete', '', 'select', 'add', 'New 3'
+					'row', 'delete', "Just multi-line text.\nLine number 1.5.",
+						'select', 'add', 'Just multi-line test.',
+					'row', 'copy', 'Line number 2.',
+					'row', 'delete', '', 'select', 'add', 'Line number 3.'
 				],
 				[
 					[
@@ -187,8 +183,6 @@ TEXT
 			$this->createMock( Language::class )
 		) )->getHtml(
 			$diff,
-			[ 'New 1', 'New 2', 'New 3', 'New 4', 'New 5' ],
-			[ 'Old 1', 'Old 2', 'Old 3', 'Old 4', 'Old 5' ],
 			false
 		);
 
