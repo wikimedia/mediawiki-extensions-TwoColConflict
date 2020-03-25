@@ -107,6 +107,8 @@
 	}
 
 	&.mw-twocolconflict-split-unselected {
+		color: #72777d;
+
 		&.mw-twocolconflict-split-add {
 			border-color: #eaf3ff;
 		}
@@ -115,8 +117,12 @@
 			border-color: #fef6e7;
 		}
 
-		.mw-twocolconflict-split-difftext {
-			opacity: 0.6;
+		ins.mw-twocolconflict-diffchange {
+			background-color: #eaf3ff;
+		}
+
+		del.mw-twocolconflict-diffchange {
+			background-color: #fef6e7;
 		}
 
 		.oo-ui-widget-disabled > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
