@@ -56,7 +56,7 @@ class LineBasedUnifiedDiffFormatter {
 				case 'change':
 					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 
-					$changes[] = [ [
+					$changes[] = [
 						'action' => 'change',
 						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
@@ -64,19 +64,19 @@ class LineBasedUnifiedDiffFormatter {
 						'newline' => $this->newLine,
 						'oldcount' => $edit->norig(),
 						'newcount' => $edit->nclosing(),
-					] ];
+					];
 					$this->oldLine += $edit->norig();
 					$this->newLine += $edit->nclosing();
 					break;
 
 				case 'copy':
 					$count = $edit->norig();
-					$changes[] = [ [
+					$changes[] = [
 						'action' => 'copy',
 						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
 						'oldline' => $this->oldLine,
 						'count' => $count,
-					] ];
+					];
 					$this->oldLine += $count;
 					$this->newLine += $count;
 					break;
@@ -126,12 +126,12 @@ class LineBasedUnifiedDiffFormatter {
 	 * @param string $diffHtml HTML
 	 */
 	private function trackDelete( array &$changes, int $lineCount, string $diffHtml ) {
-		$changes[] = [ [
+		$changes[] = [
 			'action' => 'delete',
 			'old' => $diffHtml,
 			'oldline' => $this->oldLine,
 			'count' => $lineCount,
-		] ];
+		];
 		$this->oldLine += $lineCount;
 	}
 
@@ -147,12 +147,12 @@ class LineBasedUnifiedDiffFormatter {
 		int $lineCount,
 		string $diffHtml
 	) {
-		$changes[] = [ [
+		$changes[] = [
 			'action' => 'add',
 			'new' => $diffHtml,
 			'newline' => $this->newLine,
 			'count' => $lineCount,
-		] ];
+		];
 		$this->newLine += $lineCount;
 	}
 
