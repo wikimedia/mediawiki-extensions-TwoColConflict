@@ -45,16 +45,13 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				[ 'row', 'delete', 'Old 1', 'select', 'add', 'New 1' ],
 				[
 					[
-						'action' => 'delete',
+						'action' => 'change',
 						'old' => 'Just text.',
 						'oldline' => 0,
-						'count' => 1,
-					],
-					[
-						'action' => 'add',
+						'oldcount' => 1,
 						'new' => 'Just text<ins class="diffchange"> and more</ins>.',
 						'newline' => 0,
-						'count' => 1,
+						'newcount' => 1,
 					],
 				],
 			],
@@ -93,7 +90,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				],
 				[
 					[
-						'action' => 'delete',
+						'action' => 'change',
 						'old' =>
 							<<<TEXT
 Just multi-line <del class="diffchange">text.</del>
@@ -101,13 +98,10 @@ Just multi-line <del class="diffchange">text.</del>
 TEXT
 						,
 						'oldline' => 0,
-						'count' => 1,
-					],
-					[
-						'action' => 'add',
+						'oldcount' => 1,
 						'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
 						'newline' => 0,
-						'count' => 1,
+						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
