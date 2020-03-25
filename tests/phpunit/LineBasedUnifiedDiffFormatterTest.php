@@ -33,7 +33,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just text.',
 				'after' => 'Just text.',
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just text.',
@@ -47,7 +47,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just text.',
 				'after' => 'Just text. And more.',
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'change',
 							'old' => 'Just text.',
@@ -64,7 +64,7 @@ class LineBasedUnifiedDiffFormatterTest extends MediaWikiTestCase {
 				'before' => 'Just less text.',
 				'after' => 'Just less.',
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'change',
 							'old' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
@@ -90,7 +90,7 @@ Line number 2.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just multi-line text.',
@@ -98,13 +98,15 @@ TEXT
 							'count' => 1,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'add',
 							'new' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
 							'newline' => 1,
 							'count' => 1,
 						],
+					],
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
@@ -125,7 +127,7 @@ Delete the empty line below.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Delete the empty line below.',
@@ -133,7 +135,7 @@ TEXT
 							'count' => 1,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'delete',
 							'old' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
@@ -154,7 +156,7 @@ Add an empty line below.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Add an empty line below.',
@@ -162,7 +164,7 @@ TEXT
 							'count' => 1,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'add',
 							'new' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
@@ -185,7 +187,7 @@ Line number 1.5.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => "Just multi-line text.\nLine number 1.5.",
@@ -193,7 +195,7 @@ TEXT
 							'count' => 2,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'delete',
 							'old' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
@@ -217,7 +219,7 @@ Line number 3.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'change',
 							'old' => <<<TEXT
@@ -232,7 +234,7 @@ TEXT
 							'newcount' => 1,
 						]
 					],
-					2 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Line number 2.',
@@ -240,7 +242,7 @@ TEXT
 							'count' => 1,
 						],
 					],
-					3 => [
+					[
 						[
 							'action' => 'add',
 							'new' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
@@ -264,7 +266,7 @@ Line number 3 also changed.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'change',
 							'old' => <<<TEXT
@@ -307,7 +309,7 @@ Add more new stuff.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
@@ -315,7 +317,7 @@ TEXT
 							'count' => 1,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'change',
 							'old' =>
@@ -362,7 +364,7 @@ Line number three.
 TEXT
 				,
 				'result' => [
-					0 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Just a multi-line text.',
@@ -370,7 +372,7 @@ TEXT
 							'count' => 1,
 						],
 					],
-					1 => [
+					[
 						[
 							'action' => 'change',
 							'old' => 'Line number two. This line is ' .
@@ -388,7 +390,7 @@ TEXT
 							'newcount' => 2,
 						],
 					],
-					2 => [
+					[
 						[
 							'action' => 'copy',
 							'copy' => 'Line number three.',
