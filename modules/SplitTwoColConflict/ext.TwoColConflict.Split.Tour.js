@@ -113,6 +113,7 @@
 
 			var popup = new OO.ui.PopupWidget( {
 				position: 'above',
+				align: 'forwards',
 				$content: $content,
 				$footer: closeButton.$element,
 				padded: true,
