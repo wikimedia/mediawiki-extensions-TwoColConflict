@@ -35,7 +35,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				[
 					[
 						'action' => 'copy',
-						'copy' => 'Just text.',
+						'copytext' => 'Just text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
@@ -46,10 +46,10 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				[
 					[
 						'action' => 'change',
-						'old' => 'Just text.',
+						'oldhtml' => 'Just text.',
 						'oldline' => 0,
 						'oldcount' => 1,
-						'new' => 'Just text<ins class="diffchange"> and more</ins>.',
+						'newhtml' => 'Just text<ins class="diffchange"> and more</ins>.',
 						'newline' => 0,
 						'newcount' => 1,
 					],
@@ -64,19 +64,19 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				[
 					[
 						'action' => 'copy',
-						'copy' => 'Just multi-line text.',
+						'copytext' => 'Just multi-line text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => '<ins class="diffchange">Line number 1.5.</ins>',
+						'newhtml' => '<ins class="diffchange">Line number 1.5.</ins>',
 						'newline' => 1,
-						'count' => 1,
+						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
-						'copy' => 'Line number 2.',
+						'copytext' => 'Line number 2.',
 						'oldline' => 1,
 						'count' => 1,
 					],
@@ -91,29 +91,28 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 				[
 					[
 						'action' => 'change',
-						'old' =>
-							<<<TEXT
+						'oldhtml' => <<<TEXT
 Just multi-line <del class="diffchange">text.</del>
 <del class="diffchange">Line number 1.5</del>.
 TEXT
 						,
 						'oldline' => 0,
 						'oldcount' => 1,
-						'new' => 'Just multi-line <ins class="diffchange">test</ins>.',
+						'newhtml' => 'Just multi-line <ins class="diffchange">test</ins>.',
 						'newline' => 0,
 						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
-						'copy' => 'Line number 2.',
+						'copytext' => 'Line number 2.',
 						'oldline' => 1,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => '<ins class="diffchange">Line number 3.</ins>',
+						'newhtml' => '<ins class="diffchange">Line number 3.</ins>',
 						'newline' => 2,
-						'count' => 1,
+						'newcount' => 1,
 					],
 				],
 			],

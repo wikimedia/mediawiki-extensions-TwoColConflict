@@ -35,7 +35,7 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Just text.',
+						'copytext' => 'Just text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
@@ -47,8 +47,8 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 				'result' => [
 					[
 						'action' => 'change',
-						'old' => 'Just text.',
-						'new' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
+						'oldhtml' => 'Just text.',
+						'newhtml' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 1,
@@ -62,8 +62,8 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 				'result' => [
 					[
 						'action' => 'change',
-						'old' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
-						'new' => 'Just less.',
+						'oldhtml' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
+						'newhtml' => 'Just less.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 1,
@@ -86,19 +86,19 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Just multi-line text.',
+						'copytext' => 'Just multi-line text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
 						'newline' => 1,
-						'count' => 1,
+						'newcount' => 1,
 					],
 					[
 						'action' => 'copy',
-						'copy' => 'Line number 2.',
+						'copytext' => 'Line number 2.',
 						'oldline' => 1,
 						'count' => 1,
 					],
@@ -117,15 +117,15 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Delete the empty line below.',
+						'copytext' => 'Delete the empty line below.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'delete',
-						'old' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
+						'oldhtml' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
 						'oldline' => 1,
-						'count' => 1,
+						'oldcount' => 1,
 					],
 				],
 			],
@@ -142,15 +142,15 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Add an empty line below.',
+						'copytext' => 'Add an empty line below.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
+						'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
 						'newline' => 1,
-						'count' => 1,
+						'newcount' => 1,
 					],
 				],
 			],
@@ -169,15 +169,15 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => "Just multi-line text.\nLine number 1.5.",
+						'copytext' => "Just multi-line text.\nLine number 1.5.",
 						'oldline' => 0,
 						'count' => 2,
 					],
 					[
 						'action' => 'delete',
-						'old' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
 						'oldline' => 2,
-						'count' => 1,
+						'oldcount' => 1,
 					],
 				],
 			],
@@ -197,12 +197,12 @@ TEXT
 				'result' => [
 					[
 						'action' => 'change',
-						'old' => <<<TEXT
+						'oldhtml' => <<<TEXT
 Just multi-line <del class="mw-twocolconflict-diffchange">text.</del>
 <del class="mw-twocolconflict-diffchange">Line number 1.5</del>.
 TEXT
 						,
-						'new' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
+						'newhtml' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 2,
@@ -210,15 +210,15 @@ TEXT
 					],
 					[
 						'action' => 'copy',
-						'copy' => 'Line number 2.',
+						'copytext' => 'Line number 2.',
 						'oldline' => 2,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
 						'newline' => 2,
-						'count' => 1,
+						'newcount' => 1,
 					],
 				],
 			],
@@ -238,13 +238,13 @@ TEXT
 				'result' => [
 					[
 						'action' => 'change',
-						'old' => <<<TEXT
+						'oldhtml' => <<<TEXT
 Just multi-line <del class="mw-twocolconflict-diffchange">text</del>.
 <del class="mw-twocolconflict-diffchange">To change </del>number 2.
 <del class="mw-twocolconflict-diffchange">To change </del>number 3.
 TEXT
 						,
-						'new' =>
+						'newhtml' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
 Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
@@ -279,13 +279,13 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Just a multi-line text.',
+						'copytext' => 'Just a multi-line text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'change',
-						'old' =>
+						'oldhtml' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
 Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del class="mw-twocolconflict-diffchange">is </del>quite long!
@@ -295,7 +295,7 @@ Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del 
 TEXT
 // @codingStandardsIgnoreEnd
 						,
-						'new' =>
+						'newhtml' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
 <ins class="mw-twocolconflict-diffchange">Add something new.</ins>
@@ -330,15 +330,15 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Just a multi-line text.',
+						'copytext' => 'Just a multi-line text.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'change',
-						'old' => 'Line number two. This line is ' .
+						'oldhtml' => 'Line number two. This line is ' .
 							'<del class="mw-twocolconflict-diffchange">quite long</del>!',
-						'new' => <<<TEXT
+						'newhtml' => <<<TEXT
 Line number two. This line is <ins class="mw-twocolconflict-diffchange">now a bit longer</ins>!
 \u{00A0}
 <ins class="mw-twocolconflict-diffchange">And it gets even longer.</ins>
@@ -352,7 +352,7 @@ TEXT
 					],
 					[
 						'action' => 'copy',
-						'copy' => 'Line number three.',
+						'copytext' => 'Line number three.',
 						'oldline' => 2,
 						'count' => 1,
 					],
@@ -382,7 +382,7 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Text with [markup] &lt;references /&gt;.',
+						'copytext' => 'Text with [markup] &lt;references /&gt;.',
 						'oldline' => 0,
 						'count' => 1,
 					],
@@ -394,16 +394,16 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'delete',
-						'old' => '<del class="mw-twocolconflict-diffchange">' .
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</del>',
 						'oldline' => 1,
-						'count' => 1,
+						'oldcount' => 1,
 					],
 				]
 			],
@@ -413,16 +413,16 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copy' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
 						'oldline' => 0,
 						'count' => 1,
 					],
 					[
 						'action' => 'add',
-						'new' => '<ins class="mw-twocolconflict-diffchange">' .
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</ins>',
 						'newline' => 1,
-						'count' => 1,
+						'newcount' => 1,
 					],
 				],
 			],
@@ -432,9 +432,9 @@ TEXT
 				'result' => [
 					[
 						'action' => 'change',
-						'old' => '<del class="mw-twocolconflict-diffchange">' .
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							'Test </del>with [markup] &lt;references /&gt;.',
-						'new' => '<ins class="mw-twocolconflict-diffchange">' .
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text </ins>with [markup] &lt;references /&gt;.',
 						'oldline' => 0,
 						'newline' => 0,
