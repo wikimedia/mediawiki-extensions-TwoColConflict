@@ -45,30 +45,13 @@ class HtmlSplitConflictView {
 		$out = '';
 
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
-			$line = '';
-			$markAsIncomplete = $markAllAsIncomplete;
-
-			switch ( $changeSet['action'] ) {
-				case 'delete':
-					$line = $this->buildRemovedLine(
-						$changeSet['oldhtml'],
-						$changeSet['oldtext'],
-						$currRowNum
-					) .
-					$this->buildSideSelector( $currRowNum ) .
-					$this->buildAddedLine( "\u{00A0}", '', $currRowNum );
-					break;
-				case 'add':
-					$line = $this->buildRemovedLine( "\u{00A0}", '', $currRowNum ) .
-					$this->buildSideSelector( $currRowNum ) .
-					$this->buildAddedLine(
-						$changeSet['newhtml'],
-						$changeSet['newtext'],
-						$currRowNum
-					);
-					break;
-				case 'change':
-					$line = $this->buildRemovedLine(
+			if ( $changeSet['action'] === 'copy' ) {
+				// Copy block across both columns.
+				$line = $this->buildCopiedLine( $changeSet['copytext'], $currRowNum );
+				$markAsIncomplete = false;
+			} else {
+				// Old and new split across two columns.
+				$line = $this->buildRemovedLine(
 						$changeSet['oldhtml'],
 						$changeSet['oldtext'],
 						$currRowNum
@@ -79,11 +62,7 @@ class HtmlSplitConflictView {
 						$changeSet['newtext'],
 						$currRowNum
 					);
-					break;
-				case 'copy':
-					$line = $this->buildCopiedLine( $changeSet['copytext'], $currRowNum );
-					$markAsIncomplete = false;
-					break;
+				$markAsIncomplete = $markAllAsIncomplete;
 			}
 
 			$out .= Html::rawElement(
