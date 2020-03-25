@@ -52,7 +52,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		$yourLines = explode( "\n", $yourText );
 
 		$formatter = new AnnotatedHtmlDiffFormatter();
-		$diff = $formatter->format( $storedLines, $yourLines );
+		$diff = $formatter->format( $storedLines, $yourLines, $yourLines );
 
 		$view = new HtmlSplitConflictView(
 			$this->getTestUser()->getUser(),
@@ -91,9 +91,11 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 					[
 						'action' => 'change',
 						'oldhtml' => 'Just text.',
+						'oldtext' => 'Just text.',
 						'oldline' => 0,
 						'oldcount' => 1,
 						'newhtml' => 'Just text<ins class="diffchange"> and more</ins>.',
+						'newtext' => 'Just text and more.',
 						'newline' => 0,
 						'newcount' => 1,
 					],
@@ -115,7 +117,9 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="diffchange">Line number 1.5.</ins>',
+						'newtext' => 'Line number 1.5.',
 						'newline' => 1,
 						'newcount' => 1,
 					],
@@ -143,7 +147,13 @@ TEXT
 						,
 						'oldline' => 0,
 						'oldcount' => 1,
+						'oldtext' => <<<TEXT
+Just multi-line text.
+Line number 1.5.
+TEXT
+						,
 						'newhtml' => 'Just multi-line <ins class="diffchange">test</ins>.',
+						'newtext' => 'Just multi-line test.',
 						'newline' => 0,
 						'newcount' => 1,
 					],
@@ -156,7 +166,9 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="diffchange">Line number 3.</ins>',
+						'newtext' => 'Line number 3.',
 						'newline' => 2,
 						'newcount' => 1,
 					],

@@ -67,9 +67,10 @@ class ResolutionSuggester {
 			return true;
 		}
 
+		$formatter = new AnnotatedHtmlDiffFormatter();
 		// TODO: preSaveTransform $yourLines, but not $storedLines
-		$diffYourLines = $this->diff( $baseLines, $yourLines );
-		$diffStoredLines = $this->diff( $baseLines, $storedLines );
+		$diffYourLines = $formatter->format( $baseLines, $yourLines, $yourLines );
+		$diffStoredLines = $formatter->format( $baseLines, $storedLines, $storedLines );
 
 		$count = count( $diffYourLines );
 		if ( $count !== count( $diffStoredLines ) ) {
@@ -137,16 +138,6 @@ class ResolutionSuggester {
 		}
 
 		return SplitConflictUtils::splitText( $baseText );
-	}
-
-	/**
-	 * @param string[] $fromLines
-	 * @param string[] $toLines
-	 *
-	 * @return array[]
-	 */
-	private function diff( array $fromLines, array $toLines ) : array {
-		return ( new AnnotatedHtmlDiffFormatter() )->format( $fromLines, $toLines );
 	}
 
 }

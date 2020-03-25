@@ -168,6 +168,17 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		return '';
 	}
 
+	private function getPreSaveTransformedLines() {
+		$user = $this->out->getUser();
+		$language = $this->out->getLanguage();
+
+		$content = new \WikitextContent( $this->yourtext );
+		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$previewWikitext = $content->preSaveTransform( $this->title, $user, $parserOptions )->getText();
+		return SplitConflictUtils::splitText( $previewWikitext );
+	}
+
 	/**
 	 * Build HTML that will add the textbox with the unified diff.
 	 *
@@ -179,11 +190,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildEditConflictView( array $storedLines, array $yourLines ) : string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
-
-		$content = new \WikitextContent( $this->yourtext );
-		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
-		// @phan-suppress-next-line PhanUndeclaredMethod
-		$previewWikitext = $content->preSaveTransform( $this->title, $user, $parserOptions )->getText();
+		$formatter = new AnnotatedHtmlDiffFormatter();
+		$diff = $formatter->format( $storedLines, $yourLines, $this->getPreSaveTransformedLines() );
 
 		$out = ( new HtmlSplitConflictHeader(
 			$this->title,
@@ -196,10 +204,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$user,
 			$language
 		) )->getHtml(
-			$this->getLineBasedUnifiedDiff(
-				$storedLines,
-				SplitConflictUtils::splitText( $previewWikitext )
-			),
+			$diff,
 			$yourLines,
 			$storedLines,
 			// Note: Can't use getBool() because that discards arrays
@@ -221,19 +226,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private function buildRawTextsHiddenFields() : string {
 		return Html::input( 'mw-twocolconflict-current-text', $this->storedversion, 'hidden' ) .
 			Html::input( 'mw-twocolconflict-your-text', $this->yourtext, 'hidden' );
-	}
-
-	/**
-	 * Get array with line based diff changes.
-	 *
-	 * @param string[] $fromLines
-	 * @param string[] $toLines
-	 *
-	 * @return array[]
-	 */
-	private function getLineBasedUnifiedDiff( array $fromLines, array $toLines ) : array {
-		$formatter = new AnnotatedHtmlDiffFormatter();
-		return $formatter->format( $fromLines, $toLines );
 	}
 
 }

@@ -15,15 +15,21 @@ class AnnotatedHtmlDiffFormatter {
 	/**
 	 * @param string[] $oldLines
 	 * @param string[] $newLines
+	 * @param string[] $preSaveTransformedLines
 	 *
-	 * @return array[] List of changes, formatted to include an HTML representation and line
-	 *     numbers pointing to the original wikitext.
+	 * @return array[] List of changes, each of which include an HTML representation of the diff,
+	 *     and the original wikitext.
+	 * TODO: "preSavedTransformedLines" is still warty.
 	 */
-	public function format( array $oldLines, array $newLines ) : array {
+	public function format(
+		array $oldLines,
+		array $newLines,
+		array $preSaveTransformedLines
+	) : array {
 		$changes = [];
 		$oldLine = 0;
 		$newLine = 0;
-		$diff = new Diff( $oldLines, $newLines );
+		$diff = new Diff( $oldLines, $preSaveTransformedLines );
 
 		foreach ( $diff->getEdits() as $edit ) {
 			switch ( $edit->getType() ) {
@@ -32,8 +38,11 @@ class AnnotatedHtmlDiffFormatter {
 					$changes[] = [
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getClosing() ) . '</ins>',
+						'newtext' => implode( "\n",
+							array_slice( $newLines, $newLine, $count ) ),
 						'newline' => $newLine,
 						'newcount' => $count,
 					];
@@ -45,7 +54,10 @@ class AnnotatedHtmlDiffFormatter {
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getOrig() ) . '</del>',
+						'oldtext' => implode( "\n",
+							array_slice( $oldLines, $oldLine, $count ) ),
 						'newhtml' => "\u{00A0}",
+						'newtext' => '',
 						'oldline' => $oldLine,
 						'oldcount' => $count,
 					];
@@ -57,6 +69,10 @@ class AnnotatedHtmlDiffFormatter {
 						'action' => 'change',
 						'oldhtml' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 						'newhtml' => $this->getClosingInlineDiff( $wordLevelDiff ),
+						'oldtext' => implode( "\n",
+							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
+						'newtext' => implode( "\n",
+							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
 						'oldline' => $oldLine,
 						'newline' => $newLine,
 						'oldcount' => $edit->norig(),

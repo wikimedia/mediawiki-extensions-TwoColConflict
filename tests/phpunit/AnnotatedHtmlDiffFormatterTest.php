@@ -21,7 +21,11 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 	 */
 	public function testFormat( string $before, string $after, array $expectedOutput ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
-		$output = $instance->format( $this->splitText( $before ), $this->splitText( $after ) );
+		$output = $instance->format(
+			$this->splitText( $before ),
+			$this->splitText( $after ),
+			$this->splitText( $after )
+		);
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
@@ -46,7 +50,9 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 					[
 						'action' => 'change',
 						'oldhtml' => 'Just text.',
+						'oldtext' => 'Just text.',
 						'newhtml' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
+						'newtext' => 'Just text. And more.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 1,
@@ -61,7 +67,9 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 					[
 						'action' => 'change',
 						'oldhtml' => 'Just less <del class="mw-twocolconflict-diffchange">text</del>.',
+						'oldtext' => 'Just less text.',
 						'newhtml' => 'Just less.',
+						'newtext' => 'Just less.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 1,
@@ -91,7 +99,9 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
+						'newtext' => 'Line number 1.5.',
 						'newline' => 1,
 						'newcount' => 1,
 					],
@@ -123,7 +133,9 @@ TEXT
 					[
 						'action' => 'delete',
 						'oldhtml' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
+						'oldtext' => '',
 						'newhtml' => "\u{00A0}",
+						'newtext' => '',
 						'oldline' => 1,
 						'oldcount' => 1,
 					],
@@ -149,7 +161,9 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
+						'newtext' => '',
 						'newline' => 1,
 						'newcount' => 1,
 					],
@@ -177,7 +191,9 @@ TEXT
 					[
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
+						'oldtext' => 'Line number 2.',
 						'newhtml' => "\u{00A0}",
+						'newtext' => '',
 						'oldline' => 2,
 						'oldcount' => 1,
 					],
@@ -204,7 +220,13 @@ Just multi-line <del class="mw-twocolconflict-diffchange">text.</del>
 <del class="mw-twocolconflict-diffchange">Line number 1.5</del>.
 TEXT
 						,
+						'oldtext' => <<<TEXT
+Just multi-line text.
+Line number 1.5.
+TEXT
+						,
 						'newhtml' => 'Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.',
+						'newtext' => 'Just multi-line test.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 2,
@@ -219,7 +241,9 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
+						'newtext' => 'Line number 3.',
 						'newline' => 2,
 						'newcount' => 1,
 					],
@@ -247,6 +271,12 @@ Just multi-line <del class="mw-twocolconflict-diffchange">text</del>.
 <del class="mw-twocolconflict-diffchange">To change </del>number 3.
 TEXT
 						,
+						'oldtext' => <<<TEXT
+Just multi-line text.
+To change number 2.
+To change number 3.
+TEXT
+						,
 						'newhtml' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
@@ -255,6 +285,12 @@ Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
 <ins class="mw-twocolconflict-diffchange">Line </ins>number 3 <ins class="mw-twocolconflict-diffchange">also changed</ins>.
 TEXT
 // @codingStandardsIgnoreEnd
+						,
+						'newtext' => <<<TEXT
+Just multi-line test.
+Line number 2 changed.
+Line number 3 also changed.
+TEXT
 						,
 						'oldline' => 0,
 						'newline' => 0,
@@ -298,6 +334,13 @@ Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del 
 TEXT
 // @codingStandardsIgnoreEnd
 						,
+						'oldtext' => <<<TEXT
+Line number two. This line is quite long!
+And that's line number three - even longer than the line before.
+
+Just another line with an empty line above.
+TEXT
+						,
 						'newhtml' =>
 // @codingStandardsIgnoreStart
 <<<TEXT
@@ -306,6 +349,12 @@ Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins c
 <ins class="mw-twocolconflict-diffchange">Add more new stuff</ins>.
 TEXT
 // @codingStandardsIgnoreEnd
+						,
+						'newtext' => <<<TEXT
+Add something new.
+Line number two. Now line number three and quite long!
+Add more new stuff.
+TEXT
 						,
 						'oldline' => 1,
 						'newline' => 1,
@@ -341,11 +390,19 @@ TEXT
 						'action' => 'change',
 						'oldhtml' => 'Line number two. This line is ' .
 							'<del class="mw-twocolconflict-diffchange">quite long</del>!',
+						'oldtext' => 'Line number two. This line is quite long!',
 						'newhtml' => <<<TEXT
 Line number two. This line is <ins class="mw-twocolconflict-diffchange">now a bit longer</ins>!
 \u{00A0}
 <ins class="mw-twocolconflict-diffchange">And it gets even longer.</ins>
 \u{00A0}
+TEXT
+						,
+						'newtext' => <<<TEXT
+Line number two. This line is now a bit longer!
+
+And it gets even longer.
+
 TEXT
 						,
 						'oldline' => 1,
@@ -372,7 +429,11 @@ TEXT
 	 */
 	public function testMarkupFormat( string $before, string $after, array $expectedOutput ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
-		$output = $instance->format( $this->splitText( $before ), $this->splitText( $after ) );
+		$output = $instance->format(
+			$this->splitText( $before ),
+			$this->splitText( $after ),
+			$this->splitText( $after )
+		);
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
@@ -404,7 +465,9 @@ TEXT
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</del>',
+						'oldtext' => 'Text with [markup] <references />.',
 						'newhtml' => "\u{00A0}",
+						'newtext' => '',
 						'oldline' => 1,
 						'oldcount' => 1,
 					],
@@ -423,8 +486,10 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</ins>',
+						'newtext' => 'Text with [markup] <references />.',
 						'newline' => 1,
 						'newcount' => 1,
 					],
@@ -438,8 +503,10 @@ TEXT
 						'action' => 'change',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							'Test </del>with [markup] &lt;references /&gt;.',
+						'oldtext' => 'Test with [markup] <references />.',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text </ins>with [markup] &lt;references /&gt;.',
+						'newtext' => 'Text with [markup] <references />.',
 						'oldline' => 0,
 						'newline' => 0,
 						'oldcount' => 1,
