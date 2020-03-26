@@ -14,16 +14,13 @@
 	}
 
 	/**
-	 * @param {jQuery} $rows
+	 * @param {jQuery} $selected Columns to merge
 	 * @return {string}
 	 */
-	function merger( $rows ) {
+	function merger( $selected ) {
 		var textLines = [];
 
-		$rows.find(
-			'.mw-twocolconflict-split-column.mw-twocolconflict-split-copy, ' +
-			'.mw-twocolconflict-split-column.mw-twocolconflict-split-selected'
-		).each( function ( index, element ) {
+		$selected.each( function ( index, element ) {
 			var line = $( element ).find( '.mw-twocolconflict-split-editor' )
 				.val().trim( '\r\n' );
 

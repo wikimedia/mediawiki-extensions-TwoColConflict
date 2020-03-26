@@ -36,6 +36,12 @@
 			.removeClass( 'mw-twocolconflict-split-unselected' );
 	}
 
+	function getSelectedColumn( $element ) {
+		return $element.find(
+			'.mw-twocolconflict-split-column.mw-twocolconflict-split-copy, ' +
+			'.mw-twocolconflict-split-column.mw-twocolconflict-split-selected' );
+	}
+
 	/**
 	 * @return {string}
 	 */
@@ -61,7 +67,7 @@
 	 * @param {jQuery} $row
 	 */
 	function enableEditing( $row ) {
-		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+		var $selected = getSelectedColumn( $row ),
 			originalHeight = $selected.find( '.mw-twocolconflict-split-editable' ).height();
 
 		expandText( $row );
@@ -90,7 +96,7 @@
 	 * @param {jQuery} $row
 	 */
 	function saveEditing( $row ) {
-		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+		var $selected = getSelectedColumn( $row ),
 			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
 			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' ),
 			$diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
@@ -109,7 +115,7 @@
 	 * @param {jQuery} $row
 	 */
 	function resetWarning( $row ) {
-		var $selected = $row.find( '.mw-twocolconflict-split-selected, .mw-twocolconflict-split-copy' ),
+		var $selected = getSelectedColumn( $row ),
 			$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
 			$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
 
@@ -300,8 +306,8 @@
 	}
 
 	function initPreview() {
-		var merger = require( 'ext.TwoColConflict.Split.Merger' ),
-			api = new mw.Api(),
+		var api = new mw.Api(),
+			merger = require( 'ext.TwoColConflict.Split.Merger' ),
 			$previewBtn = $( '#wpPreviewWidget' );
 		if ( api && $previewBtn.length ) {
 			OO.ui.infuse( $previewBtn )
@@ -320,7 +326,7 @@
 
 					$.when(
 						api.parse(
-							merger( $( '.mw-twocolconflict-split-row' ) ),
+							merger( getSelectedColumn( $( '.mw-twocolconflict-split-view' ) ) ),
 							{
 								title: title,
 								prop: 'text',
