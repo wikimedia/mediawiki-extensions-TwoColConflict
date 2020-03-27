@@ -56,8 +56,8 @@ class HtmlSplitConflictView {
 				case 'delete':
 					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 					$out .= $this->buildRemovedLine(
-						$changeSet['old'],
-						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['count'] ) ),
+						$changeSet['oldhtml'],
+						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
 						$currRowNum
 					);
 
@@ -74,8 +74,8 @@ class HtmlSplitConflictView {
 					$out .= $this->buildSideSelector( $currRowNum );
 
 					$out .= $this->buildAddedLine(
-						$changeSet['new'],
-						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['count'] ) ),
+						$changeSet['newhtml'],
+						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
 						$currRowNum
 					);
 					$out .= $this->endRow();
@@ -84,7 +84,7 @@ class HtmlSplitConflictView {
 				case 'change':
 					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
 					$out .= $this->buildRemovedLine(
-						$changeSet['old'],
+						$changeSet['oldhtml'],
 						implode( "\n", array_slice( $storedLines, $changeSet['oldline'], $changeSet['oldcount'] ) ),
 						$currRowNum
 					);
@@ -92,7 +92,7 @@ class HtmlSplitConflictView {
 					$out .= $this->buildSideSelector( $currRowNum );
 
 					$out .= $this->buildAddedLine(
-						$changeSet['new'],
+						$changeSet['newhtml'],
 						implode( "\n", array_slice( $yourLines, $changeSet['newline'], $changeSet['newcount'] ) ),
 						$currRowNum
 					);

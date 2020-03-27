@@ -29,10 +29,10 @@ class AnnotatedHtmlDiffFormatter {
 					$count = $edit->nclosing();
 					$changes[] = [
 						'action' => 'add',
-						'new' => '<ins class="mw-twocolconflict-diffchange">' .
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getClosing() ) . '</ins>',
 						'newline' => $newLine,
-						'count' => $count,
+						'newcount' => $count,
 					];
 					$newLine += $count;
 					break;
@@ -41,10 +41,10 @@ class AnnotatedHtmlDiffFormatter {
 					$count = $edit->norig();
 					$changes[] = [
 						'action' => 'delete',
-						'old' => '<del class="mw-twocolconflict-diffchange">' .
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
 							$this->composeLines( $edit->getOrig() ) . '</del>',
 						'oldline' => $oldLine,
-						'count' => $count,
+						'oldcount' => $count,
 					];
 					$oldLine += $count;
 					break;
@@ -53,8 +53,8 @@ class AnnotatedHtmlDiffFormatter {
 					$wordLevelDiff = $this->rTrimmedWordLevelDiff( $edit->getOrig(), $edit->getClosing() );
 					$changes[] = [
 						'action' => 'change',
-						'old' => $this->getOriginalInlineDiff( $wordLevelDiff ),
-						'new' => $this->getClosingInlineDiff( $wordLevelDiff ),
+						'oldhtml' => $this->getOriginalInlineDiff( $wordLevelDiff ),
+						'newhtml' => $this->getClosingInlineDiff( $wordLevelDiff ),
 						'oldline' => $oldLine,
 						'newline' => $newLine,
 						'oldcount' => $edit->norig(),
@@ -68,7 +68,7 @@ class AnnotatedHtmlDiffFormatter {
 					$count = $edit->norig();
 					$changes[] = [
 						'action' => 'copy',
-						'copy' => htmlspecialchars( implode( "\n", $edit->getOrig() ) ),
+						'copytext' => $this->composeLines( $edit->getOrig() ),
 						'oldline' => $oldLine,
 						'count' => $count,
 					];
