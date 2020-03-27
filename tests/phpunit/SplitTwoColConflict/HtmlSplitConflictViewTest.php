@@ -2,9 +2,11 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
+use Language;
 use MediaWikiTestCase;
 use OOUI\BlankTheme;
 use OOUI\Theme;
+use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
 
 /**
@@ -27,8 +29,50 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		parent::tearDown();
 	}
 
+	public function provideIntegrationTests() {
+		return [
+			'added line' => [ "A\nC", "A\nB\nC", 3, 4 ],
+			'changed line' => [ "A\nB\nC", "A\nX\nC", 3, 4 ],
+			'copied line' => [ 'A', 'A', 1, 1 ],
+			'deleted line' => [ "A\nB\nC", "A\nC", 3, 4 ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideIntegrationTests
+	 * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView::getHtml
+	 */
+	public function testIntegration(
+		string $storedText,
+		string $yourText,
+		int $expectedRows,
+		int $expectedCells
+	) {
+		$storedLines = explode( "\n", $storedText );
+		$yourLines = explode( "\n", $yourText );
+
+		$formatter = new AnnotatedHtmlDiffFormatter();
+		$diff = $formatter->format( new \Diff( $storedLines, $yourLines ) );
+
+		$view = new HtmlSplitConflictView(
+			$this->getTestUser()->getUser(),
+			$this->createMock( Language::class )
+		);
+		$html = $view->getHtml(
+			$diff,
+			$yourLines,
+			$storedLines,
+			false
+		);
+
+		// All we effectively care about is that no "undefined index" are triggered
+		$this->assertIsString( $html );
+		$this->assertSame( $expectedRows, substr_count( $html, 'mw-twocolconflict-split-row' ) );
+		$this->assertSame( $expectedCells, substr_count( $html, 'mw-twocolconflict-split-column' ) );
+	}
+
 	public function provideGetHtml() {
-		// inputs inspired by the LineBasedUnifiedDiffFormatterTest
+		// inputs inspired by the AnnotatedHtmlDiffFormatterTest
 		return [
 			[
 				[ 'row', 'copy', 'Old 1' ],
@@ -127,7 +171,7 @@ TEXT
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
 		$htmlResult = ( new HtmlSplitConflictView(
 			$this->getTestUser()->getUser(),
-			new \Language()
+			$this->createMock( Language::class )
 		) )->getHtml(
 			$diff,
 			[ 'New 1', 'New 2', 'New 3', 'New 4', 'New 5' ],
