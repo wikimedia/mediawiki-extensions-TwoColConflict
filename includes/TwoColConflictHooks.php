@@ -37,9 +37,9 @@ class TwoColConflictHooks {
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-				$baseRevision = $editPage->getBaseRevision();
+			$baseRevision = $editPage->getBaseRevision();
 
-				return new SplitTwoColConflictHelper(
+			return new SplitTwoColConflictHelper(
 				$editPage->getTitle(),
 				$editPage->getContext()->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
