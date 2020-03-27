@@ -10,23 +10,6 @@ class SplitConflictMerger {
 
 	/**
 	 * @param array[] $contentRows
-	 * @param string[] $sideSelection
-	 *
-	 * @return bool
-	 */
-	public static function validateSideSelection( array $contentRows, array $sideSelection ) : bool {
-		foreach ( $contentRows as $num => $row ) {
-			$side = $sideSelection[$num] ?? 'copy';
-			if ( !isset( $row[$side] ) || !is_string( $row[$side] ) ) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param array[] $contentRows
 	 * @param array[] $extraLineFeeds
 	 * @param string[]|string $sideSelection Either an array of side identifiers per row ("copy",
 	 *  "other", or "your"). Or one side identifier for all rows (either "other" or "your").
