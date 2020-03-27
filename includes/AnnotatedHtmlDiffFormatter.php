@@ -170,7 +170,7 @@ class AnnotatedHtmlDiffFormatter {
 	 */
 	private function composeLines( array $lines ) : string {
 		return htmlspecialchars( implode( "\n", array_map(
-			function ( $line ) {
+			function ( string $line ) : string {
 				// Replace empty lines with a non-breaking space
 				return $line === '' ? "\u{00A0}" : $line;
 			},

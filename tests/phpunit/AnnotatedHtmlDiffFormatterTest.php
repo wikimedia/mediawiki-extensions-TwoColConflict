@@ -20,7 +20,7 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 	 * @param array[] $expectedOutput
 	 * @dataProvider provideFormat
 	 */
-	public function testFormat( $before, $after, array $expectedOutput ) {
+	public function testFormat( string $before, string $after, array $expectedOutput ) {
 		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format( $diff );
@@ -367,7 +367,7 @@ TEXT
 	 * @param array[] $expectedOutput
 	 * @dataProvider provideFormatWithMarkup
 	 */
-	public function testMarkupFormat( $before, $after, array $expectedOutput ) {
+	public function testMarkupFormat( string $before, string $after, array $expectedOutput ) {
 		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format( $diff );
@@ -451,7 +451,7 @@ TEXT
 	 *
 	 * @return string[]
 	 */
-	private function splitText( $text ) {
+	private function splitText( string $text ) : array {
 		return preg_split( '/\n(?!\n)/', $text );
 	}
 

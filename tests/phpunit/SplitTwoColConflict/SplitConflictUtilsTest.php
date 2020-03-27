@@ -47,7 +47,7 @@ class SplitConflictUtilsTest extends MediaWikiTestCase {
 	 * @param string[] $expectedOutput
 	 * @dataProvider provideSplitText
 	 */
-	public function testSplitText( $input, array $expectedOutput ) {
+	public function testSplitText( string $input, array $expectedOutput ) {
 		$this->assertSame(
 			$expectedOutput,
 			$result = SplitConflictUtils::splitText( $input )

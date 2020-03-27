@@ -116,7 +116,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		$this->assertStringContainsString( '>(parentheses: Conflicting edit summary)<', $html );
 	}
 
-	private function newConflictHeader( $summary, $revision = null ) {
+	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
 		return new HtmlSplitConflictHeader(
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
@@ -133,7 +133,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( $timestamp, $editSummary = '' ) {
+	private function newRevisionRecord( $timestamp, string $editSummary = '' ) {
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
 			->willReturn( $this->otherUser );

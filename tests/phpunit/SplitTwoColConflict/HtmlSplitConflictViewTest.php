@@ -184,7 +184,7 @@ TEXT
 		);
 	}
 
-	private function assertElementsPresentInOrder( $html, array $expectedElements ) {
+	private function assertElementsPresentInOrder( string $html, array $expectedElements ) {
 		$offset = 0;
 		foreach ( $expectedElements as $element ) {
 			switch ( $element ) {
@@ -221,7 +221,7 @@ TEXT
 		}
 	}
 
-	private function assertEditorExistsWithValue( $html, $value, $startPos ) {
+	private function assertEditorExistsWithValue( string $html, string $value, int $startPos ) {
 		$value .= "\n";
 
 		$pos = strpos( $html, '>' . $value . '</textarea>', $startPos );
@@ -232,7 +232,7 @@ TEXT
 		return $pos;
 	}
 
-	private function assertDivExistsWithClassValue( $html, $class, $startPos ) {
+	private function assertDivExistsWithClassValue( string $html, string $class, int $startPos ) {
 		$pos = strpos( $html, '<div class="' . $class . '"', $startPos );
 		$this->assertTrue(
 			$pos !== false,

@@ -13,7 +13,7 @@ class SplitConflictUtils {
 	 *
 	 * @return string[]
 	 */
-	public static function splitText( $text ) {
+	public static function splitText( string $text ) : array {
 		return preg_split( '/\n(?!\n)/', str_replace( [ "\r\n", "\r" ], "\n", $text ) );
 	}
 
@@ -22,7 +22,7 @@ class SplitConflictUtils {
 	 *
 	 * @return string
 	 */
-	public static function mergeTextLines( $textLines ) {
+	public static function mergeTextLines( array $textLines ) : string {
 		return str_replace( [ "\r\n", "\r" ], "\n", implode( "\n", $textLines ) );
 	}
 
