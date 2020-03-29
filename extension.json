@@ -39,7 +39,6 @@
 		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
 		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
-		"ResourceLoaderTestModules": "TwoColConflict\\TwoColConflictHooks::onResourceLoaderTestModules",
 		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormInitial"
 	},
 	"MessagesDirs": {
@@ -142,6 +141,16 @@
 				"modules/ext.TwoColConflict.JSCheck.js"
 			]
 		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "tests/qunit",
+		"remoteExtPath": "TwoColConflict/tests/qunit",
+		"scripts": [
+			"SplitTwoColConflict/TwoColConflict.Merger.test.js"
+		],
+		"dependencies": [
+			"ext.TwoColConflict.Split.Merger"
+		]
 	},
 	"attributes": {
 		"EventLogging": {
