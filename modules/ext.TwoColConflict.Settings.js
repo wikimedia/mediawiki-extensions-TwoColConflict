@@ -1,4 +1,5 @@
 ( function () {
+
 	/**
 	 * @constructor
 	 */
@@ -80,6 +81,5 @@
 		}
 	} );
 
-	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
-	mw.libs.twoColConflict.Settings = Settings;
+	module.exports = Settings;
 }() );

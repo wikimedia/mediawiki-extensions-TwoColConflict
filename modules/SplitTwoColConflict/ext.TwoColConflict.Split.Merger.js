@@ -43,7 +43,5 @@
 		return textLines.join( '\n' );
 	}
 
-	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
-	mw.libs.twoColConflict.split = mw.libs.twoColConflict.split || {};
-	mw.libs.twoColConflict.split.merger = merger;
+	module.exports = merger;
 }() );
