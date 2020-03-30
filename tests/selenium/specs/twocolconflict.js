@@ -39,7 +39,7 @@ describe( 'TwoColConflict', function () {
 		);
 
 		assert(
-			EditConflictPage.wpTextbox2.isVisible(),
+			EditConflictPage.wpTextbox2.isDisplayed(),
 			'the editor for the core conflict UI is shown'
 		);
 		assert(
@@ -50,6 +50,6 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );

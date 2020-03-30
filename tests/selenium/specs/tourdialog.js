@@ -15,7 +15,7 @@ describe( 'TwoColConflict', function () {
 
 		it( 'shows the tour', function () {
 			assert(
-				EditConflictPage.tourDialog.waitForVisible(),
+				EditConflictPage.tourDialog.waitForDisplayed(),
 				'I see an info tour'
 			);
 		} );
@@ -31,7 +31,7 @@ describe( 'TwoColConflict', function () {
 
 		it( 'hides the tour', function () {
 			assert(
-				!EditConflictPage.tourDialog.isVisible(),
+				!EditConflictPage.tourDialog.isDisplayed(),
 				'I don\'t see an info tour'
 			);
 		} );
@@ -40,63 +40,63 @@ describe( 'TwoColConflict', function () {
 			EditConflictPage.infoButton.click();
 
 			assert(
-				EditConflictPage.tourDialog.waitForVisible(),
+				EditConflictPage.tourDialog.waitForDisplayed(),
 				'I see an info tour'
 			);
 		} );
 
 		it( 'clicking the close button dismisses the dialog and adds pulsating buttons', function () {
-			EditConflictPage.tourDialogCloseButton.waitForVisible( 1000 );
+			EditConflictPage.tourDialogCloseButton.waitForDisplayed( 1000 );
 			EditConflictPage.tourDialogCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDialogCloseButton.waitForVisible( 2000, true ),
+				EditConflictPage.tourDialogCloseButton.waitForDisplayed( 2000, true ),
 				'Dialog has disappeared'
 			);
 
 			assert(
-				EditConflictPage.tourDiffChangeButton.isVisible(),
+				EditConflictPage.tourDiffChangeButton.isDisplayed(),
 				'Diff change pulsating button has appeared'
 			);
 
 			assert(
-				EditConflictPage.tourSplitSelectionButton.isVisible(),
+				EditConflictPage.tourSplitSelectionButton.isDisplayed(),
 				'Split selection pulsating button has appeared'
 			);
 
 			assert(
-				EditConflictPage.tourYourVersionHeaderButton.isVisible(),
+				EditConflictPage.tourYourVersionHeaderButton.isDisplayed(),
 				'Your version header pulsating button has appeared'
 			);
 		} );
 
 		it( 'clicking on a pulsating button opens a popup', function () {
-			EditConflictPage.tourDiffChangeButton.waitForVisible( 1000 );
+			EditConflictPage.tourDiffChangeButton.waitForDisplayed( 1000 );
 			EditConflictPage.tourDiffChangeButton.click();
 
 			assert(
-				!EditConflictPage.tourDiffChangeButton.isVisible(),
+				!EditConflictPage.tourDiffChangeButton.isDisplayed(),
 				'Diff change pulsating button has disappeared'
 			);
 
 			assert(
-				EditConflictPage.tourDiffChangePopup.waitForVisible(),
+				EditConflictPage.tourDiffChangePopup.waitForDisplayed(),
 				'Diff change popup has appeared'
 			);
 		} );
 
 		it( 'clicking on a popup\'s close button closes the popup', function () {
-			EditConflictPage.tourDiffChangePopupCloseButton.waitForVisible( 1000 );
+			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed( 1000 );
 			EditConflictPage.tourDiffChangePopupCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDiffChangePopup.waitForVisible( 500, true ),
+				EditConflictPage.tourDiffChangePopup.waitForDisplayed( 500, true ),
 				'Diff change popup has disappeared'
 			);
 		} );
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );

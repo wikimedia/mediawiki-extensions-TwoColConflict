@@ -17,9 +17,9 @@ describe( 'TwoColConflict', function () {
 			'neither side is activated'
 		);
 
-		assert( EditConflictPage.submitButton.isVisible(), 'submit button exists' );
-		assert( EditConflictPage.previewButton.isVisible(), 'preview button exists' );
-		assert( !EditConflictPage.diffButton.isVisible(), 'no diff button' );
+		assert( EditConflictPage.submitButton.isDisplayed(), 'submit button exists' );
+		assert( EditConflictPage.previewButton.isDisplayed(), 'preview button exists' );
+		assert( !EditConflictPage.diffButton.isDisplayed(), 'no diff button' );
 	} );
 
 	it( 'has edit buttons that toggle availability depending on side selection', function () {
@@ -48,23 +48,23 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.getEditButton( 'other' ).click();
 
 		assert(
-			EditConflictPage.getEditor( 'other' ).waitForVisible(),
+			EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
 			'the selected text box becomes a wikitext editor'
 		);
 		assert(
-			!EditConflictPage.getEditor( 'your' ).isVisible(),
+			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
 			'the unselected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.getEditButton( 'other' ).isVisible(),
+			!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
 			'the edit icon disappears in the selected text box'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'your' ).isVisible(),
+			EditConflictPage.getEditButton( 'your' ).isDisplayed(),
 			'the edit icon in the unselected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.getEditor( 'unchanged' ).isVisible(),
+			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
 			'the unselected unchanged text box stays as it is'
 		);
 		assert(
@@ -82,27 +82,27 @@ describe( 'TwoColConflict', function () {
 	it( 'allows editing of unchanged paragraphs by clicking the activated edit button', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		assert(
-			!EditConflictPage.getEditor( 'other' ).isVisible(),
+			!EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'the selected text box stays as it is'
 		);
 		assert(
-			!EditConflictPage.getEditor( 'your' ).isVisible(),
+			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
 			'the unselected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'other' ).isVisible(),
+			EditConflictPage.getEditButton( 'other' ).isDisplayed(),
 			'the edit icon in the selected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'your' ).isVisible(),
+			EditConflictPage.getEditButton( 'your' ).isDisplayed(),
 			'the edit icon in the unselected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.getEditor( 'unchanged' ).isVisible(),
+			EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
 			'the unselected unchanged text box becomes a wikitext editor'
 		);
 		assert(
-			!EditConflictPage.getEditButton( 'unchanged' ).isVisible(),
+			!EditConflictPage.getEditButton( 'unchanged' ).isDisplayed(),
 			'the edit icon disappears in the unchanged text box'
 		);
 		assert(
@@ -124,28 +124,28 @@ describe( 'TwoColConflict', function () {
 
 	it( 'certain edit specific buttons should not be visible at first', function () {
 		assert(
-			!EditConflictPage.getSaveButton( 'unchanged' ).isVisible(),
+			!EditConflictPage.getSaveButton( 'unchanged' ).isDisplayed(),
 			'the edit icon in the unselected unchanged text box is hidden'
 		);
 		assert(
-			!EditConflictPage.getSaveButton( 'other' ).isVisible(),
+			!EditConflictPage.getSaveButton( 'other' ).isDisplayed(),
 			'the edit icon in the selected text box is hidden'
 		);
 		assert(
-			!EditConflictPage.getSaveButton( 'your' ).isVisible(),
+			!EditConflictPage.getSaveButton( 'your' ).isDisplayed(),
 			'the edit icon in the unselected text box is hidden'
 		);
 
 		assert(
-			!EditConflictPage.getResetButton( 'unchanged' ).isVisible(),
+			!EditConflictPage.getResetButton( 'unchanged' ).isDisplayed(),
 			'the reset icon in the unselected unchanged text box is hidden'
 		);
 		assert(
-			!EditConflictPage.getResetButton( 'other' ).isVisible(),
+			!EditConflictPage.getResetButton( 'other' ).isDisplayed(),
 			'the reset icon in the selected text box is hidden'
 		);
 		assert(
-			!EditConflictPage.getResetButton( 'your' ).isVisible(),
+			!EditConflictPage.getResetButton( 'your' ).isDisplayed(),
 			'the reset icon in the unselected text box is hidden'
 		);
 	} );
@@ -222,9 +222,9 @@ describe( 'TwoColConflict', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationPopup.waitForVisible( 1000 );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( 1000 );
 		EditConflictPage.resetConfirmationButton.click();
-		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
 
 		assert.strictEqual(
 			EditConflictPage.getDiffText( 'other' ).getHTML(),
@@ -238,7 +238,7 @@ describe( 'TwoColConflict', function () {
 			'plain text in editor was reverted successfully'
 		);
 		assert(
-			!EditConflictPage.getEditor( 'other' ).isVisible(),
+			!EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'the editor is hidden again and we left editing mode'
 		);
 	} );
@@ -248,13 +248,13 @@ describe( 'TwoColConflict', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
 		assert(
-			!EditConflictPage.resetConfirmationButton.isVisible(),
+			!EditConflictPage.resetConfirmationButton.isDisplayed(),
 			'there is no confirmation box for the reset visible'
 		);
 		assert(
-			!EditConflictPage.getEditor( 'other' ).isVisible(),
+			!EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'the editor is hidden again and we left editing mode'
 		);
 	} );
@@ -262,7 +262,7 @@ describe( 'TwoColConflict', function () {
 	it( 'clicking edit should automatically focus the text editor', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		assert(
-			EditConflictPage.getEditor( 'unchanged' ).hasFocus(),
+			EditConflictPage.getEditor( 'unchanged' ).isFocused(),
 			'text editor is focused'
 		);
 	} );
@@ -283,6 +283,6 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );

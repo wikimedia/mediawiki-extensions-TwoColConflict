@@ -20,7 +20,7 @@ class PreferencesPage extends Page {
 
 	disableEditWarning() {
 		this.openEditPreferences();
-		this.editWarnLabel.waitForVisible();
+		this.editWarnLabel.waitForDisplayed();
 		if ( this.editWarnCheckbox.getAttribute( 'checked' ) ) {
 			this.clickCheckBoxAndSave( this.editWarnCheckbox );
 		}
@@ -56,15 +56,15 @@ class PreferencesPage extends Page {
 				checkBox.click();
 				saveBar.style.visibility = '';
 			},
-			checkBox.value,
-			this.saveBar.value
+			checkBox,
+			this.saveBar
 		);
 		this.submit.click();
 	}
 
 	hasBetaFeatureSetting() {
 		try {
-			this.twoColBetaLabel.waitForVisible( 2000 );
+			this.twoColBetaLabel.waitForDisplayed( 2000 );
 			return true;
 		} catch ( e ) {
 			return false;
@@ -73,7 +73,7 @@ class PreferencesPage extends Page {
 
 	hasOptOutUserSetting() {
 		try {
-			this.twoColLabel.waitForVisible( 2000 );
+			this.twoColLabel.waitForDisplayed( 2000 );
 			return true;
 		} catch ( e ) {
 			return false;

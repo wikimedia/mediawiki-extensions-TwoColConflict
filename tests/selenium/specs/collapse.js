@@ -12,23 +12,23 @@ describe( 'TwoColConflict', function () {
 
 	it( 'collapses long unchanged paragraphs', function () {
 		assert(
-			EditConflictPage.fadeOverlay.isVisible(),
+			EditConflictPage.fadeOverlay.isDisplayed(),
 			'an overlay fades the collapsed text'
 		);
 		assert(
-			EditConflictPage.collapsedParagraph.isVisible(),
+			EditConflictPage.collapsedParagraph.isDisplayed(),
 			'the collapsed paragraph text is visible'
 		);
 		assert(
-			!EditConflictPage.expandedParagraph.isVisible(),
+			!EditConflictPage.expandedParagraph.isDisplayed(),
 			'the expanded paragraph text is hidden'
 		);
 		assert(
-			EditConflictPage.expandButton.isVisible(),
+			EditConflictPage.expandButton.isDisplayed(),
 			'the expand button is visible'
 		);
 		assert(
-			!EditConflictPage.collapseButton.isVisible(),
+			!EditConflictPage.collapseButton.isDisplayed(),
 			'the collapse button is hidden'
 		);
 	} );
@@ -37,23 +37,23 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.expandButton.click();
 
 		assert(
-			!EditConflictPage.fadeOverlay.isVisible(),
+			!EditConflictPage.fadeOverlay.isDisplayed(),
 			'no overlay fades the collapsed text'
 		);
 		assert(
-			EditConflictPage.expandedParagraph.isVisible(),
+			EditConflictPage.expandedParagraph.isDisplayed(),
 			'the expanded paragraph text is visible'
 		);
 		assert(
-			!EditConflictPage.collapsedParagraph.isVisible(),
+			!EditConflictPage.collapsedParagraph.isDisplayed(),
 			'the collapsed paragraph text is hidden'
 		);
 		assert(
-			!EditConflictPage.expandButton.isVisible(),
+			!EditConflictPage.expandButton.isDisplayed(),
 			'the expand button is hidden'
 		);
 		assert(
-			EditConflictPage.collapseButton.isVisible(),
+			EditConflictPage.collapseButton.isDisplayed(),
 			'the collapse button is visible'
 		);
 	} );
@@ -66,23 +66,23 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.getSaveButton( 'unchanged' ).click();
 
 		assert(
-			!EditConflictPage.fadeOverlay.isVisible(),
+			!EditConflictPage.fadeOverlay.isDisplayed(),
 			'no overlay fades the collapsed text'
 		);
 		assert(
-			EditConflictPage.expandedParagraph.isVisible(),
+			EditConflictPage.expandedParagraph.isDisplayed(),
 			'the expanded paragraph text is visible'
 		);
 		assert(
-			!EditConflictPage.collapsedParagraph.isVisible(),
+			!EditConflictPage.collapsedParagraph.isDisplayed(),
 			'the collapsed paragraph text is hidden'
 		);
 		assert(
-			!EditConflictPage.expandButton.isVisible(),
+			!EditConflictPage.expandButton.isDisplayed(),
 			'the expand button is hidden'
 		);
 		assert(
-			EditConflictPage.collapseButton.isVisible(),
+			EditConflictPage.collapseButton.isDisplayed(),
 			'the collapse button is visible'
 		);
 		assert.strictEqual(
@@ -100,33 +100,33 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		EditConflictPage.getResetButton( 'unchanged' ).click();
 
-		EditConflictPage.resetConfirmationPopup.waitForVisible( 1000 );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( 1000 );
 		EditConflictPage.resetConfirmationButton.click();
-		EditConflictPage.resetConfirmationButton.waitForVisible( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
 
 		assert(
-			!EditConflictPage.fadeOverlay.isVisible(),
+			!EditConflictPage.fadeOverlay.isDisplayed(),
 			'no overlay fades the collapsed text'
 		);
 		assert(
-			EditConflictPage.expandedParagraph.isVisible(),
+			EditConflictPage.expandedParagraph.isDisplayed(),
 			'the expanded paragraph text is visible'
 		);
 		assert(
-			!EditConflictPage.collapsedParagraph.isVisible(),
+			!EditConflictPage.collapsedParagraph.isDisplayed(),
 			'the collapsed paragraph text is hidden'
 		);
 		assert(
-			!EditConflictPage.expandButton.isVisible(),
+			!EditConflictPage.expandButton.isDisplayed(),
 			'the expand button is hidden'
 		);
 		assert(
-			EditConflictPage.collapseButton.isVisible(),
+			EditConflictPage.collapseButton.isDisplayed(),
 			'the collapse button is visible'
 		);
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );
