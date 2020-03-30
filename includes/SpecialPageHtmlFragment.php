@@ -34,7 +34,7 @@ abstract class SpecialPageHtmlFragment implements MessageLocalizer {
 	 *
 	 * @param SpecialPage|self $specialPage
 	 */
-	final public function __construct( $specialPage ) {
+	final public function __construct( object $specialPage ) {
 		if ( $specialPage instanceof self ) {
 			$specialPage = $specialPage->specialPage;
 		} elseif ( !( $specialPage instanceof SpecialPage ) ) {

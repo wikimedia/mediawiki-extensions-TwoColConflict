@@ -38,7 +38,7 @@ class ResolutionSuggester {
 	 * @param array $b
 	 * @return bool
 	 */
-	private static function identicalCopyBlock( $a, $b ) {
+	private static function identicalCopyBlock( array $a, array $b ) : bool {
 		return $a['action'] === 'copy' && $a === $b;
 	}
 

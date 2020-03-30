@@ -55,7 +55,8 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideRowsForText
 	 */
-	public function testRowsForText( $input, $rows ) {
+	public function testRowsForText( string $input, int $rows ) {
+		/** @var HtmlEditableTextComponent $component */
 		$component = TestingAccessWrapper::newFromObject(
 			new HtmlEditableTextComponent(
 				$this->getTestUser()->getUser(),
