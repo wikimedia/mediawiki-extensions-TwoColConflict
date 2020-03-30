@@ -230,24 +230,4 @@ class TwoColConflictHooks {
 		$defaultOptions[TwoColConflictContext::OPTOUT_PREFERENCE_NAME] = 1;
 	}
 
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/ResourceLoaderTestModules
-	 * @codeCoverageIgnore
-	 *
-	 * @param array[] &$testModules
-	 * @param \ResourceLoader $resourceLoader
-	 */
-	public static function onResourceLoaderTestModules( array &$testModules, $resourceLoader ) {
-		$testModules['qunit']['ext.TwoColConflict.tests'] = [
-			'scripts' => [
-				'tests/qunit/SplitTwoColConflict/TwoColConflict.Merger.test.js'
-			],
-			'dependencies' => [
-				'ext.TwoColConflict.Split.Merger'
-			],
-			'localBasePath' => dirname( __DIR__ ),
-			'remoteExtPath' => 'TwoColConflict',
-		];
-	}
-
 }
