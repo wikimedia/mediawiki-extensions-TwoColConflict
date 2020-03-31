@@ -1,13 +1,14 @@
 const Page = require( 'wdio-mediawiki/Page' );
 
 class PreferencesPage extends Page {
-	get twoColBetaCheckbox() { return browser.element( 'input[name=wptwocolconflict]' ); }
-	get twoColBetaLabel() { return browser.element( '//*[@name="wptwocolconflict"]//parent::span' ); }
-	get editWarnCheckbox() { return browser.element( 'input[name=wpuseeditwarning]' ); }
-	get editWarnLabel() { return browser.element( '#mw-input-wpuseeditwarning' ); }
-	get twoColCheckbox() { return browser.element( 'input[name=wptwocolconflict-enabled]' ); }
-	get twoColLabel() { return browser.element( '#mw-input-wptwocolconflict-enabled' ); }
-	get submit() { return browser.element( '#prefcontrol button' ); }
+	get twoColBetaCheckbox() { return $( 'input[name=wptwocolconflict]' ); }
+	get twoColBetaLabel() { return $( '//*[@name="wptwocolconflict"]//parent::span' ); }
+	get editWarnCheckbox() { return $( 'input[name=wpuseeditwarning]' ); }
+	get editWarnLabel() { return $( '#mw-input-wpuseeditwarning' ); }
+	get twoColCheckbox() { return $( 'input[name=wptwocolconflict-enabled]' ); }
+	get twoColLabel() { return $( '#mw-input-wptwocolconflict-enabled' ); }
+	get saveBar() { return $( '.mw-prefs-buttons' ); }
+	get submit() { return $( '#prefcontrol button' ); }
 
 	openBetaPreferences() {
 		super.openTitle( 'Special:Preferences', {}, 'mw-prefsection-betafeatures' );
@@ -47,7 +48,6 @@ class PreferencesPage extends Page {
 	}
 
 	clickCheckBoxAndSave( checkBox ) {
-		const saveBar = browser.element( '.mw-prefs-buttons' );
 		// This workaround is needed when the preferences save bar
 		// might obscure the feature's label and checkbox.
 		browser.execute(
@@ -57,7 +57,7 @@ class PreferencesPage extends Page {
 				saveBar.style.visibility = '';
 			},
 			checkBox.value,
-			saveBar.value
+			this.saveBar.value
 		);
 		this.submit.click();
 	}
