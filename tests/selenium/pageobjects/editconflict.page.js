@@ -75,7 +75,6 @@ class EditConflictPage extends Page {
 		Util.waitForModuleState( 'mediawiki.base' );
 
 		return browser.execute( function ( hide ) {
-			/* global mw */
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption(
 					'userjs-twocolconflict-hide-help-dialogue',
