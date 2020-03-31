@@ -6,50 +6,50 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class EditConflictPage extends Page {
-	get conflictHeader() { return browser.element( '.mw-twocolconflict-split-header' ); }
-	get conflictView() { return browser.element( '.mw-twocolconflict-split-view' ); }
+	get conflictHeader() { return $( '.mw-twocolconflict-split-header' ); }
+	get conflictView() { return $( '.mw-twocolconflict-split-view' ); }
 
-	getParagraph( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editable' ); }
-	getEditButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
-	getSaveButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
-	getResetButton( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
-	getEditor( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
-	getDiffText( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
-	getEditDisabledEditButtonPopup( column ) { return browser.element( this.columnToClass( column ) + ' .mw-twocolconflict-split-disabled-edit-button-popup' ); }
+	getParagraph( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editable' ); }
+	getEditButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
+	getSaveButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
+	getResetButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
+	getEditor( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
+	getDiffText( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
+	getEditDisabledEditButtonPopup( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-disabled-edit-button-popup' ); }
 
-	get selectionLabel() { return browser.element( '.mw-twocolconflict-split-selector-label span' ); }
-	get otherParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(1) span' ); }
-	get otherParagraphRadio() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(1) input' ); }
-	get yourParagraphSelection() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
-	get yourParagraphRadio() { return browser.element( '.mw-twocolconflict-split-selection div:nth-child(2) input' ); }
-	get resetConfirmationPopup() { return browser.element( '.oo-ui-window-content' ); }
-	get resetConfirmationButton() { return browser.element( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
+	get selectionLabel() { return $( '.mw-twocolconflict-split-selector-label span' ); }
+	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) span' ); }
+	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) input' ); }
+	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
+	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) input' ); }
+	get resetConfirmationPopup() { return $( '.oo-ui-window-content' ); }
+	get resetConfirmationButton() { return $( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
-	get collapsedParagraph() { return browser.element( '.mw-twocolconflict-split-collapsed' ); }
-	get expandedParagraph() { return browser.element( '.mw-twocolconflict-split-expanded' ); }
-	get fadeOverlay() { return browser.element( '.mw-twocolconflict-split-fade' ); }
-	get collapseButton() { return browser.element( '.mw-twocolconflict-split-collapse-button' ); }
-	get expandButton() { return browser.element( '.mw-twocolconflict-split-expand-button' ); }
+	get collapsedParagraph() { return $( '.mw-twocolconflict-split-collapsed' ); }
+	get expandedParagraph() { return $( '.mw-twocolconflict-split-expanded' ); }
+	get fadeOverlay() { return $( '.mw-twocolconflict-split-fade' ); }
+	get collapseButton() { return $( '.mw-twocolconflict-split-collapse-button' ); }
+	get expandButton() { return $( '.mw-twocolconflict-split-expand-button' ); }
 
-	get infoButton() { return browser.element( '.mw-twocolconflict-split-tour-help-button' ); }
-	get tourDialog() { return browser.element( '.mw-twocolconflict-split-tour-intro-container' ); }
-	get tourDialogCloseButton() { return browser.element( '.mw-twocolconflict-split-tour-intro-container a' ); }
+	get infoButton() { return $( '.mw-twocolconflict-split-tour-help-button' ); }
+	get tourDialog() { return $( '.mw-twocolconflict-split-tour-intro-container' ); }
+	get tourDialogCloseButton() { return $( '.mw-twocolconflict-split-tour-intro-container a' ); }
 
-	get tourDiffChangeButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ); }
-	get tourSplitSelectionButton() { return browser.element( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-pulsating-button' ); }
-	get tourYourVersionHeaderButton() { return browser.element( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-pulsating-button' ); }
+	get tourDiffChangeButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ); }
+	get tourSplitSelectionButton() { return $( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-pulsating-button' ); }
+	get tourYourVersionHeaderButton() { return $( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-pulsating-button' ); }
 
-	get tourDiffChangePopup() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
-	get tourDiffChangePopupCloseButton() { return browser.element( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
+	get tourDiffChangePopup() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
+	get tourDiffChangePopupCloseButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
 
-	get submitButton() { return browser.element( '#wpSave' ); }
-	get previewButton() { return browser.element( '#wpPreview' ); }
-	get diffButton() { return browser.element( '#wpDiff' ); }
+	get submitButton() { return $( '#wpSave' ); }
+	get previewButton() { return $( '#wpPreview' ); }
+	get diffButton() { return $( '#wpDiff' ); }
 
-	get previewView() { return browser.element( '#wikiPreview' ); }
-	get previewText() { return browser.element( '#wikiPreview .mw-parser-output' ); }
+	get previewView() { return $( '#wikiPreview' ); }
+	get previewText() { return $( '#wikiPreview .mw-parser-output' ); }
 
-	get wpTextbox2() { return browser.element( '#wpTextbox2' ); }
+	get wpTextbox2() { return $( '#wpTextbox2' ); }
 
 	hoverEditButton( column ) {
 		browser.moveToObject( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' );
