@@ -25,7 +25,7 @@
 		"TwoColConflictSuggestResolution": {
 			"description": "Suggest an easy resolution for edit conflicts on talk pages when two users replied at the same time.",
 			"public": true,
-			"value": true
+			"value": false
 		}
 	},
 	"AutoloadNamespaces": {
