@@ -89,7 +89,7 @@
 	};
 
 	QUnit.module( 'ext.TwoColConflict.Split.Merger' );
-	var merger = mw.libs.twoColConflict.split.merger;
+	var merger = require( 'ext.TwoColConflict.Split.Merger' );
 
 	QUnit.test( 'testSingleCopyRow', function ( assert ) {
 		assert.strictEqual(

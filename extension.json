@@ -56,9 +56,10 @@
 			]
 		},
 		"ext.TwoColConflict.SplitJs": {
-			"scripts": [
+			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js",
+				"modules/ext.TwoColConflict.Settings.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
@@ -96,8 +97,7 @@
 			}
 		},
 		"ext.TwoColConflict.Split.Tour": {
-			"scripts": [
-				"modules/ext.TwoColConflict.Settings.js",
+			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.js"
 			],
 			"styles": [
@@ -132,12 +132,12 @@
 			]
 		},
 		"ext.TwoColConflict.Split.Merger": {
-			"scripts": [
+			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js"
 			]
 		},
 		"ext.TwoColConflict.JSCheck": {
-			"scripts": [
+			"packageFiles": [
 				"modules/ext.TwoColConflict.JSCheck.js"
 			]
 		}

@@ -1,4 +1,5 @@
 ( function () {
+
 	'use strict';
 
 	/**
@@ -209,10 +210,12 @@
 
 	function initTour() {
 		var $body = $( 'body' ),
-			settings = new mw.libs.twoColConflict.Settings(),
+			Settings = require( '../ext.TwoColConflict.Settings.js' ),
+			Tour = require( 'ext.TwoColConflict.Split.Tour' ),
+			settings = new Settings(),
 			windowManager = new OO.ui.WindowManager();
 
-		var tour = mw.libs.twoColConflict.split.Tour.init(
+		var tour = Tour.init(
 			mw.msg( 'twocolconflict-split-tour-dialog-header' ),
 			'mw-twocolconflict-split-tour-slide-1',
 			mw.msg( 'twocolconflict-split-tour-dialog-message' ),
@@ -297,7 +300,8 @@
 	}
 
 	function initPreview() {
-		var api = new mw.Api(),
+		var merger = require( 'ext.TwoColConflict.Split.Merger' ),
+			api = new mw.Api(),
 			$previewBtn = $( '#wpPreviewWidget' );
 		if ( api && $previewBtn.length ) {
 			OO.ui.infuse( $previewBtn )
@@ -316,9 +320,7 @@
 
 					$.when(
 						api.parse(
-							mw.libs.twoColConflict.split.merger(
-								$( '.mw-twocolconflict-split-row' )
-							),
+							merger( $( '.mw-twocolconflict-split-row' ) ),
 							{
 								title: title,
 								prop: 'text',
@@ -354,6 +356,8 @@
 	}
 
 	$( function () {
+		var initTracking = require( './ext.TwoColConflict.Split.tracking.js' );
+
 		// disable all javascript from this feature when testing the nojs implementation
 		if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
 			// set CSS class so nojs CSS rules are applied
@@ -365,6 +369,6 @@
 		initPreview();
 		initSubmit();
 		initTour();
+		initTracking();
 	} );
-
 }() );

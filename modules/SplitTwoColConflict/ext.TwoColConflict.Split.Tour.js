@@ -213,7 +213,5 @@
 		return new Tour( header, image, message, windowManager );
 	};
 
-	mw.libs.twoColConflict = mw.libs.twoColConflict || {};
-	mw.libs.twoColConflict.split = mw.libs.twoColConflict.split || {};
-	mw.libs.twoColConflict.split.Tour = Tour;
+	module.exports = Tour;
 }() );

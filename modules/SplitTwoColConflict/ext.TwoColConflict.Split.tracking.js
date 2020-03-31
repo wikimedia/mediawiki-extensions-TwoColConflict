@@ -1,4 +1,5 @@
 ( function () {
+
 	'use strict';
 
 	var finalExitEvent = null;
@@ -42,7 +43,7 @@
 		} );
 	}
 
-	function initListeners() {
+	function initTrackingListeners() {
 		$( '#wpSave' ).on( 'click', function () {
 			finalExitEvent = 'save';
 		} );
@@ -54,8 +55,5 @@
 		window.addEventListener( 'unload', recordExitStatistics );
 	}
 
-	$( function () {
-		initListeners();
-	} );
-
+	module.exports = initTrackingListeners;
 }() );
