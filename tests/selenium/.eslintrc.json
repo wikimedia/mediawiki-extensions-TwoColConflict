@@ -14,6 +14,7 @@
 		"mw": "readonly"
 	},
 	"rules": {
-		"no-jquery/no-global-selector": "off"
+		"no-jquery/no-global-selector": "off",
+		"no-jquery/no-sizzle": "off"
 	}
 }
