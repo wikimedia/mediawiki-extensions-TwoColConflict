@@ -1,22 +1,14 @@
 var assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
 describe( 'TwoColConflict', function () {
-	let conflictUser,
-		conflictUserPassword;
-
 	before( function () {
-		conflictUser = Util.getTestString( 'User-' );
-		conflictUserPassword = Util.getTestString();
-		EditConflictPage.prepareEditConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.prepareEditConflict();
 		EditConflictPage.testNoJs();
 	} );
 
 	it( 'is showing the nojs version correctly', function () {
 		EditConflictPage.createConflict(
-			conflictUser,
-			conflictUserPassword,
 			'A',
 			'B',
 			'C'

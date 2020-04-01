@@ -1,22 +1,16 @@
 var assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
 describe( 'TwoColConflict', function () {
-	let conflictUser,
-		conflictUserPassword;
-
 	before( function () {
-		conflictUser = Util.getTestString( 'User-' );
-		conflictUserPassword = Util.getTestString();
-		EditConflictPage.prepareEditConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.prepareEditConflict();
 	} );
 
 	describe( 'initial viewing', function () {
 
 		before( function () {
 			EditConflictPage.toggleHelpDialog( true );
-			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+			EditConflictPage.showSimpleConflict();
 		} );
 
 		it( 'shows the tour', function () {
@@ -32,7 +26,7 @@ describe( 'TwoColConflict', function () {
 		before( function () {
 			EditConflictPage.openTitle( '' );
 			EditConflictPage.toggleHelpDialog( false );
-			EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+			EditConflictPage.showSimpleConflict();
 		} );
 
 		it( 'hides the tour', function () {

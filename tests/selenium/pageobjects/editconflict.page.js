@@ -3,6 +3,7 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	PreferencesPage = require( '../pageobjects/preferences.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	Api = require( 'wdio-mediawiki/Api' ),
+	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class EditConflictPage extends Page {
@@ -84,10 +85,7 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	prepareEditConflict( conflictUser, conflictUserPassword ) {
-		browser.call( function () {
-			return Api.createAccount( conflictUser, conflictUserPassword );
-		} );
+	prepareEditConflict() {
 		UserLoginPage.loginAdmin();
 		PreferencesPage.disableEditWarning();
 		PreferencesPage.shouldUseTwoColConflict( true );
@@ -104,10 +102,8 @@ class EditConflictPage extends Page {
 		} );
 	}
 
-	showSimpleConflict( conflictUser, conflictUserPassword ) {
+	showSimpleConflict() {
 		this.createConflict(
-			conflictUser,
-			conflictUserPassword,
 			'Line1\nLine2',
 			'Line1\nChange <span lang="de">A</span>',
 			'Line1\nChange <span lang="en">B</span>'
@@ -115,10 +111,8 @@ class EditConflictPage extends Page {
 		this.waitForUiToLoad();
 	}
 
-	showBigConflict( conflictUser, conflictUserPassword ) {
+	showBigConflict() {
 		this.createConflict(
-			conflictUser,
-			conflictUserPassword,
 			'Line1\nLine2\nLine3\nline4',
 			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
@@ -126,21 +120,19 @@ class EditConflictPage extends Page {
 		this.waitForUiToLoad();
 	}
 
-	editPage( title, text, conflictUser, conflictUserPassword ) {
+	editPage( credentials, title, text ) {
 		browser.call( function () {
 			return Api.edit(
 				title,
 				text,
-				conflictUser,
-				conflictUserPassword
+				credentials.username,
+				credentials.password
 			);
 		} );
 		browser.pause( 500 );
 	}
 
 	createConflict(
-		conflictUser,
-		conflictUserPassword,
 		startText,
 		otherText,
 		yourText,
@@ -149,14 +141,7 @@ class EditConflictPage extends Page {
 	) {
 		title = ( title !== null ) ? title : Util.getTestString( 'conflict-title-' );
 
-		browser.call( function () {
-			return Api.edit(
-				title,
-				startText
-			);
-		} );
-
-		browser.pause( 500 ); // make sure Api edit is finished
+		this.editPage( TestAccounts.you, title, startText );
 
 		if ( section !== null ) {
 			EditPage.openSectionForEditing( title, section );
@@ -166,15 +151,7 @@ class EditConflictPage extends Page {
 
 		EditPage.content.waitForExist();
 
-		browser.call( function () {
-			return Api.edit(
-				title,
-				otherText,
-				conflictUser,
-				conflictUserPassword
-			);
-		} );
-		browser.pause( 500 ); // make sure Api edit is finished
+		this.editPage( TestAccounts.other, title, otherText );
 
 		EditPage.content.setValue( yourText );
 		EditPage.save.click();

@@ -1,27 +1,21 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	PreferencesPage = require( '../pageobjects/preferences.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	PreferencesPage = require( '../pageobjects/preferences.page' );
 
 describe( 'TwoColConflict', function () {
-	let conflictUser,
-		conflictUserPassword;
-
 	before( function () {
-		conflictUser = Util.getTestString( 'User-' );
-		conflictUserPassword = Util.getTestString();
-		EditConflictPage.prepareEditConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.prepareEditConflict();
 	} );
 
 	it( 'is showing the edit conflict split screen correctly', function () {
-		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.showSimpleConflict();
 
 		assert( EditConflictPage.conflictHeader.isExisting() );
 		assert( EditConflictPage.conflictView.isExisting() );
 	} );
 
 	it( 'label changes according to selected column', function () {
-		EditConflictPage.showSimpleConflict( conflictUser, conflictUserPassword );
+		EditConflictPage.showSimpleConflict();
 
 		const initialText = EditConflictPage.selectionLabel.getText();
 
@@ -39,8 +33,6 @@ describe( 'TwoColConflict', function () {
 		}
 		PreferencesPage.shouldUseTwoColConflict( false );
 		EditConflictPage.createConflict(
-			conflictUser,
-			conflictUserPassword,
 			'A',
 			'B',
 			'C'
