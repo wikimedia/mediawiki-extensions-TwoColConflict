@@ -41,7 +41,6 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		];
 		$sides = [ 'your', 'other' ];
 
-		$this->assertTrue( SplitConflictMerger::validateSideSelection( $rows, $sides ) );
 		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
 		$this->assertSame( "B\nC", $result );
 	}
@@ -52,7 +51,6 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		];
 		$sides = [ 1 => 'your' ];
 
-		$this->assertFalse( SplitConflictMerger::validateSideSelection( $rows, $sides ) );
 		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
 		$this->assertSame( 'B', $result );
 	}
