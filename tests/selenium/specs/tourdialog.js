@@ -1,12 +1,12 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
-describe( 'TwoColConflict', function () {
+describe( 'TwoColConflict GuidedTour', function () {
 	before( function () {
 		EditConflictPage.prepareEditConflict();
 	} );
 
-	describe( 'initial viewing', function () {
+	describe( 'on initial view', function () {
 
 		before( function () {
 			EditConflictPage.toggleHelpDialog( true );
@@ -21,7 +21,7 @@ describe( 'TwoColConflict', function () {
 		} );
 	} );
 
-	describe( 'subsequent viewing', function () {
+	describe( 'on subsequent view', function () {
 
 		before( function () {
 			EditConflictPage.openTitle( '' );

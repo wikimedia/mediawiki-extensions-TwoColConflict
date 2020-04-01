@@ -1,7 +1,7 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
-describe( 'TwoColConflict', function () {
+describe( 'TwoColConflict editable areas', function () {
 	before( function () {
 		EditConflictPage.prepareEditConflict();
 	} );

@@ -4,7 +4,7 @@ var assert = require( 'assert' ),
 	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
-describe( 'TwoColConflict', function () {
+describe( 'TwoColConflict save and preview', function () {
 	before( function () {
 		EditConflictPage.prepareEditConflict();
 	} );

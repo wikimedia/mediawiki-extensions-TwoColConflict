@@ -14,7 +14,7 @@ describe( 'TwoColConflict', function () {
 		assert( EditConflictPage.conflictView.isExisting() );
 	} );
 
-	it( 'label changes according to selected column', function () {
+	it( 'labels change according to selected column', function () {
 		EditConflictPage.showSimpleConflict();
 
 		const initialText = EditConflictPage.selectionLabel.getText();
