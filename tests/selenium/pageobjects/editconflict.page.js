@@ -22,8 +22,8 @@ class EditConflictPage extends Page {
 	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) input' ); }
 	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
 	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) input' ); }
-	get resetConfirmationPopup() { return $( '.oo-ui-window-content' ); }
-	get resetConfirmationButton() { return $( '.oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
+	get resetConfirmationPopup() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content' ); }
+	get resetConfirmationButton() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
 	get collapsedParagraph() { return $( '.mw-twocolconflict-split-collapsed' ); }
 	get expandedParagraph() { return $( '.mw-twocolconflict-split-expanded' ); }
