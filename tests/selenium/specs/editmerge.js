@@ -8,7 +8,6 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict();
-		EditConflictPage.waitForUiToLoad();
 
 		assert(
 			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )

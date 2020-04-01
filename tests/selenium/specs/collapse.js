@@ -8,7 +8,6 @@ describe( 'TwoColConflict', function () {
 
 	beforeEach( function () {
 		EditConflictPage.showBigConflict();
-		EditConflictPage.waitForUiToLoad();
 	} );
 
 	it( 'collapses long unchanged paragraphs', function () {
