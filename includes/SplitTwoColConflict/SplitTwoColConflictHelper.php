@@ -233,7 +233,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 */
 	private function getLineBasedUnifiedDiff( array $fromLines, array $toLines ) : array {
 		$formatter = new AnnotatedHtmlDiffFormatter();
-		return $formatter->format( new \Diff( $fromLines, $toLines ) );
+		return $formatter->format( $fromLines, $toLines );
 	}
 
 }

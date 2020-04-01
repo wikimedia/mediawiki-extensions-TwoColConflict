@@ -67,6 +67,7 @@ class ResolutionSuggester {
 			return true;
 		}
 
+		// TODO: preSaveTransform $yourLines, but not $storedLines
 		$diffYourLines = $this->diff( $baseLines, $yourLines );
 		$diffStoredLines = $this->diff( $baseLines, $storedLines );
 
@@ -145,8 +146,7 @@ class ResolutionSuggester {
 	 * @return array[]
 	 */
 	private function diff( array $fromLines, array $toLines ) : array {
-		return ( new AnnotatedHtmlDiffFormatter() )->format(
-			new \Diff( $fromLines, $toLines ) );
+		return ( new AnnotatedHtmlDiffFormatter() )->format( $fromLines, $toLines );
 	}
 
 }

@@ -52,7 +52,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		$yourLines = explode( "\n", $yourText );
 
 		$formatter = new AnnotatedHtmlDiffFormatter();
-		$diff = $formatter->format( new \Diff( $storedLines, $yourLines ) );
+		$diff = $formatter->format( $storedLines, $yourLines );
 
 		$view = new HtmlSplitConflictView(
 			$this->getTestUser()->getUser(),

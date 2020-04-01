@@ -13,15 +13,17 @@ use WordLevelDiff;
 class AnnotatedHtmlDiffFormatter {
 
 	/**
-	 * @param Diff $diff A Diff object.
+	 * @param string[] $oldLines
+	 * @param string[] $newLines
 	 *
 	 * @return array[] List of changes, formatted to include an HTML representation and line
 	 *     numbers pointing to the original wikitext.
 	 */
-	public function format( Diff $diff ) : array {
+	public function format( array $oldLines, array $newLines ) : array {
 		$changes = [];
 		$oldLine = 0;
 		$newLine = 0;
+		$diff = new Diff( $oldLines, $newLines );
 
 		foreach ( $diff->getEdits() as $edit ) {
 			switch ( $edit->getType() ) {
@@ -35,7 +37,6 @@ class AnnotatedHtmlDiffFormatter {
 						'newline' => $newLine,
 						'newcount' => $count,
 					];
-					$newLine += $count;
 					break;
 
 				case 'delete':
@@ -48,7 +49,6 @@ class AnnotatedHtmlDiffFormatter {
 						'oldline' => $oldLine,
 						'oldcount' => $count,
 					];
-					$oldLine += $count;
 					break;
 
 				case 'change':
@@ -62,8 +62,6 @@ class AnnotatedHtmlDiffFormatter {
 						'oldcount' => $edit->norig(),
 						'newcount' => $edit->nclosing(),
 					];
-					$oldLine += $edit->norig();
-					$newLine += $edit->nclosing();
 					break;
 
 				case 'copy':
@@ -74,10 +72,11 @@ class AnnotatedHtmlDiffFormatter {
 						'oldline' => $oldLine,
 						'count' => $count,
 					];
-					$oldLine += $count;
-					$newLine += $count;
 					break;
 			}
+
+			$oldLine += $edit->norig();
+			$newLine += $edit->nclosing();
 		}
 
 		return $changes;

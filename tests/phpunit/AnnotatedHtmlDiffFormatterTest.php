@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\Tests;
 
-use Diff;
 use MediaWikiTestCase;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 
@@ -21,9 +20,8 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 	 * @dataProvider provideFormat
 	 */
 	public function testFormat( string $before, string $after, array $expectedOutput ) {
-		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new AnnotatedHtmlDiffFormatter();
-		$output = $instance->format( $diff );
+		$output = $instance->format( $this->splitText( $before ), $this->splitText( $after ) );
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
@@ -373,9 +371,8 @@ TEXT
 	 * @dataProvider provideFormatWithMarkup
 	 */
 	public function testMarkupFormat( string $before, string $after, array $expectedOutput ) {
-		$diff = new Diff( $this->splitText( $before ), $this->splitText( $after ) );
 		$instance = new AnnotatedHtmlDiffFormatter();
-		$output = $instance->format( $diff );
+		$output = $instance->format( $this->splitText( $before ), $this->splitText( $after ) );
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
 
