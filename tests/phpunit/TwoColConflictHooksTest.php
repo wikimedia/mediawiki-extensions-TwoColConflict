@@ -7,7 +7,6 @@ use TwoColConflict\TwoColConflictHooks;
 
 /**
  * @covers \TwoColConflict\TwoColConflictHooks
- * @covers \TwoColConflict\SplitTwoColConflict\SplitConflictMerger
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
@@ -97,14 +96,6 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$this->assertSame( $expected, $editPage->textbox1 );
 	}
 
-	public function testOnImportFormDataNotTriggered() {
-		$editPage = $this->createEditPage();
-		$request = $this->createWebRequest( null, null, null, false );
-
-		TwoColConflictHooks::onImportFormData( $editPage, $request );
-		$this->assertSame( '', $editPage->textbox1 );
-	}
-
 	/**
 	 * @return EditPage
 	 */
@@ -118,8 +109,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	private function createWebRequest(
 		array $sideSelection = null,
 		array $splitContent = null,
-		array $splitLineFeeds = null,
-		$submit = true
+		array $splitLineFeeds = null
 	) {
 		return new \FauxRequest( [
 			'mw-twocolconflict-side-selector' => $sideSelection,
