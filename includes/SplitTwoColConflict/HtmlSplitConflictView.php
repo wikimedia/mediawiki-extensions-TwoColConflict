@@ -42,82 +42,62 @@ class HtmlSplitConflictView {
 		array $unifiedDiff,
 		bool $markAllAsIncomplete
 	) : string {
-		$out = Html::openElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
-		);
+		$out = '';
 
-		$currRowNum = 0;
-		foreach ( $unifiedDiff as $changeSet ) {
+		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
+			$line = '';
+			$markAsIncomplete = $markAllAsIncomplete;
+
 			switch ( $changeSet['action'] ) {
 				case 'delete':
-					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-					$out .= $this->buildRemovedLine(
+					$line = $this->buildRemovedLine(
 						$changeSet['oldhtml'],
 						$changeSet['oldtext'],
 						$currRowNum
-					);
-
-					$out .= $this->buildSideSelector( $currRowNum );
-
-					$out .= $this->buildAddedLine( "\u{00A0}", '', $currRowNum );
-					$out .= $this->endRow();
-					$currRowNum++;
+					) .
+					$this->buildSideSelector( $currRowNum ) .
+					$this->buildAddedLine( "\u{00A0}", '', $currRowNum );
 					break;
 				case 'add':
-					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-					$out .= $this->buildRemovedLine( "\u{00A0}", '', $currRowNum );
-
-					$out .= $this->buildSideSelector( $currRowNum );
-
-					$out .= $this->buildAddedLine(
+					$line = $this->buildRemovedLine( "\u{00A0}", '', $currRowNum ) .
+					$this->buildSideSelector( $currRowNum ) .
+					$this->buildAddedLine(
 						$changeSet['newhtml'],
 						$changeSet['newtext'],
 						$currRowNum
 					);
-					$out .= $this->endRow();
-					$currRowNum++;
 					break;
 				case 'change':
-					$out .= $this->startRow( $currRowNum, $markAllAsIncomplete );
-					$out .= $this->buildRemovedLine(
+					$line = $this->buildRemovedLine(
 						$changeSet['oldhtml'],
 						$changeSet['oldtext'],
 						$currRowNum
-					);
-
-					$out .= $this->buildSideSelector( $currRowNum );
-
-					$out .= $this->buildAddedLine(
+					) .
+					$this->buildSideSelector( $currRowNum ) .
+					$this->buildAddedLine(
 						$changeSet['newhtml'],
 						$changeSet['newtext'],
 						$currRowNum
 					);
-					$out .= $this->endRow();
-					$currRowNum++;
 					break;
 				case 'copy':
-					$out .= $this->startRow( $currRowNum );
-					$out .= $this->buildCopiedLine( $changeSet['copytext'], $currRowNum );
-					$out .= $this->endRow();
-					$currRowNum++;
+					$line = $this->buildCopiedLine( $changeSet['copytext'], $currRowNum );
+					$markAsIncomplete = false;
 					break;
 			}
+
+			$out .= Html::rawElement(
+				'div',
+				[
+					'class' => 'mw-twocolconflict-split-row' .
+						( $markAsIncomplete ? ' mw-twocolconflict-no-selection' : '' ),
+					'data-line-number' => $currRowNum,
+				],
+				$line
+			);
 		}
 
-		$out .= Html::closeElement( 'div' );
-		return $out;
-	}
-
-	private function startRow( int $rowNum, bool $markAsIncomplete = false ) : string {
-		$class = 'mw-twocolconflict-split-row';
-		if ( $markAsIncomplete ) {
-			$class .= ' mw-twocolconflict-no-selection';
-		}
-		return Html::openElement( 'div', [ 'class' => $class, 'data-line-number' => $rowNum ] );
-	}
-
-	private function endRow() : string {
-		return Html::closeElement( 'div' );
+		return Html::rawElement( 'div', [ 'class' => 'mw-twocolconflict-split-view' ], $out );
 	}
 
 	private function buildAddedLine( string $diffHtml, string $text, int $rowNum ) : string {
