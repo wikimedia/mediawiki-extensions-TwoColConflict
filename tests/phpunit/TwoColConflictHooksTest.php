@@ -127,6 +127,65 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 				],
 				'b'
 			],
+
+			'trivial copy situation' => [
+				[
+					'mw-twocolconflict-side-selector' => [],
+					'mw-twocolconflict-split-content' => [
+						1 => [ 'copy' => 'abc' ],
+					],
+					'mw-twocolconflict-split-linefeeds' => [
+						1 => [ 'copy' => 0 ],
+					],
+				],
+				'abc',
+			],
+			'trailing linefeeds in the content are ignored' => [
+				[
+					'mw-twocolconflict-side-selector' => [
+						1 => 'other',
+					],
+					'mw-twocolconflict-split-content' => [
+						1 => [ 'other' => "abc\n", 'your' => 'def' ],
+					],
+					'mw-twocolconflict-split-linefeeds' => [
+						1 => [ 'other' => 0 ],
+					],
+				],
+				'abc',
+			],
+			'original trailing linefeed is restored' => [
+				[
+					'mw-twocolconflict-side-selector' => [
+						1 => 'other',
+					],
+					'mw-twocolconflict-split-content' => [
+						1 => [ 'other' => "abc\n\n", 'your' => 'def' ],
+					],
+					'mw-twocolconflict-split-linefeeds' => [
+						1 => [ 'other' => 1 ],
+					],
+				],
+				"abc\n",
+			],
+			'all possibilities in one request' => [
+				[
+					'mw-twocolconflict-side-selector' => [
+						2 => 'other',
+						4 => 'your',
+					],
+					'mw-twocolconflict-split-content' => [
+						1 => [ 'copy' => 'a' ],
+						2 => [ 'other' => 'b other', 'your' => 'b your' ],
+						3 => [ 'copy' => 'c' ],
+						4 => [ 'other' => 'd other', 'your' => 'd your' ],
+					],
+					'mw-twocolconflict-split-linefeeds' => [
+						4 => [ 'your' => 0 ],
+					],
+				],
+				"a\nb other\nc\nd your",
+			],
 		];
 	}
 
@@ -140,94 +199,10 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$this->assertSame( $expectedWikitext, $editPage->textbox1 );
 	}
 
-	public function provideOnImportFormData() {
-		return [
-			[
-				null,
-				null,
-				null,
-				'',
-			],
-			[
-				[],
-				[
-					1 => [ 'copy' => 'abc' ],
-				],
-				[
-					1 => [ 'copy' => 0 ],
-				],
-				"abc",
-			],
-			[
-				[
-					1 => 'other',
-				],
-				[
-					1 => [ 'other' => "abc\n", 'your' => 'def' ],
-				],
-				[
-					1 => [ 'other' => 0 ],
-				],
-				"abc",
-			],
-			[
-				[
-					1 => 'other',
-				],
-				[
-					1 => [ 'other' => "abc\n\n", 'your' => 'def' ],
-				],
-				[
-					1 => [ 'other' => 1 ],
-				],
-				"abc\n",
-			],
-			[
-				[
-					2 => 'other',
-					4 => 'your',
-				],
-				[
-					1 => [ 'copy' => 'a' ],
-					2 => [ 'other' => 'b other', 'your' => 'b your' ],
-					3 => [ 'copy' => 'c' ],
-					4 => [ 'other' => 'd other', 'your' => 'd your' ],
-				],
-				[
-					4 => [ 'your' => 0 ],
-				],
-				"a\nb other\nc\nd your",
-			],
-		];
-	}
-
-	/**
-	 * @dataProvider provideOnImportFormData
-	 */
-	public function testOnImportFormData_legacy(
-		?array $sideSelection,
-		?array $splitContent,
-		?array $splitLineFeeds,
-		string $expected
-	) {
-		$editPage = $this->createEditPage();
-		$request = $this->createWebRequest( $sideSelection, $splitContent, $splitLineFeeds );
-
-		TwoColConflictHooks::onImportFormData( $editPage, $request );
-		$this->assertSame( $expected, $editPage->textbox1 );
-	}
-
 	public function testOnUserGetDefaultOptions() {
 		$prefs = [];
 		TwoColConflictHooks::onUserGetDefaultOptions( $prefs );
 		$this->assertArrayHasKey( 'twocolconflict-enabled', $prefs );
-	}
-
-	/**
-	 * @return EditPage
-	 */
-	private function createEditPage() {
-		return $this->createMock( EditPage::class );
 	}
 
 	/**
@@ -237,21 +212,6 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
 		return $context;
-	}
-
-	/**
-	 * @return \WebRequest
-	 */
-	private function createWebRequest(
-		array $sideSelection = null,
-		array $splitContent = null,
-		array $splitLineFeeds = null
-	) {
-		return new \FauxRequest( [
-			'mw-twocolconflict-side-selector' => $sideSelection,
-			'mw-twocolconflict-split-content' => $splitContent,
-			'mw-twocolconflict-split-linefeeds' => $splitLineFeeds,
-		] );
 	}
 
 }
