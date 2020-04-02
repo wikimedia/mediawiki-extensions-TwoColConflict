@@ -9,6 +9,7 @@ use IContextSource;
 use OOUI\InputWidget;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
+use Title;
 use TwoColConflict\TwoColConflictHooks;
 use WebRequest;
 
@@ -39,6 +40,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->method( 'getContext' )->willReturn( $context );
+		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 		// TODO: The code in the factory function is currently not tested
 		$editPage->expects( $this->once() )->method( 'setEditConflictHelperFactory' );
 
@@ -49,6 +51,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->isConflict = true;
 		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
+		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 
 		$previewButton = $this->createMock( InputWidget::class );
 		$previewButton->expects( $this->once() )->method( 'setDisabled' );

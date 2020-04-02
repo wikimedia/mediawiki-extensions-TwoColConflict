@@ -33,7 +33,8 @@ class TwoColConflictHooks {
 		}
 
 		// Skip out if the feature is disabled
-		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ) {
+		$user = $editPage->getContext()->getUser();
+		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) ) {
 			return;
 		}
 
@@ -153,7 +154,10 @@ class TwoColConflictHooks {
 				'TwoColConflictConflict',
 				19872073,
 				[
-					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown( $user ),
+					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown(
+						$user,
+						$editPage->getTitle()
+					),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
@@ -185,7 +189,8 @@ class TwoColConflictHooks {
 		array &$buttons,
 		&$tabindex
 	) {
-		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) &&
+		$user = $editPage->getContext()->getUser();
+		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) &&
 			!( $editPage instanceof TwoColConflictTestEditPage ) &&
 			$editPage->isConflict === true
 		) {
