@@ -62,6 +62,8 @@ class HtmlTalkPageResolutionView {
 		}
 
 		$out .= Html::closeElement( 'div' );
+		$out .= Html::hidden( 'mw-twocolconflict-single-column-view', true );
+
 		return $out;
 	}
 

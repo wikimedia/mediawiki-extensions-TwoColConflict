@@ -29,6 +29,10 @@ class ConflictFormValidator {
 			return $this->validateSideSelection( $contentRows, $sideSelection );
 		}
 
+		if ( $request->getBool( 'mw-twocolconflict-single-column-view' ) ) {
+			return $this->validateSingleColumnForm( $contentRows );
+		}
+
 		return false;
 	}
 
@@ -42,6 +46,31 @@ class ConflictFormValidator {
 		foreach ( $contentRows as $num => $row ) {
 			$side = $sideSelection[$num] ?? 'copy';
 			if ( !isset( $row[$side] ) || !is_string( $row[$side] ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param array[] $contentRows
+	 *
+	 * @return bool
+	 */
+	private function validateSingleColumnForm( array $contentRows ) : bool {
+		foreach ( $contentRows as $num => $row ) {
+			if ( !is_array( $row ) || count( $row ) !== 1 ) {
+				// Must be an array with exactly one column.
+				return false;
+			}
+			$key = key( $row );
+			if ( !in_array( $key, [ 'copy', 'other', 'your' ] ) ) {
+				// Illegal key.
+				return false;
+			}
+			if ( !is_string( $row[$key] ) ) {
+				// Contents must be a plain string.
 				return false;
 			}
 		}
