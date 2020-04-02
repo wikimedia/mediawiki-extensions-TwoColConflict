@@ -217,7 +217,7 @@ class TwoColConflictHooks {
 	 * @param User $user
 	 * @param array[] &$preferences
 	 */
-	public static function onGetPreferences( User $user, array &$preferences ) {
+	public static function onGetPreferences( $user, array &$preferences ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
