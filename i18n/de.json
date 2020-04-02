@@ -4,7 +4,8 @@
 			"Metalhead64",
 			"ThePiscin",
 			"McDutchie",
-			"Johanna Strodt (WMDE)"
+			"Johanna Strodt (WMDE)",
+			"TMg"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -26,8 +27,8 @@
 	"twocolconflict-test-preview-hint": "Vielen Dank für das Ausprobieren der Oberfläche des Zwei-Spalten-Bearbeitungskonflikts! Hilf uns, die Funktion durch deine Rückmeldungen [https://de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte/Feedbackrunde_Testseite auf dieser Feedbackseite] zu verbessern.\n\nUnten sind die Ergebnisse der Auflösung deines Test-Bearbeitungskonfliktes.",
 	"twocolconflict-test-username": "KonfliktTest-Benutzer",
 	"twocolconflict-test-summary-text": "Konflikttest-Bearbeitungszusammenfassung",
-	"twocolconflict-split-header-hint": "Du kannst mithelfen, diese Funktion zu verbessern, wenn du dein Feedback  [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View auf diese Seite] schreibst.",
-	"twocolconflict-split-header-hint-beta": "Vielen Dank für die Benutzung dieser Betafunktion. Du kannst weiterhin bei ihrer Verbesserung helfen, indem du [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View auf dieser Seite] deine Rückmeldung hinterlässt.",
+	"twocolconflict-split-header-hint": "Du kannst mithelfen, diese Funktion zu verbessern, wenn du dein Feedback [//de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte auf diese Seite] schreibst.",
+	"twocolconflict-split-header-hint-beta": "Vielen Dank für die Benutzung dieser Betafunktion. Du kannst weiterhin bei ihrer Verbesserung helfen, indem du [//de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte auf dieser Seite] deine Rückmeldung hinterlässt.",
 	"twocolconflict-split-your-version-header": "Deine Version",
 	"twocolconflict-split-current-version-header": "Aktuelle Version von $1",
 	"twocolconflict-split-not-saved-at": "Noch nicht veröffentlicht",
