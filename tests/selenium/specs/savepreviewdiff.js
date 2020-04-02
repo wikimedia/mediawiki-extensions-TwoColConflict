@@ -118,7 +118,7 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			EditConflictPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForDisplayed(),
 			'I see a preview page for my changes'
 		);
 
@@ -138,7 +138,7 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			EditConflictPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForDisplayed(),
 			'I see a preview page for my changes'
 		);
 
@@ -158,7 +158,7 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			EditConflictPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForDisplayed(),
 			'I see a preview page for my changes'
 		);
 
@@ -179,7 +179,7 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.previewButton.click();
 
 		assert(
-			EditConflictPage.previewView.waitForVisible(),
+			EditConflictPage.previewView.waitForDisplayed(),
 			'The preview appears'
 		);
 
@@ -222,6 +222,6 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );

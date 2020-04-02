@@ -14,23 +14,23 @@ describe( 'TwoColConflict', function () {
 			'C'
 		);
 		// wait for the nojs script to switch CSS visibility
-		EditConflictPage.getEditor( 'your' ).waitForVisible();
+		EditConflictPage.getEditor( 'your' ).waitForDisplayed();
 
-		assert( EditConflictPage.conflictHeader.isVisible() );
-		assert( EditConflictPage.conflictView.isVisible() );
+		assert( EditConflictPage.conflictHeader.isDisplayed() );
+		assert( EditConflictPage.conflictView.isDisplayed() );
 		assert(
 			EditConflictPage.yourParagraphRadio.isSelected() &&
 			!EditConflictPage.otherParagraphRadio.isSelected(),
 			'your side is selected by default'
 		);
 		assert(
-			EditConflictPage.getEditor( 'your' ).isVisible() &&
-			EditConflictPage.getEditor( 'other' ).isVisible(),
+			EditConflictPage.getEditor( 'your' ).isDisplayed() &&
+			EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'editors are visible right away'
 		);
 	} );
 
 	after( function () {
-		browser.deleteCookie();
+		browser.deleteAllCookies();
 	} );
 } );

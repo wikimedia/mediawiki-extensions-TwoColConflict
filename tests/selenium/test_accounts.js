@@ -2,25 +2,24 @@ const Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class TestAccounts {
+	// FIXME: Note that these cannot be lazy-initialized from within another browser.call
+
 	get you() {
-		return {
-			username: browser.options.username,
-			password: browser.options.password
-		};
+		return browser.call( async () => {
+			return await Api.bot();
+		} );
 	}
 
 	get other() {
-		const username = Util.getTestString( 'User-' ),
+		// Same thing as above: do not call from browser.call
+		const adminBot = this.you,
+			username = Util.getTestString( 'User-' ),
 			password = Util.getTestString( 'pwd-' );
 
-		browser.call( function () {
-			return Api.createAccount( username, password );
+		return browser.call( async () => {
+			await Api.createAccount( adminBot, username, password );
+			return await Api.bot( username, password );
 		} );
-
-		return {
-			username: username,
-			password: password
-		};
 	}
 }
 

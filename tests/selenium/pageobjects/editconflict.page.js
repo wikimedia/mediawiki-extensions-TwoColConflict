@@ -2,7 +2,6 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	PreferencesPage = require( '../pageobjects/preferences.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
-	Api = require( 'wdio-mediawiki/Api' ),
 	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
@@ -120,14 +119,9 @@ class EditConflictPage extends Page {
 		this.waitForUiToLoad();
 	}
 
-	editPage( credentials, title, text ) {
-		browser.call( function () {
-			return Api.edit(
-				title,
-				text,
-				credentials.username,
-				credentials.password
-			);
+	editPage( bot, title, text ) {
+		browser.call( async () => {
+			return await bot.edit( title, text );
 		} );
 		browser.pause( 500 );
 	}
@@ -158,11 +152,12 @@ class EditConflictPage extends Page {
 	}
 
 	waitForUiToLoad() {
-		this.infoButton.waitForVisible( 60000 ); // JS for the tour is loaded
+		this.infoButton.waitForDisplayed( 60000, false,
+			'Conflict page never displayed' );
 	}
 
 	testNoJs() {
-		return browser.setCookie( {
+		return browser.setCookies( {
 			name: 'mw-twocolconflict-test-nojs',
 			value: '1'
 		} );
