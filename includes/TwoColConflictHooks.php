@@ -84,7 +84,7 @@ class TwoColConflictHooks {
 				// When the request is invalid, drop the "other" row to force the original conflict
 				// to be re-created, and not silently resolved or corrupted.
 				foreach ( $contentRows as $num => &$row ) {
-					if ( array_key_exists( 'other', $row ) ) {
+					if ( is_array( $row ) && array_key_exists( 'other', $row ) ) {
 						$row['other'] = '';
 					}
 				}

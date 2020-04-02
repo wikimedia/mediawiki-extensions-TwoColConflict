@@ -4,6 +4,7 @@ namespace TwoColConflict\Tests;
 
 use EditPage;
 use ExtensionRegistry;
+use FauxRequest;
 use IContextSource;
 use OOUI\InputWidget;
 use OutputPage;
@@ -80,6 +81,65 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$this->assertArrayHasKey( 'twocolconflict-enabled', $prefs );
 	}
 
+	public function provideWebRequests() {
+		return [
+			'empty request' => [ [], '' ],
+			'no content' => [ [ 'mw-twocolconflict-split-content' => [], ], '' ],
+			'minimal non-empty request' => [
+				[
+					'mw-twocolconflict-split-content' => [ [ 'copy' => 'a' ] ],
+				],
+				'a'
+			],
+			'bad non-array elements' => [
+				[
+					'mw-twocolconflict-split-content' => [ 'bad' ],
+					'mw-twocolconflict-split-linefeeds' => [ 1 ],
+				],
+				"bad\n"
+			],
+			'valid single column request' => [
+				[
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [ [ 'other' => 'a' ] ],
+				],
+				'a'
+			],
+			'single column request with invalid content' => [
+				[
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						[ 'other' => 'a' ],
+						[ 'your' => 'b' ],
+						'bad',
+					],
+				],
+				"b\nbad"
+			],
+			'single column request with invalid side selection' => [
+				[
+					'mw-twocolconflict-single-column-view' => true,
+					'mw-twocolconflict-split-content' => [
+						[ 'other' => 'a' ],
+						[ 'your' => 'b' ],
+					],
+					'mw-twocolconflict-side-selector' => [ 'bad' ],
+				],
+				'b'
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideWebRequests
+	 */
+	public function testOnImportFormData( array $requestData, string $expectedWikitext ) {
+		$editPage = $this->createMock( EditPage::class );
+		$request = new FauxRequest( $requestData );
+		TwoColConflictHooks::onImportFormData( $editPage, $request );
+		$this->assertSame( $expectedWikitext, $editPage->textbox1 );
+	}
+
 	public function provideOnImportFormData() {
 		return [
 			[
@@ -144,11 +204,11 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	/**
 	 * @dataProvider provideOnImportFormData
 	 */
-	public function testOnImportFormData(
+	public function testOnImportFormData_legacy(
 		?array $sideSelection,
 		?array $splitContent,
 		?array $splitLineFeeds,
-		$expected
+		string $expected
 	) {
 		$editPage = $this->createEditPage();
 		$request = $this->createWebRequest( $sideSelection, $splitContent, $splitLineFeeds );

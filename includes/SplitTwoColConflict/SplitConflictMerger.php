@@ -35,7 +35,9 @@ class SplitConflictMerger {
 			// already detected as such (see above). Intentionally return the most recent, most
 			// conflicting result. Fall back to the users conflicting edit, or to *whatever* is
 			// there, no matter how invalid the input is. We *never* want to delete a row.
-			$line = $row[$side] ?? $row['your'] ?? (string)current( $row );
+			$line = $row[$side] ??
+				$row['your'] ??
+				(string)( is_array( $row ) ? current( $row ) : $row );
 
 			// Don't remove all whitespace, because this is not necessarily the end of the article
 			$line = rtrim( $line, "\r\n" );
@@ -46,9 +48,11 @@ class SplitConflictMerger {
 			}
 
 			if ( isset( $extraLineFeeds[$num] ) ) {
+				$lf = $extraLineFeeds[$num];
 				// Same fallback logic as above, just so we never loose content
-				$count = $extraLineFeeds[$num][$side] ?? $extraLineFeeds[$num]['your'] ??
-					(int)current( $extraLineFeeds[$num] );
+				$count = $lf[$side] ??
+					$lf['your'] ??
+					(int)( is_array( $lf ) ? current( $lf ) : $lf );
 				// Arbitrary limit just to not end with megabytes in case of an attack
 				$line .= str_repeat( "\n", min( $count, 1000 ) );
 			}
