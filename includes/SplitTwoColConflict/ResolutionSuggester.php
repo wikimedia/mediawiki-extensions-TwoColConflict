@@ -34,38 +34,42 @@ class ResolutionSuggester {
 	}
 
 	/**
-	 * @param array $a
-	 * @param array $b
-	 * @return bool
+	 * @param array $a First block to compare
+	 * @param array $b Second block
+	 * @return bool True if the blocks are both copy blocks, with identical content.
 	 */
-	private static function identicalCopyBlock( array $a, array $b ) : bool {
+	private static function isIdenticalCopyBlock( array $a, array $b ) : bool {
 		return $a['action'] === 'copy' && $a === $b;
+	}
+
+	/**
+	 * @param array $a First block to compare
+	 * @param array $b Second block
+	 * @return bool True if the blocks are both add blocks, at the same line
+	 */
+	private static function isConflictingAddBlock( array $a, array $b ) {
+		return $a['action'] === 'add' && $b['action'] === 'add';
 	}
 
 	/**
 	 * @param Title $title
 	 * @param string[] $storedLines
 	 * @param string[] $yourLines
-	 * @return bool
+	 * @return TalkPageResolution|null
 	 */
 	public function getResolutionSuggestion(
 		Title $title,
 		array $storedLines,
 		array $yourLines
-	) : bool {
+	) : ?TalkPageResolution {
 		$services = MediaWikiServices::getInstance();
 		if ( !$services->getMainConfig()->get( 'TwoColConflictSuggestResolution' ) ||
 			!$services->getNamespaceInfo()->isTalk( $title->getNamespace() )
 		) {
-			return false;
+			return null;
 		}
 
 		$baseLines = $this->getBaseRevisionLines();
-		// if the base version is empty there's an addition from both sides
-		// we should be able to suggest a resolution then
-		if ( $baseLines === [] ) {
-			return true;
-		}
 
 		$formatter = new AnnotatedHtmlDiffFormatter();
 		// TODO: preSaveTransform $yourLines, but not $storedLines
@@ -74,46 +78,39 @@ class ResolutionSuggester {
 
 		$count = count( $diffYourLines );
 		if ( $count !== count( $diffStoredLines ) ) {
-			return false;
+			return null;
 		}
 
-		// only diffs that contain exactly one addition that is optionally
-		// preceded or succeeded by one identical copy line at a time are
+		// only diffs that contain exactly one addition, that is optionally
+		// preceded and/or succeeded by one identical copy line, are
 		// candidates for the resolution suggestion
-		if ( $count === 1 ) {
-			$yourLine = $diffYourLines[0];
-			$storedLine = $diffStoredLines[0];
-		} elseif ( $count === 2 ) {
-			// if the diffs contain only two action either the first or the second
-			// action must be identical copies
-			if ( self::identicalCopyBlock( $diffYourLines[0], $diffStoredLines[0] ) ) {
-				$yourLine = $diffYourLines[1];
-				$storedLine = $diffStoredLines[1];
-			} elseif ( self::identicalCopyBlock( $diffYourLines[1], $diffStoredLines[1] ) ) {
-				$yourLine = $diffYourLines[0];
-				$storedLine = $diffStoredLines[0];
+
+		$diff = [];
+		/** @var ?int $spliceIndex */
+		$spliceIndex = null;
+		// Copy over identical blocks, and splice the two alternatives.
+		foreach ( $diffYourLines as $index => $yourLine ) {
+			$otherLine = $diffStoredLines[$index];
+			if ( self::isIdenticalCopyBlock( $yourLine, $otherLine ) ) {
+				// Copy
+				$diff[] = $otherLine;
+			} elseif ( self::isConflictingAddBlock( $yourLine, $otherLine )
+				&& $spliceIndex === null
+			) {
+				// Splice alternatives
+				$spliceIndex = count( $diff );
+				$diff[] = $otherLine;
+				$diff[] = $yourLine;
 			} else {
-				return false;
+				return null;
 			}
-		} elseif ( $count === 3 &&
-			// if the diffs contain three actions the preceding and succeeding
-			// actions must be identical copies
-			self::identicalCopyBlock( $diffYourLines[0], $diffStoredLines[0] ) &&
-			self::identicalCopyBlock( $diffYourLines[2], $diffStoredLines[2] )
-		) {
-			$yourLine = $diffYourLines[1];
-			$storedLine = $diffStoredLines[1];
-		} else {
-			return false;
+		}
+		if ( $spliceIndex === null ) {
+			// TODO: I'm not sure yet, but this might be a logic error and should be logged.
+			return null;
 		}
 
-		// we are only suggesting a resolution if we have two additions in the same line
-		if ( $yourLine['action'] !== 'add' || $storedLine['action'] !== 'add' ) {
-			return false;
-		}
-
-		// TODO in theory we could return what's needed to show the suggestion here
-		return true;
+		return new TalkPageResolution( $diff, $spliceIndex, $spliceIndex + 1 );
 	}
 
 	/**
