@@ -49,11 +49,14 @@
 	flex-direction: column;
 }
 
+.mw-twocolconflict-single-row,
 .mw-twocolconflict-split-row {
 	display: flex;
 	align-items: flex-start;
 	margin: 10px 0;
+}
 
+.mw-twocolconflict-split-row {
 	&.mw-twocolconflict-no-selection {
 		background-color: @error-background-color;
 		border: 2px solid @error-border-color;
@@ -63,6 +66,7 @@
 	}
 }
 
+.mw-twocolconflict-single-column,
 .mw-twocolconflict-split-column {
 	flex: 1;
 	background-color: #fff;
@@ -80,12 +84,10 @@
 
 	&.mw-twocolconflict-split-add {
 		border-color: #add8ff;
-		margin-left: 10px;
 	}
 
 	&.mw-twocolconflict-split-delete {
 		border-color: #ffe8a6;
-		margin-right: 10px;
 	}
 
 	&.mw-twocolconflict-split-copy {
@@ -200,6 +202,16 @@
 	}
 }
 
+.mw-twocolconflict-split-column {
+	&.mw-twocolconflict-split-delete {
+		margin-right: 10px;
+	}
+
+	&.mw-twocolconflict-split-add {
+		margin-left: 10px;
+	}
+}
+
 .mw-twocolconflict-split-selector-label {
 	margin-bottom: -8px;
 	text-align: center;
@@ -263,6 +275,7 @@
 		display: none;
 	}
 
+	.mw-twocolconflict-single-column,
 	.mw-twocolconflict-split-column {
 		.mw-twocolconflict-split-expand-button {
 			display: none;

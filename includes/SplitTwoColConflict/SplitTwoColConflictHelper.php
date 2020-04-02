@@ -211,9 +211,15 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		return $out;
 	}
 
-	private function buildResolutionSuggestionView( $suggestion ) : string {
-		// TODO implement interface for the suggested resolution
-		return 'Resolution suggestion goes here.';
+	private function buildResolutionSuggestionView( TalkPageResolution $suggestion ) : string {
+		return ( new HtmlTalkPageResolutionView(
+			$this->out->getUser(),
+			$this->out->getLanguage() )
+		)->getHtml(
+			$suggestion->getDiff(),
+			$suggestion->getOtherIndex(),
+			$suggestion->getYourIndex()
+		);
 	}
 
 	/**
