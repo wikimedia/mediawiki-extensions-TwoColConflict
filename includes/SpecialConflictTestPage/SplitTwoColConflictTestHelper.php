@@ -1,8 +1,8 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict\SpecialConflictTestPage;
 
-use TwoColConflict\RandomChangesGenerator;
+use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 
 /**
