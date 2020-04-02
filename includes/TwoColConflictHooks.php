@@ -32,7 +32,8 @@ class TwoColConflictHooks {
 		}
 
 		// Skip out if the feature is disabled
-		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) ) {
+		$user = $editPage->getContext()->getUser();
+		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) ) {
 			return;
 		}
 
@@ -127,16 +128,17 @@ class TwoColConflictHooks {
 			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19872073
 			\EventLogging::logEvent(
 				'TwoColConflictConflict',
-				19872073,
+				19950885,
 				[
-					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown( $user ),
+					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown(
+						$user,
+						$editPage->getTitle()
+					),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $editPage->getTitle()->getNamespace(),
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
 					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
-					'textUser' => mb_substr( $editPage->textbox2, 0, 128 ),
-					'summary' => mb_substr( $editPage->summary, 0, 128 ),
 					'conflictChunks' => $conflictChunks,
 					'conflictChars' => $conflictChars,
 					'startTime' => $editPage->starttime,
@@ -161,7 +163,8 @@ class TwoColConflictHooks {
 		array &$buttons,
 		&$tabindex
 	) {
-		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $editPage->getContext()->getUser() ) &&
+		$user = $editPage->getContext()->getUser();
+		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) &&
 			!( $editPage instanceof TwoColConflictTestEditPage ) &&
 			$editPage->isConflict === true
 		) {

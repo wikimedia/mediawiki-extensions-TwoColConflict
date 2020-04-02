@@ -53,9 +53,9 @@ class ResolutionSuggester {
 		array $storedLines,
 		array $yourLines
 	) : bool {
-		$services = MediaWikiServices::getInstance();
-		if ( !$services->getMainConfig()->get( 'TwoColConflictSuggestResolution' ) ||
-			!$services->getNamespaceInfo()->isTalk( $title->getNamespace() )
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( !$config->get( 'TwoColConflictSuggestResolution' ) ||
+			!( $title->isTalkPage() || $title->inNamespace( NS_PROJECT ) )
 		) {
 			return false;
 		}
