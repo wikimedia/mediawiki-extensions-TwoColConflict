@@ -163,8 +163,6 @@ class TwoColConflictHooks {
 					'pageNs' => $editPage->getTitle()->getNamespace(),
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
 					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
-					'textUser' => mb_substr( $editPage->textbox2, 0, 128 ),
-					'summary' => mb_substr( $editPage->summary, 0, 128 ),
 					'conflictChunks' => $conflictChunks,
 					'conflictChars' => $conflictChars,
 					'startTime' => $editPage->starttime,
