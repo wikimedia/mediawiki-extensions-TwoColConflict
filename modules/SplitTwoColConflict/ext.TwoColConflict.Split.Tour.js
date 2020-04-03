@@ -5,11 +5,13 @@
 	 *
 	 * @param {string} header for the initial dialog window
 	 * @param {string} image class for the initial dialog window
+	 * @param {string} imageHeight css value for image
 	 * @param {string} message for the initial dialog window
+	 * @param {string} close button text for the dialog window
 	 * @param {OO.ui.WindowManager} windowManager
 	 * @constructor
 	 */
-	var Tour = function ( header, image, message, windowManager ) {
+	var Tour = function ( header, image, imageHeight, message, close, windowManager ) {
 		var self = this;
 
 		function TourDialog( config ) {
@@ -29,7 +31,7 @@
 		};
 
 		var closeButton = new OO.ui.ButtonWidget( {
-			label: mw.msg( 'twocolconflict-split-tour-dialog-btn-text' ),
+			label: close,
 			flags: [ 'primary', 'progressive' ]
 		} );
 
@@ -40,9 +42,10 @@
 					.addClass( 'mw-twocolconflict-split-tour-intro-container-header' )
 			)
 			.append(
-				$( '<div>' ).addClass(
-					'mw-twocolconflict-split-tour-image-landscape ' + image
-				)
+				$( '<div>' )
+					.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + image )
+					// Todo: find a better way to handle image scaling
+					.css( 'height', imageHeight )
 			)
 			.append(
 				$( '<p>' ).text( message )
@@ -175,16 +178,17 @@
 		},
 
 		/**
+		 * @param {string[]} css classes for the help button
 		 * @return {OO.ui.ButtonWidget}
 		 */
-		getHelpButton: function () {
+		getHelpButton: function ( css ) {
 			var self = this;
 
 			var helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
 				framed: false,
 				title: mw.msg( 'twocolconflict-split-help-tooltip' ),
-				classes: [ 'mw-twocolconflict-split-tour-help-button' ]
+				classes: css
 			} );
 
 			helpButton.on( 'click', function () {
@@ -205,12 +209,14 @@
 	 *
 	 * @param {string} header for the initial dialog window
 	 * @param {string} image class for the initial dialog window
+	 * @param {string} imageHeight css value for image
 	 * @param {string} message for the initial dialog window
+	 * @param {string} close button text for the dialog window
 	 * @param {OO.ui.WindowManager} windowManager
 	 * @return {Tour}
 	 */
-	Tour.init = function ( header, image, message, windowManager ) {
-		return new Tour( header, image, message, windowManager );
+	Tour.init = function ( header, image, imageHeight, message, close, windowManager ) {
+		return new Tour( header, image, imageHeight, message, close, windowManager );
 	};
 
 	module.exports = Tour;

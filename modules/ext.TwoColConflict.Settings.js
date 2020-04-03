@@ -3,33 +3,9 @@
 	/**
 	 * @constructor
 	 */
-	var Settings = function () {
-		this.hideHelpDialogue = this.loadBoolean( 'hide-help-dialogue' );
-	};
+	var Settings = function () {};
 
 	$.extend( Settings.prototype, {
-		/**
-		 * @type {boolean}
-		 */
-		hideHelpDialogue: null,
-
-		/**
-		 * @return {boolean}
-		 */
-		shouldHideHelpDialogue: function () {
-			return this.hideHelpDialogue;
-		},
-
-		/**
-		 * @param {boolean} newSetting
-		 */
-		setHideHelpDialogue: function ( newSetting ) {
-			if ( newSetting !== this.hideHelpDialogue ) {
-				this.saveBoolean( 'hide-help-dialogue', newSetting );
-				this.hideHelpDialogue = newSetting;
-			}
-		},
-
 		/**
 		 * @param {string} name
 		 * @param {string} defaultValue

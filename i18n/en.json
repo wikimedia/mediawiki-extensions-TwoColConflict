@@ -53,5 +53,8 @@
 	"twocolconflict-split-expand-tooltip": "Expand unchanged text",
 	"twocolconflict-split-selected-version-tooltip": "Selected version",
 	"twocolconflict-split-unselected-version-tooltip": "Click to select this version",
-	"twocolconflict-split-help-tooltip": "Show help"
+	"twocolconflict-split-help-tooltip": "Show help",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Conflicting Posts",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Unfortunately, someone else posted at the same time as you. Please review the comments on the next page. If needed, you can edit yours and change the final order.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Resolve issue"
 }

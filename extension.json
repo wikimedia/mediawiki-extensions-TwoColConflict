@@ -88,10 +88,16 @@
 			"class": "ResourceLoaderImageModule",
 			"selector": ".mw-twocolconflict-split-tour-slide-{name}",
 			"images": {
-				"1": {
+				"dual-column-view-1": {
 					"file": {
-						"ltr": "resources/ext.TwoColConflict.Split.Tour/slide1-ltr.png",
-						"rtl": "resources/ext.TwoColConflict.Split.Tour/slide1-rtl.png"
+						"ltr": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-ltr.png",
+						"rtl": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-rtl.png"
+					}
+				},
+				"single-column-view-1": {
+					"file": {
+						"ltr": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1.svg",
+						"rtl": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1.svg"
 					}
 				}
 			}
@@ -128,7 +134,10 @@
 				"twocolconflict-split-reset-warning",
 				"twocolconflict-split-reset-warning-cancel",
 				"twocolconflict-split-reset-warning-accept",
-				"twocolconflict-split-help-tooltip"
+				"twocolconflict-split-help-tooltip",
+				"twocolconflict-split-tour-dialog-header-single-column-view",
+				"twocolconflict-split-tour-dialog-message-single-column-view",
+				"twocolconflict-split-tour-dialog-btn-text-single-column-view"
 			]
 		},
 		"ext.TwoColConflict.Split.Merger": {

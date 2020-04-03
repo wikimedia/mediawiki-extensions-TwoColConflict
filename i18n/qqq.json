@@ -60,5 +60,8 @@
 	"twocolconflict-split-expand-tooltip": "Label for the expand button to expand an unchanged text paragraph.",
 	"twocolconflict-split-selected-version-tooltip": "Label for the selected radio button used to choose a conflicting paragraph.",
 	"twocolconflict-split-unselected-version-tooltip": "Label for the unselected radio button used to choose a conflicting paragraph.",
-	"twocolconflict-split-help-tooltip": "Label for the help button."
+	"twocolconflict-split-help-tooltip": "Label for the help button.",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Text for the header on the first screen of the help dialog when using the single column view.",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Text for the message on the first screen of the help dialog when using the single column view.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Text for the close button on the first screen of the help dialog when using the single column view."
 }

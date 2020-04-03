@@ -42,9 +42,7 @@ class HtmlTalkPageResolutionView {
 		int $otherIndex,
 		int $yourIndex
 	) : string {
-		$out = Html::openElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-view' ]
-		);
+		$out = Html::element( 'div', [ 'class' => 'mw-twocolconflict-talk-header' ] );
 
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
 			$text = $changeSet['copytext'] ?? $changeSet['newtext'];
@@ -61,10 +59,9 @@ class HtmlTalkPageResolutionView {
 			}
 		}
 
-		$out .= Html::closeElement( 'div' );
 		$out .= Html::hidden( 'mw-twocolconflict-single-column-view', true );
 
-		return $out;
+		return Html::rawElement( 'div', [ 'class' => 'mw-twocolconflict-split-view' ], $out );
 	}
 
 	private function startRow( int $rowNum ) : string {
