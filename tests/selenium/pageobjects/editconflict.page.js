@@ -152,8 +152,8 @@ class EditConflictPage extends Page {
 	}
 
 	waitForUiToLoad() {
-		this.infoButton.waitForDisplayed( 60000, false,
-			'Conflict page never displayed' );
+		this.infoButton.waitForDisplayed( { timeout: 60000, reverse: false,
+			timeoutMsg: 'Conflict page never displayed' } );
 	}
 
 	testNoJs() {

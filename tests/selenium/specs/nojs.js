@@ -31,6 +31,6 @@ describe( 'TwoColConflict without JavaScript', function () {
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );

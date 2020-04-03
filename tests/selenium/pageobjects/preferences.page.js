@@ -64,7 +64,7 @@ class PreferencesPage extends Page {
 
 	hasBetaFeatureSetting() {
 		try {
-			this.twoColBetaLabel.waitForDisplayed( 2000 );
+			this.twoColBetaLabel.waitForDisplayed( { timeout: 2000 } );
 			return true;
 		} catch ( e ) {
 			return false;
@@ -73,7 +73,7 @@ class PreferencesPage extends Page {
 
 	hasOptOutUserSetting() {
 		try {
-			this.twoColLabel.waitForDisplayed( 2000 );
+			this.twoColLabel.waitForDisplayed( { timeout: 2000 } );
 			return true;
 		} catch ( e ) {
 			return false;

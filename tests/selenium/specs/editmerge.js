@@ -222,9 +222,9 @@ describe( 'TwoColConflict editable areas', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( 1000 );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 1000 } );
 		EditConflictPage.resetConfirmationButton.click();
-		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( { timeout: 1000, reverse: true } );
 
 		assert.strictEqual(
 			EditConflictPage.getDiffText( 'other' ).getHTML(),
@@ -248,7 +248,7 @@ describe( 'TwoColConflict editable areas', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( { timeout: 1000, reverse: true } );
 		assert(
 			!EditConflictPage.resetConfirmationButton.isDisplayed(),
 			'there is no confirmation box for the reset visible'
@@ -283,6 +283,6 @@ describe( 'TwoColConflict editable areas', function () {
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );

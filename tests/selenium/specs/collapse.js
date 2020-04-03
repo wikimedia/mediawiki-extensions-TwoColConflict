@@ -100,9 +100,9 @@ describe( 'TwoColConflict collapse button', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		EditConflictPage.getResetButton( 'unchanged' ).click();
 
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( 1000 );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 1000 } );
 		EditConflictPage.resetConfirmationButton.click();
-		EditConflictPage.resetConfirmationButton.waitForDisplayed( 1000, true );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( { timeout: 1000, reverse: true } );
 
 		assert(
 			!EditConflictPage.fadeOverlay.isDisplayed(),
@@ -127,6 +127,6 @@ describe( 'TwoColConflict collapse button', function () {
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );

@@ -222,6 +222,6 @@ describe( 'TwoColConflict save and preview', function () {
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );
