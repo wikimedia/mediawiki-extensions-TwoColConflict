@@ -152,7 +152,7 @@ class TwoColConflictHooks {
 			// https://meta.wikimedia.org/w/index.php?title=Schema:TwoColConflictConflict&oldid=19872073
 			\EventLogging::logEvent(
 				'TwoColConflictConflict',
-				19872073,
+				19950885,
 				[
 					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown(
 						$user,
