@@ -53,5 +53,6 @@
 	"twocolconflict-split-expand-tooltip": "Visa oförändrad text",
 	"twocolconflict-split-selected-version-tooltip": "Vald alternativ",
 	"twocolconflict-split-unselected-version-tooltip": "Klicka för att välja denna version",
-	"twocolconflict-split-help-tooltip": "Visa hjälp"
+	"twocolconflict-split-help-tooltip": "Visa hjälp",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Lös ärende"
 }

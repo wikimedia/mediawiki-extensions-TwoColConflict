@@ -13,6 +13,7 @@
 	"twocolconflict-desc": "Pokazuje pola tekstowe obok siebie podczas konfliktu zapisu edycji, aby ułatwić jego rozwiązanie",
 	"twocolconflict-beta-feature-message": "Dwukolumnowe wyświetlanie konfliktu edycji",
 	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.",
+	"twocolconflict-preference-enabled": "Włącz [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|dwukolumnowe wyświetlanie konfliktu edycji]] aby rozwiązywać konflikty.",
 	"twocolconflict-test-needsbeta": "Musisz włączyć funkcję eksperymentalną „Dwukolumnowe wyświetlanie konfliktu edycji” w swoich preferencjach, aby móc użyć tej strony specjalnej.",
 	"twocolconflict-test-page-title": "Konflikt edycji: Symulacja",
 	"twocolconflict-test-title-label": "Wprowadź tytuł niezabezpieczonej strony, na które zasymulować konflikt edycji:",
@@ -24,7 +25,7 @@
 	"twocolconflict-test-edit-hint": "Wprowadź kilka zmian poniżej. Nie zostaną opublikowane. Będą używane tylko do symulacji przykładowego konfliktu edycji.",
 	"twocolconflict-test-conflict-hint": "To jest konflikt testowy. Zmiany nie zostaną opublikowane, ale można je przejrzeć.",
 	"twocolconflict-test-preview-submit": "Symuluj publikowanie zmian",
-	"twocolconflict-test-preview-hint": "Dziękujemy za wypróbowanie interfejsu Dwukolumnowe Rozwiązywanie Konfliktów Edycji! Pomóż nam go ulepszyć poprzez dostarczenie nam swojej opinii [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page tutaj].\n\nPoniżej są wyniki testu rozwiązywania konfliktu edycji.",
+	"twocolconflict-test-preview-hint": "Dziękujemy za wypróbowanie interfejsu dwukolumnowego rozwiązywania konfliktów edycji! Pomóż nam go ulepszyć poprzez dostarczenie nam swojej opinii [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page tutaj].\n\nPoniżej są wyniki testu rozwiązywania konfliktu edycji.",
 	"twocolconflict-test-summary-text": "Opis zmian edycji konfliktowej",
 	"twocolconflict-split-header-hint-beta": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-your-version-header": "Twoja wersja",
@@ -54,5 +55,6 @@
 	"twocolconflict-split-expand-tooltip": "Rozwiń niezmieniony tekst",
 	"twocolconflict-split-selected-version-tooltip": "Wybrana wersja",
 	"twocolconflict-split-unselected-version-tooltip": "Kliknij, aby wybrać tę wersję",
-	"twocolconflict-split-help-tooltip": "Pokaż pomoc"
+	"twocolconflict-split-help-tooltip": "Pokaż pomoc",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Rozwiąż problem"
 }

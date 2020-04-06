@@ -57,5 +57,6 @@
 	"twocolconflict-split-expand-tooltip": "أظهر ما لم يتغير",
 	"twocolconflict-split-selected-version-tooltip": "النسخة المحددة",
 	"twocolconflict-split-unselected-version-tooltip": "انقر لتحديد هذه النسخة",
-	"twocolconflict-split-help-tooltip": "أظهر المساعدة"
+	"twocolconflict-split-help-tooltip": "أظهر المساعدة",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "المنشورات المتعارضة"
 }

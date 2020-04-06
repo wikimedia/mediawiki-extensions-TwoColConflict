@@ -61,5 +61,6 @@
 	"twocolconflict-split-expand-tooltip": "Déplier le texte non modifié",
 	"twocolconflict-split-selected-version-tooltip": "Version sélectionnée",
 	"twocolconflict-split-unselected-version-tooltip": "Cliquer pour sélectionner cette version",
-	"twocolconflict-split-help-tooltip": "Afficher l’aide"
+	"twocolconflict-split-help-tooltip": "Afficher l’aide",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Résoudre le problème"
 }

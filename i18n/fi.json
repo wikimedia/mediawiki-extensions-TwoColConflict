@@ -7,7 +7,8 @@
 			"4shadoww",
 			"Surjection",
 			"Valtlait",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Moj"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -17,5 +18,6 @@
 	"twocolconflict-test-page-title": "Muokkausristiriita: Simulaatio",
 	"twocolconflict-test-title-submit": "Näytä muokkaussivu",
 	"twocolconflict-test-text-submit": "Luo muokkausristiriita",
-	"twocolconflict-test-username": "Muokkauristiriidan kokeilu"
+	"twocolconflict-test-username": "Muokkauristiriidan kokeilu",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Ratkaise ongelma"
 }

@@ -53,5 +53,8 @@
 	"twocolconflict-split-expand-tooltip": "Расклопи непроменет текст",
 	"twocolconflict-split-selected-version-tooltip": "Избрана верзија",
 	"twocolconflict-split-unselected-version-tooltip": "Стиснете за да изберете верзија",
-	"twocolconflict-split-help-tooltip": "Дај помош"
+	"twocolconflict-split-help-tooltip": "Дај помош",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Спротиставени објави",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "За жал, некој напишал објава истовремено со вас. Прегледате ги коментарите на следната страница. Ако е потребно, можете да ги уредите вашите и да го смените конечниот редослед.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Реши проблем"
 }

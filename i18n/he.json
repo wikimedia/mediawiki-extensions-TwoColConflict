@@ -53,5 +53,8 @@
 	"twocolconflict-split-expand-tooltip": "הצגת טקסט שלא שוּנה",
 	"twocolconflict-split-selected-version-tooltip": "הגרסה שנבחרה",
 	"twocolconflict-split-unselected-version-tooltip": "יש ללחוץ כאן כדי לבחור את הגרסה הזאת",
-	"twocolconflict-split-help-tooltip": "הצגת עזרה"
+	"twocolconflict-split-help-tooltip": "הצגת עזרה",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "רשומות מתנגשות",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "למרבה הצער, מישהו אחר כתב באותו זמן כמוך. נא לסקור את ההערות בדף הבא. אם זה נחוץ, אפשר לערוך את שלך ולשנות את הסדר הסופי.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "פתרון הבעיה"
 }
