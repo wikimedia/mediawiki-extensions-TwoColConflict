@@ -336,7 +336,7 @@ function initSubmit() {
 }
 
 $( function () {
-	var initTracking = UtilModule.Tracking,
+	var initTracking = UtilModule.Tracking.initTrackingListeners,
 		initTour = require( 'ext.TwoColConflict.Split.Tour' );
 
 	// disable all javascript from this feature when testing the nojs implementation
