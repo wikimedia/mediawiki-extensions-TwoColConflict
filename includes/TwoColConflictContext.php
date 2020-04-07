@@ -8,8 +8,6 @@ use Title;
 use User;
 
 /**
- * TwoColConflict Module
- *
  * @license GPL-2.0-or-later
  */
 class TwoColConflictContext {
