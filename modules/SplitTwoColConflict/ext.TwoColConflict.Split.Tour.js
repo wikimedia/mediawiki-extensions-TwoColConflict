@@ -178,17 +178,17 @@
 		},
 
 		/**
-		 * @param {string[]} css classes for the help button
+		 * @param {string[]} buttonClasses classes for the help button
 		 * @return {OO.ui.ButtonWidget}
 		 */
-		getHelpButton: function ( css ) {
+		getHelpButton: function ( buttonClasses ) {
 			var self = this;
 
 			var helpButton = new OO.ui.ButtonWidget( {
 				icon: 'info',
 				framed: false,
 				title: mw.msg( 'twocolconflict-split-help-tooltip' ),
-				classes: css
+				classes: buttonClasses
 			} );
 
 			helpButton.on( 'click', function () {
