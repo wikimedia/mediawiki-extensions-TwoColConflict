@@ -29,7 +29,16 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		] );
 	}
 
-	public function testOnAlternateEdit() {
+	public function testOnAlternateEdit_withFeatureDisabled() {
+		$editPage = $this->createMock( EditPage::class );
+		$editPage->method( 'getContext' )->willReturn( $this->createContext( false ) );
+		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
+		$editPage->expects( $this->never() )->method( 'setEditConflictHelperFactory' );
+
+		TwoColConflictHooks::onAlternateEdit( $editPage );
+	}
+
+	public function testOnAlternateEdit_withInvalidRequest() {
 		$request = $this->createMock( WebRequest::class );
 		$request->method( 'getArray' )->with( 'mw-twocolconflict-split-content' )->willReturn( [] );
 		$request->method( 'getInt' )->with( 'parentRevId' )->willReturn( 1 );
@@ -72,7 +81,14 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		);
 	}
 
-	public function testOnGetBetaFeaturePreferences() {
+	public function testOnGetBetaFeaturePreferences_whileInBeta() {
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
+		$prefs = [];
+		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
+		$this->assertArrayHasKey( 'twocolconflict', $prefs );
+	}
+
+	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
 		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayNotHasKey( 'twocolconflict', $prefs );
@@ -209,11 +225,16 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	}
 
 	/**
+	 * @param bool $enabled
+	 *
 	 * @return IContextSource|MockObject
 	 */
-	private function createContext() {
+	private function createContext( bool $enabled = true ) {
+		$user = $this->getTestUser()->getUser();
+		$user->setOption( 'twocolconflict-enabled', $enabled );
+
 		$context = $this->createMock( IContextSource::class );
-		$context->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
+		$context->method( 'getUser' )->willReturn( $user );
 		return $context;
 	}
 
