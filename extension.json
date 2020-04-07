@@ -155,7 +155,8 @@
 		"localBasePath": "tests/qunit",
 		"remoteExtPath": "TwoColConflict/tests/qunit",
 		"scripts": [
-			"SplitTwoColConflict/TwoColConflict.Merger.test.js"
+			"SplitTwoColConflict/TwoColConflict.Merger.test.js",
+			"SplitTwoColConflict/TwoColConflict.Split.tracking.test.js"
 		],
 		"dependencies": [
 			"ext.TwoColConflict.Util"
