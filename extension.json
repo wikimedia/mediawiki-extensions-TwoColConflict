@@ -57,14 +57,13 @@
 		},
 		"ext.TwoColConflict.SplitJs": {
 			"packageFiles": [
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
 			],
 			"dependencies": [
 				"mediawiki.api",
 				"oojs-ui",
-				"ext.TwoColConflict.Split.Merger",
-				"ext.TwoColConflict.Split.Tour"
+				"ext.TwoColConflict.Split.Tour",
+				"ext.TwoColConflict.Util"
 			],
 			"messages": [
 				"preview",
@@ -140,9 +139,11 @@
 				"twocolconflict-split-tour-dialog-btn-text-single-column-view"
 			]
 		},
-		"ext.TwoColConflict.Split.Merger": {
+		"ext.TwoColConflict.Util": {
 			"packageFiles": [
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js"
+				"modules/ext.TwoColConflict.Util.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js"
 			]
 		},
 		"ext.TwoColConflict.JSCheck": {
@@ -158,7 +159,7 @@
 			"SplitTwoColConflict/TwoColConflict.Merger.test.js"
 		],
 		"dependencies": [
-			"ext.TwoColConflict.Split.Merger"
+			"ext.TwoColConflict.Util"
 		]
 	},
 	"attributes": {
