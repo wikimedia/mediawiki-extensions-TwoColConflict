@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alacabe",
 			"Derugon",
+			"Eneelk",
 			"Gomoko",
-			"Wladek92",
+			"McDutchie",
 			"Oupsa",
 			"The RedBurn",
-			"McDutchie",
-			"Zarisi",
-			"Alacabe",
 			"Thibaut120094",
-			"Eneelk"
+			"Wladek92",
+			"Zarisi"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -62,5 +62,7 @@
 	"twocolconflict-split-selected-version-tooltip": "Version sélectionnée",
 	"twocolconflict-split-unselected-version-tooltip": "Cliquer pour sélectionner cette version",
 	"twocolconflict-split-help-tooltip": "Afficher l’aide",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Publications en conflit",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Malheureusement, quelqu’un d’autre a publié en même temps que vous. Veuillez vérifier les commentaires sur la page suivante. Si nécessaire, vous pouvez modifier les vôtres et modifier l’ordre final.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Résoudre le problème"
 }

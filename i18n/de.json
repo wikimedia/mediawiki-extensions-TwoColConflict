@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64",
-			"ThePiscin",
-			"McDutchie",
 			"Johanna Strodt (WMDE)",
-			"TMg"
+			"McDutchie",
+			"Metalhead64",
+			"TMg",
+			"ThePiscin"
 		]
 	},
 	"twocolconflict": "TwoColConflict",

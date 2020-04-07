@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Selven",
 			"Fringio",
-			"Ontsed",
 			"Martinligabue",
+			"Ontsed",
+			"Selven",
 			"Senpremì"
 		]
 	},
@@ -44,5 +44,6 @@
 	"twocolconflict-split-reset-warning-cancel": "Annulla",
 	"twocolconflict-split-reset-warning-accept": "Cancella",
 	"twocolconflict-split-collapse-tooltip": "Comprimi testo non modificato",
-	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato"
+	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Risolvi anomalia"
 }
