@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\SpecialConflictTestPage;
 
 /**
  * @license GPL-2.0-or-later

@@ -9,7 +9,6 @@ use SpecialPage;
 use Title;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
-use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictTestHelper;
 use TwoColConflict\TwoColConflictContext;
 
 /**
