@@ -204,20 +204,76 @@
 		}
 	} );
 
+	function isSingleColumnView() {
+		return $( 'input[name="mw-twocolconflict-single-column-view"]' ).val() === '1';
+	}
+
 	/**
 	 * Initializes the tour
-	 *
-	 * @param {string} header for the initial dialog window
-	 * @param {string} image class for the initial dialog window
-	 * @param {string} imageHeight css value for image
-	 * @param {string} message for the initial dialog window
-	 * @param {string} close button text for the dialog window
-	 * @param {OO.ui.WindowManager} windowManager
-	 * @return {Tour}
 	 */
-	Tour.init = function ( header, image, imageHeight, message, close, windowManager ) {
-		return new Tour( header, image, imageHeight, message, close, windowManager );
-	};
+	function initialize() {
+		var $body = $( 'body' ),
+			hideDialogSetting,
+			Settings = require( '../ext.TwoColConflict.Settings.js' ),
+			settings = new Settings(),
+			tour,
+			windowManager = new OO.ui.WindowManager();
 
-	module.exports = Tour;
+		if ( isSingleColumnView() ) {
+			hideDialogSetting = 'hide-help-dialogue-single-column-view';
+
+			tour = new Tour(
+				mw.msg( 'twocolconflict-split-tour-dialog-header-single-column-view' ),
+				'mw-twocolconflict-split-tour-slide-single-column-view-1',
+				'240px',
+				mw.msg( 'twocolconflict-split-tour-dialog-message-single-column-view' ),
+				mw.msg( 'twocolconflict-split-tour-dialog-btn-text-single-column-view' ),
+				windowManager
+			);
+
+			$( '.firstHeading' ).append(
+				tour.getHelpButton( [ 'mw-twocolconflict-split-tour-help-button-single-column-view' ] )
+			);
+		} else {
+			hideDialogSetting = 'hide-help-dialogue';
+
+			tour = new Tour(
+				mw.msg( 'twocolconflict-split-tour-dialog-header' ),
+				'mw-twocolconflict-split-tour-slide-dual-column-view-1',
+				'180px',
+				mw.msg( 'twocolconflict-split-tour-dialog-message' ),
+				mw.msg( 'twocolconflict-split-tour-dialog-btn-text' ),
+				windowManager
+			);
+
+			tour.addTourPopup(
+				mw.msg( 'twocolconflict-split-tour-popup1-header' ),
+				mw.msg( 'twocolconflict-split-tour-popup1-message' ),
+				$body.find( '.mw-twocolconflict-split-your-version-header' )
+			);
+
+			tour.addTourPopup(
+				mw.msg( 'twocolconflict-split-tour-popup2-header' ),
+				mw.msg( 'twocolconflict-split-tour-popup2-message' ),
+				$body.find( '.mw-twocolconflict-split-selection' ).first()
+			);
+
+			tour.addTourPopup(
+				mw.msg( 'twocolconflict-split-tour-popup3-header' ),
+				mw.msg( 'twocolconflict-split-tour-popup3-message' ),
+				$body.find( '.mw-twocolconflict-diffchange' ).first()
+			);
+
+			$( '.mw-twocolconflict-split-flex-header' ).append(
+				tour.getHelpButton( [ 'mw-twocolconflict-split-tour-help-button' ] )
+			);
+		}
+
+		if ( !settings.loadBoolean( hideDialogSetting, false ) ) {
+			tour.showTour();
+			settings.saveBoolean( hideDialogSetting, true );
+		}
+	}
+
+	module.exports = initialize;
 }() );
