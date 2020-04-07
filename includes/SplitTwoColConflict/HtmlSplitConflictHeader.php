@@ -122,7 +122,13 @@ class HtmlSplitConflictHeader {
 
 		if ( $this->revision ) {
 			$dateTime = $this->getFormattedDateTime( $this->revision->getTimestamp() );
-			$userTools = Linker::revUserTools( new \Revision( $this->revision ) );
+
+			if ( version_compare( MW_VERSION, '1.35', '<' ) ) {
+				$userTools = Linker::revUserTools( new \Revision( $this->revision ) );
+			} else {
+				// MW 1.35+
+				$userTools = Linker::revUserTools( $this->revision );
+			}
 
 			$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );
 			if ( $comment ) {
