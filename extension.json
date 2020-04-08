@@ -88,8 +88,8 @@
 			"images": {
 				"dual-column-view-1": {
 					"file": {
-						"ltr": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-ltr.png",
-						"rtl": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-rtl.png"
+						"ltr": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-rtl.svg"
 					}
 				},
 				"single-column-view-1": {
