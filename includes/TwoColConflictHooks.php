@@ -165,8 +165,8 @@ class TwoColConflictHooks {
 					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
 					'conflictChunks' => $conflictChunks,
 					'conflictChars' => $conflictChars,
-					'startTime' => $editPage->starttime,
-					'editTime' => $editPage->edittime,
+					'startTime' => $editPage->starttime ?: '',
+					'editTime' => $editPage->edittime ?: '',
 					'pageTitle' => $editPage->getTitle()->getText(),
 					'hasJavascript' => $request->getBool( 'mw-twocolconflict-js' )
 						|| $request->getBool( 'veswitched' ),
