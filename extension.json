@@ -22,6 +22,11 @@
 			"public": true,
 			"value": true
 		},
+		"TwoColConflictTrackingOversample": {
+			"description": "100% sampling for EditStepAttempt events whenever a user is in the conflict workflow.  FIXME: This should be disabled everywhere unless we're explicitly collecting data and planning to analyze the results.",
+			"public": true,
+			"value": false
+		},
 		"TwoColConflictSuggestResolution": {
 			"description": "Suggest an easy resolution for edit conflicts on talk pages when two users replied at the same time.",
 			"public": true,
