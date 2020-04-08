@@ -50,6 +50,6 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );

@@ -46,11 +46,11 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 
 		it( 'clicking the close button dismisses the dialog and adds pulsating buttons', function () {
-			EditConflictPage.tourDialogCloseButton.waitForDisplayed( 1000 );
+			EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 1000 } );
 			EditConflictPage.tourDialogCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDialogCloseButton.waitForDisplayed( 2000, true ),
+				EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 2000, reverse: true } ),
 				'Dialog has disappeared'
 			);
 
@@ -71,7 +71,7 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 
 		it( 'clicking on a pulsating button opens a popup', function () {
-			EditConflictPage.tourDiffChangeButton.waitForDisplayed( 1000 );
+			EditConflictPage.tourDiffChangeButton.waitForDisplayed( { timeout: 1000 } );
 			EditConflictPage.tourDiffChangeButton.click();
 
 			assert(
@@ -86,17 +86,17 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 
 		it( 'clicking on a popup\'s close button closes the popup', function () {
-			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed( 1000 );
+			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed( { timeout: 1000 } );
 			EditConflictPage.tourDiffChangePopupCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed( 500, true ),
+				EditConflictPage.tourDiffChangePopup.waitForDisplayed( { timeout: 500, reverse: true } ),
 				'Diff change popup has disappeared'
 			);
 		} );
 	} );
 
 	after( function () {
-		browser.deleteAllCookies();
+		browser.deleteCookies();
 	} );
 } );
