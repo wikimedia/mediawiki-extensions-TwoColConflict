@@ -1,5 +1,7 @@
 'use strict';
 
+var UtilModule = require( 'ext.TwoColConflict.Util' );
+
 /**
  * @param {jQuery} $column
  * @return {OO.ui.Element}
@@ -265,7 +267,7 @@ function validateForm() {
 
 function initPreview() {
 	var api = new mw.Api(),
-		merger = require( 'ext.TwoColConflict.Split.Merger' ),
+		merger = UtilModule.Merger,
 		$previewBtn = $( '#wpPreviewWidget' );
 	if ( api && $previewBtn.length ) {
 		OO.ui.infuse( $previewBtn )
@@ -320,7 +322,7 @@ function initSubmit() {
 }
 
 $( function () {
-	var initTracking = require( './ext.TwoColConflict.Split.tracking.js' ),
+	var initTracking = UtilModule.Tracking,
 		initTour = require( 'ext.TwoColConflict.Split.Tour' );
 
 	// disable all javascript from this feature when testing the nojs implementation
