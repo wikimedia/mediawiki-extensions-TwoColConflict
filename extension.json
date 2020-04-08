@@ -69,7 +69,6 @@
 			"messages": [
 				"preview",
 				"twocolconflict-split-choose-version",
-				"twocolconflict-split-disabled-edit-tooltip",
 				"twocolconflict-split-edit-tooltip",
 				"twocolconflict-split-other-version-chosen",
 				"twocolconflict-split-selected-version-tooltip",
