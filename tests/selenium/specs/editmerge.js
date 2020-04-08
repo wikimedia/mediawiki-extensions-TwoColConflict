@@ -42,6 +42,53 @@ describe( 'TwoColConflict editable areas', function () {
 		);
 	} );
 
+	it( 'will not begin editing if the columns are clicked as long as nothing is selected', function () {
+		EditConflictPage.getColumn( 'other' ).click();
+		EditConflictPage.getColumn( 'your' ).click();
+		EditConflictPage.getColumn( 'unchanged' ).click();
+
+		assert(
+			EditConflictPage.copyRowEditMode.waitForDisplayed( { reverse: true } ),
+			'the copy row is not in edit mode'
+		);
+		assert(
+			EditConflictPage.changeRowEditMode.waitForDisplayed( { reverse: true } ),
+			'the change row is not in edit mode'
+		);
+	} );
+
+	it( 'will not begin editing if the column that is selected is not the column that is clicked', function () {
+		EditConflictPage.otherParagraphSelection.click();
+		EditConflictPage.getColumn( 'your' ).click();
+
+		assert(
+			EditConflictPage.getEditor( 'other' ).waitForDisplayed( { reverse: true } ),
+			'the selected other text box stays as it is'
+		);
+		assert(
+			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+			'the unselected unchanged text box stays as it is'
+		);
+	} );
+
+	it( 'will begin editing if the column that is selected is clicked', function () {
+		EditConflictPage.otherParagraphSelection.click();
+		EditConflictPage.getColumn( 'other' ).click();
+
+		assert(
+			EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
+			'the selected other text box becomes a wikitext editor'
+		);
+		assert(
+			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
+			'the unselected your text box stays as it is'
+		);
+		assert(
+			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+			'the unselected unchanged text box stays as it is'
+		);
+	} );
+
 	it( 'allows editing of conflict paragraphs by clicking the activated edit button', function () {
 		EditConflictPage.otherParagraphSelection.click();
 

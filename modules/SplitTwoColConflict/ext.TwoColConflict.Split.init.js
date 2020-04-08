@@ -170,6 +170,22 @@ function initButtonEvents() {
 	} );
 }
 
+function initColumnClickEvent() {
+	$( '.mw-twocolconflict-split-column' ).each( function () {
+		var $column = $( this ),
+			$row = $column.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
+
+		$column.on( 'click', function () {
+			if (
+				$column.is( '.mw-twocolconflict-split-selected' ) &&
+				!$row.is( '.mw-twocolconflict-split-editing' )
+			) {
+				enableEditing( $row );
+			}
+		} );
+	} );
+}
+
 function handleSelectColumn() {
 	var $group = $( this ).closest( '.mw-twocolconflict-split-selection' ),
 		$checked = $group.find( 'input:checked' ),
@@ -332,6 +348,7 @@ $( function () {
 		return;
 	}
 	initColumnSelection();
+	initColumnClickEvent();
 	initButtonEvents();
 	initPreview();
 	initSubmit();

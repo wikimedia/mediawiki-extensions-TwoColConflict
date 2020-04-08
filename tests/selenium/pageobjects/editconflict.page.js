@@ -15,6 +15,7 @@ class EditConflictPage extends Page {
 	getResetButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
 	getEditor( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
 	getDiffText( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
+	getColumn( column ) { return $( this.columnToClass( column ) ); }
 
 	get selectionLabel() { return $( '.mw-twocolconflict-split-selector-label span' ); }
 	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) span' ); }
@@ -49,6 +50,9 @@ class EditConflictPage extends Page {
 	get previewText() { return $( '#wikiPreview .mw-parser-output' ); }
 
 	get wpTextbox2() { return $( '#wpTextbox2' ); }
+
+	get copyRowEditMode() { return $( '.mw-twocolconflict-split-editing[data-line-number="0"]' ); }
+	get changeRowEditMode() { return $( '.mw-twocolconflict-split-editing[data-line-number="1"]' ); }
 
 	columnToClass( column ) {
 		switch ( column ) {
