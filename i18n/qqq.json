@@ -50,7 +50,6 @@
 	"twocolconflict-split-tour-popup3-header": "Text for the header of the popup explaining \"Choose a base version\".",
 	"twocolconflict-split-tour-popup3-message": "Text for the message of the popup explaining \"Choose a base version\".",
 	"twocolconflict-split-edit-tooltip": "Label for the edit button shown on diff paragraphs.",
-	"twocolconflict-split-disabled-edit-tooltip": "Label for the popup shown when a user hovers over a disabled edit button.",
 	"twocolconflict-split-save-tooltip": "Label for the save button shown on diff paragraphs to save changes in that paragraph.",
 	"twocolconflict-split-reset-tooltip": "Label for the reset button shown on diff paragraphs.",
 	"twocolconflict-split-reset-warning": "Message for the warning shown to the user when the reset button was pressed. This message confirms whether or not the user wants to discard their changes.",

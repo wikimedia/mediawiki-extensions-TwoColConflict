@@ -17,8 +17,7 @@ function getColumnEditButton( $column ) {
  */
 function disableColumn( $column ) {
 	getColumnEditButton( $column )
-		.setDisabled( true )
-		.setTitle( mw.msg( 'twocolconflict-split-disabled-edit-tooltip' ) );
+		.toggle( false );
 	$column
 		.removeClass( 'mw-twocolconflict-split-selected' )
 		.addClass( 'mw-twocolconflict-split-unselected' );
@@ -29,8 +28,7 @@ function disableColumn( $column ) {
  */
 function enableColumn( $column ) {
 	getColumnEditButton( $column )
-		.setDisabled( false )
-		.setTitle( mw.msg( 'twocolconflict-split-edit-tooltip' ) );
+		.toggle( true );
 	$column
 		.addClass( 'mw-twocolconflict-split-selected' )
 		.removeClass( 'mw-twocolconflict-split-unselected' );

@@ -11,9 +11,9 @@ describe( 'TwoColConflict editable areas', function () {
 
 		assert(
 			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-widget-disabled' ) !== -1 &&
+				.indexOf( 'oo-ui-element-hidden' ) !== -1 &&
 			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-widget-disabled' ) !== -1,
+				.indexOf( 'oo-ui-element-hidden' ) !== -1,
 			'neither side is activated'
 		);
 
@@ -22,22 +22,22 @@ describe( 'TwoColConflict editable areas', function () {
 		assert( !EditConflictPage.diffButton.isDisplayed(), 'no diff button' );
 	} );
 
-	it( 'has edit buttons that toggle availability depending on side selection', function () {
+	it( 'has edit buttons that toggle visibility depending on the side selection', function () {
 		EditConflictPage.yourParagraphSelection.click();
 
 		assert(
 			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-widget-disabled' ) === -1,
+				.indexOf( 'oo-ui-element-hidden' ) === -1,
 			'I see an activated edit icon on the selected "yours" paragraph'
 		);
 		assert(
 			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-widget-disabled' ) !== -1,
-			'I see a deactivated edit icon on the selected "mine" paragraph'
+				.indexOf( 'oo-ui-element-hidden' ) !== -1,
+			'I don\'t see an edit icon on the selected "mine" paragraph'
 		);
 		assert(
 			EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-widget-disabled' ) === -1,
+				.indexOf( 'oo-ui-element-hidden' ) === -1,
 			'I see an activated edit icon on the unchanged paragraph'
 		);
 	} );
@@ -60,8 +60,8 @@ describe( 'TwoColConflict editable areas', function () {
 			'the edit icon disappears in the selected text box'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'your' ).isDisplayed(),
-			'the edit icon in the unselected text box stays as it is'
+			!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
+			'the edit icon in the unselected text box stays hidden'
 		);
 		assert(
 			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
@@ -90,12 +90,12 @@ describe( 'TwoColConflict editable areas', function () {
 			'the unselected text box stays as it is'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'other' ).isDisplayed(),
-			'the edit icon in the selected text box stays as it is'
+			!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
+			'the edit icon in the selected text box stays hidden'
 		);
 		assert(
-			EditConflictPage.getEditButton( 'your' ).isDisplayed(),
-			'the edit icon in the unselected text box stays as it is'
+			!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
+			'the edit icon in the unselected text box stays hidden'
 		);
 		assert(
 			EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
