@@ -44,7 +44,6 @@
 	"twocolconflict-split-tour-popup3-header": "Vurgulanan metin",
 	"twocolconflict-split-tour-popup3-message": "Satırın her iki sürümünde de değiştirilen metin vurgulanır. Metni düzenledikten sonra vurgulama kaybolacaktır.",
 	"twocolconflict-split-edit-tooltip": "Bu metni düzenlemek için tıklayın",
-	"twocolconflict-split-disabled-edit-tooltip": "Bu sürümü düzenlemeden önce, ortadaki ilgili düğmeyi tıklayarak sürümü seçin.",
 	"twocolconflict-split-save-tooltip": "Değişikliklerinizi bu metne uygulayın",
 	"twocolconflict-split-reset-tooltip": "Bu metindeki tüm değişikliklerinizi atın",
 	"twocolconflict-split-reset-warning": "Değişiklikleri gözardı edilsin mi? Bu kutudaki metin, düzenleme çakışması oluştuğu zamanki haline sıfırlanacaktır.",

@@ -41,7 +41,6 @@
 	"twocolconflict-split-tour-popup3-header": "متن برجسته",
 	"twocolconflict-split-tour-popup3-message": "متنی که در هرکدام از نسخه‌های سطر تغییر کرده‌باشد، علامت‌گذاری شده‌است. بعد از اینکه متن را ویرایش کنید، علامت‌گذاری‌ها پاک می‌شوند.",
 	"twocolconflict-split-edit-tooltip": "ویرایش متن",
-	"twocolconflict-split-disabled-edit-tooltip": "قبل از اینکه بتوانید این نسخه را ویرایش کنید، آن را با کلیک روی دکمه مربوطه در وسط انتخاب کنید.",
 	"twocolconflict-split-save-tooltip": "ذخیره تغییرات و ترک حالت ویرایش.",
 	"twocolconflict-split-reset-tooltip": "بازنشانی متن",
 	"twocolconflict-split-reset-warning": "تغییرات دور ریخته شوند؟ متن شما به چیزی که زمانی که تعارض ویرایش رخ می‌دهد، صفر خواهد شد.",

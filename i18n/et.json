@@ -23,7 +23,6 @@
 	"twocolconflict-split-tour-popup3-header": "Esiletõstetud tekst",
 	"twocolconflict-split-tour-popup3-message": "Emmas-kummas versioonis muudetud tekst on esile tõstetud. Pärast redigeerimist kaob esiletõst.",
 	"twocolconflict-split-edit-tooltip": "Klõpsa, et seda teksti redigeerida",
-	"twocolconflict-split-disabled-edit-tooltip": "Enne kui saad seda versiooni redigeerida, klõpsa selle valimiseks keskel vastavat nuppu.",
 	"twocolconflict-split-save-tooltip": "Rakenda selles tekstis enda muudatused",
 	"twocolconflict-split-reset-tooltip": "Hülga kõik enda muudatused selles tekstis",
 	"twocolconflict-split-reset-warning": "Kas hülgad muudatused? Tekst selles kastis lähtestatakse kujule, mis esines redigeerimiskonflikti sattumise hetkel.",

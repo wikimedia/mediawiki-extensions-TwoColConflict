@@ -45,7 +45,6 @@
 	"twocolconflict-split-tour-popup3-header": "Označeni tekst",
 	"twocolconflict-split-tour-popup3-message": "Tekst koji je mijenjan u obje inačice je označen. Nakon uređivanja teksta isticanje će nestati.",
 	"twocolconflict-split-edit-tooltip": "Pritisnite da biste uredili ovaj tekst",
-	"twocolconflict-split-disabled-edit-tooltip": "Prije nego mognete uređivati ovu inačicu, iznačite je klikom na odgovarajući gumb u sredini.",
 	"twocolconflict-split-save-tooltip": "Primijeni promjene ovoga teksta.",
 	"twocolconflict-split-reset-tooltip": "Otkažite sve Vaše promjene ovoga teksta",
 	"twocolconflict-split-reset-warning": "Zanemariti izmjene? Tekst u ovome okviru bit će vraćen na stanje u kojem je bio kada se dogodio sukob uređivanja.",

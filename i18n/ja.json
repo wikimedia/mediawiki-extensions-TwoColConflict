@@ -42,7 +42,6 @@
 	"twocolconflict-split-tour-popup3-header": "強調表示の文字列",
 	"twocolconflict-split-tour-popup3-message": "各行で変更された文字列は、右欄でも左欄でも強調表示されます。文を編集すると、強調表示は消えて通常の表示に換わります。",
 	"twocolconflict-split-edit-tooltip": "文を編集する",
-	"twocolconflict-split-disabled-edit-tooltip": "文を編集するためには、まず左右の枠の間にある丸印のどちらか1個をクリックして、残すほうの文を選びます。",
 	"twocolconflict-split-save-tooltip": "変更を保存して編集モードを終えます。",
 	"twocolconflict-split-reset-tooltip": "テキストをリセット",
 	"twocolconflict-split-reset-warning": "変更内容を破棄しますか？ あなたの文はリセットされ、編集の競合が発生した時点の状態が表示されます。",

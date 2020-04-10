@@ -50,7 +50,6 @@
 	"twocolconflict-split-tour-popup3-header": "Texto resaltado",
 	"twocolconflict-split-tour-popup3-message": "El texto que haya cambiado en cualquier versión de una línea quedará resaltado. Cuando hayas editado el texto, el resaltado desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Pulsa para editar este texto",
-	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versión, selecciónala haciendo clic en el botón correspondiente en el centro.",
 	"twocolconflict-split-save-tooltip": "Guardar cambios y salir del modo de edición.",
 	"twocolconflict-split-reset-tooltip": "Restablecer texto",
 	"twocolconflict-split-reset-warning": "¿Descartar cambios? Se restablecerá tu texto a como estaba cuando se produjo el conflicto de ediciones.",

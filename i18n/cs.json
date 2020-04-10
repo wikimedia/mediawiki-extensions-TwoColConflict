@@ -38,7 +38,6 @@
 	"twocolconflict-split-tour-popup-btn-text": "Dobře, chápu.",
 	"twocolconflict-split-tour-popup3-header": "Zvýraznit text",
 	"twocolconflict-split-edit-tooltip": "Editovat text",
-	"twocolconflict-split-disabled-edit-tooltip": "Než tuto verzi upravíte, vyberte ji kliknutím na odpovídající tlačítko uprostřed.",
 	"twocolconflict-split-save-tooltip": "Použít vaše změny tohoto textu",
 	"twocolconflict-split-reset-tooltip": "Zahodit všechny vaše změny tohoto textu",
 	"twocolconflict-split-reset-warning": "Zahodit změny? Text se vrátí do okamžiku, kdy se editační konflikt stal.",

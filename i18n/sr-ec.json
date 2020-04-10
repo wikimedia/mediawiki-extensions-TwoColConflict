@@ -45,7 +45,6 @@
 	"twocolconflict-split-tour-popup3-header": "Истакнут текст",
 	"twocolconflict-split-tour-popup3-message": "Истакнут је текст који је промењен у било којој верзији реда. Након што уредите текст, истицање ће нестати.",
 	"twocolconflict-split-edit-tooltip": "Притисните да бисте уредили текст",
-	"twocolconflict-split-disabled-edit-tooltip": "Пре него што уредите ову верзију, изаберите је кликом на одговарајуће дугме у средини.",
 	"twocolconflict-split-save-tooltip": "Примени промене текста",
 	"twocolconflict-split-reset-tooltip": "Одбаци све промене текста",
 	"twocolconflict-split-reset-warning": "Одбацити промене? Текст у овом оквиру ресетоваће се на оно што је био када се десио сукоб измена.",

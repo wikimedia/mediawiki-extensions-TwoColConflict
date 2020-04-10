@@ -43,7 +43,6 @@
 	"twocolconflict-split-tour-popup3-header": "טקסט מודגש",
 	"twocolconflict-split-tour-popup3-message": "הטקסט ששוּנה באחת מהגרסאות מודגש. אחרי עריכת הטקסט ההדגשה תיעלם.",
 	"twocolconflict-split-edit-tooltip": "יש ללחוץ כאן כדי לערוך את הטקסט",
-	"twocolconflict-split-disabled-edit-tooltip": "לפני שיהיה אפשר לערוך את הגרסה הזאת, יש לבחור אותה באמצעות לחיצה על הכפתור המתאים באמצע.",
 	"twocolconflict-split-save-tooltip": "החלת השינויים שלך על הטקסט הזה",
 	"twocolconflict-split-reset-tooltip": "מחיקת כל השינויים שעשית לטקסט הזה",
 	"twocolconflict-split-reset-warning": "לזרוק את השינויים? הטקסט בתיבה הזאת יאופס למה שהוא היה לפני שאירעה התנגשות העריכה.",

@@ -44,7 +44,6 @@
 	"twocolconflict-split-tour-popup3-header": "Texto destacado",
 	"twocolconflict-split-tour-popup3-message": "O texto que foi alterado em qualquer versão de uma linha é realçado. Depois de editar o texto, o realce desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Clicar para editar este texto",
-	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versão, selecione-a clicando no botão correspondente no meio.",
 	"twocolconflict-split-save-tooltip": "Aplicar suas alterações neste texto",
 	"twocolconflict-split-reset-tooltip": "Descartar todas as suas mudanças neste texto",
 	"twocolconflict-split-reset-warning": "Descartar mudanças?  O texto nesta caixa será redefinido para o que era quando ocorreu o conflito de edição.",

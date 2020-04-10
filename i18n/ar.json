@@ -47,7 +47,6 @@
 	"twocolconflict-split-tour-popup3-header": "نص بارز",
 	"twocolconflict-split-tour-popup3-message": "يظهر النص الذي تغير في السطر في النسختين بلون بارز، ويختفي اللون بعد تعديلك النص.",
 	"twocolconflict-split-edit-tooltip": "اضغط لتعديل النص",
-	"twocolconflict-split-disabled-edit-tooltip": "قبل تعديل هذه النسخة، اخترها عن طريق الضغط على الزر المقابل في المنتصف.",
 	"twocolconflict-split-save-tooltip": "أضف تعديلاتك إلى هذا النص",
 	"twocolconflict-split-reset-tooltip": "لا تضف تعديلاتك إلى هذا النص",
 	"twocolconflict-split-reset-warning": "تجاهل التغييرات؟ ستتم إعادة تعيين النص في هذا الصندوق إلى ما كان عليه عندما حدث تعارض التحرير.",

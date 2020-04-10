@@ -45,7 +45,6 @@
 	"twocolconflict-split-tour-popup3-header": "Podświetlony tekst",
 	"twocolconflict-split-tour-popup3-message": "Zmieniony tekst w obydwu wersjach linii jest podświetlany. Po edycji takiego tekstu podświetlenie zniknie.",
 	"twocolconflict-split-edit-tooltip": "Kliknij aby edytować tekst",
-	"twocolconflict-split-disabled-edit-tooltip": "Zanim będziesz mógł edytować tę wersję, zaznacz ją, wybierając odpowiedni przycisk ze środka.",
 	"twocolconflict-split-save-tooltip": "Zastosuj zmiany do tekstu",
 	"twocolconflict-split-reset-tooltip": "Odrzuć zmiany w tym tekście",
 	"twocolconflict-split-reset-warning": "Porzucić zmiany? Tekst z tego pola zostanie przywrócony do stanu z momentu wystąpienia konfliktu edycji.",

@@ -47,7 +47,6 @@
 	"twocolconflict-split-tour-popup3-header": "突顯文字",
 	"twocolconflict-split-tour-popup3-message": "在任一行所修改的文字會以突顯方式顯示。在您編輯完文字之後，突顯出的內容就會消失。",
 	"twocolconflict-split-edit-tooltip": "點擊來編輯此文字",
-	"twocolconflict-split-disabled-edit-tooltip": "在您可編輯此修訂之前，透過點擊在中間的對應按鈕來選擇它。",
 	"twocolconflict-split-save-tooltip": "套用您的修改到此文字",
 	"twocolconflict-split-reset-tooltip": "捨棄您對此文字的所有修改",
 	"twocolconflict-split-reset-warning": "捨棄更改？此方框裡文字將會被重新設定成在編輯衝突發生時的內容。",

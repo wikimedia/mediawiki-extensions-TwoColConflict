@@ -45,7 +45,6 @@
 	"twocolconflict-split-tour-popup3-header": "Виділений текст",
 	"twocolconflict-split-tour-popup3-message": "Текст, який було змінено в будь-якій із версії рядка, буде виділеним. Після редагування такого тексту виділення зникне.",
 	"twocolconflict-split-edit-tooltip": "Клацніть, щоб редагувати цей текст",
-	"twocolconflict-split-disabled-edit-tooltip": "Перш ніж редагувати цю версію, виберіть її кліком на відповідну кнопку у середині.",
 	"twocolconflict-split-save-tooltip": "Застосувати Ваші зміни до цього тексту",
 	"twocolconflict-split-reset-tooltip": "Скинути всі Ваші зміни до цього тексту",
 	"twocolconflict-split-reset-warning": "Відхилити зміни? Текст у цьому блоці буде скинуто до того стану, в якому він був тоді, коли стався конфлікт редагувань.",

@@ -35,7 +35,6 @@
 	"twocolconflict-split-tour-popup3-header": "Επισημασμένο κείμενο",
 	"twocolconflict-split-tour-popup3-message": "Το κείμενο που άλλαξε σε οποιαδήποτε έκδοση μιας γραμμής επισημαίνεται. Αφού επεξεργαστείτε το κείμενο, η επισήμανση θα χαθεί.",
 	"twocolconflict-split-edit-tooltip": "Κάντε κλικ για να επεξεργαστείτε αυτό το κείμενο",
-	"twocolconflict-split-disabled-edit-tooltip": "Προτού επεξεργαστείτε αυτήν την έκδοση, επιλέξτε την κάνοντας κλικ στο αντίστοιχο κουμπί στη μέση.",
 	"twocolconflict-split-save-tooltip": "Εφαρμόστε τις αλλαγές σας σε αυτό το κείμενο",
 	"twocolconflict-split-reset-tooltip": "Καταργήστε όλες τις αλλαγές σας σε αυτό το κείμενο",
 	"twocolconflict-split-reset-warning": "Να απορριφθούν οι αλλαγές; Το κείμενο σε αυτό το πλαίσιο θα επαναφερθεί σε αυτό που ήταν όταν συνέβη η σύγκρουση επεξεργασίας.",

@@ -33,7 +33,6 @@
 	"twocolconflict-split-tour-popup3-header": "Kiemelt szöveg",
 	"twocolconflict-split-tour-popup3-message": "Bármely változat sorában a megváltozott szöveg ki van emelve. Miután szerkeszted a szöveget, a kiemelés eltűnik.",
 	"twocolconflict-split-edit-tooltip": "Szöveg szerkesztése",
-	"twocolconflict-split-disabled-edit-tooltip": "Mielőtt szerkeszthetnéd ezt a változatot, előbb jelöld ki a megfelelő gombbal középen.",
 	"twocolconflict-split-save-tooltip": "Változtatások mentése és a szerkesztési mód elhagyása.",
 	"twocolconflict-split-reset-tooltip": "Szöveg visszaállítása",
 	"twocolconflict-split-reset-warning": "Biztos elveted a változtatásokat? A szöveged a szerkesztési konfliktus előtti állapotra fog visszaállni.",

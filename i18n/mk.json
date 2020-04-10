@@ -43,7 +43,6 @@
 	"twocolconflict-split-tour-popup3-header": "Истакнат текст",
 	"twocolconflict-split-tour-popup3-message": "Кога ќе има изменет текст во една од верзиите, редот ќе се истакне. Откако ќе го уредите, истакнувањето ќе го снема.",
 	"twocolconflict-split-edit-tooltip": "Стиснете за да го уредите текстов",
-	"twocolconflict-split-disabled-edit-tooltip": "Пред да ја уредите овааа верзија, одберете ја стискајќи на соодветното копче во средината.",
 	"twocolconflict-split-save-tooltip": "Примени ги промените во текстов",
 	"twocolconflict-split-reset-tooltip": "Отфрли ги сите промени во текстов",
 	"twocolconflict-split-reset-warning": "Да ги отфрлам промените? Текстот во ова поле ќе биде повратен на содржината пред појавувањето на спротиставеноста.",

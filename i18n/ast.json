@@ -41,7 +41,6 @@
 	"twocolconflict-split-tour-popup3-header": "Testu resaltáu",
 	"twocolconflict-split-tour-popup3-message": "El testu que cambió en cualquier versión d'una llinia ta resaltáu. Después de qu'edites el testu, el resaltáu desapaecerá.",
 	"twocolconflict-split-edit-tooltip": "Pulsia pa editar esti testu",
-	"twocolconflict-split-disabled-edit-tooltip": "Antes de poder editar esta versión, seleiciónala pulsiando nel botón correspondiente nel centru.",
 	"twocolconflict-split-save-tooltip": "Aplicar los cambeos a esti testu",
 	"twocolconflict-split-reset-tooltip": "Descartar tolos cambeos a esti testu",
 	"twocolconflict-split-reset-warning": "¿Descartar los cambeos? El testu d'esti cuadru va reestablecese a como taba cuando asocedió'l conflictu d'ediciones.",

@@ -39,7 +39,6 @@
 	"twocolconflict-split-tour-popup3-header": "Markert tekst",
 	"twocolconflict-split-tour-popup3-message": "Teksten som er forskjellig i hver versjon av ei linje er markert. Etter at du redigerer teksten vil markeringen forsvinne.",
 	"twocolconflict-split-edit-tooltip": "Klikk for å redigere denne teksten",
-	"twocolconflict-split-disabled-edit-tooltip": "Før du kan redigere denne versjonen må du velge den ved å klikke på den relevante knappen i midten.",
 	"twocolconflict-split-save-tooltip": "Bruk endringene dine på denne teksten",
 	"twocolconflict-split-reset-tooltip": "Forkast alle endringene dine i denne teksten",
 	"twocolconflict-split-reset-warning": "Forkaste endringer? Teksten i denne bosen vil bli nullstilt til slik den var da redigeringskonflikten oppsto.",
