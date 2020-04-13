@@ -22,9 +22,9 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 	public function testFormat( string $before, string $after, array $expectedOutput ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format(
-			$this->splitText( $before ),
-			$this->splitText( $after ),
-			$this->splitText( $after )
+			explode( "\n", $before ),
+			explode( "\n", $after ),
+			explode( "\n", $this->preSaveTransform( $after ) )
 		);
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
@@ -43,14 +43,15 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 			],
 			[
 				'before' => 'Just text.',
-				'after' => 'Just text. And more.',
+				'after' => 'Just text. And more.<ref>Example</ref> --~~~~',
 				'result' => [
 					[
 						'action' => 'change',
 						'oldhtml' => 'Just text.',
 						'oldtext' => 'Just text.',
-						'newhtml' => 'Just text<ins class="mw-twocolconflict-diffchange">. And more</ins>.',
-						'newtext' => 'Just text. And more.',
+						'newhtml' => 'Just text. <ins class="mw-twocolconflict-diffchange">' .
+							'And more.&lt;ref&gt;Example&lt;/ref&gt; --[[User signature]]</ins>',
+						'newtext' => 'Just text. And more.<ref>Example</ref> --~~~~',
 					],
 				],
 			],
@@ -75,7 +76,7 @@ TEXT
 				,
 				'after' => <<<TEXT
 Just multi-line text.
-Line number 1.5.
+Line number 1.5.<ref>Example</ref> --~~~~
 Line number 2.
 TEXT
 				,
@@ -88,8 +89,9 @@ TEXT
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
 						'oldtext' => '',
-						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.</ins>',
-						'newtext' => 'Line number 1.5.',
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.' .
+							'&lt;ref&gt;Example&lt;/ref&gt; --[[User signature]]</ins>',
+						'newtext' => 'Line number 1.5.<ref>Example</ref> --~~~~',
 					],
 					[
 						'action' => 'copy',
@@ -376,9 +378,9 @@ TEXT
 	public function testMarkupFormat( string $before, string $after, array $expectedOutput ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format(
-			$this->splitText( $before ),
-			$this->splitText( $after ),
-			$this->splitText( $after )
+			explode( "\n", $before ),
+			explode( "\n", $after ),
+			explode( "\n", $this->preSaveTransform( $after ) )
 		);
 		$this->assertArrayEquals( $expectedOutput, $output );
 	}
@@ -450,12 +452,14 @@ TEXT
 	}
 
 	/**
-	 * @param string $text
+	 * @see \Parser::pstPass2
 	 *
-	 * @return string[]
+	 * @param string $wikitext
+	 *
+	 * @return string
 	 */
-	private function splitText( string $text ) : array {
-		return preg_split( '/\n(?!\n)/', $text );
+	private function preSaveTransform( string $wikitext ) : string {
+		return preg_replace( '/~~~+/', '[[User signature]]', $wikitext );
 	}
 
 }

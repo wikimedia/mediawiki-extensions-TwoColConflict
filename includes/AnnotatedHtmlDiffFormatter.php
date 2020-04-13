@@ -18,7 +18,8 @@ class AnnotatedHtmlDiffFormatter {
 	 * @param string[] $preSaveTransformedLines
 	 *
 	 * @return array[] List of changes, each of which include an HTML representation of the diff,
-	 *     and the original wikitext.
+	 *  and the original wikitext. Note the HTML does not use <br> but relies on `white-space:
+	 *  pre-line` being set!
 	 * TODO: "preSavedTransformedLines" is still warty.
 	 */
 	public function format(
@@ -39,7 +40,7 @@ class AnnotatedHtmlDiffFormatter {
 						'oldhtml' => "\u{00A0}",
 						'oldtext' => '',
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
-							$this->composeLines( $edit->getClosing() ) . '</ins>',
+							$this->composeHtml( $edit->getClosing() ) . '</ins>',
 						'newtext' => implode( "\n",
 							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
 					];
@@ -49,9 +50,8 @@ class AnnotatedHtmlDiffFormatter {
 					$changes[] = [
 						'action' => 'delete',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">' .
-							$this->composeLines( $edit->getOrig() ) . '</del>',
-						'oldtext' => implode( "\n",
-							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
+							$this->composeHtml( $edit->getOrig() ) . '</del>',
+						'oldtext' => implode( "\n", $edit->getOrig() ),
 						'newhtml' => "\u{00A0}",
 						'newtext' => '',
 					];
@@ -63,8 +63,7 @@ class AnnotatedHtmlDiffFormatter {
 						'action' => 'change',
 						'oldhtml' => $this->getOriginalInlineDiff( $wordLevelDiff ),
 						'newhtml' => $this->getClosingInlineDiff( $wordLevelDiff ),
-						'oldtext' => implode( "\n",
-							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
+						'oldtext' => implode( "\n", $edit->getOrig() ),
 						'newtext' => implode( "\n",
 							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
 					];
@@ -74,8 +73,7 @@ class AnnotatedHtmlDiffFormatter {
 					$changes[] = [
 						'action' => 'copy',
 						// Warning, this must be unescaped Wikitext, not escaped HTML!
-						'copytext' => implode( "\n",
-							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
+						'copytext' => implode( "\n", $edit->getOrig() ),
 					];
 					break;
 			}
@@ -101,6 +99,8 @@ class AnnotatedHtmlDiffFormatter {
 	}
 
 	/**
+	 * Trims identical sequences of whitespace from the end of both lines.
+	 *
 	 * @param string &$before
 	 * @param string &$after
 	 */
@@ -122,9 +122,9 @@ class AnnotatedHtmlDiffFormatter {
 	/**
 	 * Composes lines from a WordLevelDiff and marks removed words.
 	 *
-	 * @param WordLevelDiff $diff Diff on word level.
+	 * @param WordLevelDiff $diff
 	 *
-	 * @return string Composed string with marked lines.
+	 * @return string Composed HTML string with inline markup
 	 */
 	private function getOriginalInlineDiff( WordLevelDiff $diff ) : string {
 		$wordAccumulator = $this->getWordAccumulator();
@@ -142,9 +142,9 @@ class AnnotatedHtmlDiffFormatter {
 	/**
 	 * Composes lines from a WordLevelDiff and marks added words.
 	 *
-	 * @param WordLevelDiff $diff Diff on word level.
+	 * @param WordLevelDiff $diff
 	 *
-	 * @return string Composed string with marked lines.
+	 * @return string Composed HTML string with inline markup
 	 */
 	private function getClosingInlineDiff( WordLevelDiff $diff ) : string {
 		$wordAccumulator = $this->getWordAccumulator();
@@ -170,11 +170,11 @@ class AnnotatedHtmlDiffFormatter {
 	}
 
 	/**
-	 * @param string[] $lines Lines that should be composed.
+	 * @param string[] $lines
 	 *
-	 * @return string HTML
+	 * @return string HTML without <br>, relying on `white-space: pre-line` being set
 	 */
-	private function composeLines( array $lines ) : string {
+	private function composeHtml( array $lines ) : string {
 		return htmlspecialchars( implode( "\n", array_map(
 			function ( string $line ) : string {
 				// Replace empty lines with a non-breaking space
