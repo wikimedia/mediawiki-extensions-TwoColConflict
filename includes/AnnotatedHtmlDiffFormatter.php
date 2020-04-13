@@ -73,7 +73,9 @@ class AnnotatedHtmlDiffFormatter {
 				case 'copy':
 					$changes[] = [
 						'action' => 'copy',
-						'copytext' => $this->composeLines( $edit->getOrig() ),
+						// Warning, this must be unescaped Wikitext, not escaped HTML!
+						'copytext' => implode( "\n",
+							array_slice( $oldLines, $oldLine, $edit->norig() ) ),
 					];
 					break;
 			}

@@ -391,7 +391,7 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copytext' => 'Text with [markup] &lt;references /&gt;.',
+						'copytext' => 'Text with [markup] <references />.',
 					],
 				],
 			],
@@ -401,7 +401,7 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+						'copytext' => 'Copied <b>text</b>.',
 					],
 					[
 						'action' => 'delete',
@@ -419,7 +419,7 @@ TEXT
 				'result' => [
 					[
 						'action' => 'copy',
-						'copytext' => 'Copied &lt;b&gt;text&lt;/b&gt;.',
+						'copytext' => 'Copied <b>text</b>.',
 					],
 					[
 						'action' => 'add',
