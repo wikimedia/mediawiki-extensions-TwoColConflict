@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Iñaki LL",
+			"Joseba",
 			"Mikel Ibaiba",
 			"Subi"
 		]
@@ -28,5 +29,6 @@
 	"twocolconflict-split-your-version-header": "Zure bertsioa",
 	"twocolconflict-split-current-version-header": "$1ekin (une honetan erabilgarri) gatazkan den bertsioa",
 	"twocolconflict-split-not-saved-at": "$1, $2 gorde gabe",
-	"twocolconflict-split-choose-version": "Aukeratu mesedez bertsio bat"
+	"twocolconflict-split-choose-version": "Aukeratu mesedez bertsio bat",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Zoritxarrez, norbaitek zure une berean argitaratu du. Mesedez birpasatu hurrengo orrialdeko iruzkinak. Behar izanez gero, zurea edita dezakegu eta amaierako ordena aldatu"
 }
