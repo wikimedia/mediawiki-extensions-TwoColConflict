@@ -5,6 +5,7 @@ namespace TwoColConflict;
 use EditPage;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 use OutputPage;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
@@ -39,7 +40,7 @@ class TwoColConflictHooks {
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
-			$baseRevision = $editPage->getBaseRevision();
+			$baseRevision = $editPage->getExpectedParentRevision();
 
 			return new SplitTwoColConflictHelper(
 				$editPage->getTitle(),
@@ -49,7 +50,7 @@ class TwoColConflictHooks {
 				$editPage->summary,
 				MediaWikiServices::getInstance()->getContentHandlerFactory(),
 				new ResolutionSuggester(
-					$baseRevision ? $baseRevision->getRevisionRecord() : null,
+					$baseRevision,
 					$editPage->getArticle()->getContentHandler()->getDefaultFormat()
 				)
 			);
@@ -128,7 +129,7 @@ class TwoColConflictHooks {
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
-			$baseRevision = $editPage->getBaseRevision();
+			$baseRevision = $editPage->getExpectedParentRevision();
 			$latestRevision = $editPage->getArticle()->getRevision();
 
 			$conflictChunks = 0;
@@ -138,7 +139,7 @@ class TwoColConflictHooks {
 				/** @var ThreeWayMerge $merge */
 				$merge = MediaWikiServices::getInstance()->getService( 'TwoColConflictThreeWayMerge' );
 				$result = $merge->merge3(
-					$baseRevision->getContent()->serialize(),
+					$baseRevision->getContent( SlotRecord::MAIN )->serialize(),
 					$latestRevision->getContent()->serialize(),
 					$editPage->textbox2
 				);
