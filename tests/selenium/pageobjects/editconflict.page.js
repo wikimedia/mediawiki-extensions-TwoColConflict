@@ -102,9 +102,12 @@ class EditConflictPage extends Page {
 
 	showSimpleConflict() {
 		this.createConflict(
-			'Line1\nLine2',
-			'Line1\nChange <span lang="de">A</span>',
-			'Line1\nChange <span lang="en">B</span>'
+			// Includes HTML characters to check for proper escaping throughout the process.
+			// Note the final assertions will look for "Line 1", "Change A" and such only, without
+			// any of the HTML code being visible.
+			'Line<span>1</span>\nLine2',
+			'Line<span>1</span>\nChange <span lang="de">A</span>',
+			'Line<span>1</span>\nChange <span lang="en">B</span>'
 		);
 		this.waitForUiToLoad();
 	}
