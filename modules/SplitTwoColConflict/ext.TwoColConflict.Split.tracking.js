@@ -10,7 +10,8 @@ function recordExitStatistics() {
 		base_rev_id: parseInt( $( 'input[name="parentRevId"]' ).val() ),
 		latest_rev_id: parseInt( $( 'input[name="editRevId"]' ).val() ),
 		page_namespace: parseInt( mw.config.get( 'wgNamespaceNumber' ) ),
-		page_title: mw.config.get( 'wgTitle' )
+		page_title: mw.config.get( 'wgTitle' ),
+		session_token: mw.user.sessionId()
 	} );
 	/* eslint-enable camelcase */
 }
