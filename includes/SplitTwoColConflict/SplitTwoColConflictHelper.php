@@ -3,12 +3,15 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use IBufferingStatsdDataFactory;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
+use ParserOptions;
 use Title;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use User;
+use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later
@@ -29,18 +32,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @param Title $title
 	 * @param OutputPage $out
-	 * @param \IBufferingStatsdDataFactory $stats
+	 * @param IBufferingStatsdDataFactory $stats
 	 * @param string $submitLabel
 	 * @param string $newEditSummary
 	 * @param IContentHandlerFactory $contentHandlerFactory
 	 * @param ResolutionSuggester $resolutionSuggester
-	 *
-	 * @throws \MWUnknownContentModelException
 	 */
 	public function __construct(
 		Title $title,
 		OutputPage $out,
-		\IBufferingStatsdDataFactory $stats,
+		IBufferingStatsdDataFactory $stats,
 		string $submitLabel,
 		string $newEditSummary,
 		IContentHandlerFactory $contentHandlerFactory,
@@ -170,10 +171,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	private function getPreSaveTransformedLines() {
 		$user = $this->out->getUser();
-		$language = $this->out->getLanguage();
 
-		$content = new \WikitextContent( $this->yourtext );
-		$parserOptions = new \ParserOptions( $user, $this->out->getLanguage() );
+		$content = new WikitextContent( $this->yourtext );
+		$parserOptions = new ParserOptions( $user, $this->out->getLanguage() );
 		// @phan-suppress-next-line PhanUndeclaredMethod
 		$previewWikitext = $content->preSaveTransform( $this->title, $user, $parserOptions )->getText();
 		return SplitConflictUtils::splitText( $previewWikitext );
