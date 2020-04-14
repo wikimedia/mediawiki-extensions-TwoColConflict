@@ -5,6 +5,7 @@
 			"Mainframe98",
 			"Mar(c)",
 			"Optilete",
+			"PonkoSasuke",
 			"Sjoerddebruin"
 		]
 	},
@@ -35,5 +36,8 @@
 	"twocolconflict-split-save-tooltip": "Wijzigingen opslaan en de bewerkingsmodus verlaten.",
 	"twocolconflict-split-reset-warning-cancel": "Annuleren",
 	"twocolconflict-split-collapse-tooltip": "Tekst samenvouwen",
-	"twocolconflict-split-expand-tooltip": "Tekst uitvouwen"
+	"twocolconflict-split-expand-tooltip": "Tekst uitvouwen",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Tegenstrijdige Posts",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Jammer genoeg heeft er iemand tegelijkertijd met jou gepost. Bekijk de commentaar op de volgende pagina. Indien nodig kan je jouw commentaar aanpassen en de definitieve volgorde veranderen.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Melding oplossen"
 }
