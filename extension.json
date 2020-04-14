@@ -93,8 +93,8 @@
 				},
 				"single-column-view-1": {
 					"file": {
-						"ltr": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1.svg",
-						"rtl": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1.svg"
+						"ltr": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1-ltr.svg",
+						"rtl": "resources/ext.TwoColConflict.Split.Tour/single-column-view-slide1-rtl.svg"
 					}
 				}
 			}
