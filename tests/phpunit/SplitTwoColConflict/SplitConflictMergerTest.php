@@ -75,12 +75,40 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		$result = SplitConflictMerger::mergeSplitConflictResults(
 			[
 				[ 'copy' => 'A' ],
+				// We assume the user intentionally emptied this
 				[ 'copy' => '' ],
 				[ 'copy' => 'B' ],
 			],
 			[
+				// The tracked linefeeds should be removed with the text
 				1 => [ 'copy' => 2 ],
 			],
+			[]
+		);
+		$this->assertSame( "A\nB", $result );
+	}
+
+	public function testFirstEmptyRowIsNotIgnored() {
+		$result = SplitConflictMerger::mergeSplitConflictResults(
+			[
+				[ 'copy' => '' ],
+				[ 'copy' => 'A' ],
+			],
+			[
+				[ 'copy' => 1 ],
+			],
+			[]
+		);
+		$this->assertSame( "\n\nA", $result );
+	}
+
+	public function testTrailingNewlinesAreTrimmed() {
+		$result = SplitConflictMerger::mergeSplitConflictResults(
+			[
+				[ 'copy' => "A\n\n" ],
+				[ 'copy' => 'B' ],
+			],
+			[],
 			[]
 		);
 		$this->assertSame( "A\nB", $result );

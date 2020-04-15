@@ -43,7 +43,7 @@ class SplitConflictMerger {
 			$line = rtrim( $line, "\r\n" );
 
 			// In case a line was emptied, we need to skip the extra linefeeds as well
-			if ( $line === '' ) {
+			if ( $line === '' && $num ) {
 				continue;
 			}
 
