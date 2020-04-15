@@ -6,28 +6,22 @@ use MediaWikiUnitTestCase;
 use TwoColConflict\ThreeWayMergeResult;
 
 /**
- * @coversDefaultClass \TwoColConflict\ThreeWayMergeResult
+ * @covers \TwoColConflict\ThreeWayMergeResult
  */
 class ThreeWayMergeResultUnitTest extends MediaWikiUnitTestCase {
 
 	/**
-	 * @covers ::__construct
-	 * @covers ::getOverlappingChunkCount
 	 * @dataProvider provideOverlappingChunks
 	 */
-	public function testGetOverlappingChunkCount( $mergeLeftovers, $expectedCount, $expectedSize ) {
-		$result = new ThreeWayMergeResult( false, 'foo', $mergeLeftovers );
-		$this->assertSame( $expectedCount, $result->getOverlappingChunkCount() );
-	}
-
-	/**
-	 * @covers ::__construct
-	 * @covers ::getOverlappingChunkSize
-	 * @dataProvider provideOverlappingChunks
-	 */
-	public function testGetOverlappingChunkSize( $mergeLeftovers, $expectedCount, $expectedSize ) {
-		$result = new ThreeWayMergeResult( false, 'foo', $mergeLeftovers );
-		$this->assertSame( $expectedSize, $result->getOverlappingChunkSize() );
+	public function testGetters(
+		string $mergeLeftovers,
+		int $expectedCount,
+		int $expectedSize
+	) {
+		$result = new ThreeWayMergeResult( false, '', $mergeLeftovers );
+		$this->assertFalse( $result->isCleanMerge() );
+		$this->assertSame( $expectedCount, $result->getOverlappingChunkCount(), 'count' );
+		$this->assertSame( $expectedSize, $result->getOverlappingChunkSize(), 'size' );
 	}
 
 	public function provideOverlappingChunks() {

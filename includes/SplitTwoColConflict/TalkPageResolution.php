@@ -5,9 +5,12 @@ namespace TwoColConflict\SplitTwoColConflict;
 /**
  * Container for talk page use case resolution.  This is populated by the suggester, and can be
  * manipulated by editing your text or reordering your and the other text block.
+ *
+ * @codeCoverageIgnore Trivial, even immutable value object
  */
 class TalkPageResolution {
-	/** @var array */
+
+	/** @var array[] */
 	private $diff;
 	/** @var int */
 	private $otherIndex;
@@ -15,7 +18,7 @@ class TalkPageResolution {
 	private $yourIndex;
 
 	/**
-	 * @param array $diff
+	 * @param array[] $diff
 	 * @param int $otherIndex
 	 * @param int $yourIndex
 	 */
@@ -26,7 +29,7 @@ class TalkPageResolution {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	public function getDiff(): array {
 		return $this->diff;
@@ -45,4 +48,5 @@ class TalkPageResolution {
 	public function getYourIndex(): int {
 		return $this->yourIndex;
 	}
+
 }

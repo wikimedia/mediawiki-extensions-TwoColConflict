@@ -24,7 +24,7 @@ class HtmlTalkPageResolutionView {
 	}
 
 	/**
-	 * @param array $unifiedDiff
+	 * @param array[] $unifiedDiff
 	 * @param int $otherIndex
 	 * @param int $yourIndex
 	 *

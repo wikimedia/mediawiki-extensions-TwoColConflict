@@ -3,6 +3,7 @@
 namespace TwoColConflict;
 
 class ThreeWayMergeResult {
+
 	/** @var bool True when the merge is safe to perform automatically. */
 	private $isCleanMerge;
 	/** @var string Result of automatic merge, with overlapping chunks defaulting to "your" text. */
@@ -83,4 +84,5 @@ class ThreeWayMergeResult {
 			PREG_SET_ORDER | PREG_UNMATCHED_AS_NULL );
 		return $matches;
 	}
+
 }

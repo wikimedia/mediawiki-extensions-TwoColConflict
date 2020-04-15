@@ -6,6 +6,7 @@ namespace TwoColConflict;
  * Provides a testable wrapper for MediaWiki core diff3 services.
  */
 class ThreeWayMerge {
+
 	/**
 	 * Perform three-way merge and return an information structure.
 	 * @param string $base
@@ -22,4 +23,5 @@ class ThreeWayMerge {
 			$mergeLeftovers );
 		return new ThreeWayMergeResult( $isCleanMerge, $simplisticMergeAttempt, $mergeLeftovers );
 	}
+
 }
