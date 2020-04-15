@@ -3,6 +3,7 @@
 		"authors": [
 			"Meno25",
 			"Mido",
+			"Tala Ali",
 			"ديفيد",
 			"زكريا",
 			"علاء",
@@ -57,5 +58,7 @@
 	"twocolconflict-split-selected-version-tooltip": "النسخة المحددة",
 	"twocolconflict-split-unselected-version-tooltip": "انقر لتحديد هذه النسخة",
 	"twocolconflict-split-help-tooltip": "أظهر المساعدة",
-	"twocolconflict-split-tour-dialog-header-single-column-view": "المنشورات المتعارضة"
+	"twocolconflict-split-tour-dialog-header-single-column-view": "المنشورات المتعارضة",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "لسوء الحظ قام شخص آخر بنشر في نفس الوقت التي نشرت فيه أنت. الرجاء مراجعة التعليقات في الصفحة التالية. ويمكنك تعديل صفحتك بعده إن أردت",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "حل المشكلة"
 }
