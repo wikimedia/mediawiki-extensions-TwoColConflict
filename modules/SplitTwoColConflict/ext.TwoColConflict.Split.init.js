@@ -114,9 +114,13 @@ function saveEditing( $row ) {
  */
 function resetWarning( $row ) {
 	var $selected = getSelectedColumn( $row ),
-		$editor = $selected.find( '.mw-twocolconflict-split-editor' );
+		$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
+		originalText = $editor[ 0 ].defaultValue;
 
-	if ( !$editor.length || $editor.val() === $editor[ 0 ].defaultValue ) {
+	// The later merge ignores trailing newlines, they don't cause a change
+	if ( !$editor.length ||
+		$editor.val().replace( /[\r\n]+$/, '' ) === originalText.replace( /[\r\n]+$/, '' )
+	) {
 		disableEditing( $row );
 		return;
 	}
@@ -140,7 +144,7 @@ function resetWarning( $row ) {
 			var $diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
 				$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 
-			$editor.val( $editor[ 0 ].defaultValue );
+			$editor.val( originalText );
 			$diffText.html( $resetDiffText.html() );
 			disableEditing( $row );
 		}
