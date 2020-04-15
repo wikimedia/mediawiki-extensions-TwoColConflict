@@ -229,8 +229,34 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 				'base' => "Initial comment.\n\nLater comment.",
 				'your' => "Initial comment.\n:Conflicting response.\n\nLater comment.",
 				'stored' => "Initial comment.\n:Inline response.\n\nLater comment.",
-				// FIXME: DiffEngine detects this as change-copy instead of copy-add-copy
-				'expected' => null,
+				'expected' => new TalkPageResolution(
+					[
+						[
+							'action' => 'copy',
+							'copytext' => 'Initial comment.',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">:Inline response.</ins>",
+							'newtext' => ':Inline response.',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">:Conflicting response.</ins>",
+							'newtext' => ':Conflicting response.',
+						],
+						[
+							'action' => 'copy',
+							'copytext' => "\nLater comment.",
+						],
+					],
+					1,
+					2
+				)
 			],
 			[
 				'base' => "A\nA",
@@ -292,8 +318,8 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
 				\Title::makeTitle( NS_TALK, __FUNCTION__ ),
-				$this->splitText( $stored ),
-				$this->splitText( $your )
+				explode( "\n", $stored ),
+				explode( "\n", $your )
 			)
 		);
 	}
@@ -328,15 +354,6 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 		return TestingAccessWrapper::newFromObject(
 			new ResolutionSuggester( $baseRevisionMock, CONTENT_FORMAT_WIKITEXT )
 		);
-	}
-
-	/**
-	 * @param string $text
-	 *
-	 * @return string[]
-	 */
-	private function splitText( string $text ) : array {
-		return preg_split( '/\n(?!\n)/', $text );
 	}
 
 }

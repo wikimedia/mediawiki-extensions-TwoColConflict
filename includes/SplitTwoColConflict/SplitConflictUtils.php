@@ -14,7 +14,7 @@ class SplitConflictUtils {
 	 * @return string[]
 	 */
 	public static function splitText( string $text ) : array {
-		return preg_split( '/\n(?!\n)/', str_replace( [ "\r\n", "\r" ], "\n", $text ) );
+		return explode( "\n", str_replace( [ "\r\n", "\r" ], "\n", $text ) );
 	}
 
 	/**

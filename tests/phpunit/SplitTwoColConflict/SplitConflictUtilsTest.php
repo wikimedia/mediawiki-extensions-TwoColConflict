@@ -21,23 +21,23 @@ class SplitConflictUtilsTest extends MediaWikiTestCase {
 			],
 			[
 				"A\r\nB\r\nC",
-				[ "A", 'B', 'C' ],
+				[ 'A', 'B', 'C' ],
 			],
 			[
 				"A\n\nB\nC",
-				[ "A\n", 'B', 'C' ],
+				[ 'A', '', 'B', 'C' ],
 			],
 			[
 				"A\r\n\r\nB\r\nC",
-				[ "A\n", 'B', 'C' ],
+				[ 'A', '', 'B', 'C' ],
 			],
 			[
 				"A\n\n\nB\nC",
-				[ "A\n\n", 'B', 'C' ],
+				[ 'A', '', '', 'B', 'C' ],
 			],
 			[
 				"A\r\n\r\n\r\nB\r\nC",
-				[ "A\n\n", 'B', 'C' ],
+				[ 'A', '', '', 'B', 'C' ],
 			],
 		];
 	}

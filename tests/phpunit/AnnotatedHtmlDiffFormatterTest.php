@@ -366,6 +366,27 @@ TEXT
 					],
 				],
 			],
+			'bug T248668' => [
+				'before' => "Initial comment.\n\nLater comment.",
+				'after' => "Initial comment.\n:Inline response.\n\nLater comment.",
+				'result' => [
+					[
+						'action' => 'copy',
+						'copytext' => 'Initial comment.',
+					],
+					[
+						'action' => 'add',
+						'oldhtml' => "\u{00A0}",
+						'oldtext' => '',
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
+						'newtext' => ':Inline response.',
+					],
+					[
+						'action' => 'copy',
+						'copytext' => "\nLater comment.",
+					],
+				],
+			],
 		];
 	}
 

@@ -44,7 +44,11 @@ class HtmlEditableTextComponent {
 		bool $isDisabled = false
 	) : string {
 		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
-		$editorText = rtrim( $text, "\r\n" ) . "\n";
+		$editorText = rtrim( $text, "\r\n" );
+		// This duplicates what EditPage::addNewLineAtEnd() does
+		if ( $editorText !== '' ) {
+			$editorText .= "\n";
+		}
 		$classes = [ 'mw-twocolconflict-split-editable' ];
 
 		$innerHtml = Html::rawElement(
@@ -91,7 +95,6 @@ class HtmlEditableTextComponent {
 		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
 		$attributes = [
 			'class' => $class . ' mw-twocolconflict-split-editor',
-			'name' => 'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
 			'lang' => $this->language->getHtmlCode(),
 			'dir' => $this->language->getDir(),
 			'rows' => $this->rowsForText( $editorText ),
@@ -102,7 +105,18 @@ class HtmlEditableTextComponent {
 			$attributes['readonly'] = 'readonly';
 		}
 
-		return Html::element( 'textarea', $attributes, $editorText );
+		/**
+		 * "If the next token is a U+000A LINE FEED (LF) character token, then ignore that token and
+		 * move on to the next one. (Newlines at the start of textarea elements are ignored as an
+		 * authoring convenience.)"
+		 * @see https://html.spec.whatwg.org/multipage/parsing.html#parsing-main-inbody
+		 * Html::textarea() respects this, but Html::element() doesn't.
+		 */
+		return Html::textarea(
+			'mw-twocolconflict-split-content[' . $rowNum . '][' . $changeType . ']',
+			$editorText,
+			$attributes
+		);
 	}
 
 	private function buildLineFeedField( string $text, int $rowNum, string $changeType ) : string {
@@ -170,7 +184,7 @@ class HtmlEditableTextComponent {
 	/**
 	 * @param string $text
 	 *
-	 * @return int
+	 * @return int Number of linefeeds at the end of the text
 	 */
 	private function countExtraLineFeeds( string $text ) : int {
 		return substr_count( $text, "\n", strlen( rtrim( $text, "\r\n" ) ) );
