@@ -26,7 +26,7 @@ class AnnotatedHtmlDiffFormatterTest extends MediaWikiTestCase {
 			explode( "\n", $after ),
 			explode( "\n", $this->preSaveTransform( $after ) )
 		);
-		$this->assertArrayEquals( $expectedOutput, $output );
+		$this->assertSame( $expectedOutput, $output );
 	}
 
 	public function provideFormat() {
@@ -382,7 +382,7 @@ TEXT
 			explode( "\n", $after ),
 			explode( "\n", $this->preSaveTransform( $after ) )
 		);
-		$this->assertArrayEquals( $expectedOutput, $output );
+		$this->assertSame( $expectedOutput, $output );
 	}
 
 	public function provideFormatWithMarkup() {

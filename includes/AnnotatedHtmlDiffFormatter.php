@@ -62,8 +62,8 @@ class AnnotatedHtmlDiffFormatter {
 					$changes[] = [
 						'action' => 'change',
 						'oldhtml' => $this->getOriginalInlineDiff( $wordLevelDiff ),
-						'newhtml' => $this->getClosingInlineDiff( $wordLevelDiff ),
 						'oldtext' => implode( "\n", $edit->getOrig() ),
+						'newhtml' => $this->getClosingInlineDiff( $wordLevelDiff ),
 						'newtext' => implode( "\n",
 							array_slice( $newLines, $newLine, $edit->nclosing() ) ),
 					];

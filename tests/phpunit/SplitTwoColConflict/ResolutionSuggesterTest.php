@@ -225,6 +225,13 @@ class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
 					2
 				)
 			],
+			'bug T248668' => [
+				'base' => "Initial comment.\n\nLater comment.",
+				'your' => "Initial comment.\n:Conflicting response.\n\nLater comment.",
+				'stored' => "Initial comment.\n:Inline response.\n\nLater comment.",
+				// FIXME: DiffEngine detects this as change-copy instead of copy-add-copy
+				'expected' => null,
+			],
 			[
 				'base' => "A\nA",
 				'your' => "A\nB\nA",
