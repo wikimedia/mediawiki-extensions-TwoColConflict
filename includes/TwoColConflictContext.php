@@ -19,16 +19,32 @@ class TwoColConflictContext {
 	 * @param User $user
 	 * @param Title $title
 	 *
-	 * @return bool
+	 * @return bool True if the new conflict interface should be used for this
+	 *   user and title.  The user may have opted out, or the title namespace
+	 *   may be blacklisted for this interface.
 	 */
 	public static function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( !$config->get( 'TwoColConflictSuggestResolution' ) &&
-			( $title->isTalkPage() || $title->inNamespace( NS_PROJECT ) )
+		if ( self::isEligibleTalkPage( $title ) &&
+			!self::isTalkPageSuggesterEnabled()
 		) {
+			// Temporary feature logic to completely disable on talk pages.
 			return false;
 		}
 
+		return self::hasUserEnabledFeature( $user );
+	}
+
+	/**
+	 * @param Title $title
+	 * @return bool True if this article is appropriate for the talk page
+	 *   workflow, and the interface has been enabled by configuration.
+	 */
+	public static function shouldTalkPageSuggestionBeConsidered( Title $title ) : bool {
+		return self::isTalkPageSuggesterEnabled() &&
+			self::isEligibleTalkPage( $title );
+	}
+
+	private static function hasUserEnabledFeature( User $user ) : bool {
 		if ( self::isUsedAsBetaFeature() ) {
 			return \BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
@@ -44,6 +60,15 @@ class TwoColConflictContext {
 		return MediaWikiServices::getInstance()->getMainConfig()
 				->get( 'TwoColConflictBetaFeature' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
+	}
+
+	private static function isEligibleTalkPage( Title $title ) : bool {
+		return $title->isTalkPage() || $title->inNamespace( NS_PROJECT );
+	}
+
+	private static function isTalkPageSuggesterEnabled() : bool {
+		return MediaWikiServices::getInstance()->getMainConfig()
+			->get( 'TwoColConflictSuggestResolution' );
 	}
 
 }

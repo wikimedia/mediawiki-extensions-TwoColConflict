@@ -2,11 +2,11 @@
 
 namespace TwoColConflict\SplitTwoColConflict;
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use Title;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
+use TwoColConflict\TwoColConflictContext;
 
 /**
  * @license GPL-2.0-or-later
@@ -62,10 +62,7 @@ class ResolutionSuggester {
 		array $storedLines,
 		array $yourLines
 	) : ?TalkPageResolution {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( !$config->get( 'TwoColConflictSuggestResolution' ) ||
-			!( $title->isTalkPage() || $title->inNamespace( NS_PROJECT ) )
-		) {
+		if ( !TwoColConflictContext::shouldTalkPageSuggestionBeConsidered( $title ) ) {
 			return null;
 		}
 
