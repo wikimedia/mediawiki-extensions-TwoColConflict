@@ -66,19 +66,16 @@ class HtmlEditableTextComponent {
 			$classes[] = 'mw-twocolconflict-split-collapsed';
 		}
 
-		$innerHtml .= $this->buildResetText( $diffHtml, $editorText );
+		$innerHtml .= $this->buildResetElements( $diffHtml );
 		$innerHtml .= $this->buildLineFeedField( $text, $rowNum, $changeType );
 
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
 
-	private function buildResetText( string $diffHtml, string $editorText ) : string {
+	private function buildResetElements( string $diffHtml ) : string {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
 				$diffHtml
-			) . Html::element(
-				'span', [ 'class' => 'mw-twocolconflict-split-reset-editor-text' ],
-				$editorText
 			);
 	}
 

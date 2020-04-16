@@ -15,11 +15,7 @@ function buildColumn( params, columnClass, type ) {
 			$( '<textarea>' )
 				.addClass( 'mw-twocolconflict-split-editor' )
 				.append( params.content )
-		)
-		.append(
-			$( '<span>' )
-				.addClass( 'mw-twocolconflict-split-reset-editor-text' )
-				.text( params.origContent || params.content )
+				.val( params.editedContent || params.content )
 		);
 }
 
@@ -105,7 +101,7 @@ QUnit.test( 'test edited single-column row', function ( assert ) {
 		RowFormatter.formatView( buildSingleView( [
 			{ type: 'copy', content: 'A' },
 			{ type: 'other', content: 'B' },
-			{ type: 'your', origContent: 'C1', content: 'C2' }
+			{ type: 'your', content: 'C1', editedContent: 'C2' }
 		] ) ),
 		'v1:c|o|y+'
 	);
@@ -137,16 +133,16 @@ QUnit.test( 'test split-column row selections', function ( assert ) {
 QUnit.test( 'test edited split-column row', function ( assert ) {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSplitView( [
-			{ copy: { origContent: 'A1', content: 'A2' } },
+			{ copy: { content: 'A1', editedContent: 'A2' } },
 			{
-				other: { origContent: 'B1', content: 'B' },
+				other: { content: 'B1', editedContent: 'B' },
 				selection: 'other',
 				your: { content: 'C' }
 			},
 			{
 				other: { content: 'D' },
 				selection: 'your',
-				your: { origContent: 'E1', content: 'E2' }
+				your: { content: 'E1', editedContent: 'E2' }
 			}
 		] ) ),
 		'v1:c+|o+<y|o>y+'
