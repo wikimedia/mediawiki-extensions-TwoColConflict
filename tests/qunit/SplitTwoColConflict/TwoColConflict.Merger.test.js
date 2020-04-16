@@ -49,11 +49,11 @@
 		assert.strictEqual(
 			merger(
 				buildColumns( [
-					{ content: 'A', linefeeds: 2 },
+					{ content: 'A', linefeeds: '2,1' },
 					{ content: 'B', linefeeds: 0 }
 				] )
 			),
-			'A\n\n\nB'
+			'\nA\n\n\nB'
 		);
 	} );
 

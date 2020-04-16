@@ -50,16 +50,31 @@ class SplitConflictMerger {
 			if ( isset( $extraLineFeeds[$num] ) ) {
 				$lf = $extraLineFeeds[$num];
 				// Same fallback logic as above, just so we never loose content
-				$count = $lf[$side] ??
+				$lf = $lf[$side] ??
 					$lf['your'] ??
-					(int)( is_array( $lf ) ? current( $lf ) : $lf );
-				// Arbitrary limit just to not end with megabytes in case of an attack
-				$line .= str_repeat( "\n", min( $count, 1000 ) );
+					(string)( is_array( $lf ) ? current( $lf ) : $lf );
+				$lf = explode( ',', $lf );
+				// "Before" and "after" are intentionally flipped, because "before" is very rare
+				if ( isset( $lf[1] ) ) {
+					$line = self::lineFeeds( $lf[1] ) . $line;
+				}
+				$line .= self::lineFeeds( $lf[0] );
 			}
 
 			$textLines[] = $line;
 		}
 		return SplitConflictUtils::mergeTextLines( $textLines );
+	}
+
+	private static function lineFeeds( string $count ) : string {
+		$count = (int)$count;
+
+		// Arbitrary limit just to not end with megabytes in case of an attack
+		if ( $count <= 0 || $count > 1000 ) {
+			return '';
+		}
+
+		return str_repeat( "\n", $count );
 	}
 
 }

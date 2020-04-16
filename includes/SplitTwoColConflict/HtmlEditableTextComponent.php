@@ -43,8 +43,8 @@ class HtmlEditableTextComponent {
 		string $changeType,
 		bool $isDisabled = false
 	) : string {
-		$diffHtml = rtrim( $diffHtml, "\r\n\u{00A0}" );
-		$editorText = rtrim( $text, "\r\n" );
+		$diffHtml = trim( $diffHtml, "\r\n\u{00A0}" );
+		$editorText = trim( $text, "\r\n" );
 		// This duplicates what EditPage::addNewLineAtEnd() does
 		if ( $editorText !== '' ) {
 			$editorText .= "\n";
@@ -178,13 +178,12 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	/**
-	 * @param string $text
-	 *
-	 * @return int Number of linefeeds at the end of the text
-	 */
-	private function countExtraLineFeeds( string $text ) : int {
-		return substr_count( $text, "\n", strlen( rtrim( $text, "\r\n" ) ) );
+	private function countExtraLineFeeds( string $text ) : string {
+		$endOfText = strlen( rtrim( $text, "\r\n" ) );
+		$before = substr_count( $text, "\n", 0, strspn( $text, "\r\n", 0, $endOfText ) );
+		$after = substr_count( $text, "\n", $endOfText );
+		// "Before" and "after" are intentionally flipped, because "before" is very rare
+		return $after . ( $before ? ',' . $before : '' );
 	}
 
 	/**

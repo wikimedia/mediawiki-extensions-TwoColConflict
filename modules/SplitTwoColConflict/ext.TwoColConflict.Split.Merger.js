@@ -1,12 +1,12 @@
 /**
- * @param {string} str
- * @param {number} num
+ * @param {string} num
  * @return {string}
  */
-function repeat( str, num ) {
+function lineFeeds( num ) {
 	var out = '';
+	num = parseInt( num, 10 );
 	while ( num-- ) {
-		out += str;
+		out += '\n';
 	}
 	return out;
 }
@@ -28,7 +28,12 @@ function merger( $selected ) {
 			);
 
 			if ( $extraLineFeeds.length ) {
-				line += repeat( '\n', $extraLineFeeds.val() );
+				var lf = $extraLineFeeds.val().split( ',' );
+				// "Before" and "after" are intentionally flipped, because "before" is very rare
+				if ( 1 in lf ) {
+					line = lineFeeds( lf[ 1 ] ) + line;
+				}
+				line += lineFeeds( lf[ 0 ] );
 			}
 
 			textLines.push( line );

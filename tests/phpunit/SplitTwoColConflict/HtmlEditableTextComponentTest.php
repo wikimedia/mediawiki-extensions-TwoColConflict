@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
+use Language;
 use MediaWikiTestCase;
 use OOUI\BlankTheme;
 use OOUI\Theme;
@@ -21,7 +22,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	public function testEnabledElement() {
 		$html = ( new HtmlEditableTextComponent(
 			$this->getTestUser()->getUser(),
-			new \Language()
+			$this->createMock( Language::class )
 		) )->getHtml( '', '', 0, 'copy', false );
 		$this->assertStringNotContainsString( 'readonly', $html );
 	}
@@ -29,9 +30,36 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	public function testDisabledElement() {
 		$html = ( new HtmlEditableTextComponent(
 			$this->getTestUser()->getUser(),
-			new \Language()
+			$this->createMock( Language::class )
 		) )->getHtml( '', '', 0, 'copy', true );
 		$this->assertStringContainsString( 'readonly', $html );
+	}
+
+	public function provideExtraLinefeeds() {
+		return [
+			[ '', '0' ],
+			[ 'a', '0' ],
+			[ "\n", '1' ],
+			[ "a\n", '1' ],
+			[ "a\r\n\r\n", '2' ],
+			// "Before" and "after" are intentionally flipped, because "before" is very rare
+			[ "\na", '0,1' ],
+			[ "\r\n\r\na", '0,2' ],
+			[ "\r\n\n\n\na\r\n\n\n", '3,4' ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideExtraLinefeeds
+	 */
+	public function testCountExtraLineFeeds( string $text, string $expected ) {
+		/** @var HtmlEditableTextComponent $component */
+		$component = TestingAccessWrapper::newFromObject( new HtmlEditableTextComponent(
+			$this->getTestUser()->getUser(),
+			$this->createMock( Language::class )
+		) );
+
+		$this->assertSame( $expected, $component->countExtraLineFeeds( $text ) );
 	}
 
 	public function provideRowsForText() {
@@ -60,7 +88,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 		$component = TestingAccessWrapper::newFromObject(
 			new HtmlEditableTextComponent(
 				$this->getTestUser()->getUser(),
-				new \Language()
+				$this->createMock( Language::class )
 			)
 		);
 
