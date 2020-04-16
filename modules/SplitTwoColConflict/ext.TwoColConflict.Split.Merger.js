@@ -20,7 +20,7 @@ function merger( $selected ) {
 
 	$selected.each( function ( index, element ) {
 		var line = $( element ).find( '.mw-twocolconflict-split-editor' )
-			.val().trim( '\r\n' );
+			.val().replace( /[\r\n]+$/, '' );
 
 		if ( line !== '' ) {
 			var $extraLineFeeds = $( element ).find(
