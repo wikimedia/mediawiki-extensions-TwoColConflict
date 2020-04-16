@@ -92,9 +92,7 @@ class HtmlSplitConflictHeader {
 		$hintMsg = TwoColConflictContext::isUsedAsBetaFeature() ?
 			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
 
-		$out = $this->getWarningMessage(
-			wfMessage( $hintMsg )->parse()
-		);
+		$out = $this->getWarningMessage( $hintMsg );
 
 		$out .= Html::openElement(
 			'div',
@@ -204,15 +202,18 @@ class HtmlSplitConflictHeader {
 	}
 
 	/**
-	 * @param string $message
+	 * @param string $messageKey
 	 *
 	 * @return string HTML
 	 */
-	private function getWarningMessage( string $message ) : string {
+	private function getWarningMessage( string $messageKey ) : string {
+		$html = wfMessage( $messageKey )->parse();
+		// Force feedback links to be opened in a new tab, and not loose the edit
+		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-warningbox' ],
-			Html::rawElement( 'p', [], $message )
+			Html::rawElement( 'p', [], $html )
 		);
 	}
 
