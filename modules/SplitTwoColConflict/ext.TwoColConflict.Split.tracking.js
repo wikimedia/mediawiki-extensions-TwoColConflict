@@ -16,9 +16,8 @@ var finalExitEvent = null,
 	TEXT_UNCHANGED = '';
 
 function wasEdited( $column ) {
-	var $editor = $column.find( '.mw-twocolconflict-split-editor' ),
-		$resetEditorText = $column.find( '.mw-twocolconflict-split-reset-editor-text' );
-	return $editor.val() !== $resetEditorText.text();
+	var $editor = $column.find( '.mw-twocolconflict-split-editor' );
+	return $editor.length && $editor.val() !== $editor[ 0 ].defaultValue;
 }
 
 function RowFormatter() {}

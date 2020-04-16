@@ -97,10 +97,9 @@ function disableEditing( $row ) {
 function saveEditing( $row ) {
 	var $selected = getSelectedColumn( $row ),
 		$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-		$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' ),
 		$diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
 
-	if ( $editor.val() === $resetEditorText.text() ) {
+	if ( !$editor.length || $editor.val() === $editor[ 0 ].defaultValue ) {
 		var $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 		$diffText.html( $resetDiffText.html() );
 	} else {
@@ -115,10 +114,9 @@ function saveEditing( $row ) {
  */
 function resetWarning( $row ) {
 	var $selected = getSelectedColumn( $row ),
-		$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-		$resetEditorText = $selected.find( '.mw-twocolconflict-split-reset-editor-text' );
+		$editor = $selected.find( '.mw-twocolconflict-split-editor' );
 
-	if ( $editor.val() === $resetEditorText.text() ) {
+	if ( !$editor.length || $editor.val() === $editor[ 0 ].defaultValue ) {
 		disableEditing( $row );
 		return;
 	}
@@ -142,7 +140,7 @@ function resetWarning( $row ) {
 			var $diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
 				$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 
-			$editor.val( $resetEditorText.text() );
+			$editor.val( $editor[ 0 ].defaultValue );
 			$diffText.html( $resetDiffText.html() );
 			disableEditing( $row );
 		}
