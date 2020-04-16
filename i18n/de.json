@@ -58,5 +58,7 @@
 	"twocolconflict-split-help-tooltip": "Hilfe anzeigen",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Gleichzeitige Kommentare",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Leider hat jemand anderes zur gleichen Zeit wie du gepostet. Lies dir bitte die Kommentare auf der nächsten Seite durch. Falls nötig, kannst du deine Bearbeitungen und die endgültige Reihenfolge ändern.",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Problem lösen"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Problem lösen",
+	"twocolconflict-talk-your": "Dein Eintrag",
+	"twocolconflict-talk-conflicting": "Kollidierender Eintrag"
 }

@@ -56,5 +56,7 @@
 	"twocolconflict-split-help-tooltip": "Yardımı gör",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Çelişen Gönderiler",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Ne yazık ki, başka bir kişi sizinle aynı zamanda gönderdi. Lütfen bir sonraki sayfadaki yorumları inceleyin. Gerekirse, kendinizinkini düzenleyebilir ve son düzeni değiştirebilirsiniz.",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Sorunu çöz"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Sorunu çöz",
+	"twocolconflict-talk-your": "Girişiniz",
+	"twocolconflict-talk-conflicting": "Giriş çakışma"
 }

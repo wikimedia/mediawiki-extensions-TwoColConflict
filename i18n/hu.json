@@ -3,6 +3,7 @@
 		"authors": [
 			"BanKris",
 			"Bencemac",
+			"Csigabi",
 			"Dj",
 			"Urbalazs"
 		]
@@ -27,7 +28,7 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Összevonás kezdése",
 	"twocolconflict-split-tour-popup-btn-text": "Rendben, értettem.",
 	"twocolconflict-split-tour-popup1-header": "Eltérő változtatások soronként vannak jelölve.",
-	"twocolconflict-split-tour-popup1-message": "Amennyiben különbség van a másik felhasználó és a te változatod között, a két változat egymás mellett fog megjelenni: a másik felhasználó változata sárga dobozban bal oldat, míg a tiéd kék dobozban jobb oldalt.<br /><br />Amennyiben nincs különbség a két változat között, a sorok szürke dobozban jelennek meg. Ezek szükség esetén kinyithatók és összecsukhatók, valamint szerkeszthetők.",
+	"twocolconflict-split-tour-popup1-message": "Amennyiben különbség van a másik felhasználó és a te változatod között, a két változat egymás mellett fog megjelenni: a másik felhasználó változata sárga dobozban bal oldalt, míg a tiéd kék dobozban jobb oldalt.<br /><br />Amennyiben nincs különbség a két változat között, a sorok szürke dobozban jelennek meg. Ezek szükség esetén kinyithatók és összecsukhatók, valamint szerkeszthetők.",
 	"twocolconflict-split-tour-popup2-header": "Válaszd ki, mely változtatásokat akarod megtartani.",
 	"twocolconflict-split-tour-popup2-message": "A sorok közti gombokkal válaszd ki, a szöveg melyik változatát szeretnéd megtartani. Amikor kiválasztottál egy változatot, a ceruza ikonra való kattintással tudod szerkeszteni. Lehetséges továbbá átmásolnod szöveget a másik változatból is a klaviatúrád másolás és beillesztés funkciójával vagy a jobb egérgombbal.<br /><br />Az összevont szöveg elmentéséhez minden sorból kell választanod egy változatot.",
 	"twocolconflict-split-tour-popup3-header": "Kiemelt szöveg",

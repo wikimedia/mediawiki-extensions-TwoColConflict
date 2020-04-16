@@ -9,6 +9,7 @@
 			"Ihojose",
 			"Jelou",
 			"Joanmp17",
+			"Juenti el toju",
 			"Macofe",
 			"RicardoSGZ"
 		]
@@ -58,5 +59,7 @@
 	"twocolconflict-split-collapse-tooltip": "Replegar texto sin cambios",
 	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios",
 	"twocolconflict-split-selected-version-tooltip": "Versión seleccionada",
-	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión"
+	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión",
+	"twocolconflict-talk-your": "Vuestra entrada",
+	"twocolconflict-talk-conflicting": "Entrada en conflicto"
 }

@@ -34,5 +34,6 @@
 	"twocolconflict-split-collapse-tooltip": "Text zesummeklappen",
 	"twocolconflict-split-expand-tooltip": "Text opklappen",
 	"twocolconflict-split-selected-version-tooltip": "Erausgesicht Versioun",
-	"twocolconflict-split-help-tooltip": "Hëllef weisen"
+	"twocolconflict-split-help-tooltip": "Hëllef weisen",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Problem léisen"
 }
