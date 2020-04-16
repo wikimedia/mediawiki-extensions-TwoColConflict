@@ -13,7 +13,7 @@ use User;
 class TwoColConflictContext {
 
 	public const BETA_PREFERENCE_NAME = 'twocolconflict';
-	public const OPTOUT_PREFERENCE_NAME = 'twocolconflict-enabled';
+	public const ENABLED_PREFERENCE = 'twocolconflict-enabled';
 
 	/**
 	 * @param User $user
@@ -49,7 +49,7 @@ class TwoColConflictContext {
 			return \BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
 
-		return $user->getBoolOption( self::OPTOUT_PREFERENCE_NAME );
+		return $user->getBoolOption( self::ENABLED_PREFERENCE );
 	}
 
 	/**

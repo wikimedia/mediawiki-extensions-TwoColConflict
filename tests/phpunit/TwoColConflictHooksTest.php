@@ -98,7 +98,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	public function testOnGetPreferences() {
 		$prefs = [];
 		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
-		$this->assertArrayHasKey( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $prefs );
+		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
 	public function provideWebRequests() {
@@ -222,7 +222,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	public function testOnUserGetDefaultOptions() {
 		$prefs = [];
 		TwoColConflictHooks::onUserGetDefaultOptions( $prefs );
-		$this->assertArrayHasKey( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $prefs );
+		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
 	/**
@@ -232,7 +232,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	 */
 	private function createContext( bool $enabled = true ) {
 		$user = $this->getTestUser()->getUser();
-		$user->setOption( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $enabled );
+		$user->setOption( TwoColConflictContext::ENABLED_PREFERENCE, $enabled );
 
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getUser' )->willReturn( $user );

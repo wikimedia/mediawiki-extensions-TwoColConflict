@@ -239,7 +239,7 @@ class TwoColConflictHooks {
 			return;
 		}
 
-		$preferences[TwoColConflictContext::OPTOUT_PREFERENCE_NAME] = [
+		$preferences[TwoColConflictContext::ENABLED_PREFERENCE] = [
 			'type' => 'toggle',
 			'label-message' => 'twocolconflict-preference-enabled',
 			'section' => 'editing/advancedediting',
@@ -252,7 +252,7 @@ class TwoColConflictHooks {
 	 * @param array &$defaultOptions
 	 */
 	public static function onUserGetDefaultOptions( array &$defaultOptions ) {
-		$defaultOptions[TwoColConflictContext::OPTOUT_PREFERENCE_NAME] = 1;
+		$defaultOptions[TwoColConflictContext::ENABLED_PREFERENCE] = 1;
 	}
 
 }

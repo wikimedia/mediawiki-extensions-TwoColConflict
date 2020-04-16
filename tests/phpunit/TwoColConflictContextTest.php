@@ -107,7 +107,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	private function createUser( bool $enabled = true ) {
 		$user = $this->createMock( User::class );
 		$user->method( 'getBoolOption' )
-			->with( TwoColConflictContext::OPTOUT_PREFERENCE_NAME )
+			->with( TwoColConflictContext::ENABLED_PREFERENCE )
 			->willReturn( $enabled );
 		return $user;
 	}
