@@ -2,16 +2,18 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use FauxRequest;
-use MediaWikiIntegrationTestCase;
 use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
+use WebRequest;
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflict\ConflictFormValidator
  */
-class ConflictFormValidatorTest extends MediaWikiIntegrationTestCase {
+class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 
+	/**
+	 * @return ConflictFormValidator
+	 */
 	private function getValidator() {
 		return TestingAccessWrapper::newFromObject(
 			new ConflictFormValidator()
@@ -21,7 +23,7 @@ class ConflictFormValidatorTest extends MediaWikiIntegrationTestCase {
 	public function testEmptyGetRequest() {
 		/** @var ConflictFormValidator $merger */
 		$merger = $this->getValidator();
-		$this->assertTrue( $merger->validateRequest( new FauxRequest( [], false ) ) );
+		$this->assertTrue( $merger->validateRequest( $this->createRequest( [] ) ) );
 	}
 
 	public function provideRequests() {
@@ -161,10 +163,25 @@ class ConflictFormValidatorTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testValidateRequest( array $requestParams, bool $expected ) {
 		$merger = $this->getValidator();
-		$request = new FauxRequest( $requestParams, true );
+		$request = $this->createRequest( $requestParams );
 
 		$result = $merger->validateRequest( $request );
 		$this->assertEquals( $expected, $result );
+	}
+
+	/**
+	 * @param array $requestParams
+	 *
+	 * @return WebRequest
+	 */
+	private function createRequest( array $requestParams ) {
+		$request = $this->createMock( WebRequest::class );
+		$getter = function ( string $name, $default ) use ( $requestParams ) {
+			return $requestParams[$name] ?? $default;
+		};
+		$request->method( 'getArray' )->willReturnCallback( $getter );
+		$request->method( 'getBool' )->willReturnCallback( $getter );
+		return $request;
 	}
 
 }
