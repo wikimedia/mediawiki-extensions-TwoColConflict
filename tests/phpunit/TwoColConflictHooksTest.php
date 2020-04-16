@@ -10,6 +10,7 @@ use OOUI\InputWidget;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
 use Title;
+use TwoColConflict\TwoColConflictContext;
 use TwoColConflict\TwoColConflictHooks;
 use WebRequest;
 
@@ -85,19 +86,19 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 		$prefs = [];
 		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
-		$this->assertArrayHasKey( 'twocolconflict', $prefs );
+		$this->assertArrayHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
 		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
-		$this->assertArrayNotHasKey( 'twocolconflict', $prefs );
+		$this->assertArrayNotHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetPreferences() {
 		$prefs = [];
 		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
-		$this->assertArrayHasKey( 'twocolconflict-enabled', $prefs );
+		$this->assertArrayHasKey( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $prefs );
 	}
 
 	public function provideWebRequests() {
@@ -221,7 +222,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	public function testOnUserGetDefaultOptions() {
 		$prefs = [];
 		TwoColConflictHooks::onUserGetDefaultOptions( $prefs );
-		$this->assertArrayHasKey( 'twocolconflict-enabled', $prefs );
+		$this->assertArrayHasKey( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $prefs );
 	}
 
 	/**
@@ -231,7 +232,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	 */
 	private function createContext( bool $enabled = true ) {
 		$user = $this->getTestUser()->getUser();
-		$user->setOption( 'twocolconflict-enabled', $enabled );
+		$user->setOption( TwoColConflictContext::OPTOUT_PREFERENCE_NAME, $enabled );
 
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getUser' )->willReturn( $user );

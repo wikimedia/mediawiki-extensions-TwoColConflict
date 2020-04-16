@@ -44,7 +44,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$betaPossible = \ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
 		$betaUser = $this->createUser( false );
 		$betaUser->method( 'getOption' )
-			->with( 'twocolconflict' )
+			->with( TwoColConflictContext::BETA_PREFERENCE_NAME )
 			->willReturn( '1' );
 
 		$defaultPage = $this->createMock( Title::class );
@@ -107,7 +107,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	private function createUser( bool $enabled = true ) {
 		$user = $this->createMock( User::class );
 		$user->method( 'getBoolOption' )
-			->with( 'twocolconflict-enabled' )
+			->with( TwoColConflictContext::OPTOUT_PREFERENCE_NAME )
 			->willReturn( $enabled );
 		return $user;
 	}

@@ -12,6 +12,7 @@ use User;
  */
 class TwoColConflictContext {
 
+	public const BETA_PREFERENCE_NAME = 'twocolconflict';
 	public const OPTOUT_PREFERENCE_NAME = 'twocolconflict-enabled';
 
 	/**
@@ -31,7 +32,7 @@ class TwoColConflictContext {
 		if ( self::isUsedAsBetaFeature() &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
 		) {
-			return \BetaFeatures::isFeatureEnabled( $user, 'twocolconflict' );
+			return \BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
 
 		return $user->getBoolOption( self::OPTOUT_PREFERENCE_NAME );

@@ -212,7 +212,7 @@ class TwoColConflictHooks {
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
 		if ( $config->get( 'TwoColConflictBetaFeature' ) ) {
-			$prefs['twocolconflict'] = [
+			$prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] = [
 				'label-message' => 'twocolconflict-beta-feature-message',
 				'desc-message' => 'twocolconflict-beta-feature-description',
 				'screenshot' => [
