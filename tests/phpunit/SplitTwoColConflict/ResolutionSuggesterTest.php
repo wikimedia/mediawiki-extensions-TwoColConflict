@@ -4,6 +4,7 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use Content;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWikiIntegrationTestCase;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\TalkPageResolution;
 use Wikimedia\TestingAccessWrapper;
@@ -14,14 +15,14 @@ use Wikimedia\TestingAccessWrapper;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class ResolutionSuggesterTest extends \PHPUnit\Framework\TestCase {
+class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
-		global $wgTwoColConflictSuggestResolution;
-
 		parent::setUp();
 
-		$wgTwoColConflictSuggestResolution = true;
+		$this->setMwGlobals( [
+			'wgTwoColConflictSuggestResolution' => true,
+		] );
 	}
 
 	public function provideSuggestion() {
