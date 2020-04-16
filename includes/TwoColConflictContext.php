@@ -29,9 +29,7 @@ class TwoColConflictContext {
 			return false;
 		}
 
-		if ( self::isUsedAsBetaFeature() &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
-		) {
+		if ( self::isUsedAsBetaFeature() ) {
 			return \BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
 
@@ -39,11 +37,13 @@ class TwoColConflictContext {
 	}
 
 	/**
-	 * @return bool
+	 * @return bool True if TwoColConflict should be provided as a beta feature.
+	 *   False if it will be the default conflict workflow.
 	 */
 	public static function isUsedAsBetaFeature() : bool {
 		return MediaWikiServices::getInstance()->getMainConfig()
-			->get( 'TwoColConflictBetaFeature' );
+				->get( 'TwoColConflictBetaFeature' ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
 	}
 
 }

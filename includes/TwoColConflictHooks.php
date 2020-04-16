@@ -211,7 +211,7 @@ class TwoColConflictHooks {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
-		if ( $config->get( 'TwoColConflictBetaFeature' ) ) {
+		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
 			$prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] = [
 				'label-message' => 'twocolconflict-beta-feature-message',
 				'desc-message' => 'twocolconflict-beta-feature-description',
@@ -236,9 +236,7 @@ class TwoColConflictHooks {
 	 */
 	public static function onGetPreferences( $user, array &$preferences ) {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $config->get( 'TwoColConflictBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' )
-		) {
+		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
 			return;
 		}
 
