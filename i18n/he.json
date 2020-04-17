@@ -55,5 +55,7 @@
 	"twocolconflict-split-help-tooltip": "הצגת עזרה",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "רשומות מתנגשות",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "למרבה הצער, מישהו אחר כתב באותו זמן כמוך. נא לסקור את ההערות בדף הבא. אם זה נחוץ, אפשר לערוך את שלך ולשנות את הסדר הסופי.",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "פתרון הבעיה"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "פתרון הבעיה",
+	"twocolconflict-talk-your": "ההצעה שלך",
+	"twocolconflict-talk-conflicting": "ההצעה המתנגשת"
 }
