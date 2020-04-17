@@ -58,5 +58,8 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Unfortunately, someone else posted at the same time as you. Please review the comments on the next page. If needed, you can edit yours and change the final order.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Resolve issue",
 	"twocolconflict-talk-your": "Your entry",
-	"twocolconflict-talk-conflicting": "Conflicting entry"
+	"twocolconflict-talk-conflicting": "Conflicting entry",
+	"twocolconflict-talk-reorder-prompt": "Position your entry in relation to the conflicting entry:",
+	"twocolconflict-talk-same-order": "Keep after",
+	"twocolconflict-talk-reverse-order": "Move before"
 }

@@ -77,22 +77,26 @@ class TwoColConflictHooks {
 	public static function onImportFormData( EditPage $editPage, WebRequest $request ) {
 		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
 		if ( $contentRows ) {
-			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds', [] );
-			$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector', [] );
+			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' ) ?? [];
+			$sideSelection = $request->getArray( 'mw-twocolconflict-side-selector' ) ?? [];
 
-			if ( $request->getBool( 'mw-twocolconflict-single-column-view' )
-				&& !( new ConflictFormValidator() )->validateRequest( $request )
-			) {
-				// When the request is invalid, drop any selection to force the original conflict to
-				// be re-created, and not silently resolved or corrupted.
-				$sideSelection = [];
-				foreach ( $contentRows as $num => &$row ) {
-					// Make sure the merger can't fall back to "other", but allow other fallbacks
-					if ( is_array( $row ) && key( $row ) === 'other' ) {
-						unset( $row['other'] );
-						if ( !$row ) {
-							unset( $contentRows[$num] );
+			if ( $request->getBool( 'mw-twocolconflict-single-column-view' ) ) {
+				if ( !( new ConflictFormValidator() )->validateRequest( $request ) ) {
+					// When the request is invalid, drop any selection to force the original conflict to
+					// be re-created, and not silently resolved or corrupted.
+					$sideSelection = [];
+					foreach ( $contentRows as $num => &$row ) {
+						// Make sure the merger can't fall back to "other", but allow other fallbacks
+						if ( is_array( $row ) && key( $row ) === 'other' ) {
+							unset( $row['other'] );
+							if ( !$row ) {
+								unset( $contentRows[$num] );
+							}
 						}
+					}
+				} else {
+					if ( $request->getVal( 'mw-twocolconflict-reorder' ) === 'reverse' ) {
+						[ $contentRows, $extraLineFeeds ] = self::swapTalkComments( $contentRows, $extraLineFeeds );
 					}
 				}
 			}
@@ -103,6 +107,24 @@ class TwoColConflictHooks {
 				$sideSelection
 			);
 		}
+	}
+
+	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ) : array {
+		foreach ( $contentRows as $num => $row ) {
+			if ( is_array( $row ) && array_key_exists( 'other', $row )
+				&& $num < count( $contentRows ) - 1
+				&& $num < count( $extraLineFeeds ) - 1
+			) {
+				[ $contentRows[$num], $contentRows[$num + 1] ] =
+					[ $contentRows[$num + 1], $contentRows[$num] ];
+				[ $extraLineFeeds[$num], $extraLineFeeds[$num + 1] ] =
+					[ $extraLineFeeds[$num + 1], $extraLineFeeds[$num] ];
+
+				break;
+			}
+		}
+
+		return [ $contentRows, $extraLineFeeds ];
 	}
 
 	/**
