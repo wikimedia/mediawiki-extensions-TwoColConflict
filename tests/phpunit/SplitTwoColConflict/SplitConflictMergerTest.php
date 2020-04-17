@@ -64,11 +64,11 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 				[ 'copy' => 'B' ],
 			],
 			[
-				[ 'copy' => 2 ],
+				[ 'copy' => '2,1' ],
 			],
 			[]
 		);
-		$this->assertSame( "A\n\n\nB", $result );
+		$this->assertSame( "\nA\n\n\nB", $result );
 	}
 
 	public function testEmptyLinesAreSkipped() {
