@@ -146,7 +146,8 @@
 				"twocolconflict-split-help-tooltip",
 				"twocolconflict-split-tour-dialog-header-single-column-view",
 				"twocolconflict-split-tour-dialog-message-single-column-view",
-				"twocolconflict-split-tour-dialog-btn-text-single-column-view"
+				"twocolconflict-split-tour-dialog-btn-text-single-column-view",
+				"savechanges"
 			]
 		},
 		"ext.TwoColConflict.Util": {
