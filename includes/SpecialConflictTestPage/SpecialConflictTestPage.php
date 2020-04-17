@@ -156,17 +156,23 @@ class SpecialConflictTestPage extends SpecialPage {
 
 	private function showConflict( Article $article ) {
 		$editConflictHelperFactory = function ( $submitButtonLabel ) use ( $article ) {
-			$baseRevision = $article->getRevision()->getPrevious();
+			$currentRevisionRecord = $article->getPage()->getRevisionRecord();
+			$services = MediaWikiServices::getInstance();
+
+			$baseRevisionRecord = $currentRevisionRecord ?
+				$services->getRevisionLookup()
+					->getPreviousRevision( $currentRevisionRecord ) :
+				null;
 
 			return new SplitTwoColConflictTestHelper(
 				$article->getTitle(),
 				$article->getContext()->getOutput(),
-				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$services->getStatsdDataFactory(),
 				$submitButtonLabel,
 				'',
-				MediaWikiServices::getInstance()->getContentHandlerFactory(),
+				$services->getContentHandlerFactory(),
 				new ResolutionSuggester(
-					$baseRevision ? $baseRevision->getRevisionRecord() : null,
+					$baseRevisionRecord,
 					$article->getContentHandler()->getDefaultFormat()
 				)
 			);

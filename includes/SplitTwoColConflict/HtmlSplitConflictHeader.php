@@ -81,8 +81,7 @@ class HtmlSplitConflictHeader {
 		$wikiPage = \WikiPage::factory( \Title::newFromLinkTarget( $this->linkTarget ) );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( \WikiPage::READ_LATEST );
-		$revision = $wikiPage->getRevision();
-		return $revision ? $revision->getRevisionRecord() : null;
+		return $wikiPage->getRevisionRecord();
 	}
 
 	/**

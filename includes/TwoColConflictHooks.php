@@ -130,7 +130,7 @@ class TwoColConflictHooks {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getExpectedParentRevision();
-			$latestRevision = $editPage->getArticle()->getRevision();
+			$latestRevision = $editPage->getArticle()->getPage()->getRevisionRecord();
 
 			$conflictChunks = 0;
 			$conflictChars = 0;
@@ -140,7 +140,7 @@ class TwoColConflictHooks {
 				$merge = MediaWikiServices::getInstance()->getService( 'TwoColConflictThreeWayMerge' );
 				$result = $merge->merge3(
 					$baseRevision->getContent( SlotRecord::MAIN )->serialize(),
-					$latestRevision->getContent()->serialize(),
+					$latestRevision->getContent( SlotRecord::MAIN )->serialize(),
 					$editPage->textbox2
 				);
 
