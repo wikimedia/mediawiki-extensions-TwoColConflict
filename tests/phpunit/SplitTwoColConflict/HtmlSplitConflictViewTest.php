@@ -206,26 +206,31 @@ TEXT
 						$offset
 					);
 			}
+			$offset++;
 		}
 	}
 
 	private function assertEditorExistsWithValue( string $html, string $value, int $startPos ) {
-		$value .= "\n";
-
-		$pos = strpos( $html, '>' . $value . '</textarea>', $startPos );
-		$this->assertTrue(
-			$pos !== false,
-			'Input element having value "' . $value . '" not found or in wrong position.' . $html
-		);
+		if ( $value !== '' ) {
+			// HtmlEditableTextComponent::getHtml() might enforce one newline at the end
+			$value .= "\n";
+			if ( $value[0] === "\n" ) {
+				// Html::textarea() might add an extra newline at the start
+				$value = "\n" . $value;
+			}
+		}
+		$fragment = '>' . $value . '</textarea>';
+		$pos = strpos( $html, $fragment, $startPos );
+		$this->assertIsInt( $pos, "…$fragment not found after position " . $startPos .
+			': …' . substr( $html, $startPos, 1000 ) . '…' );
 		return $pos;
 	}
 
 	private function assertDivExistsWithClassValue( string $html, string $class, int $startPos ) {
-		$pos = strpos( $html, '<div class="' . $class . '"', $startPos );
-		$this->assertTrue(
-			$pos !== false,
-			'Div element with class ' . $class . ' not found or in wrong position.'
-		);
+		$fragment = '<div class="' . $class . '"';
+		$pos = strpos( $html, $fragment, $startPos );
+		$this->assertIsInt( $pos, $fragment . '… not found after position ' . $startPos .
+			': …' . substr( $html, $startPos, 1000 ) . '…' );
 		return $pos;
 	}
 
