@@ -11,59 +11,8 @@
  * @constructor
  */
 var Tour = function ( windowManager, config ) {
-	var self = this;
-
-	function TourDialog( config ) {
-		this.panel = config.panel;
-		TourDialog.super.call( this, config );
-	}
-
-	OO.inheritClass( TourDialog, OO.ui.Dialog );
-
-	TourDialog.static.name = 'TourDialog';
-	TourDialog.prototype.initialize = function () {
-		TourDialog.super.prototype.initialize.call( this );
-		this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
-		this.content.$element.addClass( 'mw-twocolconflict-split-tour-intro-container' );
-		this.content.$element.append( this.panel );
-		this.$body.append( this.content.$element );
-	};
-
-	var closeButton = new OO.ui.ButtonWidget( {
-		label: config.close,
-		flags: [ 'primary', 'progressive' ]
-	} );
-
-	var $panel = $( '<div>' )
-		.append(
-			$( '<h5>' )
-				.text( config.header )
-				.addClass( 'mw-twocolconflict-split-tour-intro-container-header' )
-		)
-		.append(
-			$( '<div>' )
-				.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + config.image.css )
-				// Todo: find a better way to handle image scaling
-				.css( 'height', config.image.height )
-		)
-		.append(
-			$( '<p>' ).text( config.message )
-		)
-		.append( closeButton.$element );
-
-	this.dialog = new TourDialog( {
-		size: 'large',
-		panel: $panel
-	} );
-
-	closeButton.on( 'click', function () {
-		self.dialog.close();
-		self.showButtons();
-	} );
-
 	this.windowManager = windowManager;
-	$( 'body' ).append( this.windowManager.$element );
-	this.windowManager.addWindows( [ this.dialog ] );
+	this.config = config;
 };
 
 $.extend( Tour.prototype, {
@@ -79,9 +28,85 @@ $.extend( Tour.prototype, {
 	windowManager: null,
 
 	/**
+	 * @type {Object}
+	 */
+	config: null,
+
+	/**
 	 * @type {Object[]}
 	 */
 	buttons: [],
+
+	/**
+	 * Creates the initial dialog window
+	 */
+	createDialog: function () {
+		var self = this;
+
+		function TourDialog( config ) {
+			this.panel = config.panel;
+			TourDialog.super.call( this, config );
+		}
+
+		OO.inheritClass( TourDialog, OO.ui.Dialog );
+
+		TourDialog.static.name = 'TourDialog';
+		TourDialog.prototype.initialize = function () {
+			TourDialog.super.prototype.initialize.call( this );
+			this.content = new OO.ui.PanelLayout( { padded: true, expanded: false } );
+			this.content.$element.addClass( 'mw-twocolconflict-split-tour-intro-container' );
+			this.content.$element.append( this.panel );
+			this.$body.append( this.content.$element );
+		};
+
+		var closeButton = new OO.ui.ButtonWidget( {
+			label: this.config.close,
+			flags: [ 'primary', 'progressive' ]
+		} );
+
+		var $panel = $( '<div>' )
+			.append(
+				$( '<h5>' )
+					.text( this.config.header )
+					.addClass( 'mw-twocolconflict-split-tour-intro-container-header' )
+			)
+			.append(
+				$( '<div>' )
+					.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + this.config.image.css )
+					// Todo: find a better way to handle image scaling
+					.css( 'height', this.config.image.height )
+			)
+			.append(
+				$( '<p>' ).text( this.config.message )
+			);
+
+		// As of now this is never empty, but if it is hinting at the blue dots doesn't make sense
+		if ( this.buttons.length ) {
+			$panel.append(
+				$( '<div>' )
+					.addClass( 'mw-twocolconflict-split-tour-intro-container-blue-dot-hint' )
+					.append(
+						$( '<div>' ).addClass( 'mw-twocolconflict-split-tour-image-blue-dot' ),
+						$( '<p>' ).text( mw.msg( 'twocolconflict-split-tour-dialog-dot-message' ) )
+					)
+			);
+		}
+
+		$panel.append( closeButton.$element );
+
+		this.dialog = new TourDialog( {
+			size: 'large',
+			panel: $panel
+		} );
+
+		closeButton.on( 'click', function () {
+			self.dialog.close();
+			self.showButtons();
+		} );
+
+		$( 'body' ).append( this.windowManager.$element );
+		this.windowManager.addWindows( [ this.dialog ] );
+	},
 
 	/**
 	 * @param {jQuery} $element
@@ -149,6 +174,10 @@ $.extend( Tour.prototype, {
 			}
 
 			data.$pulsatingButton.show();
+
+			if ( data.showByDefault ) {
+				data.$pulsatingButton.click();
+			}
 		} );
 	},
 
@@ -158,12 +187,14 @@ $.extend( Tour.prototype, {
 	 * @param {string} header for the popup
 	 * @param {string} message for the popup
 	 * @param {jQuery} $element to which the popup should be anchored to
+	 * @param {boolean} [showByDefault=false] whether the popup should be shown by default
 	 */
-	addTourPopup: function ( header, message, $element ) {
+	addTourPopup: function ( header, message, $element, showByDefault ) {
 		this.buttons.push( {
 			header: header,
 			message: message,
-			$element: $element
+			$element: $element,
+			showByDefault: showByDefault || false
 		} );
 	},
 
@@ -199,6 +230,10 @@ $.extend( Tour.prototype, {
 
 	showTour: function () {
 		this.hideTourPopups();
+
+		if ( !this.dialog ) {
+			this.createDialog();
+		}
 		this.windowManager.openWindow( this.dialog );
 	}
 } );
@@ -226,7 +261,7 @@ function initialize() {
 			{
 				header: mw.msg( 'twocolconflict-split-tour-dialog-header-single-column-view' ),
 				image: {
-					css: 'mw-twocolconflict-split-tour-slide-single-column-view-1',
+					css: 'mw-twocolconflict-split-tour-image-single-column-view-1',
 					height: '240px'
 				},
 				message: mw.msg( 'twocolconflict-split-tour-dialog-message-single-column-view' ),
@@ -245,8 +280,8 @@ function initialize() {
 			{
 				header: mw.msg( 'twocolconflict-split-tour-dialog-header' ),
 				image: {
-					css: 'mw-twocolconflict-split-tour-slide-dual-column-view-1',
-					height: '180px'
+					css: 'mw-twocolconflict-split-tour-image-dual-column-view-1',
+					height: '200px'
 				},
 				message: mw.msg( 'twocolconflict-split-tour-dialog-message' ),
 				close: mw.msg( 'twocolconflict-split-tour-dialog-btn-text' )
@@ -256,7 +291,8 @@ function initialize() {
 		tour.addTourPopup(
 			mw.msg( 'twocolconflict-split-tour-popup1-header' ),
 			mw.msg( 'twocolconflict-split-tour-popup1-message' ),
-			$body.find( '.mw-twocolconflict-split-your-version-header' )
+			$body.find( '.mw-twocolconflict-split-your-version-header' ),
+			true
 		);
 
 		tour.addTourPopup(

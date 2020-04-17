@@ -90,8 +90,11 @@
 		},
 		"ext.TwoColConflict.Split.TourImages": {
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-twocolconflict-split-tour-slide-{name}",
+			"selector": ".mw-twocolconflict-split-tour-image-{name}",
 			"images": {
+				"blue-dot": {
+					"file": "resources/ext.TwoColConflict.Split.Tour/blue-dot.svg"
+				},
 				"dual-column-view-1": {
 					"file": {
 						"ltr": "resources/ext.TwoColConflict.Split.Tour/dual-column-view-slide1-ltr.svg",
@@ -126,6 +129,7 @@
 				"user.options"
 			],
 			"messages": [
+				"twocolconflict-split-tour-dialog-dot-message",
 				"twocolconflict-split-tour-dialog-header",
 				"twocolconflict-split-tour-dialog-message",
 				"twocolconflict-split-tour-dialog-btn-text",

@@ -37,8 +37,8 @@ class EditConflictPage extends Page {
 
 	get tourDiffChangeButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ); }
 	get tourSplitSelectionButton() { return $( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-pulsating-button' ); }
-	get tourYourVersionHeaderButton() { return $( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-pulsating-button' ); }
 
+	get tourYourVersionHeaderPopup() { return $( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-popup' ); }
 	get tourDiffChangePopup() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
 	get tourDiffChangePopupCloseButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
 

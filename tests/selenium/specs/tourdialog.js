@@ -45,7 +45,7 @@ describe( 'TwoColConflict GuidedTour', function () {
 			);
 		} );
 
-		it( 'clicking the close button dismisses the dialog and adds pulsating buttons', function () {
+		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', function () {
 			EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 1000 } );
 			EditConflictPage.tourDialogCloseButton.click();
 
@@ -65,8 +65,8 @@ describe( 'TwoColConflict GuidedTour', function () {
 			);
 
 			assert(
-				EditConflictPage.tourYourVersionHeaderButton.isDisplayed(),
-				'Your version header pulsating button has appeared'
+				EditConflictPage.tourYourVersionHeaderPopup.isDisplayed(),
+				'Your version header popup has appeared'
 			);
 		} );
 

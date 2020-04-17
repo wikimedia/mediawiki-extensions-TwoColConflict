@@ -39,6 +39,7 @@
 	"twocolconflict-split-choose-version": "Label for the version selection on conflicting paragraphs, when neither column has been selected.",
 	"twocolconflict-split-other-version-chosen": "Label for the version selection on conflicting paragraphs when the \"other\" edit has been selected as the starting point.",
 	"twocolconflict-split-your-version-chosen": "Label for the version selection on conflicting paragraphs when \"your\" edit has been selected as the starting point.",
+	"twocolconflict-split-tour-dialog-dot-message": "Text for the blue dot explanation shown on the first screen of the help dialog.",
 	"twocolconflict-split-tour-dialog-header": "Text for the header on the first screen of the help dialog.",
 	"twocolconflict-split-tour-dialog-message": "Text for the message on the first screen of the help dialog.",
 	"twocolconflict-split-tour-dialog-btn-text": "Text for the close button on the first screen of the help dialog.",
