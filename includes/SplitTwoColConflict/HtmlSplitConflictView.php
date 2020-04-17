@@ -84,7 +84,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $diffHtml, $text, $rowNum, 'your' )
+			$this->editableTextComponent->getHtml( $diffHtml, $text, $rowNum, 'your' )
 		);
 	}
 
@@ -92,7 +92,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( $diffHtml, $rawText, $rowNum, 'other' )
+			$this->editableTextComponent->getHtml( $diffHtml, $rawText, $rowNum, 'other' )
 		);
 	}
 
@@ -100,7 +100,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-split-column' ],
-			$this->buildEditableTextContainer( htmlspecialchars( $text ), $text, $rowNum, 'copy' )
+			$this->editableTextComponent->getHtml( htmlspecialchars( $text ), $text, $rowNum, 'copy' )
 		);
 	}
 
@@ -113,17 +113,6 @@ class HtmlSplitConflictView {
 				[],
 				$this->messageLocalizer->msg( 'twocolconflict-split-choose-version' )->text()
 			)
-		);
-	}
-
-	private function buildEditableTextContainer(
-		string $diffHtml,
-		string $text,
-		int $rowNum,
-		string $changeType
-	) : string {
-		return $this->editableTextComponent->getHtml(
-			$diffHtml, $text, $rowNum, $changeType
 		);
 	}
 

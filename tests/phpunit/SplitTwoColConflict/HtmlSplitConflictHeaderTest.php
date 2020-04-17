@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use MediaWiki\MediaWikiServices;
+use Language;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiTestCase;
 use Message;
@@ -60,7 +60,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$this->assertStringContainsString( '>(twocolconflict-split-header-hint)<', $html );
 		$this->assertStringContainsString(
-			'>(twocolconflict-split-current-version-header: 23:42, 21 (july) 2018)<',
+			'>(twocolconflict-split-current-version-header: 20180721234200)<',
 			$html
 		);
 	}
@@ -119,6 +119,11 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
+		$language = $this->createMock( Language::class );
+		$language->method( 'userTimeAndDate' )->willReturnCallback( function ( ?string $ts ) {
+			return $ts ?? '(just-now)';
+		} );
+
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturnCallback( function ( $key, ...$params ) {
 			$msg = $this->createMock( Message::class );
@@ -135,23 +140,23 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		} );
 
 		return new HtmlSplitConflictHeader(
-			Title::newFromText( __METHOD__ ),
+			Title::makeTitle( NS_MAIN, __METHOD__ ),
 			$this->getTestUser()->getUser(),
-			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'qqx' ),
+			$summary,
+			$language,
 			$localizer,
 			self::NOW,
-			$summary,
 			$revision
 		);
 	}
 
 	/**
-	 * @param int|string $timestamp
+	 * @param string|null $timestamp
 	 * @param string $editSummary
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( $timestamp, string $editSummary = '' ) {
+	private function newRevisionRecord( string $timestamp = null, string $editSummary = '' ) {
 		$revision = $this->createMock( RevisionRecord::class );
 		$revision->method( 'getUser' )
 			->willReturn( $this->otherUser );

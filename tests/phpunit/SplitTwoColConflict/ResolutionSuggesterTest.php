@@ -5,6 +5,7 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 use Content;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiIntegrationTestCase;
+use Title;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\TalkPageResolution;
 use Wikimedia\TestingAccessWrapper;
@@ -313,12 +314,15 @@ class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
 		string $stored,
 		?TalkPageResolution $expectedOutput
 	) {
-		$suggester = $this->createResolutionSuggester( new \WikitextContent( $base ) );
+		$title = $this->createMock( Title::class );
+		$title->method( 'isTalkPage' )->willReturn( true );
+
+		$suggester = $this->createResolutionSuggester( $base );
 
 		$this->assertEquals(
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
-				\Title::makeTitle( NS_TALK, __FUNCTION__ ),
+				$title,
 				explode( "\n", $stored ),
 				explode( "\n", $your )
 			)
@@ -326,7 +330,7 @@ class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetBaseRevisionLines() {
-		$suggester = $this->createResolutionSuggester( new \WikitextContent( "A\nB\nC" ) );
+		$suggester = $this->createResolutionSuggester( "A\nB\nC" );
 		$this->assertSame( [ 'A','B','C' ], $suggester->getBaseRevisionLines() );
 	}
 
@@ -344,11 +348,14 @@ class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @param ?Content $content
+	 * @param string|null $wikiText
 	 *
 	 * @return ResolutionSuggester
 	 */
-	private function createResolutionSuggester( ?Content $content ) {
+	private function createResolutionSuggester( ?string $wikiText ) {
+		$content = $this->createMock( Content::class );
+		$content->method( 'serialize' )->willReturn( $wikiText );
+
 		$baseRevisionMock = $this->createMock( RevisionRecord::class );
 		$baseRevisionMock->method( 'getContent' )
 			->willReturn( $content );

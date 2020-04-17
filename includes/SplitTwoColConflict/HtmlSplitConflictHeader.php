@@ -57,21 +57,21 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @param LinkTarget $linkTarget
 	 * @param User $user
+	 * @param string $newEditSummary
 	 * @param Language $language
 	 * @param MessageLocalizer $messageLocalizer
-	 * @param string|int|false $now Any value the ConvertibleTimestamp class accepts. False for the
-	 *  current time
-	 * @param string $newEditSummary
+	 * @param string|int|false $now Current time for testing. Any value the ConvertibleTimestamp
+	 *  class accepts. False for the current time.
 	 * @param RevisionRecord|null $revision Latest revision for testing, derived from the
 	 *  $linkTarget otherwise.
 	 */
 	public function __construct(
 		LinkTarget $linkTarget,
 		User $user,
+		string $newEditSummary,
 		Language $language,
 		MessageLocalizer $messageLocalizer,
-		$now,
-		string $newEditSummary,
+		$now = false,
 		RevisionRecord $revision = null
 	) {
 		$this->linkTarget = $linkTarget;
@@ -121,6 +121,7 @@ class HtmlSplitConflictHeader {
 
 		if ( $this->revision ) {
 			$dateTime = $this->getFormattedDateTime( $this->revision->getTimestamp() );
+			// FIXME: This blocks us from having pure unit tests for this class
 			$userTools = Linker::revUserTools( $this->revision );
 
 			$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );

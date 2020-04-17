@@ -6,7 +6,6 @@ use Html;
 use Language;
 use MessageLocalizer;
 use OOUI\ButtonWidget;
-use User;
 
 // TODO: Should this be an official OOUI component?
 class HtmlEditableTextComponent {
@@ -17,28 +16,29 @@ class HtmlEditableTextComponent {
 	private $messageLocalizer;
 
 	/**
-	 * @var User
-	 */
-	private $user;
-
-	/**
 	 * @var Language
 	 */
 	private $language;
 
 	/**
+	 * @var string
+	 */
+	private $editFontOption;
+
+	/**
 	 * @param MessageLocalizer $messageLocalizer
-	 * @param User $user
 	 * @param Language $language
+	 * @param string $editFontOption Supported values are "monospace" (default), "sans-serif", and
+	 *  "serif"
 	 */
 	public function __construct(
 		MessageLocalizer $messageLocalizer,
-		User $user,
-		Language $language
+		Language $language,
+		string $editFontOption = 'monospace'
 	) {
 		$this->messageLocalizer = $messageLocalizer;
-		$this->user = $user;
 		$this->language = $language;
+		$this->editFontOption = $editFontOption;
 	}
 
 	/**
@@ -103,9 +103,8 @@ class HtmlEditableTextComponent {
 		string $changeType,
 		bool $isDisabled
 	) : string {
-		$class = 'mw-editfont-' . $this->user->getOption( 'editfont' );
 		$attributes = [
-			'class' => $class . ' mw-twocolconflict-split-editor',
+			'class' => 'mw-editfont-' . $this->editFontOption . ' mw-twocolconflict-split-editor',
 			'lang' => $this->language->getHtmlCode(),
 			'dir' => $this->language->getDir(),
 			'rows' => $this->rowsForText( $editorText ),
