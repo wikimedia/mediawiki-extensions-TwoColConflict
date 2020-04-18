@@ -3,6 +3,7 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use MessageLocalizer;
 use OOUI\IconWidget;
 
 /**
@@ -17,10 +18,20 @@ class HtmlTalkPageResolutionView {
 	private $editableTextComponent;
 
 	/**
-	 * @param HtmlEditableTextComponent $editableTextComponent
+	 * @var MessageLocalizer
 	 */
-	public function __construct( HtmlEditableTextComponent $editableTextComponent ) {
+	private $messageLocalizer;
+
+	/**
+	 * @param HtmlEditableTextComponent $editableTextComponent
+	 * @param MessageLocalizer $messageLocalizer
+	 */
+	public function __construct(
+		HtmlEditableTextComponent $editableTextComponent,
+		MessageLocalizer $messageLocalizer
+	) {
 		$this->editableTextComponent = $editableTextComponent;
+		$this->messageLocalizer = $messageLocalizer;
 	}
 
 	/**
@@ -115,7 +126,7 @@ class HtmlTalkPageResolutionView {
 		$out .= Html::element(
 			'div',
 			[ 'class' => 'mw-twocolconflict-draggable-label' ],
-			wfMessage( $draggableLabel )->text()
+			$this->messageLocalizer->msg( $draggableLabel )->text()
 		);
 		$out .= Html::rawElement(
 			'div',

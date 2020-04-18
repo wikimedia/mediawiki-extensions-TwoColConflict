@@ -197,14 +197,18 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->title,
 			$user,
 			$language,
+			$this->out,
 			false,
 			$this->newEditSummary
 		) )->getHtml();
-		$out .= ( new HtmlSplitConflictView( new HtmlEditableTextComponent(
-			$this->out,
-			$user,
-			$language
-		) ) )->getHtml(
+		$out .= ( new HtmlSplitConflictView(
+			new HtmlEditableTextComponent(
+				$this->out,
+				$user,
+				$language
+			),
+			$this->out
+		) )->getHtml(
 			$diff,
 			// Note: Can't use getBool() because that discards arrays
 			(bool)$this->out->getRequest()->getArray( 'mw-twocolconflict-split-content' )
@@ -213,10 +217,13 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	private function buildResolutionSuggestionView( TalkPageResolution $suggestion ) : string {
-		return ( new HtmlTalkPageResolutionView( new HtmlEditableTextComponent(
-			$this->out->getContext(),
-			$this->out->getUser(),
-			$this->out->getLanguage() )
+		return ( new HtmlTalkPageResolutionView(
+			new HtmlEditableTextComponent(
+				$this->out->getContext(),
+				$this->out->getUser(),
+				$this->out->getLanguage()
+			),
+			$this->out->getContext()
 		) )->getHtml(
 			$suggestion->getDiff(),
 			$suggestion->getOtherIndex(),

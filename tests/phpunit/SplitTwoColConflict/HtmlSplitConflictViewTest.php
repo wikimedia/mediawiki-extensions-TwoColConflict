@@ -231,11 +231,14 @@ TEXT
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
 
-		return new HtmlSplitConflictView( new HtmlEditableTextComponent(
-			$localizer,
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) );
+		return new HtmlSplitConflictView(
+			new HtmlEditableTextComponent(
+				$localizer,
+				$this->getTestUser()->getUser(),
+				$this->createMock( Language::class )
+			),
+			$localizer
+		);
 	}
 
 }

@@ -3,6 +3,7 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
+use MessageLocalizer;
 use OOUI\RadioInputWidget;
 
 /**
@@ -17,10 +18,20 @@ class HtmlSplitConflictView {
 	private $editableTextComponent;
 
 	/**
-	 * @param HtmlEditableTextComponent $editableTextComponent
+	 * @var MessageLocalizer
 	 */
-	public function __construct( HtmlEditableTextComponent $editableTextComponent ) {
+	private $messageLocalizer;
+
+	/**
+	 * @param HtmlEditableTextComponent $editableTextComponent
+	 * @param MessageLocalizer $messageLocalizer
+	 */
+	public function __construct(
+		HtmlEditableTextComponent $editableTextComponent,
+		MessageLocalizer $messageLocalizer
+	) {
 		$this->editableTextComponent = $editableTextComponent;
+		$this->messageLocalizer = $messageLocalizer;
 	}
 
 	/**
@@ -100,7 +111,7 @@ class HtmlSplitConflictView {
 			Html::element(
 				'span',
 				[],
-				wfMessage( 'twocolconflict-split-choose-version' )->text()
+				$this->messageLocalizer->msg( 'twocolconflict-split-choose-version' )->text()
 			)
 		);
 	}
