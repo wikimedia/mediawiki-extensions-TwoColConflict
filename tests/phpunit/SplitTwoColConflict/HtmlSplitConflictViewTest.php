@@ -4,6 +4,8 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use Language;
 use MediaWikiTestCase;
+use Message;
+use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
@@ -55,11 +57,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		$formatter = new AnnotatedHtmlDiffFormatter();
 		$diff = $formatter->format( $storedLines, $yourLines, $yourLines );
 
-		$view = new HtmlSplitConflictView( new HtmlEditableTextComponent(
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) );
-		$html = $view->getHtml( $diff, false );
+		$html = $this->createInstance()->getHtml( $diff, false );
 
 		// All we effectively care about is that no "undefined index" are triggered
 		$this->assertIsString( $html );
@@ -159,16 +157,10 @@ TEXT
 	 * @dataProvider provideGetHtml
 	 */
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
-		$htmlResult = ( new HtmlSplitConflictView( new HtmlEditableTextComponent(
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) ) )->getHtml(
-			$diff,
-			false
-		);
+		$html = $this->createInstance()->getHtml( $diff, false );
 
 		$this->assertElementsPresentInOrder(
-			$htmlResult,
+			$html,
 			$expectedElements
 		);
 	}
@@ -233,6 +225,17 @@ TEXT
 		$this->assertIsInt( $pos, $fragment . '… not found after position ' . $startPos .
 			': …' . substr( $html, $startPos, 1000 ) . '…' );
 		return $pos;
+	}
+
+	private function createInstance() {
+		$localizer = $this->createMock( MessageLocalizer::class );
+		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
+
+		return new HtmlSplitConflictView( new HtmlEditableTextComponent(
+			$localizer,
+			$this->getTestUser()->getUser(),
+			$this->createMock( Language::class )
+		) );
 	}
 
 }
