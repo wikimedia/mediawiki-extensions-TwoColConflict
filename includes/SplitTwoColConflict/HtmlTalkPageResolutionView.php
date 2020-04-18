@@ -12,23 +12,18 @@ use User;
  *  "single" where appropriate.
  */
 class HtmlTalkPageResolutionView {
-	/**
-	 * @var User
-	 */
-	private $user;
 
 	/**
-	 * @var Language
+	 * @var HtmlEditableTextComponent
 	 */
-	private $language;
+	private $editableTextComponent;
 
 	/**
 	 * @param User $user
 	 * @param Language $language
 	 */
 	public function __construct( User $user, Language $language ) {
-		$this->user = $user;
-		$this->language = $language;
+		$this->editableTextComponent = new HtmlEditableTextComponent( $user, $language );
 	}
 
 	/**
@@ -130,7 +125,7 @@ class HtmlTalkPageResolutionView {
 		$out .= Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-' . $classSuffix . ' mw-twocolconflict-single-column' ],
-			( new HtmlEditableTextComponent( $this->user, $this->language ) )->getHtml(
+			$this->editableTextComponent->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, $changeType, $isDisabled )
 		);
 		$out .= $this->endRow();
@@ -145,7 +140,7 @@ class HtmlTalkPageResolutionView {
 		$out .= Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-single-column' ],
-			( new HtmlEditableTextComponent( $this->user, $this->language ) )->getHtml(
+			$this->editableTextComponent->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy', true )
 		);
 		$out .= $this->endRow();
