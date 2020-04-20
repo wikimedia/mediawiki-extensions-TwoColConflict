@@ -94,16 +94,16 @@ class HtmlTalkPageResolutionView {
 		);
 	}
 
-	private function startRow( int $rowNum, $isDraggable = false ) : string {
-		$class = 'mw-twocolconflict-single-row';
-		if ( $isDraggable ) {
-			$class .= ' mw-twocolconflict-draggable';
-		}
-		return Html::openElement( 'div', [ 'class' => $class, 'data-line-number' => $rowNum ] );
-	}
-
-	private function endRow() : string {
-		return Html::closeElement( 'div' );
+	private function wrapRow( string $html, int $rowNum, $isDraggable = false ) : string {
+		return Html::rawElement(
+			'div',
+			[
+				'class' => 'mw-twocolconflict-single-row' .
+					( $isDraggable ? ' mw-twocolconflict-draggable' : '' ),
+				'data-line-number' => $rowNum,
+			],
+			$html
+		);
 	}
 
 	private function buildDraggableRow(
@@ -114,8 +114,7 @@ class HtmlTalkPageResolutionView {
 		bool $isDisabled,
 		string $draggableLabel
 	) : string {
-		$out = $this->startRow( $rowNum, true );
-		$out .= Html::rawElement(
+		$out = Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-draggable-handle' ],
 			new IconWidget( [
@@ -133,23 +132,20 @@ class HtmlTalkPageResolutionView {
 			( new HtmlEditableTextComponent( $this->user, $this->language ) )->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, $changeType, $isDisabled )
 		);
-		$out .= $this->endRow();
-		return $out;
+		return $this->wrapRow( $out, $rowNum, true );
 	}
 
 	private function buildCopyRow(
 		string $rawText,
 		int $rowNum
 	) : string {
-		$out = $this->startRow( $rowNum );
-		$out .= Html::rawElement(
+		$out = Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-copy mw-twocolconflict-single-column' ],
 			( new HtmlEditableTextComponent( $this->user, $this->language ) )->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy', true )
 		);
-		$out .= $this->endRow();
-		return $out;
+		return $this->wrapRow( $out, $rowNum );
 	}
 
 }

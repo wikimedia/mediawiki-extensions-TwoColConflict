@@ -104,15 +104,15 @@ class HtmlSplitConflictView {
 	}
 
 	private function buildSideSelectorLabel() : string {
-		return Html::openElement(
-			'div', [ 'class' => 'mw-twocolconflict-split-selector-label' ]
-		) .
-		Html::element(
-			'span',
-			[],
-			wfMessage( 'twocolconflict-split-choose-version' )->text()
-		) .
-		Html::closeElement( 'div' );
+		return Html::rawElement(
+			'div',
+			[ 'class' => 'mw-twocolconflict-split-selector-label' ],
+			Html::element(
+				'span',
+				[],
+				wfMessage( 'twocolconflict-split-choose-version' )->text()
+			)
+		);
 	}
 
 	private function buildEditableTextContainer(

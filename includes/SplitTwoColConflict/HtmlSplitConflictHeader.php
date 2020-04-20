@@ -92,23 +92,16 @@ class HtmlSplitConflictHeader {
 			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
 
 		$out = $this->getWarningMessage( $hintMsg );
-
-		$out .= Html::openElement(
+		$out .= Html::rawElement(
 			'div',
-			[ 'class' => 'mw-twocolconflict-split-header' ]
+			[ 'class' => 'mw-twocolconflict-split-header' ],
+			Html::rawElement(
+				'div',
+				[ 'class' => 'mw-twocolconflict-split-flex-header' ],
+				$this->buildCurrentVersionHeader() .
+					$this->buildYourVersionHeader()
+			)
 		);
-
-		$out .= Html::openElement(
-			'div',
-			[ 'class' => 'mw-twocolconflict-split-flex-header' ]
-		);
-
-		$out .= $this->buildCurrentVersionHeader();
-		$out .= $this->buildYourVersionHeader();
-
-		$out .= Html::closeElement( 'div' );
-		$out .= Html::closeElement( 'div' );
-
 		return $out;
 	}
 
