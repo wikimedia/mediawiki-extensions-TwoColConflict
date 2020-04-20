@@ -14,22 +14,16 @@ use User;
 class HtmlSplitConflictView {
 
 	/**
-	 * @var User
+	 * @var HtmlEditableTextComponent
 	 */
-	private $user;
-
-	/**
-	 * @var Language
-	 */
-	private $language;
+	private $editableTextComponent;
 
 	/**
 	 * @param User $user
 	 * @param Language $language
 	 */
 	public function __construct( User $user, Language $language ) {
-		$this->user = $user;
-		$this->language = $language;
+		$this->editableTextComponent = new HtmlEditableTextComponent( $user, $language );
 	}
 
 	/**
@@ -121,9 +115,7 @@ class HtmlSplitConflictView {
 		int $rowNum,
 		string $changeType
 	) : string {
-		return ( new HtmlEditableTextComponent(
-			$this->user, $this->language
-		) )->getHtml(
+		return $this->editableTextComponent->getHtml(
 			$diffHtml, $text, $rowNum, $changeType
 		);
 	}
