@@ -126,6 +126,9 @@ class TwoColConflictHooks {
 		OutputPage $outputPage
 	) {
 		$request = $editPage->getContext()->getRequest();
+		if ( $editPage->getContext()->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
+			$request->setVal( 'editingStatsOversample', true );
+		}
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
