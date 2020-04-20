@@ -332,6 +332,7 @@ function initPreview() {
 	}
 }
 
+// eslint-disable-next-line no-unused-vars
 function initResolutionSuggestion() {
 	var $view = $( '.mw-twocolconflict-single-column-view' ),
 		$draggableSection = $view.find( '.mw-twocolconflict-suggestion-draggable' ),
@@ -378,7 +379,8 @@ $( function () {
 		return;
 	}
 
-	initResolutionSuggestion();
+	// FIXME: Disabled because of a widget glitch, see T247957.
+	// initResolutionSuggestion();
 	initColumnSelection();
 	initColumnClickEvent();
 	initButtonEvents();
