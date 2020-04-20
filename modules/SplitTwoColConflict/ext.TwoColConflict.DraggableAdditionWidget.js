@@ -20,7 +20,6 @@ function DraggableAdditionWidget( config ) {
 	// append the elements from the DOM and copy the important attributes
 	this.$element
 		.addClass( config.$rowElement.attr( 'class' ) )
-		.attr( 'data-line-number', config.$rowElement.attr( 'data-line-number' ) )
 		.append( config.$rowElement.children() );
 	// The original element is empty now
 	config.$rowElement.remove();

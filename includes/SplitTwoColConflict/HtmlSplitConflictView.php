@@ -61,7 +61,6 @@ class HtmlSplitConflictView {
 				[
 					'class' => 'mw-twocolconflict-split-row' .
 						( $markAsIncomplete ? ' mw-twocolconflict-no-selection' : '' ),
-					'data-line-number' => $currRowNum,
 				],
 				$line
 			);

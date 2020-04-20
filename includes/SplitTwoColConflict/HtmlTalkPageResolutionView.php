@@ -86,13 +86,12 @@ class HtmlTalkPageResolutionView {
 		);
 	}
 
-	private function wrapRow( string $html, int $rowNum, $isDraggable = false ) : string {
+	private function wrapRow( string $html, $isDraggable = false ) : string {
 		return Html::rawElement(
 			'div',
 			[
 				'class' => 'mw-twocolconflict-single-row' .
-					( $isDraggable ? ' mw-twocolconflict-draggable' : '' ),
-				'data-line-number' => $rowNum,
+					( $isDraggable ? ' mw-twocolconflict-draggable' : '' )
 			],
 			$html
 		);
@@ -124,7 +123,7 @@ class HtmlTalkPageResolutionView {
 			$this->editableTextComponent->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, $changeType, $isDisabled )
 		);
-		return $this->wrapRow( $out, $rowNum, true );
+		return $this->wrapRow( $out, true );
 	}
 
 	private function buildCopyRow(
@@ -137,7 +136,7 @@ class HtmlTalkPageResolutionView {
 			$this->editableTextComponent->getHtml(
 				htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy', true )
 		);
-		return $this->wrapRow( $out, $rowNum );
+		return $this->wrapRow( $out );
 	}
 
 }

@@ -48,12 +48,8 @@ describe( 'TwoColConflict editable areas', function () {
 		EditConflictPage.getColumn( 'unchanged' ).click();
 
 		assert(
-			EditConflictPage.copyRowEditMode.waitForDisplayed( { reverse: true } ),
-			'the copy row is not in edit mode'
-		);
-		assert(
-			EditConflictPage.changeRowEditMode.waitForDisplayed( { reverse: true } ),
-			'the change row is not in edit mode'
+			EditConflictPage.rowsInEditMode.waitForDisplayed( { reverse: true } ),
+			'no row is in edit mode'
 		);
 	} );
 
