@@ -7,6 +7,7 @@ use MediaWikiTestCase;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
+use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
 
 /**
@@ -54,10 +55,10 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 		$formatter = new AnnotatedHtmlDiffFormatter();
 		$diff = $formatter->format( $storedLines, $yourLines, $yourLines );
 
-		$view = new HtmlSplitConflictView(
+		$view = new HtmlSplitConflictView( new HtmlEditableTextComponent(
 			$this->getTestUser()->getUser(),
 			$this->createMock( Language::class )
-		);
+		) );
 		$html = $view->getHtml( $diff, false );
 
 		// All we effectively care about is that no "undefined index" are triggered
@@ -158,10 +159,10 @@ TEXT
 	 * @dataProvider provideGetHtml
 	 */
 	public function testGetHtmlElementOrder( array $expectedElements, array $diff ) {
-		$htmlResult = ( new HtmlSplitConflictView(
+		$htmlResult = ( new HtmlSplitConflictView( new HtmlEditableTextComponent(
 			$this->getTestUser()->getUser(),
 			$this->createMock( Language::class )
-		) )->getHtml(
+		) ) )->getHtml(
 			$diff,
 			false
 		);

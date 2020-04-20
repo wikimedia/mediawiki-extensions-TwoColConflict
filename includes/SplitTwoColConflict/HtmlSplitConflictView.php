@@ -3,9 +3,7 @@
 namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
-use Language;
 use OOUI\RadioInputWidget;
-use User;
 
 /**
  * @license GPL-2.0-or-later
@@ -19,11 +17,10 @@ class HtmlSplitConflictView {
 	private $editableTextComponent;
 
 	/**
-	 * @param User $user
-	 * @param Language $language
+	 * @param HtmlEditableTextComponent $editableTextComponent
 	 */
-	public function __construct( User $user, Language $language ) {
-		$this->editableTextComponent = new HtmlEditableTextComponent( $user, $language );
+	public function __construct( HtmlEditableTextComponent $editableTextComponent ) {
+		$this->editableTextComponent = $editableTextComponent;
 	}
 
 	/**
