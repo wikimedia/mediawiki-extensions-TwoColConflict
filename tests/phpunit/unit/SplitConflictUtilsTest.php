@@ -52,4 +52,5 @@ class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 			$result = SplitConflictUtils::splitText( $input )
 		);
 	}
+
 }

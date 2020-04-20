@@ -9,6 +9,7 @@ use User;
 
 // TODO: Should this be an official OOUI component?
 class HtmlEditableTextComponent {
+
 	/**
 	 * @var User
 	 */
