@@ -36,8 +36,20 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				0,
 				0,
 				[
+					// Not every order is critical here, just make sure everything is there
+					' class="mw-twocolconflict-split-view mw-twocolconflict-single-column-view"',
 					'<textarea>a</textarea>',
-					'</div></div>',
+
+					// Form elements and labels required for the no-JavaScript workflow
+					' class="mw-twocolconflict-order-selector"',
+					'(twocolconflict-talk-reorder-prompt)',
+					" name='mw-twocolconflict-reorder'",
+					" value='reverse'",
+					"(twocolconflict-talk-reverse-order)",
+					" value='no-change'",
+					"(twocolconflict-talk-same-order)",
+
+					' name="mw-twocolconflict-single-column-view"',
 				]
 			],
 			'typical talk page conflict' => [
@@ -51,9 +63,10 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				2,
 				[
 					'<textarea>a</textarea>',
+					"(twocolconflict-talk-conflicting)",
 					'<textarea>b</textarea>',
+					"(twocolconflict-talk-your)",
 					'<textarea>c</textarea>',
-					'</div></div>',
 					'<textarea>d</textarea>',
 				]
 			],
@@ -71,11 +84,32 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				[
 					'<textarea>a</textarea>',
 					'<textarea>b</textarea>',
+					"(twocolconflict-talk-conflicting)",
 					'<textarea>c</textarea>',
+					"(twocolconflict-talk-your)",
 					'<textarea>d</textarea>',
-					'</div></div>',
 					'<textarea>e</textarea>',
 					'<textarea>f</textarea>',
+				]
+			],
+			'should not make bogus input with >2 conflicting rows worse' => [
+				[
+					[ 'copytext' => 'a' ],
+					[ 'copytext' => 'b' ],
+					[ 'copytext' => 'c' ],
+					[ 'copytext' => 'd' ],
+					[ 'copytext' => 'e' ],
+				],
+				1,
+				3,
+				[
+					'<textarea>a</textarea>',
+					"(twocolconflict-talk-conflicting)",
+					'<textarea>b</textarea>',
+					'<textarea>c</textarea>',
+					"(twocolconflict-talk-your)",
+					'<textarea>d</textarea>',
+					'<textarea>e</textarea>',
 				]
 			],
 		];
@@ -92,7 +126,11 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		} );
 
 		$localizer = $this->createMock( MessageLocalizer::class );
-		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
+		$localizer->method( 'msg' )->willReturnCallback( function ( $key ) {
+			$msg = $this->createMock( Message::class );
+			$msg->method( 'text' )->willReturn( "($key)" );
+			return $msg;
+		} );
 
 		$view = new HtmlTalkPageResolutionView( $editableTextComponent, $localizer );
 		$html = $view->getHtml( $diff, $otherIndex, $yourIndex );
@@ -106,7 +144,7 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		$offset = 0;
 		foreach ( $expectedElements as $element ) {
 			$pos = strpos( $html, $element, $offset );
-			$this->assertIsInt( $pos, "…$element not found after position " . $offset .
+			$this->assertIsInt( $pos, "$element not found after position " . $offset .
 				': …' . substr( $html, $offset, 1000 ) . '…' );
 			$offset = $pos + strlen( $element );
 		}
