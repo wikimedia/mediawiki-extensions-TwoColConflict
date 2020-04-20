@@ -4,7 +4,6 @@ namespace TwoColConflict\Tests;
 
 use EditPage;
 use ExtensionRegistry;
-use FauxRequest;
 use IContextSource;
 use OOUI\InputWidget;
 use OutputPage;
@@ -12,6 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use TwoColConflict\TwoColConflictHooks;
+use User;
 use WebRequest;
 
 /**
@@ -20,14 +20,15 @@ use WebRequest;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictHooksTest extends \MediaWikiTestCase {
+class TwoColConflictHooksTest extends \MediaWikiUnitTestCase {
 
 	protected function setUp() : void {
+		global $wgTwoColConflictBetaFeature, $wgTwoColConflictSuggestResolution;
+
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => false,
-		] );
+		$wgTwoColConflictBetaFeature = false;
+		$wgTwoColConflictSuggestResolution = true;
 	}
 
 	public function testOnAlternateEdit_withFeatureDisabled() {
@@ -83,21 +84,26 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	}
 
 	public function testOnGetBetaFeaturePreferences_whileInBeta() {
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
+		global $wgTwoColConflictBetaFeature, $wgExtensionAssetsPath;
+
+		$wgTwoColConflictBetaFeature = true;
+		$wgExtensionAssetsPath = '';
+
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
-		$this->assertArrayHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
+		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
+		$expected = ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
+		$this->assertSame( $expected, isset( $prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] ) );
 	}
 
 	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
+		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetPreferences() {
 		$prefs = [];
-		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
+		TwoColConflictHooks::onGetPreferences( $this->createMock( User::class ), $prefs );
 		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
@@ -214,7 +220,7 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	 */
 	public function testOnImportFormData( array $requestData, string $expectedWikitext ) {
 		$editPage = $this->createMock( EditPage::class );
-		$request = new FauxRequest( $requestData );
+		$request = $this->createRequest( $requestData );
 		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( $expectedWikitext, $editPage->textbox1 );
 	}
@@ -231,12 +237,29 @@ class TwoColConflictHooksTest extends \MediaWikiTestCase {
 	 * @return IContextSource|MockObject
 	 */
 	private function createContext( bool $enabled = true ) {
-		$user = $this->getTestUser()->getUser();
-		$user->setOption( TwoColConflictContext::ENABLED_PREFERENCE, $enabled );
+		$user = $this->createMock( User::class );
+		$user->method( 'getBoolOption' )
+			->with( TwoColConflictContext::ENABLED_PREFERENCE )
+			->willReturn( $enabled );
 
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getUser' )->willReturn( $user );
 		return $context;
+	}
+
+	/**
+	 * @param array $requestParams
+	 *
+	 * @return WebRequest
+	 */
+	private function createRequest( array $requestParams ) {
+		$request = $this->createMock( WebRequest::class );
+		$getter = function ( string $name, $default ) use ( $requestParams ) {
+			return $requestParams[$name] ?? $default;
+		};
+		$request->method( 'getArray' )->willReturnCallback( $getter );
+		$request->method( 'getBool' )->willReturnCallback( $getter );
+		return $request;
 	}
 
 }

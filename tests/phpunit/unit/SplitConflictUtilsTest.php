@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use MediaWikiTestCase;
 use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
 
 /**
@@ -11,7 +10,7 @@ use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class SplitConflictUtilsTest extends MediaWikiTestCase {
+class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 
 	public function provideSplitText() {
 		return [

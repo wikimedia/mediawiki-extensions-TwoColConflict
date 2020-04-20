@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Tests;
 
+use ExtensionRegistry;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
@@ -10,13 +11,17 @@ use User;
  * @covers \TwoColConflict\TwoColConflictContext
  * @license GPL-2.0-or-later
  */
-class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
+class TwoColConflictContextTest extends \MediaWikiUnitTestCase {
 
 	public function testIsUsedAsBetaFeature() {
-		$this->assertTrue( TwoColConflictContext::isUsedAsBetaFeature(), 'default' );
+		global $wgTwoColConflictBetaFeature;
 
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+		$wgTwoColConflictBetaFeature = false;
 		$this->assertFalse( TwoColConflictContext::isUsedAsBetaFeature() );
+
+		$wgTwoColConflictBetaFeature = true;
+		$expected = ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
+		$this->assertSame( $expected, TwoColConflictContext::isUsedAsBetaFeature() );
 	}
 
 	/**
@@ -29,10 +34,11 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		Title $title,
 		bool $expected
 	) {
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => $betaConfig,
-			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
-		] );
+		global $wgTwoColConflictBetaFeature, $wgTwoColConflictSuggestResolution;
+
+		$wgTwoColConflictBetaFeature = $betaConfig;
+		$wgTwoColConflictSuggestResolution = $singleColumnConfig;
+
 		$result = TwoColConflictContext::shouldTwoColConflictBeShown( $user, $title );
 		$this->assertSame( $expected, $result );
 	}
