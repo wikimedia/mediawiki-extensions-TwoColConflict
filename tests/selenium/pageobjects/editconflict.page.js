@@ -51,8 +51,7 @@ class EditConflictPage extends Page {
 
 	get wpTextbox2() { return $( '#wpTextbox2' ); }
 
-	get copyRowEditMode() { return $( '.mw-twocolconflict-split-editing[data-line-number="0"]' ); }
-	get changeRowEditMode() { return $( '.mw-twocolconflict-split-editing[data-line-number="1"]' ); }
+	get rowsInEditMode() { return $( '.mw-twocolconflict-split-editing' ); }
 
 	columnToClass( column ) {
 		switch ( column ) {
