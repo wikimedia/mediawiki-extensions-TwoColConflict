@@ -5,6 +5,8 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiTestCase;
+use Message;
+use MessageLocalizer;
 use Title;
 use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictHeader;
 use User;
@@ -117,10 +119,26 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	}
 
 	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
+		$localizer = $this->createMock( MessageLocalizer::class );
+		$localizer->method( 'msg' )->willReturnCallback( function ( $key, ...$params ) {
+			$msg = $this->createMock( Message::class );
+			$text = "($key" . ( $params ? ': ' . implode( '|', $params ) : '' ) . ')';
+			$msg->method( 'escaped' )->willReturn( $text );
+			$msg->method( 'parse' )->willReturn( $text );
+			$msg->method( 'text' )->willReturn( $text );
+			$msg->method( 'rawParams' )->willReturnCallback( function ( ...$params ) use ( $key ) {
+				$msg = $this->createMock( Message::class );
+				$msg->method( 'escaped' )->willReturn( "($key: " . implode( '|', $params ) . ')' );
+				return $msg;
+			} );
+			return $msg;
+		} );
+
 		return new HtmlSplitConflictHeader(
 			Title::newFromText( __METHOD__ ),
 			$this->getTestUser()->getUser(),
 			MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( 'qqx' ),
+			$localizer,
 			self::NOW,
 			$summary,
 			$revision

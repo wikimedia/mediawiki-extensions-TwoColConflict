@@ -8,6 +8,7 @@ use Linker;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
+use MessageLocalizer;
 use TwoColConflict\TwoColConflictContext;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
@@ -39,6 +40,11 @@ class HtmlSplitConflictHeader {
 	private $language;
 
 	/**
+	 * @var MessageLocalizer
+	 */
+	private $messageLocalizer;
+
+	/**
 	 * @var ConvertibleTimestamp
 	 */
 	private $now;
@@ -52,6 +58,7 @@ class HtmlSplitConflictHeader {
 	 * @param LinkTarget $linkTarget
 	 * @param User $user
 	 * @param Language $language
+	 * @param MessageLocalizer $messageLocalizer
 	 * @param string|int|false $now Any value the ConvertibleTimestamp class accepts. False for the
 	 *  current time
 	 * @param string $newEditSummary
@@ -62,6 +69,7 @@ class HtmlSplitConflictHeader {
 		LinkTarget $linkTarget,
 		User $user,
 		Language $language,
+		MessageLocalizer $messageLocalizer,
 		$now,
 		string $newEditSummary,
 		RevisionRecord $revision = null
@@ -70,6 +78,7 @@ class HtmlSplitConflictHeader {
 		$this->revision = $revision ?? $this->getLatestRevision();
 		$this->user = $user;
 		$this->language = $language;
+		$this->messageLocalizer = $messageLocalizer;
 		$this->now = new ConvertibleTimestamp( $now );
 		$this->newEditSummary = $newEditSummary;
 	}
@@ -106,7 +115,7 @@ class HtmlSplitConflictHeader {
 	}
 
 	private function buildCurrentVersionHeader() : string {
-		$dateTime = wfMessage( 'just-now' )->text();
+		$dateTime = $this->messageLocalizer->msg( 'just-now' )->text();
 		$userTools = '';
 		$summary = '';
 
@@ -121,8 +130,8 @@ class HtmlSplitConflictHeader {
 		}
 
 		return $this->buildVersionHeader(
-			wfMessage( 'twocolconflict-split-current-version-header', $dateTime ),
-			wfMessage( 'twocolconflict-split-saved-at' )->rawParams( $userTools ),
+			$this->messageLocalizer->msg( 'twocolconflict-split-current-version-header', $dateTime ),
+			$this->messageLocalizer->msg( 'twocolconflict-split-saved-at' )->rawParams( $userTools ),
 			$summary,
 			'mw-twocolconflict-split-current-version-header'
 		);
@@ -130,8 +139,8 @@ class HtmlSplitConflictHeader {
 
 	private function buildYourVersionHeader() : string {
 		return $this->buildVersionHeader(
-			wfMessage( 'twocolconflict-split-your-version-header' ),
-			wfMessage( 'twocolconflict-split-not-saved-at' ),
+			$this->messageLocalizer->msg( 'twocolconflict-split-your-version-header' ),
+			$this->messageLocalizer->msg( 'twocolconflict-split-not-saved-at' ),
 			$this->newEditSummary,
 			'mw-twocolconflict-split-your-version-header'
 		);
@@ -156,7 +165,7 @@ class HtmlSplitConflictHeader {
 			Html::rawElement( 'span', [], $userMsg->escaped() );
 
 		if ( $summary !== '' ) {
-			$summaryMsg = wfMessage( 'parentheses' )
+			$summaryMsg = $this->messageLocalizer->msg( 'parentheses' )
 				->rawParams( Linker::formatComment( $summary, $this->linkTarget ) );
 			$html .= Html::element( 'br' ) .
 				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
@@ -179,18 +188,18 @@ class HtmlSplitConflictHeader {
 
 		if ( $diff->h ) {
 			$minutes = $diff->i + $diff->s / 60;
-			return wfMessage( 'hours-ago', round( $diff->h + $minutes / 60 ) )->text();
+			return $this->messageLocalizer->msg( 'hours-ago', round( $diff->h + $minutes / 60 ) )->text();
 		}
 
 		if ( $diff->i ) {
-			return wfMessage( 'minutes-ago', round( $diff->i + $diff->s / 60 ) )->text();
+			return $this->messageLocalizer->msg( 'minutes-ago', round( $diff->i + $diff->s / 60 ) )->text();
 		}
 
 		if ( $diff->s ) {
-			return wfMessage( 'seconds-ago', $diff->s )->text();
+			return $this->messageLocalizer->msg( 'seconds-ago', $diff->s )->text();
 		}
 
-		return wfMessage( 'just-now' )->text();
+		return $this->messageLocalizer->msg( 'just-now' )->text();
 	}
 
 	/**
@@ -199,7 +208,7 @@ class HtmlSplitConflictHeader {
 	 * @return string HTML
 	 */
 	private function getWarningMessage( string $messageKey ) : string {
-		$html = wfMessage( $messageKey )->parse();
+		$html = $this->messageLocalizer->msg( $messageKey )->parse();
 		// Force feedback links to be opened in a new tab, and not loose the edit
 		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
 		return Html::rawElement(
