@@ -113,7 +113,7 @@ class HtmlEditableTextComponent {
 			'tabindex' => '1',
 		];
 		if ( $isDisabled ) {
-			$attributes['readonly'] = 'readonly';
+			$attributes[] = 'readonly';
 		}
 
 		/**

@@ -22,13 +22,84 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	}
 
 	public function testEnabledElement() {
-		$html = $this->createInstance()->getHtml( '', '', 0, 'copy', false );
+		$html = $this->createInstance()->getHtml( '', '', 0, '' );
 		$this->assertStringNotContainsString( 'readonly', $html );
 	}
 
 	public function testDisabledElement() {
-		$html = $this->createInstance()->getHtml( '', '', 0, 'copy', true );
+		$html = $this->createInstance()->getHtml( '', '', 0, '', true );
 		$this->assertStringContainsString( 'readonly', $html );
+	}
+
+	public function provideEditorTexts() {
+		return [
+			'escaping' => [ '<script>alert()</script>', "&lt;script>alert()&lt;/script>\n", '0' ],
+
+			// Newlines are trimmed and one enforced
+			'single line' => [ 'a', "a\n", '0' ],
+			'two lines' => [ "a\nb", "a\nb\n", '0' ],
+			'leading newlines' => [ "\n\na", "a\n", '0,2' ],
+			'trailing newlines' => [ "a\n\n", "a\n", '2' ],
+
+			// But no enforced newline when empty
+			'empty' => [ '', '', '0' ],
+			'newline only' => [ "\n", '', '1' ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideEditorTexts
+	 */
+	public function testGetHtml( string $text, string $expectedText, string $expectedLinefeeds ) {
+		$component = $this->createInstance();
+		$html = $component->getHtml( '<span>DIFF</span>', $text, 0, '<TYPE>' );
+
+		$this->assertStringContainsString(
+			'<span class="mw-twocolconflict-split-reset-diff-text"><span>DIFF</span></span>',
+			$html,
+			'diff element'
+		);
+		$this->assertStringContainsString(
+			' name="mw-twocolconflict-split-content[0][&lt;TYPE&gt;]"',
+			$html,
+			'content element name'
+		);
+		$this->assertStringContainsString(
+			' name="mw-twocolconflict-split-linefeeds[0][&lt;TYPE&gt;]"',
+			$html,
+			'linefeed tracking element name'
+		);
+		$this->assertStringContainsString(
+			" value=\"$expectedLinefeeds\"",
+			$html,
+			'linefeed tracking value'
+		);
+		$this->assertStringContainsString( ">$expectedText</textarea>", $html );
+	}
+
+	public function provideRawTextareaContents() {
+		return [
+			// A leading newline needs to be duplicated
+			'newline only' => [ "\n", "\n\n" ],
+			'leading newlines' => [ "\n\na", "\n\n\na" ],
+
+			// Anything else should not be touched
+			'empty' => [ '', '' ],
+			'single line' => [ 'a', 'a' ],
+			'two lines' => [ "a\nb", "a\nb" ],
+			'trailing newlines' => [ "a\n\n", "a\n\n" ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideRawTextareaContents
+	 */
+	public function testRawTextareaContents( string $text, string $expected ) {
+		/** @var HtmlEditableTextComponent $component */
+		$component = TestingAccessWrapper::newFromObject( $this->createInstance() );
+		$html = $component->buildTextEditor( $text, 0, '', false );
+
+		$this->assertStringContainsString( ">$expected</textarea>", $html );
 	}
 
 	public function provideExtraLinefeeds() {

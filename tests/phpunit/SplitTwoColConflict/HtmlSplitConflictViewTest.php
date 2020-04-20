@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\Tests\SplitTwoColConflict;
 
-use Language;
 use MediaWikiTestCase;
 use Message;
 use MessageLocalizer;
@@ -203,15 +202,7 @@ TEXT
 	}
 
 	private function assertEditorExistsWithValue( string $html, string $value, int &$startPos ) {
-		if ( $value !== '' ) {
-			// HtmlEditableTextComponent::getHtml() might enforce one newline at the end
-			$value .= "\n";
-			if ( $value[0] === "\n" ) {
-				// Html::textarea() might add an extra newline at the start
-				$value = "\n" . $value;
-			}
-		}
-		$fragment = '>' . $value . '</textarea>';
+		$fragment = "<textarea>$value</textarea>";
 		$pos = strpos( $html, $fragment, $startPos );
 		$this->assertIsInt( $pos, "…$fragment not found after position " . $startPos .
 			': …' . substr( $html, $startPos, 1000 ) . '…' );
@@ -227,17 +218,16 @@ TEXT
 	}
 
 	private function createInstance() {
+		$editableTextComponent = $this->createMock( HtmlEditableTextComponent::class );
+		$editableTextComponent->method( 'getHtml' )
+			->willReturnCallback( function ( $diffHtml, $text ) {
+				return "<textarea>$text</textarea>";
+			} );
+
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
 
-		return new HtmlSplitConflictView(
-			new HtmlEditableTextComponent(
-				$localizer,
-				$this->getTestUser()->getUser(),
-				$this->createMock( Language::class )
-			),
-			$localizer
-		);
+		return new HtmlSplitConflictView( $editableTextComponent, $localizer );
 	}
 
 }
