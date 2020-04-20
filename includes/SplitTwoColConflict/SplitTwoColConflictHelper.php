@@ -197,13 +197,13 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->title,
 			$user,
 			$language,
-			$this->out,
+			$this->out->getContext(),
 			false,
 			$this->newEditSummary
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			new HtmlEditableTextComponent(
-				$this->out,
+				$this->out->getContext(),
 				$user,
 				$language
 			),
