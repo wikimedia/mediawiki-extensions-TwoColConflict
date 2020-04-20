@@ -26,7 +26,7 @@
 	"twocolconflict-test-username": "ProbakoGatazkaren Erabiltzailea",
 	"twocolconflict-test-summary-text": "Probako gatazkako aldaketen Laburpena",
 	"twocolconflict-split-header-hint-beta": "Eskerrik asko beta ezaugarri hau erabiltzearren. Hura gehiago hobetzen lagun dezakezu, zure iruzkina [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View orri honetan] adieraziz.",
-	"twocolconflict-split-your-version-header": "Zure bertsioa",
+	"twocolconflict-split-your-version-header": "Zure berrikusketa",
 	"twocolconflict-split-current-version-header": "$1ekin (une honetan erabilgarri) gatazkan den bertsioa",
 	"twocolconflict-split-not-saved-at": "$1, $2 gorde gabe",
 	"twocolconflict-split-choose-version": "Aukeratu mesedez bertsio bat",
