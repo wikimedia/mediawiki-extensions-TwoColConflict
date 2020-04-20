@@ -4,11 +4,17 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use Language;
+use MessageLocalizer;
 use OOUI\ButtonWidget;
 use User;
 
 // TODO: Should this be an official OOUI component?
 class HtmlEditableTextComponent {
+
+	/**
+	 * @var MessageLocalizer
+	 */
+	private $messageLocalizer;
 
 	/**
 	 * @var User
@@ -21,10 +27,16 @@ class HtmlEditableTextComponent {
 	private $language;
 
 	/**
+	 * @param MessageLocalizer $messageLocalizer
 	 * @param User $user
 	 * @param Language $language
 	 */
-	public function __construct( User $user, Language $language ) {
+	public function __construct(
+		MessageLocalizer $messageLocalizer,
+		User $user,
+		Language $language
+	) {
+		$this->messageLocalizer = $messageLocalizer;
 		$this->user = $user;
 		$this->language = $language;
 	}
@@ -35,6 +47,7 @@ class HtmlEditableTextComponent {
 	 * @param int $rowNum
 	 * @param string $changeType
 	 * @param bool $isDisabled
+	 *
 	 * @return string
 	 */
 	public function getHtml(
@@ -129,7 +142,7 @@ class HtmlEditableTextComponent {
 			'infusable' => true,
 			'framed' => false,
 			'icon' => 'edit',
-			'title' => wfMessage( 'twocolconflict-split-edit-tooltip' )->text(),
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-split-edit-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-edit-button' ],
 			'tabIndex' => '1',
 		] );
@@ -140,7 +153,7 @@ class HtmlEditableTextComponent {
 			'infusable' => true,
 			'framed' => false,
 			'icon' => 'check',
-			'title' => wfMessage( 'twocolconflict-split-save-tooltip' )->text(),
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-split-save-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-save-button' ],
 			'tabIndex' => '1',
 		] );
@@ -151,7 +164,7 @@ class HtmlEditableTextComponent {
 			'infusable' => true,
 			'framed' => false,
 			'icon' => 'close',
-			'title' => wfMessage( 'twocolconflict-split-reset-tooltip' )->text(),
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-split-reset-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-reset-button' ],
 			'tabIndex' => '1',
 		] );
@@ -162,7 +175,7 @@ class HtmlEditableTextComponent {
 			'infusable' => true,
 			'framed' => false,
 			'icon' => 'expand',
-			'title' => wfMessage( 'twocolconflict-split-expand-tooltip' )->text(),
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-split-expand-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-expand-button' ],
 			'tabIndex' => '1',
 		] );
@@ -173,7 +186,7 @@ class HtmlEditableTextComponent {
 			'infusable' => true,
 			'framed' => false,
 			'icon' => 'collapse',
-			'title' => wfMessage( 'twocolconflict-split-collapse-tooltip' )->text(),
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-split-collapse-tooltip' )->text(),
 			'classes' => [ 'mw-twocolconflict-split-collapse-button' ],
 			'tabIndex' => '1',
 		] );
@@ -189,7 +202,9 @@ class HtmlEditableTextComponent {
 
 	/**
 	 * Estimate the appropriate size textbox to use for a given text.
+	 *
 	 * @param string $text Contents of the textbox
+	 *
 	 * @return int Suggested number of rows
 	 */
 	private function rowsForText( string $text ) : int {

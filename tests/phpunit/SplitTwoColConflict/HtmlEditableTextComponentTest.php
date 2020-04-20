@@ -4,6 +4,8 @@ namespace TwoColConflict\Tests\SplitTwoColConflict;
 
 use Language;
 use MediaWikiTestCase;
+use Message;
+use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
@@ -20,18 +22,12 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	}
 
 	public function testEnabledElement() {
-		$html = ( new HtmlEditableTextComponent(
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) )->getHtml( '', '', 0, 'copy', false );
+		$html = $this->createInstance()->getHtml( '', '', 0, 'copy', false );
 		$this->assertStringNotContainsString( 'readonly', $html );
 	}
 
 	public function testDisabledElement() {
-		$html = ( new HtmlEditableTextComponent(
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) )->getHtml( '', '', 0, 'copy', true );
+		$html = $this->createInstance()->getHtml( '', '', 0, 'copy', true );
 		$this->assertStringContainsString( 'readonly', $html );
 	}
 
@@ -54,10 +50,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	 */
 	public function testCountExtraLineFeeds( string $text, string $expected ) {
 		/** @var HtmlEditableTextComponent $component */
-		$component = TestingAccessWrapper::newFromObject( new HtmlEditableTextComponent(
-			$this->getTestUser()->getUser(),
-			$this->createMock( Language::class )
-		) );
+		$component = TestingAccessWrapper::newFromObject( $this->createInstance() );
 
 		$this->assertSame( $expected, $component->countExtraLineFeeds( $text ) );
 	}
@@ -85,14 +78,20 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	 */
 	public function testRowsForText( string $input, int $rows ) {
 		/** @var HtmlEditableTextComponent $component */
-		$component = TestingAccessWrapper::newFromObject(
-			new HtmlEditableTextComponent(
-				$this->getTestUser()->getUser(),
-				$this->createMock( Language::class )
-			)
-		);
+		$component = TestingAccessWrapper::newFromObject( $this->createInstance() );
 
 		$this->assertSame( $rows, $component->rowsForText( $input ) );
+	}
+
+	private function createInstance() {
+		$localizer = $this->createMock( MessageLocalizer::class );
+		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
+
+		return new HtmlEditableTextComponent(
+			$localizer,
+			$this->getTestUser()->getUser(),
+			$this->createMock( Language::class )
+		);
 	}
 
 }

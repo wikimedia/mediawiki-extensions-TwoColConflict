@@ -201,6 +201,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->newEditSummary
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView( new HtmlEditableTextComponent(
+			$this->out,
 			$user,
 			$language
 		) ) )->getHtml(
@@ -213,6 +214,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	private function buildResolutionSuggestionView( TalkPageResolution $suggestion ) : string {
 		return ( new HtmlTalkPageResolutionView( new HtmlEditableTextComponent(
+			$this->out->getContext(),
 			$this->out->getUser(),
 			$this->out->getLanguage() )
 		) )->getHtml(
