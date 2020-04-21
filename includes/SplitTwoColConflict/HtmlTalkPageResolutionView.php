@@ -47,10 +47,6 @@ class HtmlTalkPageResolutionView {
 		int $yourIndex
 	) : string {
 		$out = Html::element( 'div', [ 'class' => 'mw-twocolconflict-talk-header' ] );
-		$out .= Html::hidden(
-			'mw-twocolconflict-resolution-first-entry',
-			'other'
-		);
 
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
 			$text = $changeSet['copytext'] ?? $changeSet['newtext'];
