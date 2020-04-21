@@ -137,10 +137,11 @@ class TwoColConflictHooksTest extends \MediaWikiUnitTestCase {
 					'mw-twocolconflict-split-content' => [
 						[ 'other' => 'a' ],
 						[ 'your' => 'b' ],
-						'bad',
+						[ 'other' => 'c', 'bad key' => 'bad value' ],
+						'bad string',
 					],
 				],
-				"b\nbad"
+				"b\nbad value\nbad string"
 			],
 			'single column request with invalid side selection' => [
 				[

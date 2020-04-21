@@ -83,11 +83,16 @@ class TwoColConflictHooks {
 			if ( $request->getBool( 'mw-twocolconflict-single-column-view' )
 				&& !( new ConflictFormValidator() )->validateRequest( $request )
 			) {
-				// When the request is invalid, drop the "other" row to force the original conflict
-				// to be re-created, and not silently resolved or corrupted.
+				// When the request is invalid, drop any selection to force the original conflict to
+				// be re-created, and not silently resolved or corrupted.
+				$sideSelection = [];
 				foreach ( $contentRows as $num => &$row ) {
-					if ( is_array( $row ) && array_key_exists( 'other', $row ) ) {
-						$row['other'] = '';
+					// Make sure the merger can't fall back to "other", but allow other fallbacks
+					if ( is_array( $row ) && key( $row ) === 'other' ) {
+						unset( $row['other'] );
+						if ( !$row ) {
+							unset( $contentRows[$num] );
+						}
 					}
 				}
 			}
