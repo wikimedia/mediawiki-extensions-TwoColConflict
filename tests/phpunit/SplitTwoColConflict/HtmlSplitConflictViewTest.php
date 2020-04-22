@@ -170,14 +170,14 @@ TEXT
 		foreach ( $expectedElements as $element ) {
 			switch ( $element ) {
 				case 'row':
-					$offset = $this->assertDivExistsWithClassValue(
+					$this->assertDivExistsWithClassValue(
 						$html,
 						'mw-twocolconflict-split-row',
 						$offset
 					);
 					break;
 				case 'select':
-					$offset = $this->assertDivExistsWithClassValue(
+					$this->assertDivExistsWithClassValue(
 						$html,
 						'mw-twocolconflict-split-selection',
 						$offset
@@ -186,24 +186,23 @@ TEXT
 				case 'add':
 				case 'delete':
 				case 'copy':
-					$offset = $this->assertDivExistsWithClassValue(
+					$this->assertDivExistsWithClassValue(
 						$html,
 						'mw-twocolconflict-split-' . $element . ' mw-twocolconflict-split-column',
 						$offset
 					);
 					break;
 				default:
-					$offset = $this->assertEditorExistsWithValue(
+					$this->assertEditorExistsWithValue(
 						$html,
 						$element,
 						$offset
 					);
 			}
-			$offset++;
 		}
 	}
 
-	private function assertEditorExistsWithValue( string $html, string $value, int $startPos ) {
+	private function assertEditorExistsWithValue( string $html, string $value, int &$startPos ) {
 		if ( $value !== '' ) {
 			// HtmlEditableTextComponent::getHtml() might enforce one newline at the end
 			$value .= "\n";
@@ -216,15 +215,15 @@ TEXT
 		$pos = strpos( $html, $fragment, $startPos );
 		$this->assertIsInt( $pos, "…$fragment not found after position " . $startPos .
 			': …' . substr( $html, $startPos, 1000 ) . '…' );
-		return $pos;
+		$startPos = $pos + strlen( $fragment );
 	}
 
-	private function assertDivExistsWithClassValue( string $html, string $class, int $startPos ) {
+	private function assertDivExistsWithClassValue( string $html, string $class, int &$startPos ) {
 		$fragment = '<div class="' . $class . '"';
 		$pos = strpos( $html, $fragment, $startPos );
 		$this->assertIsInt( $pos, $fragment . '… not found after position ' . $startPos .
 			': …' . substr( $html, $startPos, 1000 ) . '…' );
-		return $pos;
+		$startPos = $pos + strlen( $fragment );
 	}
 
 	private function createInstance() {
