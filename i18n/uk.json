@@ -57,5 +57,7 @@
 	"twocolconflict-split-help-tooltip": "Показати довідку",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Конфліктуючи пости",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "На жаль хтось інший також запостив у той самий час, як і ви. Будь ласка, перегляньте коментарі на наступній сторінці. Якщо потрібно, ви можете відредагувати свій коментар і змінити їх порядок.",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Вирішити проблему"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Вирішити проблему",
+	"twocolconflict-talk-your": "Ваш запис",
+	"twocolconflict-talk-conflicting": "Конфліктний запис"
 }
