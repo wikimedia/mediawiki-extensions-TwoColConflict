@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Tests\SpecialConflictTestPage;
 
+use ExtensionRegistry;
 use SpecialPage;
 use SpecialPageTestBase;
 use TwoColConflict\SpecialConflictTestPage\SpecialConflictTestPage;
@@ -42,6 +43,10 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 	}
 
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped();
+		}
+
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
 		[ $html, ] = $this->executeSpecialPage();
