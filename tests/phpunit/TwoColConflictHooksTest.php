@@ -20,15 +20,15 @@ use WebRequest;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class TwoColConflictHooksTest extends \MediaWikiUnitTestCase {
+class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
-		global $wgTwoColConflictBetaFeature, $wgTwoColConflictSuggestResolution;
-
 		parent::setUp();
 
-		$wgTwoColConflictBetaFeature = false;
-		$wgTwoColConflictSuggestResolution = true;
+		$this->setMwGlobals( [
+			'wgTwoColConflictBetaFeature' => false,
+			'wgTwoColConflictSuggestResolution' => true,
+		] );
 	}
 
 	public function testOnAlternateEdit_withFeatureDisabled() {
@@ -84,21 +84,36 @@ class TwoColConflictHooksTest extends \MediaWikiUnitTestCase {
 	}
 
 	public function testOnGetBetaFeaturePreferences_whileInBeta() {
-		global $wgTwoColConflictBetaFeature, $wgExtensionAssetsPath;
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
+		}
 
-		$wgTwoColConflictBetaFeature = true;
-		$wgExtensionAssetsPath = '';
+		$this->setMwGlobals( [
+			'wgTwoColConflictBetaFeature' => true,
+			'wgExtensionAssetsPath' => '',
+		] );
 
 		$prefs = [];
 		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
-		$expected = ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
-		$this->assertSame( $expected, isset( $prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] ) );
+		$this->assertArrayHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
 		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
+	}
+
+	public function testOnGetPreferences_whileInBeta() {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
+		}
+
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
+
+		$prefs = [];
+		TwoColConflictHooks::onGetPreferences( $this->createMock( User::class ), $prefs );
+		$this->assertArrayNotHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
 	public function testOnGetPreferences() {

@@ -42,7 +42,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $expected
 	) {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped();
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
 		}
 
 		$this->setMwGlobals( [
@@ -127,7 +127,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $expected
 	) {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped();
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
 		}
 
 		$this->setMwGlobals( [
