@@ -230,9 +230,6 @@ class TwoColConflictHooks {
 					=> 'https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Two_Column_Edit_Conflict_View',
 				'discussion-link'
 					=> 'https://www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View',
-				'requirements' => [
-					'javascript' => true,
-				],
 			];
 		}
 	}
