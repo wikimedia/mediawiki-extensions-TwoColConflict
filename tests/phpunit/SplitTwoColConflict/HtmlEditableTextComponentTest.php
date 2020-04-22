@@ -64,16 +64,15 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 			$html,
 			'content element name'
 		);
-		$this->assertStringContainsString(
-			' name="mw-twocolconflict-split-linefeeds[0][&lt;TYPE&gt;]"',
-			$html,
-			'linefeed tracking element name'
-		);
-		$this->assertStringContainsString(
-			" value=\"$expectedLinefeeds\"",
-			$html,
-			'linefeed tracking value'
-		);
+		$name = strpos( $html, ' name="mw-twocolconflict-split-linefeeds[0][&lt;TYPE&gt;]"' );
+		$value = strpos( $html, " value=\"$expectedLinefeeds\"" );
+		if ( !$expectedLinefeeds ) {
+			$this->assertFalse( $name, 'linefeed tracking element name' );
+			$this->assertFalse( $value, 'linefeed tracking value' );
+		} else {
+			$this->assertIsInt( $name, 'linefeed tracking element name' );
+			$this->assertIsInt( $value, 'linefeed tracking value' );
+		}
 		$this->assertStringContainsString( ">$expectedText</textarea>", $html );
 	}
 

@@ -36,9 +36,11 @@ class SplitConflictMerger {
 			// recent, most conflicting value. Fall back to the users conflicting edit, or to
 			// *whatever* is there, no matter how invalid it might be. We *never* want to delete
 			// anything.
-			$line = $row[$side] ??
+			$line = (string)(
+				$row[$side] ??
 				$row['your'] ??
-				(string)( is_array( $row ) ? current( $row ) : $row );
+				current( (array)$row )
+			);
 
 			// Don't remove all whitespace, because this is not necessarily the end of the article
 			$line = rtrim( $line, "\r\n" );
@@ -47,22 +49,24 @@ class SplitConflictMerger {
 			if ( isset( $extraLineFeeds[$num] ) ) {
 				$lf = $extraLineFeeds[$num];
 				// Same fallback logic as above, just so we never loose content
-				$lf = $lf[$side] ??
+				$lf = (string)(
+					$lf[$side] ??
 					$lf['your'] ??
-					(string)( is_array( $lf ) ? current( $lf ) : $lf );
-				$lf = explode( ',', $lf, 2 );
+					current( (array)$lf )
+				);
+				$counts = explode( ',', $lf, 2 );
 				// "Before" and "after" are intentionally flipped, because "before" is very rare
-				if ( isset( $lf[1] ) ) {
+				if ( isset( $counts[1] ) ) {
 					// We want to understand the difference between a row the user emptied (extra
 					// linefeeds are removed as well then), or a row that was empty before. This is
 					// how HtmlEditableTextComponent marked empty rows.
-					if ( $lf[1] === 'was-empty' ) {
+					if ( $counts[1] === 'was-empty' ) {
 						$emptiedByUser = false;
 					} else {
-						$line = self::lineFeeds( $lf[1] ) . $line;
+						$line = self::lineFeeds( $counts[1] ) . $line;
 					}
 				}
-				$line .= self::lineFeeds( $lf[0] );
+				$line .= self::lineFeeds( $counts[0] );
 			}
 
 			// In case a line was emptied, we need to skip the extra linefeeds as well
