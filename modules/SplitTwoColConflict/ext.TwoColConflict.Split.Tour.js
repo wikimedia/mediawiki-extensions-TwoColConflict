@@ -1,15 +1,16 @@
 /**
  * Module containing the SplitTwoColConflict tour
  *
- * @param {string} header for the initial dialog window
- * @param {string} image class for the initial dialog window
- * @param {string} imageHeight css value for image
- * @param {string} message for the initial dialog window
- * @param {string} close button text for the dialog window
  * @param {OO.ui.WindowManager} windowManager
+ * @param {Object} config
+ * @param {string} config.header for the initial dialog window
+ * @param {string} config.image.css class for the initial dialog window
+ * @param {string} config.image.height css value for image
+ * @param {string} config.message for the initial dialog window
+ * @param {string} config.close button text for the dialog window
  * @constructor
  */
-var Tour = function ( header, image, imageHeight, message, close, windowManager ) {
+var Tour = function ( windowManager, config ) {
 	var self = this;
 
 	function TourDialog( config ) {
@@ -29,24 +30,24 @@ var Tour = function ( header, image, imageHeight, message, close, windowManager 
 	};
 
 	var closeButton = new OO.ui.ButtonWidget( {
-		label: close,
+		label: config.close,
 		flags: [ 'primary', 'progressive' ]
 	} );
 
 	var $panel = $( '<div>' )
 		.append(
 			$( '<h5>' )
-				.text( header )
+				.text( config.header )
 				.addClass( 'mw-twocolconflict-split-tour-intro-container-header' )
 		)
 		.append(
 			$( '<div>' )
-				.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + image )
+				.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + config.image.css )
 				// Todo: find a better way to handle image scaling
-				.css( 'height', imageHeight )
+				.css( 'height', config.image.height )
 		)
 		.append(
-			$( '<p>' ).text( message )
+			$( '<p>' ).text( config.message )
 		)
 		.append( closeButton.$element );
 
@@ -221,12 +222,16 @@ function initialize() {
 		hideDialogSetting = 'hide-help-dialogue-single-column-view';
 
 		tour = new Tour(
-			mw.msg( 'twocolconflict-split-tour-dialog-header-single-column-view' ),
-			'mw-twocolconflict-split-tour-slide-single-column-view-1',
-			'240px',
-			mw.msg( 'twocolconflict-split-tour-dialog-message-single-column-view' ),
-			mw.msg( 'twocolconflict-split-tour-dialog-btn-text-single-column-view' ),
-			windowManager
+			windowManager,
+			{
+				header: mw.msg( 'twocolconflict-split-tour-dialog-header-single-column-view' ),
+				image: {
+					css: 'mw-twocolconflict-split-tour-slide-single-column-view-1',
+					height: '240px'
+				},
+				message: mw.msg( 'twocolconflict-split-tour-dialog-message-single-column-view' ),
+				close: mw.msg( 'twocolconflict-split-tour-dialog-btn-text-single-column-view' )
+			}
 		);
 
 		$( '.firstHeading' ).append(
@@ -236,12 +241,16 @@ function initialize() {
 		hideDialogSetting = 'hide-help-dialogue';
 
 		tour = new Tour(
-			mw.msg( 'twocolconflict-split-tour-dialog-header' ),
-			'mw-twocolconflict-split-tour-slide-dual-column-view-1',
-			'180px',
-			mw.msg( 'twocolconflict-split-tour-dialog-message' ),
-			mw.msg( 'twocolconflict-split-tour-dialog-btn-text' ),
-			windowManager
+			windowManager,
+			{
+				header: mw.msg( 'twocolconflict-split-tour-dialog-header' ),
+				image: {
+					css: 'mw-twocolconflict-split-tour-slide-dual-column-view-1',
+					height: '180px'
+				},
+				message: mw.msg( 'twocolconflict-split-tour-dialog-message' ),
+				close: mw.msg( 'twocolconflict-split-tour-dialog-btn-text' )
+			}
 		);
 
 		tour.addTourPopup(
