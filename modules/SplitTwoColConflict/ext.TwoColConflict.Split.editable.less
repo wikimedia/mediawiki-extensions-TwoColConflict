@@ -15,10 +15,10 @@
 		box-shadow: none;
 		background: transparent;
 		color: #000;
-	}
 
-	.mw-twocolconflict-split-editor:focus {
-		border: 0;
+		&:focus {
+			border: 0;
+		}
 	}
 
 	/* stylelint-disable-next-line selector-max-id */
@@ -32,28 +32,16 @@
 	.mw-twocolconflict-split-selected,
 	.mw-twocolconflict-split-copy {
 		.mw-twocolconflict-split-editable {
-			.mw-twocolconflict-split-editor {
-				display: block;
-			}
-
+			.mw-twocolconflict-split-collapse-button,
+			.mw-twocolconflict-split-difftext,
 			.mw-twocolconflict-split-edit-button {
 				display: none;
 			}
 
-			.mw-twocolconflict-split-difftext {
-				display: none;
-			}
-
+			.mw-twocolconflict-split-editor,
+			.mw-twocolconflict-split-reset-button,
 			.mw-twocolconflict-split-save-button {
 				display: block;
-			}
-
-			.mw-twocolconflict-split-reset-button {
-				display: block;
-			}
-
-			.mw-twocolconflict-split-collapse-button {
-				display: none;
 			}
 		}
 	}
@@ -87,16 +75,7 @@
 
 	.mw-twocolconflict-single-column,
 	.mw-twocolconflict-split-column {
-		overflow-wrap: break-word;
-		-moz-appearance: textfield-multiline;
-		-webkit-appearance: textarea;
-		-webkit-user-select: text;
-		/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-		font: medium '-moz-fixed';
-		/* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-		font: '-webkit-small-control';
-		font-size: medium;
-		line-height: normal;
-		color: initial;
+		// We could as well use a mixin, but that would result in a bigger CSS file
+		&:extend( .mw-twocolconflict-split-editing .mw-twocolconflict-single-column );
 	}
 }

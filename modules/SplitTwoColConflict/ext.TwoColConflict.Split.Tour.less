@@ -1,30 +1,38 @@
+@block-element-padding: 5px 0;
+
 .mw-twocolconflict-split-tour-image-landscape {
 	height: 180px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
-	padding: 5px 0 5px 0;
+	padding: @block-element-padding;
 	margin: 0.4em 0 0.5em 0;
 }
 
-.mw-twocolconflict-split-tour-intro-container {
+.mw-twocolconflict-split-tour-intro-container,
+.mw-twocolconflict-split-tour-popup {
 	text-align: center;
 
 	.oo-ui-buttonElement {
-		padding: 5px 0 5px 0;
+		padding: @block-element-padding;
+	}
+
+	h5,
+	p {
+		padding: @block-element-padding;
+	}
+
+	p {
+		text-align: left;
+		line-height: 1.5;
+		white-space: pre-wrap;
 	}
 }
 
-.mw-twocolconflict-split-tour-intro-container h5 {
-	padding: 5px 0 5px 0;
-}
-
-.mw-twocolconflict-split-tour-intro-container p {
-	text-align: left;
-	line-height: 1.5;
-	padding: 5px 0 5px 0;
-	white-space: pre-wrap;
+.mw-twocolconflict-split-tour-popup {
+	color: #000;
+	z-index: 2;
 }
 
 .mw-twocolconflict-diffchange,
@@ -43,22 +51,6 @@
 	height: 1px;
 }
 
-.mw-twocolconflict-split-tour-popup {
-	text-align: center;
-	z-index: 2;
-	color: #000;
-}
-
-.mw-twocolconflict-split-tour-popup h5 {
-	padding: 5px 0 5px 0;
-}
-
-.mw-twocolconflict-split-tour-popup p {
-	text-align: left;
-	line-height: 1.5;
-	padding: 5px 0 5px 0;
-}
-
 .mw-twocolconflict-split-tour-help-button {
 	font-size: 1.5em;
 	position: absolute;
@@ -69,10 +61,10 @@
 .mw-twocolconflict-split-tour-help-button-single-column-view {
 	font-size: 0.7em;
 	float: right;
-}
 
-.mw-twocolconflict-split-tour-help-button-single-column-view:last-child {
-	margin-right: -10px;
+	&:last-child {
+		margin-right: -10px;
+	}
 }
 
 .mw-twocolconflict-split-tour-intro-container-blue-dot-hint {
