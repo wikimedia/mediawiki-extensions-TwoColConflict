@@ -15,6 +15,21 @@ class TwoColConflictContext {
 
 	public const BETA_PREFERENCE_NAME = 'twocolconflict';
 	public const ENABLED_PREFERENCE = 'twocolconflict-enabled';
+	public const HIDE_CORE_HINT_PREFERENCE = 'userjs-twocolconflict-hide-core-hint';
+
+	/**
+	 * @param User $user
+	 *
+	 * @return bool True if the feature is not used as a beta feature, the
+	 * user has disabled the feature but has not dismissed the core hint
+	 * already.
+	 */
+	public static function shouldCoreHintBeShown( User $user ) {
+		return !$user->isAnon() &&
+			!self::isUsedAsBetaFeature() &&
+			!$user->getBoolOption( self::ENABLED_PREFERENCE ) &&
+			!$user->getBoolOption( self::HIDE_CORE_HINT_PREFERENCE );
+	}
 
 	/**
 	 * @param User $user

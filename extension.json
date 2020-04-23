@@ -45,7 +45,8 @@
 		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
 		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
-		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormInitial"
+		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormInitial",
+		"EditPage::showEditForm:fields": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormFields"
 	},
 	"MessagesDirs": {
 		"TwoColConflict": [
@@ -59,6 +60,21 @@
 		"ext.TwoColConflict.SpecialConflictTestPageCss": {
 			"styles": [
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
+			]
+		},
+		"ext.TwoColConflict.CoreHintJs": {
+			"packageFiles": [
+				"modules/ext.TwoColConflict.CoreHint.js"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.user",
+				"user.options"
+			]
+		},
+		"ext.TwoColConflict.CoreHintCss": {
+			"styles": [
+				"modules/ext.TwoColConflict.CoreHint.less"
 			]
 		},
 		"ext.TwoColConflict.SplitJs": {

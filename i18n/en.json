@@ -8,6 +8,7 @@
 	"twocolconflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twocolconflict-beta-feature-message": "Two column edit conflict",
 	"twocolconflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.",
+	"twocolconflict-core-ui-hint": "An updated interface for solving edit conflicts is now available. Enable the Two Column Edit Conflict View in your [[Special:Preferences#mw-prefsection-editing|preferences]] to try it out.",
 	"twocolconflict-preference-enabled": "Enable the [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Two Column Edit Conflict View]] to resolve edit conflicts",
 	"twocolconflict-test-needsbeta": "You must enable the 'Two column edit conflict' beta feature in your preferences to use this special page.",
 	"twocolconflict-test-page-title": "Edit Conflict: Simulation",
