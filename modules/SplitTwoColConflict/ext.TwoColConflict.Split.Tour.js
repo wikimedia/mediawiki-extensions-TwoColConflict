@@ -176,6 +176,8 @@ $.extend( Tour.prototype, {
 			data.$pulsatingButton.show();
 
 			if ( data.showByDefault ) {
+				// Later, manual clicks should not trigger this auto-open action again
+				data.showByDefault = false;
 				data.$pulsatingButton.click();
 			}
 		} );
