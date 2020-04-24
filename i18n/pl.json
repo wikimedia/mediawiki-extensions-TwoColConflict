@@ -34,7 +34,7 @@
 	"twocolconflict-split-choose-version": "Wybierz wersję",
 	"twocolconflict-split-other-version-chosen": "Inna wersja",
 	"twocolconflict-split-your-version-chosen": "Twoja wersja",
-	"twocolconflict-split-tour-dialog-header": "Rozwiąż konflikty edycji",
+	"twocolconflict-split-tour-dialog-header": "Scal skonfliktowane wersje",
 	"twocolconflict-split-tour-dialog-message": "Niestety wszedłeś(-aś) w konflikt edycji. Podczas wprowadzania zmian ktoś inny również edytował stronę i ją zapisał. Twoja wersja jest nieaktualna ponieważ nie uwzględnia zmian dokonanych w czasie twojej edycji. Połącz swoją wersję z najnowszymi zmianami na następnej stronie.",
 	"twocolconflict-split-tour-dialog-btn-text": "Rozpocznij łączenie",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, rozumiem.",
