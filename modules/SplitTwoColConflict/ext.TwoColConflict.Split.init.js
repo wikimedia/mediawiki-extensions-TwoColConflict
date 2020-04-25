@@ -71,6 +71,10 @@ function enableEditing( $row ) {
 
 	expandText( $row );
 	$row.addClass( 'mw-twocolconflict-split-editing' );
+	// The following classes are used here:
+	// * mw-editfont-monospace
+	// * mw-editfont-sans-serif
+	// * mw-editfont-serif
 	$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
 
 	$selected.find( 'textarea' ).each( function () {
@@ -88,6 +92,10 @@ function enableEditing( $row ) {
  */
 function disableEditing( $row ) {
 	$row.removeClass( 'mw-twocolconflict-split-editing' );
+	// The following classes are used here:
+	// * mw-editfont-monospace
+	// * mw-editfont-sans-serif
+	// * mw-editfont-serif
 	$row.find( '.mw-twocolconflict-split-editable' ).removeClass( getEditorFontClass() );
 }
 
@@ -250,6 +258,9 @@ function showPreview( parsedContent, parsedNote ) {
 				.append( $( parsedNote ).children() )
 		);
 
+	// The following classes are used here:
+	// * mw-content-ltr
+	// * mw-content-rtl
 	var $content = $( '<div>' )
 		.addClass( 'mw-content-' + $html.attr( 'dir' ) )
 		.attr( 'dir', $html.attr( 'dir' ) )

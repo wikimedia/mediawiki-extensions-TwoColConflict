@@ -71,6 +71,9 @@ $.extend( Tour.prototype, {
 					.addClass( 'mw-twocolconflict-split-tour-intro-container-header' )
 			)
 			.append(
+				// The following classes are used here:
+				// * mw-twocolconflict-split-tour-image-dual-column-view-1
+				// * mw-twocolconflict-split-tour-image-single-column-view-1
 				$( '<div>' )
 					.addClass( 'mw-twocolconflict-split-tour-image-landscape ' + this.config.image.css )
 					// Todo: find a better way to handle image scaling
@@ -216,6 +219,9 @@ $.extend( Tour.prototype, {
 	getHelpButton: function ( buttonClasses ) {
 		var self = this;
 
+		// The following classes are used here:
+		// * mw-twocolconflict-split-tour-help-button
+		// * mw-twocolconflict-split-tour-help-button-single-column-view
 		var helpButton = new OO.ui.ButtonWidget( {
 			icon: 'info',
 			framed: false,

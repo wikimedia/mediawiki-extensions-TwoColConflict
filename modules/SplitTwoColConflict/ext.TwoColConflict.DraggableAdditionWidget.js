@@ -18,6 +18,7 @@ function DraggableAdditionWidget( config ) {
 
 	// The $element holds event listeners needed for the interaction so lets
 	// append the elements from the DOM and copy the important attributes
+	// eslint-disable-next-line mediawiki/class-doc
 	this.$element
 		.addClass( config.$rowElement.attr( 'class' ) )
 		.append( config.$rowElement.children() );
