@@ -1,0 +1,75 @@
+/**
+ * Styles which are only applied to the talk page use case.  This file is loaded conditionally,
+ * so overrides here can assume we're definitely in the talk page view.
+ *
+ * TODO: Layout should switch to vertical on narrow screens.
+ */
+@labelColumnWidth: 110px;
+
+/* Shift core edit buttons */
+.editOptions {
+	margin-left: @labelColumnWidth;
+}
+
+.mw-twocolconflict-single-column {
+	margin-left: @labelColumnWidth;
+}
+
+.mw-twocolconflict-suggestion-draggable {
+	.mw-twocolconflict-single-column {
+		margin-left: 0;
+	}
+
+	.mw-twocolconflict-draggable-handle,
+	.mw-twocolconflict-draggable-label {
+		flex: 1;
+		display: flex;
+		position: relative;
+		max-width: @labelColumnWidth;
+	}
+
+	.mw-twocolconflict-draggable-handle .oo-ui-iconWidget {
+		max-width: 20px;
+		margin: auto 0;
+	}
+
+	.mw-twocolconflict-draggable-label {
+		max-width: @labelColumnWidth;
+		margin: auto;
+
+		span {
+			font-weight: bold;
+			text-align: center;
+			width: 100%;
+
+			.mw-twocolconflict-split-delete {
+				background-color: #ffe8a6;
+			}
+
+			.mw-twocolconflict-split-add {
+				background-color: #add8ff;
+			}
+		}
+	}
+}
+
+.client-nojs {
+	.mw-twocolconflict-split-copy {
+		margin-left: @labelColumnWidth;
+	}
+
+	.mw-twocolconflict-suggestion-draggable {
+		.mw-twocolconflict-draggable-handle .oo-ui-iconWidget {
+			display: none;
+		}
+
+		.mw-twocolconflict-draggable-label {
+			max-width: @labelColumnWidth;
+		}
+	}
+
+	/* stylelint-disable-next-line selector-max-id */
+	#wpPreviewWidget {
+		display: none;
+	}
+}

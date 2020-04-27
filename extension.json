@@ -150,6 +150,11 @@
 				"savechanges"
 			]
 		},
+		"ext.TwoColConflict.TalkCss": {
+			"styles": [
+				"modules/TalkPageConflict/ext.TwoColConflict.Talk.styles.less"
+			]
+		},
 		"ext.TwoColConflict.Util": {
 			"packageFiles": [
 				"modules/ext.TwoColConflict.Util.js",

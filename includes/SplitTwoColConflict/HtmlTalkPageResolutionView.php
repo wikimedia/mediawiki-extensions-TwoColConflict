@@ -117,19 +117,18 @@ class HtmlTalkPageResolutionView {
 			[ 'class' => 'mw-twocolconflict-draggable-handle' ],
 			new IconWidget( [
 				'icon' => 'draggable',
-			] )
-		);
-
-		$out .= Html::rawElement(
-			'div',
-			[ 'class' => 'mw-twocolconflict-draggable-label' ],
+			] ) .
 			Html::rawElement(
-				'span',
-				[],
-				Html::element(
+				'div',
+				[ 'class' => 'mw-twocolconflict-draggable-label' ],
+				Html::rawElement(
 					'span',
-					[ 'class' => 'mw-twocolconflict-split-' . $classSuffix ],
-					$this->messageLocalizer->msg( $draggableLabel )->text()
+					[],
+					Html::element(
+						'span',
+						[ 'class' => 'mw-twocolconflict-split-' . $classSuffix ],
+						$this->messageLocalizer->msg( $draggableLabel )->text()
+					)
 				)
 			)
 		);
