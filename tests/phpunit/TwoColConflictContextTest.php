@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\TwoColConflictContext
@@ -40,6 +41,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		Title $title,
 		bool $expected
 	) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped();
+		}
+
 		$this->setMwGlobals( [
 			'wgTwoColConflictBetaFeature' => $betaConfig,
 			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
@@ -51,13 +56,8 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
 	public function configurationProvider() {
 		$defaultUser = $this->createUser();
-		$optOutUser = $this->createUser( false );
-
-		$betaPossible = \ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
-		$betaUser = $this->createUser( false );
-		$betaUser->method( 'getOption' )
-			->with( TwoColConflictContext::BETA_PREFERENCE_NAME )
-			->willReturn( '1' );
+		$betaUser = $this->createUser( '1', '1' );
+		$optOutUser = $this->createUser( '0' );
 
 		$defaultPage = $this->createMock( Title::class );
 
@@ -76,14 +76,14 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 				'wgTwoColConflictSuggestResolution' => true,
 				'user' => $defaultUser,
 				'title' => $defaultPage,
-				'expected' => !$betaPossible,
+				'expected' => false,
 			],
 			'user enabled Beta feature' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
 				'user' => $betaUser,
 				'title' => $defaultPage,
-				'expected' => $betaPossible,
+				'expected' => true,
 			],
 			'enabled by default when not in Beta any more' => [
 				'wgTwoColConflictBetaFeature' => false,
@@ -116,11 +116,118 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		];
 	}
 
-	private function createUser( bool $enabled = true ) {
+	/**
+	 * @dataProvider configurationProviderNoBetaFeatures
+	 */
+	public function testShouldTwoColConflictBeShown_noBetaFeatures(
+		bool $betaConfig,
+		bool $singleColumnConfig,
+		User $user,
+		Title $title,
+		bool $expected
+	) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped();
+		}
+
+		$this->setMwGlobals( [
+			'wgTwoColConflictBetaFeature' => $betaConfig,
+			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
+		] );
+
+		$result = TwoColConflictContext::shouldTwoColConflictBeShown( $user, $title );
+		$this->assertSame( $expected, $result );
+	}
+
+	public function configurationProviderNoBetaFeatures() {
+		$defaultUser = $this->createUser();
+		$betaUser = $this->createUser( '1', '1' );
+
+		$defaultPage = $this->createMock( Title::class );
+
+		return [
+			'enabled in beta mode when BetaFeatures not installed' => [
+				'wgTwoColConflictBetaFeature' => true,
+				'wgTwoColConflictSuggestResolution' => true,
+				'user' => $defaultUser,
+				'title' => $defaultPage,
+				'expected' => true,
+			],
+			'enabled without BetaFeatures, also for an opted-in user' => [
+				'wgTwoColConflictBetaFeature' => true,
+				'wgTwoColConflictSuggestResolution' => true,
+				'user' => $betaUser,
+				'title' => $defaultPage,
+				'expected' => true,
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideHasUserEnabledFeature
+	 */
+	public function testHasUserEnabledFeature(
+		$betaPreference,
+		$editingPreference,
+		bool $expectedResult
+	) {
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+
+		$user = $this->createUser( $editingPreference, $betaPreference );
+		$contextStatic = TestingAccessWrapper::newFromClass( TwoColConflictContext::class );
+
+		$result = $contextStatic->hasUserEnabledFeature( $user );
+		$this->assertSame( $expectedResult, $result );
+	}
+
+	public function provideHasUserEnabledFeature() {
+		// Note that 'editing' => null is impossible from the point of view of this
+		//  function, in other words null and true are indistinguishable because the
+		//  default value has already been merged into the option.
+		return [
+			[
+				'beta' => null,
+				'editing' => '0',
+				'expected' => false,
+			],
+			[
+				'beta' => null,
+				'editing' => '1',
+				'expected' => true,
+			],
+			[
+				'beta' => '0',
+				'editing' => '0',
+				'expected' => false,
+			],
+			[
+				'beta' => '0',
+				'editing' => '1',
+				'expected' => true,
+			],
+			[
+				'beta' => '1',
+				'editing' => '0',
+				'expected' => false,
+			],
+			[
+				'beta' => '1',
+				'editing' => '1',
+				'expected' => true,
+			],
+		];
+	}
+
+	private function createUser( string $enabled = '1', ?string $beta = null ) {
 		$user = $this->createMock( User::class );
-		$user->method( 'getBoolOption' )
-			->with( TwoColConflictContext::ENABLED_PREFERENCE )
-			->willReturn( $enabled );
+		$user->method( 'getOption' )->willReturnMap( [
+			[ TwoColConflictContext::BETA_PREFERENCE_NAME, null, false, $beta ],
+			[ TwoColConflictContext::ENABLED_PREFERENCE, null, false, $enabled ],
+		] );
+		$user->method( 'getBoolOption' )->willReturnMap( [
+			[ TwoColConflictContext::BETA_PREFERENCE_NAME, (bool)$beta ],
+			[ TwoColConflictContext::ENABLED_PREFERENCE, (bool)$enabled ],
+		] );
 		return $user;
 	}
 
