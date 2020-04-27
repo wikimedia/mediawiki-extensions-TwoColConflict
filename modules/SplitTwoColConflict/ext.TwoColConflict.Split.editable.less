@@ -77,5 +77,13 @@
 	.mw-twocolconflict-split-column {
 		// We could as well use a mixin, but that would result in a bigger CSS file
 		&:extend( .mw-twocolconflict-split-editing .mw-twocolconflict-single-column );
+
+		// No need to reserve space for buttons, as there are none
+		padding: 0;
+
+		.mw-twocolconflict-split-editor {
+			// Re-apply the removed padding to the *inside* of the <textarea>
+			padding: 5px 5px 5px 20px;
+		}
 	}
 }
