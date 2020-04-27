@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"Steeve815"
 		]
 	},
 	"twocolconflict": "התנגשות עריכה בשני טורים",
@@ -32,8 +33,9 @@
 	"twocolconflict-split-choose-version": "נא לבחור גרסה",
 	"twocolconflict-split-other-version-chosen": "גרסה אחרת",
 	"twocolconflict-split-your-version-chosen": "הגרסה שלך",
-	"twocolconflict-split-tour-dialog-header": "פתרון התנגשויות עריכה",
-	"twocolconflict-split-tour-dialog-message": "למרבה הצער יש לך התנגשות עריכה: בזמן שערכת, משתמש אחר ערך את הדף ושמר אותו. הגרסה שלך אינה עדכנית עכשיו כי אינה כוללת את העריכות של המשתמש האחר. נא למזג את העריכות שלך בדף הבא.",
+	"twocolconflict-split-tour-dialog-dot-message": "לעצות מועילות נא ללחוץ על הנקודות הכחולות הזוהרות.",
+	"twocolconflict-split-tour-dialog-header": "מיזוג גרסאות מתנגשות",
+	"twocolconflict-split-tour-dialog-message": "למרבה הצער, בזמן שערכת, משתמש אחר גם ערך את אותו הדף ופרסם אותו {{GENDER:|לפניך|לפנייך}}.\n\nאל דאגה, העריכות שלך לא הלכו לאיבוד! נא לסקור את שתי הגרסאות ולמזג אותן. אם זה נחוץ, אפשר לערוך את הטקסט שנבחר. רק הטקסט בתיבות שנבחרו יישמר אחרי לחיצה על \"{{int:Savechanges}}\".",
 	"twocolconflict-split-tour-dialog-btn-text": "להתחיל למזג",
 	"twocolconflict-split-tour-popup-btn-text": "בסדר, הבנתי.",
 	"twocolconflict-split-tour-popup1-header": "ההבדלים מוצגים שורה אחר שורה.",
