@@ -41,11 +41,7 @@ class SplitConflictMerger {
 
 			// Don't remove all whitespace, because this is not necessarily the end of the article
 			$line = rtrim( $line, "\r\n" );
-
-			// In case a line was emptied, we need to skip the extra linefeeds as well
-			if ( $line === '' && $num ) {
-				continue;
-			}
+			$emptiedByUser = $line === '';
 
 			if ( isset( $extraLineFeeds[$num] ) ) {
 				$lf = $extraLineFeeds[$num];
@@ -53,15 +49,22 @@ class SplitConflictMerger {
 				$lf = $lf[$side] ??
 					$lf['your'] ??
 					(string)( is_array( $lf ) ? current( $lf ) : $lf );
-				$lf = explode( ',', $lf );
+				$lf = explode( ',', $lf, 2 );
 				// "Before" and "after" are intentionally flipped, because "before" is very rare
 				if ( isset( $lf[1] ) ) {
-					$line = self::lineFeeds( $lf[1] ) . $line;
+					if ( $lf[1] === 'was-empty' ) {
+						$emptiedByUser = false;
+					} else {
+						$line = self::lineFeeds( $lf[1] ) . $line;
+					}
 				}
 				$line .= self::lineFeeds( $lf[0] );
 			}
 
-			$textLines[] = $line;
+			// In case a line was emptied, we need to skip the extra linefeeds as well
+			if ( !$emptiedByUser ) {
+				$textLines[] = $line;
+			}
 		}
 		return SplitConflictUtils::mergeTextLines( $textLines );
 	}

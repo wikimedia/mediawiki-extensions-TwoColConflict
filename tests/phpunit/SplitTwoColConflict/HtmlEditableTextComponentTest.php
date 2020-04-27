@@ -43,7 +43,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 
 			// But no enforced newline when empty
 			'empty' => [ '', '', '0' ],
-			'newline only' => [ "\n", '', '1' ],
+			'newline only' => [ "\n", '', '1,was-empty' ],
 		];
 	}
 
@@ -106,7 +106,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 		return [
 			[ '', '0' ],
 			[ 'a', '0' ],
-			[ "\n", '1' ],
+			[ "\n", '1,was-empty' ],
 			[ "a\n", '1' ],
 			[ "a\r\n\r\n", '2' ],
 			// "Before" and "after" are intentionally flipped, because "before" is very rare

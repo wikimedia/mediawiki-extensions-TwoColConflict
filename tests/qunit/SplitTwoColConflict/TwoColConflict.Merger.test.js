@@ -10,7 +10,7 @@
 			.append(
 				$( '<input>' )
 					.attr( 'name', 'mw-twocolconflict-split-linefeeds' )
-					.val( params.linefeeds )
+					.val( params.linefeeds || 0 )
 			);
 	}
 
@@ -26,7 +26,7 @@
 		assert.strictEqual(
 			merger(
 				buildColumns( [
-					{ content: 'A', linefeeds: 0 }
+					{ content: 'A' }
 				] )
 			),
 			'A'
@@ -37,8 +37,8 @@
 		assert.strictEqual(
 			merger(
 				buildColumns( [
-					{ content: 'B', linefeeds: 0 },
-					{ content: 'C', linefeeds: 0 }
+					{ content: 'B' },
+					{ content: 'C' }
 				] )
 			),
 			'B\nC'
@@ -50,7 +50,7 @@
 			merger(
 				buildColumns( [
 					{ content: 'A', linefeeds: '2,1' },
-					{ content: 'B', linefeeds: 0 }
+					{ content: 'B' }
 				] )
 			),
 			'\nA\n\n\nB'
@@ -61,12 +61,24 @@
 		assert.strictEqual(
 			merger(
 				buildColumns( [
-					{ content: 'A', linefeeds: 0 },
+					{ content: 'A' },
 					{ content: '', linefeeds: 2 },
-					{ content: 'B', linefeeds: 0 }
+					{ content: 'B' }
 				] )
 			),
 			'A\nB'
+		);
+	} );
+
+	QUnit.test( 'testRowsNotEmptiedByTheUserAreNotIgnored', function ( assert ) {
+		assert.strictEqual(
+			merger(
+				buildColumns( [
+					{ content: '', linefeeds: '1,was-empty' },
+					{ content: 'A' }
+				] )
+			),
+			'\n\nA'
 		);
 	} );
 }() );
