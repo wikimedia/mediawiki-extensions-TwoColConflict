@@ -9,6 +9,13 @@ function buildColumn( params, columnClass, type ) {
 		},
 		mappedType = typeMap[ type || params.type ],
 		classes = [ columnClass, mappedType ];
+
+	// The following classes are used here:
+	// * mw-twocolconflict-split-delete
+	// * mw-twocolconflict-split-add
+	// * mw-twocolconflict-split-copy
+	// * mw-twocolconflict-split-column
+	// * mw-twocolconflict-single-column
 	return $( '<div>' )
 		.addClass( classes )
 		.append(
