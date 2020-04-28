@@ -15,32 +15,18 @@
 	margin-left: @labelColumnWidth;
 }
 
-.mw-twocolconflict-suggestion-draggable {
+.mw-twocolconflict-conflicting-talk-row {
 	.mw-twocolconflict-single-column {
 		margin-left: 0;
 	}
 
-	.mw-twocolconflict-draggable-handle,
-	.mw-twocolconflict-draggable-label {
-		flex: 1;
-		display: flex;
-		position: relative;
-		max-width: @labelColumnWidth;
-	}
-
-	.mw-twocolconflict-draggable-handle .oo-ui-iconWidget {
-		max-width: 20px;
-		margin: auto 0;
-	}
-
-	.mw-twocolconflict-draggable-label {
-		max-width: @labelColumnWidth;
+	.mw-twocolconflict-conflicting-talk-label {
+		width: @labelColumnWidth;
 		margin: auto;
+		text-align: center;
 
 		span {
 			font-weight: bold;
-			text-align: center;
-			width: 100%;
 
 			.mw-twocolconflict-split-delete {
 				background-color: #ffe8a6;
@@ -58,12 +44,8 @@
 		margin-left: @labelColumnWidth;
 	}
 
-	.mw-twocolconflict-suggestion-draggable {
-		.mw-twocolconflict-draggable-handle .oo-ui-iconWidget {
-			display: none;
-		}
-
-		.mw-twocolconflict-draggable-label {
+	.mw-twocolconflict-conflicting-talk-row {
+		.mw-twocolconflict-conflicting-talk-label {
 			max-width: @labelColumnWidth;
 		}
 	}

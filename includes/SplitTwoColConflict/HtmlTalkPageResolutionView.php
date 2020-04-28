@@ -4,7 +4,6 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MessageLocalizer;
-use OOUI\IconWidget;
 
 /**
  * TODO: Clean up, maybe CSS class names should match change type, and "split" replaced with
@@ -53,13 +52,7 @@ class HtmlTalkPageResolutionView {
 
 			switch ( $currRowNum ) {
 				case $otherIndex:
-					// TODO wrapping these while using a loop is a bit ugly ideally $unifiedDiff
-					// has a different structure
-					$out .= Html::openElement(
-						'div',
-						[ 'class' => 'mw-twocolconflict-suggestion-draggable' ]
-					);
-					$out .= $this->buildDraggableRow(
+					$out .= $this->buildConflictingTalkRow(
 						$text,
 						$currRowNum,
 						'delete',
@@ -69,7 +62,7 @@ class HtmlTalkPageResolutionView {
 					);
 					break;
 				case $yourIndex:
-					$out .= $this->buildDraggableRow(
+					$out .= $this->buildConflictingTalkRow(
 						$text,
 						$currRowNum,
 						'add',
@@ -77,7 +70,6 @@ class HtmlTalkPageResolutionView {
 						false,
 						'twocolconflict-talk-your'
 					);
-					$out .= Html::closeElement( 'div' );
 					break;
 				default:
 					$out .= $this->buildCopyRow( $text, $currRowNum );
@@ -93,42 +85,35 @@ class HtmlTalkPageResolutionView {
 		);
 	}
 
-	private function wrapRow( string $html, $isDraggable = false ) : string {
+	private function wrapRow( string $html, $isConflicting = false ) : string {
 		return Html::rawElement(
 			'div',
 			[
 				'class' => 'mw-twocolconflict-single-row' .
-					( $isDraggable ? ' mw-twocolconflict-draggable' : '' )
+					( $isConflicting ? ' mw-twocolconflict-conflicting-talk-row' : '' )
 			],
 			$html
 		);
 	}
 
-	private function buildDraggableRow(
+	private function buildConflictingTalkRow(
 		string $rawText,
 		int $rowNum,
 		string $classSuffix,
 		string $changeType,
 		bool $isDisabled,
-		string $draggableLabel
+		string $conflictingTalkLabel
 	) : string {
 		$out = Html::rawElement(
 			'div',
-			[ 'class' => 'mw-twocolconflict-draggable-handle' ],
-			new IconWidget( [
-				'icon' => 'draggable',
-			] ) .
+			[ 'class' => 'mw-twocolconflict-conflicting-talk-label' ],
 			Html::rawElement(
-				'div',
-				[ 'class' => 'mw-twocolconflict-draggable-label' ],
-				Html::rawElement(
+				'span',
+				[],
+				Html::element(
 					'span',
-					[],
-					Html::element(
-						'span',
-						[ 'class' => 'mw-twocolconflict-split-' . $classSuffix ],
-						$this->messageLocalizer->msg( $draggableLabel )->text()
-					)
+					[ 'class' => 'mw-twocolconflict-split-' . $classSuffix ],
+					$this->messageLocalizer->msg( $conflictingTalkLabel )->text()
 				)
 			)
 		);

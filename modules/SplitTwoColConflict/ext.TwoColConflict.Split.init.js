@@ -343,33 +343,6 @@ function initPreview() {
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
-function initResolutionSuggestion() {
-	var $view = $( '.mw-twocolconflict-single-column-view' ),
-		$draggableSection = $view.find( '.mw-twocolconflict-suggestion-draggable' ),
-		DraggableAdditionWidget, OrderSelectionWidget, orderSelection;
-
-	if ( !$draggableSection.length ) {
-		return;
-	}
-
-	DraggableAdditionWidget = require( './ext.TwoColConflict.DraggableAdditionWidget.js' );
-	OrderSelectionWidget = require( './ext.TwoColConflict.OrderSelectionWidget.js' );
-
-	orderSelection = new OrderSelectionWidget( {
-		items: [
-			new DraggableAdditionWidget( {
-				// FIXME: Couple to the ancestor's class, not exact structure.
-				$rowElement: $view.find( '.mw-twocolconflict-split-delete' ).first().parent()
-			} ),
-			new DraggableAdditionWidget( {
-				$rowElement: $view.find( '.mw-twocolconflict-split-add' ).first().parent()
-			} )
-		]
-	} );
-	$draggableSection.replaceWith( orderSelection.$element );
-}
-
 function initSubmit() {
 	$( '#wpSave, #wpTestPreviewWidget #wpPreview' )
 		.click( function ( e ) {
@@ -390,8 +363,6 @@ $( function () {
 		return;
 	}
 
-	// FIXME: Disabled because of a widget glitch, see T247957.
-	// initResolutionSuggestion();
 	initColumnSelection();
 	initColumnClickEvent();
 	initButtonEvents();

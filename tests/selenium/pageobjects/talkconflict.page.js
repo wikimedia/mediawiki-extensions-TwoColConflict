@@ -2,7 +2,7 @@ const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class TalkConflictPage {
-	get draggableContainer() { return $( '.mw-twocolconflict-draggable' ); }
+	get draggableContainer() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
 	get splitColumn() { return $( '.mw-twocolconflict-split-column' ); }
 
 	createTalkPageConflict() {

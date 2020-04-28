@@ -36,10 +36,8 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				0,
 				0,
 				[
-					// FIXME: This <div> is not closed
-					'<div class="mw-twocolconflict-suggestion-draggable">',
 					'<textarea>a</textarea>',
-					// '</div></div></div>',
+					'</div></div>',
 				]
 			],
 			'typical talk page conflict' => [
@@ -53,10 +51,9 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				2,
 				[
 					'<textarea>a</textarea>',
-					'<div class="mw-twocolconflict-suggestion-draggable">',
 					'<textarea>b</textarea>',
 					'<textarea>c</textarea>',
-					'</div></div></div>',
+					'</div></div>',
 					'<textarea>d</textarea>',
 				]
 			],
@@ -74,10 +71,9 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 				[
 					'<textarea>a</textarea>',
 					'<textarea>b</textarea>',
-					'<div class="mw-twocolconflict-suggestion-draggable">',
 					'<textarea>c</textarea>',
 					'<textarea>d</textarea>',
-					'</div></div></div>',
+					'</div></div>',
 					'<textarea>e</textarea>',
 					'<textarea>f</textarea>',
 				]
