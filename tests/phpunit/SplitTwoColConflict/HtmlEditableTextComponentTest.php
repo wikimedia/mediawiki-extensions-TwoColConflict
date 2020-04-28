@@ -160,7 +160,6 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 
 		return new HtmlEditableTextComponent(
 			$localizer,
-			$this->getTestUser()->getUser(),
 			$this->createMock( Language::class )
 		);
 	}

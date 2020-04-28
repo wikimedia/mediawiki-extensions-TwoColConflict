@@ -15,7 +15,7 @@ use TwoColConflict\TwoColConflictContext;
 class ResolutionSuggester {
 
 	/**
-	 * @var RevisionRecord
+	 * @var RevisionRecord|null
 	 */
 	private $baseRevision;
 

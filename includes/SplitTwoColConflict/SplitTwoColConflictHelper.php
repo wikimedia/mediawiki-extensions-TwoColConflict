@@ -198,18 +198,17 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$out = ( new HtmlSplitConflictHeader(
 			$this->title,
 			$user,
+			$this->newEditSummary,
 			$language,
-			$this->out->getContext(),
-			false,
-			$this->newEditSummary
+			$this->out->getContext()
 		) )->getHtml();
 		$out .= ( new HtmlSplitConflictView(
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),
-				$user,
-				$language
+				$language,
+				$user->getOption( 'editfont' )
 			),
-			$this->out
+			$this->out->getContext()
 		) )->getHtml(
 			$diff,
 			// Note: Can't use getBool() because that discards arrays
@@ -222,8 +221,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		return ( new HtmlTalkPageResolutionView(
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),
-				$this->out->getUser(),
-				$this->out->getLanguage()
+				$this->out->getLanguage(),
+				$this->out->getUser()->getOption( 'editfont' )
 			),
 			$this->out->getContext()
 		) )->getHtml(
