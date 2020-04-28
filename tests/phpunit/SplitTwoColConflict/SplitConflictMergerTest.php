@@ -88,14 +88,14 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame( "A\nB", $result );
 	}
 
-	public function testFirstEmptyRowIsNotIgnored() {
+	public function testRowsNotEmptiedByTheUserAreNotIgnored() {
 		$result = SplitConflictMerger::mergeSplitConflictResults(
 			[
 				[ 'copy' => '' ],
 				[ 'copy' => 'A' ],
 			],
 			[
-				[ 'copy' => 1 ],
+				[ 'copy' => '1,was-empty' ],
 			],
 			[]
 		);

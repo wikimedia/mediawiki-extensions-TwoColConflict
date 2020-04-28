@@ -194,10 +194,18 @@ class HtmlEditableTextComponent {
 
 	private function countExtraLineFeeds( string $text ) : string {
 		$endOfText = strlen( rtrim( $text, "\r\n" ) );
-		$before = substr_count( $text, "\n", 0, strspn( $text, "\r\n", 0, $endOfText ) );
 		$after = substr_count( $text, "\n", $endOfText );
-		// "Before" and "after" are intentionally flipped, because "before" is very rare
-		return $after . ( $before ? ',' . $before : '' );
+		if ( $endOfText === 0 && $after ) {
+			return "$after,was-empty";
+		}
+
+		$before = substr_count( $text, "\n", 0, strspn( $text, "\r\n", 0, $endOfText ) );
+		if ( $before ) {
+			// "Before" and "after" are intentionally flipped, because "before" is very rare
+			return "$after,$before";
+		} else {
+			return (string)$after;
+		}
 	}
 
 	/**
