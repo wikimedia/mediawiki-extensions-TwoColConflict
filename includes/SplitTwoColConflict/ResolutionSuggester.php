@@ -40,13 +40,9 @@ class ResolutionSuggester {
 		return $a['action'] === 'copy' && $a === $b;
 	}
 
-	/**
-	 * @param array $a First block to compare
-	 * @param array $b Second block
-	 * @return bool True if the blocks are both add blocks, at the same line
-	 */
-	private function isConflictingAddBlock( array $a, array $b ) {
-		return $a['action'] === 'add' && $b['action'] === 'add';
+	private function isAddition( array $change ) : bool {
+		return $change['action'] === 'add'
+			|| ( $change['action'] === 'change' && $change['oldtext'] === '' );
 	}
 
 	/**
@@ -70,6 +66,27 @@ class ResolutionSuggester {
 			return null;
 		}
 
+		foreach ( $diffStoredLines as $i => $stored ) {
+			$unsaved = $diffYourLines[$i];
+
+			// We only care about copies that are *almost* identical, except for extra newlines
+			if ( !isset( $stored['copytext'] )
+				|| !isset( $unsaved['copytext'] )
+				|| $stored['copytext'] === $unsaved['copytext']
+				|| trim( $stored['copytext'], "\n" ) !== trim( $unsaved['copytext'], "\n" )
+			) {
+				continue;
+			}
+
+			[ $beforeStored, $afterStored ] = $this->countNewlines( $stored['copytext'] );
+			[ $beforeUnsafed, $afterUnsafed ] = $this->countNewlines( $unsaved['copytext'] );
+
+			$this->moveNewlinesUp( $diffStoredLines, $i, $beforeStored - $beforeUnsafed );
+			$this->moveNewlinesUp( $diffYourLines, $i, $beforeUnsafed - $beforeStored );
+			$this->moveNewlinesDown( $diffStoredLines, $i, $afterStored - $afterUnsafed );
+			$this->moveNewlinesDown( $diffYourLines, $i, $afterUnsafed - $afterStored );
+		}
+
 		// only diffs that contain exactly one addition, that is optionally
 		// preceded and/or succeeded by one identical copy line, are
 		// candidates for the resolution suggestion
@@ -83,13 +100,14 @@ class ResolutionSuggester {
 			if ( $this->isIdenticalCopyBlock( $yourLine, $otherLine ) ) {
 				// Copy
 				$diff[] = $otherLine;
-			} elseif ( $this->isConflictingAddBlock( $yourLine, $otherLine )
+			} elseif ( $this->isAddition( $yourLine )
+				&& $this->isAddition( $otherLine )
 				&& $spliceIndex === null
 			) {
 				// Splice alternatives
 				$spliceIndex = count( $diff );
-				$diff[] = $otherLine;
-				$diff[] = $yourLine;
+				$diff[] = [ 'action' => 'add' ] + $otherLine;
+				$diff[] = [ 'action' => 'add' ] + $yourLine;
 			} else {
 				return null;
 			}
@@ -121,6 +139,34 @@ class ResolutionSuggester {
 		}
 
 		return SplitConflictUtils::splitText( $baseText );
+	}
+
+	private function countNewlines( string $text ) : array {
+		// Start from the end, because we want "\n" to be reported as [ 0, 1 ]
+		$endOfText = strlen( rtrim( $text, "\n" ) );
+		$after = strlen( $text ) - $endOfText;
+		$before = strspn( $text, "\n", 0, $endOfText );
+		return [ $before, $after ];
+	}
+
+	private function moveNewlinesUp( array &$diff, int $i, int $count ) {
+		if ( $count < 1 || !isset( $diff[$i - 1] ) || $diff[$i - 1]['action'] !== 'add' ) {
+			return;
+		}
+
+		$diff[$i - 1]['newtext'] .= str_repeat( "\n", $count );
+		// The current row is guaranteed to be a copy
+		$diff[$i]['copytext'] = substr( $diff[$i]['copytext'], $count );
+	}
+
+	private function moveNewlinesDown( array &$diff, int $i, int $count ) {
+		if ( $count < 1 || !isset( $diff[$i + 1] ) || $diff[$i + 1]['action'] !== 'add' ) {
+			return;
+		}
+
+		$diff[$i + 1]['newtext'] = str_repeat( "\n", $count ) . $diff[$i + 1]['newtext'];
+		// The current row is guaranteed to be a copy
+		$diff[$i]['copytext'] = substr( $diff[$i]['copytext'], 0, -$count );
 	}
 
 }
