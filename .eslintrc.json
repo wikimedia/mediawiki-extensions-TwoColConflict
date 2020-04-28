@@ -16,7 +16,6 @@
 		"no-jquery/no-global-selector": "off",
 		"vars-on-top": "off",
 		"one-var": "off",
-		"mediawiki/class-doc": "warn",
 		"mediawiki/valid-package-file-require": "warn"
 	}
 }
