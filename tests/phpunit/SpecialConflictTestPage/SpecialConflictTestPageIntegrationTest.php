@@ -44,7 +44,7 @@ class SpecialConflictTestPageIntegrationTest extends SpecialPageTestBase {
 
 	public function testNoOutputWhenBetaFeatureAndNoUser() {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped();
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
 		}
 
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );

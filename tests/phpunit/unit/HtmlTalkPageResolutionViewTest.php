@@ -20,6 +20,12 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		Theme::setSingleton( new BlankTheme() );
 	}
 
+	protected function tearDown() : void {
+		Theme::setSingleton( null );
+
+		parent::tearDown();
+	}
+
 	public function provideDiffs() {
 		return [
 			'empty' => [ [], 0, 0, [] ],
