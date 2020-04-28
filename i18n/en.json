@@ -8,7 +8,7 @@
 	"twocolconflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twocolconflict-beta-feature-message": "Two column edit conflict",
 	"twocolconflict-beta-feature-description": "Show the edit conflict view using a more advanced two column view.",
-	"twocolconflict-preference-enabled": "Enable the [[mw:Help:Two_Column_Edit_Conflict_View|Two Column Edit Conflict View]] to resolve edit conflicts",
+	"twocolconflict-preference-enabled": "Enable the [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Two Column Edit Conflict View]] to resolve edit conflicts",
 	"twocolconflict-test-needsbeta": "You must enable the 'Two column edit conflict' beta feature in your preferences to use this special page.",
 	"twocolconflict-test-page-title": "Edit Conflict: Simulation",
 	"twocolconflict-test-title-label": "Enter the title of a non-protected wiki page for which the edit conflict should be simulated:",
