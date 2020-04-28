@@ -51,7 +51,7 @@ class TwoColConflictHooks {
 				MediaWikiServices::getInstance()->getContentHandlerFactory(),
 				new ResolutionSuggester(
 					$baseRevision,
-					$editPage->getArticle()->getContentHandler()->getDefaultFormat()
+					$editPage->getArticle()->getPage()->getContentHandler()->getDefaultFormat()
 				)
 			);
 		} );
