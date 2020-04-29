@@ -10,7 +10,7 @@
 	"twocolconflict-desc": "Değişiklik çakışmasının çözümü için yan yana birleşik bir ekran gösterir.",
 	"twocolconflict-beta-feature-message": "İki sütunlu değişiklik çakışması",
 	"twocolconflict-beta-feature-description": "Daha gelişmiş iki sütun görünümü kullanarak çakışmayı düzenle görünümünü gösterin.",
-	"twocolconflict-preference-enabled": "Düzenleme çakışmalarını çözmek için [[mw:Help:Two_Column_Edit_Conflict_View|İki Sütun Düzenleme Çakışma Görünümü]]'nü etkinleştirin",
+	"twocolconflict-preference-enabled": "Düzenleme çakışmalarını çözmek için [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|İki Sütun Düzenleme Çakışma Görünümü]]'nü etkinleştirin",
 	"twocolconflict-test-needsbeta": "Bu özel sayfayı kullanmak için tercihlerinizdeki 'İki Sütunlu Düzenleme Çakışması' beta özelliğini etkinleştirmeniz gerekir.",
 	"twocolconflict-test-page-title": "Değişiklik Çakışması: Simülasyon",
 	"twocolconflict-test-title-label": "Değişiklik çakışmasının simüle edilmesi için koruma altında olmayan bir viki sayfasının adını yazın:",

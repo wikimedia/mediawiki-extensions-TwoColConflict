@@ -13,7 +13,7 @@
 	"twocolconflict-desc": "顯示並排的編輯合併畫面來解決編輯衝突",
 	"twocolconflict-beta-feature-message": "雙欄編輯衝突",
 	"twocolconflict-beta-feature-description": "使用更先進的雙欄介面來顯示編輯衝突。",
-	"twocolconflict-preference-enabled": "啟用[[mw:Help:Two_Column_Edit_Conflict_View|雙欄編輯衝突檢視]]來解決編輯衝突",
+	"twocolconflict-preference-enabled": "啟用[[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|雙欄編輯衝突檢視]]來解決編輯衝突",
 	"twocolconflict-test-needsbeta": "您必須在您的偏好設定中啟用「雙欄編輯衝突」測試功能來使用該特殊頁面。",
 	"twocolconflict-test-page-title": "編輯衝突：模擬",
 	"twocolconflict-test-title-label": "輸入一個未受保護的wiki頁面的標題以模擬編輯衝突：",
