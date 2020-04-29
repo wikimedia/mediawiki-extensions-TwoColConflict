@@ -2,6 +2,7 @@
 
 namespace TwoColConflict;
 
+use BetaFeatures;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use Title;
@@ -46,7 +47,7 @@ class TwoColConflictContext {
 
 	private static function hasUserEnabledFeature( User $user ) : bool {
 		if ( self::isUsedAsBetaFeature() ) {
-			return \BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
+			return BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
 
 		return $user->getBoolOption( self::ENABLED_PREFERENCE );
