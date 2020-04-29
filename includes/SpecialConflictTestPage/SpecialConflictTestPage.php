@@ -77,7 +77,7 @@ class SpecialConflictTestPage extends SpecialPage {
 
 		$testArticle = Article::newFromTitle( $testTitle, $this->getContext() );
 
-		if ( !$testArticle->getContentHandler()->supportsDirectEditing() ) {
+		if ( !$testArticle->getPage()->getContentHandler()->supportsDirectEditing() ) {
 			$this->showHintBox( $this->msg( 'twocolconflict-test-initial-hint' )->parse() );
 
 			$this->showWarningBox( $this->msg( 'twocolconflict-test-no-direct-editing' )->text() );
@@ -173,7 +173,7 @@ class SpecialConflictTestPage extends SpecialPage {
 				$services->getContentHandlerFactory(),
 				new ResolutionSuggester(
 					$baseRevisionRecord,
-					$article->getContentHandler()->getDefaultFormat()
+					$article->getPage()->getContentHandler()->getDefaultFormat()
 				)
 			);
 		};
