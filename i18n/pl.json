@@ -13,7 +13,7 @@
 	"twocolconflict-desc": "Pokazuje pola tekstowe obok siebie podczas konfliktu zapisu edycji, aby ułatwić jego rozwiązanie",
 	"twocolconflict-beta-feature-message": "Dwukolumnowe wyświetlanie konfliktu edycji",
 	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.",
-	"twocolconflict-preference-enabled": "Włącz [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|dwukolumnowe wyświetlanie konfliktu edycji]] aby rozwiązywać konflikty.",
+	"twocolconflict-preference-enabled": "Włącz [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|dwukolumnowe wyświetlanie konfliktu edycji]] aby rozwiązywać konflikty",
 	"twocolconflict-test-needsbeta": "Musisz włączyć funkcję eksperymentalną „Dwukolumnowe wyświetlanie konfliktu edycji” w swoich preferencjach, aby móc użyć tej strony specjalnej.",
 	"twocolconflict-test-page-title": "Konflikt edycji: Symulacja",
 	"twocolconflict-test-title-label": "Wprowadź tytuł niezabezpieczonej strony, na które zasymulować konflikt edycji:",
@@ -27,6 +27,7 @@
 	"twocolconflict-test-preview-submit": "Symuluj publikowanie zmian",
 	"twocolconflict-test-preview-hint": "Dziękujemy za wypróbowanie interfejsu dwukolumnowego rozwiązywania konfliktów edycji! Pomóż nam go ulepszyć poprzez dostarczenie nam swojej opinii [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page tutaj].\n\nPoniżej są wyniki testu rozwiązywania konfliktu edycji.",
 	"twocolconflict-test-summary-text": "Opis zmian edycji konfliktowej",
+	"twocolconflict-split-header-hint": "Możesz pomóc ulepszać tę funkcję jeśli zostawisz feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-header-hint-beta": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-current-version-header": "Najnowsza wersja na dzień $1",
@@ -35,7 +36,7 @@
 	"twocolconflict-split-other-version-chosen": "Inna wersja",
 	"twocolconflict-split-your-version-chosen": "Twoja wersja",
 	"twocolconflict-split-tour-dialog-header": "Scal skonfliktowane wersje",
-	"twocolconflict-split-tour-dialog-message": "Niestety wszedłeś(-aś) w konflikt edycji. Podczas wprowadzania zmian ktoś inny również edytował stronę i ją zapisał. Twoja wersja jest nieaktualna ponieważ nie uwzględnia zmian dokonanych w czasie twojej edycji. Połącz swoją wersję z najnowszymi zmianami na następnej stronie.",
+	"twocolconflict-split-tour-dialog-message": "Niestety podczas wprowadzania zmian ktoś inny również edytował stronę i zapisał ją przed Tobą.\n\nNie ma powodu do obaw, Twoje edycje nie przepadły! Sprawdź proszę obie wersje i połącz je ze sobą. Jeśli będzie to konieczne, możesz edytować zaznaczony tekst. Tylko tekst w zaznaczonych polach zostanie zapisany gdy klikniesz „{{int:Savechanges}}”.",
 	"twocolconflict-split-tour-dialog-btn-text": "Rozpocznij łączenie",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, rozumiem.",
 	"twocolconflict-split-tour-popup1-header": "Różniące się zmiany są pokazywane linia po linii.",
@@ -55,5 +56,7 @@
 	"twocolconflict-split-selected-version-tooltip": "Wybrana wersja",
 	"twocolconflict-split-unselected-version-tooltip": "Kliknij, aby wybrać tę wersję",
 	"twocolconflict-split-help-tooltip": "Pokaż pomoc",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Rozwiąż problem"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Rozwiąż problem",
+	"twocolconflict-talk-your": "Twój wpis",
+	"twocolconflict-talk-conflicting": "Konfliktujący wpis"
 }

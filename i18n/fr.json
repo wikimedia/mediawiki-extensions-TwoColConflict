@@ -18,7 +18,7 @@
 	"twocolconflict-desc": "Affichage d’un écran de fusion des modifications côte-à-côte pour résoudre les conflits de modification",
 	"twocolconflict-beta-feature-message": "Conflit de modification sur deux colonnes",
 	"twocolconflict-beta-feature-description": "Afficher le conflit de modification en utilisant une version plus avancée de la vue sur deux colonnes.",
-	"twocolconflict-preference-enabled": "Activer la [[mw:Help:Two_Column_Edit_Conflict_View|Vue des conflits de modification sur deux colonnes]] pour résoudre les conflits de modification",
+	"twocolconflict-preference-enabled": "Activer la [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Vue des conflits de modification sur deux colonnes]] pour résoudre les conflits de modification",
 	"twocolconflict-test-needsbeta": "Vous devez activer la fonctionnalité bêta 'Conflit d’édition sur deux colonnes' dans vos préférences pour utiliser cette page spéciale.",
 	"twocolconflict-test-page-title": "Conflit d'édition: simulation",
 	"twocolconflict-test-title-label": "Saisir le titre d’une page wiki non protégée, pour laquelle le conflit d’édition doit être simulé :",
