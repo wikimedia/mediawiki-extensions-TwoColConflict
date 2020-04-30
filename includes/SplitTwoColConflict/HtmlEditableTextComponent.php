@@ -7,7 +7,9 @@ use Language;
 use MessageLocalizer;
 use OOUI\ButtonWidget;
 
-// TODO: Should this be an official OOUI component?
+/**
+ * @license GPL-2.0-or-later
+ */
 class HtmlEditableTextComponent {
 
 	/**

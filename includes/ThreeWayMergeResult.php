@@ -2,6 +2,9 @@
 
 namespace TwoColConflict;
 
+/**
+ * @license GPL-2.0-or-later
+ */
 class ThreeWayMergeResult {
 
 	/** @var bool True when the merge is safe to perform automatically. */

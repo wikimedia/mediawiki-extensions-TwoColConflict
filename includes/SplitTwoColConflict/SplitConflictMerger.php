@@ -31,10 +31,11 @@ class SplitConflictMerger {
 				$side = isset( $row['copy'] ) ? 'copy' : $sideSelection;
 			}
 
-			// A mismatch here means the input is either incomplete (by design) or broken, and
-			// already detected as such (see above). Intentionally return the most recent, most
-			// conflicting result. Fall back to the users conflicting edit, or to *whatever* is
-			// there, no matter how invalid the input is. We *never* want to delete a row.
+			// A mismatch here means the request is either incomplete (by design) or broken, and
+			// already detected as such (see ConflictFormValidator). Intentionally return the most
+			// recent, most conflicting value. Fall back to the users conflicting edit, or to
+			// *whatever* is there, no matter how invalid it might be. We *never* want to delete
+			// anything.
 			$line = $row[$side] ??
 				$row['your'] ??
 				(string)( is_array( $row ) ? current( $row ) : $row );
@@ -52,6 +53,9 @@ class SplitConflictMerger {
 				$lf = explode( ',', $lf, 2 );
 				// "Before" and "after" are intentionally flipped, because "before" is very rare
 				if ( isset( $lf[1] ) ) {
+					// We want to understand the difference between a row the user emptied (extra
+					// linefeeds are removed as well then), or a row that was empty before. This is
+					// how HtmlEditableTextComponent marked empty rows.
 					if ( $lf[1] === 'was-empty' ) {
 						$emptiedByUser = false;
 					} else {

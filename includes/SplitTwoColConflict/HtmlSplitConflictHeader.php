@@ -9,9 +9,11 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MessageLocalizer;
+use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
+use WikiPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -87,9 +89,9 @@ class HtmlSplitConflictHeader {
 	 * @return RevisionRecord|null
 	 */
 	private function getLatestRevision() : ?RevisionRecord {
-		$wikiPage = \WikiPage::factory( \Title::newFromLinkTarget( $this->linkTarget ) );
+		$wikiPage = WikiPage::factory( Title::newFromLinkTarget( $this->linkTarget ) );
 		/** @see https://phabricator.wikimedia.org/T203085 */
-		$wikiPage->loadPageData( \WikiPage::READ_LATEST );
+		$wikiPage->loadPageData( WikiPage::READ_LATEST );
 		return $wikiPage->getRevisionRecord();
 	}
 

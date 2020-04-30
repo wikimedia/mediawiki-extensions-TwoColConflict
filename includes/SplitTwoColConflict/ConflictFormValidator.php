@@ -4,6 +4,9 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use WebRequest;
 
+/**
+ * @license GPL-2.0-or-later
+ */
 class ConflictFormValidator {
 
 	/**
