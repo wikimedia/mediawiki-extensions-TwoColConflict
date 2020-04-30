@@ -4,6 +4,9 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MessageLocalizer;
+use OOUI\FieldLayout;
+use OOUI\FieldsetLayout;
+use OOUI\RadioInputWidget;
 
 /**
  * TODO: Clean up, maybe CSS class names should match change type, and "split" replaced with
@@ -76,6 +79,7 @@ class HtmlTalkPageResolutionView {
 			}
 		}
 
+		$out .= $this->buildOrderSelector();
 		$out .= Html::hidden( 'mw-twocolconflict-single-column-view', true );
 
 		return Html::rawElement(
@@ -94,6 +98,44 @@ class HtmlTalkPageResolutionView {
 			],
 			$html
 		);
+	}
+
+	private function buildOrderSelector() {
+		$out = new FieldsetLayout( [
+			'label' => $this->messageLocalizer->msg( 'twocolconflict-talk-reorder-prompt' )->text(),
+			'items' => [
+				new FieldLayout(
+					new RadioInputWidget( [
+						'name' => 'mw-twocolconflict-reorder',
+						'value' => 'reverse',
+						'tabIndex' => '1',
+					] ),
+					[
+						'align' => 'inline',
+						'label' => $this->messageLocalizer->msg( 'twocolconflict-talk-reverse-order' )->text(),
+					]
+				),
+				new FieldLayout(
+					new RadioInputWidget( [
+						'name' => 'mw-twocolconflict-reorder',
+						'value' => 'no-change',
+						'selected' => true,
+						'tabIndex' => '1',
+					] ),
+					[
+						'align' => 'inline',
+						'label' => $this->messageLocalizer->msg( 'twocolconflict-talk-same-order' )->text(),
+					]
+				),
+			],
+		] );
+
+		$out = Html::rawElement(
+			'div',
+			[ 'class' => 'mw-twocolconflict-order-selector' ],
+			$out
+		);
+		return $out;
 	}
 
 	private function buildConflictingTalkRow(

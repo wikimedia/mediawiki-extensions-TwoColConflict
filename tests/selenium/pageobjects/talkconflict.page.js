@@ -4,6 +4,9 @@ const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 class TalkConflictPage {
 	get draggableContainer() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
 	get splitColumn() { return $( '.mw-twocolconflict-split-column' ); }
+	get orderSelector() { return $( '.mw-twocolconflict-order-selector' ); }
+	get keepAfterButton() { return $( '.mw-twocolconflict-order-selector [value="no-change"]' ); }
+	get moveBeforeButton() { return $( '.mw-twocolconflict-order-selector [value="reverse"]' ); }
 
 	createTalkPageConflict() {
 		EditConflictPage.createConflict(

@@ -15,6 +15,20 @@
 	margin-left: @labelColumnWidth;
 }
 
+.mw-twocolconflict-order-selector {
+	margin-top: 2em;
+
+	.oo-ui-fieldsetLayout.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+
+	.oo-ui-fieldLayout-align-inline {
+		display: inline-block;
+		margin-right: 20px;
+	}
+}
+
 .mw-twocolconflict-conflicting-talk-row {
 	.mw-twocolconflict-single-column {
 		margin-left: 0;
@@ -39,8 +53,15 @@
 	}
 }
 
+.client-js {
+	.mw-twocolconflict-order-selector {
+		display: none;
+	}
+}
+
 .client-nojs {
-	.mw-twocolconflict-split-copy {
+	.mw-twocolconflict-split-copy,
+	.mw-twocolconflict-order-selector {
 		margin-left: @labelColumnWidth;
 	}
 

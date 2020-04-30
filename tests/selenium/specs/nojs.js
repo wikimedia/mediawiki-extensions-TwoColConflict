@@ -1,5 +1,7 @@
 var assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' );
+	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
+	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
 
 describe( 'TwoColConflict without JavaScript', function () {
 	before( function () {
@@ -7,7 +9,7 @@ describe( 'TwoColConflict without JavaScript', function () {
 		EditConflictPage.testNoJs();
 	} );
 
-	it( 'is showing the nojs version correctly', function () {
+	it( 'is showing the default version correctly', function () {
 		EditConflictPage.createConflict(
 			'A',
 			'B',
@@ -27,6 +29,34 @@ describe( 'TwoColConflict without JavaScript', function () {
 			EditConflictPage.getEditor( 'your' ).isDisplayed() &&
 			EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'editors are visible right away'
+		);
+	} );
+
+	it( 'is showing the talk page version correctly', function () {
+		TalkConflictPage.createTalkPageConflict();
+
+		EditConflictPage.conflictView.waitForDisplayed();
+		assert( !TalkConflictPage.splitColumn.isExisting() );
+
+		TalkConflictPage.draggableContainer.waitForDisplayed();
+		TalkConflictPage.orderSelector.waitForDisplayed();
+		assert( TalkConflictPage.keepAfterButton.isSelected() );
+
+		assert( EditConflictPage.getParagraph( 'other' ) );
+		assert( EditConflictPage.getParagraph( 'your' ) );
+		assert( EditConflictPage.getParagraph( 'copy' ) );
+	} );
+
+	it( 'handles order selection on the talk page version correctly', function () {
+		TalkConflictPage.createTalkPageConflict();
+		TalkConflictPage.orderSelector.waitForDisplayed();
+
+		TalkConflictPage.moveBeforeButton.click();
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 Line2 Line3 Comment B Comment A'
 		);
 	} );
 
