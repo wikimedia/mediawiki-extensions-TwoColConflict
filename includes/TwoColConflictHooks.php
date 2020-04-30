@@ -94,10 +94,8 @@ class TwoColConflictHooks {
 							}
 						}
 					}
-				} else {
-					if ( $request->getVal( 'mw-twocolconflict-reorder' ) === 'reverse' ) {
-						[ $contentRows, $extraLineFeeds ] = self::swapTalkComments( $contentRows, $extraLineFeeds );
-					}
+				} elseif ( $request->getVal( 'mw-twocolconflict-reorder' ) === 'reverse' ) {
+					[ $contentRows, $extraLineFeeds ] = self::swapTalkComments( $contentRows, $extraLineFeeds );
 				}
 			}
 
@@ -109,18 +107,14 @@ class TwoColConflictHooks {
 		}
 	}
 
-	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ) : array {
-		foreach ( $contentRows as $num => $row ) {
-			if ( is_array( $row ) && array_key_exists( 'other', $row )
-				&& $num < count( $contentRows ) - 1
-				&& $num < count( $extraLineFeeds ) - 1
-			) {
-				[ $contentRows[$num], $contentRows[$num + 1] ] =
-					[ $contentRows[$num + 1], $contentRows[$num] ];
-				[ $extraLineFeeds[$num], $extraLineFeeds[$num + 1] ] =
-					[ $extraLineFeeds[$num + 1], $extraLineFeeds[$num] ];
-
-				break;
+	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ) {
+		for ( $i = 0; $i < count( $contentRows ) - 1; $i++ ) {
+			if ( isset( $contentRows[$i]['other'] ) && isset( $contentRows[$i + 1]['your'] ) ) {
+				[ $contentRows[$i], $contentRows[$i + 1] ] =
+					[ $contentRows[$i + 1], $contentRows[$i] ];
+				[ $extraLineFeeds[$i], $extraLineFeeds[$i + 1] ] =
+					[ $extraLineFeeds[$i + 1] ?? 0, $extraLineFeeds[$i] ?? 0 ];
+				$i++;
 			}
 		}
 
