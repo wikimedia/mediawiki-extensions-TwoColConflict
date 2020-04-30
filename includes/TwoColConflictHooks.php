@@ -273,12 +273,35 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * Called whenever a user wants to reset their preferences.
+	 * Anonymous users and those without a preference will get the default: enabled.
 	 *
 	 * @param array &$defaultOptions
 	 */
 	public static function onUserGetDefaultOptions( array &$defaultOptions ) {
 		$defaultOptions[TwoColConflictContext::ENABLED_PREFERENCE] = 1;
+	}
+
+	/**
+	 * If a user is opted-out of the beta feature, that will be copied over to the newer
+	 * preference.  This ensures that anyone who has opted-out continues to be so as we
+	 * promote wikis out of beta feature mode.
+	 *
+	 * This entire function can be removed once all users have been migrated away from
+	 * their beta feature preference.  See T250955.
+	 *
+	 * @param User $user
+	 * @param array &$options
+	 */
+	public static function onUserLoadOptions( User $user, array &$options ) {
+		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
+			return;
+		}
+
+		$betaPreference = $options[TwoColConflictContext::BETA_PREFERENCE_NAME] ?? null;
+		if ( $betaPreference === 0 ) {
+			$options[TwoColConflictContext::ENABLED_PREFERENCE] = 0;
+		}
+		$options[TwoColConflictContext::BETA_PREFERENCE_NAME] = null;
 	}
 
 }

@@ -5,6 +5,7 @@ namespace TwoColConflict\Tests;
 use EditPage;
 use ExtensionRegistry;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use OOUI\InputWidget;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -254,6 +255,9 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 */
 	private function createContext( bool $enabled = true ) {
 		$user = $this->createMock( User::class );
+		$user->method( 'getOption' )
+			->with( TwoColConflictContext::ENABLED_PREFERENCE )
+			->willReturn( $enabled );
 		$user->method( 'getBoolOption' )
 			->with( TwoColConflictContext::ENABLED_PREFERENCE )
 			->willReturn( $enabled );
@@ -276,6 +280,139 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$request->method( 'getArray' )->willReturnCallback( $getter );
 		$request->method( 'getBool' )->willReturnCallback( $getter );
 		return $request;
+	}
+
+	/**
+	 * Integration for our option hooks and the User class.
+	 *
+	 * @dataProvider provideGetOption
+	 */
+	public function testGetOption( $origBeta, $origEditing, bool $expectedEditing ) {
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+		$user = $this->getTestUser()->getUser();
+
+		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
+		$this->setOptionRow( $user, TwoColConflictContext::ENABLED_PREFERENCE, $origEditing );
+
+		$fetchedBeta = $user->getOption( TwoColConflictContext::BETA_PREFERENCE_NAME );
+		$fetchedEditing = $user->getOption( TwoColConflictContext::ENABLED_PREFERENCE );
+		$this->assertNull( $fetchedBeta );
+		$this->assertSame( $expectedEditing, (bool)$fetchedEditing );
+	}
+
+	public function provideGetOption() {
+		return [
+			[
+				'origBeta' => 0,
+				'origEditing' => 0,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => 0,
+				'origEditing' => null,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => 0,
+				'origEditing' => 1,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => null,
+				'origEditing' => 0,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => null,
+				'origEditing' => null,
+				'fetchedEditing' => true,
+			],
+			[
+				'origBeta' => null,
+				'origEditing' => 1,
+				'fetchedEditing' => true,
+			],
+			[
+				'origBeta' => 1,
+				'origEditing' => 0,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => 1,
+				'origEditing' => null,
+				'fetchedEditing' => true,
+			],
+			[
+				'origBeta' => 1,
+				'origEditing' => 1,
+				'fetchedEditing' => true,
+			],
+		];
+	}
+
+	/**
+	 * Integration for our option hooks and the User class.
+	 *
+	 * @dataProvider provideSetOption
+	 */
+	public function testSetOption( $origBeta, $origEditing, $setEditing, bool $newEditing ) {
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+		$user = $this->getTestUser()->getUser();
+
+		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
+		$this->setOptionRow( $user, TwoColConflictContext::ENABLED_PREFERENCE, $origEditing );
+
+		$user->setOption( TwoColConflictContext::ENABLED_PREFERENCE, $setEditing );
+		$user->saveSettings();
+
+		$fetchedBeta = $user->getOption( TwoColConflictContext::BETA_PREFERENCE_NAME );
+		$fetchedEditing = $user->getOption( TwoColConflictContext::ENABLED_PREFERENCE );
+		$this->assertNull( $fetchedBeta );
+		$this->assertSame( $newEditing, (bool)$fetchedEditing );
+	}
+
+	public function provideSetOption() {
+		return [
+			[
+				'origBeta' => null,
+				'origEditing' => null,
+				'setEditing' => true,
+				'fetchedEditing' => true,
+			],
+			[
+				'origBeta' => null,
+				'origEditing' => null,
+				'setEditing' => false,
+				'fetchedEditing' => false,
+			],
+			[
+				'origBeta' => null,
+				'origEditing' => null,
+				'setEditing' => null,
+				'fetchedEditing' => true,
+			],
+		];
+	}
+
+	private function setOptionRow( User $user, string $key, ?string $value ) {
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_MASTER );
+		if ( $value === null ) {
+			$db->delete(
+				'user_properties',
+				[
+					'up_user' => $user->getId(),
+					'up_property' => $key,
+				]
+			);
+		} else {
+			$db->insert(
+				'user_properties', [
+					'up_user' => $user->getId(),
+					'up_property' => $key,
+					'up_value' => $value,
+				]
+			);
+		}
 	}
 
 }

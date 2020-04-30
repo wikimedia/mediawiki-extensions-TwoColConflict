@@ -40,6 +40,7 @@
 		"GetBetaFeaturePreferences": "TwoColConflict\\TwoColConflictHooks::onGetBetaFeaturePreferences",
 		"GetPreferences": "TwoColConflict\\TwoColConflictHooks::onGetPreferences",
 		"UserGetDefaultOptions": "TwoColConflict\\TwoColConflictHooks::onUserGetDefaultOptions",
+		"UserLoadOptions": "TwoColConflict\\TwoColConflictHooks::onUserLoadOptions",
 		"AlternateEdit": "TwoColConflict\\TwoColConflictHooks::onAlternateEdit",
 		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
