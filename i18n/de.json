@@ -12,7 +12,7 @@
 	"twocolconflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twocolconflict-beta-feature-message": "Zwei-Spalten-Bearbeitungskonflikt",
 	"twocolconflict-beta-feature-description": "Zeigt eine erweiterte Ansicht für Bearbeitungskonflikte in zwei Spalten an.",
-	"twocolconflict-preference-enabled": "[[mw:Help:Two_Column_Edit_Conflict_View|Zwei-Spalten-Bearbeitungskonflikt-Oberfläche]] aktivieren, um Bearbeitungskonflikte zu lösen",
+	"twocolconflict-preference-enabled": "[[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Zwei-Spalten-Bearbeitungskonflikt-Oberfläche]] aktivieren, um Bearbeitungskonflikte zu lösen",
 	"twocolconflict-test-needsbeta": "Du musst die Betafunktion „Zwei-Spalten-Bearbeitungskonflikt“ in deinen Einstellungen aktivieren, um diese Spezialseite zu nutzen.",
 	"twocolconflict-test-page-title": "Bearbeitungskonflikt: Simulation",
 	"twocolconflict-test-title-label": "Gib den Titel einer nicht geschützten Wikiseite ein, für die der Bearbeitungskonflikt simuliert werden soll:",
@@ -61,5 +61,8 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Leider hat jemand anderes zur gleichen Zeit wie du gepostet. Lies dir bitte die Kommentare auf der nächsten Seite durch. Falls nötig, kannst du deine Bearbeitungen und die endgültige Reihenfolge ändern.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Problem lösen",
 	"twocolconflict-talk-your": "Dein Eintrag",
-	"twocolconflict-talk-conflicting": "Kollidierender Eintrag"
+	"twocolconflict-talk-conflicting": "Kollidierender Eintrag",
+	"twocolconflict-talk-reorder-prompt": "Positioniere deinen Eintrag in Bezug auf den sich widersprechenden Eintrag:",
+	"twocolconflict-talk-same-order": "Dahinter halten",
+	"twocolconflict-talk-reverse-order": "Nach davor verschieben"
 }

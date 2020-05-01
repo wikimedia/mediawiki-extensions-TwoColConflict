@@ -12,7 +12,7 @@
 	"twocolconflict-desc": "Usporedni prikaz za rješavanje sukoba uređivanja",
 	"twocolconflict-beta-feature-message": "Rješavanje sukoba uređivanja",
 	"twocolconflict-beta-feature-description": "Prikaži sukob uređivanja rabeći napredniji dvostupčani pregled.",
-	"twocolconflict-preference-enabled": "Omogući [[mw:Help:Two_Column_Edit_Conflict_View|Prikaz rješavanja sukoba uređivanja]] kako biste rješavali sukobe između uređivanja",
+	"twocolconflict-preference-enabled": "Omogući [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Prikaz rješavanja sukoba uređivanja]] kako biste rješavali sukobe između uređivanja",
 	"twocolconflict-test-needsbeta": "Da biste rabili ovu posebnu stranicu, u postavkama morate omogućiti beta mogućnost rješavanja sukoba uređivanja.",
 	"twocolconflict-test-page-title": "Sukob uređivanja: simulacija",
 	"twocolconflict-test-title-label": "Unesite naslov nezaštićene wikistranice na kojoj želite simulaciju sukoba uređivanja:",

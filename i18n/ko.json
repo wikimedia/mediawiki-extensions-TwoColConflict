@@ -42,5 +42,6 @@
 	"twocolconflict-split-collapse-tooltip": "텍스트 접기",
 	"twocolconflict-split-expand-tooltip": "텍스트 펼치기",
 	"twocolconflict-split-unselected-version-tooltip": "이 판을 선택하려면 클릭",
-	"twocolconflict-split-help-tooltip": "도움말 보기"
+	"twocolconflict-split-help-tooltip": "도움말 보기",
+	"twocolconflict-talk-reverse-order": "이전으로 이동"
 }

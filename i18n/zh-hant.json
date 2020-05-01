@@ -62,5 +62,8 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "很不巧地，有其他人和您在同一時間做出發布，請在下一個頁面預覽註解。如有需要的話，您可以編輯您自己的內容，並在最後的次序更改。",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "解決問題",
 	"twocolconflict-talk-your": "您的項目",
-	"twocolconflict-talk-conflicting": "衝突項目"
+	"twocolconflict-talk-conflicting": "衝突項目",
+	"twocolconflict-talk-reorder-prompt": "定位您與衝突項目關聯的項目：",
+	"twocolconflict-talk-same-order": "維持在後",
+	"twocolconflict-talk-reverse-order": "向前移動"
 }

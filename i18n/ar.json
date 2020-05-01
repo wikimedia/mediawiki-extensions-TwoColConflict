@@ -14,7 +14,7 @@
 	"twocolconflict-desc": "عرض شاشة دمج التعديلات لحل تضاربات التحرير",
 	"twocolconflict-beta-feature-message": "دمج التعديلات",
 	"twocolconflict-beta-feature-description": "إظهار تضارب التحرير باستخدام عرض العمودين المتقدم.",
-	"twocolconflict-preference-enabled": "تفعيل [[mw:Help:Two_Column_Edit_Conflict_View|دمج التعديلات]] لحل تضاربات التحرير",
+	"twocolconflict-preference-enabled": "تفعيل [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|دمج التعديلات]] لحل تضاربات التحرير",
 	"twocolconflict-test-needsbeta": "يجب عليك تفعيل الخاصية التجريبية 'Two column edit conflict' في تفضيلاتك لاستخدام هذه الصفحة الخاصة.",
 	"twocolconflict-test-page-title": "تضارب تحرير: محاكاة",
 	"twocolconflict-test-title-label": "أدخل عنوان صفحة الويكي التي ينبغي أن تتم محاكاة اختبار التعارض لها:",
