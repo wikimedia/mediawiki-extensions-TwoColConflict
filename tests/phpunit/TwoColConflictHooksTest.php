@@ -7,6 +7,7 @@ use ExtensionRegistry;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use Message;
+use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\InputWidget;
 use OOUI\Theme;
@@ -29,10 +30,16 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 		Theme::setSingleton( new BlankTheme() );
+
 		$this->setMwGlobals( [
 			'wgTwoColConflictBetaFeature' => false,
 			'wgTwoColConflictSuggestResolution' => true,
 		] );
+	}
+
+	protected function tearDown() : void {
+		Theme::setSingleton( null );
+		parent::tearDown();
 	}
 
 	public function testOnAlternateEdit_withFeatureDisabled() {
@@ -419,24 +426,30 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnEditPageShowEditFormFields() {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
+			$this->markTestSkipped( 'BetaFeatures not loaded' );
+		}
+
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->isConflict = true;
 
 		$outputPage = $this->createOutputPage();
-		$outputPage->expects( $this->once() )->method( 'addHTML' );
+		$outputPage->expects( $this->once() )
+			->method( 'addHTML' )
+			->with( $this->stringContains( '(twocolconflict-core-ui-hint)' ) );
 
 		TwoColConflictHooks::onEditPageShowEditFormFields( $editPage,  $outputPage );
 	}
 
 	private function createOutputPage() {
 		$user = $this->createMock( User::class );
-		// user option to hide hint and to show new interface should both be false
-		$user->method( 'getBoolOption' )->willReturn( false );
-		$user->method( 'isAnon' )->willReturn( false );
 
-		$context = $this->createMock( IContextSource::class );
-		$context->method( 'msg' )
-			->willReturn( $this->createMock( Message::class ) );
+		$context = $this->createMock( MessageLocalizer::class );
+		$context->method( 'msg' )->willReturnCallback( function ( $key ) {
+			$msg = $this->createMock( Message::class );
+			$msg->method( 'parse' )->willReturn( "($key)" );
+			return $msg;
+		} );
 
 		$outputPage = $this->createMock( OutputPage::class );
 		$outputPage->method( 'getUser' )
