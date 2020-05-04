@@ -16,6 +16,7 @@
 	"twocolconflict-beta-feature-message": "Label for the TwoColConflict Beta Feature.",
 	"twocolconflict-beta-feature-description": "Description for the TwoColConflict Beta Feature, describing the feature that will be enabled.",
 	"twocolconflict-core-ui-hint": "Note shown to users experiencing the MediaWiki core edit conflict pointing to the new feature.",
+	"twocolconflict-core-ui-hint-close": "Tooltip explaining the side effect of the close button, which is that the message will never been shown again.",
 	"twocolconflict-preference-enabled": "Label for the user preference that enables the two column edit conflict interface.",
 	"twocolconflict-test-needsbeta": "Error message show on the conflict test page if the beta feature is not enabled.",
 	"twocolconflict-test-page-title": "Page title when simulating edit conflicts on the conflict test pages.",

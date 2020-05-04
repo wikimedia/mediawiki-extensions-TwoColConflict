@@ -28,6 +28,11 @@ class CoreUiHintHtml {
 	 * @return string
 	 */
 	public function getHtml() : string {
+		$closeIcon = new IconWidget( [
+			'icon' => 'close',
+			'title' => $this->messageLocalizer->msg( 'twocolconflict-core-ui-hint-close' )->text(),
+		] );
+
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-core-ui-hint' ],
@@ -42,7 +47,7 @@ class CoreUiHintHtml {
 					Html::rawElement(
 						'label',
 						[ 'for' => 'mw-twocolconflict-disable-core-hint' ],
-						new IconWidget( [ 'icon' => 'close' ] )
+						$closeIcon
 					)
 				)
 			] )
