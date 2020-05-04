@@ -82,21 +82,12 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	disableQuickSurveys() {
-		Util.waitForModuleState( 'mediawiki.base' );
-
-		return browser.execute( function () {
-			return mw.config.set( 'wgEnabledQuickSurveys', null );
-		} );
-	}
-
 	prepareEditConflict() {
 		UserLoginPage.loginAdmin();
 		PreferencesPage.disableEditWarning();
 		PreferencesPage.shouldUseTwoColConflict( true );
 		PreferencesPage.enableTwoColConflictBetaFeature();
 		this.toggleHelpDialog( false );
-		this.disableQuickSurveys();
 
 		browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {

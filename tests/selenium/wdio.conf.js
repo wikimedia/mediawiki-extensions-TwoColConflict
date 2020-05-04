@@ -61,7 +61,12 @@ exports.config = {
 				...( process.env.DISPLAY ? [] : [ '--headless' ] ),
 				// Chrome sandbox does not work in Docker
 				...( fs.existsSync( '/.dockerenv' ) ? [ '--no-sandbox' ] : [] )
-			]
+			],
+			// avoid that QuickSurveys pollute the output T251235
+			prefs: {
+				// eslint-disable-next-line camelcase
+				enable_do_not_track: true
+			}
 		}
 	} ],
 
