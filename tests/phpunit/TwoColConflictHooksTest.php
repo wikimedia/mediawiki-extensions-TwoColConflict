@@ -73,12 +73,12 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->assertArrayNotHasKey( 'diff', $buttons );
 	}
 
-	public function testOnEditPageshowEditFormInitial() {
+	public function testOnEditPageShowEditFormInitial() {
 		$calls = ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ? 1 : 0;
 		$outputPage = $this->createMock( OutputPage::class );
 		$outputPage->expects( $this->exactly( $calls ) )->method( 'addModules' );
 
-		TwoColConflictHooks::onEditPageshowEditFormInitial(
+		TwoColConflictHooks::onEditPageShowEditFormInitial(
 			$this->createMock( EditPage::class ),
 			$outputPage
 		);

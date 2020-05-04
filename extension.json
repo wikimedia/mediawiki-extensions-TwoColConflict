@@ -45,8 +45,8 @@
 		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
 		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
-		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormInitial",
-		"EditPage::showEditForm:fields": "TwoColConflict\\TwoColConflictHooks::onEditPageshowEditFormFields"
+		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial",
+		"EditPage::showEditForm:fields": "TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormFields"
 	},
 	"MessagesDirs": {
 		"TwoColConflict": [

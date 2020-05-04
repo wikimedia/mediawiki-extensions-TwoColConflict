@@ -141,7 +141,7 @@ class TwoColConflictHooks {
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
 	 */
-	public static function onEditPageshowEditFormInitial(
+	public static function onEditPageShowEditFormInitial(
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
@@ -156,7 +156,7 @@ class TwoColConflictHooks {
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
 	 */
-	public static function onEditPageshowEditFormFields(
+	public static function onEditPageShowEditFormFields(
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
