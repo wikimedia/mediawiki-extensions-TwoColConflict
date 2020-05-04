@@ -40,6 +40,14 @@ class TwoColConflictContext {
 	 *   may be blacklisted for this interface.
 	 */
 	public static function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
+		// T249817: Temporarily disabled on mobile
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' ) &&
+			MediaWikiServices::getInstance()->getService( 'MobileFrontend.Context' )
+				->shouldDisplayMobileView()
+		) {
+			return false;
+		}
+
 		if ( self::isEligibleTalkPage( $title ) &&
 			!self::isTalkPageSuggesterEnabled()
 		) {
