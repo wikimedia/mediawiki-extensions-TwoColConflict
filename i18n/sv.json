@@ -54,5 +54,7 @@
 	"twocolconflict-split-selected-version-tooltip": "Vald alternativ",
 	"twocolconflict-split-unselected-version-tooltip": "Klicka för att välja denna version",
 	"twocolconflict-split-help-tooltip": "Visa hjälp",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Lös ärende"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Lös ärende",
+	"twocolconflict-talk-same-order": "Behåll efter",
+	"twocolconflict-talk-reverse-order": "Flytta innan"
 }

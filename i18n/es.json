@@ -11,6 +11,7 @@
 			"Joanmp17",
 			"Juenti el toju",
 			"Macofe",
+			"MarcoAurelio",
 			"RicardoSGZ"
 		]
 	},
@@ -40,7 +41,7 @@
 	"twocolconflict-split-choose-version": "Por favor, elige una versión",
 	"twocolconflict-split-other-version-chosen": "Otras versiones",
 	"twocolconflict-split-your-version-chosen": "Tu versión",
-	"twocolconflict-split-tour-dialog-header": "Resolver conflictos de edición",
+	"twocolconflict-split-tour-dialog-header": "Fusionar versiones en conflicto",
 	"twocolconflict-split-tour-dialog-message": "Estás experimentando un conflicto de ediciones. Mientras realizabas tu edición, otro usuario ha editado la misma página y la ha guardado. Tu versión ahora no incluye los últimos cambios. Te pedimos amablemente fusionar tu versión con la versión más reciente del otro usuario.",
 	"twocolconflict-split-tour-dialog-btn-text": "Empezar a fusionar",
 	"twocolconflict-split-tour-popup-btn-text": "Entendido.",

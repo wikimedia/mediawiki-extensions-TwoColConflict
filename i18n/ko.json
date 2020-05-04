@@ -29,7 +29,7 @@
 	"twocolconflict-split-current-version-header": "$1 기준 최신판",
 	"twocolconflict-split-not-saved-at": "아직 게시되지 않음",
 	"twocolconflict-split-choose-version": "판을 선택해 주십시오",
-	"twocolconflict-split-tour-dialog-header": "편집 충돌 해결",
+	"twocolconflict-split-tour-dialog-header": "충돌되는 판 합치기",
 	"twocolconflict-split-tour-dialog-btn-text": "병합 시작",
 	"twocolconflict-split-tour-popup-btn-text": "알겠습니다.",
 	"twocolconflict-split-tour-popup2-header": "유지하고 싶은 변경사항을 선택하십시오",

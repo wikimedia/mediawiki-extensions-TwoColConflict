@@ -59,5 +59,8 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Ne yazık ki, başka bir kişi sizinle aynı zamanda gönderdi. Lütfen bir sonraki sayfadaki yorumları inceleyin. Gerekirse, kendinizinkini düzenleyebilir ve son düzeni değiştirebilirsiniz.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Sorunu çöz",
 	"twocolconflict-talk-your": "Girişiniz",
-	"twocolconflict-talk-conflicting": "Giriş çakışma"
+	"twocolconflict-talk-conflicting": "Giriş çakışma",
+	"twocolconflict-talk-reorder-prompt": "Girişinizi çakışan girişe göre konumlandırın:",
+	"twocolconflict-talk-same-order": "Sonra sakla",
+	"twocolconflict-talk-reverse-order": "Önce taşı"
 }

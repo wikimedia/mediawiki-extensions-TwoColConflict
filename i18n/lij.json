@@ -57,5 +57,8 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Purtroppo ti e quarchedun atro ei sciaccou 'pubbrica' scimultaneamente. Pe piaxei rilezi i commenti inta proscima paggina. Se necessaio ti poeu modificâ i to e cangiâ l'ordine finâ.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Resciorvi o problema",
 	"twocolconflict-talk-your": "Quello che t'hæ scrito tie",
-	"twocolconflict-talk-conflicting": "Scrito in confrito"
+	"twocolconflict-talk-conflicting": "Scrito in confrito",
+	"twocolconflict-talk-reorder-prompt": "Poxission-a a to modiffica in relassion a-a modiffica co-a quæ a l'è in contrasto:",
+	"twocolconflict-talk-same-order": "Mantegni doppo",
+	"twocolconflict-talk-reverse-order": "Mescia avanti"
 }
