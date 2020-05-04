@@ -63,13 +63,18 @@
 
 .client-nojs {
 	.mw-twocolconflict-split-editable {
-		.mw-twocolconflict-split-difftext {
+		&.mw-twocolconflict-split-collapsed {
+			max-height: none;
+		}
+
+		.mw-twocolconflict-split-difftext,
+		.mw-twocolconflict-split-fade {
 			display: none;
 		}
 
 		.mw-twocolconflict-split-editor {
 			display: block;
-			overflow: inherit;
+			overflow: auto;
 		}
 	}
 

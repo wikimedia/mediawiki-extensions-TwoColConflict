@@ -224,14 +224,14 @@ class HtmlEditableTextComponent {
 		];
 		$numChars = function_exists( 'grapheme_strlen' )
 			? grapheme_strlen( $text ) : mb_strlen( $text );
-		$numLines = substr_count( $text, "\n" ) + 1;
+		$upperLimit = min( substr_count( $text, "\n" ) + 1, 2 * 18 );
 		foreach ( $thresholds as $minChars => $rows ) {
 			if ( $numChars >= $minChars ) {
-				return max( $rows, $numLines );
+				return max( $rows, $upperLimit );
 			}
 		}
 		// Should be unreachable.
-		return $numLines;
+		return $upperLimit;
 	}
 
 }
