@@ -107,6 +107,14 @@ class TwoColConflictHooks {
 				$sideSelection
 			);
 		}
+
+		if ( $request->getBool( 'mw-twocolconflict-disable-core-hint' ) ) {
+			$user = $editPage->getContext()->getUser();
+			if ( !$user->isAnon() ) {
+				$user->setOption( TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, '1' );
+				$user->saveSettings();
+			}
+		}
 	}
 
 	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ) : array {
@@ -139,6 +147,27 @@ class TwoColConflictHooks {
 	) {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$outputPage->addModules( 'ext.TwoColConflict.JSCheck' );
+		}
+	}
+
+	/**
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::showEditForm:fields
+	 *
+	 * @param EditPage $editPage
+	 * @param OutputPage $outputPage
+	 */
+	public static function onEditPageshowEditFormFields(
+		EditPage $editPage,
+		OutputPage $outputPage
+	) {
+		// TODO remove this hint when we're sure people are aware of the new feature
+		if ( $editPage->isConflict &&
+			TwoColConflictContext::shouldCoreHintBeShown( $outputPage->getUser() )
+		) {
+			$outputPage->enableOOUI();
+			$outputPage->addModuleStyles( 'ext.TwoColConflict.CoreHintCss' );
+			$outputPage->addModules( 'ext.TwoColConflict.CoreHintJs' );
+			$outputPage->addHTML( ( new CoreUiHintHtml( $outputPage->getContext() ) )->getHtml() );
 		}
 	}
 
