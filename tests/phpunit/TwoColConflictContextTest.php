@@ -231,4 +231,67 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		return $user;
 	}
 
+	/**
+	 * @dataProvider provideShouldCoreHintBeShown
+	 */
+	public function testShouldCoreHintBeShown(
+		bool $isAnon,
+		bool $usedAsBeta,
+		bool $enabledOpt,
+		bool $hideHintOpt,
+		bool $expectedResult
+	) {
+		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', $usedAsBeta );
+
+		$user = $this->createMock( User::class );
+		$user->method( 'getBoolOption' )->willReturnMap( [
+			[ TwoColConflictContext::ENABLED_PREFERENCE, $enabledOpt ],
+			[ TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, $hideHintOpt ],
+		] );
+		$user->method( 'isAnon' )->willReturn( $isAnon );
+
+		$result = TwoColConflictContext::shouldCoreHintBeShown( $user );
+		$this->assertSame( $expectedResult, $result );
+	}
+
+	public function provideShouldCoreHintBeShown() {
+		return [
+			[
+				'isAnon' => true,
+				'usedAsBeta' => false,
+				'enabledOpt' => false,
+				'hideHintOpt' => false,
+				'expected' => false,
+			],
+			[
+				'isAnon' => false,
+				'usedAsBeta' => true,
+				'enabledOpt' => false,
+				'hideHintOpt' => false,
+				'expected' => false,
+			],
+			[
+				'isAnon' => false,
+				'usedAsBeta' => false,
+				'enabledOpt' => true,
+				'hideHintOpt' => false,
+				'expected' => false,
+			],
+			[
+				'isAnon' => false,
+				'usedAsBeta' => false,
+				'enabledOpt' => false,
+				'hideHintOpt' => true,
+				'expected' => false,
+			],
+			[
+				'isAnon' => false,
+				'usedAsBeta' => false,
+				'enabledOpt' => false,
+				'hideHintOpt' => false,
+				'expected' => true,
+			],
+		];
+	}
+
 }
