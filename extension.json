@@ -78,6 +78,7 @@
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.editable.less",
+				"modules/TalkPageConflict/ext.TwoColConflict.Talk.styles.less",
 				"modules/ext.TwoColConflict.CoreHint.less"
 			]
 		},
@@ -141,11 +142,6 @@
 				"twocolconflict-split-tour-dialog-message-single-column-view",
 				"twocolconflict-split-tour-dialog-btn-text-single-column-view",
 				"savechanges"
-			]
-		},
-		"ext.TwoColConflict.TalkCss": {
-			"styles": [
-				"modules/TalkPageConflict/ext.TwoColConflict.Talk.styles.less"
 			]
 		},
 		"ext.TwoColConflict.Util": {

@@ -1,16 +1,12 @@
 /**
- * Styles which are only applied to the talk page use case.  This file is loaded conditionally,
- * so overrides here can assume we're definitely in the talk page view.
+ * Styles which are only applied to the talk page use case.
  *
  * TODO: Layout should switch to vertical on narrow screens.
  */
 @labelColumnWidth: 110px;
 
 /* Shift core edit buttons */
-.editOptions {
-	margin-left: @labelColumnWidth;
-}
-
+.mw-twocolconflict-single-column-view ~ .editOptions,
 .mw-twocolconflict-single-column {
 	margin-left: @labelColumnWidth;
 }
@@ -79,7 +75,7 @@
 	}
 }
 
-.client-nojs {
+.client-nojs .mw-twocolconflict-single-column-view {
 	.mw-twocolconflict-split-copy,
 	.mw-twocolconflict-order-selector {
 		margin-left: @labelColumnWidth;
@@ -93,8 +89,6 @@
 		}
 	}
 
-	/* stylelint-disable-next-line selector-max-id */
-	#wpPreviewWidget,
 	.mw-twocolconflict-single-swap-button {
 		display: none;
 	}
