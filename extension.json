@@ -62,11 +62,6 @@
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
 			]
 		},
-		"ext.TwoColConflict.CoreHintCss": {
-			"styles": [
-				"modules/ext.TwoColConflict.CoreHint.less"
-			]
-		},
 		"ext.TwoColConflict.SplitJs": {
 			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
@@ -90,7 +85,8 @@
 		"ext.TwoColConflict.SplitCss": {
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.less",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.editable.less"
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.editable.less",
+				"modules/ext.TwoColConflict.CoreHint.less"
 			]
 		},
 		"ext.TwoColConflict.Split.TourImages": {

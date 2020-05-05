@@ -160,7 +160,7 @@ class TwoColConflictHooks {
 			TwoColConflictContext::shouldCoreHintBeShown( $outputPage->getUser() )
 		) {
 			$outputPage->enableOOUI();
-			$outputPage->addModuleStyles( 'ext.TwoColConflict.CoreHintCss' );
+			$outputPage->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 			$outputPage->addModules( 'ext.TwoColConflict.SplitJs' );
 			$outputPage->addHTML( ( new CoreUiHintHtml( $outputPage->getContext() ) )->getHtml() );
 		}
