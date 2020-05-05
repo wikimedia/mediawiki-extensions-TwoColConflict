@@ -6,7 +6,10 @@ use EditPage;
 use ExtensionRegistry;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use Message;
+use OOUI\BlankTheme;
 use OOUI\InputWidget;
+use OOUI\Theme;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
 use Title;
@@ -25,7 +28,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
 		parent::setUp();
-
+		Theme::setSingleton( new BlankTheme() );
 		$this->setMwGlobals( [
 			'wgTwoColConflictBetaFeature' => false,
 			'wgTwoColConflictSuggestResolution' => true,
@@ -415,4 +418,32 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		}
 	}
 
+	public function testOnEditPageShowEditFormFields() {
+		$editPage = $this->createMock( EditPage::class );
+		$editPage->isConflict = true;
+
+		$outputPage = $this->createOutputPage();
+		$outputPage->expects( $this->once() )->method( 'addHTML' );
+
+		TwoColConflictHooks::onEditPageShowEditFormFields( $editPage,  $outputPage );
+	}
+
+	private function createOutputPage() {
+		$user = $this->createMock( User::class );
+		// user option to hide hint and to show new interface should both be false
+		$user->method( 'getBoolOption' )->willReturn( false );
+		$user->method( 'isAnon' )->willReturn( false );
+
+		$context = $this->createMock( IContextSource::class );
+		$context->method( 'msg' )
+			->willReturn( $this->createMock( Message::class ) );
+
+		$outputPage = $this->createMock( OutputPage::class );
+		$outputPage->method( 'getUser' )
+			->willReturn( $user );
+		$outputPage->method( 'getContext' )
+			->willReturn( $context );
+
+		return $outputPage;
+	}
 }
