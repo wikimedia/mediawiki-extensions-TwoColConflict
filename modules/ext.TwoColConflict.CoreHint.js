@@ -1,13 +1,11 @@
 'use strict';
 
-var HIDE_CORE_HINT_PREFERENCE = 'userjs-twocolconflict-hide-core-hint';
-
-$( function () {
+// Make sure we don't try to save an option for anonymous users
+if ( !mw.user.isAnon() ) {
+	// It's fine to run this even when the element doesn't exist
 	$( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' ).change( function () {
 		if ( this.checked ) {
-			if ( !mw.user.isAnon() ) {
-				( new mw.Api() ).saveOption( HIDE_CORE_HINT_PREFERENCE, '1' );
-			}
+			( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-core-hint', '1' );
 		}
 	} );
-} );
+}
