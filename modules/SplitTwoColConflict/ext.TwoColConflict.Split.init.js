@@ -353,6 +353,17 @@ function initSubmit() {
 }
 
 $( function () {
+	var $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
+	if ( $coreHintCheckbox.length ) {
+		$coreHintCheckbox.change( function () {
+			if ( this.checked ) {
+				( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-core-hint', '1' );
+			}
+		} );
+		// When the hint element exists, the split view does not, and nothing below applies
+		return;
+	}
+
 	var initTracking = UtilModule.Tracking.initTrackingListeners,
 		initTour = require( 'ext.TwoColConflict.Split.Tour' );
 

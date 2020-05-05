@@ -166,7 +166,7 @@ class TwoColConflictHooks {
 		) {
 			$outputPage->enableOOUI();
 			$outputPage->addModuleStyles( 'ext.TwoColConflict.CoreHintCss' );
-			$outputPage->addModules( 'ext.TwoColConflict.CoreHintJs' );
+			$outputPage->addModules( 'ext.TwoColConflict.SplitJs' );
 			$outputPage->addHTML( ( new CoreUiHintHtml( $outputPage->getContext() ) )->getHtml() );
 		}
 	}
