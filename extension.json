@@ -68,8 +68,7 @@
 			],
 			"dependencies": [
 				"mediawiki.api",
-				"mediawiki.user",
-				"user.options"
+				"mediawiki.user"
 			]
 		},
 		"ext.TwoColConflict.CoreHintCss": {
