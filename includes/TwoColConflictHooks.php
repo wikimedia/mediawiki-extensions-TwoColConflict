@@ -6,6 +6,7 @@ use EditPage;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use OOUI\ButtonInputWidget;
 use OutputPage;
 use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
@@ -239,7 +240,7 @@ class TwoColConflictHooks {
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeEditButtons
 	 *
 	 * @param EditPage $editPage
-	 * @param array &$buttons
+	 * @param ButtonInputWidget[] &$buttons
 	 * @param int &$tabindex
 	 */
 	public static function onEditPageBeforeEditButtons(
