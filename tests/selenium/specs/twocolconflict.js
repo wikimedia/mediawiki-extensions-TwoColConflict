@@ -27,10 +27,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'is not used when it is not enabled in the preferences', function () {
-		PreferencesPage.openEditPreferences();
-		if ( !this.hasOptOutUserSetting ) {
-			this.skip();
-		}
+		PreferencesPage.shouldUseTwoColConflictBetaFeature( false );
 		PreferencesPage.shouldUseTwoColConflict( false );
 		EditConflictPage.createConflict(
 			'A',
