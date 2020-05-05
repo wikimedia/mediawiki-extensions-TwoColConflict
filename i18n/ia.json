@@ -5,7 +5,6 @@
 		]
 	},
 	"twocolconflict-test-edit-hint": "Face modificationes hic infra. Illos non essera publicate. Illos essera usate solmente pro simular un conflicto de modification de exemplo.",
-	"twocolconflict-test-conflict-hint": "Isto es le conflicto de test. Le modificationes non essera publicate ma pote esser previsualisate.",
 	"twocolconflict-test-preview-submit": "Simular le publication del modificationes",
 	"twocolconflict-split-not-saved-at": "Non ancora publicate",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Entratas in conflicto",

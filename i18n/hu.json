@@ -17,7 +17,6 @@
 	"twocolconflict-test-title-not-existing": "Nincs ilyen nevű lap.",
 	"twocolconflict-test-no-direct-editing": "Ezt a lapot nem tudod közvetlenül szerkeszteni.",
 	"twocolconflict-test-edit-hint": "Végezz pár változtatást lentebb. Ezek nem kerülnek közzétételre. Pusztán egy szerkesztési ütközés szimulálására lesznek felhasználva.",
-	"twocolconflict-test-conflict-hint": "Ez egy tesztkonfliktus. A változtatások nem lesznek közzétéve, de megtekinthetők lesznek.",
 	"twocolconflict-split-header-hint-beta": "Köszönjük, hogy használod ezt a béta funkciót. Te is segíthetsz a tökéletesítésében, ha visszajelzéssel szolgálsz [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View ezen a lapon].",
 	"twocolconflict-split-your-version-header": "A te változtatásod",
 	"twocolconflict-split-current-version-header": "Aktuális változat: $1",

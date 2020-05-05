@@ -9,6 +9,7 @@
 	"twocolconflict-desc": "Εμφάνιση πλάι-πλάι της οθόνης συγχώνευσης επεξεργασίας κατά την επίλυση σύγκρουσης επεξεργασίας",
 	"twocolconflict-beta-feature-message": "Δυο στήλες στη σύγκρουση επεξεργασίας",
 	"twocolconflict-beta-feature-description": "Εμφάνιση της οθόνης σύγκρουσης επεξεργασίας με τη χρήση περισσότερο προηγμένης όψης δύο στηλών.",
+	"twocolconflict-preference-enabled": "Ενεργοποίηση της [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Δίστηλης Εμφάνισης Σύγκρουσης Επεξεργασίας]] για την επίλυση συγκρούσεων επεξεργασίας",
 	"twocolconflict-test-needsbeta": "Για να χρησιμοποιήσετε αυτήν την ειδική σελίδα, πρέπει να ενεργοποιήσετε τη δυνατότητα beta «Δυο στήλες στη σύγκρουση επεξεργασίας» στις προτιμήσεις σας.",
 	"twocolconflict-test-page-title": "Σύγκρουση Επεξεργασίας: Προσομοίωση",
 	"twocolconflict-test-title-submit": "Εμφάνιση σελίδας επεξεργασίας",

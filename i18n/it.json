@@ -22,11 +22,8 @@
 	"twocolconflict-test-text-submit": "Crea conflitto",
 	"twocolconflict-test-initial-hint": "In questa pagina puoi provare la nuova interfaccia di Conflitto di modifiche su due colonne senza rovinare nulla.",
 	"twocolconflict-test-edit-hint": "Realizza alcune modifiche qui sotto. Non verranno pubblicate. Verranno utilizzate per simulare un conflitto di modifiche.",
-	"twocolconflict-test-conflict-hint": "Questo è il conflitto di prova. Le modifiche non verranno pubblicate ma puoi vedere l'anteprima.",
 	"twocolconflict-test-preview-submit": "Simula la pubblicazione delle modifiche",
 	"twocolconflict-test-preview-hint": "Grazie per aver provato l'interfaccia del Conflitto di modifiche su due colonne! Aiutaci a migliorarla dando il tuo parere [//meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/Edit_Conflicts/Feedback_Round_Test_Page qui].",
-	"twocolconflict-test-username": "Utente ConflictTest",
-	"twocolconflict-test-summary-text": "Oggetto della modifica del conflitto di prova",
 	"twocolconflict-split-header-hint-beta": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorala lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View su questa pagina].",
 	"twocolconflict-split-your-version-header": "La tua versione",
 	"twocolconflict-split-current-version-header": "Versione attuale delle $1",
@@ -45,5 +42,6 @@
 	"twocolconflict-split-reset-warning-accept": "Cancella",
 	"twocolconflict-split-collapse-tooltip": "Comprimi testo non modificato",
 	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Risolvi anomalia"
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Risolvi anomalia",
+	"twocolconflict-talk-reverse-order": "Sposta prima"
 }
