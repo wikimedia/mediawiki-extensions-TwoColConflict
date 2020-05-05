@@ -50,6 +50,8 @@ class EditConflictPage extends Page {
 	get previewText() { return $( '#wikiPreview .mw-parser-output' ); }
 
 	get wpTextbox2() { return $( '#wpTextbox2' ); }
+	get coreUiHint() { return $( '.mw-twocolconflict-core-ui-hint .oo-ui-messageWidget' ); }
+	get coreUiHintCloseButton() { return $( '.mw-twocolconflict-core-ui-hint .oo-ui-icon-close' ); }
 
 	get rowsInEditMode() { return $( '.mw-twocolconflict-split-editing' ); }
 
