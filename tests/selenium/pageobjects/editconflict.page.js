@@ -82,14 +82,13 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	prepareEditConflict() {
-		UserLoginPage.loginAdmin();
-		PreferencesPage.disableEditWarning();
-		PreferencesPage.shouldUseTwoColConflict( true );
-		PreferencesPage.shouldUseTwoColConflictBetaFeature( true );
-		this.toggleHelpDialog( false );
+	/**
+	 * @return {Promise} Promise from the mw.Api request
+	 */
+	disableVisualEditor() {
+		Util.waitForModuleState( 'mediawiki.base' );
 
-		browser.execute( function () {
+		return browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOptions( {
 					'visualeditor-hidebetawelcome': '1',
@@ -97,6 +96,15 @@ class EditConflictPage extends Page {
 				} );
 			} );
 		} );
+	}
+
+	prepareEditConflict() {
+		UserLoginPage.loginAdmin();
+		PreferencesPage.disableEditWarning();
+		PreferencesPage.shouldUseTwoColConflict( true );
+		PreferencesPage.shouldUseTwoColConflictBetaFeature( true );
+		this.toggleHelpDialog( false );
+		this.disableVisualEditor();
 	}
 
 	showSimpleConflict() {
