@@ -14,6 +14,7 @@
 	"twocolconflict-beta-feature-message": "Dwukolumnowe wyświetlanie konfliktu edycji",
 	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku dwukolumnowego.",
 	"twocolconflict-core-ui-hint": "Zaktualizowany interfejs rozwiązywania konfliktów edycji jest już dostępny. Włącz dwukolumnowe wyświetlanie konfliktu edycji w [[Special:Preferences#mw-prefsection-editing|preferencjach]] aby go przetestować.",
+	"twocolconflict-core-ui-hint-close": "Nie pokazuj ponownie",
 	"twocolconflict-preference-enabled": "Włącz [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|dwukolumnowe wyświetlanie konfliktu edycji]] aby rozwiązywać konflikty",
 	"twocolconflict-test-needsbeta": "Musisz włączyć funkcję eksperymentalną „Dwukolumnowe wyświetlanie konfliktu edycji” w swoich preferencjach, aby móc użyć tej strony specjalnej.",
 	"twocolconflict-test-page-title": "Konflikt edycji: Symulacja",

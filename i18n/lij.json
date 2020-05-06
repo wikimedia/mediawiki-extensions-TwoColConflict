@@ -8,6 +8,8 @@
 	"twocolconflict-desc": "Mostra una schermâ d'union de modiffiche rent'a rente pe risolve i confliti de modiffica",
 	"twocolconflict-beta-feature-message": "Confrito de modiffiche sciu doe colonne",
 	"twocolconflict-beta-feature-description": "A mostra o confrito de modiffica doeuviando 'na vixoalizassion a doe colonne ciù avantagiâ.",
+	"twocolconflict-core-ui-hint": "L'è oua disponibbile 'n'interfaccia agiornâ pe resciorve i contrasti de modiffica. Pe provâla abillita a Mostra de Contrasti de Modiffica sciu Doe Colonne inte to [[Special:Preferences#mw-prefsection-editing|preferense]].",
+	"twocolconflict-core-ui-hint-close": "No mostrâmelo ciu",
 	"twocolconflict-preference-enabled": "Abillita a [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Vixon a doe colonne di confliti de modiffica]] pe resciorve i confliti de modiffica",
 	"twocolconflict-test-needsbeta": "Pe doeuviâ sta paggina speciâ ti g'hæ da abilitâ a fonsion beta 'Confriti de modiffiche sciu doe colonne' inte to preferense.",
 	"twocolconflict-test-page-title": "Confrito de modiffica: scimulassion",

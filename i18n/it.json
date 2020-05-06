@@ -13,6 +13,7 @@
 	"twocolconflict-desc": "Mostra una schermata di unione affiancata per modificare la risoluzione dei conflitti",
 	"twocolconflict-beta-feature-message": "Conflitto di modifiche su due colonne",
 	"twocolconflict-beta-feature-description": "Mostra la visualizzazione del conflitto di modifica utilizzando una vista più avanzata a due colonne.",
+	"twocolconflict-core-ui-hint-close": "Non mostrare più",
 	"twocolconflict-test-needsbeta": "Devi abilitare la funzione beta 'Conflitti di modifiche su due colonne' nelle tue preferenze prima di usare questa pagina speciale",
 	"twocolconflict-test-page-title": "Conflitto di modifica: simulazione",
 	"twocolconflict-test-title-label": "Inserisci il titolo di una pagina wiki non protetta per la quale deve essere simulato il conflitto di modifica:",

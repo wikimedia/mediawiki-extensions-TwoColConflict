@@ -11,6 +11,8 @@
 	"twocolconflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twocolconflict-beta-feature-message": "Editor de conflitos em duas colunas",
 	"twocolconflict-beta-feature-description": "Mostra o conflito de edições numa forma mais avançada em duas colunas.",
+	"twocolconflict-core-ui-hint": "Uma interface atualizada para resolver conflitos de edição está agora disponível. Ative a exibição de conflito de edição de duas colunas na suas [[Special:Preferences#mw-prefsection-editing|preferências]] para experimentar.",
+	"twocolconflict-core-ui-hint-close": "Nunca mostrar novamente",
 	"twocolconflict-preference-enabled": "Ative o [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Two Column Edit Conflict View]] para resolver conflitos de edição",
 	"twocolconflict-test-needsbeta": "Para usar esta página especial tem de ativar a funcionalidade beta 'Conflito de edições em duas colunas' nas suas preferências.",
 	"twocolconflict-test-page-title": "Conflito de Edições: Simulação",

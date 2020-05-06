@@ -10,6 +10,7 @@
 	"twocolconflict-beta-feature-message": "Двостолбна спротиставеност на уредувања",
 	"twocolconflict-beta-feature-description": "Прикажи ги спротиставените уредувања во понапреден двостолбен облик.",
 	"twocolconflict-core-ui-hint": "Сега е достапен унапреден посредник за решавање на спротиставени уредувања. Овозможете ја „Двостолбна спротиставеност на уредувања“ во вашите [[Special:Preferences#mw-prefsection-editing|нагодувања]] за да го испробате.",
+	"twocolconflict-core-ui-hint-close": "Повеќе не прикажувај",
 	"twocolconflict-preference-enabled": "Овозможете го [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|двостолбниот преглед на спротиставени уредувања]] за да ги решите",
 	"twocolconflict-test-needsbeta": "Мора да ја овозможите бета-можноста „Двостолбена спротиставеност во уредувањата“ во вашите нагодувања за да ја користите оваа службена страница.",
 	"twocolconflict-test-page-title": "Спротиставеност во уредувањето: Божемна",
