@@ -14,6 +14,7 @@
 	"twocolconflict-desc": "Упоредо приказује екран за решавање сукоба измена",
 	"twocolconflict-beta-feature-message": "Сукоб измена у две колоне",
 	"twocolconflict-beta-feature-description": "Приказује сукоб измена коришћењем напреднијег приказа у две колоне.",
+	"twocolconflict-core-ui-hint-close": "Не приказуј поново",
 	"twocolconflict-preference-enabled": "Омогући [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|приказ конфликта измена у две колоне]] за решавање конфликта у изменама",
 	"twocolconflict-test-needsbeta": "Морате омогућити бета функцију „Сукоб измена у две колоне” у подешавањима како бисте могли да користите ову посебну страницу.",
 	"twocolconflict-test-page-title": "Сукоб измена: симулација",
@@ -51,5 +52,6 @@
 	"twocolconflict-split-expand-tooltip": "Рашири непромењени текст",
 	"twocolconflict-split-selected-version-tooltip": "Изабрана верзија",
 	"twocolconflict-split-unselected-version-tooltip": "Кликните да бисте изабрали верзију",
-	"twocolconflict-split-help-tooltip": "Прикажи помоћ"
+	"twocolconflict-split-help-tooltip": "Прикажи помоћ",
+	"twocolconflict-talk-reverse-order": "Премести испред"
 }

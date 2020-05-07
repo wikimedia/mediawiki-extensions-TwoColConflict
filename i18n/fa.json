@@ -12,6 +12,7 @@
 	"twocolconflict-desc": "نمایش کنارهم حل تعارض ویرایشی",
 	"twocolconflict-beta-feature-message": "تعارض ویرایشی دو ستونی",
 	"twocolconflict-beta-feature-description": "تعارض‌های ویرایشی را به شکل دوستونی نمایش می‌دهد.",
+	"twocolconflict-core-ui-hint-close": "دیگر هرگز نشان نده",
 	"twocolconflict-test-needsbeta": "برای استفاده از این صفحهٔ ویژه ابتدا باید افزونهٔ «تعارض ویرایشی دو ستونی» را از بخش '''آزمایشی''' فعال کنید.",
 	"twocolconflict-test-page-title": "تعارض ویرایش: شبیه‌سازی",
 	"twocolconflict-test-title-label": "عنوان صفحهٔ محافظت نشدهٔ ویکی که ویرایش تداخل‌دار باید مشابه آن باشد را وارد کنید:",

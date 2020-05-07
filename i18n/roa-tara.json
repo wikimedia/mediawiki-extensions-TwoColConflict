@@ -8,6 +8,7 @@
 	"twocolconflict-desc": "Fà 'ndrucà 'na schermate de aunione affiangate pe cangià 'a resoluzione de le conflitte",
 	"twocolconflict-beta-feature-message": "Conflitte de cangiamende sus a doje culonne",
 	"twocolconflict-beta-feature-description": "Fà 'ndrucà 'u 'ndrucamende d'u conflitte d'u cangiamende ausanne 'nu 'ndrucamende cchiù avanzate a doje culonne",
+	"twocolconflict-core-ui-hint-close": "No fà 'ndrucà cchiù",
 	"twocolconflict-test-needsbeta": "A abbilità 'a funzione beta 'Conflitte de cangiaminde sus a doje culonne' jndr'à le preferenze tune apprime de ausà sta pàgena speciale",
 	"twocolconflict-test-page-title": "Conflitte de cangiamende: simulazione",
 	"twocolconflict-test-title-label": "'Nzerisce 'u titole de 'na pàgene uicchi non prutette pa quale adda essere simulate 'u conflitte de cangiamende:",
@@ -36,12 +37,14 @@
 	"twocolconflict-split-tour-popup2-message": "Scacchie 'a versione d'u teste ca vuè stipà cazzanne sus a une de le doje buttune 'mbrà ogne coppie de righe. Apprisse ca è scacchiate 'na versione, jè possibbele cangiarle cazzanne sus a l'icone d'a penne. Jè pure possibbele copià 'u teste d'a versione ca non g'ha state scacchiate ausanne 'a funzione copie e 'ngolle sus 'a tastiere o cu 'nu cazzamende destre d'u mouse. <br /><br />E' abbesogne de scacchià 'na versione pe ogne righe cangiate pe reggistrà 'u teste aunite.",
 	"twocolconflict-split-tour-popup3-header": "Teste evidenziate",
 	"twocolconflict-split-tour-popup3-message": "'U teste ha state cangiate jndr'à totte e doje le versine de 'na linèe evidenziate. Apprisse ca è cangiate 'u teste, l'evidenziamende se ne vè.",
-	"twocolconflict-split-edit-tooltip": "Cange 'u teste",
-	"twocolconflict-split-save-tooltip": "Reggìstre le cangiaminde e lasse 'a modalità de cangiamende.",
-	"twocolconflict-split-reset-tooltip": "Pulizze 'u teste",
+	"twocolconflict-split-edit-tooltip": "Cazze pe cangià stu teste",
+	"twocolconflict-split-save-tooltip": "Appleche le cnagiaminde tune a stu teste",
+	"twocolconflict-split-reset-tooltip": "Scitte tutte le cangiaminde a stu teste",
 	"twocolconflict-split-reset-warning": "Scitte le cangiaminde? 'U teste jndr'à sta sckatole avène azzerate accume stave quanne 'u conflitte d'u cangiamende ave assute.",
 	"twocolconflict-split-reset-warning-cancel": "Annulle",
 	"twocolconflict-split-reset-warning-accept": "Scitte",
-	"twocolconflict-split-collapse-tooltip": "Scunne 'u teste",
-	"twocolconflict-split-expand-tooltip": "Spanne 'u teste"
+	"twocolconflict-split-collapse-tooltip": "Scunne 'u teste non cangiate",
+	"twocolconflict-split-expand-tooltip": "Spanne 'u teste non cangiate",
+	"twocolconflict-split-selected-version-tooltip": "Versione scacchiate",
+	"twocolconflict-split-unselected-version-tooltip": "Cazze pe scacchià sta versione"
 }
