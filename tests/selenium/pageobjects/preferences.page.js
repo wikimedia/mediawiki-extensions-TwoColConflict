@@ -36,13 +36,12 @@ class PreferencesPage extends Page {
 		}
 	}
 
-	enableTwoColConflictBetaFeature() {
+	shouldUseTwoColConflictBetaFeature( shouldUse ) {
 		this.openBetaPreferences();
 		if ( !this.hasBetaFeatureSetting() ) {
 			return;
 		}
-		this.hasBetaFeatureSetting();
-		if ( !this.twoColBetaCheckbox.getAttribute( 'checked' ) ) {
+		if ( !this.twoColBetaCheckbox.getAttribute( 'checked' ) === shouldUse ) {
 			this.clickCheckBoxAndSave( this.twoColBetaCheckbox );
 		}
 	}

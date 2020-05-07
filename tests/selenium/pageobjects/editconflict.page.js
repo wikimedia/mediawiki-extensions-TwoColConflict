@@ -86,7 +86,7 @@ class EditConflictPage extends Page {
 		UserLoginPage.loginAdmin();
 		PreferencesPage.disableEditWarning();
 		PreferencesPage.shouldUseTwoColConflict( true );
-		PreferencesPage.enableTwoColConflictBetaFeature();
+		PreferencesPage.shouldUseTwoColConflictBetaFeature( true );
 		this.toggleHelpDialog( false );
 
 		browser.execute( function () {
