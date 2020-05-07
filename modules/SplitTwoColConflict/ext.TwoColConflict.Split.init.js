@@ -352,6 +352,41 @@ function initSubmit() {
 		} );
 }
 
+function getRowNumber( $column ) {
+	var name = $column.find( 'textarea[name^="mw-twocolconflict-split-content"]' ).attr( 'name' );
+	return name.match( /\d+/ )[ 0 ];
+}
+
+function setRowNumber( $column, oldRowNum, newRowNum ) {
+	$column.find( 'input, textarea' ).each( function ( index, input ) {
+		var $input = $( input ),
+			name = $input.attr( 'name' );
+		$input.attr( 'name', name.replace( '[' + oldRowNum + ']', '[' + newRowNum + ']' ) );
+	} );
+}
+
+function initSwapHandling() {
+	var $swapButton = $( '.mw-twocolconflict-single-swap-button' );
+	if ( !$swapButton.length ) {
+		return;
+	}
+
+	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', function () {
+		var $view = $( '.mw-twocolconflict-single-column-view' ),
+			$rows = $view.find( '.mw-twocolconflict-conflicting-talk-row' ),
+			$buttonContainer = $view.find( '.mw-twocolconflict-single-swap-button-container' ),
+			$upper = $rows.eq( 0 ),
+			$lower = $rows.eq( 1 ),
+			upperRowNum = getRowNumber( $upper ),
+			lowerRowNum = getRowNumber( $lower );
+
+		setRowNumber( $upper, upperRowNum, lowerRowNum );
+		setRowNumber( $lower, lowerRowNum, upperRowNum );
+		$view[ 0 ].insertBefore( $lower[ 0 ], $upper[ 0 ] );
+		$view[ 0 ].insertBefore( $buttonContainer[ 0 ], $upper[ 0 ] );
+	} );
+}
+
 $( function () {
 	var $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
 	if ( $coreHintCheckbox.length ) {
@@ -377,6 +412,7 @@ $( function () {
 	initColumnSelection();
 	initColumnClickEvent();
 	initButtonEvents();
+	initSwapHandling();
 	initPreview();
 	initSubmit();
 	initTour();

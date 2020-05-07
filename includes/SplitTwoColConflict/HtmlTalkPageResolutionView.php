@@ -4,6 +4,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MessageLocalizer;
+use OOUI\ButtonWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\RadioInputWidget;
@@ -63,6 +64,19 @@ class HtmlTalkPageResolutionView {
 						true,
 						'twocolconflict-talk-conflicting'
 					);
+
+					$out .= Html::rawElement(
+						'div',
+						[ 'class' => 'mw-twocolconflict-single-swap-button-container' ],
+						new ButtonWidget( [
+							'infusable' => true,
+							'framed' => false,
+							'icon' => 'markup',
+							'classes' => [ 'mw-twocolconflict-single-swap-button' ],
+							'tabIndex' => '1'
+						] )
+					);
+
 					break;
 				case $yourIndex:
 					$out .= $this->buildConflictingTalkRow(
