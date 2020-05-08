@@ -10,6 +10,8 @@
 	"twocolconflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
 	"twocolconflict-beta-feature-message": "התנגשות עריכה בשני טורים",
 	"twocolconflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
+	"twocolconflict-core-ui-hint": "ממשק מעודכן לפתרון התנגשויות עריכה זמין עכשיו. הפעילו את תצוגת התנגשות עריכה בשני טורים ב[[Special:Preferences#mw-prefsection-editing|העדפות]] שלך כדי לנסות אותו.",
+	"twocolconflict-core-ui-hint-close": "לא להציג שוב לעולם",
 	"twocolconflict-preference-enabled": "הפעלת [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|תצוגת התנגשות עריכה בשני טורים]] לפתרון התנגשויות עריכה",
 	"twocolconflict-test-needsbeta": "יש להפעיל את אפשרות הבטא \"התנגשות עריכה בשני טורים\" בהעדפות שלך כדי להשתמש בדף במיוחד הזה.",
 	"twocolconflict-test-page-title": "התנגשות עריכה: הדמיה",

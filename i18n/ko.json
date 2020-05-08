@@ -10,6 +10,7 @@
 	"twocolconflict-desc": "편집 충돌 해결을 위한 병렬식 편집 병합 화면을 보여줌",
 	"twocolconflict-beta-feature-message": "2단 편집 충돌",
 	"twocolconflict-beta-feature-description": "더 진보된 2단 뷰를 사용하여 편집 충돌 뷰를 표시합니다.",
+	"twocolconflict-core-ui-hint-close": "다시는 보지 않기",
 	"twocolconflict-test-needsbeta": "이 특수 문서를 사용하려면 환경 설정에서 '2단 편집 충돌' 베타 기능을 활성화해야 합니다.",
 	"twocolconflict-test-page-title": "편집 충돌: 시뮬레이션",
 	"twocolconflict-test-title-label": "편집 충돌을 모의 시험할 보호되지 않은 위키 문서의 제목을 입력하십시오:",
