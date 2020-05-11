@@ -132,9 +132,10 @@ class HtmlEditableTextComponent {
 	}
 
 	private function buildLineFeedField( string $text, int $rowNum, string $changeType ) : string {
-		return Html::hidden(
+		$counts = $this->countExtraLineFeeds( $text );
+		return $counts === '0' ? '' : Html::hidden(
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
-			$this->countExtraLineFeeds( $text )
+			$counts
 		);
 	}
 

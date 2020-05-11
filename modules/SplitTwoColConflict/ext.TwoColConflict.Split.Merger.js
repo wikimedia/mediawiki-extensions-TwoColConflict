@@ -25,16 +25,16 @@ function merger( $selected ) {
 			$extraLineFeeds = $( element ).find( '[name^="mw-twocolconflict-split-linefeeds"]' );
 
 		if ( $extraLineFeeds.length ) {
-			var lf = $extraLineFeeds.val().split( ',', 2 );
+			var counts = $extraLineFeeds.val().split( ',', 2 );
 			// "Before" and "after" are intentionally flipped, because "before" is very rare
-			if ( 1 in lf ) {
-				if ( lf[ 1 ] === 'was-empty' ) {
+			if ( 1 in counts ) {
+				if ( counts[ 1 ] === 'was-empty' ) {
 					emptiedByUser = false;
 				} else {
-					line = lineFeeds( lf[ 1 ] ) + line;
+					line = lineFeeds( counts[ 1 ] ) + line;
 				}
 			}
-			line += lineFeeds( lf[ 0 ] );
+			line += lineFeeds( counts[ 0 ] );
 		}
 
 		if ( !emptiedByUser ) {
