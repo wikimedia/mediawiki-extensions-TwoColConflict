@@ -17,6 +17,7 @@ use TwoColConflict\TwoColConflictContext;
 use TwoColConflict\TwoColConflictHooks;
 use User;
 use WebRequest;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\TwoColConflictHooks
@@ -243,6 +244,95 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$request = $this->createRequest( $requestData );
 		TwoColConflictHooks::onImportFormData( $editPage, $request );
 		$this->assertSame( $expectedWikitext, $editPage->textbox1 );
+	}
+
+	public function provideTalkPageRequests() {
+		return [
+			'empty' => [
+				'contentRows' => [],
+				'extraLineFeeds' => [],
+				'expected' => [ [], [] ]
+			],
+			'other first' => [
+				'contentRows' => [
+					[ 'other' => '' ],
+					[ 'your' => '' ],
+				],
+				'extraLineFeeds' => [ 1, 2 ],
+				'expected' => [
+					[
+						[ 'your' => '' ],
+						[ 'other' => '' ],
+					],
+					[ 2, 1 ]
+				]
+			],
+			'leave copy rows untouched' => [
+				'contentRows' => [
+					[ 'copy' => 'a' ],
+					[ 'copy' => 'b' ],
+					[ 'other' => '' ],
+					[ 'your' => '' ],
+					[ 'copy' => 'c' ],
+				],
+				'extraLineFeeds' => [ 1, 2, 3, 4, 5 ],
+				'expected' => [
+					[
+						[ 'copy' => 'a' ],
+						[ 'copy' => 'b' ],
+						[ 'your' => '' ],
+						[ 'other' => '' ],
+						[ 'copy' => 'c' ],
+					],
+					[ 1, 2, 4, 3, 5 ]
+				]
+			],
+			'multiple pairs to swap' => [
+				'contentRows' => [
+					[ 'other' => 'a' ],
+					[ 'your' => 'b' ],
+					[ 'other' => 'c' ],
+					[ 'your' => 'd' ],
+				],
+				'extraLineFeeds' => [],
+				'expected' => [
+					[
+						[ 'your' => 'b' ],
+						[ 'other' => 'a' ],
+						[ 'your' => 'd' ],
+						[ 'other' => 'c' ],
+					],
+					[ 0, 0, 0, 0 ]
+				]
+			],
+			'do not swap back if my row is alreday before' => [
+				'contentRows' => [
+					[ 'your' => '' ],
+					[ 'other' => '' ],
+				],
+				'extraLineFeeds' => [],
+				'expected' => [
+					[
+						[ 'your' => '' ],
+						[ 'other' => '' ],
+					],
+					[]
+				]
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideTalkPageRequests
+	 */
+	public function testSwapTalkComments(
+		array $contentRows,
+		array $extraLineFeeds,
+		array $expected
+	) {
+		/** @var TwoColConflictHooks $hooks */
+		$hooks = TestingAccessWrapper::newFromClass( TwoColConflictHooks::class );
+		$this->assertSame( $expected, $hooks->swapTalkComments( $contentRows, $extraLineFeeds ) );
 	}
 
 	public function testOnUserGetDefaultOptions() {
