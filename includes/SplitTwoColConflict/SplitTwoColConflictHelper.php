@@ -228,7 +228,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) )->getHtml(
 			$suggestion->getDiff(),
 			$suggestion->getOtherIndex(),
-			$suggestion->getYourIndex()
+			$suggestion->getYourIndex(),
+			TwoColConflictContext::isUsedAsBetaFeature()
 		);
 	}
 

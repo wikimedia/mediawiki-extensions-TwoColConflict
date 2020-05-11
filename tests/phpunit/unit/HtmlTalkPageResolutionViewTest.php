@@ -133,7 +133,7 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		} );
 
 		$view = new HtmlTalkPageResolutionView( $editableTextComponent, $localizer );
-		$html = $view->getHtml( $diff, $otherIndex, $yourIndex );
+		$html = $view->getHtml( $diff, $otherIndex, $yourIndex, false );
 
 		$this->assertStringContainsString( ' name="mw-twocolconflict-single-column-view"', $html,
 			'form identifier' );

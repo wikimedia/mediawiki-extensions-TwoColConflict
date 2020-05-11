@@ -43,16 +43,21 @@ class HtmlTalkPageResolutionView {
 	 * @param array[] $unifiedDiff
 	 * @param int $otherIndex
 	 * @param int $yourIndex
+	 * @param bool $isBetaFeature
 	 *
 	 * @return string HTML
 	 */
 	public function getHtml(
 		array $unifiedDiff,
 		int $otherIndex,
-		int $yourIndex
+		int $yourIndex,
+		bool $isBetaFeature
 	) : string {
 		$out = $this->getMessageBox(
 			'twocolconflict-talk-header-overview', 'error', 'mw-twocolconflict-overview' );
+		$hintMsg = $isBetaFeature ?
+			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
+		$out .= $this->getMessageBox( $hintMsg, 'notice' );
 
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
 			$text = $changeSet['copytext'] ?? $changeSet['newtext'];
