@@ -39,7 +39,6 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	public function testOnAlternateEdit_withFeatureDisabled() {
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->method( 'getContext' )->willReturn( $this->createContext( false ) );
-		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 		$editPage->expects( $this->never() )->method( 'setEditConflictHelperFactory' );
 
 		TwoColConflictHooks::onAlternateEdit( $editPage );
@@ -56,7 +55,6 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->method( 'getContext' )->willReturn( $context );
-		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 		// TODO: The code in the factory function is currently not tested
 		$editPage->expects( $this->once() )->method( 'setEditConflictHelperFactory' );
 
@@ -67,7 +65,6 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->isConflict = true;
 		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
-		$editPage->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 
 		$previewButton = $this->createMock( InputWidget::class );
 		$previewButton->expects( $this->once() )->method( 'setDisabled' );
@@ -356,6 +353,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			->willReturn( $enabled );
 
 		$context = $this->createMock( IContextSource::class );
+		$context->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
 		$context->method( 'getUser' )->willReturn( $user );
 		return $context;
 	}
