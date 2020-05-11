@@ -142,7 +142,7 @@ $.extend( Tour.prototype, {
 			.append( $( '<p>' ).html( message ) );
 
 		var popup = new OO.ui.PopupWidget( {
-			position: 'above',
+			position: 'below',
 			align: 'forwards',
 			$content: $content,
 			$footer: closeButton.$element,
