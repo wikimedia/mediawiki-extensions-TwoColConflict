@@ -19,6 +19,7 @@
 	"twocolconflict-desc": "Muestra una pantalla de combinación doble para solucionar conflictos",
 	"twocolconflict-beta-feature-message": "Conflicto de edición en dos columnas",
 	"twocolconflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.",
+	"twocolconflict-core-ui-hint-close": "No mostrar de nuevo",
 	"twocolconflict-test-needsbeta": "Antes de utilizar esta página especial, debes activar en tus preferencias la función en pruebas «Conflictos de edición en dos columnas».",
 	"twocolconflict-test-page-title": "Conflicto de edición: simulación",
 	"twocolconflict-test-title-label": "Digita el título de una página no protegida del wiki para simular un conflicto de edición en ella:",
@@ -58,6 +59,6 @@
 	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios",
 	"twocolconflict-split-selected-version-tooltip": "Versión seleccionada",
 	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión",
-	"twocolconflict-talk-your": "Vuestra entrada",
+	"twocolconflict-talk-your": "Tu entrada",
 	"twocolconflict-talk-conflicting": "Entrada en conflicto"
 }

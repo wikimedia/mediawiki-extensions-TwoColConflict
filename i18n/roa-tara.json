@@ -28,7 +28,7 @@
 	"twocolconflict-split-other-version-chosen": "Otre versione",
 	"twocolconflict-split-your-version-chosen": "'A versiona toje",
 	"twocolconflict-split-tour-dialog-header": "Scuagghie le conflitte de versiune",
-	"twocolconflict-split-tour-dialog-message": "Pare ca tu è avute 'nu conflitte de cangiaminde: durande 'u cangiamende tune 'n'otre utende ave fatte otre cangiaminde a sta pàgene e le ave reggistrate. Mò 'a versiona toje non g'è aggiornate purcè non ge include le cangiaminde de l'otre utende. Te cercame de aunì le cangiaminde tune jndr'à prossema pàgene.",
+	"twocolconflict-split-tour-dialog-message": "Sfortunamatamende, mendre ca ste facive le cangiaminde, 'n'otre utende ave cangiate 'a stessa pàgene e pubblecate apprime de te.\n\nNo te sce preoccupanne, le cangiaminde tune non g'onne state perse! Pe piacere revide tutte e doje le versiune e scagghiale 'nzieme. Ce tìne abbesogne, puè cangià 'u teste scacchiate. Sulamende 'u teste jndrìà le buatte scacchiate avène reggistrate quanne cazze \"{{int:Savechanges}}.\"",
 	"twocolconflict-split-tour-dialog-btn-text": "Accumenze l'aunione",
 	"twocolconflict-split-tour-popup-btn-text": "Apposte, pigghiate.",
 	"twocolconflict-split-tour-popup1-header": "Le cangiaminde diverse avènene 'ndrucate linèe pe linèe",
@@ -47,5 +47,6 @@
 	"twocolconflict-split-expand-tooltip": "Spanne 'u teste non cangiate",
 	"twocolconflict-split-selected-version-tooltip": "Versione scacchiate",
 	"twocolconflict-split-unselected-version-tooltip": "Cazze pe scacchià sta versione",
+	"twocolconflict-split-help-tooltip": "'Ndruche l'aijute",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Messàgge in conflitte"
 }
