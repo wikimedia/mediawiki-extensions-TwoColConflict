@@ -62,15 +62,6 @@
 				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
 			]
 		},
-		"ext.TwoColConflict.CoreHintJs": {
-			"packageFiles": [
-				"modules/ext.TwoColConflict.CoreHint.js"
-			],
-			"dependencies": [
-				"mediawiki.api",
-				"mediawiki.user"
-			]
-		},
 		"ext.TwoColConflict.CoreHintCss": {
 			"styles": [
 				"modules/ext.TwoColConflict.CoreHint.less"
