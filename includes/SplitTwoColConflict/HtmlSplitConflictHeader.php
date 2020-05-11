@@ -9,6 +9,8 @@ use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MessageLocalizer;
+use OOUI\HtmlSnippet;
+use OOUI\MessageWidget;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
@@ -212,13 +214,12 @@ class HtmlSplitConflictHeader {
 	 */
 	private function getWarningMessage( string $messageKey ) : string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
-		// Force feedback links to be opened in a new tab, and not loose the edit
+		// Force feedback links to be opened in a new tab, and not lose the edit
 		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
-		return Html::rawElement(
-			'div',
-			[ 'class' => 'mw-twocolconflict-split-warningbox' ],
-			Html::rawElement( 'p', [], $html )
-		);
+		return ( new MessageWidget( [
+			'label' => new HtmlSnippet( $html ),
+			'type' => 'notice',
+		] ) )->toString();
 	}
 
 }
