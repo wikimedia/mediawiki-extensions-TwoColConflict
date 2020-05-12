@@ -267,7 +267,10 @@ describe( 'TwoColConflict editable areas', function () {
 		EditConflictPage.getResetButton( 'other' ).click();
 		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 1000 } );
 		EditConflictPage.resetConfirmationButton.click();
-		EditConflictPage.resetConfirmationButton.waitForDisplayed( { timeout: 1000, reverse: true } );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
+			timeout: 1000,
+			reverse: true
+		} );
 
 		assert.strictEqual(
 			EditConflictPage.getDiffText( 'other' ).getHTML(),
@@ -291,7 +294,10 @@ describe( 'TwoColConflict editable areas', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationButton.waitForDisplayed( { timeout: 1000, reverse: true } );
+		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
+			timeout: 1000,
+			reverse: true
+		} );
 		assert(
 			!EditConflictPage.resetConfirmationButton.isDisplayed(),
 			'there is no confirmation box for the reset visible'
