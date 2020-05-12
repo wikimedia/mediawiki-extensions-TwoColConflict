@@ -132,6 +132,8 @@ $.extend( Tour.prototype, {
 	 * @return {OO.ui.PopupWidget}
 	 */
 	createPopup: function ( header, message, $pulsatingButton ) {
+		var self = this;
+
 		var closeButton = new OO.ui.ButtonWidget( {
 			label: mw.msg( 'twocolconflict-split-tour-popup-btn-text' ),
 			flags: [ 'primary', 'progressive' ]
@@ -158,7 +160,7 @@ $.extend( Tour.prototype, {
 		$pulsatingButton.on( 'click', function ( e ) {
 			e.preventDefault();
 			$pulsatingButton.hide();
-			popup.toggle( true );
+			self.showTourPopup( popup );
 		} );
 
 		return popup;
@@ -200,6 +202,14 @@ $.extend( Tour.prototype, {
 			message: message,
 			$element: $element,
 			showByDefault: showByDefault || false
+		} );
+	},
+
+	showTourPopup: function ( popup ) {
+		this.buttons.forEach( function ( data ) {
+			if ( data.popup ) {
+				data.popup.toggle( data.popup === popup );
+			}
 		} );
 	},
 
