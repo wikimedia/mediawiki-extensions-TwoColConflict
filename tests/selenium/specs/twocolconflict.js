@@ -46,6 +46,34 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'shows a dismissible hint on the core edit conflict interface', function () {
+		PreferencesPage.openEditPreferences();
+		if ( !PreferencesPage.hasOptOutUserSetting() ) {
+			this.skip();
+		}
+		PreferencesPage.shouldUseTwoColConflict( false );
+		PreferencesPage.resetCoreHintVisibility();
+		EditConflictPage.createConflict(
+			'A',
+			'B',
+			'C'
+		);
+
+		assert(
+			EditConflictPage.coreUiHint.isDisplayed(),
+			'the core conflict UI shows a hint to enable the new interface'
+		);
+
+		// wait for the JS events to get loaded
+		browser.pause( 500 );
+		EditConflictPage.coreUiHintCloseButton.click();
+
+		assert(
+			!EditConflictPage.coreUiHint.isDisplayed(),
+			'the hint on the core conflict is hidden'
+		);
+	} );
+
 	after( function () {
 		browser.deleteCookies();
 	} );

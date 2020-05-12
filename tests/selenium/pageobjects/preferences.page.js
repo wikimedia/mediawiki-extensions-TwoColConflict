@@ -1,4 +1,5 @@
-const Page = require( 'wdio-mediawiki/Page' );
+const Page = require( 'wdio-mediawiki/Page' ),
+	Util = require( 'wdio-mediawiki/Util' );
 
 class PreferencesPage extends Page {
 	get twoColBetaCheckbox() { return $( 'input[name=wptwocolconflict]' ); }
@@ -44,6 +45,16 @@ class PreferencesPage extends Page {
 		if ( !this.twoColBetaCheckbox.getAttribute( 'checked' ) === shouldUse ) {
 			this.clickCheckBoxAndSave( this.twoColBetaCheckbox );
 		}
+	}
+
+	resetCoreHintVisibility() {
+		Util.waitForModuleState( 'mediawiki.base' );
+
+		return browser.execute( function () {
+			return mw.loader.using( 'mediawiki.api' ).then( function () {
+				return new mw.Api().saveOption( 'userjs-twocolconflict-hide-core-hint', null );
+			} );
+		} );
 	}
 
 	clickCheckBoxAndSave( checkBox ) {
