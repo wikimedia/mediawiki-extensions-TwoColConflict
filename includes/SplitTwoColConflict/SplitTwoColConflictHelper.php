@@ -154,8 +154,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$conflictView = $this->buildEditConflictView( $storedLines, $yourLines );
 		}
 
-		return Html::input( 'wpTextbox1', $this->storedversion, 'hidden' ) .
-			Html::input( 'mw-twocolconflict-title', $this->title->getPrefixedText(), 'hidden' ) .
+		return Html::hidden( 'wpTextbox1', $this->storedversion ) .
+			Html::hidden( 'mw-twocolconflict-title', $this->title->getPrefixedText() ) .
 			$conflictView .
 			$this->buildRawTextsHiddenFields();
 	}
@@ -238,8 +238,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	private function buildRawTextsHiddenFields() : string {
-		return Html::input( 'mw-twocolconflict-current-text', $this->storedversion, 'hidden' ) .
-			Html::input( 'mw-twocolconflict-your-text', $this->yourtext, 'hidden' );
+		return Html::hidden( 'mw-twocolconflict-current-text', $this->storedversion ) .
+			Html::hidden( 'mw-twocolconflict-your-text', $this->yourtext );
 	}
 
 }
