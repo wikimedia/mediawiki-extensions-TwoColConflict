@@ -35,10 +35,8 @@ describe( 'TwoColConflict without JavaScript', function () {
 	it( 'is showing the talk page version correctly', function () {
 		TalkConflictPage.createTalkPageConflict();
 
-		EditConflictPage.conflictView.waitForDisplayed();
 		assert( !TalkConflictPage.splitColumn.isExisting() );
 
-		TalkConflictPage.draggableContainer.waitForDisplayed();
 		TalkConflictPage.orderSelector.waitForDisplayed();
 		assert( TalkConflictPage.keepAfterButton.isSelected() );
 

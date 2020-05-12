@@ -11,12 +11,7 @@ describe( 'TwoColConflict', function () {
 	it( 'shows the talk page screen correctly', function () {
 		TalkConflictPage.createTalkPageConflict();
 
-		EditConflictPage.conflictView.waitForDisplayed( 60000 );
 		assert( !TalkConflictPage.splitColumn.isExisting() );
-
-		// Wait for the distinctive talk page controls.
-		TalkConflictPage.draggableContainer.waitForDisplayed( 60000 );
-
 		assert( EditConflictPage.getParagraph( 'other' ) );
 		assert( EditConflictPage.getParagraph( 'your' ) );
 		assert( EditConflictPage.getParagraph( 'copy' ) );

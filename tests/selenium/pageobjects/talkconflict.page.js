@@ -2,7 +2,7 @@ const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class TalkConflictPage {
-	get draggableContainer() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
+	get talkRow() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
 	get splitColumn() { return $( '.mw-twocolconflict-split-column' ); }
 	get orderSelector() { return $( '.mw-twocolconflict-order-selector' ); }
 	get keepAfterButton() { return $( '.mw-twocolconflict-order-selector [value="no-change"]' ); }
@@ -15,6 +15,7 @@ class TalkConflictPage {
 			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>',
 			Util.getTestString( 'Talk:Test-conflict-' )
 		);
+		this.talkRow.waitForDisplayed();
 	}
 
 	editMyComment( newText ) {
