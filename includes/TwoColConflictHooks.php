@@ -29,35 +29,38 @@ class TwoColConflictHooks {
 	 * @param EditPage $editPage
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
+		$context = $editPage->getContext();
+
 		// Skip out on the test page
 		if ( $editPage instanceof TwoColConflictTestEditPage ) {
 			return;
 		}
 
 		// Skip out if the feature is disabled
-		$user = $editPage->getContext()->getUser();
-		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) ) {
+		$user = $context->getUser();
+		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $user, $context->getTitle() ) ) {
 			return;
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+			$context = $editPage->getContext();
 			$baseRevision = $editPage->getExpectedParentRevision();
 
 			return new SplitTwoColConflictHelper(
-				$editPage->getTitle(),
-				$editPage->getContext()->getOutput(),
+				$context->getTitle(),
+				$context->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
 				$editPage->summary,
 				MediaWikiServices::getInstance()->getContentHandlerFactory(),
 				new ResolutionSuggester(
 					$baseRevision,
-					$editPage->getArticle()->getPage()->getContentHandler()->getDefaultFormat()
+					$context->getWikiPage()->getContentHandler()->getDefaultFormat()
 				)
 			);
 		} );
 
-		$request = $editPage->getContext()->getRequest();
+		$request = $context->getRequest();
 		if ( !( new ConflictFormValidator() )->validateRequest( $request ) ) {
 			// Mark the conflict as *not* being resolved to trigger it again. This works because
 			// EditPage uses editRevId to decide if it's even possible to run into a conflict.
@@ -176,15 +179,16 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
-		$request = $editPage->getContext()->getRequest();
-		if ( $editPage->getContext()->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
+		$context = $editPage->getContext();
+		$request = $context->getRequest();
+		if ( $context->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
 			$request->setVal( 'editingStatsOversample', true );
 		}
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getExpectedParentRevision();
-			$latestRevision = $editPage->getArticle()->getPage()->getRevisionRecord();
+			$latestRevision = $context->getWikiPage()->getRevisionRecord();
 
 			$conflictChunks = 0;
 			$conflictChars = 0;
@@ -211,18 +215,18 @@ class TwoColConflictHooks {
 				[
 					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown(
 						$user,
-						$editPage->getTitle()
+						$context->getTitle()
 					),
 					'isAnon' => $user->isAnon(),
 					'editCount' => (int)$user->getEditCount(),
-					'pageNs' => $editPage->getTitle()->getNamespace(),
+					'pageNs' => $context->getTitle()->getNamespace(),
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
 					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
 					'conflictChunks' => $conflictChunks,
 					'conflictChars' => $conflictChars,
 					'startTime' => $editPage->starttime ?: '',
 					'editTime' => $editPage->edittime ?: '',
-					'pageTitle' => $editPage->getTitle()->getText(),
+					'pageTitle' => $context->getTitle()->getText(),
 					'hasJavascript' => $request->getBool( 'mw-twocolconflict-js' )
 						|| $request->getBool( 'veswitched' ),
 				]
@@ -242,8 +246,9 @@ class TwoColConflictHooks {
 		array &$buttons,
 		&$tabindex
 	) {
-		$user = $editPage->getContext()->getUser();
-		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $editPage->getTitle() ) &&
+		$context = $editPage->getContext();
+		$user = $context->getUser();
+		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $context->getTitle() ) &&
 			!( $editPage instanceof TwoColConflictTestEditPage ) &&
 			$editPage->isConflict === true
 		) {
