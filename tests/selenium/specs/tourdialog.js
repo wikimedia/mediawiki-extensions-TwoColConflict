@@ -50,7 +50,10 @@ describe( 'TwoColConflict GuidedTour', function () {
 			EditConflictPage.tourDialogCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 2000, reverse: true } ),
+				EditConflictPage.tourDialogCloseButton.waitForDisplayed( {
+					timeout: 2000,
+					reverse: true
+				} ),
 				'Dialog has disappeared'
 			);
 
@@ -90,7 +93,9 @@ describe( 'TwoColConflict GuidedTour', function () {
 			EditConflictPage.tourDiffChangePopupCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed( { timeout: 500, reverse: true } ),
+				EditConflictPage.tourDiffChangePopup.waitForDisplayed( {
+					timeout: 500, reverse: true
+				} ),
 				'Diff change popup has disappeared'
 			);
 		} );

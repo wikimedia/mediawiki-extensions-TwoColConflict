@@ -77,7 +77,8 @@ describe( 'TwoColConflict save and preview', function () {
 		EditConflictPage.submitButton.click();
 
 		assert(
-			EditConflictPage.conflictHeader.isExisting() && EditConflictPage.conflictView.isExisting(),
+			EditConflictPage.conflictHeader.isExisting() &&
+			EditConflictPage.conflictView.isExisting(),
 			'there will be another edit conflict'
 		);
 		assert.strictEqual(
