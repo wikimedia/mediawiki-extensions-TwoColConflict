@@ -53,15 +53,7 @@
 			"i18n"
 		]
 	},
-	"ExtensionMessagesFiles": {
-		"TwoColConflictAlias": "TwoColConflict.alias.php"
-	},
 	"ResourceModules": {
-		"ext.TwoColConflict.SpecialConflictTestPageCss": {
-			"styles": [
-				"modules/SpecialConflictTestPage/ext.TwoColConflict.SpecialConflictTestPage.css"
-			]
-		},
 		"ext.TwoColConflict.SplitJs": {
 			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js"
@@ -194,8 +186,5 @@
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
-	],
-	"SpecialPages": {
-		"SimulateTwoColEditConflict": "TwoColConflict\\SpecialConflictTestPage\\SpecialConflictTestPage"
-	}
+	]
 }
