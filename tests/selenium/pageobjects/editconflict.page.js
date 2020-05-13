@@ -118,7 +118,7 @@ class EditConflictPage extends Page {
 			'Line<span>1</span>\nChange <span lang="de">A</span>',
 			'Line<span>1</span>\nChange <span lang="en">B</span>'
 		);
-		this.waitForUiToLoad();
+		this.waitForJS();
 	}
 
 	showBigConflict() {
@@ -127,7 +127,7 @@ class EditConflictPage extends Page {
 			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
 		);
-		this.waitForUiToLoad();
+		this.waitForJS();
 	}
 
 	editPage( bot, title, text ) {
@@ -162,9 +162,8 @@ class EditConflictPage extends Page {
 		EditPage.save.click();
 	}
 
-	waitForUiToLoad() {
-		this.infoButton.waitForDisplayed( { timeout: 60000, reverse: false,
-			timeoutMsg: 'Conflict page never displayed' } );
+	waitForJS() {
+		Util.waitForModuleState( 'ext.TwoColConflict.SplitJs' );
 	}
 
 	testNoJs() {

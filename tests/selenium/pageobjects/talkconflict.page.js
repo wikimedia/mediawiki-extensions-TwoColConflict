@@ -19,12 +19,7 @@ class TalkConflictPage {
 		this.talkRow.waitForDisplayed();
 	}
 
-	waitForJs() {
-		Util.waitForModuleState( 'ext.TwoColConflict.SplitJs' );
-	}
-
 	editMyComment( newText ) {
-		browser.pause( 500 );
 		EditConflictPage.getEditButton( 'your' ).click();
 		EditConflictPage.getEditor( 'your' ).setValue( newText );
 		EditConflictPage.getSaveButton( 'your' ).click();

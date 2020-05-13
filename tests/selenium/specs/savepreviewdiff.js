@@ -33,7 +33,7 @@ describe( 'TwoColConflict save and preview', function () {
 			title,
 			2
 		);
-		EditConflictPage.waitForUiToLoad();
+		EditConflictPage.waitForJS();
 
 		// a user editing a different section while the initial conflict is still being resolved
 		EditConflictPage.editPage(
@@ -62,7 +62,7 @@ describe( 'TwoColConflict save and preview', function () {
 			'Line1\nChange B',
 			title
 		);
-		EditConflictPage.waitForUiToLoad();
+		EditConflictPage.waitForJS();
 
 		// a user editing in a line affected by the conflict above
 		EditConflictPage.editPage(
@@ -198,7 +198,7 @@ describe( 'TwoColConflict save and preview', function () {
 			'α\n&gamma; <span lang="de">A</span>',
 			'α\n&gamma; <span lang="en">B</span>'
 		);
-		EditConflictPage.waitForUiToLoad();
+		EditConflictPage.waitForJS();
 
 		EditConflictPage.otherParagraphSelection.click();
 
