@@ -12,6 +12,7 @@ describe( 'TwoColConflict', function () {
 		TalkConflictPage.createTalkPageConflict();
 
 		assert( !TalkConflictPage.splitColumn.isExisting() );
+
 		assert( EditConflictPage.getParagraph( 'other' ) );
 		assert( EditConflictPage.getParagraph( 'your' ) );
 		assert( EditConflictPage.getParagraph( 'copy' ) );
@@ -22,6 +23,15 @@ describe( 'TwoColConflict', function () {
 		assert( !EditConflictPage.getEditButton( 'copy' ).isExisting() );
 
 		assert( TalkConflictPage.isOtherBlockFirst() );
+	} );
+
+	it( 'swaps blocks when switch button is clicked', function () {
+		TalkConflictPage.createTalkPageConflict();
+		TalkConflictPage.waitForJs();
+
+		TalkConflictPage.swapButton.click();
+
+		assert( TalkConflictPage.isYourBlockFirst() );
 	} );
 
 	it( 'shows correct preview after edit', function () {
@@ -39,6 +49,22 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'shows correct preview swapped', function () {
+		TalkConflictPage.createTalkPageConflict();
+		TalkConflictPage.waitForJs();
+
+		TalkConflictPage.swapButton.click();
+
+		EditConflictPage.previewButton.click();
+
+		assert( EditConflictPage.previewView.waitForDisplayed() );
+
+		assert.strictEqual(
+			EditConflictPage.previewText.getText(),
+			'Line1 Line2 Line3 Comment B Comment A'
+		);
+	} );
+
 	it( 'stores correct merge after edit', function () {
 		TalkConflictPage.createTalkPageConflict();
 		EditConflictPage.getEditButton( 'your' ).waitForEnabled();
@@ -49,6 +75,20 @@ describe( 'TwoColConflict', function () {
 		assert.strictEqual(
 			FinishedConflictPage.pageText.getText(),
 			'Line1 Line2 Line3 Comment A Comment edited'
+		);
+	} );
+
+	it( 'stores correct merge swapped', function () {
+		TalkConflictPage.createTalkPageConflict();
+		TalkConflictPage.waitForJs();
+
+		TalkConflictPage.swapButton.click();
+
+		EditConflictPage.submitButton.click();
+
+		assert.strictEqual(
+			FinishedConflictPage.pageText.getText(),
+			'Line1 Line2 Line3 Comment B Comment A'
 		);
 	} );
 
