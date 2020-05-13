@@ -72,6 +72,17 @@ describe( 'TwoColConflict', function () {
 			!EditConflictPage.coreUiHint.isDisplayed(),
 			'the hint on the core conflict is hidden'
 		);
+
+		EditConflictPage.createConflict(
+			'A',
+			'B',
+			'C'
+		);
+
+		assert(
+			!EditConflictPage.coreUiHint.isDisplayed(),
+			'the hint on the core conflict is hidden on the next conflict'
+		);
 	} );
 
 	after( function () {
