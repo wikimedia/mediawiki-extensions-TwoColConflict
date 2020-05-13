@@ -116,13 +116,10 @@ $.extend( Tour.prototype, {
 	 * @return {jQuery}
 	 */
 	createPopupButton: function ( $element ) {
-		var $pulsatingButton = $( '<div>' ).addClass( 'mw-pulsating-dot' );
-
-		$pulsatingButton.addClass( 'mw-twocolconflict-split-tour-pulsating-button' );
-		$pulsatingButton.appendTo( $element );
-		$pulsatingButton.hide();
-
-		return $pulsatingButton;
+		return $( '<div>' )
+			.addClass( 'mw-pulsating-dot mw-twocolconflict-split-tour-pulsating-button' )
+			.appendTo( $element )
+			.hide();
 	},
 
 	/**
