@@ -214,10 +214,8 @@ class HtmlSplitConflictHeader {
 	 */
 	private function getWarningMessage( string $messageKey ) : string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
-		// Force feedback links to be opened in a new tab, and not lose the edit
-		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
 		return ( new MessageWidget( [
-			'label' => new HtmlSnippet( $html ),
+			'label' => new HtmlSnippet( SplitConflictUtils::addTargetBlankToLinks( $html ) ),
 			'type' => 'notice',
 		] ) )->toString();
 	}

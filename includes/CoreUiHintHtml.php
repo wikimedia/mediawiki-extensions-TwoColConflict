@@ -7,6 +7,7 @@ use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\IconWidget;
 use OOUI\MessageWidget;
+use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
 
 class CoreUiHintHtml {
 
@@ -32,6 +33,7 @@ class CoreUiHintHtml {
 			'icon' => 'close',
 			'title' => $this->messageLocalizer->msg( 'twocolconflict-core-ui-hint-close' )->text(),
 		] );
+		$hintMessage = $this->messageLocalizer->msg( 'twocolconflict-core-ui-hint' )->parse();
 
 		return Html::rawElement(
 			'div',
@@ -43,7 +45,7 @@ class CoreUiHintHtml {
 			) .
 			new MessageWidget( [
 				'label' => new HtmlSnippet(
-					$this->messageLocalizer->msg( 'twocolconflict-core-ui-hint' )->parse() .
+					SplitConflictUtils::addTargetBlankToLinks( $hintMessage ) .
 					Html::rawElement(
 						'label',
 						[ 'for' => 'mw-twocolconflict-disable-core-hint' ],
