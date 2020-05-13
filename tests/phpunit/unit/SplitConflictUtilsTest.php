@@ -42,15 +42,38 @@ class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @param string $input
-	 * @param string[] $expectedOutput
 	 * @dataProvider provideSplitText
 	 */
-	public function testSplitText( string $input, array $expectedOutput ) {
-		$this->assertSame(
-			$expectedOutput,
-			$result = SplitConflictUtils::splitText( $input )
-		);
+	public function testSplitText( string $text, array $expected ) {
+		$this->assertSame( $expected, SplitConflictUtils::splitText( $text ) );
+	}
+
+	public function provideLinesToMerge() {
+		return [
+			'empty' => [
+				[],
+				''
+			],
+			'simple' => [
+				[ 'a', 'b' ],
+				"a\nb"
+			],
+			'accept extra line endings' => [
+				[ "a\n", "b\n" ],
+				"a\n\nb\n"
+			],
+			'normalize line endings' => [
+				[ "a\r", "b\r\n", "c" ],
+				"a\n\nb\n\nc"
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideLinesToMerge
+	 */
+	public function testMergeTextLines( array $lines, string $expected ) {
+		$this->assertSame( $expected, SplitConflictUtils::mergeTextLines( $lines ) );
 	}
 
 }

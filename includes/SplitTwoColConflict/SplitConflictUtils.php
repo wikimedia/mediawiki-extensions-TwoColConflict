@@ -23,7 +23,7 @@ class SplitConflictUtils {
 	 * @return string
 	 */
 	public static function mergeTextLines( array $textLines ) : string {
-		return str_replace( [ "\r\n", "\r" ], "\n", implode( "\n", $textLines ) );
+		return str_replace( [ "\r\n", "\r" ], "\n", implode( "\r\n", $textLines ) );
 	}
 
 }
