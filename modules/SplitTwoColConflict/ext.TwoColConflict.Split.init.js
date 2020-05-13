@@ -352,23 +352,22 @@ function initSubmit() {
 		} );
 }
 
-function getRowNumber( $column ) {
-	var name = $column.find( 'textarea[name^="mw-twocolconflict-split-content"]' ).attr( 'name' );
-	return name.match( /\d+/ )[ 0 ];
-}
-
-function setRowNumber( $column, oldRowNum, newRowNum ) {
-	$column.find( 'input, textarea' ).each( function ( index, input ) {
-		var $input = $( input ),
-			name = $input.attr( 'name' );
-		$input.attr( 'name', name.replace( '[' + oldRowNum + ']', '[' + newRowNum + ']' ) );
-	} );
-}
-
 function initSwapHandling() {
 	var $swapButton = $( '.mw-twocolconflict-single-swap-button' );
 	if ( !$swapButton.length ) {
 		return;
+	}
+
+	function getRowNumber( $column ) {
+		return $column.find( 'textarea[name^="mw-twocolconflict-split-content"]' )
+			.attr( 'name' )
+			.match( /\d+/ )[ 0 ];
+	}
+
+	function setRowNumber( $column, oldRowNum, newRowNum ) {
+		$column.find( 'input, textarea' ).each( function ( index, input ) {
+			input.name = input.name.replace( '[' + oldRowNum + ']', '[' + newRowNum + ']' );
+		} );
 	}
 
 	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', function () {
