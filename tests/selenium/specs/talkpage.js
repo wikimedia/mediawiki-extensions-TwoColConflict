@@ -27,7 +27,7 @@ describe( 'TwoColConflict', function () {
 
 	it( 'swaps blocks when switch button is clicked', function () {
 		TalkConflictPage.createTalkPageConflict();
-		TalkConflictPage.waitForJs();
+		EditConflictPage.waitForJS();
 
 		TalkConflictPage.swapButton.click();
 
@@ -38,6 +38,7 @@ describe( 'TwoColConflict', function () {
 		TalkConflictPage.createTalkPageConflict();
 		EditConflictPage.getEditButton( 'your' ).waitForEnabled();
 
+		EditConflictPage.waitForJS();
 		TalkConflictPage.editMyComment( 'Comment edited' );
 		EditConflictPage.previewButton.click();
 
@@ -51,7 +52,7 @@ describe( 'TwoColConflict', function () {
 
 	it( 'shows correct preview swapped', function () {
 		TalkConflictPage.createTalkPageConflict();
-		TalkConflictPage.waitForJs();
+		EditConflictPage.waitForJS();
 
 		TalkConflictPage.swapButton.click();
 
@@ -69,6 +70,7 @@ describe( 'TwoColConflict', function () {
 		TalkConflictPage.createTalkPageConflict();
 		EditConflictPage.getEditButton( 'your' ).waitForEnabled();
 
+		EditConflictPage.waitForJS();
 		TalkConflictPage.editMyComment( 'Comment edited' );
 		EditConflictPage.submitButton.click();
 
@@ -80,7 +82,7 @@ describe( 'TwoColConflict', function () {
 
 	it( 'stores correct merge swapped', function () {
 		TalkConflictPage.createTalkPageConflict();
-		TalkConflictPage.waitForJs();
+		EditConflictPage.waitForJS();
 
 		TalkConflictPage.swapButton.click();
 

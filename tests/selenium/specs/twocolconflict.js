@@ -64,8 +64,7 @@ describe( 'TwoColConflict', function () {
 			'the core conflict UI shows a hint to enable the new interface'
 		);
 
-		// wait for the JS events to get loaded
-		browser.pause( 500 );
+		EditConflictPage.waitForJS();
 		EditConflictPage.coreUiHintCloseButton.click();
 
 		assert(
