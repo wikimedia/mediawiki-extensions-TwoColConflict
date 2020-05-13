@@ -6,6 +6,7 @@
 			"DannyS712",
 			"Dgstranz",
 			"Fitoschido",
+			"Geryescalier",
 			"Ihojose",
 			"Jelou",
 			"Joanmp17",
@@ -19,6 +20,7 @@
 	"twocolconflict-desc": "Muestra una pantalla de combinación doble para solucionar conflictos",
 	"twocolconflict-beta-feature-message": "Conflicto de edición en dos columnas",
 	"twocolconflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.",
+	"twocolconflict-core-ui-hint": "Ya está disponible una interfaz actualizada para resolver conflictos de edición. Habilite la Vista de conflicto de edición de dos columnas en su [[Special:Preferences#mw-prefsection-editing|preferencias]] para probarlo.",
 	"twocolconflict-core-ui-hint-close": "No mostrar de nuevo",
 	"twocolconflict-test-needsbeta": "Antes de utilizar esta página especial, debes activar en tus preferencias la función en pruebas «Conflictos de edición en dos columnas».",
 	"twocolconflict-test-page-title": "Conflicto de edición: simulación",
@@ -60,5 +62,6 @@
 	"twocolconflict-split-selected-version-tooltip": "Versión seleccionada",
 	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión",
 	"twocolconflict-talk-your": "Tu entrada",
-	"twocolconflict-talk-conflicting": "Entrada en conflicto"
+	"twocolconflict-talk-conflicting": "Entrada en conflicto",
+	"twocolconflict-talk-reorder-prompt": "Coloque su entrada en relación con la entrada en conflicto:"
 }
