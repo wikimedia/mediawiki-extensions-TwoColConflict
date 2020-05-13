@@ -42,7 +42,7 @@
 		"UserGetDefaultOptions": "TwoColConflict\\TwoColConflictHooks::onUserGetDefaultOptions",
 		"UserLoadOptions": "TwoColConflict\\TwoColConflictHooks::onUserLoadOptions",
 		"AlternateEdit": "TwoColConflict\\TwoColConflictHooks::onAlternateEdit",
-		"EditPage::importFormData": "TwoColConflict\\TwoColConflictHooks::onImportFormData",
+		"EditPage::importFormData": "TwoColConflict\\EditPageImportFormDataHookHandler::onEditPageImportFormData",
 		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
 		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
 		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial",
