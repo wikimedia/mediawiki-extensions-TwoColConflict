@@ -8,7 +8,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use OOUI\ButtonInputWidget;
 use OutputPage;
-use TwoColConflict\SpecialConflictTestPage\TwoColConflictTestEditPage;
 use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
@@ -28,11 +27,6 @@ class TwoColConflictHooks {
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
 		$context = $editPage->getContext();
-
-		// Skip out on the test page
-		if ( $editPage instanceof TwoColConflictTestEditPage ) {
-			return;
-		}
 
 		// Skip out if the feature is disabled
 		$user = $context->getUser();
@@ -186,7 +180,6 @@ class TwoColConflictHooks {
 		$context = $editPage->getContext();
 		$user = $context->getUser();
 		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $context->getTitle() ) &&
-			!( $editPage instanceof TwoColConflictTestEditPage ) &&
 			$editPage->isConflict === true
 		) {
 			unset( $buttons['diff'] );

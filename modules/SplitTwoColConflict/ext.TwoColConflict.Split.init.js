@@ -344,7 +344,7 @@ function initPreview() {
 }
 
 function initSubmit() {
-	$( '#wpSave, #wpTestPreviewWidget #wpPreview' )
+	$( '#wpSave' )
 		.click( function ( e ) {
 			if ( !validateForm() ) {
 				e.preventDefault();
