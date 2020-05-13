@@ -32,6 +32,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $newEditSummary;
 
 	/**
+	 * @var TwoColConflictContext
+	 */
+	private $twoColContext;
+
+	/**
 	 * @var ResolutionSuggester
 	 */
 	private $resolutionSuggester;
@@ -43,6 +48,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param string $submitLabel
 	 * @param string $newEditSummary
 	 * @param IContentHandlerFactory $contentHandlerFactory
+	 * @param TwoColConflictContext $twoColContext
 	 * @param ResolutionSuggester $resolutionSuggester
 	 */
 	public function __construct(
@@ -52,11 +58,13 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		string $submitLabel,
 		string $newEditSummary,
 		IContentHandlerFactory $contentHandlerFactory,
+		TwoColConflictContext $twoColContext,
 		ResolutionSuggester $resolutionSuggester
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
 		$this->newEditSummary = $newEditSummary;
+		$this->twoColContext = $twoColContext;
 		$this->resolutionSuggester = $resolutionSuggester;
 
 		$this->out->enableOOUI();
@@ -149,7 +157,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
 		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
 
-		$suggestion = TwoColConflictContext::shouldTalkPageSuggestionBeConsidered( $this->title )
+		$suggestion = $this->twoColContext->shouldTalkPageSuggestionBeConsidered( $this->title )
 			? $this->resolutionSuggester->getResolutionSuggestion( $storedLines, $yourLines )
 			: null;
 		if ( $suggestion ) {
@@ -206,7 +214,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->newEditSummary,
 			$language,
 			$this->out->getContext()
-		) )->getHtml( TwoColConflictContext::isUsedAsBetaFeature() );
+		) )->getHtml( $this->twoColContext->isUsedAsBetaFeature() );
 		$out .= ( new HtmlSplitConflictView(
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),
@@ -234,7 +242,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$suggestion->getDiff(),
 			$suggestion->getOtherIndex(),
 			$suggestion->getYourIndex(),
-			TwoColConflictContext::isUsedAsBetaFeature()
+			$this->twoColContext->isUsedAsBetaFeature()
 		);
 	}
 

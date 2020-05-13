@@ -59,7 +59,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 		$stats->increment( 'TwoColConflict.copy.special.retrieved' );
 
-		$html = $this->getHeaderHintsHtml( TwoColConflictContext::isUsedAsBetaFeature() );
+		$html = $this->getHeaderHintsHtml( ( new TwoColConflictContext() )->isUsedAsBetaFeature() );
 		$html .= $this->getTextHeaderLabelHtml();
 		$html .= $this->getTextAreaHtml( $text );
 		$html .= $this->getFooterHtml();

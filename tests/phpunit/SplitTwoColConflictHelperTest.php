@@ -14,6 +14,7 @@ use OutputPage;
 use Title;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
+use TwoColConflict\TwoColConflictContext;
 use User;
 use WebRequest;
 
@@ -40,6 +41,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
+			$this->createMock( TwoColConflictContext::class ),
 			$this->createMock( ResolutionSuggester::class )
 		);
 
@@ -57,6 +59,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
+			$this->createMock( TwoColConflictContext::class ),
 			$this->createMock( ResolutionSuggester::class )
 		);
 		$helper->setTextboxes( '<YOURTEXT attribute="">', '<STOREDVERSION attribute="">' );
@@ -83,6 +86,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
+			$this->createMock( TwoColConflictContext::class ),
 			$this->createMock( ResolutionSuggester::class )
 		);
 

@@ -24,9 +24,9 @@ class TwoColConflictContext {
 	 * user has disabled the feature but has not dismissed the core hint
 	 * already.
 	 */
-	public static function shouldCoreHintBeShown( User $user ) {
+	public function shouldCoreHintBeShown( User $user ) {
 		return !$user->isAnon() &&
-			!self::isUsedAsBetaFeature() &&
+			!$this->isUsedAsBetaFeature() &&
 			!$user->getBoolOption( self::ENABLED_PREFERENCE ) &&
 			!$user->getBoolOption( self::HIDE_CORE_HINT_PREFERENCE );
 	}
@@ -39,7 +39,7 @@ class TwoColConflictContext {
 	 *   user and title.  The user may have opted out, or the title namespace
 	 *   may be blacklisted for this interface.
 	 */
-	public static function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
+	public function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
 		// T249817: Temporarily disabled on mobile
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' ) &&
 			MediaWikiServices::getInstance()->getService( 'MobileFrontend.Context' )
@@ -48,14 +48,14 @@ class TwoColConflictContext {
 			return false;
 		}
 
-		if ( self::isEligibleTalkPage( $title ) &&
-			!self::isTalkPageSuggesterEnabled()
+		if ( $this->isEligibleTalkPage( $title ) &&
+			!$this->isTalkPageSuggesterEnabled()
 		) {
 			// Temporary feature logic to completely disable on talk pages.
 			return false;
 		}
 
-		return self::hasUserEnabledFeature( $user );
+		return $this->hasUserEnabledFeature( $user );
 	}
 
 	/**
@@ -63,13 +63,13 @@ class TwoColConflictContext {
 	 * @return bool True if this article is appropriate for the talk page
 	 *   workflow, and the interface has been enabled by configuration.
 	 */
-	public static function shouldTalkPageSuggestionBeConsidered( Title $title ) : bool {
-		return self::isTalkPageSuggesterEnabled() &&
-			self::isEligibleTalkPage( $title );
+	public function shouldTalkPageSuggestionBeConsidered( Title $title ) : bool {
+		return $this->isTalkPageSuggesterEnabled() &&
+			$this->isEligibleTalkPage( $title );
 	}
 
-	private static function hasUserEnabledFeature( User $user ) : bool {
-		if ( self::isUsedAsBetaFeature() ) {
+	private function hasUserEnabledFeature( User $user ) : bool {
+		if ( $this->isUsedAsBetaFeature() ) {
 			return BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
 
@@ -80,17 +80,17 @@ class TwoColConflictContext {
 	 * @return bool True if TwoColConflict should be provided as a beta feature.
 	 *   False if it will be the default conflict workflow.
 	 */
-	public static function isUsedAsBetaFeature() : bool {
+	public function isUsedAsBetaFeature() : bool {
 		return MediaWikiServices::getInstance()->getMainConfig()
 				->get( 'TwoColConflictBetaFeature' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
 	}
 
-	private static function isEligibleTalkPage( Title $title ) : bool {
+	private function isEligibleTalkPage( Title $title ) : bool {
 		return $title->isTalkPage() || $title->inNamespace( NS_PROJECT );
 	}
 
-	private static function isTalkPageSuggesterEnabled() : bool {
+	private function isTalkPageSuggesterEnabled() : bool {
 		return MediaWikiServices::getInstance()->getMainConfig()
 			->get( 'TwoColConflictSuggestResolution' );
 	}

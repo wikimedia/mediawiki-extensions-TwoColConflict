@@ -32,8 +32,10 @@ class TwoColConflictHooks {
 		$context = $editPage->getContext();
 
 		// Skip out if the feature is disabled
-		$user = $context->getUser();
-		if ( !TwoColConflictContext::shouldTwoColConflictBeShown( $user, $context->getTitle() ) ) {
+		if ( !( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
+			$context->getUser(),
+			$context->getTitle()
+		) ) {
 			return;
 		}
 
@@ -48,6 +50,7 @@ class TwoColConflictHooks {
 				$submitButtonLabel,
 				$editPage->summary,
 				MediaWikiServices::getInstance()->getContentHandlerFactory(),
+				new TwoColConflictContext(),
 				new ResolutionSuggester(
 					$baseRevision,
 					$context->getWikiPage()->getContentHandler()->getDefaultFormat()
@@ -95,7 +98,7 @@ class TwoColConflictHooks {
 	) {
 		// TODO remove this hint when we're sure people are aware of the new feature
 		if ( $editPage->isConflict &&
-			TwoColConflictContext::shouldCoreHintBeShown( $outputPage->getUser() )
+			( new TwoColConflictContext() )->shouldCoreHintBeShown( $outputPage->getUser() )
 		) {
 			$outputPage->enableOOUI();
 			$outputPage->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
@@ -149,7 +152,7 @@ class TwoColConflictHooks {
 				'TwoColConflictConflict',
 				19950885,
 				[
-					'twoColConflictShown' => TwoColConflictContext::shouldTwoColConflictBeShown(
+					'twoColConflictShown' => ( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
 						$user,
 						$context->getTitle()
 					),
@@ -183,8 +186,10 @@ class TwoColConflictHooks {
 		&$tabindex
 	) {
 		$context = $editPage->getContext();
-		$user = $context->getUser();
-		if ( TwoColConflictContext::shouldTwoColConflictBeShown( $user, $context->getTitle() ) &&
+		if ( ( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
+				$context->getUser(),
+				$context->getTitle()
+			) &&
 			$editPage->isConflict === true
 		) {
 			unset( $buttons['diff'] );
@@ -202,7 +207,7 @@ class TwoColConflictHooks {
 	 * @param array[] &$prefs
 	 */
 	public static function onGetBetaFeaturePreferences( $user, array &$prefs ) {
-		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
+		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
 			$config = MediaWikiServices::getInstance()->getMainConfig();
 			$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 			$prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] = [
@@ -225,7 +230,7 @@ class TwoColConflictHooks {
 	 * @param array[] &$preferences
 	 */
 	public static function onGetPreferences( $user, array &$preferences ) {
-		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
+		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
 			return;
 		}
 
@@ -257,7 +262,7 @@ class TwoColConflictHooks {
 	 * @param array &$options
 	 */
 	public static function onUserLoadOptions( User $user, array &$options ) {
-		if ( TwoColConflictContext::isUsedAsBetaFeature() ) {
+		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
 			return;
 		}
 

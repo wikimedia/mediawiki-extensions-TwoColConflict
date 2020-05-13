@@ -21,14 +21,15 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testIsUsedAsBetaFeature() {
-		$this->assertFalse( TwoColConflictContext::isUsedAsBetaFeature() );
+		$twoColContext = new TwoColConflictContext();
+		$this->assertFalse( $twoColContext->isUsedAsBetaFeature() );
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
 			$this->markTestSkipped( 'BetaFeatures not loaded' );
 		}
 
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
-		$this->assertTrue( TwoColConflictContext::isUsedAsBetaFeature() );
+		$this->assertTrue( $twoColContext->isUsedAsBetaFeature() );
 	}
 
 	/**
@@ -50,7 +51,8 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
 		] );
 
-		$result = TwoColConflictContext::shouldTwoColConflictBeShown( $user, $title );
+		$twoColContext = new TwoColConflictContext();
+		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
 		$this->assertSame( $expected, $result );
 	}
 
@@ -135,7 +137,8 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
 		] );
 
-		$result = TwoColConflictContext::shouldTwoColConflictBeShown( $user, $title );
+		$twoColContext = new TwoColConflictContext();
+		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
 		$this->assertSame( $expected, $result );
 	}
 
@@ -174,9 +177,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 
 		$user = $this->createUser( $editingPreference, $betaPreference );
-		$contextStatic = TestingAccessWrapper::newFromClass( TwoColConflictContext::class );
+		/** @var TwoColConflictContext $twoColContext */
+		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext() );
 
-		$result = $contextStatic->hasUserEnabledFeature( $user );
+		$result = $twoColContext->hasUserEnabledFeature( $user );
 		$this->assertSame( $expectedResult, $result );
 	}
 
@@ -250,7 +254,8 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		] );
 		$user->method( 'isAnon' )->willReturn( $isAnon );
 
-		$result = TwoColConflictContext::shouldCoreHintBeShown( $user );
+		$twoColContext = new TwoColConflictContext();
+		$result = $twoColContext->shouldCoreHintBeShown( $user );
 		$this->assertSame( $expectedResult, $result );
 	}
 
