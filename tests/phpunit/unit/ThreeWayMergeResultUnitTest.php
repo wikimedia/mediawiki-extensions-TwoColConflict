@@ -3,10 +3,10 @@
 namespace TwoColConflict\Tests;
 
 use MediaWikiUnitTestCase;
-use TwoColConflict\ThreeWayMergeResult;
+use TwoColConflict\Logging\ThreeWayMergeResult;
 
 /**
- * @covers \TwoColConflict\ThreeWayMergeResult
+ * @covers \TwoColConflict\Logging\ThreeWayMergeResult
  */
 class ThreeWayMergeResultUnitTest extends MediaWikiUnitTestCase {
 

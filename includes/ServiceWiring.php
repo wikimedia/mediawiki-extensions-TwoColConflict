@@ -3,6 +3,7 @@
 namespace TwoColConflict;
 
 use MediaWiki\MediaWikiServices;
+use TwoColConflict\Logging\ThreeWayMerge;
 
 return [
 

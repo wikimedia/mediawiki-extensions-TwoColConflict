@@ -1,12 +1,13 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Html;
 
 use Html;
 use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\IconWidget;
 use OOUI\MessageWidget;
+use TwoColConflict\SplitConflictUtils;
 
 class CoreUiHintHtml {
 

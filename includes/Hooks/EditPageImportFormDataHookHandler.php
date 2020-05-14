@@ -1,8 +1,11 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Hooks;
 
 use EditPage;
+use TwoColConflict\ConflictFormValidator;
+use TwoColConflict\SplitConflictMerger;
+use TwoColConflict\TwoColConflictContext;
 use WebRequest;
 
 class EditPageImportFormDataHookHandler {

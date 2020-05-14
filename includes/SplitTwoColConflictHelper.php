@@ -9,6 +9,12 @@ use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
 use ParserOptions;
 use Title;
+use TwoColConflict\Html\HtmlEditableTextComponent;
+use TwoColConflict\Html\HtmlSplitConflictHeader;
+use TwoColConflict\Html\HtmlSplitConflictView;
+use TwoColConflict\Html\HtmlTalkPageResolutionView;
+use TwoColConflict\TalkPageConflict\ResolutionSuggester;
+use TwoColConflict\TalkPageConflict\TalkPageResolution;
 use User;
 use WikitextContent;
 

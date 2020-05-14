@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Logging;
 
 /**
  * Provides a testable wrapper for MediaWiki core diff3 services.

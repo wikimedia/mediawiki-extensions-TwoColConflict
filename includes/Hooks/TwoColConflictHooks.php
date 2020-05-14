@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Hooks;
 
 use EditPage;
 use ExtensionRegistry;
@@ -8,6 +8,12 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use OOUI\ButtonInputWidget;
 use OutputPage;
+use TwoColConflict\ConflictFormValidator;
+use TwoColConflict\Html\CoreUiHintHtml;
+use TwoColConflict\Logging\ThreeWayMerge;
+use TwoColConflict\SplitTwoColConflictHelper;
+use TwoColConflict\TalkPageConflict\ResolutionSuggester;
+use TwoColConflict\TwoColConflictContext;
 use User;
 
 /**

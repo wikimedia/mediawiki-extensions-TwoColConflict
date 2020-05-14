@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Html;
 
 use Html;
 use MessageLocalizer;

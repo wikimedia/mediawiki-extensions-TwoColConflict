@@ -3,12 +3,12 @@
 namespace TwoColConflict\Tests;
 
 use EditPage;
-use TwoColConflict\EditPageImportFormDataHookHandler;
+use TwoColConflict\Hooks\EditPageImportFormDataHookHandler;
 use WebRequest;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \TwoColConflict\EditPageImportFormDataHookHandler
+ * @covers \TwoColConflict\Hooks\EditPageImportFormDataHookHandler
  *
  * @license GPL-2.0-or-later
  */

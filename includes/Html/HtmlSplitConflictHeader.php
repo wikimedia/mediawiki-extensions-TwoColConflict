@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Html;
 
 use Html;
 use Language;
@@ -12,6 +12,7 @@ use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use Title;
+use TwoColConflict\SplitConflictUtils;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 use WikiPage;

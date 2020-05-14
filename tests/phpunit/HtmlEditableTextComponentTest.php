@@ -8,11 +8,11 @@ use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use TwoColConflict\HtmlEditableTextComponent;
+use TwoColConflict\Html\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \TwoColConflict\HtmlEditableTextComponent
+ * @covers \TwoColConflict\Html\HtmlEditableTextComponent
  */
 class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 

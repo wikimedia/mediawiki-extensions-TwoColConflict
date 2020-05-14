@@ -14,13 +14,13 @@ use OOUI\Theme;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
 use Title;
+use TwoColConflict\Hooks\TwoColConflictHooks;
 use TwoColConflict\TwoColConflictContext;
-use TwoColConflict\TwoColConflictHooks;
 use User;
 use WebRequest;
 
 /**
- * @covers \TwoColConflict\TwoColConflictHooks
+ * @covers \TwoColConflict\Hooks\TwoColConflictHooks
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

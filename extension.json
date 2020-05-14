@@ -37,16 +37,16 @@
 		"TwoColConflict\\": "includes/"
 	},
 	"Hooks": {
-		"GetBetaFeaturePreferences": "TwoColConflict\\TwoColConflictHooks::onGetBetaFeaturePreferences",
-		"GetPreferences": "TwoColConflict\\TwoColConflictHooks::onGetPreferences",
-		"UserGetDefaultOptions": "TwoColConflict\\TwoColConflictHooks::onUserGetDefaultOptions",
-		"UserLoadOptions": "TwoColConflict\\TwoColConflictHooks::onUserLoadOptions",
-		"AlternateEdit": "TwoColConflict\\TwoColConflictHooks::onAlternateEdit",
-		"EditPage::importFormData": "TwoColConflict\\EditPageImportFormDataHookHandler::onEditPageImportFormData",
-		"EditPageBeforeConflictDiff": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
-		"EditPageBeforeEditButtons": "TwoColConflict\\TwoColConflictHooks::onEditPageBeforeEditButtons",
-		"EditPage::showEditForm:initial": "TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormInitial",
-		"EditPage::showEditForm:fields": "TwoColConflict\\TwoColConflictHooks::onEditPageShowEditFormFields"
+		"GetBetaFeaturePreferences": "TwoColConflict\\Hooks\\TwoColConflictHooks::onGetBetaFeaturePreferences",
+		"GetPreferences": "TwoColConflict\\Hooks\\TwoColConflictHooks::onGetPreferences",
+		"UserGetDefaultOptions": "TwoColConflict\\Hooks\\TwoColConflictHooks::onUserGetDefaultOptions",
+		"UserLoadOptions": "TwoColConflict\\Hooks\\TwoColConflictHooks::onUserLoadOptions",
+		"AlternateEdit": "TwoColConflict\\Hooks\\TwoColConflictHooks::onAlternateEdit",
+		"EditPage::importFormData": "TwoColConflict\\Hooks\\EditPageImportFormDataHookHandler::onEditPageImportFormData",
+		"EditPageBeforeConflictDiff": "TwoColConflict\\Hooks\\TwoColConflictHooks::onEditPageBeforeConflictDiff",
+		"EditPageBeforeEditButtons": "TwoColConflict\\Hooks\\TwoColConflictHooks::onEditPageBeforeEditButtons",
+		"EditPage::showEditForm:initial": "TwoColConflict\\Hooks\\TwoColConflictHooks::onEditPageShowEditFormInitial",
+		"EditPage::showEditForm:fields": "TwoColConflict\\Hooks\\TwoColConflictHooks::onEditPageShowEditFormFields"
 	},
 	"MessagesDirs": {
 		"TwoColConflict": [

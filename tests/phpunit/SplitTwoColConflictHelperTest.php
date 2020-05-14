@@ -11,8 +11,8 @@ use OOUI\BlankTheme;
 use OOUI\Theme;
 use OutputPage;
 use Title;
-use TwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflictHelper;
+use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use User;
 use WebRequest;
 

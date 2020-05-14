@@ -8,11 +8,11 @@ use MediaWikiTestCase;
 use Message;
 use MessageLocalizer;
 use Title;
-use TwoColConflict\HtmlSplitConflictHeader;
+use TwoColConflict\Html\HtmlSplitConflictHeader;
 use User;
 
 /**
- * @covers \TwoColConflict\HtmlSplitConflictHeader
+ * @covers \TwoColConflict\Html\HtmlSplitConflictHeader
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

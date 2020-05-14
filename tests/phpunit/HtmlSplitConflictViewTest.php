@@ -8,11 +8,11 @@ use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
-use TwoColConflict\HtmlEditableTextComponent;
-use TwoColConflict\HtmlSplitConflictView;
+use TwoColConflict\Html\HtmlEditableTextComponent;
+use TwoColConflict\Html\HtmlSplitConflictView;
 
 /**
- * @covers \TwoColConflict\HtmlSplitConflictView
+ * @covers \TwoColConflict\Html\HtmlSplitConflictView
  *
  * Tests to make sure essential elements are there and put in the right order.
  *
@@ -42,7 +42,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 
 	/**
 	 * @dataProvider provideIntegrationTests
-	 * @covers \TwoColConflict\HtmlSplitConflictView::getHtml
+	 * @covers \TwoColConflict\Html\HtmlSplitConflictView::getHtml
 	 */
 	public function testIntegration(
 		string $storedText,

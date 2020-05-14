@@ -5,12 +5,12 @@ namespace TwoColConflict\Tests;
 use Content;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiUnitTestCase;
-use TwoColConflict\ResolutionSuggester;
-use TwoColConflict\TalkPageResolution;
+use TwoColConflict\TalkPageConflict\ResolutionSuggester;
+use TwoColConflict\TalkPageConflict\TalkPageResolution;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \TwoColConflict\ResolutionSuggester
+ * @covers \TwoColConflict\TalkPageConflict\ResolutionSuggester
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

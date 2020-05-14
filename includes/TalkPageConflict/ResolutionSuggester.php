@@ -1,9 +1,11 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\TalkPageConflict;
 
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use TwoColConflict\AnnotatedHtmlDiffFormatter;
+use TwoColConflict\SplitConflictUtils;
 
 /**
  * @license GPL-2.0-or-later

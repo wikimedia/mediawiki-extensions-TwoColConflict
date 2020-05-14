@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict;
+namespace TwoColConflict\Html;
 
 use Html;
 use MessageLocalizer;
@@ -10,6 +10,7 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use OOUI\RadioInputWidget;
+use TwoColConflict\SplitConflictUtils;
 
 /**
  * TODO: Clean up, maybe CSS class names should match change type, and "split" replaced with
