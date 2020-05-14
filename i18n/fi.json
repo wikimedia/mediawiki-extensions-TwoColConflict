@@ -15,8 +15,5 @@
 	"twocolconflict-desc": "Näyttää rinnakkaisen muokkaustenyhdistämisnäytön päällekkäisten muokkausten ratkaisemiseksi.",
 	"twocolconflict-beta-feature-message": "Kaksisarakkeinen muokkausristiriita",
 	"twocolconflict-beta-feature-description": "Näytä muokkausristiriitanäkymä käyttäen kehittyneempää kaksisarakkeista näkymää.",
-	"twocolconflict-test-page-title": "Muokkausristiriita: Simulaatio",
-	"twocolconflict-test-title-submit": "Näytä muokkaussivu",
-	"twocolconflict-test-text-submit": "Luo muokkausristiriita",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Ratkaise ongelma"
 }

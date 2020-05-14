@@ -6,8 +6,5 @@
 		]
 	},
 	"twocolconflict": "TwoColConflict",
-	"twocolconflict-beta-feature-message": "द्वि-स्तंभी संपादन विसंवाद",
-	"twocolconflict-test-needsbeta": "हे विशेष पान वापरण्यास आपण 'द्वि-स्तंभी संपादन विसंवाद'('Two column edit conflict')चे बीटा फिचर आपल्या पसंतीक्रमात सक्षम करा.",
-	"twocolconflict-test-title-submit": "संपादन पान दाखवा",
-	"twocolconflict-test-title-not-existing": "अशा शीर्षकाचे कोणतेही पान नाही."
+	"twocolconflict-beta-feature-message": "द्वि-स्तंभी संपादन विसंवाद"
 }

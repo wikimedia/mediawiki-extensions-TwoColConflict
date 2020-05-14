@@ -6,9 +6,5 @@
 		]
 	},
 	"twocolconflict-beta-feature-message": "کێشەی دەستکاریی دوو ڕیز",
-	"twocolconflict-beta-feature-description": "ڕووکاری کێشەی دەستکاری بە دوو ڕیزی پێشکەوتوو پیشان بدە.",
-	"twocolconflict-test-needsbeta": "دەبێت ھەڵبژاردەی بێتا کارا بکەیت بۆ بینینی ئەم پەڕەیە.",
-	"twocolconflict-test-title-submit": "پیشاندانی پەڕەی دەستکاری",
-	"twocolconflict-test-title-not-existing": "ھیچ پەڕەیەک بەم ناوە نییە.",
-	"twocolconflict-test-no-direct-editing": "ناتواندرێت ئەم پەڕەیە ڕاستەوخۆ دەستکاریی بکرێت."
+	"twocolconflict-beta-feature-description": "ڕووکاری کێشەی دەستکاری بە دوو ڕیزی پێشکەوتوو پیشان بدە."
 }
