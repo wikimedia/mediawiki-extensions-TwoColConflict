@@ -10,6 +10,7 @@ use OutputPage;
 use ParserOptions;
 use Title;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
+use TwoColConflict\TwoColConflictContext;
 use User;
 use WikitextContent;
 
@@ -202,7 +203,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$this->newEditSummary,
 			$language,
 			$this->out->getContext()
-		) )->getHtml();
+		) )->getHtml( TwoColConflictContext::isUsedAsBetaFeature() );
 		$out .= ( new HtmlSplitConflictView(
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),

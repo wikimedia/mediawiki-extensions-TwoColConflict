@@ -12,7 +12,6 @@ use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use Title;
-use TwoColConflict\TwoColConflictContext;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 use WikiPage;
@@ -98,11 +97,14 @@ class HtmlSplitConflictHeader {
 	}
 
 	/**
+	 * @param bool $isUsedAsBetaFeature
+	 *
 	 * @return string HTML
 	 */
-	public function getHtml() : string {
-		$hintMsg = TwoColConflictContext::isUsedAsBetaFeature() ?
-			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
+	public function getHtml( bool $isUsedAsBetaFeature = false ) : string {
+		$hintMsg = $isUsedAsBetaFeature
+			? 'twocolconflict-split-header-hint-beta'
+			: 'twocolconflict-split-header-hint';
 
 		$out = $this->getWarningMessage( $hintMsg );
 		$out .= Html::rawElement(
