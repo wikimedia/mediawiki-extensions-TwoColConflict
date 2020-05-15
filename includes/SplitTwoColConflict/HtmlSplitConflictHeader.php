@@ -104,7 +104,9 @@ class HtmlSplitConflictHeader {
 		$hintMsg = TwoColConflictContext::isUsedAsBetaFeature() ?
 			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
 
-		$out = $this->getWarningMessage( $hintMsg );
+		$out = $this->getMessageBox(
+			'twocolconflict-split-header-overview', 'error', 'mw-twocolconflict-overview' );
+		$out .= $this->getMessageBox( $hintMsg, 'notice' );
 		$out .= Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-header' ],
@@ -207,17 +209,14 @@ class HtmlSplitConflictHeader {
 		return $this->messageLocalizer->msg( 'just-now' )->text();
 	}
 
-	/**
-	 * @param string $messageKey
-	 *
-	 * @return string HTML
-	 */
-	private function getWarningMessage( string $messageKey ) : string {
+	private function getMessageBox( string $messageKey, string $type, $classes = [] ) : string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
 		return ( new MessageWidget( [
 			'label' => new HtmlSnippet( SplitConflictUtils::addTargetBlankToLinks( $html ) ),
-			'type' => 'notice',
-		] ) )->toString();
+			'type' => $type,
+		] ) )
+			->addClasses( array_merge( [ 'mw-twocolconflict-messageWidget' ], (array)$classes ) )
+			->toString();
 	}
 
 }

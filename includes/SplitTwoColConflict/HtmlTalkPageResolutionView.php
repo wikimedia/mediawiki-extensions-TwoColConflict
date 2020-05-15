@@ -7,6 +7,8 @@ use MessageLocalizer;
 use OOUI\ButtonWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\MessageWidget;
 use OOUI\RadioInputWidget;
 
 /**
@@ -49,7 +51,8 @@ class HtmlTalkPageResolutionView {
 		int $otherIndex,
 		int $yourIndex
 	) : string {
-		$out = '';
+		$out = $this->getMessageBox(
+			'twocolconflict-talk-header-overview', 'error', 'mw-twocolconflict-overview' );
 
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
 			$text = $changeSet['copytext'] ?? $changeSet['newtext'];
@@ -193,6 +196,18 @@ class HtmlTalkPageResolutionView {
 				htmlspecialchars( $rawText ), $rawText, $rowNum, 'copy', true )
 		);
 		return $this->wrapRow( $out );
+	}
+
+	private function getMessageBox( string $messageKey, string $type, $classes = [] ) : string {
+		$html = $this->messageLocalizer->msg( $messageKey )->parse();
+		// Force feedback links to be opened in a new tab, and not lose the edit
+		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
+		return ( new MessageWidget( [
+			'label' => new HtmlSnippet( $html ),
+			'type' => $type,
+		] ) )
+			->addClasses( array_merge( [ 'mw-twocolconflict-messageWidget' ], (array)$classes ) )
+			->toString();
 	}
 
 }

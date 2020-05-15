@@ -247,6 +247,12 @@
 	}
 }
 
+.mw-twocolconflict-messageWidget.oo-ui-messageWidget:enabled {
+	& + & {
+		margin-top: 16px;
+	}
+}
+
 .client-nojs {
 	.mw-twocolconflict-split-current-version-header span,
 	.mw-twocolconflict-split-your-version-header span {
@@ -260,6 +266,12 @@
 
 	/* stylelint-disable-next-line selector-max-id */
 	#wpPreviewWidget {
+		display: none;
+	}
+}
+
+.client-js {
+	.mw-twocolconflict-overview {
 		display: none;
 	}
 }
