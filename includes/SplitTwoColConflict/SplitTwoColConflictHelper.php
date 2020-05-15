@@ -148,8 +148,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$yourLines
 		);
 		if ( $suggestion ) {
-			// TODO: Dirty side-effect should be pushed up and encapsulated.
-			$this->out->addModuleStyles( 'ext.TwoColConflict.TalkCss' );
 			$conflictView = $this->buildResolutionSuggestionView( $suggestion );
 		} else {
 			$conflictView = $this->buildEditConflictView( $storedLines, $yourLines );
