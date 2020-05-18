@@ -66,6 +66,7 @@ class TwoColConflictHooks {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::showEditForm:initial
+	 * @codeCoverageIgnore this is only for logging, not a user-facing feature
 	 *
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
@@ -102,6 +103,7 @@ class TwoColConflictHooks {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeConflictDiff
+	 * @codeCoverageIgnore this is only for logging, not a user-facing feature
 	 *
 	 * @param EditPage $editPage
 	 * @param OutputPage $outputPage
