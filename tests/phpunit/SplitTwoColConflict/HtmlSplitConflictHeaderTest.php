@@ -30,7 +30,6 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$this->otherUser = $this->getTestUser()->getUser();
 	}
 
