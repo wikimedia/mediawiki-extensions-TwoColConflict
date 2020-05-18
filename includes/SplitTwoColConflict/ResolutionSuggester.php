@@ -38,7 +38,7 @@ class ResolutionSuggester {
 	 * @param array $b Second block
 	 * @return bool True if the blocks are both copy blocks, with identical content.
 	 */
-	private static function isIdenticalCopyBlock( array $a, array $b ) : bool {
+	private function isIdenticalCopyBlock( array $a, array $b ) : bool {
 		return $a['action'] === 'copy' && $a === $b;
 	}
 
@@ -47,7 +47,7 @@ class ResolutionSuggester {
 	 * @param array $b Second block
 	 * @return bool True if the blocks are both add blocks, at the same line
 	 */
-	private static function isConflictingAddBlock( array $a, array $b ) {
+	private function isConflictingAddBlock( array $a, array $b ) {
 		return $a['action'] === 'add' && $b['action'] === 'add';
 	}
 
@@ -88,10 +88,10 @@ class ResolutionSuggester {
 		// Copy over identical blocks, and splice the two alternatives.
 		foreach ( $diffYourLines as $index => $yourLine ) {
 			$otherLine = $diffStoredLines[$index];
-			if ( self::isIdenticalCopyBlock( $yourLine, $otherLine ) ) {
+			if ( $this->isIdenticalCopyBlock( $yourLine, $otherLine ) ) {
 				// Copy
 				$diff[] = $otherLine;
-			} elseif ( self::isConflictingAddBlock( $yourLine, $otherLine )
+			} elseif ( $this->isConflictingAddBlock( $yourLine, $otherLine )
 				&& $spliceIndex === null
 			) {
 				// Splice alternatives
