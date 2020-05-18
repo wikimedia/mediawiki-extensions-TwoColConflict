@@ -18,6 +18,7 @@
 	"twocolconflict-preference-enabled": "Włącz [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|dwukolumnowe wyświetlanie konfliktu edycji]] aby rozwiązywać konflikty",
 	"twocolconflict-split-header-hint": "Możesz pomóc ulepszać tę funkcję jeśli zostawisz feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
 	"twocolconflict-split-header-hint-beta": "Dziękujemy za skorzystanie z tej funkcji eksperymentalnej. Możesz pomóc w dalszym jej ulepszaniu, jeśli wystawisz opinię [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View na tej stronie].",
+	"twocolconflict-split-header-overview": "Podczas wprowadzania zmian ktoś inny również edytował stronę i zapisał ją przed Tobą. Sprawdź proszę obie wersje i połącz je ze sobą. Tylko tekst w zaznaczonych polach zostanie zapisany gdy klikniesz „{{int:publishpage}}”.",
 	"twocolconflict-split-your-version-header": "Twoja wersja",
 	"twocolconflict-split-current-version-header": "Najnowsza wersja utworzona $1",
 	"twocolconflict-split-not-saved-at": "Jeszcze nie opublikowano",
@@ -46,9 +47,13 @@
 	"twocolconflict-split-selected-version-tooltip": "Wybrana wersja",
 	"twocolconflict-split-unselected-version-tooltip": "Kliknij, aby wybrać tę wersję",
 	"twocolconflict-split-help-tooltip": "Pokaż pomoc",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Kolidujące posty",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Niestety ktoś zapostował wiadomość w tym samym czasie co ty. Sprawdź sproszę komentarze na następnej stronie. Jeśli to konieczne, zmodyfikuj swój i zmień końcową kolejność.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Rozwiąż problem",
+	"twocolconflict-talk-header-overview": "Ktoś inny zapostował wiadomość w tym samym czasie co ty. Sprawdź poniższe komentarze i wybierz kolejność w której mają zostać zapisane. W razie konieczności możesz zmienić swój tekst.",
 	"twocolconflict-talk-your": "Twój wpis",
 	"twocolconflict-talk-conflicting": "Konfliktujący wpis",
+	"twocolconflict-talk-reorder-prompt": "Pozycja Twojego wpisu wobec kolidującego wpisu:",
 	"twocolconflict-talk-same-order": "Pozostaw z tyłu",
 	"twocolconflict-talk-reverse-order": "Przesuń naprzód"
 }
