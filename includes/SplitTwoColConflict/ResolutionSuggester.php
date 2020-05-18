@@ -4,9 +4,7 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
-use Title;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
-use TwoColConflict\TwoColConflictContext;
 
 /**
  * @license GPL-2.0-or-later
@@ -52,20 +50,14 @@ class ResolutionSuggester {
 	}
 
 	/**
-	 * @param Title $title
 	 * @param string[] $storedLines
 	 * @param string[] $yourLines
 	 * @return TalkPageResolution|null
 	 */
 	public function getResolutionSuggestion(
-		Title $title,
 		array $storedLines,
 		array $yourLines
 	) : ?TalkPageResolution {
-		if ( !TwoColConflictContext::shouldTalkPageSuggestionBeConsidered( $title ) ) {
-			return null;
-		}
-
 		$baseLines = $this->getBaseRevisionLines();
 
 		$formatter = new AnnotatedHtmlDiffFormatter();

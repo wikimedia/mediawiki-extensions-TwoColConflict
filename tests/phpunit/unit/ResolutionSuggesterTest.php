@@ -1,11 +1,10 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
 use Content;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWikiIntegrationTestCase;
-use Title;
+use MediaWikiUnitTestCase;
 use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
 use TwoColConflict\SplitTwoColConflict\TalkPageResolution;
 use Wikimedia\TestingAccessWrapper;
@@ -16,15 +15,7 @@ use Wikimedia\TestingAccessWrapper;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
-
-	protected function setUp() : void {
-		parent::setUp();
-
-		$this->setMwGlobals( [
-			'wgTwoColConflictSuggestResolution' => true,
-		] );
-	}
+class ResolutionSuggesterTest extends MediaWikiUnitTestCase {
 
 	public function provideSuggestion() {
 		return [
@@ -314,15 +305,11 @@ class ResolutionSuggesterTest extends MediaWikiIntegrationTestCase {
 		string $stored,
 		?TalkPageResolution $expectedOutput
 	) {
-		$title = $this->createMock( Title::class );
-		$title->method( 'isTalkPage' )->willReturn( true );
-
 		$suggester = $this->createResolutionSuggester( $base );
 
 		$this->assertEquals(
 			$expectedOutput,
 			$suggester->getResolutionSuggestion(
-				$title,
 				explode( "\n", $stored ),
 				explode( "\n", $your )
 			)
