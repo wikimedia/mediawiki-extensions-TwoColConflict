@@ -3,8 +3,9 @@
 namespace TwoColConflict;
 
 use BetaFeatures;
+use Config;
 use ExtensionRegistry;
-use MediaWiki\MediaWikiServices;
+use MobileContext;
 use Title;
 use User;
 
@@ -16,6 +17,36 @@ class TwoColConflictContext {
 	public const BETA_PREFERENCE_NAME = 'twocolconflict';
 	public const ENABLED_PREFERENCE = 'twocolconflict-enabled';
 	public const HIDE_CORE_HINT_PREFERENCE = 'userjs-twocolconflict-hide-core-hint';
+
+	/**
+	 * @var Config
+	 */
+	private $config;
+
+	/**
+	 * @var ExtensionRegistry
+	 */
+	private $extensionRegistry;
+
+	/**
+	 * @var MobileContext|null
+	 */
+	private $mobileContext;
+
+	/**
+	 * @param Config $config
+	 * @param ExtensionRegistry $extensionRegistry
+	 * @param MobileContext|null $mobileContext
+	 */
+	public function __construct(
+		Config $config,
+		ExtensionRegistry $extensionRegistry,
+		MobileContext $mobileContext = null
+	) {
+		$this->config = $config;
+		$this->extensionRegistry = $extensionRegistry;
+		$this->mobileContext = $mobileContext;
+	}
 
 	/**
 	 * @param User $user
@@ -41,10 +72,7 @@ class TwoColConflictContext {
 	 */
 	public function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
 		// T249817: Temporarily disabled on mobile
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' ) &&
-			MediaWikiServices::getInstance()->getService( 'MobileFrontend.Context' )
-				->shouldDisplayMobileView()
-		) {
+		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			return false;
 		}
 
@@ -81,9 +109,8 @@ class TwoColConflictContext {
 	 *   False if it will be the default conflict workflow.
 	 */
 	public function isUsedAsBetaFeature() : bool {
-		return MediaWikiServices::getInstance()->getMainConfig()
-				->get( 'TwoColConflictBetaFeature' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' );
+		return $this->config->get( 'TwoColConflictBetaFeature' ) &&
+			$this->extensionRegistry->isLoaded( 'BetaFeatures' );
 	}
 
 	private function isEligibleTalkPage( Title $title ) : bool {
@@ -91,8 +118,7 @@ class TwoColConflictContext {
 	}
 
 	private function isTalkPageSuggesterEnabled() : bool {
-		return MediaWikiServices::getInstance()->getMainConfig()
-			->get( 'TwoColConflictSuggestResolution' );
+		return $this->config->get( 'TwoColConflictSuggestResolution' );
 	}
 
 }

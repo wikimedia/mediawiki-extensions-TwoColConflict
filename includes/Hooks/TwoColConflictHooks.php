@@ -24,15 +24,35 @@ use User;
 class TwoColConflictHooks {
 
 	/**
+	 * @var TwoColConflictContext
+	 */
+	private $twoColContext;
+
+	private static function newFromGlobalState() {
+		return new self( MediaWikiServices::getInstance()->getService( 'TwoColConflictContext' ) );
+	}
+
+	private function __construct( TwoColConflictContext $twoColContext ) {
+		$this->twoColContext = $twoColContext;
+	}
+
+	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/AlternateEdit
 	 *
 	 * @param EditPage $editPage
 	 */
 	public static function onAlternateEdit( EditPage $editPage ) {
+		self::newFromGlobalState()->doAlternateEdit( $editPage );
+	}
+
+	/**
+	 * @param EditPage $editPage
+	 */
+	private function doAlternateEdit( EditPage $editPage ) {
 		$context = $editPage->getContext();
 
 		// Skip out if the feature is disabled
-		if ( !( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
+		if ( !$this->twoColContext->shouldTwoColConflictBeShown(
 			$context->getUser(),
 			$context->getTitle()
 		) ) {
@@ -50,7 +70,7 @@ class TwoColConflictHooks {
 				$submitButtonLabel,
 				$editPage->summary,
 				MediaWikiServices::getInstance()->getContentHandlerFactory(),
-				new TwoColConflictContext(),
+				$this->twoColContext,
 				new ResolutionSuggester(
 					$baseRevision,
 					$context->getWikiPage()->getContentHandler()->getDefaultFormat()
@@ -96,9 +116,17 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
+		self::newFromGlobalState()->doEditPageShowEditFormFields( $editPage, $outputPage );
+	}
+
+	/**
+	 * @param EditPage $editPage
+	 * @param OutputPage $outputPage
+	 */
+	public function doEditPageShowEditFormFields( EditPage $editPage, OutputPage $outputPage ) {
 		// TODO remove this hint when we're sure people are aware of the new feature
 		if ( $editPage->isConflict &&
-			( new TwoColConflictContext() )->shouldCoreHintBeShown( $outputPage->getUser() )
+			$this->twoColContext->shouldCoreHintBeShown( $outputPage->getUser() )
 		) {
 			$outputPage->enableOOUI();
 			$outputPage->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
@@ -118,6 +146,14 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
+		self::newFromGlobalState()->doEditPageBeforeConflictDiff( $editPage, $outputPage );
+	}
+
+	/**
+	 * @param EditPage $editPage
+	 * @param OutputPage $outputPage
+	 */
+	public function doEditPageBeforeConflictDiff( EditPage $editPage, OutputPage $outputPage ) {
 		$context = $editPage->getContext();
 		$request = $context->getRequest();
 		if ( $context->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
@@ -152,7 +188,7 @@ class TwoColConflictHooks {
 				'TwoColConflictConflict',
 				19950885,
 				[
-					'twoColConflictShown' => ( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
+					'twoColConflictShown' => $this->twoColContext->shouldTwoColConflictBeShown(
 						$user,
 						$context->getTitle()
 					),
@@ -185,8 +221,16 @@ class TwoColConflictHooks {
 		array &$buttons,
 		&$tabindex
 	) {
+		self::newFromGlobalState()->doEditPageBeforeEditButtons( $editPage, $buttons );
+	}
+
+	/**
+	 * @param EditPage $editPage
+	 * @param ButtonInputWidget[] &$buttons
+	 */
+	public function doEditPageBeforeEditButtons( EditPage $editPage, array &$buttons ) {
 		$context = $editPage->getContext();
-		if ( ( new TwoColConflictContext() )->shouldTwoColConflictBeShown(
+		if ( $this->twoColContext->shouldTwoColConflictBeShown(
 				$context->getUser(),
 				$context->getTitle()
 			) &&
@@ -207,7 +251,14 @@ class TwoColConflictHooks {
 	 * @param array[] &$prefs
 	 */
 	public static function onGetBetaFeaturePreferences( $user, array &$prefs ) {
-		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
+		self::newFromGlobalState()->doGetBetaFeaturePreferences( $prefs );
+	}
+
+	/**
+	 * @param array[] &$prefs
+	 */
+	public function doGetBetaFeaturePreferences( array &$prefs ) {
+		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			$config = MediaWikiServices::getInstance()->getMainConfig();
 			$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 			$prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] = [
@@ -230,7 +281,14 @@ class TwoColConflictHooks {
 	 * @param array[] &$preferences
 	 */
 	public static function onGetPreferences( $user, array &$preferences ) {
-		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
+		self::newFromGlobalState()->doGetPreferences( $preferences );
+	}
+
+	/**
+	 * @param array[] &$preferences
+	 */
+	public function doGetPreferences( array &$preferences ) {
+		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			return;
 		}
 
@@ -251,6 +309,14 @@ class TwoColConflictHooks {
 	}
 
 	/**
+	 * @param User $user
+	 * @param array &$options
+	 */
+	public static function onUserLoadOptions( User $user, array &$options ) {
+		self::newFromGlobalState()->doUserLoadOptions( $options );
+	}
+
+	/**
 	 * If a user is opted-out of the beta feature, that will be copied over to the newer
 	 * preference.  This ensures that anyone who has opted-out continues to be so as we
 	 * promote wikis out of beta feature mode.
@@ -258,11 +324,10 @@ class TwoColConflictHooks {
 	 * This entire function can be removed once all users have been migrated away from
 	 * their beta feature preference.  See T250955.
 	 *
-	 * @param User $user
 	 * @param array &$options
 	 */
-	public static function onUserLoadOptions( User $user, array &$options ) {
-		if ( ( new TwoColConflictContext )->isUsedAsBetaFeature() ) {
+	public function doUserLoadOptions( array &$options ) {
+		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			return;
 		}
 
