@@ -155,7 +155,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		}
 
 		return Html::hidden( 'wpTextbox1', $this->storedversion ) .
-			Html::hidden( 'mw-twocolconflict-title', $this->title->getPrefixedText() ) .
 			$conflictView .
 			$this->buildRawTextsHiddenFields();
 	}
