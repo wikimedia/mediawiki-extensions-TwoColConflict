@@ -206,7 +206,7 @@ class HtmlTalkPageResolutionView {
 	private function getMessageBox( string $messageKey, string $type, $classes = [] ) : string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
 		// Force feedback links to be opened in a new tab, and not lose the edit
-		$html = preg_replace( '/<a\b(?![^<>]*\starget=)/', '<a target="_blank"', $html );
+		$html = SplitConflictUtils::addTargetBlankToLinks( $html );
 		return ( new MessageWidget( [
 			'label' => new HtmlSnippet( $html ),
 			'type' => $type,

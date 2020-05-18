@@ -129,6 +129,7 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		$localizer->method( 'msg' )->willReturnCallback( function ( $key ) {
 			$msg = $this->createMock( Message::class );
 			$msg->method( 'text' )->willReturn( "($key)" );
+			$msg->method( 'parse' )->willReturn( '' );
 			return $msg;
 		} );
 
