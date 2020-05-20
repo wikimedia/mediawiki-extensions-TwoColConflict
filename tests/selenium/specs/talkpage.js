@@ -1,7 +1,8 @@
 var assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
-	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
+	TalkConflictPage = require( '../pageobjects/talkconflict.page' ),
+	Util = require( 'wdio-mediawiki/Util' );
 
 describe( 'TwoColConflict', function () {
 	before( function () {
@@ -23,6 +24,18 @@ describe( 'TwoColConflict', function () {
 		assert( !EditConflictPage.getEditButton( 'copy' ).isExisting() );
 
 		assert( TalkConflictPage.isOtherBlockFirst() );
+	} );
+
+	it( 'shows the talk page screen on conflicts that also add new lines', function () {
+		EditConflictPage.createConflict(
+			'Line1\n\nLine2',
+			'Line1\nComment <span lang="de">A</span>\nLine2',
+			'Line1\nComment <span lang="en">B</span>\n\nLine2',
+			Util.getTestString( 'Talk:Test-conflict-' )
+		);
+		TalkConflictPage.talkRow.waitForDisplayed();
+
+		assert( !TalkConflictPage.splitColumn.isExisting() );
 	} );
 
 	it( 'swaps blocks when switch button is clicked', function () {
