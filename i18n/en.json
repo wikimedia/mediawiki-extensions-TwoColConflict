@@ -21,6 +21,7 @@
 	"twocolconflict-split-choose-version": "Please select a version",
 	"twocolconflict-split-other-version-chosen": "Other version",
 	"twocolconflict-split-your-version-chosen": "Your version",
+	"twocolconflict-split-select-all": "Select all",
 	"twocolconflict-split-tour-dialog-dot-message": "For helpful hints, click on the glowing blue dots.",
 	"twocolconflict-split-tour-dialog-header": "Merge conflicting versions",
 	"twocolconflict-split-tour-dialog-message": "Unfortunately, while you were editing, another user also edited the same page and published before you.\n\nDon't worry, your edits are not lost! Please review both versions and merge them together. If needed, you can edit the selected text. Only the text in the selected boxes will be saved when you click \"{{int:Savechanges}}.\"",

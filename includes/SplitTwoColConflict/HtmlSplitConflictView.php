@@ -4,7 +4,6 @@ namespace TwoColConflict\SplitTwoColConflict;
 
 use Html;
 use MessageLocalizer;
-use OOUI\RadioInputWidget;
 
 /**
  * @license GPL-2.0-or-later
@@ -58,7 +57,8 @@ class HtmlSplitConflictView {
 						$changeSet['oldtext'],
 						$currRowNum
 					) .
-					$this->buildSideSelector( $currRowNum ) .
+					( new HtmlSideSelectorComponent( $this->messageLocalizer ) )
+						->getRowHtml( $currRowNum ) .
 					$this->buildAddedLine(
 						$changeSet['newhtml'],
 						$changeSet['newtext'],
@@ -103,41 +103,4 @@ class HtmlSplitConflictView {
 			$this->editableTextComponent->getHtml( htmlspecialchars( $text ), $text, $rowNum, 'copy' )
 		);
 	}
-
-	private function buildSideSelectorLabel() : string {
-		return Html::rawElement(
-			'div',
-			[ 'class' => 'mw-twocolconflict-split-selector-label' ],
-			Html::element(
-				'span',
-				[],
-				$this->messageLocalizer->msg( 'twocolconflict-split-choose-version' )->text()
-			)
-		);
-	}
-
-	/**
-	 * @param int $rowNum Identifier for this line.
-	 *
-	 * @return string HTML
-	 */
-	private function buildSideSelector( int $rowNum ) : string {
-		return Html::openElement( 'div' ) .
-			$this->buildSideSelectorLabel() .
-			Html::openElement( 'div', [ 'class' => 'mw-twocolconflict-split-selection' ] ) .
-			Html::rawElement( 'div', [], new RadioInputWidget( [
-				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
-				'value' => 'other',
-				'tabIndex' => '1',
-			] ) ) .
-			Html::rawElement( 'div', [], new RadioInputWidget( [
-				'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
-				'value' => 'your',
-				'selected' => true,
-				'tabIndex' => '1',
-			] ) ) .
-			Html::closeElement( 'div' ) .
-			Html::closeElement( 'div' );
-	}
-
 }

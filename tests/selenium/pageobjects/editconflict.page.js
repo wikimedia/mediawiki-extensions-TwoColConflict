@@ -17,11 +17,11 @@ class EditConflictPage extends Page {
 	getDiffText( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
 	getColumn( column ) { return $( this.columnToClass( column ) ); }
 
-	get selectionLabel() { return $( '.mw-twocolconflict-split-selector-label span' ); }
-	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) span' ); }
-	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(1) input' ); }
-	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) span' ); }
-	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection div:nth-child(2) input' ); }
+	get selectionLabel() { return $( '//div[contains(@class,"mw-twocolconflict-split-selection-row")]/preceding-sibling::div/span' ); }
+	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) span' ); }
+	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) input' ); }
+	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) span' ); }
+	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) input' ); }
 	get resetConfirmationPopup() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content' ); }
 	get resetConfirmationButton() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
