@@ -16,7 +16,7 @@
 	"twocolconflict-split-current-version-header": "Последната версия от $1",
 	"twocolconflict-split-not-saved-at": "Все още не е публикувано",
 	"twocolconflict-split-choose-version": "Моля, изберете версия",
-	"twocolconflict-split-tour-dialog-header": "Разрешаване на конфликти при редактиране",
+	"twocolconflict-split-tour-dialog-header": "Сливане на конфликтни версии",
 	"twocolconflict-split-tour-dialog-btn-text": "Начало на сливането",
 	"twocolconflict-split-tour-popup-btn-text": "Добре, разбрах.",
 	"twocolconflict-split-tour-popup1-message": "Когато има разлики между текста Ви и този на другия потребител, двете версии се показват една до друга (Вашата в синята кутия дясно, а другата в жълтата в ляво).<br /><br />Когато няма разлики между двете версии, редовете се показват в сиви полета. Те могат да бъдат разгръщани и свивани и, ако е необходимо, редактирани.",
