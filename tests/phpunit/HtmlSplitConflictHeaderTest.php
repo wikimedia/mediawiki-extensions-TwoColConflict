@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWiki\Revision\RevisionRecord;
@@ -8,11 +8,11 @@ use MediaWikiTestCase;
 use Message;
 use MessageLocalizer;
 use Title;
-use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictHeader;
+use TwoColConflict\HtmlSplitConflictHeader;
 use User;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictHeader
+ * @covers \TwoColConflict\HtmlSplitConflictHeader
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

@@ -1,13 +1,13 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
-use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
+use TwoColConflict\ConflictFormValidator;
 use WebRequest;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\ConflictFormValidator
+ * @covers \TwoColConflict\ConflictFormValidator
  */
 class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 

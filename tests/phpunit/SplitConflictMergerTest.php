@@ -1,11 +1,11 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
-use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
+use TwoColConflict\SplitConflictMerger;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\SplitConflictMerger
+ * @covers \TwoColConflict\SplitConflictMerger
  *
  * @license GPL-2.0-or-later
  * @author Thiemo Kreuz

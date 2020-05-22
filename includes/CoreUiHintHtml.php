@@ -7,7 +7,6 @@ use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\IconWidget;
 use OOUI\MessageWidget;
-use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
 
 class CoreUiHintHtml {
 

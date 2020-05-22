@@ -1,10 +1,9 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict;
 
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
-use TwoColConflict\AnnotatedHtmlDiffFormatter;
 
 /**
  * @license GPL-2.0-or-later

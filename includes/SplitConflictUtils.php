@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict;
 
 /**
  * @license GPL-2.0-or-later

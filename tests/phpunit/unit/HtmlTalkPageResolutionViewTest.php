@@ -6,11 +6,11 @@ use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
-use TwoColConflict\SplitTwoColConflict\HtmlTalkPageResolutionView;
+use TwoColConflict\HtmlEditableTextComponent;
+use TwoColConflict\HtmlTalkPageResolutionView;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\HtmlTalkPageResolutionView
+ * @covers \TwoColConflict\HtmlTalkPageResolutionView
  */
 class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 

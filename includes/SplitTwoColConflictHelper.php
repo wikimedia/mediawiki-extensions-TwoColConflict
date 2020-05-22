@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict;
 
 use Html;
 use IBufferingStatsdDataFactory;
@@ -9,8 +9,6 @@ use MediaWiki\EditPage\TextConflictHelper;
 use OutputPage;
 use ParserOptions;
 use Title;
-use TwoColConflict\AnnotatedHtmlDiffFormatter;
-use TwoColConflict\TwoColConflictContext;
 use User;
 use WikitextContent;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
 use MediaWikiTestCase;
 use Message;
@@ -8,11 +8,11 @@ use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
-use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
-use TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView;
+use TwoColConflict\HtmlEditableTextComponent;
+use TwoColConflict\HtmlSplitConflictView;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView
+ * @covers \TwoColConflict\HtmlSplitConflictView
  *
  * Tests to make sure essential elements are there and put in the right order.
  *
@@ -42,7 +42,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 
 	/**
 	 * @dataProvider provideIntegrationTests
-	 * @covers \TwoColConflict\SplitTwoColConflict\HtmlSplitConflictView::getHtml
+	 * @covers \TwoColConflict\HtmlSplitConflictView::getHtml
 	 */
 	public function testIntegration(
 		string $storedText,

@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict;
 
 /**
  * Container for talk page use case resolution.  This is populated by the suggester, and can be

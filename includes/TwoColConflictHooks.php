@@ -8,9 +8,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use OOUI\ButtonInputWidget;
 use OutputPage;
-use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
-use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
-use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
 use User;
 
 /**

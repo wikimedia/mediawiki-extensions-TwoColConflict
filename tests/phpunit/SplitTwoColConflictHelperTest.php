@@ -11,13 +11,13 @@ use OOUI\BlankTheme;
 use OOUI\Theme;
 use OutputPage;
 use Title;
-use TwoColConflict\SplitTwoColConflict\ResolutionSuggester;
-use TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper;
+use TwoColConflict\ResolutionSuggester;
+use TwoColConflict\SplitTwoColConflictHelper;
 use User;
 use WebRequest;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\SplitTwoColConflictHelper
+ * @covers \TwoColConflict\SplitTwoColConflictHelper
  */
 class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 

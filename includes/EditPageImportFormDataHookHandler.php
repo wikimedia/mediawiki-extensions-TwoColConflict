@@ -3,8 +3,6 @@
 namespace TwoColConflict;
 
 use EditPage;
-use TwoColConflict\SplitTwoColConflict\ConflictFormValidator;
-use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 use WebRequest;
 
 class EditPageImportFormDataHookHandler {

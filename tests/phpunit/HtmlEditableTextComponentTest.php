@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWikiTestCase;
@@ -8,11 +8,11 @@ use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent;
+use TwoColConflict\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\HtmlEditableTextComponent
+ * @covers \TwoColConflict\HtmlEditableTextComponent
  */
 class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 

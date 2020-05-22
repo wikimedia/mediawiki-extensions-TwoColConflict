@@ -1,11 +1,11 @@
 <?php
 
-namespace TwoColConflict\Tests\SplitTwoColConflict;
+namespace TwoColConflict\Tests;
 
-use TwoColConflict\SplitTwoColConflict\SplitConflictUtils;
+use TwoColConflict\SplitConflictUtils;
 
 /**
- * @covers \TwoColConflict\SplitTwoColConflict\SplitConflictUtils
+ * @covers \TwoColConflict\SplitConflictUtils
  *
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>

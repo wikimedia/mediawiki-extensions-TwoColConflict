@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoColConflict\SplitTwoColConflict;
+namespace TwoColConflict;
 
 use WebRequest;
 
