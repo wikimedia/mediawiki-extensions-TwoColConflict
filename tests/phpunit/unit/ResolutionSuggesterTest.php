@@ -251,6 +251,114 @@ class ResolutionSuggesterTest extends MediaWikiUnitTestCase {
 					2
 				)
 			],
+			'bug T251251, change on the left, extra newlines at the bottom' => [
+				'base' => "Initial comment.\n\nLater comment.",
+				'your' => "Initial comment.\n:Conflicting response.\n\nLater comment.",
+				'stored' => "Initial comment.\n:Inline response.\nLater comment.",
+				'expected' => new TalkPageResolution(
+					[
+						[ 'action' => 'copy', 'copytext' => 'Initial comment.' ],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
+							'newtext' => ':Inline response.',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Conflicting response.</ins>',
+							'newtext' => ":Conflicting response.\n",
+						],
+						[ 'action' => 'copy', 'copytext' => 'Later comment.' ],
+					],
+					1,
+					2
+				)
+			],
+			'bug T251251, change on the right, extra newlines at the bottom' => [
+				'base' => "Initial comment.\n\nLater comment.",
+				'your' => "Initial comment.\n:Conflicting response.\nLater comment.",
+				'stored' => "Initial comment.\n:Inline response.\n\nLater comment.",
+				'expected' => new TalkPageResolution(
+					[
+						[ 'action' => 'copy', 'copytext' => 'Initial comment.' ],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
+							'newtext' => ":Inline response.\n",
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Conflicting response.</ins>',
+							'newtext' => ':Conflicting response.',
+						],
+						[ 'action' => 'copy', 'copytext' => 'Later comment.' ],
+					],
+					1,
+					2
+				)
+			],
+			'bug T251251, change on the left, extra newlines at the top' => [
+				'base' => "Initial comment.\n\nLater comment.",
+				'your' => "Initial comment.\n\n:Conflicting response.\nLater comment.",
+				'stored' => "Initial comment.\n:Inline response.\nLater comment.",
+				'expected' => new TalkPageResolution(
+					[
+						[ 'action' => 'copy', 'copytext' => 'Initial comment.' ],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
+							'newtext' => ':Inline response.',
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Conflicting response.</ins>',
+							'newtext' => "\n:Conflicting response.",
+						],
+						[ 'action' => 'copy', 'copytext' => 'Later comment.' ],
+					],
+					1,
+					2
+				)
+			],
+			'bug T251251, change on the right, extra newlines at the top' => [
+				'base' => "Initial comment.\n\nLater comment.",
+				'your' => "Initial comment.\n:Conflicting response.\nLater comment.",
+				'stored' => "Initial comment.\n\n:Inline response.\nLater comment.",
+				'expected' => new TalkPageResolution(
+					[
+						[ 'action' => 'copy', 'copytext' => 'Initial comment.' ],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
+							'newtext' => "\n:Inline response.",
+						],
+						[
+							'action' => 'add',
+							'oldhtml' => "\u{00A0}",
+							'oldtext' => '',
+							'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Conflicting response.</ins>',
+							'newtext' => ':Conflicting response.',
+						],
+						[ 'action' => 'copy', 'copytext' => 'Later comment.' ],
+					],
+					1,
+					2
+				)
+			],
 			[
 				'base' => "A\nA",
 				'your' => "A\nB\nA",
