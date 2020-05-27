@@ -1,13 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Veeven",
-			"Chaduvari"
+			"Chaduvari",
+			"Veeven"
 		]
 	},
-	"twocolconflict-label-show": "చూపించు",
-	"twocolconflict-label-hide": "దాచు",
-	"twocolconflict-previous-dialog": "మునుపటి",
-	"twocolconflict-next-dialog": "తదుపరి",
-	"twocolconflict-close-dialog": "మూసివేయి"
+	"twocolconflict-core-ui-hint-close": "మరెప్పుడూ చూపించకు"
 }
