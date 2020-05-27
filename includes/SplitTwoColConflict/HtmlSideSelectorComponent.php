@@ -89,7 +89,7 @@ class HtmlSideSelectorComponent {
 	 *
 	 * @return string HTML
 	 */
-	private function buildSideSelectorLabel( $msg ) : string {
+	private function buildSideSelectorLabel( string $msg ) : string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-selector-label' ],
