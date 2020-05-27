@@ -21,9 +21,21 @@ describe( 'TwoColConflict', function () {
 
 		EditConflictPage.yourParagraphSelection.click();
 
-		const updatedText = EditConflictPage.selectionLabel.getText();
+		const yourSelectionText = EditConflictPage.selectionLabel.getText();
 
-		assert( initialText !== updatedText );
+		assert(
+			initialText !== yourSelectionText,
+			'Your side is selected when you click the row\'s radio button'
+		);
+
+		EditConflictPage.otherParagraphAllSelection.click();
+
+		const otherSelectionText = EditConflictPage.selectionLabel.getText();
+
+		assert(
+			yourSelectionText !== otherSelectionText && initialText !== otherSelectionText,
+			'The other side is selected when you click the other side\'s select all button'
+		);
 	} );
 
 	it( 'is not used when it is not enabled in the preferences', function () {

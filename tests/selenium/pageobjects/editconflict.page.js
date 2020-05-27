@@ -20,8 +20,10 @@ class EditConflictPage extends Page {
 	get selectionLabel() { return $( '//div[contains(@class,"mw-twocolconflict-split-selection-row")]/preceding-sibling::div/span' ); }
 	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) span' ); }
 	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) input' ); }
+	get otherParagraphAllSelection() { return $( '.mw-twocolconflict-split-selection-header div:nth-child(1) span' ); }
 	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) span' ); }
 	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) input' ); }
+
 	get resetConfirmationPopup() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content' ); }
 	get resetConfirmationButton() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
 
