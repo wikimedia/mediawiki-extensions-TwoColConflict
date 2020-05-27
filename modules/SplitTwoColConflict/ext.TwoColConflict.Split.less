@@ -3,19 +3,18 @@
 @error-border-color: #ff1f1f;
 @error-background-color: #ffe7e7;
 
-.mw-twocolconflict-split-header {
-	text-align: right;
-}
-
 .mw-twocolconflict-split-flex-header {
 	display: flex;
+
+	> div {
+		margin: 20px 0;
+	}
 }
 
 .mw-twocolconflict-split-current-version-header,
 .mw-twocolconflict-split-your-version-header {
-	flex: 1 0 50%;
+	flex: 1;
 	text-align: center;
-	margin: 20px 0;
 
 	> span:first-child {
 		font-weight: bold;
@@ -267,6 +266,12 @@
 	/* stylelint-disable-next-line selector-max-id */
 	#wpPreviewWidget {
 		display: none;
+	}
+
+	.mw-twocolconflict-split-flex-header {
+		.mw-twocolconflict-split-selection-container {
+			display: none;
+		}
 	}
 }
 

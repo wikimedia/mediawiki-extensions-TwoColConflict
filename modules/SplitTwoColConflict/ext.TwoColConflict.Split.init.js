@@ -198,12 +198,40 @@ function initColumnClickEvent() {
 	} );
 }
 
+function resetHeaderSideSelector( $sideSelected ) {
+	var $headerSwitch = $( '.mw-twocolconflict-split-selection-header' ),
+		$headerRadioButtons = $headerSwitch.find( 'input:checked' );
+
+	if ( $headerRadioButtons.val() !== $sideSelected ) {
+		$headerRadioButtons.prop( 'checked', false );
+	}
+}
+
+function initHeaderSideSelector() {
+	var $headerSwitch = $( '.mw-twocolconflict-split-selection-header' ),
+		$headerRadioButtons = $headerSwitch.find( 'input' );
+
+	$headerRadioButtons.on( 'change', function () {
+		var $rowSwitches = $( '.mw-twocolconflict-split-selection-row' ),
+			$rowRadioButtons = $rowSwitches.find( 'input' ),
+			$checkedHeaderButton = $( this );
+
+		$rowRadioButtons.each( function () {
+			var $rowButton = $( this );
+
+			if ( $rowButton.val() === $checkedHeaderButton.val() ) {
+				$rowButton.click();
+			}
+		} );
+	} );
+}
+
 function handleSelectColumn() {
-	var $group = $( this ).closest( '.mw-twocolconflict-split-selection' ),
+	var $group = $( this ).closest( '.mw-twocolconflict-split-selection-row' ),
 		$checked = $group.find( 'input:checked' ),
 		$row = $group.closest( '.mw-twocolconflict-split-row' ),
 		$label = $row.find( '.mw-twocolconflict-split-selector-label span' ),
-		$selection = $row.find( '.mw-twocolconflict-split-selection' ),
+		$selection = $row.find( '.mw-twocolconflict-split-selection-row' ),
 		// TODO: Rename classes, "add" should be "your", etc.
 		$yourColumn = $row.find( '.mw-twocolconflict-split-add' ),
 		$otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
@@ -230,17 +258,19 @@ function handleSelectColumn() {
 		disableColumn( $yourColumn );
 		$label.text( mw.msg( 'twocolconflict-split-choose-version' ) );
 	}
+
+	resetHeaderSideSelector( $checked.val() );
 }
 
-function initColumnSelection() {
-	var $switches = $( '.mw-twocolconflict-split-selection' ),
-		$radioButtons = $switches.find( 'input' );
+function initRowSideSelectors() {
+	var $rowSwitches = $( '.mw-twocolconflict-split-selection-row' ),
+		$radioButtons = $rowSwitches.find( 'input' );
 
 	// TODO remove when having no selection is the default
 	$radioButtons.prop( 'checked', false );
 	$radioButtons.on( 'change', handleSelectColumn );
 
-	$switches.find( 'input:first-of-type' ).trigger( 'change' );
+	$rowSwitches.find( 'input:first-of-type' ).trigger( 'change' );
 }
 
 function showPreview( parsedContent, parsedNote ) {
@@ -281,7 +311,7 @@ function showPreview( parsedContent, parsedNote ) {
 function validateForm() {
 	var isFormValid = true;
 
-	$( '.mw-twocolconflict-split-selection' ).each( function () {
+	$( '.mw-twocolconflict-split-selection-row' ).each( function () {
 		var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
 			$checked = $row.find( 'input:checked' );
 
@@ -408,7 +438,8 @@ $( function () {
 		return;
 	}
 
-	initColumnSelection();
+	initRowSideSelectors();
+	initHeaderSideSelector();
 	initColumnClickEvent();
 	initButtonEvents();
 	initSwapHandling();

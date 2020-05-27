@@ -116,6 +116,7 @@ class HtmlSplitConflictHeader {
 				'div',
 				[ 'class' => 'mw-twocolconflict-split-flex-header' ],
 				$this->buildCurrentVersionHeader() .
+					( new HtmlSideSelectorComponent( $this->messageLocalizer ) )->getHeaderHtml() .
 					$this->buildYourVersionHeader()
 			)
 		);

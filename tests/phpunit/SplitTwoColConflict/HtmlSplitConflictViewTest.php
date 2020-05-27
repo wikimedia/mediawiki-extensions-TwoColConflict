@@ -210,7 +210,7 @@ TEXT
 	}
 
 	private function assertDivExistsWithClassValue( string $html, string $class, int &$startPos ) {
-		$fragment = '<div class="' . $class . '"';
+		$fragment = '<div class="' . $class;
 		$pos = strpos( $html, $fragment, $startPos );
 		$this->assertIsInt( $pos, $fragment . '… not found after position ' . $startPos .
 			': …' . substr( $html, $startPos, 1000 ) . '…' );

@@ -313,7 +313,7 @@ function initialize() {
 		tour.addTourPopup(
 			mw.msg( 'twocolconflict-split-tour-popup2-header' ),
 			mw.msg( 'twocolconflict-split-tour-popup2-message' ),
-			$body.find( '.mw-twocolconflict-split-selection' ).first()
+			$body.find( '.mw-twocolconflict-split-selection-row' ).first()
 		);
 
 		tour.addTourPopup(
