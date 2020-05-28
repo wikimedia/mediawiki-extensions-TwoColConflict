@@ -116,9 +116,9 @@ class EditConflictPage extends Page {
 			// Includes HTML characters to check for proper escaping throughout the process.
 			// Note the final assertions will look for "Line 1", "Change A" and such only, without
 			// any of the HTML code being visible.
-			'Line<span>1</span>\nLine2',
-			'Line<span>1</span>\nChange <span lang="de">A</span>',
-			'Line<span>1</span>\nChange <span lang="en">B</span>'
+			'Line<span>1</span>\n\nLine2',
+			'Line<span>1</span>\n\nChange <span lang="de">A</span>',
+			'Line<span>1</span>\n\nChange <span lang="en">B</span>'
 		);
 		this.waitForJS();
 	}
