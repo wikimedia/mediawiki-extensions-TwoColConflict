@@ -24,6 +24,7 @@
 	"twocolconflict-split-choose-version": "Bitte eine Version auswählen",
 	"twocolconflict-split-other-version-chosen": "Andere Version",
 	"twocolconflict-split-your-version-chosen": "Deine Version",
+	"twocolconflict-split-select-all": "Alle auswählen",
 	"twocolconflict-split-tour-dialog-dot-message": "Um hilfreiche Hinweise zu erhalten, klicke auf die leuchtenden blauen Punkte.",
 	"twocolconflict-split-tour-dialog-header": "Sich widersprechende Versionen zusammenführen",
 	"twocolconflict-split-tour-dialog-message": "Leider hat während deiner Bearbeitung auch ein anderer Benutzer dieselbe Seite bearbeitet und vor deiner veröffentlicht.\nKeine Sorge, deine Bearbeitungen sind nicht verloren! Bitte überprüfe beide Versionen und führe sie zusammen. Falls nötig, kannst du den ausgewählten Text bearbeiten. Nur der Text in den ausgewählten Feldern wird gespeichert, wenn du auf „{{int:Änderungen speichern}}“ klickst.",
