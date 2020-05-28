@@ -153,7 +153,8 @@ class HtmlSplitConflictHeader {
 			$this->messageLocalizer->msg( 'twocolconflict-split-your-version-header' ),
 			$this->messageLocalizer->msg( 'twocolconflict-split-not-saved-at' ),
 			$this->newEditSummary,
-			'mw-twocolconflict-split-your-version-header'
+			'mw-twocolconflict-split-your-version-header',
+			$this->messageLocalizer->msg( 'twocolconflict-copy-action' )
 		);
 	}
 
@@ -162,6 +163,7 @@ class HtmlSplitConflictHeader {
 	 * @param Message $userMsg
 	 * @param string $summary
 	 * @param string $class
+	 * @param Message|null $copyMsg
 	 *
 	 * @return string HTML
 	 */
@@ -169,14 +171,29 @@ class HtmlSplitConflictHeader {
 		Message $dateMsg,
 		Message $userMsg,
 		string $summary,
-		string $class
+		string $class,
+		?Message $copyMsg = null
 	) : string {
 		$html = Html::element(
 				'span',
 				[ 'class' => 'mw-twocolconflict-revision-label' ],
 				$dateMsg->text()
-			) .
-			Html::element( 'br' ) .
+			);
+		if ( $copyMsg ) {
+			$html .= Html::rawElement(
+				'span',
+				[ 'class' => 'mw-twocolconflict-copy-link' ],
+				$this->messageLocalizer->msg( 'parentheses' )
+					->rawParams( Html::element(
+						'a',
+						[ 'title' => $this->messageLocalizer->msg(
+							'twocolconflict-copy-tooltip'
+						)->text() ],
+						$copyMsg->text()
+					) )
+			);
+		}
+		$html .= Html::element( 'br' ) .
 			Html::rawElement( 'span', [], $userMsg->escaped() );
 
 		if ( $summary !== '' ) {

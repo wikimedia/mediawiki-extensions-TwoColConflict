@@ -65,7 +65,9 @@
 				"ext.TwoColConflict.Util"
 			],
 			"messages": [
+				"parentheses",
 				"preview",
+				"twocolconflict-copy-notice",
 				"twocolconflict-split-choose-version",
 				"twocolconflict-split-edit-tooltip",
 				"twocolconflict-split-other-version-chosen",

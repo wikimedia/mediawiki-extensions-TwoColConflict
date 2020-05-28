@@ -58,18 +58,18 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( ResolutionSuggester::class )
 		);
-		$helper->setTextboxes( '<YOURTEXT>', '<STOREDVERSION>' );
+		$helper->setTextboxes( '<YOURTEXT attribute="">', '<STOREDVERSION attribute="">' );
 
 		$html = $helper->getEditFormHtmlBeforeContent();
 		$this->assertStringContainsString( ' name="wpTextbox1"', $html );
 		$this->assertStringContainsString( ' name="mw-twocolconflict-current-text"', $html );
 		$this->assertStringContainsString( ' name="mw-twocolconflict-your-text"', $html );
 
-		$this->assertStringContainsString( '&lt;YOURTEXT&gt;', $html );
-		$this->assertStringContainsString( '&lt;STOREDVERSION&gt;', $html );
+		$this->assertStringContainsString( '&lt;YOURTEXT attribute="">', $html );
+		$this->assertStringContainsString( '&lt;STOREDVERSION attribute=&quot;&quot;&gt;', $html );
 		// Make sure there is no code path without escaping
-		$this->assertStringNotContainsString( '<YOURTEXT>', $html );
-		$this->assertStringNotContainsString( '<STOREDVERSION>', $html );
+		$this->assertStringNotContainsString( '<YOURTEXT attribute="">', $html );
+		$this->assertStringNotContainsString( '<STOREDVERSION attribute="">', $html );
 	}
 
 	public function testGetEditFormHtmlAfterContent() {

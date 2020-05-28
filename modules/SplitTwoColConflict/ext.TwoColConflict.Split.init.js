@@ -416,6 +416,42 @@ function initSwapHandling() {
 	} );
 }
 
+/**
+ * Expose an action to copy the entire wikitext source of "your" originally submitted revision.
+ */
+function initSourceCopy() {
+	var $copyLink = $( '.mw-twocolconflict-copy-link a' ),
+		$confirmPopup, popupTimeout;
+	if ( !$copyLink.length ) {
+		return;
+	}
+
+	$confirmPopup = new OO.ui.PopupWidget( {
+		$content: $( '<p>' ).text( mw.msg( 'twocolconflict-copy-notice' ) ),
+		$floatableContainer: $copyLink,
+		position: 'above',
+		align: 'forwards',
+		anchor: false,
+		autoClose: true,
+		classes: [ 'mw-twocolconflict-copy-notice' ]
+	} );
+	$( 'body' ).append( $confirmPopup.$element );
+
+	$copyLink.click( function () {
+		$( '.mw-twocolconflict-your-text' ).select();
+		document.execCommand( 'copy' );
+
+		$confirmPopup.toggle( true );
+		popupTimeout = setTimeout( function () {
+			$confirmPopup.toggle( false );
+		}, 5000 );
+	} );
+
+	$confirmPopup.on( 'toggle', function () {
+		clearTimeout( popupTimeout );
+	} );
+}
+
 $( function () {
 	var $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
 	if ( $coreHintCheckbox.length ) {
@@ -447,4 +483,5 @@ $( function () {
 	initSubmit();
 	initTour();
 	initTracking();
+	initSourceCopy();
 } );

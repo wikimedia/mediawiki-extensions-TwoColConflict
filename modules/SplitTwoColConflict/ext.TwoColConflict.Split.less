@@ -252,6 +252,15 @@
 	}
 }
 
+.mw-twocolconflict-copy-notice {
+	padding: 3em 0;
+
+	p {
+		margin: 1em;
+		font-size: 0.875em;
+	}
+}
+
 .client-nojs {
 	.mw-twocolconflict-split-current-version-header span,
 	.mw-twocolconflict-split-your-version-header span {
@@ -273,10 +282,25 @@
 			display: none;
 		}
 	}
+
+	.mw-twocolconflict-your-text {
+		display: none;
+	}
+
+	//FIXME only as long as non-js is not implemented
+	.mw-twocolconflict-copy-link {
+		display: none;
+	}
 }
 
 .client-js {
 	.mw-twocolconflict-overview {
 		display: none;
+	}
+
+	.mw-twocolconflict-your-text {
+		position: absolute;
+		left: -9999px;
+		height: 0;
 	}
 }
