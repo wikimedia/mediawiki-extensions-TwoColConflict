@@ -170,7 +170,11 @@ class HtmlSplitConflictHeader {
 		string $summary,
 		string $class
 	) : string {
-		$html = Html::element( 'span', [], $dateMsg->text() ) .
+		$html = Html::element(
+				'span',
+				[ 'class' => 'mw-twocolconflict-revision-label' ],
+				$dateMsg->text()
+			) .
 			Html::element( 'br' ) .
 			Html::rawElement( 'span', [], $userMsg->escaped() );
 
