@@ -3,6 +3,7 @@
 		"authors": [
 			"Alexander Yukal",
 			"Alexey zakharenkov",
+			"Diman Russkov",
 			"Facenapalm",
 			"Kareyac",
 			"Movses",
@@ -29,6 +30,7 @@
 	"twocolconflict-split-choose-version": "Выберите версию",
 	"twocolconflict-split-other-version-chosen": "Другая версия",
 	"twocolconflict-split-your-version-chosen": "Ваша версия",
+	"twocolconflict-split-select-all": "Выбрать всё",
 	"twocolconflict-split-tour-dialog-header": "Разрешения конфликтов редактирования",
 	"twocolconflict-split-tour-dialog-btn-text": "Начать объединение",
 	"twocolconflict-split-tour-popup-btn-text": "Понятно",

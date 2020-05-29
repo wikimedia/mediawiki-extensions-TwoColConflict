@@ -23,6 +23,7 @@
 	"twocolconflict-split-choose-version": "Por favor, selecione uma versão",
 	"twocolconflict-split-other-version-chosen": "Outra versão",
 	"twocolconflict-split-your-version-chosen": "Sua revisão",
+	"twocolconflict-split-select-all": "Selecionar tudo",
 	"twocolconflict-split-tour-dialog-dot-message": "Para dicas úteis, clique nos pontos azuis brilhantes.",
 	"twocolconflict-split-tour-dialog-header": "Mesclar versões conflitantes",
 	"twocolconflict-split-tour-dialog-message": "Infelizmente, enquanto você estava editando, outro usuário também editou a mesma página e publicou antes de você.\n\nNão se preocupe, suas edições não estão perdidas! Revise as duas versões e junte-as. Se necessário, você pode editar o texto selecionado. Somente o texto nas caixas selecionadas será salvo quando você clicar em \"{{int:Savechanges}}.\"",

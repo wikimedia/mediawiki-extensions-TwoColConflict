@@ -21,6 +21,7 @@
 	"twocolconflict-split-choose-version": "Seleziona una versione",
 	"twocolconflict-split-other-version-chosen": "Altra versione",
 	"twocolconflict-split-your-version-chosen": "La tua versione",
+	"twocolconflict-split-select-all": "Seleziona tutto",
 	"twocolconflict-split-tour-dialog-header": "Unisci versioni in conflitto",
 	"twocolconflict-split-tour-dialog-message": "Sfortunatamente, mentre stavi facendo la tua modifica, anche un altro utente ha apportato delle modifiche alla stessa pagina e le ha pubblicate prima di te.\n\nNon preoccuparti, le tue modifiche non sono andate perse! Rivedi entrambi le versioni e uniscile insieme. Se necessario, puoi modificare il testo selezionato. Solo il testo nel riquadro selezionato sarà salvato quando cliccherai \"{{int:Savechanges}}.\"",
 	"twocolconflict-split-tour-dialog-btn-text": "Inizia l'unione",

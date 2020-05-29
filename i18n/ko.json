@@ -18,6 +18,7 @@
 	"twocolconflict-split-current-version-header": "$1 기준 최신판",
 	"twocolconflict-split-not-saved-at": "아직 게시되지 않음",
 	"twocolconflict-split-choose-version": "판을 선택해 주십시오",
+	"twocolconflict-split-select-all": "모두 선택",
 	"twocolconflict-split-tour-dialog-dot-message": "유용한 힌트를 얻으려면 빛나는 파란색 점을 클릭하세요.",
 	"twocolconflict-split-tour-dialog-header": "충돌되는 판 합치기",
 	"twocolconflict-split-tour-dialog-message": "유감스럽게도 당신이 편집하시는 동안 다른 사용자가 같은 문서를 편집했고 먼저 게시했습니다.\n\n걱정하지 마세요, 당신의 기여는 사라지지 않습니다! 두 개의 판을 검토하고 합병해 주세요. 필요한 경우, 선택된 문구를 편집할 수 있습니다. {{int:Savechanges}}를 클릭하면 선택된 상자의 문구만 저장됩니다.",

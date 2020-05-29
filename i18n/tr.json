@@ -22,6 +22,7 @@
 	"twocolconflict-split-choose-version": "Lütfen bir sürüm seçin",
 	"twocolconflict-split-other-version-chosen": "Diğer sürüm",
 	"twocolconflict-split-your-version-chosen": "Sürümünüz",
+	"twocolconflict-split-select-all": "Hepsini seç",
 	"twocolconflict-split-tour-dialog-dot-message": "Yararlı ipuçları için parlak mavi noktalara tıklayın.",
 	"twocolconflict-split-tour-dialog-header": "Çakışan sürümleri birleştir",
 	"twocolconflict-split-tour-dialog-message": "Ne yazık ki, siz düzenleme yaparken başka bir kullanıcı da aynı sayfayı düzenledi ve önünüzde yayınladı.\n\nEndişelenmeyin, düzenlemeleriniz kaybolmaz! Lütfen her iki sürümü de inceleyin ve birleştirin. Gerekirse, seçilen metni düzenleyebilirsiniz. \"{{int:savechanges}}\" seçeneğini tıkladığınızda yalnızca seçili kutulardaki metin kaydedilecektir.",

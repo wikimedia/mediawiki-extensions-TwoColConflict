@@ -24,6 +24,7 @@
 	"twocolconflict-split-choose-version": "اختر نسخة رجاءً",
 	"twocolconflict-split-other-version-chosen": "النسخة الأخرى",
 	"twocolconflict-split-your-version-chosen": "نسختك",
+	"twocolconflict-split-select-all": "اختر الكل",
 	"twocolconflict-split-tour-dialog-header": "إصلاح تضاربات التحرير",
 	"twocolconflict-split-tour-dialog-message": "لسوء الحظ، واجهت تعارضًا في التعديل: أثناء التعديل، قام مستخدم آخر أيضًا بتحرير الصفحة وحفظها. نسختك الآن قديمة لأنها لا تتضمن تعديلات المستخدم الآخر، يُرجَى دمج تعديلاتك في الصفحة التالية.",
 	"twocolconflict-split-tour-dialog-btn-text": "بدء الدمج",

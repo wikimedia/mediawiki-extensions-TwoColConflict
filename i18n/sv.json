@@ -19,6 +19,7 @@
 	"twocolconflict-split-choose-version": "Välj en version",
 	"twocolconflict-split-other-version-chosen": "Annan version",
 	"twocolconflict-split-your-version-chosen": "Din version",
+	"twocolconflict-split-select-all": "Markera allt",
 	"twocolconflict-split-tour-dialog-dot-message": "Klicka på de blåa pickarna för hjälpsamma tips.",
 	"twocolconflict-split-tour-dialog-header": "Sammanfoga versioner i konflikt",
 	"twocolconflict-split-tour-dialog-message": "Tyvärr redigerade en annan användare också samma sida och hann publicera före dig.\n\nIngen fara, dina redigeringar är inte försvunna! Granska båda versioner och sammanfoga dem. Om du behöver kan du redigera den markerade texten. Endast texten i de markerade fälten kommer sparas när du klickar på \"{{int:Savechanges}}.\"",
