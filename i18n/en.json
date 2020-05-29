@@ -50,6 +50,7 @@
 	"twocolconflict-talk-header-overview": "Someone else posted at the same time as you. Please review the comments below and choose the order to be published. If needed, you can edit your text.",
 	"twocolconflict-talk-your": "Your entry",
 	"twocolconflict-talk-conflicting": "Conflicting entry",
+	"twocolconflict-talk-switch-tooltip": "Switch order",
 	"twocolconflict-talk-reorder-prompt": "Position your entry in relation to the conflicting entry:",
 	"twocolconflict-talk-same-order": "Keep after",
 	"twocolconflict-talk-reverse-order": "Move before"

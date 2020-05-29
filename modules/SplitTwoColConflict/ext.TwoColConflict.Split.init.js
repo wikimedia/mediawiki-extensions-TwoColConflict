@@ -401,9 +401,9 @@ function initSwapHandling() {
 	}
 
 	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', function () {
-		var $view = $( '.mw-twocolconflict-single-column-view' ),
-			$rows = $view.find( '.mw-twocolconflict-conflicting-talk-row' ),
-			$buttonContainer = $view.find( '.mw-twocolconflict-single-swap-button-container' ),
+		var $rowContainer = $( '.mw-twocolconflict-single-column-rows' ),
+			$rows = $rowContainer.find( '.mw-twocolconflict-conflicting-talk-row' ),
+			$buttonContainer = $rowContainer.find( '.mw-twocolconflict-single-swap-button-container' ),
 			$upper = $rows.eq( 0 ),
 			$lower = $rows.eq( 1 ),
 			upperRowNum = getRowNumber( $upper ),
@@ -411,8 +411,8 @@ function initSwapHandling() {
 
 		setRowNumber( $upper, upperRowNum, lowerRowNum );
 		setRowNumber( $lower, lowerRowNum, upperRowNum );
-		$view[ 0 ].insertBefore( $lower[ 0 ], $upper[ 0 ] );
-		$view[ 0 ].insertBefore( $buttonContainer[ 0 ], $upper[ 0 ] );
+		$rowContainer[ 0 ].insertBefore( $lower[ 0 ], $upper[ 0 ] );
+		$rowContainer[ 0 ].insertBefore( $buttonContainer[ 0 ], $upper[ 0 ] );
 	} );
 }
 
