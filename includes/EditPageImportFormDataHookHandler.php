@@ -40,7 +40,7 @@ class EditPageImportFormDataHookHandler {
 				}
 			}
 
-			$editPage->textbox1 = SplitConflictMerger::mergeSplitConflictResults(
+			$editPage->textbox1 = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 				$contentRows,
 				$extraLineFeeds,
 				$sideSelection
