@@ -40,7 +40,7 @@ class HtmlTalkPageResolutionView {
 	}
 
 	/**
-	 * @param array[] $unifiedDiff
+	 * @param array[] $unifiedDiff A list of changes as created by the AnnotatedHtmlDiffFormatter
 	 * @param int $otherIndex
 	 * @param int $yourIndex
 	 * @param bool $isBetaFeature

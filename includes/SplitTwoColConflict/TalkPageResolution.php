@@ -18,7 +18,7 @@ class TalkPageResolution {
 	private $yourIndex;
 
 	/**
-	 * @param array[] $diff
+	 * @param array[] $diff A list of changes as created by the AnnotatedHtmlDiffFormatter
 	 * @param int $otherIndex
 	 * @param int $yourIndex
 	 */
