@@ -21,6 +21,7 @@
 	"twocolconflict-split-choose-version": "Изберете верзија",
 	"twocolconflict-split-other-version-chosen": "Други верзии",
 	"twocolconflict-split-your-version-chosen": "Вашата верзија",
+	"twocolconflict-split-select-all": "Избери сè",
 	"twocolconflict-split-tour-dialog-dot-message": "За да видите корисни совети, стиснете на сините светлечки точки.",
 	"twocolconflict-split-tour-dialog-header": "Спојување на спротиставените верзии",
 	"twocolconflict-split-tour-dialog-message": "За жал, додека уредувавте, страницата ја уредил некој друг корисник и ја објавил пред вас.\n\nНо не грижете се, вашите уредувања не се изгубени! Прегледајте ги двете верзии и спојте ги во едно. Ако е потребно, можете да го измените избраниот текст. Ќе се зачува само текстот во избраните полиња кога ќе стиснете на „{{int:Savechanges}}“.",
