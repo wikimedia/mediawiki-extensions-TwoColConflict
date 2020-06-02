@@ -16,7 +16,7 @@ class SplitConflictMerger {
 	 *
 	 * @return string Wikitext
 	 */
-	public static function mergeSplitConflictResults(
+	public function mergeSplitConflictResults(
 		array $contentRows,
 		array $extraLineFeeds,
 		$sideSelection
@@ -31,42 +31,24 @@ class SplitConflictMerger {
 				$side = isset( $row['copy'] ) ? 'copy' : $sideSelection;
 			}
 
-			// A mismatch here means the request is either incomplete (by design) or broken, and
-			// already detected as such (see ConflictFormValidator). Intentionally return the most
-			// recent, most conflicting value. Fall back to the users conflicting edit, or to
-			// *whatever* is there, no matter how invalid it might be. We *never* want to delete
-			// anything.
-			$line = (string)(
-				$row[$side] ??
-				$row['your'] ??
-				current( (array)$row )
-			);
-
+			$line = $this->pickBestPossibleValue( $row, $side );
 			// Don't remove all whitespace, because this is not necessarily the end of the article
 			$line = rtrim( $line, "\r\n" );
+			// *Possibly* emptied by the user, or the line was empty before
 			$emptiedByUser = $line === '';
 
 			if ( isset( $extraLineFeeds[$num] ) ) {
-				$lf = $extraLineFeeds[$num];
-				// Same fallback logic as above, just so we never loose content
-				$lf = (string)(
-					$lf[$side] ??
-					$lf['your'] ??
-					current( (array)$lf )
-				);
-				$counts = explode( ',', $lf, 2 );
-				// "Before" and "after" are intentionally flipped, because "before" is very rare
-				if ( isset( $counts[1] ) ) {
-					// We want to understand the difference between a row the user emptied (extra
-					// linefeeds are removed as well then), or a row that was empty before. This is
-					// how HtmlEditableTextComponent marked empty rows.
-					if ( $counts[1] === 'was-empty' ) {
-						$emptiedByUser = false;
-					} else {
-						$line = self::lineFeeds( $counts[1] ) . $line;
-					}
+				$value = $this->pickBestPossibleValue( $extraLineFeeds[$num], $side );
+				[ $before, $after ] = $this->parseExtraLineFeeds( $value );
+				// We want to understand the difference between a row the user emptied (extra
+				// linefeeds are removed as well then), or a row that was empty before. This is
+				// how HtmlEditableTextComponent marked empty rows.
+				if ( $before === 'was-empty' ) {
+					$emptiedByUser = false;
+				} else {
+					$line = $this->lineFeeds( $before ) . $line;
 				}
-				$line .= self::lineFeeds( $counts[0] );
+				$line .= $this->lineFeeds( $after );
 			}
 
 			// In case a line was emptied, we need to skip the extra linefeeds as well
@@ -77,7 +59,36 @@ class SplitConflictMerger {
 		return SplitConflictUtils::mergeTextLines( $textLines );
 	}
 
-	private static function lineFeeds( string $count ) : string {
+	/**
+	 * @param string[]|mixed $postedValues Typically an array of strings, but not guaranteed
+	 * @param string $key Preferred array key to pick from the list of values, if present
+	 *
+	 * @return string
+	 */
+	private function pickBestPossibleValue( $postedValues, string $key ) : string {
+		// A mismatch here means the request is either incomplete (by design) or broken, and already
+		// detected as such (see ConflictFormValidator). Intentionally return the most recent, most
+		// conflicting value. Fall back to the users unsaved edit, or to *whatever* is there, no
+		// matter how invalid it might be. We *never* want to loose anything.
+		return (string)(
+			$postedValues[$key] ??
+			$postedValues['your'] ??
+			current( (array)$postedValues )
+		);
+	}
+
+	/**
+	 * @param string $postedValue
+	 *
+	 * @return string[]
+	 */
+	private function parseExtraLineFeeds( string $postedValue ) : array {
+		$counts = explode( ',', $postedValue, 2 );
+		// "Before" and "after" are intentionally flipped, because "before" is very rare
+		return [ $counts[1] ?? '', $counts[0] ];
+	}
+
+	private function lineFeeds( string $count ) : string {
 		$count = (int)$count;
 
 		// Arbitrary limit just to not end with megabytes in case of an attack

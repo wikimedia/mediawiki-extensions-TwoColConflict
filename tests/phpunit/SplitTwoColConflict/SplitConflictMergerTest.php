@@ -13,7 +13,7 @@ use TwoColConflict\SplitTwoColConflict\SplitConflictMerger;
 class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 
 	public function testSingleCopyRow() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => 'A' ],
 			],
@@ -24,7 +24,7 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testStaticSideSelection() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'other' => 'A', 'your' => 'B' ],
 			],
@@ -41,7 +41,7 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		];
 		$sides = [ 'your', 'other' ];
 
-		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults( $rows, [], $sides );
 		$this->assertSame( "B\nC", $result );
 	}
 
@@ -51,14 +51,14 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		];
 		$sides = [ 1 => 'your' ];
 
-		$result = SplitConflictMerger::mergeSplitConflictResults( $rows, [], $sides );
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults( $rows, [], $sides );
 		$this->assertSame( 'B', $result );
 	}
 
 	// TODO: public function testTalkPageSpecialCase()
 
 	public function testExtraLineFeedsAreAdded() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => 'A' ],
 				[ 'copy' => 'B' ],
@@ -72,7 +72,7 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testEmptyLinesAreSkipped() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => 'A' ],
 				// We assume the user intentionally emptied this
@@ -89,7 +89,7 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testRowsNotEmptiedByTheUserAreNotIgnored() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => '' ],
 				[ 'copy' => 'A' ],
@@ -103,7 +103,7 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testTrailingNewlinesAreTrimmed() {
-		$result = SplitConflictMerger::mergeSplitConflictResults(
+		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => "A\n\n" ],
 				[ 'copy' => 'B' ],
