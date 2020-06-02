@@ -59,12 +59,12 @@ class HtmlTalkPageResolutionView {
 			'twocolconflict-split-header-hint-beta' : 'twocolconflict-split-header-hint';
 		$out .= $this->getMessageBox( $hintMsg, 'notice' );
 
+		$rows = '';
 		foreach ( $unifiedDiff as $currRowNum => $changeSet ) {
 			$text = $changeSet['copytext'] ?? $changeSet['newtext'];
-
 			switch ( $currRowNum ) {
 				case $otherIndex:
-					$out .= $this->buildConflictingTalkRow(
+					$rows .= $this->buildConflictingTalkRow(
 						$text,
 						$currRowNum,
 						'delete',
@@ -73,13 +73,16 @@ class HtmlTalkPageResolutionView {
 						'twocolconflict-talk-conflicting'
 					);
 
-					$out .= Html::rawElement(
+					$rows .= Html::rawElement(
 						'div',
 						[ 'class' => 'mw-twocolconflict-single-swap-button-container' ],
 						new ButtonWidget( [
 							'infusable' => true,
-							'framed' => false,
+							'framed' => true,
 							'icon' => 'markup',
+							'title' => $this->messageLocalizer->msg(
+								'twocolconflict-talk-switch-label'
+							)->text(),
 							'classes' => [ 'mw-twocolconflict-single-swap-button' ],
 							'tabIndex' => '1'
 						] )
@@ -87,7 +90,7 @@ class HtmlTalkPageResolutionView {
 
 					break;
 				case $yourIndex:
-					$out .= $this->buildConflictingTalkRow(
+					$rows .= $this->buildConflictingTalkRow(
 						$text,
 						$currRowNum,
 						'add',
@@ -97,9 +100,15 @@ class HtmlTalkPageResolutionView {
 					);
 					break;
 				default:
-					$out .= $this->buildCopyRow( $text, $currRowNum );
+					$rows .= $this->buildCopyRow( $text, $currRowNum );
 			}
 		}
+		// this will allow CSS formatting with :first-of-type
+		$out .= Html::rawElement(
+			'div',
+			[ 'class' => 'mw-twocolconflict-single-column-rows' ],
+			$rows
+		);
 
 		$out .= $this->buildOrderSelector() .
 			Html::hidden( 'mw-twocolconflict-single-column-view', true );
