@@ -3,13 +3,14 @@
 		"authors": [
 			"GR",
 			"Geraki",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"Norhorn"
 		]
 	},
 	"twocolconflict-desc": "Εμφάνιση πλάι-πλάι της οθόνης συγχώνευσης επεξεργασίας κατά την επίλυση σύγκρουσης επεξεργασίας",
 	"twocolconflict-beta-feature-message": "Δυο στήλες στη σύγκρουση επεξεργασίας",
 	"twocolconflict-beta-feature-description": "Εμφάνιση της οθόνης σύγκρουσης επεξεργασίας με τη χρήση περισσότερο προηγμένης όψης δύο στηλών.",
-	"twocolconflict-preference-enabled": "Ενεργοποίηση της [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Δίστηλης Εμφάνισης Σύγκρουσης Επεξεργασίας]] για την επίλυση συγκρούσεων επεξεργασίας",
+	"twocolconflict-preference-enabled": "Ενεργοποίηση της [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Εμφάνισης σε δύο στήλες διενέξεων επεξεργασίας]] για την επίλυση διενέξεων επεξεργασίας",
 	"twocolconflict-split-header-hint": "Μπορείτε να βοηθήσετε να βελτιώσουμε περαιτέρω αυτή τη λειτουργία αν αφήσετε ανατροφοδότηση [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View σε αυτή τη σελίδα].",
 	"twocolconflict-split-header-hint-beta": "Σας ευχαριστούμε επειδή χρησιμοποιήσατε αυτό το δοκιμαστικό χαρακτηριστικό. Μπορείτε να βοηθήσετε στην περαιτέρω βελτίωσή του, εάν αφήσετε ανατροφοδότηση στο [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_Βλέπε σε αυτή τη σελίδα].",
 	"twocolconflict-split-your-version-header": "Η δική σας αναθεώρηση",

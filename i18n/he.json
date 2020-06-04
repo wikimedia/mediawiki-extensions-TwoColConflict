@@ -51,6 +51,7 @@
 	"twocolconflict-talk-header-overview": "מישהו אחר שלח הודעה באותו זמן כמוך. נא לסקור את ההערות להלן ולבחור באיזו סדר לפרסם. אם זה נחוץ, אפשר לערוך את הטקסט.",
 	"twocolconflict-talk-your": "ההצעה שלך",
 	"twocolconflict-talk-conflicting": "ההצעה המתנגשת",
+	"twocolconflict-talk-switch-tooltip": "שינוי סדר",
 	"twocolconflict-talk-reorder-prompt": "{{GENDER:|מקם|מקמי}} את מה שכתבת יחסית למה שנכתב בגרסה המתנגשת",
 	"twocolconflict-talk-same-order": "להשאיר אחרי זה",
 	"twocolconflict-talk-reverse-order": "להעביר לפני זה"
