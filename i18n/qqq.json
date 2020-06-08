@@ -57,7 +57,7 @@
 	"twocolconflict-talk-header-overview": "Brief help message explaining the talk page workflow, when advanced help isn't available.",
 	"twocolconflict-talk-your": "Label for your entry when solving a conflict with two talk page entries.",
 	"twocolconflict-talk-conflicting": "Label for the conflicting entry when solving a conflict with two talk page entries.",
-	"twocolconflict-talk-switch-tooltip": "Label for the button that allows changing the order of two conflicting entries.",
+	"twocolconflict-talk-switch-tooltip": "Label for the button that allows changing the order of two conflicting entries, i.e. which one should precede the other one.",
 	"twocolconflict-talk-reorder-prompt": "Label prompting the user to choose an order for two conflicting entries.",
 	"twocolconflict-talk-same-order": "Button label used in talk page conflicts, to keep the conflicting entries in the same order.",
 	"twocolconflict-talk-reverse-order": "Button label used in talk page conflicts, to reverse the order of conflicting entries."

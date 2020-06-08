@@ -82,7 +82,7 @@ class HtmlTalkPageResolutionView {
 							'framed' => true,
 							'icon' => 'markup',
 							'title' => $this->messageLocalizer->msg(
-								'twocolconflict-talk-switch-label'
+								'twocolconflict-talk-switch-tooltip'
 							)->text(),
 							'classes' => [ 'mw-twocolconflict-single-swap-button' ],
 							'tabIndex' => '1'
