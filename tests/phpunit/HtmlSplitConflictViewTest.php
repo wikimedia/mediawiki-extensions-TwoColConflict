@@ -13,6 +13,7 @@ use TwoColConflict\Html\HtmlSplitConflictView;
 
 /**
  * @covers \TwoColConflict\Html\HtmlSplitConflictView
+ * @covers \TwoColConflict\Html\HtmlSideSelectorComponent
  *
  * Tests to make sure essential elements are there and put in the right order.
  *
