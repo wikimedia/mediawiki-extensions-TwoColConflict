@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Kenrick95"
 		]
 	},
 	"twocolconflict": "DuaKolKonflik",
@@ -22,5 +23,6 @@
 	"twocolconflict-split-reset-warning-cancel": "Batal",
 	"twocolconflict-split-reset-warning-accept": "Buang",
 	"twocolconflict-split-collapse-tooltip": "Tutup teks",
-	"twocolconflict-split-expand-tooltip": "Buka teks"
+	"twocolconflict-split-expand-tooltip": "Buka teks",
+	"twocolconflict-talk-switch-tooltip": "Ganti urutan"
 }

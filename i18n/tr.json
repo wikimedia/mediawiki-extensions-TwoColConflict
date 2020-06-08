@@ -51,6 +51,7 @@
 	"twocolconflict-talk-header-overview": "Sizinle aynı zamanda başka biri de yayın gönderdi. Lütfen aşağıdaki yorumları inceleyin ve yayınlanacak siparişi seçin. Gerekirse metninizi düzenleyebilirsiniz.",
 	"twocolconflict-talk-your": "Girişiniz",
 	"twocolconflict-talk-conflicting": "Giriş çakışma",
+	"twocolconflict-talk-switch-tooltip": "Sıralamayı değiştir",
 	"twocolconflict-talk-reorder-prompt": "Girişinizi çakışan girişe göre konumlandırın:",
 	"twocolconflict-talk-same-order": "Sonra sakla",
 	"twocolconflict-talk-reverse-order": "Önce taşı"

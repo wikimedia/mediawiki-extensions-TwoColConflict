@@ -31,6 +31,7 @@
 	"twocolconflict-split-choose-version": "Veuillez choisir une version",
 	"twocolconflict-split-other-version-chosen": "Autre version",
 	"twocolconflict-split-your-version-chosen": "Votre version",
+	"twocolconflict-split-select-all": "Tout sélectionner",
 	"twocolconflict-split-tour-dialog-dot-message": "Pour des conseils d’aide, cliquer sur les points bleus lumineux.",
 	"twocolconflict-split-tour-dialog-header": "Fusionner les versions en conflit",
 	"twocolconflict-split-tour-dialog-message": "Malheureusement, pendant que vous éditiez, un autre utilisateur a aussi modifié la même page et a publié avant vous.\n\nNe vous inquiétez pas, vos modifications ne sont pas perdues ! Veuillez vérifier les deux versions et les fusionner. Si besoin, vous pouvez modifier le texte sélectionné. Seul le texte dans les boîtes sélectionnées sera enregistré quand vous cliquerez sur « {{int:Savechanges}} ».",
@@ -59,6 +60,7 @@
 	"twocolconflict-talk-header-overview": "Quelqu’un d’autre a envoyé un commentaire en même temps que vous. Veuillez examiner les commentaires ci-dessous et choisir l’ordre de publication. Si nécessaire, vous pouvez modifier votre texte.",
 	"twocolconflict-talk-your": "Votre entrée",
 	"twocolconflict-talk-conflicting": "Entrée en conflit",
+	"twocolconflict-talk-switch-tooltip": "Changer l'ordre",
 	"twocolconflict-talk-reorder-prompt": "Positionner votre entrée en relation avec l'entrée conflictuelle :",
 	"twocolconflict-talk-same-order": "Garder après",
 	"twocolconflict-talk-reverse-order": "Déplacer avant"
