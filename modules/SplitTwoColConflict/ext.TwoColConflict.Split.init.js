@@ -198,28 +198,40 @@ function initColumnClickEvent() {
 	} );
 }
 
-function resetHeaderSideSelector( $sideSelected ) {
-	var $headerSwitch = $( '.mw-twocolconflict-split-selection-header' ),
-		$headerRadioButtons = $headerSwitch.find( 'input:checked' );
+function resetHeaderSideSelector( selectedValue ) {
+	var $headerSelection = $( '.mw-twocolconflict-split-selection-header' ),
+		$selectedSide = $headerSelection.find( 'input:checked' );
 
-	if ( $headerRadioButtons.val() !== $sideSelected ) {
-		$headerRadioButtons.prop( 'checked', false );
+	if ( $selectedSide.val() !== selectedValue ) {
+		$selectedSide.prop( 'checked', false );
+		$selectedSide.prop( 'title', mw.msg(
+			selectedValue === 'other' ?
+				'twocolconflict-split-select-all-your-tooltip' :
+				'twocolconflict-split-select-all-other-tooltip'
+		) );
 	}
 }
 
 function initHeaderSideSelector() {
-	var $headerSwitch = $( '.mw-twocolconflict-split-selection-header' ),
-		$headerRadioButtons = $headerSwitch.find( 'input' );
+	var $headerSelection = $( '.mw-twocolconflict-split-selection-header' );
 
-	$headerRadioButtons.on( 'change', function () {
-		var $rowSwitches = $( '.mw-twocolconflict-split-selection-row' ),
-			$rowRadioButtons = $rowSwitches.find( 'input' ),
-			$checkedHeaderButton = $( this );
+	$headerSelection.find( 'input' ).on( 'change', function () {
+		var $selectedHeaderSide = $( this ),
+			$unselectedHeaderSide = $headerSelection.find( 'input:not(:checked)' );
+		$selectedHeaderSide.prop( 'title', mw.msg(
+			$selectedHeaderSide.val() === 'other' ?
+				'twocolconflict-split-selected-all-other-tooltip' :
+				'twocolconflict-split-selected-all-your-tooltip'
+		) );
+		$unselectedHeaderSide.prop( 'title', mw.msg(
+			$unselectedHeaderSide.val() === 'other' ?
+				'twocolconflict-split-select-all-other-tooltip' :
+				'twocolconflict-split-select-all-your-tooltip'
+		) );
 
-		$rowRadioButtons.each( function () {
+		$( '.mw-twocolconflict-split-selection-row input' ).each( function () {
 			var $rowButton = $( this );
-
-			if ( $rowButton.val() === $checkedHeaderButton.val() ) {
+			if ( $rowButton.val() === $selectedHeaderSide.val() ) {
 				$rowButton.click();
 			}
 		} );
@@ -227,30 +239,26 @@ function initHeaderSideSelector() {
 }
 
 function handleSelectColumn() {
-	var $group = $( this ).closest( '.mw-twocolconflict-split-selection-row' ),
-		$checked = $group.find( 'input:checked' ),
-		$row = $group.closest( '.mw-twocolconflict-split-row' ),
+	var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
+		$selected = $row.find( '.mw-twocolconflict-split-selection-row input:checked' ),
+		$unselected = $row.find( '.mw-twocolconflict-split-selection-row input:not(:checked)' ),
 		$label = $row.find( '.mw-twocolconflict-split-selector-label span' ),
-		$selection = $row.find( '.mw-twocolconflict-split-selection-row' ),
 		// TODO: Rename classes, "add" should be "your", etc.
 		$yourColumn = $row.find( '.mw-twocolconflict-split-add' ),
 		$otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
 
-	$selection.find( '.oo-ui-inputWidget-input' ).each( function () {
-		$( this ).prop( 'title', mw.msg(
-			( $( this ).is( ':checked' ) ) ? 'twocolconflict-split-selected-version-tooltip' :
-				'twocolconflict-split-unselected-version-tooltip'
-		) );
-	} );
-
-	if ( $checked.val() === 'your' ) {
+	if ( $selected.val() === 'your' ) {
 		disableColumn( $otherColumn );
 		enableColumn( $yourColumn );
+		$selected.prop( 'title', mw.msg( 'twocolconflict-split-selected-your-tooltip' ) );
+		$unselected.prop( 'title', mw.msg( 'twocolconflict-split-select-other-tooltip' ) );
 		$row.removeClass( 'mw-twocolconflict-no-selection' );
 		$label.text( mw.msg( 'twocolconflict-split-your-version-chosen' ) );
-	} else if ( $checked.val() === 'other' ) {
+	} else if ( $selected.val() === 'other' ) {
 		enableColumn( $otherColumn );
 		disableColumn( $yourColumn );
+		$selected.prop( 'title', mw.msg( 'twocolconflict-split-selected-other-tooltip' ) );
+		$unselected.prop( 'title', mw.msg( 'twocolconflict-split-select-your-tooltip' ) );
 		$row.removeClass( 'mw-twocolconflict-no-selection' );
 		$label.text( mw.msg( 'twocolconflict-split-other-version-chosen' ) );
 	} else {
@@ -259,7 +267,7 @@ function handleSelectColumn() {
 		$label.text( mw.msg( 'twocolconflict-split-choose-version' ) );
 	}
 
-	resetHeaderSideSelector( $checked.val() );
+	resetHeaderSideSelector( $selected.val() );
 }
 
 function initRowSideSelectors() {
