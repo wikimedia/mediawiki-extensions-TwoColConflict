@@ -17,8 +17,8 @@ describe( 'TwoColConflict save and preview', function () {
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageText.getText(),
-			'Line1\nChange A'
+			FinishedConflictPage.pageWikitext,
+			'Line<span>1</span>\n\nChange <span lang="de">A</span>'
 		);
 	} );
 
@@ -47,8 +47,8 @@ describe( 'TwoColConflict save and preview', function () {
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageText.getText(),
-			'A[edit]\nEdit3\nB[edit]\nEdit2\\r Your'
+			FinishedConflictPage.pageWikitext,
+			'==A==\nEdit3\n==B==\nEdit2\\r <span lang="en">Your</span>'
 		);
 	} );
 
@@ -103,8 +103,8 @@ describe( 'TwoColConflict save and preview', function () {
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageText.getText(),
-			'Line1\nDummy Text'
+			FinishedConflictPage.pageWikitext,
+			'Line<span>1</span>\n\nDummy Text'
 		);
 	} );
 
