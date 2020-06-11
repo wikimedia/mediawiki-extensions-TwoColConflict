@@ -88,8 +88,8 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageText.getText(),
-			'Line1 Line2 Line3 Comment A Comment edited'
+			FinishedConflictPage.pageWikitext,
+			'Line1\nLine2\nLine3\nComment <span lang="de">A</span>\nComment edited'
 		);
 	} );
 
@@ -102,8 +102,8 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageText.getText(),
-			'Line1 Line2 Line3 Comment B Comment A'
+			FinishedConflictPage.pageWikitext,
+			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>\nComment <span lang="de">A</span>'
 		);
 	} );
 
