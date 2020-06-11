@@ -40,11 +40,17 @@ class HtmlSideSelectorComponent {
 				] ],
 				Html::rawElement( 'div', [], new RadioInputWidget( [
 					'name' => 'mw-twocolconflict-side-selector',
+					'title' => $this->messageLocalizer->msg(
+						'twocolconflict-split-select-all-other-tooltip'
+					)->text(),
 					'value' => 'other',
 					'tabIndex' => '1',
 				] ) ) .
 				Html::rawElement( 'div', [], new RadioInputWidget( [
 					'name' => 'mw-twocolconflict-side-selector',
+					'title' => $this->messageLocalizer->msg(
+						'twocolconflict-split-select-all-your-tooltip'
+					)->text(),
 					'value' => 'your',
 					'tabIndex' => '1',
 				] ) )
@@ -71,11 +77,17 @@ class HtmlSideSelectorComponent {
 				] ],
 				Html::rawElement( 'div', [], new RadioInputWidget( [
 					'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
+					'title' => $this->messageLocalizer->msg(
+						'twocolconflict-split-select-other-tooltip'
+					)->text(),
 					'value' => 'other',
 					'tabIndex' => '1',
 				] ) ) .
 				Html::rawElement( 'div', [], new RadioInputWidget( [
 					'name' => 'mw-twocolconflict-side-selector[' . $rowNum . ']',
+					'title' => $this->messageLocalizer->msg(
+						'twocolconflict-split-select-your-tooltip'
+					)->text(),
 					'value' => 'your',
 					'selected' => true,
 					'tabIndex' => '1',

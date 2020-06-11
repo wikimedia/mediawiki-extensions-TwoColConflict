@@ -71,9 +71,15 @@
 				"twocolconflict-split-choose-version",
 				"twocolconflict-split-edit-tooltip",
 				"twocolconflict-split-other-version-chosen",
-				"twocolconflict-split-selected-version-tooltip",
-				"twocolconflict-split-unselected-version-tooltip",
-				"twocolconflict-split-your-version-chosen"
+				"twocolconflict-split-your-version-chosen",
+				"twocolconflict-split-select-all-other-tooltip",
+				"twocolconflict-split-select-all-your-tooltip",
+				"twocolconflict-split-selected-all-other-tooltip",
+				"twocolconflict-split-selected-all-your-tooltip",
+				"twocolconflict-split-select-other-tooltip",
+				"twocolconflict-split-select-your-tooltip",
+				"twocolconflict-split-selected-other-tooltip",
+				"twocolconflict-split-selected-your-tooltip"
 			]
 		},
 		"ext.TwoColConflict.SplitCss": {
