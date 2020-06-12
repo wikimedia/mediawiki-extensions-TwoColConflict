@@ -163,7 +163,18 @@
 			"packageFiles": [
 				"modules/ext.TwoColConflict.JSCheck.js"
 			]
+		},
+		"ext.TwoColConflict.SpecialCss": {
+			"styles": [
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Special.less"
+			]
 		}
+	},
+	"ExtensionMessagesFiles": {
+		"TwoColConflictAlias": "TwoColConflict.alias.php"
+	},
+	"SpecialPages": {
+		"TwoColConflictProvideSubmittedText": "TwoColConflict\\ProvideSubmittedText\\SpecialProvideSubmittedText"
 	},
 	"QUnitTestModule": {
 		"localBasePath": "tests/qunit",

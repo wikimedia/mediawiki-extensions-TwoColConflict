@@ -5,13 +5,16 @@ namespace TwoColConflict\Html;
 use Html;
 use Language;
 use Linker;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use Title;
+use TitleValue;
 use TwoColConflict\SplitConflictUtils;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
@@ -26,7 +29,7 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @var LinkTarget
 	 */
-	private $linkTarget;
+	private $title;
 
 	/**
 	 * @var RevisionRecord|null
@@ -59,7 +62,12 @@ class HtmlSplitConflictHeader {
 	private $newEditSummary;
 
 	/**
-	 * @param LinkTarget $linkTarget
+	 * @var LinkRenderer
+	 */
+	private $linkRenderer;
+
+	/**
+	 * @param Title $title
 	 * @param User $user
 	 * @param string $newEditSummary
 	 * @param Language $language
@@ -67,10 +75,10 @@ class HtmlSplitConflictHeader {
 	 * @param string|int|false $now Current time for testing. Any value the ConvertibleTimestamp
 	 *  class accepts. False for the current time.
 	 * @param RevisionRecord|null $revision Latest revision for testing, derived from the
-	 *  $linkTarget otherwise.
+	 *  title otherwise.
 	 */
 	public function __construct(
-		LinkTarget $linkTarget,
+		Title $title,
 		User $user,
 		string $newEditSummary,
 		Language $language,
@@ -78,20 +86,22 @@ class HtmlSplitConflictHeader {
 		$now = false,
 		RevisionRecord $revision = null
 	) {
-		$this->linkTarget = $linkTarget;
+		$this->title = $title;
 		$this->revision = $revision ?? $this->getLatestRevision();
 		$this->user = $user;
 		$this->language = $language;
 		$this->messageLocalizer = $messageLocalizer;
 		$this->now = new ConvertibleTimestamp( $now );
 		$this->newEditSummary = $newEditSummary;
+		// TODO inject?
+		$this->linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 	}
 
 	/**
 	 * @return RevisionRecord|null
 	 */
 	private function getLatestRevision() : ?RevisionRecord {
-		$wikiPage = WikiPage::factory( Title::newFromLinkTarget( $this->linkTarget ) );
+		$wikiPage = WikiPage::factory( $this->title );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( WikiPage::READ_LATEST );
 		return $wikiPage->getRevisionRecord();
@@ -154,7 +164,7 @@ class HtmlSplitConflictHeader {
 			$this->messageLocalizer->msg( 'twocolconflict-split-not-saved-at' ),
 			$this->newEditSummary,
 			'mw-twocolconflict-split-your-version-header',
-			$this->messageLocalizer->msg( 'twocolconflict-copy-action' )
+			true
 		);
 	}
 
@@ -163,7 +173,7 @@ class HtmlSplitConflictHeader {
 	 * @param Message $userMsg
 	 * @param string $summary
 	 * @param string $class
-	 * @param Message|null $copyMsg
+	 * @param bool|null $showCopy
 	 *
 	 * @return string HTML
 	 */
@@ -172,38 +182,62 @@ class HtmlSplitConflictHeader {
 		Message $userMsg,
 		string $summary,
 		string $class,
-		?Message $copyMsg = null
+		?bool $showCopy = false
 	) : string {
 		$html = Html::element(
 				'span',
 				[ 'class' => 'mw-twocolconflict-revision-label' ],
 				$dateMsg->text()
 			);
-		if ( $copyMsg ) {
-			$html .= Html::rawElement(
-				'span',
-				[ 'class' => 'mw-twocolconflict-copy-link' ],
-				$this->messageLocalizer->msg( 'parentheses' )
-					->rawParams( Html::element(
-						'a',
-						[ 'title' => $this->messageLocalizer->msg(
-							'twocolconflict-copy-tooltip'
-						)->text() ],
-						$copyMsg->text()
-					) )
-			);
+		if ( $showCopy ) {
+			$html .= $this->getCopyLink();
 		}
 		$html .= Html::element( 'br' ) .
 			Html::rawElement( 'span', [], $userMsg->escaped() );
 
 		if ( $summary !== '' ) {
 			$summaryMsg = $this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( Linker::formatComment( $summary, $this->linkTarget ) );
+				->rawParams( Linker::formatComment( $summary, $this->title ) );
 			$html .= Html::element( 'br' ) .
 				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
 		}
 
 		return Html::rawElement( 'div', [ 'class' => $class ], $html );
+	}
+
+	private function getCopyLink() {
+		$jsLink = Html::rawElement(
+			'span',
+			[ 'class' => 'mw-twocolconflict-copy-link-js' ],
+			$this->messageLocalizer->msg( 'parentheses' )
+				->rawParams( Html::element(
+					'a',
+					[ 'title' => $this->messageLocalizer->msg(
+						'twocolconflict-copy-tooltip'
+					)->text() ],
+					$this->messageLocalizer->msg( 'twocolconflict-copy-action' )->text()
+				) )
+		);
+
+		$noJsLink = Html::rawElement(
+			'span',
+			[ 'class' => 'mw-twocolconflict-copy-link-nojs' ],
+			$this->messageLocalizer->msg( 'parentheses' )
+				->rawParams( $this->linkRenderer->makeKnownLink(
+					new TitleValue( NS_SPECIAL, 'ProvideSubmittedText' ),
+					$this->messageLocalizer->msg( 'twocolconflict-copy-tab-action' )->text(),
+					[
+						'title' => $this->messageLocalizer->msg(
+							'twocolconflict-copy-tab-tooltip'
+						)->text(),
+						'target' => '_blank',
+					],
+					[
+						'mw-twocolconflict-cache-title' => $this->title->getPrefixedDBkey()
+					]
+				) )
+		);
+		return $jsLink . $noJsLink;
 	}
 
 	/**

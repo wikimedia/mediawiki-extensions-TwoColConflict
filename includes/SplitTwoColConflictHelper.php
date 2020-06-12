@@ -6,6 +6,7 @@ use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
+use ObjectCache;
 use OutputPage;
 use ParserOptions;
 use Title;
@@ -13,6 +14,7 @@ use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 use TwoColConflict\Html\HtmlSplitConflictView;
 use TwoColConflict\Html\HtmlTalkPageResolutionView;
+use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TalkPageConflict\TalkPageResolution;
 use User;
@@ -156,6 +158,10 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$conflictView = $this->buildEditConflictView( $storedLines, $yourLines );
 		}
 
+		if ( !$this->out->getRequest()->getBool( 'mw-twocolconflict-js' ) ) {
+			$this->setSubmittedTextCache();
+		}
+
 		return Html::hidden( 'wpTextbox1', $this->storedversion ) .
 			$conflictView .
 			$this->buildRawTextsHiddenFields();
@@ -250,6 +256,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 					'tabindex' => '-1',
 				]
 			);
+	}
+
+	private function setSubmittedTextCache() {
+		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
+		$textCache->stashText(
+			$this->title->getPrefixedDBkey(),
+			$this->out->getUser(),
+			$this->out->getRequest()->getSessionId()->getId(),
+			$this->yourtext
+		);
 	}
 
 }
