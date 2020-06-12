@@ -1,3 +1,5 @@
+'use strict';
+
 const Api = require( 'wdio-mediawiki/Api' ),
 	Util = require( 'wdio-mediawiki/Util' );
 

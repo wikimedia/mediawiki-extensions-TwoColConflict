@@ -1,3 +1,5 @@
+'use strict';
+
 const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 

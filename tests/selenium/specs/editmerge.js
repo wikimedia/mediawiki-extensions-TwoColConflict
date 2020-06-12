@@ -1,4 +1,6 @@
-var assert = require( 'assert' ),
+'use strict';
+
+const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
 describe( 'TwoColConflict editable areas', function () {

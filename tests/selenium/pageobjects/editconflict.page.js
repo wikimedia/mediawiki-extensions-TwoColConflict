@@ -1,3 +1,5 @@
+'use strict';
+
 const Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	PreferencesPage = require( '../pageobjects/preferences.page' ),
@@ -70,10 +72,10 @@ class EditConflictPage extends Page {
 
 	/**
 	 * @param {boolean} [show] Defaults to true.
-     * @return {Promise} Promise from the mw.Api request
+	 * @return {Promise} Promise from the mw.Api request
 	 */
 	toggleHelpDialog( show ) {
-		var hide = show === false;
+		const hide = show === false;
 		Util.waitForModuleState( 'mediawiki.base' );
 
 		return browser.execute( function ( hide ) {
