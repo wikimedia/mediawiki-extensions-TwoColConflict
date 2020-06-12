@@ -34,8 +34,6 @@
 	"twocolconflict-split-reset-warning-accept": "Scitte",
 	"twocolconflict-split-collapse-tooltip": "Scunne 'u teste non cangiate",
 	"twocolconflict-split-expand-tooltip": "Spanne 'u teste non cangiate",
-	"twocolconflict-split-selected-version-tooltip": "Versione scacchiate",
-	"twocolconflict-split-unselected-version-tooltip": "Cazze pe scacchià sta versione",
 	"twocolconflict-split-help-tooltip": "'Ndruche l'aijute",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Messàgge in conflitte"
 }

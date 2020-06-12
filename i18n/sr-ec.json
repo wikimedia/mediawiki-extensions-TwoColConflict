@@ -39,8 +39,6 @@
 	"twocolconflict-split-reset-warning-accept": "Одбаци",
 	"twocolconflict-split-collapse-tooltip": "Скупи непромењени текст",
 	"twocolconflict-split-expand-tooltip": "Рашири непромењени текст",
-	"twocolconflict-split-selected-version-tooltip": "Изабрана верзија",
-	"twocolconflict-split-unselected-version-tooltip": "Кликните да бисте изабрали верзију",
 	"twocolconflict-split-help-tooltip": "Прикажи помоћ",
 	"twocolconflict-talk-reverse-order": "Премести испред"
 }

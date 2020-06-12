@@ -44,6 +44,5 @@
 	"twocolconflict-split-reset-warning-cancel": "Отмена",
 	"twocolconflict-split-reset-warning-accept": "Сбросить",
 	"twocolconflict-split-collapse-tooltip": "Свернуть текст",
-	"twocolconflict-split-expand-tooltip": "Развернуть текст",
-	"twocolconflict-split-selected-version-tooltip": "Выбранная версия"
+	"twocolconflict-split-expand-tooltip": "Развернуть текст"
 }

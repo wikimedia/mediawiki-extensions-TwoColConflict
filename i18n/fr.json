@@ -54,8 +54,6 @@
 	"twocolconflict-split-reset-warning-accept": "Abandonner",
 	"twocolconflict-split-collapse-tooltip": "Replier le texte non modifié",
 	"twocolconflict-split-expand-tooltip": "Déplier le texte non modifié",
-	"twocolconflict-split-selected-version-tooltip": "Version sélectionnée",
-	"twocolconflict-split-unselected-version-tooltip": "Cliquer pour sélectionner cette version",
 	"twocolconflict-split-help-tooltip": "Afficher l’aide",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Publications en conflit",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Malheureusement, quelqu’un d’autre a publié en même temps que vous. Veuillez vérifier les commentaires sur la page suivante. Si nécessaire, vous pouvez modifier les vôtres et modifier l’ordre final.",

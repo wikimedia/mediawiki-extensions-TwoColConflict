@@ -45,8 +45,6 @@
 	"twocolconflict-split-reset-warning-accept": "Porzuć",
 	"twocolconflict-split-collapse-tooltip": "Zwiń niezmieniony tekst",
 	"twocolconflict-split-expand-tooltip": "Rozwiń niezmieniony tekst",
-	"twocolconflict-split-selected-version-tooltip": "Wybrana wersja",
-	"twocolconflict-split-unselected-version-tooltip": "Kliknij, aby wybrać tę wersję",
 	"twocolconflict-split-help-tooltip": "Pokaż pomoc",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Kolidujące posty",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Niestety ktoś zapostował wiadomość w tym samym czasie co ty. Sprawdź sproszę komentarze na następnej stronie. Jeśli to konieczne, zmodyfikuj swój i zmień końcową kolejność.",

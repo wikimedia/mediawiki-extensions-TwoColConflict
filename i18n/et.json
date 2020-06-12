@@ -34,7 +34,5 @@
 	"twocolconflict-split-reset-warning-accept": "Hülga",
 	"twocolconflict-split-collapse-tooltip": "Peida muutmata tekst",
 	"twocolconflict-split-expand-tooltip": "Näita muutmata teksti",
-	"twocolconflict-split-selected-version-tooltip": "Valitud versioon",
-	"twocolconflict-split-unselected-version-tooltip": "Klõpsa, et valida see versioon",
 	"twocolconflict-split-help-tooltip": "Näita abi"
 }

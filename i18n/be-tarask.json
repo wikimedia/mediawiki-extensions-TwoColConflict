@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
-	"twocolconflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня"
+	"twocolconflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня",
+	"twocolconflict-beta-feature-message": "Двухслупковы прагляд канфліктаў рэдагаваньня",
+	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагаваньня ў палепшаным, двухслупковым выглядзе."
 }

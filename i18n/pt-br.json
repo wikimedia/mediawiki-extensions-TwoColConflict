@@ -43,8 +43,6 @@
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Recolher texto inalterado",
 	"twocolconflict-split-expand-tooltip": "Expandir texto inalterado",
-	"twocolconflict-split-selected-version-tooltip": "Versão selecionada",
-	"twocolconflict-split-unselected-version-tooltip": "Clique para selecionar esta versão",
 	"twocolconflict-split-help-tooltip": "Mostrar ajuda",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Postagens conflitantes",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Infelizmente, alguém postou ao mesmo tempo que você. Por favor, revise os comentários na próxima página. Se necessário, você pode editar o seu e alterar o pedido final.",

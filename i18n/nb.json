@@ -32,7 +32,5 @@
 	"twocolconflict-split-reset-warning-accept": "Forkast",
 	"twocolconflict-split-collapse-tooltip": "Skjul uendret tekst",
 	"twocolconflict-split-expand-tooltip": "Vis uendret tekst",
-	"twocolconflict-split-selected-version-tooltip": "Valgt versjon",
-	"twocolconflict-split-unselected-version-tooltip": "Klikk for å velge denne versjonen",
 	"twocolconflict-split-help-tooltip": "Vis hjelp"
 }

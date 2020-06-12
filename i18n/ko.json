@@ -33,7 +33,6 @@
 	"twocolconflict-split-reset-warning-accept": "버리기",
 	"twocolconflict-split-collapse-tooltip": "텍스트 접기",
 	"twocolconflict-split-expand-tooltip": "텍스트 펼치기",
-	"twocolconflict-split-unselected-version-tooltip": "이 판을 선택하려면 클릭",
 	"twocolconflict-split-help-tooltip": "도움말 보기",
 	"twocolconflict-talk-header-overview": "어떤 다른 사람이 당신과 같은 시각에 게시했습니다. 아래의 의견을 검토하고 게시할 순서를 정하십세요. 필요한 경우 당신의 기여를 편집할 수 있습니다.",
 	"twocolconflict-talk-reverse-order": "이전으로 이동"

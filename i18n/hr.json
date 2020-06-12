@@ -40,7 +40,13 @@
 	"twocolconflict-split-reset-warning-accept": "Odbaci",
 	"twocolconflict-split-collapse-tooltip": "Sklopi nepromijenjeni tekst",
 	"twocolconflict-split-expand-tooltip": "Proširi nepromijenjeni tekst",
-	"twocolconflict-split-selected-version-tooltip": "Izabrana inačica",
-	"twocolconflict-split-unselected-version-tooltip": "Klikni za odabir inačice",
+	"twocolconflict-split-select-all-other-tooltip": "Škljocni za odabir svih drugih promjena inačica",
+	"twocolconflict-split-select-all-your-tooltip": "Škljocni za odabir svih Vaših promjena inačica",
+	"twocolconflict-split-selected-all-other-tooltip": "Sve druge promjene inačica su odabrane",
+	"twocolconflict-split-selected-all-your-tooltip": "Sve su Vaše promjene inačica odabrane",
+	"twocolconflict-split-select-other-tooltip": "Škljocni za odabir druge inačice",
+	"twocolconflict-split-select-your-tooltip": "Škljocni za odabir vlastite inačice",
+	"twocolconflict-split-selected-other-tooltip": "Druga inačica je odabrana",
+	"twocolconflict-split-selected-your-tooltip": "Vaša inačice je odabrana",
 	"twocolconflict-split-help-tooltip": "Prikaži pomoć"
 }

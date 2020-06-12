@@ -9,7 +9,5 @@
 	"twocolconflict-split-reset-tooltip": "Gooi al u wysigings aan hierdie teks weg",
 	"twocolconflict-split-collapse-tooltip": "Vou onveranderde teks in",
 	"twocolconflict-split-expand-tooltip": "Brei onveranderde teks uit",
-	"twocolconflict-split-selected-version-tooltip": "Geselekteerde weergawe",
-	"twocolconflict-split-unselected-version-tooltip": "Klik om hierdie weergawe te kies",
 	"twocolconflict-split-help-tooltip": "Wys hulp"
 }

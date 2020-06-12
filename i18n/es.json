@@ -13,7 +13,8 @@
 			"Juenti el toju",
 			"Macofe",
 			"MarcoAurelio",
-			"RicardoSGZ"
+			"RicardoSGZ",
+			"Whytheonlyone"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -48,8 +49,14 @@
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Replegar texto sin cambios",
 	"twocolconflict-split-expand-tooltip": "Expandir texto sin cambios",
-	"twocolconflict-split-selected-version-tooltip": "Versión seleccionada",
-	"twocolconflict-split-unselected-version-tooltip": "Pulsa para seleccionar esta versión",
+	"twocolconflict-split-select-all-other-tooltip": "Clic para seleccionar todo de los cambios de la otra revisión",
+	"twocolconflict-split-select-all-your-tooltip": "Clic para seleccionar todo de los cambios de tu revisión",
+	"twocolconflict-split-selected-all-other-tooltip": "Todo de los cambios de la otra revisión están seleccionados",
+	"twocolconflict-split-selected-all-your-tooltip": "Todo de los cambios de la otra revisión están seleccionados",
+	"twocolconflict-split-select-other-tooltip": "Pulsa para seleccionar la otra versión",
+	"twocolconflict-split-select-your-tooltip": "Pulsa para seleccionar esta versión",
+	"twocolconflict-split-selected-other-tooltip": "Otra versión está seleccionada",
+	"twocolconflict-split-selected-your-tooltip": "La versión está seleccionada",
 	"twocolconflict-talk-your": "Tu entrada",
 	"twocolconflict-talk-conflicting": "Entrada en conflicto",
 	"twocolconflict-talk-reorder-prompt": "Coloque su entrada en relación con la entrada en conflicto:"

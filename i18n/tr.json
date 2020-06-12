@@ -45,8 +45,6 @@
 	"twocolconflict-split-reset-warning-accept": "Sil",
 	"twocolconflict-split-collapse-tooltip": "Değişmeyen metni daralt",
 	"twocolconflict-split-expand-tooltip": "Değişmeyen metni genişlet",
-	"twocolconflict-split-selected-version-tooltip": "Seçilen sürüm",
-	"twocolconflict-split-unselected-version-tooltip": "Bu sürümü seçmek için tıklayın",
 	"twocolconflict-split-help-tooltip": "Yardımı gör",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Çelişen Gönderiler",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Ne yazık ki, başka bir kişi sizinle aynı zamanda gönderdi. Lütfen bir sonraki sayfadaki yorumları inceleyin. Gerekirse, kendinizinkini düzenleyebilir ve son düzeni değiştirebilirsiniz.",

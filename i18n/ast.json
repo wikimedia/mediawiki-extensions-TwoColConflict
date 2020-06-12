@@ -34,7 +34,5 @@
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Replegar el testu ensin cambiar",
 	"twocolconflict-split-expand-tooltip": "Espander el testu ensin cambiar",
-	"twocolconflict-split-selected-version-tooltip": "Versión seleicionada",
-	"twocolconflict-split-unselected-version-tooltip": "Pulsia pa escoyer esta versión",
 	"twocolconflict-split-help-tooltip": "Amosar l'ayuda"
 }
