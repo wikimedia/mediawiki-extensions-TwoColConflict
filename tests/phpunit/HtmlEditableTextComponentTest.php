@@ -16,7 +16,7 @@ use Wikimedia\TestingAccessWrapper;
  */
 class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 
-	public function setUp() : void {
+	protected function setUp() : void {
 		parent::setUp();
 		Theme::setSingleton( new BlankTheme() );
 	}
