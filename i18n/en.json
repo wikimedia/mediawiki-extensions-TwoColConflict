@@ -13,7 +13,7 @@
 	"twocolconflict-copy-tooltip": "Copy full wikitext of your revision to clipboard (edits made below are not included)",
 	"twocolconflict-core-ui-hint": "An updated interface for solving edit conflicts is now available. Enable the Two Column Edit Conflict View in your [[Special:Preferences#mw-prefsection-editing|preferences]] to try it out.",
 	"twocolconflict-core-ui-hint-close": "Never show again",
-	"twocolconflict-preference-enabled": "Enable the [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Two Column Edit Conflict View]] to resolve edit conflicts",
+	"twocolconflict-preference-enabled": "Enable the [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Paragraph-based Edit Conflict Interface]] to resolve edit conflicts",
 	"twocolconflict-split-header-hint": "You can help to improve this feature further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
 	"twocolconflict-split-header-hint-beta": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
 	"twocolconflict-split-header-overview": "While you were editing, another user edited the same page and published before you. Please review both versions and merge them. Only the text in the selected boxes will be saved when you click \"{{int:publishpage}}\".",
