@@ -38,5 +38,8 @@
 	"twocolconflict-split-reset-warning-accept": "Απόρριψη",
 	"twocolconflict-split-collapse-tooltip": "Σύμπτυξη αμετάβλητου κειμένου",
 	"twocolconflict-split-expand-tooltip": "Επέκταση αμετάβλητου κειμένου",
+	"twocolconflict-split-select-other-tooltip": "Κάντε κλικ για να επιλέξετε την άλλη έκδοση",
+	"twocolconflict-split-select-your-tooltip": "Κάντε κλικ για να επιλέξετε την έκδοσή σας",
+	"twocolconflict-split-selected-your-tooltip": "Επιλέχθηκε η έκδοσή σας",
 	"twocolconflict-split-help-tooltip": "Εμφάνιση βοήθειας"
 }

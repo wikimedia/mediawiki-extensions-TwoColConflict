@@ -33,6 +33,14 @@
 	"twocolconflict-split-reset-warning-accept": "Cancella",
 	"twocolconflict-split-collapse-tooltip": "Comprimi testo non modificato",
 	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato",
+	"twocolconflict-split-select-all-other-tooltip": "Clicca per selezionare tutte le altre versioni di modifica",
+	"twocolconflict-split-select-all-your-tooltip": "Clicca per selezionare tutte le tue versioni di modifica",
+	"twocolconflict-split-selected-all-other-tooltip": "Tutte le altre versioni di modifica sono selezionate",
+	"twocolconflict-split-selected-all-your-tooltip": "Tutte le tue versioni di modifica sono selezionate",
+	"twocolconflict-split-select-other-tooltip": "Clicca per selezionare l'altra versione",
+	"twocolconflict-split-select-your-tooltip": "Clicca per selezionare la tua versione",
+	"twocolconflict-split-selected-other-tooltip": "Un'altra versione è selezionata",
+	"twocolconflict-split-selected-your-tooltip": "La tua versione è selezionata",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Risolvi anomalia",
 	"twocolconflict-talk-reverse-order": "Sposta prima"
 }

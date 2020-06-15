@@ -15,7 +15,8 @@
 			"予弦",
 			"夢蝶葬花",
 			"神樂坂秀吉",
-			"科劳"
+			"科劳",
+			"铁桶"
 		]
 	},
 	"twocolconflict": "双栏冲突",
@@ -30,7 +31,7 @@
 	"twocolconflict-split-not-saved-at": "尚未发布",
 	"twocolconflict-split-choose-version": "请选择一个版本",
 	"twocolconflict-split-select-all": "全选",
-	"twocolconflict-split-tour-dialog-header": "解决编辑冲突",
+	"twocolconflict-split-tour-dialog-header": "合并冲突版本",
 	"twocolconflict-split-tour-dialog-message": "编辑冲突：在编辑期间，其他用户已经编辑并保存了此页面；因此，您刚刚完成编辑的版本，并未包含其他用户的更改。请在更新后的页面上合并您的更改。",
 	"twocolconflict-split-tour-dialog-btn-text": "开始合并",
 	"twocolconflict-split-tour-popup-btn-text": "好的，明白了",
