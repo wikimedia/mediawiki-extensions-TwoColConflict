@@ -17,7 +17,7 @@
 	"twocolconflict-copy-tooltip": "Kopiere den vollständigen Wikitext deiner Version in die Zwischenablage (unten vorgenommene Änderungen sind nicht enthalten)",
 	"twocolconflict-core-ui-hint": "Eine aktualisierte Schnittstelle zur Lösung von Bearbeitungskonflikten ist jetzt verfügbar. Aktiviere die zweispaltige Ansicht zum Bearbeiten von Konflikten in deinen [[Special:Preferences#mw-prefsection-editing|Benutzereinstellungen]], um sie auszuprobieren.",
 	"twocolconflict-core-ui-hint-close": "Nie wieder anzeigen",
-	"twocolconflict-preference-enabled": "[[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Zwei-Spalten-Bearbeitungskonflikt-Oberfläche]] aktivieren, um Bearbeitungskonflikte zu lösen",
+	"twocolconflict-preference-enabled": "[[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Absatzbasierte Bearbeitungskonflikt-Oberfläche]] aktivieren, um Bearbeitungskonflikte zu lösen",
 	"twocolconflict-split-header-hint": "Du kannst mithelfen, diese Funktion zu verbessern, wenn du dein Feedback [//de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte auf diese Seite] schreibst.",
 	"twocolconflict-split-header-hint-beta": "Vielen Dank für die Benutzung dieser Betafunktion. Du kannst weiterhin bei ihrer Verbesserung helfen, indem du [//de.wikipedia.org/wiki/Wikipedia_Diskussion:Technische_Wünsche/Topwünsche/Bearbeitungskonflikte auf dieser Seite] deine Rückmeldung hinterlässt.",
 	"twocolconflict-split-header-overview": "Während du bearbeitest, hat ein anderer Benutzer dieselbe Seite bearbeitet und vor deiner veröffentlicht. Bitte überprüfe beide Versionen und führe sie zusammen. Nur der Text in den ausgewählten Feldern wird gespeichert, wenn du auf \"{{int:publishpage}}\" klickst.",
