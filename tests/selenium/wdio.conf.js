@@ -1,13 +1,9 @@
 'use strict';
 
-/**
- * See also: http://webdriver.io/guide/testrunner/configurationfile.html
- */
 const fs = require( 'fs' );
 const path = require( 'path' );
+const video = require( 'wdio-video-reporter' );
 const logPath = process.env.LOG_DIR || path.join( __dirname, '/log' );
-
-let ffmpeg;
 
 // get current test title and clean it, to use it as file name
 function fileName( title ) {
@@ -54,7 +50,7 @@ exports.config = {
 	// ============
 	maxInstances: 1,
 	capabilities: [ {
-		// https://sites.google.com/a/chromium.org/chromedriver/capabilities
+		// For Chrome/Chromium https://sites.google.com/a/chromium.org/chromedriver/capabilities
 		browserName: 'chrome',
 		'goog:chromeOptions': {
 			// If DISPLAY is set, assume developer asked non-headless or CI with Xvfb.
@@ -63,12 +59,7 @@ exports.config = {
 				...( process.env.DISPLAY ? [] : [ '--headless' ] ),
 				// Chrome sandbox does not work in Docker
 				...( fs.existsSync( '/.dockerenv' ) ? [ '--no-sandbox' ] : [] )
-			],
-			// avoid that QuickSurveys pollute the output T251235
-			prefs: {
-				// eslint-disable-next-line camelcase
-				enable_do_not_track: true
-			}
+			]
 		}
 	} ],
 
@@ -86,38 +77,32 @@ exports.config = {
 	),
 	// See also: https://webdriver.io/docs/frameworks.html
 	framework: 'mocha',
-
-	// Setting this enables automatic screenshots for when a browser command fails
-	// It is also used by afterTest for capturig failed assertions.
-	screenshotPath: process.env.LOG_DIR || __dirname + '/log',
-
-	// Default timeout for each waitFor* command.
-	waitforTimeout: 10 * 1000,
-
-	// See also: http://webdriver.io/guide/testrunner/reporters.html
-	reporters: [ 'spec' ],
-
-	// See also: http://mochajs.org
+	// See also: https://webdriver.io/docs/spec-reporter.html
+	reporters: [
+		'spec',
+		// See also: https://webdriver.io/docs/junit-reporter.html#configuration
+		[ 'junit', {
+			outputDir: logPath
+		} ],
+		[
+			video, {
+				saveAllVideos: true,
+				outputDir: logPath
+			}
+		]
+	],
+	// See also: http://mochajs.org/
 	mochaOpts: {
 		ui: 'bdd',
 		timeout: 60 * 1000
 	},
 
-	// =====
-	// Hooks
-	// =====
-
 	/**
-	 * Save a screenshot when test fails.
+	 * Executed after a Mocha test ends.
 	 *
 	 * @param {Object} test Mocha Test object
 	 */
 	afterTest: function ( test ) {
-		if ( ffmpeg ) {
-			// stop video recording
-			ffmpeg.kill( 'SIGINT' );
-		}
-
 		// if test passed, ignore, else take and save screenshot
 		if ( test.passed ) {
 			return;
