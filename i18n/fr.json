@@ -24,7 +24,7 @@
 	"twocolconflict-copy-tooltip": "Copier tout le wikitexte de votre révision dans le presse-papier (les modifications faites ci-dessous ne sont pas incluses).",
 	"twocolconflict-core-ui-hint": "Une interface mise à jour pour résoudre les conflits de modification est désormais disponible. Activez l’affichage de conflit d’édition en deux colonnes dans vos [[Special:Preferences#mw-prefsection-editing|préférences]] pour l’essayer.",
 	"twocolconflict-core-ui-hint-close": "Ne plus afficher",
-	"twocolconflict-preference-enabled": "Activer la [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|Vue des conflits de modification sur deux colonnes]] pour résoudre les conflits de modification",
+	"twocolconflict-preference-enabled": "Activer la [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Interface des conflits de modification en paragraphe]] pour résoudre les conflits de modification",
 	"twocolconflict-split-header-hint": "Vous pouvez aider à améliorer cette fonctionnalité davantage, si vous laissez un avis [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View sur cette page].",
 	"twocolconflict-split-header-hint-beta": "Merci d'utiliser cette bêta-fonction. Vous pouvez aider à l'améliorer davantage en laissant un commentaire [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View sur cette page].",
 	"twocolconflict-split-header-overview": "Pendant que vous modifiez, une autre personne a modifié la même page et l’a publiée avant vous. Veuillez vérifier les deux versions et les fusionner. Seul le texte dans les cases sélectionnées sera enregistré lorsque vous cliquerez sur « {{int:publishpage}} ».",
