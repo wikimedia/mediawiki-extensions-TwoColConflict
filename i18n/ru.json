@@ -21,6 +21,7 @@
 	"twocolconflict-desc": "Показывает экран слияния правок для разрешения конфликтов редактирования в две колонки",
 	"twocolconflict-beta-feature-message": "Двухколоночный конфликт редактирования",
 	"twocolconflict-beta-feature-description": "Показывать конфликт редактирования в более современном, двухколоночном виде.",
+	"twocolconflict-core-ui-hint-close": "Никогда больше не показывать",
 	"twocolconflict-preference-enabled": "Включите [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|представление конфликта двухколоночного редактирования]] для разрешения конфликтов редактирования",
 	"twocolconflict-split-header-hint": "Вы можете помочь улучшить эту функцию, если оставите отзыв [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View на этой странице].",
 	"twocolconflict-split-header-hint-beta": "Благодарим за использование этой бета-функции. Вы можете помочь улучшить её, оставив отзыв [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View на этой странице].",
