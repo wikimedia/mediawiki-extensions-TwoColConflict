@@ -4,9 +4,11 @@ namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
+use OOUI\BlankTheme;
+use OOUI\Theme;
 use Title;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 use User;
@@ -17,7 +19,7 @@ use User;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
+class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 
 	private const NOW = 1000000000;
 
@@ -29,6 +31,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 	protected function setUp() : void {
 		parent::setUp();
 
+		Theme::setSingleton( new BlankTheme() );
 		$this->setUserLang( 'qqx' );
 		$this->otherUser = $this->getTestUser()->getUser();
 	}
@@ -43,9 +46,12 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			'>(twocolconflict-split-current-version-header: (just-now))<',
 			$html
 		);
+
 		$this->assertStringContainsString( '>(twocolconflict-split-saved-at: )<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-your-version-header)<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-not-saved-at)<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-copy-action)<', $html );
+		$this->assertStringContainsString( '>(twocolconflict-copy-tab-action)<', $html );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
@@ -55,8 +61,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertStringContainsString( '>' . $this->otherUser->getName() . '<', $html
-		);
+		$this->assertStringContainsString( '>' . $this->otherUser->getName() . '<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-header-hint)<', $html );
 		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: 20180721234200)<',
@@ -131,6 +136,10 @@ class HtmlSplitConflictHeaderTest extends MediaWikiTestCase {
 			$msg->method( 'parse' )->willReturn( $text );
 			$msg->method( 'text' )->willReturn( $text );
 			$msg->method( 'rawParams' )->willReturnCallback( function ( ...$params ) use ( $key ) {
+				// fallback for the copy links
+				if ( strpos( $params[0], 'twocolconflict-copy' ) ) {
+					return $params[0];
+				}
 				$msg = $this->createMock( Message::class );
 				$msg->method( 'escaped' )->willReturn( "($key: " . implode( '|', $params ) . ')' );
 				return $msg;
