@@ -5,6 +5,7 @@ namespace TwoColConflict\Tests;
 use IBufferingStatsdDataFactory;
 use Language;
 use MediaWiki\Content\IContentHandlerFactory;
+use MediaWiki\Session\SessionId;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
@@ -92,6 +93,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 	private function createTitle() {
 		$title = $this->createMock( Title::class );
 		$title->method( 'getContentModel' )->willReturn( '' );
+		$title->method( 'getPrefixedDBkey' )->willReturn( '' );
 		return $title;
 	}
 
@@ -106,12 +108,16 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$user = $this->createMock( User::class );
 		$user->method( 'getOption' )->willReturn( '' );
 
+		$request = $this->createMock( WebRequest::class );
+		$request->method( 'getBool' )->willReturn( false );
+		$request->method( 'getSessionId' )->willReturn( new SessionId( '' ) );
+
 		$out = $this->createMock( OutputPage::class );
 		$out->expects( $this->never() )->method( 'addHTML' );
 		$out->method( 'getUser' )->willReturn( $user );
 		$out->method( 'getLanguage' )->willReturn( $this->createMock( Language::class ) );
 		$out->method( 'getContext' )->willReturn( $localizer );
-		$out->method( 'getRequest' )->willReturn( $this->createMock( WebRequest::class ) );
+		$out->method( 'getRequest' )->willReturn( $request );
 		return $out;
 	}
 
