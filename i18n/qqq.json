@@ -23,7 +23,7 @@
 	"twocolconflict-copy-tooltip": "Tooltip displayed for the action link to copy your original wikitext.",
 	"twocolconflict-core-ui-hint": "Note shown to users experiencing the MediaWiki core edit conflict pointing to the new feature.",
 	"twocolconflict-core-ui-hint-close": "Tooltip explaining the side effect of the close button, which is that the message will never been shown again.",
-	"twocolconflict-preference-enabled": "Label for the user preference that enables the two column edit conflict interface.",
+	"twocolconflict-preference-enabled": "Label for the user preference that enables the paragraph-based edit conflict interface.",
 	"twocolconflict-special-footer-hint": "Hint at the bottom of the special page to copy your original wikitext how to return to the conflict resolution screen.",
 	"twocolconflict-special-header-overview": "Brief help message explaining the two-column workflow when you're on the special page to copy your original wikitext.",
 	"twocolconflict-special-not-saved": "Header for the special page to copy your original wikitext that was not saved yet.",
