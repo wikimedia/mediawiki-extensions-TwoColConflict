@@ -28,7 +28,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 	 */
 	public function execute( $subPage ) {
 		$this->setHeaders();
-		$this->getOutput()->addModuleStyles( 'ext.TwoColConflict.SpecialCss' );
+		$this->getOutput()->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 		$this->getOutput()->enableOOUI();
 
 		$titleDbKey = $this->getRequest()->getText( 'mw-twocolconflict-cache-title' );
