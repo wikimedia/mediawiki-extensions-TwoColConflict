@@ -41,32 +41,32 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 		return [
 			'logged-in user, non-main namespace' => [
 				'title' => 'Project:TestArticle',
-				'user' => $this->newMockUser( 'Foo' ),
+				'user' => $this->newMockUser( 1000 ),
 				'session' => 'abc123',
 				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:Project:TestArticle:Foo:abc123',
+					'twoColConflict_yourText:Project:TestArticle:1000',
 			],
 			'logged-in user' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( 'Foo' ),
+				'user' => $this->newMockUser( 1000 ),
 				'session' => 'abc123',
 				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:TestArticle:Foo:abc123',
+					'twoColConflict_yourText:TestArticle:1000',
 			],
 			'anonymous user' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( '1.2.3.4' ),
+				'user' => $this->newMockUser( 0 ),
 				'session' => 'abc123',
 				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:TestArticle:1.2.3.4:abc123',
+					'twoColConflict_yourText:TestArticle:abc123',
 			],
 		];
 	}
 
-	private function newMockUser( string $userName ) {
+	private function newMockUser( int $userId ) {
 		$user = $this->createMock( User::class );
-		$user->method( 'getName' )
-			->willReturn( $userName );
+		$user->method( 'getId' )
+			->willReturn( $userId );
 		return $user;
 	}
 }

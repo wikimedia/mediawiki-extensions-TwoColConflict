@@ -61,8 +61,7 @@ class SubmittedTextCache {
 			__CLASS__,
 			self::CACHE_KEY,
 			$titleDbKey,
-			$user->getName(),
-			$session
+			( $user->getId() ?: $session )
 		);
 	}
 }
