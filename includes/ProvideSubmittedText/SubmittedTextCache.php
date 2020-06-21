@@ -58,7 +58,6 @@ class SubmittedTextCache {
 	 */
 	private function makeCacheKey( string $titleDbKey, User $user, string $session ) {
 		return $this->cache->makeKey(
-			__CLASS__,
 			self::CACHE_KEY,
 			$titleDbKey,
 			( $user->getId() ?: $session )

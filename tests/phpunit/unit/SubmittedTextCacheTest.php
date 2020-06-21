@@ -43,22 +43,19 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 				'title' => 'Project:TestArticle',
 				'user' => $this->newMockUser( 1000 ),
 				'session' => 'abc123',
-				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:Project:TestArticle:1000',
+				'expected' => 'twoColConflict_yourText:Project:TestArticle:1000',
 			],
 			'logged-in user' => [
 				'title' => 'TestArticle',
 				'user' => $this->newMockUser( 1000 ),
 				'session' => 'abc123',
-				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:TestArticle:1000',
+				'expected' => 'twoColConflict_yourText:TestArticle:1000',
 			],
 			'anonymous user' => [
 				'title' => 'TestArticle',
 				'user' => $this->newMockUser( 0 ),
 				'session' => 'abc123',
-				'expected' => 'TwoColConflict\ProvideSubmittedText\SubmittedTextCache:' .
-					'twoColConflict_yourText:TestArticle:abc123',
+				'expected' => 'twoColConflict_yourText:TestArticle:abc123',
 			],
 		];
 	}
