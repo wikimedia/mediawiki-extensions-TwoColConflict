@@ -46,7 +46,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$text = $textCache->fetchText(
 			$titleDbKey,
 			$this->getOutput()->getUser(),
-			$this->getOutput()->getRequest()->getSessionId()->getId()
+			$this->getOutput()->getRequest()->getSessionId()
 		);
 
 		if ( !$text ) {
