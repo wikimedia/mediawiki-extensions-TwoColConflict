@@ -69,7 +69,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 		$out = $this->getMessageBox(
 			'twocolconflict-special-header-overview',
-			'error',
+			'notice',
 			'mw-twocolconflict-overview'
 		);
 		$out .= $this->getMessageBox( $hintMsg, 'notice' );
