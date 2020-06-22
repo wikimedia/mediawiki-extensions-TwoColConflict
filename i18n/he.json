@@ -3,19 +3,27 @@
 		"authors": [
 			"Amire80",
 			"Guycn2",
-			"Steeve815"
+			"Steeve815",
+			"דגש חזק"
 		]
 	},
 	"twocolconflict": "התנגשות עריכה בשני טורים",
 	"twocolconflict-desc": "הצגת מסך מיזוג צד־מול־צד לפתרון התנגשויות עריכה",
+	"twocolconflictprovidesubmittedtext": "התנגשות עריכה:",
 	"twocolconflict-beta-feature-message": "התנגשות עריכה בשני טורים",
 	"twocolconflict-beta-feature-description": "הצגת התנגשות עריכה בתצוגה מתקדמת בשני טורים.",
 	"twocolconflict-copy-action": "להעתיק את כל הטקסט",
 	"twocolconflict-copy-notice": "כל קוד הוויקי על הגרסה שלך הועתק ללוח ההעתקה (עריכות שנעשו להלן לא נכללות).",
+	"twocolconflict-copy-tab-action": "הצגת הטקסט המלא",
+	"twocolconflict-copy-tab-tooltip": "הצגת קוד הוויקי המלא של הגרסה שלך (העריכות שנעשו למטה אינן כלולות). נפתח בלשונית חדשה.",
 	"twocolconflict-copy-tooltip": "העתקת כל קוד הוויקי של הגרסה שלך ללוח ההעתקה (עריכות שנעשו להלן לא נכללות).",
 	"twocolconflict-core-ui-hint": "ממשק מעודכן לפתרון התנגשויות עריכה זמין עכשיו. {{GENDER:|הפעל|הפעילי}} את תצוגת התנגשות עריכה בשני טורים ב[[Special:Preferences#mw-prefsection-editing|העדפות]] שלך כדי לנסות אותו.",
 	"twocolconflict-core-ui-hint-close": "לא להציג שוב לעולם",
 	"twocolconflict-preference-enabled": "הפעלת [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|ממשק מבוסס פסקאות]] לפתרון התנגשויות עריכה",
+	"twocolconflict-special-footer-hint": "לסגור את הדף הנוכחי ולחזור לממשק התנגשות העריכה.",
+	"twocolconflict-special-header-overview": "בזמן שערכת, משתמש אחר ערך את אותו הדף ופרסם אותו לפניך. עותק לתצוגה בלבד שמור למטה. כל השינויים שנעשו בממשק התנגשות העריכה אינם מוצגים. כדי למזג שינויים ולפתור את העניין באמצעות ממשק התנגשויות עריכה, נא לחזור ללשונית הקודמת.",
+	"twocolconflict-special-not-saved": "לא פורסם",
+	"twocolconflict-special-textarea-hint": "באפשרותך להציג ולהעתיק את קוד המקור של הגרסה שלך:",
 	"twocolconflict-split-header-hint": "אתם יכולים לעזור לשפר את האפשרות הזאת עוד, אם תשאירו משוב [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View בדף הזה].",
 	"twocolconflict-split-header-hint-beta": "תודה על השימוש באפשרות הבטא הזאת. {{GENDER:|אתה יכול|את יכולה}} עזור לשפר אותה עוד יותר באמצעות שליחת משוב [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View לדף הזה].",
 	"twocolconflict-split-header-overview": "בזמן שערכת, משתמש אחר ערך את אותו הדף ופרסם לפניך. נא לסקור את שתי הגרסאות ולמזג אותן. רק הטקסט בתיבות שנבחרו יישמר בעת לחיצה על \"{{int:publishpage}}\".",
