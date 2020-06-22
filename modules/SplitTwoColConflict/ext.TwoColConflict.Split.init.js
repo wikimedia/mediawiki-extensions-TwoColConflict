@@ -335,59 +335,59 @@ function validateForm() {
 }
 
 function initPreview() {
-	var api = new mw.Api(),
-		merger = UtilModule.Merger,
-		$previewBtn = $( '#wpPreviewWidget' );
-	if ( api && $previewBtn.length ) {
-		OO.ui.infuse( $previewBtn )
-			.setDisabled( false );
-
-		$( '#wpPreview' )
-			.click( function ( e ) {
-				e.preventDefault();
-
-				if ( !validateForm() ) {
-					return;
-				}
-
-				var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→',
-					title = mw.config.get( 'wgPageName' );
-
-				$.when(
-					api.parse(
-						merger( getSelectedColumn( $( '.mw-twocolconflict-split-view' ) ) ),
-						{
-							title: title,
-							prop: 'text',
-							pst: true,
-							disablelimitreport: true,
-							disableeditsection: true
-						}
-					),
-					api.parse(
-						'{{int:previewnote}} <span class="mw-continue-editing">[[#editform|' +
-							arrow + ' {{int:continue-editing}}]]</span>',
-						{
-							title: title,
-							prop: 'text',
-							disablelimitreport: true,
-							disableeditsection: true
-						}
-					)
-				).done( function ( parsedContent, parsedNote ) {
-					showPreview( parsedContent, parsedNote );
-				} );
-			} );
+	var $previewBtn = $( '#wpPreviewWidget' );
+	if ( !$previewBtn.length ) {
+		return;
 	}
+
+	var api = new mw.Api();
+
+	OO.ui.infuse( $previewBtn )
+		.setDisabled( false );
+
+	$( '#wpPreview' ).click( function ( e ) {
+		e.preventDefault();
+
+		if ( !validateForm() ) {
+			return;
+		}
+
+		var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→',
+			title = mw.config.get( 'wgPageName' );
+
+		$.when(
+			api.parse(
+				UtilModule.Merger( getSelectedColumn( $( '.mw-twocolconflict-split-view' ) ) ),
+				{
+					title: title,
+					prop: 'text',
+					pst: true,
+					disablelimitreport: true,
+					disableeditsection: true
+				}
+			),
+			api.parse(
+				'{{int:previewnote}} <span class="mw-continue-editing">[[#editform|' +
+					arrow + ' {{int:continue-editing}}]]</span>',
+				{
+					title: title,
+					prop: 'text',
+					disablelimitreport: true,
+					disableeditsection: true
+				}
+			)
+		).done( function ( parsedContent, parsedNote ) {
+			showPreview( parsedContent, parsedNote );
+		} );
+	} );
 }
 
 function initSubmit() {
-	$( '#wpSave' )
-		.click( function ( e ) {
-			if ( !validateForm() ) {
-				e.preventDefault();
-			}
-		} );
+	$( '#wpSave' ).click( function ( e ) {
+		if ( !validateForm() ) {
+			e.preventDefault();
+		}
+	} );
 }
 
 function initSwapHandling() {
