@@ -4,7 +4,7 @@
 			"WMDE"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
+	"twocolconflict": "Paragraph-based Edit Conflict",
 	"twocolconflict-desc": "Showing a side-by-side edit merge screen for edit conflict resolution",
 	"twocolconflictprovidesubmittedtext": "Edit conflict:",
 	"twocolconflict-beta-feature-message": "Paragraph-based edit conflict",
@@ -21,8 +21,8 @@
 	"twocolconflict-special-header-overview": "While you were editing, another user edited the same page and published before you. A view-only copy of your revision is preserved below. Any changes made in the edit conflict interface are not reflected. To merge changes and resolve the issue using the edit conflict interface, return to the previous tab.",
 	"twocolconflict-special-not-saved": "Not published",
 	"twocolconflict-special-textarea-hint": "You can view and copy the source of your revision:",
-	"twocolconflict-split-header-hint": "You can help to improve this feature further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
-	"twocolconflict-split-header-hint-beta": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View on this page].",
+	"twocolconflict-split-header-hint": "You can help to improve this feature further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface on this page].",
+	"twocolconflict-split-header-hint-beta": "Thank you for using this beta feature. You can help to improve it further, if you leave feedback [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface on this page].",
 	"twocolconflict-split-header-overview": "While you were editing, another user edited the same page and published before you. Please review both versions and merge them. Only the text in the selected boxes will be saved when you click \"{{int:publishpage}}\".",
 	"twocolconflict-split-your-version-header": "Your revision",
 	"twocolconflict-split-current-version-header": "Latest revision as of $1",
