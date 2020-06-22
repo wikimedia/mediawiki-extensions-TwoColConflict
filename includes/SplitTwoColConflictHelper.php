@@ -263,7 +263,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$textCache->stashText(
 			$this->title->getPrefixedDBkey(),
 			$this->out->getUser(),
-			$this->out->getRequest()->getSessionId()->getId(),
+			$this->out->getRequest()->getSessionId(),
 			$this->yourtext
 		);
 	}
