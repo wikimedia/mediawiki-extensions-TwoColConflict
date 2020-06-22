@@ -34,7 +34,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$titleDbKey = $this->getRequest()->getText( 'title' );
 		$title = Title::newFromDBkey( $titleDbKey );
 		if ( !$title ) {
-			// TODO show an error message
+			// TODO: Return with a 404 ("Not Found") and show an error message
 			return;
 		}
 
@@ -50,7 +50,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		);
 
 		if ( !$text ) {
-			// TODO show an error message
+			// TODO Return with a 410 ("Gone") and show an error message
 			return;
 		}
 
