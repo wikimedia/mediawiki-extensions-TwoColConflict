@@ -233,7 +233,7 @@ class HtmlSplitConflictHeader {
 						'target' => '_blank',
 					],
 					[
-						'title' => $this->title->getPrefixedDBkey()
+						'mw-twocolconflict-cache-title' => $this->title->getPrefixedDBkey()
 					]
 				) )
 		);
