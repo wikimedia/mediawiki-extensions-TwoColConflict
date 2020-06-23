@@ -13,8 +13,8 @@ use Message;
 use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
+use SpecialPage;
 use Title;
-use TitleValue;
 use TwoColConflict\SplitConflictUtils;
 use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
@@ -224,16 +224,16 @@ class HtmlSplitConflictHeader {
 			[ 'class' => 'mw-twocolconflict-copy-link-nojs' ],
 			$this->messageLocalizer->msg( 'parentheses' )
 				->rawParams( $this->linkRenderer->makeKnownLink(
-					new TitleValue( NS_SPECIAL, 'ProvideSubmittedText' ),
+					SpecialPage::getTitleValueFor(
+						'TwoColConflictProvideSubmittedText',
+						$this->title->getPrefixedDBkey()
+					),
 					$this->messageLocalizer->msg( 'twocolconflict-copy-tab-action' )->text(),
 					[
 						'title' => $this->messageLocalizer->msg(
 							'twocolconflict-copy-tab-tooltip'
 						)->text(),
 						'target' => '_blank',
-					],
-					[
-						'mw-twocolconflict-cache-title' => $this->title->getPrefixedDBkey()
 					]
 				) )
 		);
