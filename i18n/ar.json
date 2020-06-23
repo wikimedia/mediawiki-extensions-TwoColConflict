@@ -47,6 +47,7 @@
 	"twocolconflict-split-reset-warning-accept": "تجاهل",
 	"twocolconflict-split-collapse-tooltip": "أخف ما لم يتغير",
 	"twocolconflict-split-expand-tooltip": "أظهر ما لم يتغير",
+	"twocolconflict-split-select-your-tooltip": "انقر لاختيار نسختك",
 	"twocolconflict-split-help-tooltip": "أظهر المساعدة",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "المنشورات المتعارضة",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "لسوء الحظ قام شخص آخر بنشر في نفس الوقت التي نشرت فيه أنت. الرجاء مراجعة التعليقات في الصفحة التالية. ويمكنك تعديل صفحتك بعده إن أردت",

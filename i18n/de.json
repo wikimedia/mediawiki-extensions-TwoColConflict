@@ -8,7 +8,7 @@
 			"ThePiscin"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
+	"twocolconflict": "Abschnitts-basierter Bearbeitungskonflikt",
 	"twocolconflict-desc": "Zeigt einen zweispaltigen Bildschirm zur Zusammenführung von Bearbeitungen für die Auflösung von Bearbeitungskonflikten an",
 	"twocolconflictprovidesubmittedtext": "Bearbeitungskonflikt:",
 	"twocolconflict-beta-feature-message": "Abschnitts-basierter Bearbeitungskonflikt",
