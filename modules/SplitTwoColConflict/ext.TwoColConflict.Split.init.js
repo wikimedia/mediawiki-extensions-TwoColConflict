@@ -428,7 +428,7 @@ function initSwapHandling() {
  * Expose an action to copy the entire wikitext source of "your" originally submitted revision.
  */
 function initSourceCopy() {
-	var $copyLink = $( '.mw-twocolconflict-copy-link a' ),
+	var $copyLink = $( '.mw-twocolconflict-copy-link-js a' ),
 		$confirmPopup, popupTimeout;
 	if ( !$copyLink.length ) {
 		return;
