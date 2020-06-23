@@ -31,8 +31,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$this->getOutput()->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 		$this->getOutput()->enableOOUI();
 
-		$titleDbKey = $this->getRequest()->getText( 'mw-twocolconflict-cache-title' );
-		$title = Title::newFromDBkey( $titleDbKey );
+		$title = Title::newFromDBkey( $subPage );
 		if ( !$title ) {
 			// TODO: Return with a 404 ("Not Found") and show an error message
 			return;
@@ -44,7 +43,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
 		$text = $textCache->fetchText(
-			$titleDbKey,
+			$subPage,
 			$this->getOutput()->getUser(),
 			$this->getOutput()->getRequest()->getSessionId()
 		);
