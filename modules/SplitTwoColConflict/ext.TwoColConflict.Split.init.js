@@ -428,7 +428,7 @@ function initSwapHandling() {
  * Expose an action to copy the entire wikitext source of "your" originally submitted revision.
  */
 function initSourceCopy() {
-	var $copyLink = $( '.mw-twocolconflict-copy-link-js a' ),
+	var $copyLink = $( '.mw-twocolconflict-copy-link a' ),
 		$confirmPopup, popupTimeout;
 	if ( !$copyLink.length ) {
 		return;
@@ -445,6 +445,8 @@ function initSourceCopy() {
 	} );
 	$( 'body' ).append( $confirmPopup.$element );
 
+	$copyLink.text( mw.msg( 'twocolconflict-copy-action' ) )
+		.attr( 'title', mw.msg( 'twocolconflict-copy-tooltip' ) );
 	$copyLink.click( function () {
 		$( '.mw-twocolconflict-your-text' ).select();
 		document.execCommand( 'copy' );
@@ -453,6 +455,8 @@ function initSourceCopy() {
 		popupTimeout = setTimeout( function () {
 			$confirmPopup.toggle( false );
 		}, 5000 );
+
+		return false;
 	} );
 
 	$confirmPopup.on( 'toggle', function () {

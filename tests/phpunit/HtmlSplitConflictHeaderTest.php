@@ -50,8 +50,8 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( '>(twocolconflict-split-saved-at: )<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-your-version-header)<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-not-saved-at)<', $html );
-		$this->assertStringContainsString( '>(twocolconflict-copy-action)<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-copy-tab-action)<', $html );
+		$this->assertStringContainsString( 'Special:ProvideSubmittedText/', $html );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
