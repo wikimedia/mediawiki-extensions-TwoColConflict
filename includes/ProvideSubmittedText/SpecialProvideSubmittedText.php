@@ -67,12 +67,8 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			? 'twocolconflict-split-header-hint-beta'
 			: 'twocolconflict-split-header-hint';
 
-		$out = $this->getMessageBox(
-			'twocolconflict-special-header-overview',
-			'notice',
-			'mw-twocolconflict-overview'
-		);
-		$out .= $this->getMessageBox( $hintMsg, 'notice' );
+		$out = $this->getMessageBox( 'twocolconflict-special-header-overview' );
+		$out .= $this->getMessageBox( $hintMsg );
 
 		return $out;
 	}
@@ -123,13 +119,13 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		return Html::element( 'p', [], $this->msg( 'twocolconflict-special-footer-hint' )->text() );
 	}
 
-	private function getMessageBox( string $messageKey, string $type, $classes = [] ) : string {
+	private function getMessageBox( string $messageKey ) : string {
 		$html = $this->msg( $messageKey )->parse();
 		return ( new MessageWidget( [
 			'label' => new HtmlSnippet( $html ),
-			'type' => $type,
+			'type' => 'notice',
 		] ) )
-			->addClasses( array_merge( [ 'mw-twocolconflict-messageWidget' ], (array)$classes ) )
+			->addClasses( [ 'mw-twocolconflict-messageWidget' ] )
 			->toString();
 	}
 }
