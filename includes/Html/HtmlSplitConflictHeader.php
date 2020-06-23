@@ -237,7 +237,7 @@ class HtmlSplitConflictHeader {
 					]
 				) )
 		);
-		return $jsLink . $noJsLink;
+		return ' ' . $jsLink . $noJsLink;
 	}
 
 	/**
