@@ -34,7 +34,13 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 		$title = Title::newFromDBkey( $subPage ?? '' );
 		if ( !$title ) {
-			// TODO: Return with a 404 ("Not Found") and show an error message
+			// Should be the same error code as for every malformed title
+			$out->setStatusCode( 404 );
+			$out->addHTML( new MessageWidget( [
+				// FIXME: Localize
+				'label' => 'Missing or invalid title.',
+				'type' => 'error',
+			] ) );
 			return;
 		}
 
@@ -50,7 +56,15 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		);
 
 		if ( !$text ) {
-			// TODO Return with a 410 ("Gone") and show an error message
+			// 401 means "gone", which is quite literally what happened here
+			$out->setStatusCode( 410 );
+			$out->addHTML( new MessageWidget( [
+				// FIXME: Localize
+				'label' => 'Nothing to see here. This probably means you ran into an edit conflict '
+					. 'before, but that was a while ago and your temporarily stored text expired by '
+					. 'now.',
+				'type' => 'warning',
+			] ) );
 			return;
 		}
 
