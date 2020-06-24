@@ -158,9 +158,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$conflictView = $this->buildEditConflictView( $storedLines, $yourLines );
 		}
 
-		if ( !$this->out->getRequest()->getBool( 'mw-twocolconflict-js' ) ) {
-			$this->setSubmittedTextCache();
-		}
+		$this->setSubmittedTextCache();
 
 		return Html::hidden( 'wpTextbox1', $this->storedversion ) .
 			$conflictView .
@@ -259,12 +257,14 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	private function setSubmittedTextCache() {
 		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
-		$textCache->stashText(
+		if ( !$textCache->stashText(
 			$this->title->getPrefixedDBkey(),
 			$this->out->getUser(),
 			$this->out->getRequest()->getSessionId(),
 			$this->yourtext
-		);
+		) ) {
+			// TODO: Log error?
+		}
 	}
 
 }
