@@ -9,7 +9,7 @@
 			"Senpremì"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
+	"twocolconflict": "Conflitto di modifiche basato su paragrafo",
 	"twocolconflict-desc": "Mostra una schermata di unione affiancata per modificare la risoluzione dei conflitti",
 	"twocolconflictprovidesubmittedtext": "Conflitto di modifica:",
 	"twocolconflict-beta-feature-message": "Conflitto di modifiche basato su paragrafo",
@@ -17,7 +17,7 @@
 	"twocolconflict-core-ui-hint-close": "Non mostrare più",
 	"twocolconflict-special-footer-hint": "Chiudi questa pagina per tornare all'interfaccia del conflitto di modifica.",
 	"twocolconflict-special-not-saved": "Non pubblicata",
-	"twocolconflict-split-header-hint-beta": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorala lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View su questa pagina].",
+	"twocolconflict-split-header-hint-beta": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorala lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface su questa pagina].",
 	"twocolconflict-split-your-version-header": "La tua versione",
 	"twocolconflict-split-current-version-header": "Versione attuale delle $1",
 	"twocolconflict-split-not-saved-at": "Non ancora pubblicato",
