@@ -67,7 +67,9 @@
 			"messages": [
 				"parentheses",
 				"preview",
+				"twocolconflict-copy-action",
 				"twocolconflict-copy-notice",
+				"twocolconflict-copy-tooltip",
 				"twocolconflict-split-choose-version",
 				"twocolconflict-split-edit-tooltip",
 				"twocolconflict-split-other-version-chosen",

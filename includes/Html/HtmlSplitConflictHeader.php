@@ -206,38 +206,24 @@ class HtmlSplitConflictHeader {
 	}
 
 	private function getCopyLink() {
-		$jsLink = Html::rawElement(
-			'span',
-			[ 'class' => 'mw-twocolconflict-copy-link-js' ],
-			$this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( Html::element(
-					'a',
-					[ 'title' => $this->messageLocalizer->msg(
-						'twocolconflict-copy-tooltip'
-					)->text() ],
-					$this->messageLocalizer->msg( 'twocolconflict-copy-action' )->text()
-				) )
+		$specialPage = SpecialPage::getTitleValueFor(
+			'TwoColConflictProvideSubmittedText',
+			$this->title->getPrefixedDBkey()
+		);
+		$label = $this->messageLocalizer->msg( 'twocolconflict-copy-tab-action' )->text();
+		$tooltip = $this->messageLocalizer->msg( 'twocolconflict-copy-tab-tooltip' )->text();
+
+		$link = $this->linkRenderer->makeKnownLink(
+			$specialPage,
+			$label,
+			[ 'title' => $tooltip, 'target' => '_blank' ]
 		);
 
-		$noJsLink = Html::rawElement(
+		return ' ' . Html::rawElement(
 			'span',
-			[ 'class' => 'mw-twocolconflict-copy-link-nojs' ],
-			$this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( $this->linkRenderer->makeKnownLink(
-					SpecialPage::getTitleValueFor(
-						'TwoColConflictProvideSubmittedText',
-						$this->title->getPrefixedDBkey()
-					),
-					$this->messageLocalizer->msg( 'twocolconflict-copy-tab-action' )->text(),
-					[
-						'title' => $this->messageLocalizer->msg(
-							'twocolconflict-copy-tab-tooltip'
-						)->text(),
-						'target' => '_blank',
-					]
-				) )
+			[ 'class' => 'mw-twocolconflict-copy-link' ],
+			$this->messageLocalizer->msg( 'parentheses' )->rawParams( $link )
 		);
-		return ' ' . $jsLink . $noJsLink;
 	}
 
 	/**
