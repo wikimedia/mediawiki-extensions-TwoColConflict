@@ -246,8 +246,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @return string
 	 */
 	private function buildRawTextsHiddenFields() : string {
-		return Html::hidden( 'mw-twocolconflict-current-text', $this->storedversion ) .
-			Html::textarea(
+		return Html::textarea(
 				'mw-twocolconflict-your-text',
 				$this->yourtext,
 				[

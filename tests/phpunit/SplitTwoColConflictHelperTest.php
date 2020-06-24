@@ -63,7 +63,6 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 		$html = $helper->getEditFormHtmlBeforeContent();
 		$this->assertStringContainsString( ' name="wpTextbox1"', $html );
-		$this->assertStringContainsString( ' name="mw-twocolconflict-current-text"', $html );
 		$this->assertStringContainsString( ' name="mw-twocolconflict-your-text"', $html );
 
 		$this->assertStringContainsString( '&lt;YOURTEXT attribute="">', $html );
