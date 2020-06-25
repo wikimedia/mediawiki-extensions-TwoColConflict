@@ -5,8 +5,8 @@
 			"Renessaince"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
+	"twocolconflict": "Канфлікт рэдагаваньняў на падставе параграфаў",
 	"twocolconflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня",
-	"twocolconflict-beta-feature-message": "Двухслупковы прагляд канфліктаў рэдагаваньня",
-	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагаваньня ў палепшаным, двухслупковым выглядзе."
+	"twocolconflict-beta-feature-message": "канфлікт рэдагаваньня на аснове параграфаў",
+	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагаваньня ў палепшаным выглядзе параграфаў."
 }

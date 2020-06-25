@@ -22,7 +22,7 @@
 	"twocolconflict-split-select-all": "Markera allt",
 	"twocolconflict-split-tour-dialog-dot-message": "Klicka på de blåa pickarna för hjälpsamma tips.",
 	"twocolconflict-split-tour-dialog-header": "Sammanfoga versioner i konflikt",
-	"twocolconflict-split-tour-dialog-message": "Tyvärr redigerade en annan användare också samma sida och hann publicera före dig.\n\nIngen fara, dina redigeringar är inte försvunna! Granska båda versioner och sammanfoga dem. Om du behöver kan du redigera den markerade texten. Endast texten i de markerade fälten kommer sparas när du klickar på \"{{int:Savechanges}}.\"",
+	"twocolconflict-split-tour-dialog-message": "Tyvärr redigerade en annan användare också samma sida och hann publicera före dig.\n\nIngen fara, dina redigeringar är inte försvunna! Granska båda versioner och sammanfoga dem. Om du behöver kan du redigera den markerade texten. Endast texten i de markerade fälten kommer sparas när du klickar på \"{{int:publishchanges}}.\"",
 	"twocolconflict-split-tour-dialog-btn-text": "Påbörja sammanfogning",
 	"twocolconflict-split-tour-popup-btn-text": "Okej, jag förstår.",
 	"twocolconflict-split-tour-popup1-header": "Avvikande ändringar visas rader efter rad.",

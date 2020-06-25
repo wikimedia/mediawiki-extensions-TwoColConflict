@@ -17,7 +17,7 @@
 	"twocolconflict-split-your-version-chosen": "Sinu versioon",
 	"twocolconflict-split-tour-dialog-dot-message": "Kasulike vihjete näitamiseks klõpsa siniseid täppe.",
 	"twocolconflict-split-tour-dialog-header": "Konfliktsete versioonide liitmine",
-	"twocolconflict-split-tour-dialog-message": "Paraku redigeeris lehekülge sinuga samaaegselt ka teine kasutaja, kes avaldas muudatused enne sind.\n\nOle mureta, sinu muudatused ei läinud kaotsi! Palun vaata mõlemad versioonid üle ja liida need. Vajadusel võid valitud teksti muuta. Kui klõpsad nuppu \"{{int:Savechanges}}\", siis salvestatakse ainult valitud kastides olev tekst.",
+	"twocolconflict-split-tour-dialog-message": "Paraku redigeeris lehekülge sinuga samaaegselt ka teine kasutaja, kes avaldas muudatused enne sind.\n\nOle mureta, sinu muudatused ei läinud kaotsi! Palun vaata mõlemad versioonid üle ja liida need. Vajadusel võid valitud teksti muuta. Kui klõpsad nuppu \"{{int:publishchanges}}\", siis salvestatakse ainult valitud kastides olev tekst.",
 	"twocolconflict-split-tour-dialog-btn-text": "Alustan liitmist",
 	"twocolconflict-split-tour-popup-btn-text": "Hästi, sain aru",
 	"twocolconflict-split-tour-popup1-header": "Lahknevaid muudatusi näidatakse ridade kaupa.",

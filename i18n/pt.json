@@ -19,7 +19,7 @@
 	"twocolconflict-split-not-saved-at": "Ainda não publicada",
 	"twocolconflict-split-choose-version": "Selecione uma versão, por favor",
 	"twocolconflict-split-tour-dialog-header": "Combinar versões em conflito",
-	"twocolconflict-split-tour-dialog-message": "Infelizmente, enquanto estava a editar, outro utilizador editou a mesma página e publicou-a antes de si.\n\nNão se preocupe, porque as suas edições não estão perdidas! Reveja ambas as versões e combine-as, por favor. Se for necessário, pode editar o texto selecionado. Só o texto das caixas selecionadas será gravado quando clicar \"{{int:Savechanges}}\".",
+	"twocolconflict-split-tour-dialog-message": "Infelizmente, enquanto estava a editar, outro utilizador editou a mesma página e publicou-a antes de si.\n\nNão se preocupe, porque as suas edições não estão perdidas! Reveja ambas as versões e combine-as, por favor. Se for necessário, pode editar o texto selecionado. Só o texto das caixas selecionadas será gravado quando clicar \"{{int:publishchanges}}\".",
 	"twocolconflict-split-tour-dialog-btn-text": "Iniciar fusão",
 	"twocolconflict-split-tour-popup-btn-text": "Entendido.",
 	"twocolconflict-split-tour-popup1-header": "As mudanças divergentes são mostradas linha a linha.",

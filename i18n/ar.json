@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dr. Mohammed",
 			"Meno25",
 			"Mido",
 			"Tala Ali",
@@ -22,6 +23,7 @@
 	"twocolconflict-special-not-saved": "غير منشورة",
 	"twocolconflict-split-header-hint": "ساعد في تحسين هذه الأداة بالتعليق في [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View هذه الصفحة].",
 	"twocolconflict-split-header-hint-beta": "نشكرك على استخدام هذه الميزة التجريبية، يمكنك المساعدة في تحسينها بشكل أكبر، إذا تركت تغذية راجعة [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View في هذه الصفحة].",
+	"twocolconflict-split-header-overview": "أثناء قيامك بالتحرير، قام مستخدم آخر بتحرير نفس الصفحة ونشرها قبلك. يرجى مراجعة كلا النسختين ودمجهما. سيتم حفظ النص في المربعات المحددة فقط عند النقر \"{{int:publishchanges}}\".",
 	"twocolconflict-split-your-version-header": "نسختك",
 	"twocolconflict-split-current-version-header": "آخر نسخة في $1",
 	"twocolconflict-split-not-saved-at": "لم ينشر بعد",
@@ -30,7 +32,7 @@
 	"twocolconflict-split-your-version-chosen": "نسختك",
 	"twocolconflict-split-select-all": "اختر الكل",
 	"twocolconflict-split-tour-dialog-header": "إصلاح تضاربات التحرير",
-	"twocolconflict-split-tour-dialog-message": "لسوء الحظ، واجهت تعارضًا في التعديل: أثناء التعديل، قام مستخدم آخر أيضًا بتحرير الصفحة وحفظها. نسختك الآن قديمة لأنها لا تتضمن تعديلات المستخدم الآخر، يُرجَى دمج تعديلاتك في الصفحة التالية.",
+	"twocolconflict-split-tour-dialog-message": "لسوء الحظ، واجهت تعارضًا في التعديل: أثناء التعديل، قام مستخدم آخر أيضًا بتحرير الصفحة وحفظها. نسختك الآن قديمة لأنها لا تتضمن تعديلات المستخدم الآخر، يُرجَى دمج تعديلاتك في الصفحة التالية.\nلا تقلق، تعديلاتك لن تضيع! يرجى مراجعة كلا النسختين ودمجهما معًا. إذا لزم الأمر، يمكنك تحرير النص المحدد. سيتم حفظ النص في المربعات المحددة فقط عند النقر فوق \"{{int: Publishchanges}}.\"",
 	"twocolconflict-split-tour-dialog-btn-text": "بدء الدمج",
 	"twocolconflict-split-tour-popup-btn-text": "مفهوم",
 	"twocolconflict-split-tour-popup1-header": "تعرض التغييرات المتباينة سطرًا سطرًا.",

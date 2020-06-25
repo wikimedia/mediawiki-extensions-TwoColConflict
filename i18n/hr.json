@@ -30,7 +30,7 @@
 	"twocolconflict-split-your-version-chosen": "Vaša inačica",
 	"twocolconflict-split-tour-dialog-dot-message": "Da biste vidjeli korisne savjete, kliknite na svjetleće plave točke.",
 	"twocolconflict-split-tour-dialog-header": "Spoji suprotstavljene inačice",
-	"twocolconflict-split-tour-dialog-message": "Nažalost, za vrijeme Vašega uređivanja drugi je suradnik također uređivao tu stranicu i spremio je prije Vas.\n\nNe brinite se, Vaše urađivanje nije izgubljeno! Molimo da pregledate obje inačice i spojite ih u jednu. Bude li potrebe, možete uređivati izabrani tekst. Samo će tekst u izabranim kućicama biti spremljen kad kliknete \"{{int:Savechanges}}\".",
+	"twocolconflict-split-tour-dialog-message": "Nažalost, za vrijeme Vašega uređivanja drugi je suradnik također uređivao tu stranicu i spremio je prije Vas.\n\nNe brinite se, Vaše urađivanje nije izgubljeno! Molimo da pregledate obje inačice i spojite ih u jednu. Bude li potrebe, možete uređivati izabrani tekst. Samo će tekst u izabranim kućicama biti spremljen kad kliknete \"{{int:publishchanges}}\".",
 	"twocolconflict-split-tour-dialog-btn-text": "Počni spajanje",
 	"twocolconflict-split-tour-popup-btn-text": "U redu, razumijem.",
 	"twocolconflict-split-tour-popup1-header": "Različite izmjene prikazane su red po red.",
