@@ -28,24 +28,25 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 	 */
 	public function execute( $subPage ) {
 		$this->setHeaders();
-		$this->getOutput()->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
-		$this->getOutput()->enableOOUI();
+		$out = $this->getOutput();
+		$out->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
+		$out->enableOOUI();
 
-		$title = Title::newFromDBkey( $subPage );
+		$title = Title::newFromDBkey( $subPage ?? '' );
 		if ( !$title ) {
 			// TODO: Return with a 404 ("Not Found") and show an error message
 			return;
 		}
 
-		$this->getOutput()->setPageTitle(
+		$out->setPageTitle(
 			$this->msg( 'editconflict', $title->getPrefixedText() )
 		);
 
 		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
 		$text = $textCache->fetchText(
 			$subPage,
-			$this->getOutput()->getUser(),
-			$this->getOutput()->getRequest()->getSessionId()
+			$out->getUser(),
+			$out->getRequest()->getSessionId()
 		);
 
 		if ( !$text ) {
@@ -53,12 +54,12 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			return;
 		}
 
-		$out = $this->getHeaderHintsHtml( TwoColConflictContext::isUsedAsBetaFeature() );
-		$out .= $this->getTextHeaderLabelHtml();
-		$out .= $this->getTextAreaHtml( $text );
-		$out .= $this->getFooterHtml();
+		$html = $this->getHeaderHintsHtml( TwoColConflictContext::isUsedAsBetaFeature() );
+		$html .= $this->getTextHeaderLabelHtml();
+		$html .= $this->getTextAreaHtml( $text );
+		$html .= $this->getFooterHtml();
 
-		$this->getOutput()->addHTML( $out );
+		$out->addHTML( $html );
 	}
 
 	private function getHeaderHintsHtml( $isBetaFeature ) {
