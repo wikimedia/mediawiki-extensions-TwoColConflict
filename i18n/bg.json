@@ -9,9 +9,9 @@
 			"Vodnokon4e"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
-	"twocolconflict-beta-feature-message": "Конфликт на редакциите в две колони",
-	"twocolconflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед в две колони.",
+	"twocolconflict": "Конфликт на редакциите по абзаци",
+	"twocolconflict-beta-feature-message": "Конфликт на редакциите по абзаци",
+	"twocolconflict-beta-feature-description": "Показване на изгледа с конфликт на редакциите, използвайки разширен изглед по абзаци.",
 	"twocolconflict-split-your-version-header": "Вашата версия",
 	"twocolconflict-split-current-version-header": "Последната версия от $1",
 	"twocolconflict-split-not-saved-at": "Все още не е публикувано",

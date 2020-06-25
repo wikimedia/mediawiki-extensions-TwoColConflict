@@ -7,7 +7,7 @@
 			"Vesely35"
 		]
 	},
-	"twocolconflict": "Paragraf tabanlı düzenleme çakışması",
+	"twocolconflict": "Paragraf Tabanlı Değişiklik Çakışması",
 	"twocolconflict-desc": "Değişiklik çakışmasının çözümü için yan yana birleşik bir ekran gösterir.",
 	"twocolconflictprovidesubmittedtext": "Değişiklik çakışması:",
 	"twocolconflict-beta-feature-message": "Paragraf tabanlı düzenleme çakışması",
@@ -25,8 +25,8 @@
 	"twocolconflict-special-not-saved": "Yayınlanmadı",
 	"twocolconflict-special-textarea-hint": "Revizyonuzu kaynağını görüntüleyebilir ve kopyalayabilirsiniz:",
 	"twocolconflict-split-header-hint": "Geri bildirim bırakırsanız [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View bu sayfada] bu özelliği daha da geliştirmeye yardımcı olabilirsiniz.",
-	"twocolconflict-split-header-hint-beta": "Bu beta özelliğini kullandığınız için teşekkür ederiz. Geri bildirim bırakırsanız:[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View bu sayfada] daha da gelişmesine yardımcı olabilirsiniz.",
-	"twocolconflict-split-header-overview": "Siz düzenleme yaparken başka bir kullanıcı aynı sayfayı düzenledi ve önünüzde yayınladı. Lütfen her iki sürümü de inceleyin ve birleştirin. \"{{int:publishpage}}\" düğmesini tıkladığınızda yalnızca seçili kutulardaki metin kaydedilecektir.",
+	"twocolconflict-split-header-hint-beta": "Bu beta özelliğini kullandığınız için teşekkür ederiz. [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface Bu sayfada] geri bildirim bırakırsanız, onu daha da geliştirmeye yardımcı olabilirsiniz.",
+	"twocolconflict-split-header-overview": "Siz düzenleme yaparken başka bir kullanıcı aynı sayfayı düzenledi ve önünüzde yayınladı. Lütfen her iki sürümü de inceleyin ve birleştirin. \"{{int:publishchanges}}\" düğmesini tıkladığınızda yalnızca seçili kutulardaki metin kaydedilecektir.",
 	"twocolconflict-split-your-version-header": "Senin revizyonun",
 	"twocolconflict-split-current-version-header": "$1 itibarı ile sayfanın şu anki hâli",
 	"twocolconflict-split-not-saved-at": "Henüz yayınlanmadı",
@@ -36,7 +36,7 @@
 	"twocolconflict-split-select-all": "Hepsini seç",
 	"twocolconflict-split-tour-dialog-dot-message": "Yararlı ipuçları için parlak mavi noktalara tıklayın.",
 	"twocolconflict-split-tour-dialog-header": "Çakışan sürümleri birleştir",
-	"twocolconflict-split-tour-dialog-message": "Ne yazık ki, siz düzenleme yaparken başka bir kullanıcı da aynı sayfayı düzenledi ve önünüzde yayınladı.\n\nEndişelenmeyin, düzenlemeleriniz kaybolmaz! Lütfen her iki sürümü de inceleyin ve birleştirin. Gerekirse, seçilen metni düzenleyebilirsiniz. \"{{int:savechanges}}\" seçeneğini tıkladığınızda yalnızca seçili kutulardaki metin kaydedilecektir.",
+	"twocolconflict-split-tour-dialog-message": "Ne yazık ki, siz düzenleme yaparken başka bir kullanıcı da aynı sayfayı düzenledi ve önünüzde yayınladı.\n\nEndişelenmeyin, düzenlemeleriniz kaybolmaz! Lütfen her iki sürümü de inceleyin ve birleştirin. Gerekirse, seçilen metni düzenleyebilirsiniz. \"{{int:publishchanges}}\" seçeneğini tıkladığınızda yalnızca seçili kutulardaki metin kaydedilecektir.",
 	"twocolconflict-split-tour-dialog-btn-text": "Birleştirmeye başla",
 	"twocolconflict-split-tour-popup-btn-text": "Tamam, anladım.",
 	"twocolconflict-split-tour-popup1-header": "Sapma değişiklikleri satır satır gösterilir.",
