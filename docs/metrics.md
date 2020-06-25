@@ -36,3 +36,8 @@
 * **{PREFIX}.conflict.resolved.byUserEdits.over100.{AGGREGATION}** - Number of edit conflicts resolved by users with 101-200 edits
 * **{PREFIX}.conflict.resolved.byUserEdits.over10.{AGGREGATION}** - Number of edit conflicts resolved by users with 11-100 edits
 * **{PREFIX}.conflict.resolved.byUserEdits.under11.{AGGREGATION}** - Number of edit conflicts resolved by users with 0-10 edits
+
+
+* **{PREFIX}.copy.jsclick.{AGGREGATION}** - Total number of clicks of the link to copy the originally submitted text in-place
+* **{PREFIX}.copy.special.load.{AGGREGATION}** - Total number of loads of the special page to show the originally submitted text
+* **{PREFIX}.copy.special.retrieved.{AGGREGATION}** - Total number of successfully retrieved texts from the cache on the special page to show the originally submitted text

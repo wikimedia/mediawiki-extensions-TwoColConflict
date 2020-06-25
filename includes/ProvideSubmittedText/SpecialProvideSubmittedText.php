@@ -4,6 +4,7 @@ namespace TwoColConflict\ProvideSubmittedText;
 
 use Html;
 use MediaWiki\EditPage\TextboxBuilder;
+use MediaWiki\MediaWikiServices;
 use ObjectCache;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
@@ -31,6 +32,8 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 		$out->enableOOUI();
+		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$stats->increment( 'TwoColConflict.copy.special.load' );
 
 		$title = Title::newFromDBkey( $subPage ?? '' );
 		if ( !$title ) {
@@ -53,6 +56,8 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			// TODO Return with a 410 ("Gone") and show an error message
 			return;
 		}
+
+		$stats->increment( 'TwoColConflict.copy.special.retrieved' );
 
 		$html = $this->getHeaderHintsHtml( TwoColConflictContext::isUsedAsBetaFeature() );
 		$html .= $this->getTextHeaderLabelHtml();

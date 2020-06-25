@@ -451,6 +451,8 @@ function initSourceCopy() {
 		$( '.mw-twocolconflict-your-text' ).select();
 		document.execCommand( 'copy' );
 
+		mw.track( 'counter.MediaWiki.TwoColConflict.copy.jsclick' );
+
 		$confirmPopup.toggle( true );
 		popupTimeout = setTimeout( function () {
 			$confirmPopup.toggle( false );
