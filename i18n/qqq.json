@@ -28,6 +28,8 @@
 	"twocolconflict-special-header-overview": "Brief help message explaining the two-column workflow when you're on the special page to copy your original wikitext.",
 	"twocolconflict-special-not-saved": "Header for the special page to copy your original wikitext that was not saved yet.",
 	"twocolconflict-special-textarea-hint": "Label for the textarea on the special page to copy your original wikitext.",
+	"twocolconflict-special-malformed-title": "Error message when the special page to copy your original wikitext is (e.g. manually) called without a title, or with an invalid title.",
+	"twocolconflict-special-expired": "Error message when the special page to copy your original wikitext is either called with a title that never had an edit conflict, or called to late, and the cached wikitext expired already.",
 	"twocolconflict-split-header-hint": "General hint shown on top of the edit conflict interface.",
 	"twocolconflict-split-header-hint-beta": "Beta feature specific hint shown on top of the edit conflict interface.",
 	"twocolconflict-split-header-overview": "Brief help message explaining the two-column workflow, when advanced help isn't available.",
