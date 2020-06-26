@@ -7,7 +7,7 @@
 			"McDutchie"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
+	"twocolconflict": "Conflito de edição baseado em parágrafos",
 	"twocolconflict-desc": "Mostrando uma tela de mesclagem de edição lado a lado para editar a resolução de conflitos",
 	"twocolconflictprovidesubmittedtext": "Editar conflito:",
 	"twocolconflict-beta-feature-message": "Conflito de edição baseado em parágrafos",
