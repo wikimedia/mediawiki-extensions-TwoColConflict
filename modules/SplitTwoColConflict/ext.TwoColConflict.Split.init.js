@@ -429,6 +429,7 @@ function initSwapHandling() {
  */
 function initSourceCopy() {
 	var $copyLink = $( '.mw-twocolconflict-copy-link a' ),
+		wasClicked = false,
 		$confirmPopup, popupTimeout;
 	if ( !$copyLink.length ) {
 		return;
@@ -451,7 +452,11 @@ function initSourceCopy() {
 		$( '.mw-twocolconflict-your-text' ).select();
 		document.execCommand( 'copy' );
 
-		mw.track( 'counter.MediaWiki.TwoColConflict.copy.jsclick' );
+		if ( !wasClicked ) {
+			// only count once if the user clicks several times from the same screen
+			mw.track( 'counter.MediaWiki.TwoColConflict.copy.jsclick' );
+			wasClicked = true;
+		}
 
 		$confirmPopup.toggle( true );
 		popupTimeout = setTimeout( function () {
