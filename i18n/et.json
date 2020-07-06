@@ -34,5 +34,11 @@
 	"twocolconflict-split-reset-warning-accept": "Hülga",
 	"twocolconflict-split-collapse-tooltip": "Peida muutmata tekst",
 	"twocolconflict-split-expand-tooltip": "Näita muutmata teksti",
-	"twocolconflict-split-help-tooltip": "Näita abi"
+	"twocolconflict-split-help-tooltip": "Näita abi",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Konfliktsed postitused",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Paraku postitas keegi teine sinuga samaaegselt. Palun vaata järgmisel leheküljel kommentaarid üle. Kui vaja, saad redigeerida enda kommentaari ja muuta lõplikku järjestust.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Lahenda probleem",
+	"twocolconflict-talk-your": "Sinu postitus",
+	"twocolconflict-talk-conflicting": "Konfliktne postitus",
+	"twocolconflict-talk-switch-tooltip": "Muuda järjestust"
 }
