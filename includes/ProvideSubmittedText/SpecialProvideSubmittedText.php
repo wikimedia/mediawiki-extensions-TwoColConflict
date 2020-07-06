@@ -59,7 +59,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 		$stats->increment( 'TwoColConflict.copy.special.retrieved' );
 
-		$html = $this->getHeaderHintsHtml( ( new TwoColConflictContext() )->isUsedAsBetaFeature() );
+		$html = $this->getHeaderHintsHtml();
 		$html .= $this->getTextHeaderLabelHtml();
 		$html .= $this->getTextAreaHtml( $text );
 		$html .= $this->getFooterHtml();
@@ -67,8 +67,10 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$out->addHTML( $html );
 	}
 
-	private function getHeaderHintsHtml( $isBetaFeature ) {
-		$hintMsg = $isBetaFeature
+	private function getHeaderHintsHtml() : string {
+		/** @var TwoColConflictContext $twoColContext */
+		$twoColContext = MediaWikiServices::getInstance()->getService( 'TwoColConflictContext' );
+		$hintMsg = $twoColContext->isUsedAsBetaFeature()
 			? 'twocolconflict-split-header-hint-beta'
 			: 'twocolconflict-split-header-hint';
 

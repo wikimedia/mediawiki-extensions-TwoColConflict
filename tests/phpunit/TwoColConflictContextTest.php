@@ -3,6 +3,7 @@
 namespace TwoColConflict\Tests;
 
 use ExtensionRegistry;
+use HashConfig;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
@@ -14,21 +15,12 @@ use Wikimedia\TestingAccessWrapper;
  */
 class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
-	protected function setUp() : void {
-		parent::setUp();
-
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
-	}
-
 	public function testIsUsedAsBetaFeature() {
-		$twoColContext = new TwoColConflictContext();
+		$registry = $this->createExtensionRegistry();
+		$twoColContext = new TwoColConflictContext( $this->createConfig(), $registry );
 		$this->assertFalse( $twoColContext->isUsedAsBetaFeature() );
 
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
-
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
+		$twoColContext = new TwoColConflictContext( $this->createConfig( true ), $registry );
 		$this->assertTrue( $twoColContext->isUsedAsBetaFeature() );
 	}
 
@@ -42,16 +34,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		Title $title,
 		bool $expected
 	) {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
-
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => $betaConfig,
-			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
-		] );
-
-		$twoColContext = new TwoColConflictContext();
+		$twoColContext = new TwoColConflictContext(
+			$this->createConfig( $betaConfig, $singleColumnConfig ),
+			$this->createExtensionRegistry()
+		);
 		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
 		$this->assertSame( $expected, $result );
 	}
@@ -128,16 +114,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		Title $title,
 		bool $expected
 	) {
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
-
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => $betaConfig,
-			'wgTwoColConflictSuggestResolution' => $singleColumnConfig,
-		] );
-
-		$twoColContext = new TwoColConflictContext();
+		$twoColContext = new TwoColConflictContext(
+			$this->createConfig( $betaConfig, $singleColumnConfig ),
+			$this->createExtensionRegistry( false )
+		);
 		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
 		$this->assertSame( $expected, $result );
 	}
@@ -174,11 +154,12 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$editingPreference,
 		bool $expectedResult
 	) {
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
-
 		$user = $this->createUser( $editingPreference, $betaPreference );
 		/** @var TwoColConflictContext $twoColContext */
-		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext() );
+		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext(
+			$this->createConfig( false ),
+			$this->createExtensionRegistry()
+		) );
 
 		$result = $twoColContext->hasUserEnabledFeature( $user );
 		$this->assertSame( $expectedResult, $result );
@@ -245,8 +226,6 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $hideHintOpt,
 		bool $expectedResult
 	) {
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', $usedAsBeta );
-
 		$user = $this->createMock( User::class );
 		$user->method( 'getBoolOption' )->willReturnMap( [
 			[ TwoColConflictContext::ENABLED_PREFERENCE, $enabledOpt ],
@@ -254,7 +233,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		] );
 		$user->method( 'isAnon' )->willReturn( $isAnon );
 
-		$twoColContext = new TwoColConflictContext();
+		$twoColContext = new TwoColConflictContext(
+			$this->createConfig( $usedAsBeta ),
+			$this->createExtensionRegistry()
+		);
 		$result = $twoColContext->shouldCoreHintBeShown( $user );
 		$this->assertSame( $expectedResult, $result );
 	}
@@ -297,6 +279,19 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 				'expected' => true,
 			],
 		];
+	}
+
+	private function createConfig( bool $isBetaFeature = false, bool $suggestResolution = true ) {
+		return new HashConfig( [
+			'TwoColConflictBetaFeature' => $isBetaFeature,
+			'TwoColConflictSuggestResolution' => $suggestResolution,
+		] );
+	}
+
+	private function createExtensionRegistry( bool $isLoaded = true ) {
+		$registry = $this->createMock( ExtensionRegistry::class );
+		$registry->method( 'isLoaded' )->willReturn( $isLoaded );
+		return $registry;
 	}
 
 }
