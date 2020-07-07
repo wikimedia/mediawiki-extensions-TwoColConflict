@@ -8,7 +8,7 @@
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Weist en Ecran wou op 2 Säiten zwou Versioune gewise gi fir en Ännerungskonflikt ze léisen",
 	"twocolconflictprovidesubmittedtext": "Ännerungskonflikt:",
-	"twocolconflict-beta-feature-message": "Zwou-Kolonnen Ännerungskonflikt",
+	"twocolconflict-beta-feature-message": "Ännerungskonflikt op Basis vum Abschnitt",
 	"twocolconflict-copy-tab-action": "ganzen Text weisen",
 	"twocolconflict-core-ui-hint-close": "Ni méi weisen",
 	"twocolconflict-preference-enabled": "Den [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Änneurngskonflikt-Interface op der Basis vum Abschnitt]] aktivéiere fir Ännerungskonflikter ze léisen",
