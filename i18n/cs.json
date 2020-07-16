@@ -21,7 +21,7 @@
 	"twocolconflict-split-not-saved-at": "Zatím nezveřejněno",
 	"twocolconflict-split-choose-version": "Prosíme, vyberte verzi",
 	"twocolconflict-split-tour-dialog-header": "Vyřešit editační konflikt",
-	"twocolconflict-split-tour-dialog-message": "Bohužel nastal editační konflikt: Během vaší editace jiný uživatel stránku také upravil a zveřejnil. Stránka nyní neobsahuje vaši editaci, ale editaci jiného uživatele. Žádáme vás, abyste svou verzi sloučili s nejnovější verzí jiného uživatele.",
+	"twocolconflict-split-tour-dialog-message": "Bohužel během vaší editace jiný uživatel také editoval tu samou stránku a zveřejnil ji před vámi.\n\nŽádný strach, vaše editace nejsou ztraceny! Prosíme, zkontrolujte obě verze a slučte je. Pokud je to potřeba, vybraný text můžete také editovat. Po kliknutí na  „{{int:publishchanges}}“ bude uložen pouze text z vybraných polí.",
 	"twocolconflict-split-tour-dialog-btn-text": "Začít slučovat",
 	"twocolconflict-split-tour-popup-btn-text": "Dobře, chápu.",
 	"twocolconflict-split-tour-popup3-header": "Zvýraznit text",
