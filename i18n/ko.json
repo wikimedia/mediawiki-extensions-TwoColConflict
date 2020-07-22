@@ -6,7 +6,8 @@
 			"Ellif",
 			"MemphisA5",
 			"SeoJeongHo",
-			"Ykhwong"
+			"Ykhwong",
+			"밝은소년"
 		]
 	},
 	"twocolconflict": "Paragraph-based Edit Conflict",
@@ -14,6 +15,7 @@
 	"twocolconflictprovidesubmittedtext": "편집 충돌:",
 	"twocolconflict-beta-feature-message": "단락 기반 편집 충돌",
 	"twocolconflict-beta-feature-description": "더 진보된 단락 기반 뷰를 사용하여 편집 충돌 뷰를 표시합니다.",
+	"twocolconflict-copy-action": "전체 텍스트 복사",
 	"twocolconflict-core-ui-hint-close": "다시는 보지 않기",
 	"twocolconflict-preference-enabled": "[[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|단락 기반 편집 충돌 인터페이스]]를 사용하여 편집 충돌 해결",
 	"twocolconflict-special-not-saved": "게시되지 않음",
