@@ -25,7 +25,7 @@
 	"twocolconflict-split-your-version-chosen": "Ваша верзија",
 	"twocolconflict-split-tour-dialog-header": "Решавање сукоба измена",
 	"twocolconflict-split-tour-dialog-message": "Наишли сте на сукоб измена: Током ваше измене други корисник је такође уређивао страницу и сачувао је. Ваша верзија је сада застарела јер не садржи измене другог корисника. Обједините измене на следећој страници.",
-	"twocolconflict-split-tour-dialog-btn-text": "Почни са спајањем",
+	"twocolconflict-split-tour-dialog-btn-text": "Започни обједињавање",
 	"twocolconflict-split-tour-popup-btn-text": "У реду, разумем.",
 	"twocolconflict-split-tour-popup1-header": "Различите промене су приказане ред по ред.",
 	"twocolconflict-split-tour-popup2-header": "Одаберите промене које желите да оставите",
