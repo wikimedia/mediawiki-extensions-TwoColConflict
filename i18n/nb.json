@@ -22,6 +22,8 @@
 	"twocolconflict-special-header-overview": "Mens du redigerte var det en annen bruker som redigerte samme side som deg og publiserte den før deg. En visningskopi av din revisjon finnes nedenfor. Endringer som blir gjort i redigeringskonfliktgrensesnittet er ikke med. For å slå sammen endringer og løse konflikten med redigeringskonfliktgrensesnittet, gå tilbake til den forrige fanen.",
 	"twocolconflict-special-not-saved": "Ikke publisert",
 	"twocolconflict-special-textarea-hint": "Du kan vise og kopiere kilden til din revisjon:",
+	"twocolconflict-special-malformed-title": "Manglende eller ugyldig tittel.",
+	"twocolconflict-special-expired": "Ingenting å se her. Dette betyr trolig at du fikk en redigeringskonflikt for en stund siden, og at den midlertidige teksten din har utløpt allerede.",
 	"twocolconflict-split-header-hint": "Du kan hjelpe til med å forbedre denne funksjonen videre hvis du gir tilbakemelding [https:////www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface på denne siden].",
 	"twocolconflict-split-header-hint-beta": "Takk for at du bruker denne betafunksjonen. Du kan hjelpe til med å forbedre den videre om du gir tilbakemelding [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface på denne siden].",
 	"twocolconflict-split-header-overview": "Mens du redigerte var det en annen bruker som redigerte samme side og publiserte den før deg. Vennligst gå gjennom begge versjonene og slå dem sammen. Bare teksten i de valgte boksene blir lagret når du trykker på «{{int:publishchanges}}».",
