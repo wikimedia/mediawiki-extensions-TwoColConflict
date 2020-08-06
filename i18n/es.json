@@ -24,7 +24,7 @@
 	"twocolconflict-beta-feature-description": "Mostrar el conflicto de edición con un visor más avanzado en dos columnas.",
 	"twocolconflict-core-ui-hint": "Ya está disponible una interfaz actualizada para resolver conflictos de edición. Habilite la Vista de conflicto de edición de dos columnas en su [[Special:Preferences#mw-prefsection-editing|preferencias]] para probarlo.",
 	"twocolconflict-core-ui-hint-close": "No mostrar de nuevo",
-	"twocolconflict-special-malformed-title": "Titulo que falta o invalido",
+	"twocolconflict-special-malformed-title": "Falta el título o este no es válido.",
 	"twocolconflict-split-header-hint": "Puedes ayudar a mejorar más esta función si dejas comentarios [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View en esta página].",
 	"twocolconflict-split-header-hint-beta": "Gracias por usar esta funcionalidad beta. Puedes ayudar a mejorarla dejando un comentario [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View en esta página].",
 	"twocolconflict-split-your-version-header": "Tu revisión",
