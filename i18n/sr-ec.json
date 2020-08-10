@@ -16,6 +16,7 @@
 	"twocolconflict-beta-feature-description": "Приказује сукоб измена коришћењем напреднијег приказа у две колоне.",
 	"twocolconflict-core-ui-hint-close": "Не приказуј поново",
 	"twocolconflict-preference-enabled": "Омогући [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|приказ конфликта измена у две колоне]] за решавање конфликта у изменама",
+	"twocolconflict-special-malformed-title": "Наслов недостаје или није важећи.",
 	"twocolconflict-split-header-hint-beta": "Хвала вам на коришћењу ове бета функције. Оставите повратне информације [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface на овој страници] како бисте нам помогли да је додатно побољшамо.",
 	"twocolconflict-split-your-version-header": "Ваша измена",
 	"twocolconflict-split-current-version-header": "Најновија измена од $1",

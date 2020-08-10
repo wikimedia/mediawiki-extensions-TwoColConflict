@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Akmaie Ajam",
 			"Iwan Novirion",
 			"Kenrick95"
 		]
@@ -8,6 +9,8 @@
 	"twocolconflict": "DuaKolKonflik",
 	"twocolconflict-beta-feature-message": "Konflik penyuntingan dua kolom",
 	"twocolconflict-beta-feature-description": "Tampilkan tampilan konflik penyuntingan menggunakan tampilan dua kolom yang lebih canggih.",
+	"twocolconflict-special-malformed-title": "Judul hilang atau tidak sah.",
+	"twocolconflict-special-expired": "Tidak ada yang bisa dilihat di sini. Ini mungkin berarti Anda mengalami konflik pengeditan beberapa waktu yang lalu dan teks yang disimpan sementara kadaluwarsa sekarang.",
 	"twocolconflict-split-your-version-header": "Revisi Anda",
 	"twocolconflict-split-current-version-header": "Revisi terakhir pada $1",
 	"twocolconflict-split-not-saved-at": "Belum diterbitkan",

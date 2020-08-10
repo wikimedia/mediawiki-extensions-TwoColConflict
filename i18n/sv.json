@@ -14,6 +14,7 @@
 	"twocolconflict-preference-enabled": "Aktivera [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|paragrafbaserade gränssnittet för redigeringskonflikter]] för att lösa redigeringskonflikter",
 	"twocolconflict-special-not-saved": "Inte publicerad",
 	"twocolconflict-special-textarea-hint": "Du kan se och kopiera källan av din version:",
+	"twocolconflict-special-malformed-title": "Titeln saknas eller är ogiltig.",
 	"twocolconflict-split-header-hint": "Du kan hjälpa till att förbättra denna funktion ytterligare om du lämnar återkoppling [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface på denna sida].",
 	"twocolconflict-split-header-hint-beta": "Tack för att du använder denna betafunktion. Du kan hjälpa till att förbättra den ytterligare om du lämnar återkoppling [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface på denna sida].",
 	"twocolconflict-split-your-version-header": "Din version",
