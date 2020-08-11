@@ -10,6 +10,8 @@
 	"twocolconflictprovidesubmittedtext": "Redigeringskonflikt:",
 	"twocolconflict-beta-feature-message": "Paragrafbaserad redigeringskonflikt",
 	"twocolconflict-beta-feature-description": "Visar redigeringskonflikter i en mer avancerad paragrafbaserad vy.",
+	"twocolconflict-copy-action": "kopiera hela texten",
+	"twocolconflict-copy-tab-action": "visa hela texten",
 	"twocolconflict-core-ui-hint-close": "Visa aldrig igen",
 	"twocolconflict-preference-enabled": "Aktivera [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|paragrafbaserade gränssnittet för redigeringskonflikter]] för att lösa redigeringskonflikter",
 	"twocolconflict-special-not-saved": "Inte publicerad",
