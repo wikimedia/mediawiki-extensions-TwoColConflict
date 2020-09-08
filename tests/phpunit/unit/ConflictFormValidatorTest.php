@@ -48,15 +48,9 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 				'params' => [
 					'mw-twocolconflict-single-column-view' => true,
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
-						1 => [
-							'your' => 'text2',
-						],
-						2 => [
-							'other' => 'text3',
-						]
+						0 => [ 'copy' => 'text1' ],
+						1 => [ 'your' => 'text2' ],
+						2 => [ 'other' => 'text3' ],
 					],
 				],
 				'expected' => true,
@@ -65,13 +59,9 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 				'params' => [
 					'mw-twocolconflict-single-column-view' => true,
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
+						0 => [ 'copy' => 'text1' ],
 						1 => [],
-						2 => [
-							'other' => 'text3',
-						]
+						2 => [ 'other' => 'text3' ],
 					],
 				],
 				'expected' => false,
@@ -80,16 +70,12 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 				'params' => [
 					'mw-twocolconflict-single-column-view' => true,
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
+						0 => [ 'copy' => 'text1' ],
 						1 => [
 							'other' => 'text4',
 							'your' => 'text2',
 						],
-						2 => [
-							'other' => 'text3',
-						],
+						2 => [ 'other' => 'text3' ],
 					],
 					'mw-twocolconflict-side-selector' => [
 						1 => 'your',
@@ -101,15 +87,9 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 				'params' => [
 					'mw-twocolconflict-single-column-view' => true,
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
-						1 => [
-							'other' => [ 'text4' ],
-						],
-						2 => [
-							'other' => 'text3',
-						],
+						0 => [ 'copy' => 'text1' ],
+						1 => [ 'other' => [ 'text4' ] ],
+						2 => [ 'other' => 'text3' ],
 					],
 					'mw-twocolconflict-side-selector' => [
 						1 => 'your',
@@ -120,16 +100,12 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 			'Good split-column content' => [
 				'params' => [
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
+						0 => [ 'copy' => 'text1' ],
 						1 => [
 							'other' => 'text4',
 							'your' => 'text2',
 						],
-						2 => [
-							'copy' => 'text3',
-						]
+						2 => [ 'copy' => 'text3' ],
 					],
 					'mw-twocolconflict-side-selector' => [
 						1 => 'your',
@@ -140,16 +116,12 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 			'Split-column missing selections' => [
 				'params' => [
 					'mw-twocolconflict-split-content' => [
-						0 => [
-							'copy' => 'text1',
-						],
+						0 => [ 'copy' => 'text1' ],
 						1 => [
 							'other' => 'text4',
 							'your' => 'text2',
 						],
-						2 => [
-							'other' => 'text3',
-						]
+						2 => [ 'other' => 'text3' ],
 					],
 					'mw-twocolconflict-side-selector' => [],
 				],
