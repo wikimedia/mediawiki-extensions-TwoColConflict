@@ -66,10 +66,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Unfortunately, someone else posted at the same time as you. Please review the comments on the next page. If needed, you can edit yours and change the final order.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Resolve issue",
 	"twocolconflict-talk-header-overview": "Someone else posted at the same time as you. Please review the comments below and choose the order to be published. If needed, you can edit your text.",
-	"twocolconflict-talk-your": "Your entry",
-	"twocolconflict-talk-conflicting": "Conflicting entry",
+	"twocolconflict-talk-your": "Your comment",
+	"twocolconflict-talk-conflicting": "Conflicting comment",
 	"twocolconflict-talk-switch-tooltip": "Switch order",
-	"twocolconflict-talk-reorder-prompt": "Position your entry in relation to the conflicting entry:",
+	"twocolconflict-talk-reorder-prompt": "Position your comment in relation to the conflicting comment:",
 	"twocolconflict-talk-same-order": "Keep after",
 	"twocolconflict-talk-reverse-order": "Move before"
 }
