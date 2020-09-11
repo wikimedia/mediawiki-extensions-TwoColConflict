@@ -69,10 +69,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Ne yazık ki, başka bir kişi sizinle aynı zamanda gönderdi. Lütfen bir sonraki sayfadaki yorumları inceleyin. Gerekirse, kendinizinkini düzenleyebilir ve son düzeni değiştirebilirsiniz.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Sorunu çöz",
 	"twocolconflict-talk-header-overview": "Sizinle aynı zamanda başka biri de yayın gönderdi. Lütfen aşağıdaki yorumları inceleyin ve yayınlanacak siparişi seçin. Gerekirse metninizi düzenleyebilirsiniz.",
-	"twocolconflict-talk-your": "Girişiniz",
-	"twocolconflict-talk-conflicting": "Giriş çakışması",
+	"twocolconflict-talk-your": "Yorumunuz",
+	"twocolconflict-talk-conflicting": "Yorum çakışması",
 	"twocolconflict-talk-switch-tooltip": "Sıralamayı değiştir",
-	"twocolconflict-talk-reorder-prompt": "Girişinizi çakışan girişe göre konumlandırın:",
+	"twocolconflict-talk-reorder-prompt": "Yorumunuzu çakışan yoruma göre konumlandırın:",
 	"twocolconflict-talk-same-order": "Sonra sakla",
 	"twocolconflict-talk-reverse-order": "Önce taşı"
 }

@@ -76,10 +76,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Malheureusement, quelqu’un d’autre a publié en même temps que vous. Veuillez vérifier les commentaires sur la page suivante. Si nécessaire, vous pouvez modifier les vôtres et modifier l’ordre final.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Résoudre le problème",
 	"twocolconflict-talk-header-overview": "Quelqu’un d’autre a envoyé un commentaire en même temps que vous. Veuillez examiner les commentaires ci-dessous et choisir l’ordre de publication. Si nécessaire, vous pouvez modifier votre texte.",
-	"twocolconflict-talk-your": "Votre entrée",
-	"twocolconflict-talk-conflicting": "Entrée en conflit",
+	"twocolconflict-talk-your": "Votre commentaire",
+	"twocolconflict-talk-conflicting": "Commentaire du conflit",
 	"twocolconflict-talk-switch-tooltip": "Changer l'ordre",
-	"twocolconflict-talk-reorder-prompt": "Positionner votre entrée en relation avec l'entrée conflictuelle :",
+	"twocolconflict-talk-reorder-prompt": "Positionner votre commentaire en relation avec le commentaire conflictuelle :",
 	"twocolconflict-talk-same-order": "Garder après",
 	"twocolconflict-talk-reverse-order": "Déplacer avant"
 }

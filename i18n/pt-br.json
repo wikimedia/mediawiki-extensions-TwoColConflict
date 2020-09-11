@@ -69,10 +69,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Infelizmente, alguém postou ao mesmo tempo que você. Por favor, revise os comentários na próxima página. Se necessário, você pode editar o seu e alterar o pedido final.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Resolver problema",
 	"twocolconflict-talk-header-overview": "Alguém postou ao mesmo tempo que você. Revise os comentários abaixo e escolha o pedido a ser publicado. Se necessário, você pode editar seu texto.",
-	"twocolconflict-talk-your": "Sua entrada",
-	"twocolconflict-talk-conflicting": "Entrada conflitante",
+	"twocolconflict-talk-your": "Seu comentário",
+	"twocolconflict-talk-conflicting": "Comentário conflitante",
 	"twocolconflict-talk-switch-tooltip": "Ordem de troca",
-	"twocolconflict-talk-reorder-prompt": "Posicione sua entrada em relação à entrada conflitante:",
+	"twocolconflict-talk-reorder-prompt": "Posicione seu comentário em relação ao comentário conflitante:",
 	"twocolconflict-talk-same-order": "Manter depois",
 	"twocolconflict-talk-reverse-order": "Mover antes"
 }
