@@ -59,7 +59,7 @@
 	"twocolconflict-split-select-your-tooltip": "Pulsa para seleccionar esta versión",
 	"twocolconflict-split-selected-other-tooltip": "Otra versión está seleccionada",
 	"twocolconflict-split-selected-your-tooltip": "La versión está seleccionada",
-	"twocolconflict-talk-your": "Tu entrada",
-	"twocolconflict-talk-conflicting": "Entrada en conflicto",
+	"twocolconflict-talk-your": "Tu comentario",
+	"twocolconflict-talk-conflicting": "Comentario en conflicto",
 	"twocolconflict-talk-reorder-prompt": "Coloque su entrada en relación con la entrada en conflicto:"
 }

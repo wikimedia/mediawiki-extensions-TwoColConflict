@@ -44,6 +44,6 @@
 	"twocolconflict-split-reset-tooltip": "Отменить все изменения в этом тексте",
 	"twocolconflict-split-reset-warning-cancel": "Отмена",
 	"twocolconflict-split-reset-warning-accept": "Сбросить",
-	"twocolconflict-split-collapse-tooltip": "Свернуть текст",
-	"twocolconflict-split-expand-tooltip": "Развернуть текст"
+	"twocolconflict-split-collapse-tooltip": "Свернуть неизменённый текст",
+	"twocolconflict-split-expand-tooltip": "Развернуть неизменённый текст"
 }

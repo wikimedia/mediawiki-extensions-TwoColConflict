@@ -72,10 +72,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Bohužel někdo jiný zveřejnil komentář ve stejnou dobu jako vy. Přečtěte si komentáře na následující stránce. V případě potřeby můžete editovat svůj komentář a změnit výsledné pořadí.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Vyřešit konflikt",
 	"twocolconflict-talk-header-overview": "Někdo jiný zveřejnil komentář ve stejnou dobu jako vy. Přečtěte si níže uvedené komentáře a vyberte pořadí, ve kterém mají být zveřejněny. V případě potřeby můžete svůj komentář editovat.",
-	"twocolconflict-talk-your": "Váš příspěvek",
-	"twocolconflict-talk-conflicting": "Konfliktní příspěvěk",
+	"twocolconflict-talk-your": "Váš komentář",
+	"twocolconflict-talk-conflicting": "Konfliktní komentář",
 	"twocolconflict-talk-switch-tooltip": "Prohodit pořadí",
-	"twocolconflict-talk-reorder-prompt": "Pozice vašeho příspěvku ve vztahu ke konfliktnímu příspěvku:",
+	"twocolconflict-talk-reorder-prompt": "Nastavte umístění svého komentáře ve vztahu ke konfliktnímu komentáři:",
 	"twocolconflict-talk-same-order": "Zachovat za",
 	"twocolconflict-talk-reverse-order": "Přesunout před"
 }
