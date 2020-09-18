@@ -78,11 +78,11 @@ class EditConflictPage extends Page {
 		const hide = show === false;
 		Util.waitForModuleState( 'mediawiki.base' );
 
-		return browser.execute( function ( hide ) {
+		return browser.execute( function ( setHide ) {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption(
 					'userjs-twocolconflict-hide-help-dialogue',
-					hide ? '1' : '0'
+					setHide ? '1' : '0'
 				);
 			} );
 		}, hide );

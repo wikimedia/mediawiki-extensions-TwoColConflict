@@ -63,9 +63,9 @@ class PreferencesPage extends Page {
 		// This workaround is needed when the preferences save bar
 		// might obscure the feature's label and checkbox.
 		browser.execute(
-			( checkBox, saveBar ) => {
+			( innerCheckBox, saveBar ) => {
 				saveBar.style.visibility = 'hidden';
-				checkBox.click();
+				innerCheckBox.click();
 				saveBar.style.visibility = '';
 			},
 			checkBox,
