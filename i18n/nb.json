@@ -66,10 +66,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Dessverre postet noen andre samtidig som deg. Gå gjennom kommentarene på neste side. Hvis det er nødvendig kan du redigere dine og endre den endelige rekkefølgen.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Løs problemet",
 	"twocolconflict-talk-header-overview": "Noen andre postet samtidig som deg. Gå gjennom kommentarene nedenfor og velg rekkefølgen som skal publiseres. Hvis det trengs kan du redigere teksten din.",
-	"twocolconflict-talk-your": "Oppføringen din",
-	"twocolconflict-talk-conflicting": "Den konflikterende oppføringen",
+	"twocolconflict-talk-your": "Kommentaren din",
+	"twocolconflict-talk-conflicting": "Den konflikterende kommentaren",
 	"twocolconflict-talk-switch-tooltip": "Bytt rekkefølge",
-	"twocolconflict-talk-reorder-prompt": "Plasser din oppføring i forhold til den konflikterende oppføringen:",
+	"twocolconflict-talk-reorder-prompt": "Plasser din kommentar i forhold til den konflikterende kommentaren:",
 	"twocolconflict-talk-same-order": "Behold etter",
 	"twocolconflict-talk-reverse-order": "Flytt foran"
 }
