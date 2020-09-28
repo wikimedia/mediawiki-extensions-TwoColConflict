@@ -4,6 +4,7 @@
 			"Aftabuzzaman",
 			"Bodhisattwa",
 			"Elias Ahmmad",
+			"YahyA",
 			"আফতাবুজ্জামান"
 		]
 	},
@@ -31,6 +32,6 @@
 	"twocolconflict-split-reset-warning-cancel": "বাতিল",
 	"twocolconflict-split-reset-warning-accept": "বাতিল",
 	"twocolconflict-split-help-tooltip": "সাহায্য দেখান",
-	"twocolconflict-talk-your": "আপনার ভুক্তি",
-	"twocolconflict-talk-conflicting": "দ্বন্দ্ব ঘটানো ভুক্তি"
+	"twocolconflict-talk-your": "আপনার মন্তব্য",
+	"twocolconflict-talk-conflicting": "দ্বন্দ্ব ঘটানো মন্তব্য"
 }
