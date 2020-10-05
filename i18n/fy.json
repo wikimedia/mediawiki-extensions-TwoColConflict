@@ -21,6 +21,8 @@
 	"twocolconflict-special-header-overview": "Under jo bewurking wie in oare meidogger dwaande mei deselde side, en wie jo foar mei publisearjen. In lêskopy fan jo ferzje is hjirûnder beholden. Wizigings makke yn 'e omjouwing foar bewurkingsoerlaap binne net opnommen. Gean werom nei it foarige tabblêd om de wizigings gear te foegjen, en it probleem yn de omjouwing foar bewurkingsoerlaap op te lossen.",
 	"twocolconflict-special-not-saved": "Net publisearre",
 	"twocolconflict-special-textarea-hint": "Jo kinne de boarne fan jo ferzje besjen en kopiearje:",
+	"twocolconflict-special-malformed-title": "Untbrekkende of ûnjildige titel.",
+	"twocolconflict-special-expired": "Neat te sjen hjirre. Dat betsjut faak dat jo in skoftsje lyn al in bewurkingsoerlaap hân hawwe, mar jo tydlik bewarre tekst wilens ferrûn is.",
 	"twocolconflict-split-header-hint": "Jo kinne helpe mei it fierder ferbetterjen fan dizze funksje, at jo [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface op dizze side] weromkeppeling jouwe.",
 	"twocolconflict-split-header-hint-beta": "Tankjewol dat jo dizze bêtafunksje brûke. Jo kinne helpe mei it fierder ferbetterjen derfan, at jo [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface op dizze side] weromkeppeling jouwe.",
 	"twocolconflict-split-header-overview": "Under jo bewurking wie in oare meidogger dwaande mei deselde side, en wie jo foar mei publisearjen. Besjoch beide ferzjes op 'e nij en meitsje dêr ien fan. Allinnich de tekst yn de selektearre fekken wurde fêstlein at jo \"{{int:publishchanges}}\" klikke.",
@@ -63,10 +65,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Spitigernôch reägearre immen oars op itselde stuit as jo. Besjoch de reäksjes op de neikommende side op 'e nij. Sa nedich kinne jo jowes bewurkje en de úteinlike folchoarder feroarje.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Probleem oplosse",
 	"twocolconflict-talk-header-overview": "Immen oars reägearre op itselde stuit as jo. Besjoch de reäksjes ûnder op 'e nij, en kies de folchoarder dy't publisearre wurdt. Sa nedich kinne jo jo tekst bewurkje.",
-	"twocolconflict-talk-your": "Jo ynbring",
-	"twocolconflict-talk-conflicting": "Oerlaapjende ynbring",
+	"twocolconflict-talk-your": "Jo reäksje",
+	"twocolconflict-talk-conflicting": "Oerlaapjende reäksje",
 	"twocolconflict-talk-switch-tooltip": "Folchoarder wikselje",
-	"twocolconflict-talk-reorder-prompt": "It plak fan jo ynbring tsjinoer de oerlaapjende ynbring:",
+	"twocolconflict-talk-reorder-prompt": "It plak fan jo reäksje tsjinoer de oerlaapjende reäksje:",
 	"twocolconflict-talk-same-order": "Derefter hâlde",
 	"twocolconflict-talk-reverse-order": "Derfoar sette"
 }
