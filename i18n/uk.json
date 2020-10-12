@@ -67,10 +67,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "На жаль хтось інший також запостив у той самий час, як і ви. Будь ласка, перегляньте коментарі на наступній сторінці. Якщо потрібно, ви можете відредагувати свій коментар і змінити їх порядок.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Вирішити проблему",
 	"twocolconflict-talk-header-overview": "Хтось іще написав у той же час, що і ви. Будь ласка, перегляньте коментарі нижче і виберіть порядок, в якому їх публікувати. Якщо треба, ви можете відредагувати свій текст.",
-	"twocolconflict-talk-your": "Ваш запис",
-	"twocolconflict-talk-conflicting": "Конфліктний запис",
+	"twocolconflict-talk-your": "Ваш коментар",
+	"twocolconflict-talk-conflicting": "Конфліктний коментар",
 	"twocolconflict-talk-switch-tooltip": "Змінити порядок",
-	"twocolconflict-talk-reorder-prompt": "Розмістіть написане вами відносно конфліктного запису:",
+	"twocolconflict-talk-reorder-prompt": "Розмістіть написане вами відносно конфліктного коментаря:",
 	"twocolconflict-talk-same-order": "Зберегти після",
 	"twocolconflict-talk-reverse-order": "Перемістити перед"
 }
