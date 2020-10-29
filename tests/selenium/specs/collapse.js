@@ -102,10 +102,10 @@ describe( 'TwoColConflict collapse button', function () {
 		EditConflictPage.getEditButton( 'unchanged' ).click();
 		EditConflictPage.getResetButton( 'unchanged' ).click();
 
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 1000 } );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 2000 } );
 		EditConflictPage.resetConfirmationButton.click();
 		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
-			timeout: 1000,
+			timeout: 2000,
 			reverse: true
 		} );
 
