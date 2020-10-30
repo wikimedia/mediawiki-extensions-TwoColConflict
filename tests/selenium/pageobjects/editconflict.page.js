@@ -2,7 +2,6 @@
 
 const Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
-	PreferencesPage = require( '../pageobjects/preferences.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
@@ -71,13 +70,35 @@ class EditConflictPage extends Page {
 	}
 
 	/**
+	 * Disables VisualEditor, edit warning popups and sets test
+	 * defaults to makes sure the feature is used and the help
+	 * dialog hidden.
+	 *
+	 * @return {Promise} Promise from the mw.Api request
+	 */
+	prepareUserSettings() {
+		Util.waitForModuleState( 'mediawiki.base' );
+		return browser.execute( function () {
+			return mw.loader.using( 'mediawiki.api' ).then( function () {
+				return new mw.Api().saveOptions( {
+					'visualeditor-hidebetawelcome': '1',
+					'visualeditor-betatempdisable': '1',
+					useeditwarning: '0',
+					'twocolconflict-enabled': '1',
+					twocolconflict: '1',
+					'userjs-twocolconflict-hide-help-dialogue': '1'
+				} );
+			} );
+		} );
+	}
+
+	/**
 	 * @param {boolean} [show] Defaults to true.
 	 * @return {Promise} Promise from the mw.Api request
 	 */
 	toggleHelpDialog( show ) {
 		const hide = show === false;
 		Util.waitForModuleState( 'mediawiki.base' );
-
 		return browser.execute( function ( setHide ) {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption(
@@ -88,29 +109,9 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	/**
-	 * @return {Promise} Promise from the mw.Api request
-	 */
-	disableVisualEditor() {
-		Util.waitForModuleState( 'mediawiki.base' );
-
-		return browser.execute( function () {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOptions( {
-					'visualeditor-hidebetawelcome': '1',
-					'visualeditor-betatempdisable': '1'
-				} );
-			} );
-		} );
-	}
-
 	prepareEditConflict() {
 		UserLoginPage.loginAdmin();
-		PreferencesPage.disableEditWarning();
-		PreferencesPage.shouldUseTwoColConflict( true );
-		PreferencesPage.shouldUseTwoColConflictBetaFeature( true );
-		this.toggleHelpDialog( false );
-		this.disableVisualEditor();
+		this.prepareUserSettings();
 	}
 
 	showSimpleConflict() {
