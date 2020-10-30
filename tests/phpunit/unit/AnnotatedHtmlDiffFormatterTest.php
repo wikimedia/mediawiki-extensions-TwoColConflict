@@ -386,6 +386,34 @@ TEXT
 					],
 				],
 			],
+			'bug T266860' => [
+				'before' => "A\n\nB1\n\nC1\n\nD",
+				'after' => "A\n\nB2\n\nC2\n\nD",
+				'result' => [
+					[
+						'action' => 'copy',
+						'copytext' => "A\n",
+					],
+					[
+						'action' => 'change',
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">B1</del>',
+						'oldtext' => "B1\n",
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">B2</ins>',
+						'newtext' => "B2\n",
+					],
+					3 => [
+						'action' => 'change',
+						'oldhtml' => '<del class="mw-twocolconflict-diffchange">C1</del>',
+						'oldtext' => 'C1',
+						'newhtml' => '<ins class="mw-twocolconflict-diffchange">C2</ins>',
+						'newtext' => 'C2',
+					],
+					[
+						'action' => 'copy',
+						'copytext' => "\nD",
+					],
+				],
+			],
 		];
 	}
 
