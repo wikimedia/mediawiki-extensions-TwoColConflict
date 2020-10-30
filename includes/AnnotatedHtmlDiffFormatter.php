@@ -82,6 +82,25 @@ class AnnotatedHtmlDiffFormatter {
 			$newLine += $edit->nclosing();
 		}
 
+		// Try to merge unchanged newline-only rows into a more meaningful row
+		foreach ( $changes as $i => $row ) {
+			if ( !isset( $row['copytext'] ) || trim( $row['copytext'], "\n" ) !== '' ) {
+				continue;
+			}
+
+			// Prefer adding extra empty lines to the end of the previous row
+			foreach ( [ -1, 1 ] as $offset ) {
+				$target = &$changes[$i + $offset];
+				if ( isset( $target['oldtext'] ) && isset( $target['newtext'] ) ) {
+					$extra = "\n" . $row['copytext'];
+					$target['oldtext'] .= $extra;
+					$target['newtext'] .= $extra;
+					unset( $changes[$i] );
+					break;
+				}
+			}
+		}
+
 		return $changes;
 	}
 
