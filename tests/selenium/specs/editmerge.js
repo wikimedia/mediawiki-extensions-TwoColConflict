@@ -267,10 +267,10 @@ describe( 'TwoColConflict editable areas', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 1000 } );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 2000 } );
 		EditConflictPage.resetConfirmationButton.click();
 		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
-			timeout: 1000,
+			timeout: 2000,
 			reverse: true
 		} );
 
@@ -297,7 +297,7 @@ describe( 'TwoColConflict editable areas', function () {
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
 		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
-			timeout: 1000,
+			timeout: 2000,
 			reverse: true
 		} );
 		assert(

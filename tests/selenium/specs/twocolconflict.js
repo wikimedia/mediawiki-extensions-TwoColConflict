@@ -61,7 +61,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'shows a dismissible hint on the core edit conflict interface', function () {
-		PreferencesPage.openEditPreferences();
+		PreferencesPage.openPreferences();
 		if ( !PreferencesPage.hasOptOutUserSetting() ) {
 			this.skip();
 		}
