@@ -4,6 +4,9 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class PreferencesPage extends Page {
+	get betaPreferencesLink() { return $( '#pt-betafeatures a' ); }
+	get twoColBetaLabel() { return $( '//*[@name="wptwocolconflict"]//parent::span' ); }
+
 	openPreferences() {
 		super.openTitle( 'Special:Preferences' );
 	}
@@ -42,16 +45,16 @@ class PreferencesPage extends Page {
 		} );
 	}
 
-	hasOptOutUserSetting() {
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function () {
-			let result;
-			mw.loader.using( 'mediawiki.api' ).then( function () {
-				result = new mw.Api().getOption( 'twocolconflict-enabled' );
-			} );
-			return result;
-		} );
-
+	hasBetaFeatureSetting() {
+		this.openPreferences();
+		this.betaPreferencesLink.waitForDisplayed();
+		this.betaPreferencesLink.click();
+		try {
+			this.twoColBetaLabel.waitForDisplayed( { timeout: 2000 } );
+			return true;
+		} catch ( e ) {
+			return false;
+		}
 	}
 }
 
