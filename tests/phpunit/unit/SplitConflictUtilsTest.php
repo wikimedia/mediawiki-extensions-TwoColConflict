@@ -76,4 +76,28 @@ class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 		$this->assertSame( $expected, SplitConflictUtils::mergeTextLines( $lines ) );
 	}
 
+	public function provideLinks() {
+		return [
+			'regular link' => [
+				'<a href="#test">',
+				'<a target="_blank" href="#test">',
+			],
+			'href is not required for performance reasons' => [
+				'<a>',
+				'<a target="_blank">',
+			],
+			'when there is already a target' => [
+				'<a href="#test" target="_top">',
+				'<a href="#test" target="_top">',
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideLinks
+	 */
+	public function testAddTargetBlankToLinks( string $html, string $expected ) {
+		$this->assertSame( $expected, SplitConflictUtils::addTargetBlankToLinks( $html ) );
+	}
+
 }
