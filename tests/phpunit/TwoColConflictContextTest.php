@@ -47,16 +47,9 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$betaUser = $this->createUser( '1', '1' );
 		$optOutUser = $this->createUser( '0' );
 
-		$defaultPage = $this->createMock( Title::class );
-
-		$talkPage = $this->createMock( Title::class );
-		$talkPage->method( 'isTalkPage' )
-			->willReturn( true );
-
-		$projectPage = $this->createMock( Title::class );
-		$projectPage->method( 'inNamespace' )
-			->with( NS_PROJECT )
-			->willReturn( true );
+		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
+		$talkPage = Title::makeTitle( NS_TALK, __CLASS__ );
+		$projectPage = Title::makeTitle( NS_PROJECT, __CLASS__ );
 
 		return [
 			'disabled in Beta' => [
@@ -126,7 +119,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$defaultUser = $this->createUser();
 		$betaUser = $this->createUser( '1', '1' );
 
-		$defaultPage = $this->createMock( Title::class );
+		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
 
 		return [
 			'enabled in beta mode when BetaFeatures not installed' => [

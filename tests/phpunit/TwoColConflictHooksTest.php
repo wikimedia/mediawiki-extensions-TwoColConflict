@@ -150,7 +150,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			->willReturn( $enabled );
 
 		$context = $this->createMock( IContextSource::class );
-		$context->method( 'getTitle' )->willReturn( $this->createMock( Title::class ) );
+		$context->method( 'getTitle' )->willReturn( Title::makeTitle( NS_MAIN, __CLASS__ ) );
 		$context->method( 'getUser' )->willReturn( $user );
 		return $context;
 	}
