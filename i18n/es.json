@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Canaan9801",
 			"Carlosmg.dg",
 			"DannyS712",
@@ -45,8 +46,8 @@
 	"twocolconflict-split-tour-popup3-message": "El texto que haya cambiado en cualquier versión de una línea quedará resaltado. Cuando hayas editado el texto, el resaltado desaparecerá.",
 	"twocolconflict-split-edit-tooltip": "Pulsa para editar este texto",
 	"twocolconflict-split-save-tooltip": "Guardar cambios y salir del modo de edición.",
-	"twocolconflict-split-reset-tooltip": "Restablecer texto",
-	"twocolconflict-split-reset-warning": "¿Descartar cambios? Se restablecerá tu texto a como estaba cuando se produjo el conflicto de ediciones.",
+	"twocolconflict-split-reset-tooltip": "Descartar todos los cambios a este texto",
+	"twocolconflict-split-reset-warning": "¿Descartar cambios? Se restablecerá el texto en esta caja a como estaba cuando se produjo el conflicto de ediciones.",
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Descartar",
 	"twocolconflict-split-collapse-tooltip": "Replegar texto sin cambios",
