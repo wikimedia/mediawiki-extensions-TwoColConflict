@@ -39,6 +39,7 @@ class HtmlSplitConflictViewTest extends MediaWikiTestCase {
 			'copied line' => [ 'A', 'A', 1, 1 ],
 			'deleted line' => [ "A\nB\nC", "A\nC", 3, 4 ],
 			'bug T266860' => [ "A\n\nB1\n\nC1\n\nD", "A\n\nB2\n\nC2\n\nD", 4, 6 ],
+			'bug T268313' => [ "\nA1", "\nA2", 1, 2 ],
 		];
 	}
 
