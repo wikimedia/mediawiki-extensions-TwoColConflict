@@ -96,6 +96,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 	private function createTitle() {
 		// Expensive methods like isProtected() are possibly called, better mock all of them
 		$title = $this->createMock( Title::class );
+		$title->method( 'canExist' )->willReturn( true );
 		$title->method( 'getContentModel' )->willReturn( '' );
 		$title->method( 'getPrefixedDBkey' )->willReturn( '' );
 		return $title;
