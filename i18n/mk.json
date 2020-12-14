@@ -66,10 +66,10 @@
 	"twocolconflict-split-tour-dialog-message-single-column-view": "За жал, некој напишал објава истовремено со вас. Прегледате ги коментарите на следната страница. Ако е потребно, можете да ги уредите вашите и да го смените конечниот редослед.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Реши проблем",
 	"twocolconflict-talk-header-overview": "Некој друг објавил истовремено со вас. Прегледајте ги коментарите подолу и изберете го редоследот за објавување. Ако има потреба, можете да го измените вашиот текст.",
-	"twocolconflict-talk-your": "Ваша ставка",
-	"twocolconflict-talk-conflicting": "Спротиставена ставка",
+	"twocolconflict-talk-your": "Ваш коментар",
+	"twocolconflict-talk-conflicting": "Спротиставен коментар",
 	"twocolconflict-talk-switch-tooltip": "Замени редослед",
-	"twocolconflict-talk-reorder-prompt": "Ставете ја вашата ставка во однос на спротиставената:",
+	"twocolconflict-talk-reorder-prompt": "Ставете го вашиот коментар во однос на спротиставениот:",
 	"twocolconflict-talk-same-order": "Задржи ја како наредна",
 	"twocolconflict-talk-reverse-order": "Премести ја како претходна"
 }
