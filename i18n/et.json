@@ -7,6 +7,7 @@
 	"twocolconflict-desc": "Näitab redigeerimiskonflikti lahendamise tarbeks kaheküljelist muudatuste liitmise vaadet.",
 	"twocolconflict-beta-feature-message": "Lõigupõhine redigeerimiskonflikt",
 	"twocolconflict-beta-feature-description": "Kuvab redigeerimiskonflikti täiustatud lõigupõhises vaates.",
+	"twocolconflict-preference-enabled": "Luba [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|lõigupõhine redigeerimiskonflikti liides]], millega redigeerimiskonflikte lahendada",
 	"twocolconflict-split-header-hint": "Saad aidata seda funktsiooni paremaks teha, kui annad tagasisidet [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface siin leheküljel].",
 	"twocolconflict-split-header-hint-beta": "Aitäh, et kasutad seda beetafunktsiooni. Saad aidata seda paremaks teha, kui annad tagasisidet [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface siin leheküljel].",
 	"twocolconflict-split-your-version-header": "Sinu redaktsioon",

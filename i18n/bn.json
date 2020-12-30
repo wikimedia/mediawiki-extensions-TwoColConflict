@@ -16,6 +16,7 @@
 	"twocolconflict-copy-action": "পূর্ণ লেখা অনুলিপি করুন",
 	"twocolconflict-copy-tab-action": "পূর্ণ লেখা দেখুন",
 	"twocolconflict-core-ui-hint-close": "কখনো দেখাবেন না",
+	"twocolconflict-preference-enabled": "সম্পাদনা দ্বন্দ্ব সমাধান করতে [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|অনুচ্ছেদ-ভিত্তিক সম্পাদনা দ্বন্দ্বের]] ইন্টারফেস সক্রিয় করুন",
 	"twocolconflict-special-not-saved": "প্রকাশিত হয়নি",
 	"twocolconflict-split-header-overview": "আপনি যখন সম্পাদনা করছিলেন, আরেকজন ব্যবহারকারী এক‌ই পাতা সম্পাদনা করে আপনার আগে প্রকাশ করেছেন। দয়া করে দুইটি সংস্করণ‌ই পর্যবেক্ষণ করুন এবং তাদের একত্রিত করুন। শুধুমাত্র নির্বাচিত বাক্সের ভেতরের পাঠ্যগুলিই সংরক্ষিত হবে যখন আপনি \"{{int:publishchanges}}\" ক্লিক করবেন।",
 	"twocolconflict-split-your-version-header": "আপনার সংস্করণ",
