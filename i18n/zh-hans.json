@@ -56,6 +56,7 @@
 	"twocolconflict-split-reset-warning-accept": "舍弃",
 	"twocolconflict-split-collapse-tooltip": "折叠未更改文本",
 	"twocolconflict-split-expand-tooltip": "展开未更改文本",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "很不巧，其他人在此时也发表了内容并产生编辑冲突。请在下一页中检查变更，并考虑编辑你的内容，以决定最终效果。",
 	"twocolconflict-talk-header-overview": "有用户与您同时发布了评论，请查看下方的评论以选择发布的顺序。如有需要，您可以更改您的评论文本。",
 	"twocolconflict-talk-your": "您的评论",
 	"twocolconflict-talk-conflicting": "冲突的评论"
