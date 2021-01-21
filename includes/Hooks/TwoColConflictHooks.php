@@ -196,7 +196,7 @@ class TwoColConflictHooks {
 						$user,
 						$context->getTitle()
 					),
-					'isAnon' => $user->isAnon(),
+					'isAnon' => !$user->isRegistered(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $context->getTitle()->getNamespace(),
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
@@ -316,7 +316,7 @@ class TwoColConflictHooks {
 	 * @param User $user
 	 * @param array &$options
 	 */
-	public static function onUserLoadOptions( User $user, array &$options ) {
+	public static function onUserLoadOptions( $user, array &$options ) {
 		self::newFromGlobalState()->doUserLoadOptions( $options );
 	}
 
