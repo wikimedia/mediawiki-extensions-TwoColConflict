@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
+			"Eleassar",
 			"Janezdrilc"
 		]
 	},
 	"twocolconflict-beta-feature-message": "Navzkrižno urejanje, temelječe na odstavkih",
-	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj s pomočjo naprednejšega pogleda, temelječega na odstavkih."
+	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj s pomočjo naprednejšega pogleda, temelječega na odstavkih.",
+	"twocolconflict-split-reset-warning": "Zavržem spremembe? Besedilo v tem polju bo ponastavljeno na tako, kakršno je bilo pred pojavom navzkrižja urejanj."
 }
