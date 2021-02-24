@@ -3,7 +3,9 @@
 namespace TwoColConflict\Tests;
 
 use Language;
+use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\MutableRevisionRecord;
 use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
@@ -165,13 +167,21 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	 * @return RevisionRecord
 	 */
 	private function newRevisionRecord( string $timestamp = null, string $editSummary = '' ) {
-		$revision = $this->createMock( RevisionRecord::class );
-		$revision->method( 'getUser' )
-			->willReturn( $this->otherUser );
-		$revision->method( 'getTimestamp' )
-			->willReturn( $timestamp );
-		$revision->method( 'getComment' )
-			->willReturn( $editSummary ? (object)[ 'text' => $editSummary ] : null );
+		$revision = new MutableRevisionRecord(
+			new PageIdentityValue(
+				11,
+				NS_MAIN,
+				__CLASS__,
+				PageIdentityValue::LOCAL
+			)
+		);
+		$revision->setUser( $this->otherUser );
+		if ( $timestamp ) {
+			$revision->setTimestamp( $timestamp );
+		}
+		if ( $editSummary ) {
+			$revision->setComment( \CommentStoreComment::newUnsavedComment( $editSummary ) );
+		}
 		return $revision;
 	}
 
