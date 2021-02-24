@@ -4,8 +4,8 @@ namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWiki\Page\PageIdentityValue;
+use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Storage\MutableRevisionRecord;
 use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
@@ -161,27 +161,18 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @param string|null $timestamp
+	 * @param string $timestamp
 	 * @param string $editSummary
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( string $timestamp = null, string $editSummary = '' ) {
+	private function newRevisionRecord( string $timestamp, string $editSummary = '' ) : MutableRevisionRecord {
 		$revision = new MutableRevisionRecord(
-			new PageIdentityValue(
-				11,
-				NS_MAIN,
-				__CLASS__,
-				PageIdentityValue::LOCAL
-			)
+			new PageIdentityValue( 0, NS_MAIN, __CLASS__, PageIdentityValue::LOCAL )
 		);
-		$revision->setUser( $this->otherUser );
-		if ( $timestamp ) {
-			$revision->setTimestamp( $timestamp );
-		}
-		if ( $editSummary ) {
-			$revision->setComment( \CommentStoreComment::newUnsavedComment( $editSummary ) );
-		}
+		$revision->setUser( $this->otherUser )
+			->setTimestamp( $timestamp )
+			->setComment( \CommentStoreComment::newUnsavedComment( $editSummary ) );
 		return $revision;
 	}
 
