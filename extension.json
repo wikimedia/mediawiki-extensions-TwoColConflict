@@ -187,8 +187,8 @@
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"TwoColConflictConflict": 19950885,
-				"TwoColConflictExit": 19982300
+				"TwoColConflictConflict": "/analytics/legacy/twocolconflictconflict/1.0.0",
+				"TwoColConflictExit": "/analytics/legacy/twocolconflictexit/1.0.0"
 			}
 		}
 	},
