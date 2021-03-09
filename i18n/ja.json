@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Iwai.masaharu",
+			"LaMagiaaa",
 			"Linuxmetel",
 			"Mirinano",
 			"Omotecho",
@@ -17,6 +18,7 @@
 	"twocolconflict-beta-feature-message": "段落に基づいた編集の競合",
 	"twocolconflict-beta-feature-description": "進化型の段落に基づく表示により編集の競合を表示します。",
 	"twocolconflict-copy-action": "すべての文をコピー",
+	"twocolconflict-special-not-saved": "未公開",
 	"twocolconflict-split-header-hint-beta": "このベータ機能をご使用いただきありがとうございます。さらに改善するためご協力いただけるようでしたら、ぜひフィードバックを[//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View こちらのページ]に投稿してください。",
 	"twocolconflict-split-your-version-header": "あなたが修正した版",
 	"twocolconflict-split-current-version-header": "$1時点の最終版",
