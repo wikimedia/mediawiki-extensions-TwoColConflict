@@ -171,7 +171,13 @@
 		"TwoColConflictAlias": "TwoColConflict.alias.php"
 	},
 	"SpecialPages": {
-		"TwoColConflictProvideSubmittedText": "TwoColConflict\\ProvideSubmittedText\\SpecialProvideSubmittedText"
+		"TwoColConflictProvideSubmittedText": {
+			"class": "TwoColConflict\\ProvideSubmittedText\\SpecialProvideSubmittedText",
+			"services": [
+				"StatsdDataFactory",
+				"TwoColConflictContext"
+			]
+		}
 	},
 	"QUnitTestModule": {
 		"localBasePath": "tests/qunit",
