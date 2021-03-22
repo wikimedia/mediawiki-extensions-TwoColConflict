@@ -8,10 +8,10 @@ use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Session\SessionId;
 use Message;
 use MessageLocalizer;
+use MockTitleTrait;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use OutputPage;
-use Title;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
@@ -22,6 +22,7 @@ use WebRequest;
  * @covers \TwoColConflict\SplitTwoColConflictHelper
  */
 class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
+	use MockTitleTrait;
 
 	protected function setUp() : void {
 		parent::setUp();
@@ -35,7 +36,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 	public function testBasics() {
 		$helper = new SplitTwoColConflictHelper(
-			$this->createTitle(),
+			$this->makeMockTitle( __CLASS__ ),
 			$this->createOutputPage(),
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
@@ -53,7 +54,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 	public function testGetEditFormHtmlBeforeContent() {
 		$helper = new SplitTwoColConflictHelper(
-			$this->createTitle(),
+			$this->makeMockTitle( __CLASS__ ),
 			$this->createOutputPage(),
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
@@ -80,7 +81,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$out->expects( $this->once() )->method( 'addModules' );
 
 		$helper = new SplitTwoColConflictHelper(
-			$this->createTitle(),
+			$this->makeMockTitle( __CLASS__ ),
 			$out,
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
@@ -91,15 +92,6 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		);
 
 		$this->assertSame( '', $helper->getEditFormHtmlAfterContent() );
-	}
-
-	private function createTitle() {
-		// Expensive methods like isProtected() are possibly called, better mock all of them
-		$title = $this->createMock( Title::class );
-		$title->method( 'canExist' )->willReturn( true );
-		$title->method( 'getContentModel' )->willReturn( '' );
-		$title->method( 'getPrefixedDBkey' )->willReturn( '' );
-		return $title;
 	}
 
 	private function createOutputPage() {
