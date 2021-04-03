@@ -243,13 +243,13 @@ To change number 3.
 TEXT
 						,
 						'newhtml' =>
-// @codingStandardsIgnoreStart
+// phpcs:disable Generic.Files.LineLength
 <<<TEXT
 Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
 <ins class="mw-twocolconflict-diffchange">Line </ins>number 2 <ins class="mw-twocolconflict-diffchange">changed</ins>.
 <ins class="mw-twocolconflict-diffchange">Line </ins>number 3 <ins class="mw-twocolconflict-diffchange">also changed</ins>.
 TEXT
-// @codingStandardsIgnoreEnd
+// phpcs:enable
 						,
 						'newtext' => <<<TEXT
 Just multi-line test.
@@ -284,14 +284,14 @@ TEXT
 					[
 						'action' => 'change',
 						'oldhtml' =>
-// @codingStandardsIgnoreStart
+// phpcs:disable Generic.Files.LineLength
 <<<TEXT
 Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del class="mw-twocolconflict-diffchange">is </del>quite long!
 <del class="mw-twocolconflict-diffchange">And that's line number three - even longer than the line before.</del>
 \u{00A0}
 <del class="mw-twocolconflict-diffchange">Just another line with an empty line above</del>.
 TEXT
-// @codingStandardsIgnoreEnd
+// phpcs:enable
 						,
 						'oldtext' => <<<TEXT
 Line number two. This line is quite long!
@@ -301,13 +301,13 @@ Just another line with an empty line above.
 TEXT
 						,
 						'newhtml' =>
-// @codingStandardsIgnoreStart
+// phpcs:disable Generic.Files.LineLength
 <<<TEXT
 <ins class="mw-twocolconflict-diffchange">Add something new.</ins>
 Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins class="mw-twocolconflict-diffchange">number three and </ins>quite long!
 <ins class="mw-twocolconflict-diffchange">Add more new stuff</ins>.
 TEXT
-// @codingStandardsIgnoreEnd
+// phpcs:enable
 						,
 						'newtext' => <<<TEXT
 Add something new.
