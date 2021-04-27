@@ -82,7 +82,11 @@ exports.config = {
 		'spec',
 		// See also: https://webdriver.io/docs/junit-reporter.html#configuration
 		[ 'junit', {
-			outputDir: logPath
+			outputDir: logPath,
+			outputFileFormat: function () {
+				const ISOString = new Date().toISOString().replace( /[:.]/g, '-' );
+				return `WDIO.xunit-${ISOString}.xml`;
+			}
 		} ],
 		[
 			video, {
