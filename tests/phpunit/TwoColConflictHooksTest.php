@@ -235,8 +235,9 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
 		$this->setOptionRow( $user, TwoColConflictContext::ENABLED_PREFERENCE, $origEditing );
 
-		$user->setOption( TwoColConflictContext::ENABLED_PREFERENCE, $setEditing );
-		$user->saveSettings();
+		$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, TwoColConflictContext::ENABLED_PREFERENCE, $setEditing );
+		$userOptionsManager->saveOptions( $user );
 
 		$fetchedBeta = $user->getOption( TwoColConflictContext::BETA_PREFERENCE_NAME );
 		$fetchedEditing = $user->getOption( TwoColConflictContext::ENABLED_PREFERENCE );
