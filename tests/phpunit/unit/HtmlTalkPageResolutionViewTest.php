@@ -120,7 +120,7 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 	 */
 	public function testGetHtml( array $diff, int $otherIndex, int $yourIndex, array $expected ) {
 		$editableTextComponent = $this->createMock( HtmlEditableTextComponent::class );
-		$editableTextComponent->method( 'getHtml' )->willReturnCallback( function ( $_, $text ) {
+		$editableTextComponent->method( 'getHtml' )->willReturnCallback( static function ( $_, $text ) {
 			// We don't care about escaping here, that's tested in HtmlEditableTextComponentTest
 			return "<textarea>$text</textarea>";
 		} );

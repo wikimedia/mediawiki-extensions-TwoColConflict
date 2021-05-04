@@ -140,7 +140,7 @@ class EditPageImportFormDataHookHandlerTest extends \MediaWikiUnitTestCase {
 	 */
 	private function createRequest( array $requestParams ) {
 		$request = $this->createMock( WebRequest::class );
-		$getter = function ( string $name, $default ) use ( $requestParams ) {
+		$getter = static function ( string $name, $default ) use ( $requestParams ) {
 			return $requestParams[$name] ?? $default;
 		};
 		$request->method( 'getArray' )->willReturnCallback( $getter );

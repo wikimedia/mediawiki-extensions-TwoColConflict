@@ -268,7 +268,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	private function setOptionRow( User $user, string $key, ?string $value ) {
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_MASTER );
+		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		if ( $value === null ) {
 			$db->delete(
 				'user_properties',

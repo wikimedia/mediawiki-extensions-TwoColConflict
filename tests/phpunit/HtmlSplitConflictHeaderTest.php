@@ -126,7 +126,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 
 	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
 		$language = $this->createMock( Language::class );
-		$language->method( 'userTimeAndDate' )->willReturnCallback( function ( ?string $ts ) {
+		$language->method( 'userTimeAndDate' )->willReturnCallback( static function ( ?string $ts ) {
 			return $ts ?? '(just-now)';
 		} );
 

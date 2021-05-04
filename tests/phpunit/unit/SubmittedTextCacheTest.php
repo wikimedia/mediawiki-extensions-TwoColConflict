@@ -27,7 +27,7 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 		$backend = $this->createMock( BagOStuff::class );
 		$backend->method( 'makeKey' )
 			->willReturnCallback(
-				function ( ...$components ) {
+				static function ( ...$components ) {
 					return implode( ':', $components );
 				}
 			);

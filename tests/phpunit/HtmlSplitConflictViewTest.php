@@ -223,7 +223,7 @@ TEXT
 	private function createInstance() {
 		$editableTextComponent = $this->createMock( HtmlEditableTextComponent::class );
 		$editableTextComponent->method( 'getHtml' )
-			->willReturnCallback( function ( $diffHtml, $text ) {
+			->willReturnCallback( static function ( $diffHtml, $text ) {
 				return "<textarea>$text</textarea>";
 			} );
 
