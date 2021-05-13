@@ -83,8 +83,8 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 		$user = $this->createMock( User::class );
 		$user->method( 'getId' )
 			->willReturn( $userId );
-		$user->method( 'isAnon' )
-			->willReturn( !$userId );
+		$user->method( 'isRegistered' )
+			->willReturn( $userId !== 0 );
 		return $user;
 	}
 

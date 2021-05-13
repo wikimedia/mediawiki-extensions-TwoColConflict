@@ -56,7 +56,7 @@ class TwoColConflictContext {
 	 * already.
 	 */
 	public function shouldCoreHintBeShown( User $user ) {
-		return !$user->isAnon() &&
+		return $user->isRegistered() &&
 			!$this->isUsedAsBetaFeature() &&
 			!$user->getBoolOption( self::ENABLED_PREFERENCE ) &&
 			!$user->getBoolOption( self::HIDE_CORE_HINT_PREFERENCE );

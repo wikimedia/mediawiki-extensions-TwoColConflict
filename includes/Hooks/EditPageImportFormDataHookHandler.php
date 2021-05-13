@@ -50,7 +50,7 @@ class EditPageImportFormDataHookHandler {
 
 		if ( $request->getBool( 'mw-twocolconflict-disable-core-hint' ) ) {
 			$user = $editPage->getContext()->getUser();
-			if ( !$user->isAnon() ) {
+			if ( $user->isRegistered() ) {
 				$user->setOption( TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, '1' );
 				$user->saveSettings();
 			}

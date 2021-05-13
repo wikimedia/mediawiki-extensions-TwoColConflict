@@ -213,7 +213,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	 * @dataProvider provideShouldCoreHintBeShown
 	 */
 	public function testShouldCoreHintBeShown(
-		bool $isAnon,
+		bool $isRegistered,
 		bool $usedAsBeta,
 		bool $enabledOpt,
 		bool $hideHintOpt,
@@ -224,7 +224,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			[ TwoColConflictContext::ENABLED_PREFERENCE, $enabledOpt ],
 			[ TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, $hideHintOpt ],
 		] );
-		$user->method( 'isAnon' )->willReturn( $isAnon );
+		$user->method( 'isRegistered' )->willReturn( $isRegistered );
 
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $usedAsBeta ),
@@ -237,35 +237,35 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	public function provideShouldCoreHintBeShown() {
 		return [
 			[
-				'isAnon' => true,
+				'isRegistered' => false,
 				'usedAsBeta' => false,
 				'enabledOpt' => false,
 				'hideHintOpt' => false,
 				'expected' => false,
 			],
 			[
-				'isAnon' => false,
+				'isRegistered' => true,
 				'usedAsBeta' => true,
 				'enabledOpt' => false,
 				'hideHintOpt' => false,
 				'expected' => false,
 			],
 			[
-				'isAnon' => false,
+				'isRegistered' => true,
 				'usedAsBeta' => false,
 				'enabledOpt' => true,
 				'hideHintOpt' => false,
 				'expected' => false,
 			],
 			[
-				'isAnon' => false,
+				'isRegistered' => true,
 				'usedAsBeta' => false,
 				'enabledOpt' => false,
 				'hideHintOpt' => true,
 				'expected' => false,
 			],
 			[
-				'isAnon' => false,
+				'isRegistered' => true,
 				'usedAsBeta' => false,
 				'enabledOpt' => false,
 				'hideHintOpt' => false,

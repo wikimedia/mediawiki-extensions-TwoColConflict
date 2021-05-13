@@ -306,6 +306,8 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 	private function createOutputPage() {
 		$user = $this->createMock( User::class );
+		$user->method( 'isRegistered' )
+			->willReturn( true );
 
 		$context = $this->createMock( MessageLocalizer::class );
 		$context->method( 'msg' )->willReturnCallback( function ( $key ) {
