@@ -4,15 +4,9 @@ For more information see https://www.mediawiki.org/wiki/Selenium
 
 ## Setup
 
-Follow instructions at https://www.mediawiki.org/wiki/MediaWiki-Docker/TwoColConflict
-
-Chromedriver has to run in one terminal window:
-
-    chromedriver --url-base=wd/hub --port=4444
+See https://www.mediawiki.org/wiki/MediaWiki-Docker/Extension/TwoColConflict
 
 ## Run all specs
-
-In another terminal window:
 
     npm run selenium-test
 
