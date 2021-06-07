@@ -17,6 +17,8 @@
 	"twocolconflict-split-current-version-header": "Laatste versie van $1",
 	"twocolconflict-split-not-saved-at": "Nog niet gepubliceerd",
 	"twocolconflict-split-choose-version": "Kies een versie",
+	"twocolconflict-split-other-version-chosen": "Andere versie",
+	"twocolconflict-split-your-version-chosen": "Uw versie",
 	"twocolconflict-split-select-all": "Alle selecteren",
 	"twocolconflict-split-tour-dialog-header": "Bewerkingsconflicten oplossen",
 	"twocolconflict-split-tour-dialog-btn-text": "Begin met samenvoegen",
