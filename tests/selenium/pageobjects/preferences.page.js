@@ -4,11 +4,17 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class PreferencesPage extends Page {
-	get betaPreferencesLink() { return $( '#pt-betafeatures a' ); }
+	get betaPreferencesLink() { return $( '//span[text() = "(prefs-betafeatures)"]' ); }
 	get twoColBetaLabel() { return $( '//*[@name="wptwocolconflict"]//parent::span' ); }
 
 	openPreferences() {
 		super.openTitle( 'Special:Preferences' );
+	}
+
+	openBetaFeaturesPreferences() {
+		super.openTitle( 'Special:Preferences', { uselang: 'qqx' } );
+		this.betaPreferencesLink.waitForDisplayed();
+		this.betaPreferencesLink.click();
 	}
 
 	shouldUseTwoColConflict( shouldUse ) {
@@ -46,9 +52,7 @@ class PreferencesPage extends Page {
 	}
 
 	hasBetaFeatureSetting() {
-		this.openPreferences();
-		this.betaPreferencesLink.waitForDisplayed();
-		this.betaPreferencesLink.click();
+		this.openBetaFeaturesPreferences();
 		try {
 			this.twoColBetaLabel.waitForDisplayed( { timeout: 2000 } );
 			return true;
