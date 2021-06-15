@@ -142,10 +142,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 */
 	private function createContext( bool $enabled = true ) {
 		$user = $this->createMock( User::class );
-		$user->method( 'getOption' )
-			->with( TwoColConflictContext::ENABLED_PREFERENCE )
-			->willReturn( $enabled );
-		$user->method( 'getBoolOption' )
+		$user->method( $this->logicalOr( 'getOption', 'getBoolOption' ) )
 			->with( TwoColConflictContext::ENABLED_PREFERENCE )
 			->willReturn( $enabled );
 
