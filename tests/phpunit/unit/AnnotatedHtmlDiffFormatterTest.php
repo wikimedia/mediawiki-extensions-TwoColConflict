@@ -87,7 +87,7 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 1.5.' .
 							'&lt;ref&gt;Example&lt;/ref&gt; --[[User signature]]</ins>',
 						'newtext' => 'Line number 1.5.<ref>Example</ref> --~~~~',
@@ -118,7 +118,7 @@ TEXT
 						'oldhtml' => "<del class=\"mw-twocolconflict-diffchange\">\u{00A0}</del>",
 						'oldtext' => '',
 						'newhtml' => "\u{00A0}",
-						'newtext' => '',
+						'newtext' => null,
 					],
 				],
 			],
@@ -140,7 +140,7 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => "<ins class=\"mw-twocolconflict-diffchange\">\u{00A0}</ins>",
 						'newtext' => '',
 					],
@@ -168,7 +168,7 @@ TEXT
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">Line number 2.</del>',
 						'oldtext' => 'Line number 2.',
 						'newhtml' => "\u{00A0}",
-						'newtext' => '',
+						'newtext' => null,
 					],
 				],
 			],
@@ -208,7 +208,7 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">Line number 3.</ins>',
 						'newtext' => 'Line number 3.',
 					],
@@ -376,7 +376,7 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">:Inline response.</ins>',
 						'newtext' => ':Inline response.',
 					],
@@ -483,7 +483,7 @@ TEXT
 							'Text with [markup] &lt;references /&gt;.</del>',
 						'oldtext' => 'Text with [markup] <references />.',
 						'newhtml' => "\u{00A0}",
-						'newtext' => '',
+						'newtext' => null,
 					],
 				],
 			],
@@ -498,7 +498,7 @@ TEXT
 					[
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							'Text with [markup] &lt;references /&gt;.</ins>',
 						'newtext' => 'Text with [markup] <references />.',

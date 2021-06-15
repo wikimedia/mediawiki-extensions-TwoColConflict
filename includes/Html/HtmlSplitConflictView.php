@@ -80,7 +80,7 @@ class HtmlSplitConflictView {
 		return Html::rawElement( 'div', [ 'class' => 'mw-twocolconflict-split-view' ], $out );
 	}
 
-	private function buildAddedLine( string $diffHtml, string $text, int $rowNum ): string {
+	private function buildAddedLine( string $diffHtml, ?string $text, int $rowNum ): string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-add mw-twocolconflict-split-column' ],
@@ -88,7 +88,7 @@ class HtmlSplitConflictView {
 		);
 	}
 
-	private function buildRemovedLine( string $diffHtml, string $rawText, int $rowNum ): string {
+	private function buildRemovedLine( string $diffHtml, ?string $rawText, int $rowNum ): string {
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'mw-twocolconflict-split-delete mw-twocolconflict-split-column' ],

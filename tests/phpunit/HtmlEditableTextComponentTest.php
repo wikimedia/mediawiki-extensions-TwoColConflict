@@ -42,7 +42,8 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 			'trailing newlines' => [ "a\n\n", "a\n", '2' ],
 
 			// But no enforced newline when empty
-			'empty' => [ '', '', '0' ],
+			'empty' => [ '', '', '0,was-empty' ],
+			'no text' => [ null, '', '0' ],
 			'newline only' => [ "\n", '', '1,was-empty' ],
 		];
 	}
@@ -50,7 +51,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideEditorTexts
 	 */
-	public function testGetHtml( string $text, string $expectedText, string $expectedLinefeeds ) {
+	public function testGetHtml( ?string $text, string $expectedText, string $expectedLinefeeds ) {
 		$component = $this->createInstance();
 		$html = $component->getHtml( '<span>DIFF</span>', $text, 0, '<TYPE>' );
 
@@ -103,7 +104,8 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 
 	public function provideExtraLinefeeds() {
 		return [
-			[ '', '0' ],
+			[ null, '0' ],
+			[ '', '0,was-empty' ],
 			[ 'a', '0' ],
 			[ "\n", '1,was-empty' ],
 			[ "a\n", '1' ],
@@ -118,7 +120,7 @@ class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideExtraLinefeeds
 	 */
-	public function testCountExtraLineFeeds( string $text, string $expected ) {
+	public function testCountExtraLineFeeds( ?string $text, string $expected ) {
 		/** @var HtmlEditableTextComponent $component */
 		$component = TestingAccessWrapper::newFromObject( $this->createInstance() );
 

@@ -38,7 +38,7 @@ class AnnotatedHtmlDiffFormatter {
 					$changes[] = [
 						'action' => 'add',
 						'oldhtml' => "\u{00A0}",
-						'oldtext' => '',
+						'oldtext' => null,
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">' .
 							$this->composeHtml( $edit->getClosing() ) . '</ins>',
 						'newtext' => implode( "\n",
@@ -53,7 +53,7 @@ class AnnotatedHtmlDiffFormatter {
 							$this->composeHtml( $edit->getOrig() ) . '</del>',
 						'oldtext' => implode( "\n", $edit->getOrig() ),
 						'newhtml' => "\u{00A0}",
-						'newtext' => '',
+						'newtext' => null,
 					];
 					break;
 
