@@ -124,7 +124,7 @@ describe( 'TwoColConflict save and preview', function () {
 
 		assert.strictEqual(
 			EditConflictPage.previewText.getText(),
-			'Line1\nChange A',
+			'Line1\n\nChange A',
 			'text preview shows correctly'
 		);
 	} );
@@ -144,7 +144,7 @@ describe( 'TwoColConflict save and preview', function () {
 
 		assert.strictEqual(
 			EditConflictPage.previewText.getText(),
-			'Line1\nDummy Text'
+			'Line1\n\nDummy Text'
 		);
 	} );
 
@@ -163,7 +163,7 @@ describe( 'TwoColConflict save and preview', function () {
 
 		assert.strictEqual(
 			EditConflictPage.previewText.getText(),
-			'Line1\nDummy Text title'
+			'Line1\n\nDummy Text title'
 		);
 	} );
 
@@ -183,7 +183,7 @@ describe( 'TwoColConflict save and preview', function () {
 
 		assert.strictEqual(
 			EditConflictPage.previewText.getText(),
-			'Line1\nOther, but improved',
+			'Line1\n\nOther, but improved',
 			'My edit appears in the preview'
 		);
 

@@ -77,7 +77,15 @@ describe( 'TwoColConflict GuidedTour', function () {
 
 		it( 'clicking on a pulsating button opens a popup', function () {
 			EditConflictPage.tourDiffChangeButton.waitForDisplayed( { timeout: 2000 } );
-			EditConflictPage.tourDiffChangeButton.click();
+
+			// FIXME tourDiffChangeButton.click() throws an error with the new wdio config this is a workaround
+			browser.execute( function () {
+				$( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ).click();
+			} );
+
+			EditConflictPage.tourDiffChangeButton.waitForDisplayed( {
+				timeout: 2000, reverse: true
+			} );
 
 			assert(
 				!EditConflictPage.tourDiffChangeButton.isDisplayed(),
