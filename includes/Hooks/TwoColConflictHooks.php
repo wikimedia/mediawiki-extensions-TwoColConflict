@@ -62,9 +62,11 @@ class TwoColConflictHooks {
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
 			$context = $editPage->getContext();
 			$baseRevision = $editPage->getExpectedParentRevision();
+			$title = $context->getTitle();
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 			return new SplitTwoColConflictHelper(
-				$context->getTitle(),
+				$title,
 				$context->getOutput(),
 				MediaWikiServices::getInstance()->getStatsdDataFactory(),
 				$submitButtonLabel,
@@ -73,7 +75,7 @@ class TwoColConflictHooks {
 				$this->twoColContext,
 				new ResolutionSuggester(
 					$baseRevision,
-					$context->getWikiPage()->getContentHandler()->getDefaultFormat()
+					$wikiPage->getContentHandler()->getDefaultFormat()
 				)
 			);
 		} );
@@ -155,6 +157,7 @@ class TwoColConflictHooks {
 	 */
 	public function doEditPageBeforeConflictDiff( EditPage $editPage, OutputPage $outputPage ) {
 		$context = $editPage->getContext();
+		$title = $context->getTitle();
 		$request = $context->getRequest();
 		if ( $context->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
 			$request->setVal( 'editingStatsOversample', true );
@@ -163,7 +166,8 @@ class TwoColConflictHooks {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$user = $outputPage->getUser();
 			$baseRevision = $editPage->getExpectedParentRevision();
-			$latestRevision = $context->getWikiPage()->getRevisionRecord();
+			$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
+			$latestRevision = $revisionStore->getKnownCurrentRevision( $title );
 
 			$conflictChunks = 0;
 			$conflictChars = 0;
