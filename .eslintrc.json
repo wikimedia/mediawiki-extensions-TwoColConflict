@@ -11,7 +11,6 @@
 	"rules": {
 		"no-jquery/no-event-shorthand": "off",
 		"no-jquery/no-global-selector": "off",
-		"vars-on-top": "off",
-		"one-var": "off"
+		"vars-on-top": "off"
 	}
 }
