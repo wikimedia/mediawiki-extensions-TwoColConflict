@@ -202,7 +202,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return string
 	 */
-	private function buildEditConflictView( array $storedLines, array $yourLines ) : string {
+	private function buildEditConflictView( array $storedLines, array $yourLines ): string {
 		$user = $this->out->getUser();
 		$language = $this->out->getLanguage();
 		$formatter = new AnnotatedHtmlDiffFormatter();
@@ -231,7 +231,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		return $out;
 	}
 
-	private function buildResolutionSuggestionView( TalkPageResolution $suggestion ) : string {
+	private function buildResolutionSuggestionView( TalkPageResolution $suggestion ): string {
 		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		return ( new HtmlTalkPageResolutionView(
 			new HtmlEditableTextComponent(
@@ -253,7 +253,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 *
 	 * @return string
 	 */
-	private function buildRawTextsHiddenFields() : string {
+	private function buildRawTextsHiddenFields(): string {
 		return Html::textarea(
 				'mw-twocolconflict-your-text',
 				$this->yourtext,

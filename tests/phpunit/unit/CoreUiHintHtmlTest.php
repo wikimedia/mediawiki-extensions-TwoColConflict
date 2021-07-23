@@ -13,12 +13,12 @@ use TwoColConflict\Html\CoreUiHintHtml;
  */
 class CoreUiHintHtmlTest extends \MediaWikiUnitTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		Theme::setSingleton( new BlankTheme() );
 	}
 
-	protected function tearDown() : void {
+	protected function tearDown(): void {
 		Theme::setSingleton( null );
 		parent::tearDown();
 	}

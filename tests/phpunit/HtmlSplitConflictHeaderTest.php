@@ -30,7 +30,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	 */
 	private $otherUser;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		Theme::setSingleton( new BlankTheme() );
@@ -164,7 +164,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return RevisionRecord
 	 */
-	private function newRevisionRecord( string $timestamp, string $editSummary = '' ) : MutableRevisionRecord {
+	private function newRevisionRecord( string $timestamp, string $editSummary = '' ): MutableRevisionRecord {
 		$revision = new MutableRevisionRecord(
 			new PageIdentityValue( 0, NS_MAIN, __CLASS__, PageIdentityValue::LOCAL )
 		);

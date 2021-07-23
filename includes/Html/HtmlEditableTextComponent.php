@@ -58,7 +58,7 @@ class HtmlEditableTextComponent {
 		int $rowNum,
 		string $changeType,
 		bool $isDisabled = false
-	) : string {
+	): string {
 		$diffHtml = trim( $diffHtml, "\r\n\u{00A0}" );
 		$editorText = trim( $text, "\r\n" );
 		// This duplicates what EditPage::addNewLineAtEnd() does
@@ -92,7 +92,7 @@ class HtmlEditableTextComponent {
 		return Html::rawElement( 'div', [ 'class' => $classes ], $innerHtml );
 	}
 
-	private function buildResetElements( string $diffHtml ) : string {
+	private function buildResetElements( string $diffHtml ): string {
 		return Html::rawElement(
 				'span', [ 'class' => 'mw-twocolconflict-split-reset-diff-text' ],
 				$diffHtml
@@ -104,7 +104,7 @@ class HtmlEditableTextComponent {
 		int $rowNum,
 		string $changeType,
 		bool $isDisabled
-	) : string {
+	): string {
 		$attributes = [
 			'class' => 'mw-editfont-' . $this->editFontOption . ' mw-twocolconflict-split-editor',
 			'lang' => $this->language->getHtmlCode(),
@@ -131,7 +131,7 @@ class HtmlEditableTextComponent {
 		);
 	}
 
-	private function buildLineFeedField( string $text, int $rowNum, string $changeType ) : string {
+	private function buildLineFeedField( string $text, int $rowNum, string $changeType ): string {
 		$counts = $this->countExtraLineFeeds( $text );
 		return $counts === '0' ? '' : Html::hidden(
 			"mw-twocolconflict-split-linefeeds[$rowNum][$changeType]",
@@ -194,7 +194,7 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	private function countExtraLineFeeds( string $text ) : string {
+	private function countExtraLineFeeds( string $text ): string {
 		$endOfText = strlen( rtrim( $text, "\r\n" ) );
 		$after = substr_count( $text, "\n", $endOfText );
 		if ( $endOfText === 0 && $after ) {
@@ -217,7 +217,7 @@ class HtmlEditableTextComponent {
 	 *
 	 * @return int Suggested number of rows
 	 */
-	private function rowsForText( string $text ) : int {
+	private function rowsForText( string $text ): int {
 		$thresholds = [
 			80 * 10 => 18,
 			80 * 4 => 6,

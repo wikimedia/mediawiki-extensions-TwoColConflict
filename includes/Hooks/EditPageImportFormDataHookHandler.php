@@ -59,7 +59,7 @@ class EditPageImportFormDataHookHandler {
 		}
 	}
 
-	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ) : array {
+	private static function swapTalkComments( array $contentRows, array $extraLineFeeds ): array {
 		for ( $i = 0; $i < count( $contentRows ) - 1; $i++ ) {
 			if ( isset( $contentRows[$i]['other'] ) && isset( $contentRows[$i + 1]['your'] ) ) {
 				[ $contentRows[$i], $contentRows[$i + 1] ] =

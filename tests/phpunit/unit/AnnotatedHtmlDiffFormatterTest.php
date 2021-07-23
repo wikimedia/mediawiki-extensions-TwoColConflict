@@ -530,7 +530,7 @@ TEXT
 	 *
 	 * @return string
 	 */
-	private function preSaveTransform( string $wikitext ) : string {
+	private function preSaveTransform( string $wikitext ): string {
 		return preg_replace( '/~~~+/', '[[User signature]]', $wikitext );
 	}
 

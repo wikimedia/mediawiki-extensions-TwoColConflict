@@ -100,7 +100,7 @@ class HtmlSplitConflictHeader {
 	/**
 	 * @return RevisionRecord|null
 	 */
-	private function getLatestRevision() : ?RevisionRecord {
+	private function getLatestRevision(): ?RevisionRecord {
 		$wikiPage = WikiPage::factory( $this->title );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( WikiPage::READ_LATEST );
@@ -112,7 +112,7 @@ class HtmlSplitConflictHeader {
 	 *
 	 * @return string HTML
 	 */
-	public function getHtml( bool $isUsedAsBetaFeature = false ) : string {
+	public function getHtml( bool $isUsedAsBetaFeature = false ): string {
 		$hintMsg = $isUsedAsBetaFeature
 			? 'twocolconflict-split-header-hint-beta'
 			: 'twocolconflict-split-header-hint';
@@ -134,7 +134,7 @@ class HtmlSplitConflictHeader {
 		return $out;
 	}
 
-	private function buildCurrentVersionHeader() : string {
+	private function buildCurrentVersionHeader(): string {
 		$dateTime = $this->messageLocalizer->msg( 'just-now' )->text();
 		$userTools = '';
 		$summary = '';
@@ -158,7 +158,7 @@ class HtmlSplitConflictHeader {
 		);
 	}
 
-	private function buildYourVersionHeader() : string {
+	private function buildYourVersionHeader(): string {
 		return $this->buildVersionHeader(
 			$this->messageLocalizer->msg( 'twocolconflict-split-your-version-header' ),
 			$this->messageLocalizer->msg( 'twocolconflict-split-not-saved-at' ),
@@ -183,7 +183,7 @@ class HtmlSplitConflictHeader {
 		string $summary,
 		string $class,
 		?bool $showCopy = false
-	) : string {
+	): string {
 		$html = Html::element(
 				'span',
 				[ 'class' => 'mw-twocolconflict-revision-label' ],
@@ -231,7 +231,7 @@ class HtmlSplitConflictHeader {
 	 *
 	 * @return string
 	 */
-	private function getFormattedDateTime( ?string $timestamp ) : string {
+	private function getFormattedDateTime( ?string $timestamp ): string {
 		$diff = ( new ConvertibleTimestamp( $timestamp ?: false ) )->diff( $this->now );
 
 		if ( $diff->days ) {
@@ -254,7 +254,7 @@ class HtmlSplitConflictHeader {
 		return $this->messageLocalizer->msg( 'just-now' )->text();
 	}
 
-	private function getMessageBox( string $messageKey, string $type, $classes = [] ) : string {
+	private function getMessageBox( string $messageKey, string $type, $classes = [] ): string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
 		return ( new MessageWidget( [
 			'label' => new HtmlSnippet( SplitConflictUtils::addTargetBlankToLinks( $html ) ),

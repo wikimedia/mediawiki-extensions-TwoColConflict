@@ -70,7 +70,7 @@ class TwoColConflictContext {
 	 *   user and title.  The user may have opted out, or the titles namespace
 	 *   may be excluded for this interface.
 	 */
-	public function shouldTwoColConflictBeShown( User $user, Title $title ) : bool {
+	public function shouldTwoColConflictBeShown( User $user, Title $title ): bool {
 		// T249817: Temporarily disabled on mobile
 		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			return false;
@@ -91,12 +91,12 @@ class TwoColConflictContext {
 	 * @return bool True if this article is appropriate for the talk page
 	 *   workflow, and the interface has been enabled by configuration.
 	 */
-	public function shouldTalkPageSuggestionBeConsidered( Title $title ) : bool {
+	public function shouldTalkPageSuggestionBeConsidered( Title $title ): bool {
 		return $this->isTalkPageSuggesterEnabled() &&
 			$this->isEligibleTalkPage( $title );
 	}
 
-	private function hasUserEnabledFeature( User $user ) : bool {
+	private function hasUserEnabledFeature( User $user ): bool {
 		if ( $this->isUsedAsBetaFeature() ) {
 			return BetaFeatures::isFeatureEnabled( $user, self::BETA_PREFERENCE_NAME );
 		}
@@ -108,16 +108,16 @@ class TwoColConflictContext {
 	 * @return bool True if TwoColConflict should be provided as a beta feature.
 	 *   False if it will be the default conflict workflow.
 	 */
-	public function isUsedAsBetaFeature() : bool {
+	public function isUsedAsBetaFeature(): bool {
 		return $this->config->get( 'TwoColConflictBetaFeature' ) &&
 			$this->extensionRegistry->isLoaded( 'BetaFeatures' );
 	}
 
-	private function isEligibleTalkPage( Title $title ) : bool {
+	private function isEligibleTalkPage( Title $title ): bool {
 		return $title->isTalkPage() || $title->inNamespace( NS_PROJECT );
 	}
 
-	private function isTalkPageSuggesterEnabled() : bool {
+	private function isTalkPageSuggesterEnabled(): bool {
 		return $this->config->get( 'TwoColConflictSuggestResolution' );
 	}
 
