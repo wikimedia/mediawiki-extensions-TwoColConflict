@@ -6,6 +6,7 @@ use EditPage;
 use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\UserIdentity;
 use OOUI\ButtonInputWidget;
 use OutputPage;
 use TwoColConflict\ConflictFormValidator;
@@ -316,11 +317,11 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param array &$options
 	 */
-	public static function onUserLoadOptions( $user, array &$options ) {
-		self::newFromGlobalState()->doUserLoadOptions( $options );
+	public static function onLoadUserOptions( UserIdentity $user, array &$options ) {
+		self::newFromGlobalState()->doLoadUserOptions( $options );
 	}
 
 	/**
@@ -333,7 +334,7 @@ class TwoColConflictHooks {
 	 *
 	 * @param array &$options
 	 */
-	public function doUserLoadOptions( array &$options ) {
+	public function doLoadUserOptions( array &$options ) {
 		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			return;
 		}
