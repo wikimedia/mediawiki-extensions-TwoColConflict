@@ -6,6 +6,7 @@ use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
+use MediaWiki\MediaWikiServices;
 use ObjectCache;
 use OutputPage;
 use ParserOptions;
@@ -189,8 +190,16 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 		$content = new WikitextContent( $this->yourtext );
 		$parserOptions = new ParserOptions( $user, $this->out->getLanguage() );
+		$contentTransformer = MediaWikiServices::getInstance()->getContentTransformer();
+		$content = $contentTransformer->preSaveTransform(
+			$content,
+			$this->title,
+			$user,
+			$parserOptions
+		);
 		// @phan-suppress-next-line PhanUndeclaredMethod
-		$previewWikitext = $content->preSaveTransform( $this->title, $user, $parserOptions )->getText();
+		$previewWikitext = $content->getText();
+
 		return SplitConflictUtils::splitText( $previewWikitext );
 	}
 
