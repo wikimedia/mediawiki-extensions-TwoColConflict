@@ -71,24 +71,28 @@ class SplitConflictMergerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame( "\nA\n\n\nB", $result );
 	}
 
-	public function testEmptyLinesAreSkipped() {
+	public function testEmptyLines() {
 		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => 'A' ],
-				// We assume the user intentionally emptied this
+				// We know this wasn't empty, but is when the form is submitted
 				[ 'copy' => '' ],
 				[ 'copy' => 'B' ],
+				// This was always empty (marked with "was-empty") and is not touched by the user
+				[ 'copy' => '' ],
+				[ 'copy' => 'C' ],
 			],
 			[
-				// The tracked linefeeds should be removed with the text
 				1 => [ 'copy' => 2 ],
+				3 => [ 'copy' => '0,was-empty' ],
 			],
 			[]
 		);
-		$this->assertSame( "A\nB", $result );
+		// The 2 extra linefeeds are removed, but the empty line between B and C is still there
+		$this->assertSame( "A\nB\n\nC", $result );
 	}
 
-	public function testRowsNotEmptiedByTheUserAreNotIgnored() {
+	public function testLeadingNewlinesNotEmptiedByTheUser() {
 		$result = ( new SplitConflictMerger() )->mergeSplitConflictResults(
 			[
 				[ 'copy' => '' ],
