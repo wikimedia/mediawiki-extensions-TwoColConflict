@@ -15,7 +15,8 @@ return [
 			: null;
 
 		return new TwoColConflictContext(
-			MediaWikiServices::getInstance()->getMainConfig(),
+			$services->getMainConfig(),
+			$services->getUserOptionsLookup(),
 			$extensionRegistry,
 			$mobileContext
 		);
