@@ -19,7 +19,6 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Title;
 use TwoColConflict\Hooks\TwoColConflictHooks;
 use TwoColConflict\TwoColConflictContext;
-use User;
 use WebRequest;
 
 /**
@@ -108,13 +107,13 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		] );
 
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
+		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->createMock( User::class ), $prefs );
+		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
@@ -126,13 +125,13 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
 		$prefs = [];
-		TwoColConflictHooks::onGetPreferences( $this->createMock( User::class ), $prefs );
+		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
 	public function testOnGetPreferences() {
 		$prefs = [];
-		TwoColConflictHooks::onGetPreferences( $this->createMock( User::class ), $prefs );
+		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 

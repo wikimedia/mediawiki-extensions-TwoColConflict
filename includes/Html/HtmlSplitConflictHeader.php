@@ -8,6 +8,7 @@ use Linker;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\RevisionRecord;
 use Message;
 use MessageLocalizer;
@@ -16,7 +17,6 @@ use OOUI\MessageWidget;
 use SpecialPage;
 use Title;
 use TwoColConflict\SplitConflictUtils;
-use User;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 use WikiPage;
 
@@ -37,9 +37,9 @@ class HtmlSplitConflictHeader {
 	private $revision;
 
 	/**
-	 * @var User
+	 * @var Authority
 	 */
-	private $user;
+	private $authority;
 
 	/**
 	 * @var Language
@@ -68,7 +68,7 @@ class HtmlSplitConflictHeader {
 
 	/**
 	 * @param Title $title
-	 * @param User $user
+	 * @param Authority $authority
 	 * @param string $newEditSummary
 	 * @param Language $language
 	 * @param MessageLocalizer $messageLocalizer
@@ -79,7 +79,7 @@ class HtmlSplitConflictHeader {
 	 */
 	public function __construct(
 		Title $title,
-		User $user,
+		Authority $authority,
 		string $newEditSummary,
 		Language $language,
 		MessageLocalizer $messageLocalizer,
@@ -88,7 +88,7 @@ class HtmlSplitConflictHeader {
 	) {
 		$this->title = $title;
 		$this->revision = $revision ?? $this->getLatestRevision();
-		$this->user = $user;
+		$this->authority = $authority;
 		$this->language = $language;
 		$this->messageLocalizer = $messageLocalizer;
 		$this->now = new ConvertibleTimestamp( $now );
@@ -144,7 +144,7 @@ class HtmlSplitConflictHeader {
 			// FIXME: This blocks us from having pure unit tests for this class
 			$userTools = Linker::revUserTools( $this->revision );
 
-			$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->user );
+			$comment = $this->revision->getComment( RevisionRecord::FOR_THIS_USER, $this->authority );
 			if ( $comment ) {
 				$summary = $comment->text;
 			}
@@ -235,7 +235,7 @@ class HtmlSplitConflictHeader {
 		$diff = ( new ConvertibleTimestamp( $timestamp ?: false ) )->diff( $this->now );
 
 		if ( $diff->days ) {
-			return $this->language->userTimeAndDate( $timestamp, $this->user );
+			return $this->language->userTimeAndDate( $timestamp, $this->authority->getUser() );
 		}
 
 		if ( $diff->h ) {
