@@ -6,6 +6,7 @@ use IBufferingStatsdDataFactory;
 use Language;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Session\SessionId;
+use MediaWiki\User\StaticUserOptionsLookup;
 use Message;
 use MessageLocalizer;
 use MockTitleTrait;
@@ -15,7 +16,6 @@ use OutputPage;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
-use User;
 use WebRequest;
 
 /**
@@ -43,7 +43,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			new StaticUserOptionsLookup( [] )
 		);
 
 		$this->assertSame( '', $helper->getExplainHeader() );
@@ -61,7 +62,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			new StaticUserOptionsLookup( [] )
 		);
 		$helper->setTextboxes( '<YOURTEXT attribute="">', '<STOREDVERSION attribute="">' );
 
@@ -88,7 +90,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			new StaticUserOptionsLookup( [] )
 		);
 
 		$this->assertSame( '', $helper->getEditFormHtmlAfterContent() );
@@ -102,16 +105,13 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturn( $msg );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getOption' )->willReturn( '' );
-
 		$request = $this->createMock( WebRequest::class );
 		$request->method( 'getBool' )->willReturn( false );
 		$request->method( 'getSessionId' )->willReturn( new SessionId( '' ) );
 
 		$out = $this->createMock( OutputPage::class );
 		$out->expects( $this->never() )->method( 'addHTML' );
-		$out->method( 'getUser' )->willReturn( $user );
+		$out->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
 		$out->method( 'getLanguage' )->willReturn( $this->createMock( Language::class ) );
 		$out->method( 'getContext' )->willReturn( $localizer );
 		$out->method( 'getRequest' )->willReturn( $request );

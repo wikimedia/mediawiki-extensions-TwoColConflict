@@ -61,23 +61,25 @@ class TwoColConflictHooks {
 		}
 
 		$editPage->setEditConflictHelperFactory( function ( $submitButtonLabel ) use ( $editPage ) {
+			$services = MediaWikiServices::getInstance();
 			$context = $editPage->getContext();
 			$baseRevision = $editPage->getExpectedParentRevision();
 			$title = $context->getTitle();
-			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+			$wikiPage = $services->getWikiPageFactory()->newFromTitle( $title );
 
 			return new SplitTwoColConflictHelper(
 				$title,
 				$context->getOutput(),
-				MediaWikiServices::getInstance()->getStatsdDataFactory(),
+				$services->getStatsdDataFactory(),
 				$submitButtonLabel,
 				$editPage->summary,
-				MediaWikiServices::getInstance()->getContentHandlerFactory(),
+				$services->getContentHandlerFactory(),
 				$this->twoColContext,
 				new ResolutionSuggester(
 					$baseRevision,
 					$wikiPage->getContentHandler()->getDefaultFormat()
-				)
+				),
+				$services->getUserOptionsLookup()
 			);
 		} );
 

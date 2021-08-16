@@ -7,6 +7,7 @@ use IBufferingStatsdDataFactory;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserOptionsLookup;
 use ObjectCache;
 use OutputPage;
 use ParserOptions;
@@ -43,6 +44,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $resolutionSuggester;
 
 	/**
+	 * @var UserOptionsLookup
+	 */
+	private $userOptionsLookup;
+
+	/**
 	 * @param Title $title
 	 * @param OutputPage $out
 	 * @param IBufferingStatsdDataFactory $stats
@@ -51,6 +57,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param IContentHandlerFactory $contentHandlerFactory
 	 * @param TwoColConflictContext $twoColContext
 	 * @param ResolutionSuggester $resolutionSuggester
+	 * @param UserOptionsLookup $userOptionsLookup
 	 */
 	public function __construct(
 		Title $title,
@@ -60,13 +67,15 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		string $newEditSummary,
 		IContentHandlerFactory $contentHandlerFactory,
 		TwoColConflictContext $twoColContext,
-		ResolutionSuggester $resolutionSuggester
+		ResolutionSuggester $resolutionSuggester,
+		UserOptionsLookup $userOptionsLookup
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
 		$this->newEditSummary = $newEditSummary;
 		$this->twoColContext = $twoColContext;
 		$this->resolutionSuggester = $resolutionSuggester;
+		$this->userOptionsLookup = $userOptionsLookup;
 
 		$this->out->enableOOUI();
 		$this->out->addModuleStyles( [
@@ -229,7 +238,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),
 				$language,
-				$user->getOption( 'editfont' )
+				$this->userOptionsLookup->getOption( $user, 'editfont' )
 			),
 			$this->out->getContext()
 		) )->getHtml(
@@ -246,7 +255,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			new HtmlEditableTextComponent(
 				$this->out->getContext(),
 				$this->out->getLanguage(),
-				$this->out->getUser()->getOption( 'editfont' )
+				$this->userOptionsLookup->getOption( $this->out->getUser(), 'editfont' )
 			),
 			$this->out->getContext()
 		) )->getHtml(

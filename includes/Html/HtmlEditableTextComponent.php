@@ -23,20 +23,20 @@ class HtmlEditableTextComponent {
 	private $language;
 
 	/**
-	 * @var string
+	 * @var string|null
 	 */
 	private $editFontOption;
 
 	/**
 	 * @param MessageLocalizer $messageLocalizer
 	 * @param Language $language
-	 * @param string $editFontOption Supported values are "monospace" (default), "sans-serif", and
-	 *  "serif"
+	 * @param string|null $editFontOption Supported values are "monospace" (default), "sans-serif",
+	 *  and "serif"
 	 */
 	public function __construct(
 		MessageLocalizer $messageLocalizer,
 		Language $language,
-		string $editFontOption = 'monospace'
+		string $editFontOption = null
 	) {
 		$this->messageLocalizer = $messageLocalizer;
 		$this->language = $language;
@@ -106,7 +106,7 @@ class HtmlEditableTextComponent {
 		bool $isDisabled
 	): string {
 		$attributes = [
-			'class' => 'mw-editfont-' . $this->editFontOption . ' mw-twocolconflict-split-editor',
+			'class' => 'mw-editfont-' . ( $this->editFontOption ?: 'monospace' ) . ' mw-twocolconflict-split-editor',
 			'lang' => $this->language->getHtmlCode(),
 			'dir' => $this->language->getDir(),
 			'rows' => $this->rowsForText( $editorText ),
