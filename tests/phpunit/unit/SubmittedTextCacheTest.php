@@ -4,9 +4,10 @@ namespace TwoColConflict\Tests;
 
 use BagOStuff;
 use MediaWiki\Session\SessionId;
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use UnexpectedValueException;
-use User;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -20,7 +21,7 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 	 */
 	public function testMakeCacheKey(
 		string $prefixedDbKey,
-		User $user,
+		UserIdentity $user,
 		?SessionId $sessionId,
 		?string $expected
 	) {
@@ -48,44 +49,35 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 		return [
 			'logged-in user, non-main namespace' => [
 				'title' => 'Project:TestArticle',
-				'user' => $this->newMockUser( 1000 ),
+				'user' => UserIdentityValue::newRegistered( 1000, '' ),
 				'sessionId' => new SessionId( 'abc123' ),
 				'expected' => 'twoColConflict_yourText:Project:TestArticle:1000',
 			],
 			'logged-in user' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( 1000 ),
+				'user' => UserIdentityValue::newRegistered( 1000, '' ),
 				'sessionId' => new SessionId( 'abc123' ),
 				'expected' => 'twoColConflict_yourText:TestArticle:1000',
 			],
 			'logged-in user, no session' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( 1000 ),
+				'user' => UserIdentityValue::newRegistered( 1000, '' ),
 				'sessionId' => new SessionId( 'abc123' ),
 				'expected' => 'twoColConflict_yourText:TestArticle:1000',
 			],
 			'anonymous user' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( 0 ),
+				'user' => UserIdentityValue::newAnonymous( '' ),
 				'sessionId' => new SessionId( 'abc123' ),
 				'expected' => 'twoColConflict_yourText:TestArticle:0:abc123',
 			],
 			'anonymous user, no session' => [
 				'title' => 'TestArticle',
-				'user' => $this->newMockUser( 0 ),
+				'user' => UserIdentityValue::newAnonymous( '' ),
 				'sessionId' => null,
 				'expected' => null,
 			],
 		];
-	}
-
-	private function newMockUser( int $userId ) {
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )
-			->willReturn( $userId );
-		$user->method( 'isRegistered' )
-			->willReturn( $userId !== 0 );
-		return $user;
 	}
 
 }
