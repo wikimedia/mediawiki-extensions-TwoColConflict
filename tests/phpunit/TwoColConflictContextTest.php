@@ -4,6 +4,10 @@ namespace TwoColConflict\Tests;
 
 use ExtensionRegistry;
 use HashConfig;
+use MediaWiki\User\StaticUserOptionsLookup;
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
+use MediaWiki\User\UserOptionsLookup;
 use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
@@ -17,10 +21,18 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
 	public function testIsUsedAsBetaFeature() {
 		$registry = $this->createExtensionRegistry();
-		$twoColContext = new TwoColConflictContext( $this->createConfig(), $registry );
+		$twoColContext = new TwoColConflictContext(
+			$this->createConfig(),
+			new StaticUserOptionsLookup( [] ),
+			$registry
+		);
 		$this->assertFalse( $twoColContext->isUsedAsBetaFeature() );
 
-		$twoColContext = new TwoColConflictContext( $this->createConfig( true ), $registry );
+		$twoColContext = new TwoColConflictContext(
+			$this->createConfig( true ),
+			new StaticUserOptionsLookup( [] ),
+			$registry
+		);
 		$this->assertTrue( $twoColContext->isUsedAsBetaFeature() );
 	}
 
@@ -30,12 +42,17 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	public function testShouldTwoColConflictBeShown(
 		bool $betaConfig,
 		bool $singleColumnConfig,
-		User $user,
+		UserOptionsLookup $userOptionsLookup,
 		Title $title,
 		bool $expected
 	) {
+		$user = $this->createMock( User::class );
+		// Note: Only needed by BetaFeatures
+		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
+
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
+			$userOptionsLookup,
 			$this->createExtensionRegistry()
 		);
 		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
@@ -43,9 +60,9 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function configurationProvider() {
-		$defaultUser = $this->createUser();
-		$betaUser = $this->createUser( '1', '1' );
-		$optOutUser = $this->createUser( '0' );
+		$defaultUser = $this->createUserOptionsLookup();
+		$betaUser = $this->createUserOptionsLookup( '1', '1' );
+		$optOutUser = $this->createUserOptionsLookup( '0' );
 
 		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
 		$talkPage = Title::makeTitle( NS_TALK, __CLASS__ );
@@ -55,42 +72,42 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			'disabled in Beta' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $defaultUser,
+				'userOptionsLookup' => $defaultUser,
 				'title' => $defaultPage,
 				'expected' => false,
 			],
 			'user enabled Beta feature' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $betaUser,
+				'userOptionsLookup' => $betaUser,
 				'title' => $defaultPage,
 				'expected' => true,
 			],
 			'enabled by default when not in Beta any more' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $defaultUser,
+				'userOptionsLookup' => $defaultUser,
 				'title' => $defaultPage,
 				'expected' => true,
 			],
 			'user disabled new interface' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $optOutUser,
+				'userOptionsLookup' => $optOutUser,
 				'title' => $defaultPage,
 				'expected' => false,
 			],
 			'disabled on talk pages' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => false,
-				'user' => $defaultUser,
+				'userOptionsLookup' => $defaultUser,
 				'title' => $talkPage,
 				'expected' => false,
 			],
 			'disabled in the project namespace' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => false,
-				'user' => $defaultUser,
+				'userOptionsLookup' => $defaultUser,
 				'title' => $projectPage,
 				'expected' => false,
 			],
@@ -103,21 +120,22 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	public function testShouldTwoColConflictBeShown_noBetaFeatures(
 		bool $betaConfig,
 		bool $singleColumnConfig,
-		User $user,
+		UserOptionsLookup $userOptionsLookup,
 		Title $title,
 		bool $expected
 	) {
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
+			$userOptionsLookup,
 			$this->createExtensionRegistry( false )
 		);
-		$result = $twoColContext->shouldTwoColConflictBeShown( $user, $title );
+		$result = $twoColContext->shouldTwoColConflictBeShown( $this->createMock( UserIdentity::class ), $title );
 		$this->assertSame( $expected, $result );
 	}
 
 	public function configurationProviderNoBetaFeatures() {
-		$defaultUser = $this->createUser();
-		$betaUser = $this->createUser( '1', '1' );
+		$defaultUser = $this->createUserOptionsLookup();
+		$betaUser = $this->createUserOptionsLookup( '1', '1' );
 
 		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
 
@@ -125,14 +143,14 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			'enabled in beta mode when BetaFeatures not installed' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $defaultUser,
+				'userOptionsLookup' => $defaultUser,
 				'title' => $defaultPage,
 				'expected' => true,
 			],
 			'enabled without BetaFeatures, also for an opted-in user' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
-				'user' => $betaUser,
+				'userOptionsLookup' => $betaUser,
 				'title' => $defaultPage,
 				'expected' => true,
 			],
@@ -147,14 +165,14 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$editingPreference,
 		bool $expectedResult
 	) {
-		$user = $this->createUser( $editingPreference, $betaPreference );
 		/** @var TwoColConflictContext $twoColContext */
 		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext(
 			$this->createConfig( false ),
+			$this->createUserOptionsLookup( $editingPreference, $betaPreference ),
 			$this->createExtensionRegistry()
 		) );
 
-		$result = $twoColContext->hasUserEnabledFeature( $user );
+		$result = $twoColContext->hasUserEnabledFeature( $this->createMock( UserIdentity::class ) );
 		$this->assertSame( $expectedResult, $result );
 	}
 
@@ -196,17 +214,11 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		];
 	}
 
-	private function createUser( string $enabled = '1', ?string $beta = null ) {
-		$user = $this->createMock( User::class );
-		$user->method( 'getOption' )->willReturnMap( [
-			[ TwoColConflictContext::BETA_PREFERENCE_NAME, null, false, $beta ],
-			[ TwoColConflictContext::ENABLED_PREFERENCE, null, false, $enabled ],
+	private function createUserOptionsLookup( string $enabled = '1', ?string $beta = null ): UserOptionsLookup {
+		return new StaticUserOptionsLookup( [], [
+			TwoColConflictContext::BETA_PREFERENCE_NAME => $beta,
+			TwoColConflictContext::ENABLED_PREFERENCE => $enabled,
 		] );
-		$user->method( 'getBoolOption' )->willReturnMap( [
-			[ TwoColConflictContext::BETA_PREFERENCE_NAME, (bool)$beta ],
-			[ TwoColConflictContext::ENABLED_PREFERENCE, (bool)$enabled ],
-		] );
-		return $user;
 	}
 
 	/**
@@ -219,15 +231,15 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $hideHintOpt,
 		bool $expectedResult
 	) {
-		$user = $this->createMock( User::class );
-		$user->method( 'getBoolOption' )->willReturnMap( [
-			[ TwoColConflictContext::ENABLED_PREFERENCE, $enabledOpt ],
-			[ TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, $hideHintOpt ],
+		$user = new UserIdentityValue( (int)$isRegistered, '' );
+		$userOptionsLookup = new StaticUserOptionsLookup( [], [
+			TwoColConflictContext::ENABLED_PREFERENCE => $enabledOpt,
+			TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE => $hideHintOpt,
 		] );
-		$user->method( 'isRegistered' )->willReturn( $isRegistered );
 
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $usedAsBeta ),
+			$userOptionsLookup,
 			$this->createExtensionRegistry()
 		);
 		$result = $twoColContext->shouldCoreHintBeShown( $user );

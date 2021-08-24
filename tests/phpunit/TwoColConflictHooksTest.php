@@ -6,6 +6,9 @@ use EditPage;
 use ExtensionRegistry;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\StaticUserOptionsLookup;
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
@@ -42,8 +45,12 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnAlternateEdit_withFeatureDisabled() {
+		$this->setService( 'UserOptionsLookup', new StaticUserOptionsLookup( [], [
+			TwoColConflictContext::ENABLED_PREFERENCE => false,
+		] ) );
+
 		$editPage = $this->createMock( EditPage::class );
-		$editPage->method( 'getContext' )->willReturn( $this->createContext( false ) );
+		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
 		$editPage->expects( $this->never() )->method( 'setEditConflictHelperFactory' );
 
 		TwoColConflictHooks::onAlternateEdit( $editPage );
@@ -136,19 +143,12 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @param bool $enabled
-	 *
 	 * @return IContextSource|MockObject
 	 */
-	private function createContext( bool $enabled = true ) {
-		$user = $this->createMock( User::class );
-		$user->method( $this->logicalOr( 'getOption', 'getBoolOption' ) )
-			->with( TwoColConflictContext::ENABLED_PREFERENCE )
-			->willReturn( $enabled );
-
+	private function createContext(): IContextSource {
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getTitle' )->willReturn( Title::makeTitle( NS_MAIN, __CLASS__ ) );
-		$context->method( 'getUser' )->willReturn( $user );
+		$context->method( 'getUser' )->willReturn( UserIdentityValue::newAnonymous( '' ) );
 		return $context;
 	}
 
@@ -265,7 +265,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		];
 	}
 
-	private function setOptionRow( User $user, string $key, ?string $value ) {
+	private function setOptionRow( UserIdentity $user, string $key, ?string $value ) {
 		$db = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		if ( $value === null ) {
 			$db->delete(
@@ -291,6 +291,10 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			$this->markTestSkipped( 'BetaFeatures not loaded' );
 		}
 
+		$this->setService( 'UserOptionsLookup', new StaticUserOptionsLookup( [], [
+			TwoColConflictContext::ENABLED_PREFERENCE => false,
+		] ) );
+
 		$editPage = $this->createMock( EditPage::class );
 		$editPage->isConflict = true;
 
@@ -299,14 +303,10 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			->method( 'addHTML' )
 			->with( $this->stringContains( '(twocolconflict-core-ui-hint)' ) );
 
-		TwoColConflictHooks::onEditPageShowEditFormFields( $editPage,  $outputPage );
+		TwoColConflictHooks::onEditPageShowEditFormFields( $editPage, $outputPage );
 	}
 
 	private function createOutputPage() {
-		$user = $this->createMock( User::class );
-		$user->method( 'isRegistered' )
-			->willReturn( true );
-
 		$context = $this->createMock( MessageLocalizer::class );
 		$context->method( 'msg' )->willReturnCallback( function ( $key ) {
 			$msg = $this->createMock( Message::class );
@@ -316,7 +316,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 		$outputPage = $this->createMock( OutputPage::class );
 		$outputPage->method( 'getUser' )
-			->willReturn( $user );
+			->willReturn( UserIdentityValue::newRegistered( 1, '' ) );
 		$outputPage->method( 'getContext' )
 			->willReturn( $context );
 
