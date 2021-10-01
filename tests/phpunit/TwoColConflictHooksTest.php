@@ -135,12 +135,6 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
-	public function testOnUserGetDefaultOptions() {
-		$prefs = [];
-		TwoColConflictHooks::onUserGetDefaultOptions( $prefs );
-		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
-	}
-
 	/**
 	 * @return IContextSource|MockObject
 	 */
