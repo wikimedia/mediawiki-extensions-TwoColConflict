@@ -15,6 +15,7 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\TwoColConflictContext
+ *
  * @license GPL-2.0-or-later
  */
 class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {

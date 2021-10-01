@@ -321,4 +321,5 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 		return $outputPage;
 	}
+
 }

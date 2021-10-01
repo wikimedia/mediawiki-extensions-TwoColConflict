@@ -11,6 +11,8 @@ use TwoColConflict\Html\HtmlTalkPageResolutionView;
 
 /**
  * @covers \TwoColConflict\Html\HtmlTalkPageResolutionView
+ *
+ * @license GPL-2.0-or-later
  */
 class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 

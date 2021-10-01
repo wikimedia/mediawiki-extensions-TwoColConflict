@@ -13,6 +13,8 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\Html\HtmlEditableTextComponent
+ *
+ * @license GPL-2.0-or-later
  */
 class HtmlEditableTextComponentTest extends MediaWikiTestCase {
 

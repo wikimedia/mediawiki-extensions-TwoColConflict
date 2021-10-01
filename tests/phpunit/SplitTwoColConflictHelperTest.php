@@ -20,6 +20,8 @@ use WebRequest;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
+ *
+ * @license GPL-2.0-or-later
  */
 class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 	use MockTitleTrait;

@@ -7,6 +7,8 @@ use TwoColConflict\Logging\ThreeWayMergeResult;
 
 /**
  * @covers \TwoColConflict\Logging\ThreeWayMergeResult
+ *
+ * @license GPL-2.0-or-later
  */
 class ThreeWayMergeResultUnitTest extends MediaWikiUnitTestCase {
 

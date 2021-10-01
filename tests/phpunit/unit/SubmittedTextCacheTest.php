@@ -12,6 +12,8 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @coversDefaultClass \TwoColConflict\ProvideSubmittedText\SubmittedTextCache
+ *
+ * @license GPL-2.0-or-later
  */
 class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 

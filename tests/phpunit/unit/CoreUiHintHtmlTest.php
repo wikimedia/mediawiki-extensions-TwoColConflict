@@ -10,6 +10,8 @@ use TwoColConflict\Html\CoreUiHintHtml;
 
 /**
  * @covers \TwoColConflict\Html\CoreUiHintHtml
+ *
+ * @license GPL-2.0-or-later
  */
 class CoreUiHintHtmlTest extends \MediaWikiUnitTestCase {
 

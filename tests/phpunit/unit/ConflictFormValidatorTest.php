@@ -8,6 +8,8 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \TwoColConflict\ConflictFormValidator
+ *
+ * @license GPL-2.0-or-later
  */
 class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 

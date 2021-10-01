@@ -158,4 +158,5 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			->addClasses( [ 'mw-twocolconflict-messageWidget' ] )
 			->toString();
 	}
+
 }
