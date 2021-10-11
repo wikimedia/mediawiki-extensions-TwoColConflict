@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests;
 
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
@@ -20,7 +20,7 @@ use TwoColConflict\Html\HtmlSplitConflictView;
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
-class HtmlSplitConflictViewTest extends MediaWikiTestCase {
+class HtmlSplitConflictViewTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

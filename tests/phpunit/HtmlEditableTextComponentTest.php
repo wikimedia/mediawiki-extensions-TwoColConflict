@@ -3,7 +3,7 @@
 namespace TwoColConflict\Tests;
 
 use Language;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
@@ -16,7 +16,7 @@ use Wikimedia\TestingAccessWrapper;
  *
  * @license GPL-2.0-or-later
  */
-class HtmlEditableTextComponentTest extends MediaWikiTestCase {
+class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
