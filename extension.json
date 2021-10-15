@@ -70,7 +70,9 @@
 		"ext.TwoColConflict.SplitJs": {
 			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.js",
+				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js",
 				"modules/ext.TwoColConflict.Settings.js"
 			],
 			"styles": [
@@ -88,8 +90,7 @@
 				"oojs-ui",
 				"oojs-ui.styles.icons-interactions",
 				"user.options",
-				"ext.TwoColConflict.Split.TourImages",
-				"ext.TwoColConflict.Util"
+				"ext.TwoColConflict.Split.TourImages"
 			],
 			"messages": [
 				"parentheses",
@@ -159,13 +160,6 @@
 				}
 			}
 		},
-		"ext.TwoColConflict.Util": {
-			"packageFiles": [
-				"modules/ext.TwoColConflict.Util.js",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js"
-			]
-		},
 		"ext.TwoColConflict.JSCheck": {
 			"packageFiles": [
 				"modules/ext.TwoColConflict.JSCheck.js"
@@ -193,7 +187,7 @@
 			"SplitTwoColConflict/TwoColConflict.Split.tracking.test.js"
 		],
 		"dependencies": [
-			"ext.TwoColConflict.Util"
+			"ext.TwoColConflict.SplitJs"
 		]
 	},
 	"attributes": {

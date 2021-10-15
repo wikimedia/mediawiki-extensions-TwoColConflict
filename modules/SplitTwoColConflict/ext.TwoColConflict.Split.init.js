@@ -1,6 +1,7 @@
 'use strict';
 
-const UtilModule = require( 'ext.TwoColConflict.Util' );
+const Merger = require( './ext.TwoColConflict.Split.Merger.js' );
+const Tracking = require( './ext.TwoColConflict.Split.tracking.js' );
 
 /**
  * @param {jQuery} $column
@@ -336,7 +337,7 @@ function initPreview() {
 
 		$.when(
 			api.parse(
-				UtilModule.Merger( getSelectedColumn( $( '.mw-twocolconflict-split-view' ) ) ),
+				Merger( getSelectedColumn( $( '.mw-twocolconflict-split-view' ) ) ),
 				{
 					title: title,
 					prop: 'text',
@@ -450,36 +451,40 @@ function initSourceCopy() {
 	} );
 }
 
-$( function () {
-	const $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
-	if ( $coreHintCheckbox.length ) {
-		$coreHintCheckbox.change( function () {
-			if ( this.checked && mw.user.isNamed() ) {
-				( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-core-hint', '1' );
-			}
-		} );
-		// When the hint element exists, the split view does not, and nothing below applies
-		return;
-	}
+if ( !window.QUnit ) {
+	$( function () {
+		const $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
+		if ( $coreHintCheckbox.length ) {
+			$coreHintCheckbox.change( function () {
+				if ( this.checked && mw.user.isNamed() ) {
+					( new mw.Api() ).saveOption( 'userjs-twocolconflict-hide-core-hint', '1' );
+				}
+			} );
+			// When the hint element exists, the split view does not, and nothing below applies
+			return;
+		}
 
-	const initTracking = UtilModule.Tracking.initTrackingListeners;
-	const initTour = require( './ext.TwoColConflict.Split.Tour.js' );
+		const initTracking = Tracking.initTrackingListeners;
+		const initTour = require( './ext.TwoColConflict.Split.Tour.js' );
 
-	// disable all javascript from this feature when testing the nojs implementation
-	if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
-		// set CSS class so nojs CSS rules are applied
-		$( 'html' ).removeClass( 'client-js' ).addClass( 'client-nojs' );
-		return;
-	}
+		// disable all javascript from this feature when testing the nojs implementation
+		if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
+			// set CSS class so nojs CSS rules are applied
+			$( 'html' ).removeClass( 'client-js' ).addClass( 'client-nojs' );
+			return;
+		}
 
-	initRowSideSelectors();
-	initHeaderSideSelector();
-	initColumnClickEvent();
-	initButtonEvents();
-	initSwapHandling();
-	initPreview();
-	initSubmit();
-	initTour();
-	initTracking();
-	initSourceCopy();
-} );
+		initRowSideSelectors();
+		initHeaderSideSelector();
+		initColumnClickEvent();
+		initButtonEvents();
+		initSwapHandling();
+		initPreview();
+		initSubmit();
+		initTour();
+		initTracking();
+		initSourceCopy();
+	} );
+}
+
+module.exports = { private: { Merger, RowFormatter: Tracking.private.RowFormatter } };

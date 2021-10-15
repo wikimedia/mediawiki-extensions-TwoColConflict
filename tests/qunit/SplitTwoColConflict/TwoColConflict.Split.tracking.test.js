@@ -1,5 +1,4 @@
-const UtilModule = require( 'ext.TwoColConflict.Util' ),
-	RowFormatter = UtilModule.Tracking.private.RowFormatter;
+const RowFormatter = require( 'ext.TwoColConflict.SplitJs' ).private.RowFormatter;
 
 function buildColumn( params, columnClass, type ) {
 	const typeMap = {

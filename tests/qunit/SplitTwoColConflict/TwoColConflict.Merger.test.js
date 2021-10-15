@@ -19,8 +19,7 @@
 	}
 
 	QUnit.module( 'ext.TwoColConflict.Split.Merger' );
-	const UtilModule = require( 'ext.TwoColConflict.Util' ),
-		merger = UtilModule.Merger;
+	const merger = require( 'ext.TwoColConflict.SplitJs' ).private.Merger;
 
 	QUnit.test( 'testSingleCopyRow', function ( assert ) {
 		assert.strictEqual(
