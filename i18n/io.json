@@ -7,6 +7,7 @@
 	"twocolconflict-beta-feature-message": "Redakturo-konflikti videbla en du kolumni",
 	"twocolconflict-split-header-hint-beta": "Danko por uzar ca versiono ''beta''. Vu povas helpar plubonigor ol, se vu komentos pri ol [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface hike].",
 	"twocolconflict-split-your-version-header": "Vua modifikuro",
+	"twocolconflict-split-current-version-header": "Maxim recenta modifikuro $1",
 	"twocolconflict-split-not-saved-at": "Ne publikigita ankore",
 	"twocolconflict-split-choose-version": "Voluntez selektar versiono",
 	"twocolconflict-split-select-all": "Selektar omno",
