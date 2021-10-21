@@ -484,7 +484,7 @@ $( function () {
 	}
 
 	var initTracking = UtilModule.Tracking.initTrackingListeners,
-		initTour = require( 'ext.TwoColConflict.Split.Tour' );
+		initTour = require( './ext.TwoColConflict.Split.Tour.js' );
 
 	// disable all javascript from this feature when testing the nojs implementation
 	if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
