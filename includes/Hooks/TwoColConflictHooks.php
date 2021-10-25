@@ -310,15 +310,6 @@ class TwoColConflictHooks {
 	}
 
 	/**
-	 * Anonymous users and those without a preference will get the default: enabled.
-	 *
-	 * @param array &$defaultOptions
-	 */
-	public static function onUserGetDefaultOptions( array &$defaultOptions ) {
-		$defaultOptions[TwoColConflictContext::ENABLED_PREFERENCE] = 1;
-	}
-
-	/**
 	 * @param UserIdentity $user
 	 * @param array &$options
 	 */
