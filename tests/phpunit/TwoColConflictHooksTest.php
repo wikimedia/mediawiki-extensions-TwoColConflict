@@ -181,12 +181,12 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			[
 				'origBeta' => 0,
 				'origEditing' => null,
-				'newEditing' => false,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => 0,
 				'origEditing' => 1,
-				'newEditing' => false,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => null,

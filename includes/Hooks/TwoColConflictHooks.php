@@ -268,27 +268,15 @@ class TwoColConflictHooks implements
 		];
 	}
 
-	/**
-	 * If a user is opted-out of the beta feature, that will be copied over to the newer
-	 * preference.  This ensures that anyone who has opted-out continues to be so as we
-	 * promote wikis out of beta feature mode.
-	 *
-	 * This entire function can be removed once all users have been migrated away from
-	 * their beta feature preference.  See T250955.
-	 *
-	 * @param UserIdentity $user
-	 * @param array &$options
-	 */
 	public function onLoadUserOptions( UserIdentity $user, array &$options ): void {
 		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			return;
 		}
 
-		$betaPreference = $options[TwoColConflictContext::BETA_PREFERENCE_NAME] ?? null;
-		if ( $betaPreference === 0 ) {
-			$options[TwoColConflictContext::ENABLED_PREFERENCE] = 0;
-		}
-		$options[TwoColConflictContext::BETA_PREFERENCE_NAME] = null;
+		// Drop obsolete option from the database. The original plan was to migrate the Beta opt-in
+		// to the later opt-out. This is not possible. Every user who changed some option will also
+		// have this option set. Impossible to know if the Beta feature was intentionally disabled.
+		unset( $options[TwoColConflictContext::BETA_PREFERENCE_NAME] );
 	}
 
 }
