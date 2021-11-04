@@ -21,7 +21,7 @@ class CoreUiHintHtmlTest extends \MediaWikiUnitTestCase {
 	}
 
 	protected function tearDown(): void {
-		Theme::setSingleton( null );
+		Theme::setSingleton();
 		parent::tearDown();
 	}
 

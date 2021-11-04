@@ -39,7 +39,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	protected function tearDown(): void {
-		Theme::setSingleton( null );
+		Theme::setSingleton();
 		parent::tearDown();
 	}
 
@@ -150,7 +150,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @dataProvider provideGetOption
 	 */
-	public function testGetOption( $origBeta, $origEditing, bool $expectedEditing ) {
+	public function testGetOption( ?int $origBeta, ?int $origEditing, bool $expectedEditing ) {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
@@ -168,47 +168,47 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			[
 				'origBeta' => 0,
 				'origEditing' => 0,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => 0,
 				'origEditing' => null,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => 0,
 				'origEditing' => 1,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => null,
 				'origEditing' => 0,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => null,
 				'origEditing' => null,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => null,
 				'origEditing' => 1,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => 1,
 				'origEditing' => 0,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => 1,
 				'origEditing' => null,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => 1,
 				'origEditing' => 1,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 		];
 	}
@@ -218,7 +218,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @dataProvider provideSetOption
 	 */
-	public function testSetOption( $origBeta, $origEditing, $setEditing, bool $newEditing ) {
+	public function testSetOption( ?int $origBeta, ?int $origEditing, ?bool $setEditing, bool $newEditing ) {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
@@ -241,19 +241,19 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 				'origBeta' => null,
 				'origEditing' => null,
 				'setEditing' => true,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 			[
 				'origBeta' => null,
 				'origEditing' => null,
 				'setEditing' => false,
-				'fetchedEditing' => false,
+				'newEditing' => false,
 			],
 			[
 				'origBeta' => null,
 				'origEditing' => null,
 				'setEditing' => null,
-				'fetchedEditing' => true,
+				'newEditing' => true,
 			],
 		];
 	}
