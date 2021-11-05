@@ -12,7 +12,7 @@
 	"twocolconflict-beta-feature-description": "وڌيڪ متقدم پئراگراف-تي-ٻڌل ڏيک استعمال ڪندي سنوار تڪرار ڏيکاريو.",
 	"twocolconflict-split-header-hint-beta": "ھي آزمائشي خصوصيت استعمال ڪرڻ لاءِ توھان جي مھرباني. جيڪڏھن توھان [www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface ھن صفحي تي] موٽ ڏيو تہ، توھان ان کي اڃا بھتر ڪرڻ ۾ مدد ڪري سگهو ٿا.",
 	"twocolconflict-split-your-version-header": "توھان جو ورجاءُ",
-	"twocolconflict-split-current-version-header": "$1 مطابق تازو-ترين ورجاءُ",
+	"twocolconflict-split-current-version-header": "تازو-ترين ترين ورجاءُ بمطابق $1ع",
 	"twocolconflict-split-not-saved-at": "اڃا ڇپيو ناھي",
 	"twocolconflict-split-choose-version": "مھرباني ڪري ڪو ورجاءُ چونڊيو",
 	"twocolconflict-split-tour-dialog-header": "تڪراري ورجاءَ ضم ڪريو",
