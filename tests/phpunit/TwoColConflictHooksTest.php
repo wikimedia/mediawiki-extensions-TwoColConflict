@@ -157,8 +157,9 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
 		$this->setOptionRow( $user, TwoColConflictContext::ENABLED_PREFERENCE, $origEditing );
 
-		$fetchedBeta = $user->getOption( TwoColConflictContext::BETA_PREFERENCE_NAME );
-		$fetchedEditing = $user->getOption( TwoColConflictContext::ENABLED_PREFERENCE );
+		$userOptionsLookup = $this->getServiceContainer()->getUserOptionsLookup();
+		$fetchedBeta = $userOptionsLookup->getOption( $user, TwoColConflictContext::BETA_PREFERENCE_NAME );
+		$fetchedEditing = $userOptionsLookup->getOption( $user, TwoColConflictContext::ENABLED_PREFERENCE );
 		$this->assertNull( $fetchedBeta );
 		$this->assertSame( $expectedEditing, (bool)$fetchedEditing );
 	}
@@ -229,8 +230,8 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$userOptionsManager->setOption( $user, TwoColConflictContext::ENABLED_PREFERENCE, $setEditing );
 		$userOptionsManager->saveOptions( $user );
 
-		$fetchedBeta = $user->getOption( TwoColConflictContext::BETA_PREFERENCE_NAME );
-		$fetchedEditing = $user->getOption( TwoColConflictContext::ENABLED_PREFERENCE );
+		$fetchedBeta = $userOptionsManager->getOption( $user, TwoColConflictContext::BETA_PREFERENCE_NAME );
+		$fetchedEditing = $userOptionsManager->getOption( $user, TwoColConflictContext::ENABLED_PREFERENCE );
 		$this->assertNull( $fetchedBeta );
 		$this->assertSame( $newEditing, (bool)$fetchedEditing );
 	}
