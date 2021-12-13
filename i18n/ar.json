@@ -16,6 +16,7 @@
 	"twocolconflictprovidesubmittedtext": "تضارب التحرير:",
 	"twocolconflict-beta-feature-message": "دمج التعديلات",
 	"twocolconflict-beta-feature-description": "إظهار تضارب التحرير باستخدام عرض العمودين المتقدم.",
+	"twocolconflict-copy-action": "نسخ كامل النص",
 	"twocolconflict-copy-tab-action": "عرض النص الكامل",
 	"twocolconflict-core-ui-hint-close": "لا تعرض هذا مجددا",
 	"twocolconflict-preference-enabled": "تفعيل [[mw:Special:MyLanguage/Help:Two_Column_Edit_Conflict_View|دمج التعديلات]] لحل تضاربات التحرير",

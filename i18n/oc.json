@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Quentí"
+			"Quentí",
+			"BrennodAloisi"
 		]
 	},
-	"twocolconflict-split-other-version-chosen": "Autras versions"
+	"twocolconflict-split-other-version-chosen": "Autras versions",
+	"twocolconflict-split-help-tooltip": "Mostrar l’ajuda"
 }

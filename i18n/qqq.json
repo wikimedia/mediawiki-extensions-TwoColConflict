@@ -8,10 +8,11 @@
 			"Mormegil",
 			"Raymond",
 			"Robby",
-			"WMDE"
+			"WMDE",
+			"Umherirrender"
 		]
 	},
-	"twocolconflict": "TwoColConflict\n\n{{optional}}",
+	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "{{desc|name=TwoColConflict|url=https://www.mediawiki.org/wiki/Extension:TwoColConflict}}",
 	"twocolconflictprovidesubmittedtext": "Title for the special page that provides the originally submitted text to copy it.",
 	"twocolconflict-beta-feature-message": "Label for the TwoColConflict Beta Feature.",
@@ -34,7 +35,7 @@
 	"twocolconflict-split-your-version-header": "Header for the diff column showing the users changes.",
 	"twocolconflict-split-current-version-header": "Header for the diff column showing the latest successfully saved revision.\n\nParameters:\n* $1 - Relative (e.g. \"1 second ago\") or absolute time and date the revision was saved",
 	"twocolconflict-split-not-saved-at": "Header for the diff column showing the conflicting, not yet published revision the current user aims to save.",
-	"twocolconflict-split-saved-at": "Header for the diff column showing the latest successfully saved revision.\n\nParameters:\n* $1 - User name and tool links",
+	"twocolconflict-split-saved-at": "{{notranslate}}\nHeader for the diff column showing the latest successfully saved revision.\n\nParameters:\n* $1 - User name and tool links",
 	"twocolconflict-split-choose-version": "Label for the version selection on conflicting paragraphs, when neither column has been selected.",
 	"twocolconflict-split-other-version-chosen": "Label for the version selection on conflicting paragraphs when the \"other\" edit has been selected as the starting point.",
 	"twocolconflict-split-your-version-chosen": "Label for the version selection on conflicting paragraphs when \"your\" edit has been selected as the starting point.",

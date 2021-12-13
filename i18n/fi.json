@@ -8,12 +8,14 @@
 			"Pyscowicz",
 			"Stryn",
 			"Surjection",
-			"Valtlait"
+			"Valtlait",
+			"MITO"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Näyttää rinnakkaisen muokkaustenyhdistämisnäytön päällekkäisten muokkausten ratkaisemiseksi.",
 	"twocolconflict-beta-feature-message": "Kaksisarakkeinen muokkausristiriita",
 	"twocolconflict-beta-feature-description": "Näytä muokkausristiriitanäkymä käyttäen kehittyneempää kaksisarakkeista näkymää.",
+	"twocolconflict-preference-enabled": "Ota [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|kaksisarakkeinen muokkausristiriita]] käyttöön ratkaistaksesi päällekkäiset muokkaukset.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Ratkaise ongelma"
 }

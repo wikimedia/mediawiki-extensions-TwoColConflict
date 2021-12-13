@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Iwan Novirion",
-			"Kenrick95"
+			"Kenrick95",
+			"Akmaie Ajam",
+			"Hidayatsrf"
 		]
 	},
-	"twocolconflict": "DuaKolKonflik",
+	"twocolconflict": "Konflik penyuntingan berbasis paragraf",
 	"twocolconflict-beta-feature-message": "Konflik penyuntingan dua kolom",
 	"twocolconflict-beta-feature-description": "Tampilkan tampilan konflik penyuntingan menggunakan tampilan dua kolom yang lebih canggih.",
 	"twocolconflict-split-your-version-header": "Revisi Anda",
@@ -17,7 +19,7 @@
 	"twocolconflict-split-tour-popup-btn-text": "Oke, saya paham.",
 	"twocolconflict-split-tour-popup2-header": "Pilih perubahan apa yang Anda pertahankan",
 	"twocolconflict-split-tour-popup3-header": "Sorot teks",
-	"twocolconflict-split-edit-tooltip": "Sunting teks",
+	"twocolconflict-split-edit-tooltip": "Klik untuk menyunting teks",
 	"twocolconflict-split-save-tooltip": "Simpan perubahan dan tinggalkan mode penyuntingan.",
 	"twocolconflict-split-reset-tooltip": "Kembalikan teks",
 	"twocolconflict-split-reset-warning-cancel": "Batal",
