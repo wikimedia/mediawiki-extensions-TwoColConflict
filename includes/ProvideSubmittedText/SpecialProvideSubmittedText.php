@@ -74,7 +74,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		);
 
 		if ( !$text ) {
-			// 401 means "gone", which is quite literally what happened here
+			// 410 means "gone", which is quite literally what happened here
 			$out->setStatusCode( 410 );
 			$out->addHTML( new MessageWidget( [
 				'label' => $this->msg( 'twocolconflict-special-expired' )->text(),
