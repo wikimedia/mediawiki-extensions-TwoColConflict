@@ -5,8 +5,8 @@ namespace TwoColConflict\ProvideSubmittedText;
 use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\EditPage\TextboxBuilder;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
-use ObjectCache;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use Title;
@@ -66,7 +66,8 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			$this->msg( 'editconflict', $title->getPrefixedText() )
 		);
 
-		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
+		$services = MediaWikiServices::getInstance();
+		$textCache = new SubmittedTextCache( $services->getMainObjectStash() );
 		$text = $textCache->fetchText(
 			$subPage,
 			$out->getUser(),

@@ -8,7 +8,6 @@ use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserOptionsLookup;
-use ObjectCache;
 use OutputPage;
 use ParserOptions;
 use Title;
@@ -284,7 +283,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	private function setSubmittedTextCache() {
-		$textCache = new SubmittedTextCache( ObjectCache::getInstance( 'db-replicated' ) );
+		$services = MediaWikiServices::getInstance();
+		$textCache = new SubmittedTextCache( $services->getMainObjectStash() );
 		if ( !$textCache->stashText(
 			$this->title->getPrefixedDBkey(),
 			$this->out->getUser(),
