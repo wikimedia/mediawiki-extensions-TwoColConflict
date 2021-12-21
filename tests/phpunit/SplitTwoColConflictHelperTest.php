@@ -6,7 +6,6 @@ use IBufferingStatsdDataFactory;
 use Language;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Session\SessionId;
-use MediaWiki\User\StaticUserOptionsLookup;
 use Message;
 use MessageLocalizer;
 use MockTitleTrait;
@@ -42,11 +41,9 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			$this->createOutputPage(),
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
-			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class ),
-			new StaticUserOptionsLookup( [] )
+			$this->createMock( ResolutionSuggester::class )
 		);
 
 		$this->assertSame( '', $helper->getExplainHeader() );
@@ -61,11 +58,9 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			$this->createOutputPage(),
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
-			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class ),
-			new StaticUserOptionsLookup( [] )
+			$this->createMock( ResolutionSuggester::class )
 		);
 		$helper->setTextboxes( '<YOURTEXT attribute="">', '<STOREDVERSION attribute="">' );
 
@@ -89,11 +84,9 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			$out,
 			$this->createMock( IBufferingStatsdDataFactory::class ),
 			'',
-			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class ),
-			new StaticUserOptionsLookup( [] )
+			$this->createMock( ResolutionSuggester::class )
 		);
 
 		$this->assertSame( '', $helper->getEditFormHtmlAfterContent() );

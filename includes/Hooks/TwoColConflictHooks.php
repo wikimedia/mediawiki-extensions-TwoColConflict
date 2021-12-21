@@ -72,15 +72,15 @@ class TwoColConflictHooks {
 				$context->getOutput(),
 				$services->getStatsdDataFactory(),
 				$submitButtonLabel,
-				$editPage->summary,
 				$services->getContentHandlerFactory(),
 				$this->twoColContext,
 				new ResolutionSuggester(
 					$baseRevision,
 					$wikiPage->getContentHandler()->getDefaultFormat()
 				),
-				$services->getUserOptionsLookup(),
-				$services->getMainObjectStash()
+				$services->getMainObjectStash(),
+				$editPage->summary,
+				$services->getUserOptionsLookup()->getOption( $context->getUser(), 'editfont' )
 			);
 		} );
 
