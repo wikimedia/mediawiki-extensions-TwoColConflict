@@ -2,10 +2,10 @@
 
 namespace TwoColConflict\ProvideSubmittedText;
 
+use BagOStuff;
 use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\EditPage\TextboxBuilder;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\PageIdentity;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
@@ -22,23 +22,29 @@ use UnlistedSpecialPage;
  */
 class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
-	/** @var IBufferingStatsdDataFactory */
-	private $statsdDataFactory;
-
 	/** @var TwoColConflictContext */
 	private $twoColConflictContext;
 
+	/** @var SubmittedTextCache */
+	private $textCache;
+
+	/** @var IBufferingStatsdDataFactory */
+	private $statsdDataFactory;
+
 	/**
-	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param TwoColConflictContext $twoColConflictContext
+	 * @param BagOStuff $textCache
+	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 */
 	public function __construct(
-		IBufferingStatsdDataFactory $statsdDataFactory,
-		TwoColConflictContext $twoColConflictContext
+		TwoColConflictContext $twoColConflictContext,
+		BagOStuff $textCache,
+		IBufferingStatsdDataFactory $statsdDataFactory
 	) {
 		parent::__construct( 'TwoColConflictProvideSubmittedText' );
-		$this->statsdDataFactory = $statsdDataFactory;
 		$this->twoColConflictContext = $twoColConflictContext;
+		$this->textCache = new SubmittedTextCache( $textCache );
+		$this->statsdDataFactory = $statsdDataFactory;
 	}
 
 	/**
@@ -66,9 +72,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			$this->msg( 'editconflict', $title->getPrefixedText() )
 		);
 
-		$services = MediaWikiServices::getInstance();
-		$textCache = new SubmittedTextCache( $services->getMainObjectStash() );
-		$text = $textCache->fetchText(
+		$text = $this->textCache->fetchText(
 			$subPage,
 			$out->getUser(),
 			$out->getRequest()->getSessionId()

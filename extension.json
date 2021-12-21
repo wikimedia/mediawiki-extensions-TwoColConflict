@@ -165,8 +165,9 @@
 		"TwoColConflictProvideSubmittedText": {
 			"class": "TwoColConflict\\ProvideSubmittedText\\SpecialProvideSubmittedText",
 			"services": [
-				"StatsdDataFactory",
-				"TwoColConflictContext"
+				"TwoColConflictContext",
+				"MainObjectStash",
+				"StatsdDataFactory"
 			]
 		}
 	},

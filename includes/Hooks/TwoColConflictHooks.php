@@ -79,7 +79,8 @@ class TwoColConflictHooks {
 					$baseRevision,
 					$wikiPage->getContentHandler()->getDefaultFormat()
 				),
-				$services->getUserOptionsLookup()
+				$services->getUserOptionsLookup(),
+				$services->getMainObjectStash()
 			);
 		} );
 

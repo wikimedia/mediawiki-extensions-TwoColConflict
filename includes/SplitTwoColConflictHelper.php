@@ -2,6 +2,7 @@
 
 namespace TwoColConflict;
 
+use BagOStuff;
 use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Content\IContentHandlerFactory;
@@ -48,6 +49,11 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	private $userOptionsLookup;
 
 	/**
+	 * @var SubmittedTextCache|null
+	 */
+	private $textCache;
+
+	/**
 	 * @param Title $title
 	 * @param OutputPage $out
 	 * @param IBufferingStatsdDataFactory $stats
@@ -57,6 +63,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param TwoColConflictContext $twoColContext
 	 * @param ResolutionSuggester $resolutionSuggester
 	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param BagOStuff|null $textCache
 	 */
 	public function __construct(
 		Title $title,
@@ -67,7 +74,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		IContentHandlerFactory $contentHandlerFactory,
 		TwoColConflictContext $twoColContext,
 		ResolutionSuggester $resolutionSuggester,
-		UserOptionsLookup $userOptionsLookup
+		UserOptionsLookup $userOptionsLookup,
+		BagOStuff $textCache = null
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
@@ -75,6 +83,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$this->twoColContext = $twoColContext;
 		$this->resolutionSuggester = $resolutionSuggester;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->textCache = $textCache ? new SubmittedTextCache( $textCache ) : null;
 
 		$this->out->enableOOUI();
 		$this->out->addModuleStyles( [
@@ -283,9 +292,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	}
 
 	private function setSubmittedTextCache() {
-		$services = MediaWikiServices::getInstance();
-		$textCache = new SubmittedTextCache( $services->getMainObjectStash() );
-		if ( !$textCache->stashText(
+		if ( $this->textCache && !$this->textCache->stashText(
 			$this->title->getPrefixedDBkey(),
 			$this->out->getUser(),
 			$this->out->getRequest()->getSessionId(),
