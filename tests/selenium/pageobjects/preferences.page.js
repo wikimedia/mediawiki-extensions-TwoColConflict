@@ -29,18 +29,6 @@ class PreferencesPage extends Page {
 		}, shouldUse );
 	}
 
-	shouldUseTwoColConflictBetaFeature( shouldUse ) {
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function ( use ) {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOption(
-					'twocolconflict',
-					use ? '1' : '0'
-				);
-			} );
-		}, shouldUse );
-	}
-
 	resetCoreHintVisibility() {
 		Util.waitForModuleState( 'mediawiki.base' );
 
