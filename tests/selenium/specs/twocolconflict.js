@@ -33,6 +33,31 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
+	it( 'editor should not decode html entities', function () {
+		EditConflictPage.createConflict(
+			'α\n&beta;',
+			'α\n&gamma; <span lang="de">A</span>',
+			'α\n&gamma; <span lang="en">B</span>'
+		);
+		EditConflictPage.waitForJS();
+
+		EditConflictPage.otherParagraphSelection.click();
+
+		EditConflictPage.getEditButton( 'other' ).click();
+
+		assert.strictEqual(
+			EditConflictPage.getEditor().getValue(),
+			'α\n',
+			'unchanged text editor did not decode html entities'
+		);
+
+		assert.strictEqual(
+			EditConflictPage.getEditor( 'other' ).getValue(),
+			'&gamma; <span lang="de">A</span>\n',
+			'selectable text editor did not decode html entities'
+		);
+	} );
+
 	it( 'shows a dismissible hint on the core edit conflict interface', function () {
 		try {
 			PreferencesPage.openBetaFeaturesPreferences();
