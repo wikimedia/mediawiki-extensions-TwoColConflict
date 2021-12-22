@@ -47,7 +47,6 @@ class EditConflictPage extends Page {
 
 	get submitButton() { return $( '#wpSave' ); }
 	get previewButton() { return $( '#wpPreview' ); }
-	get diffButton() { return $( '#wpDiff' ); }
 
 	get previewView() { return $( '#wikiPreview' ); }
 	get previewText() { return $( '#wikiPreview .mw-parser-output' ); }
