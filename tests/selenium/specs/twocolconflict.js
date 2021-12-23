@@ -61,9 +61,13 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'shows a dismissible hint on the core edit conflict interface', function () {
-		PreferencesPage.openPreferences();
+		try {
+			PreferencesPage.openBetaFeaturesPreferences();
+		} catch ( e ) {
+			this.skip( 'Failed to load beta preferences.' );
+		}
 		if ( PreferencesPage.hasBetaFeatureSetting() ) {
-			this.skip();
+			this.skip( 'Is run in beta feature mode.' );
 		}
 		PreferencesPage.shouldUseTwoColConflict( false );
 		PreferencesPage.resetCoreHintVisibility();
