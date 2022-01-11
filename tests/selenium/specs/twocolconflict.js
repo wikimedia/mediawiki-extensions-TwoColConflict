@@ -9,13 +9,6 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.prepareEditConflict();
 	} );
 
-	it( 'is showing the edit conflict split screen correctly', function () {
-		EditConflictPage.showSimpleConflict();
-
-		assert( EditConflictPage.conflictHeader.isExisting() );
-		assert( EditConflictPage.conflictView.isExisting() );
-	} );
-
 	it( 'labels change according to selected column', function () {
 		EditConflictPage.showSimpleConflict();
 
@@ -37,26 +30,6 @@ describe( 'TwoColConflict', function () {
 		assert(
 			yourSelectionText !== otherSelectionText && initialText !== otherSelectionText,
 			'The other side is selected when you click the other side\'s select all button'
-		);
-	} );
-
-	it( 'is not used when it is not enabled in the preferences', function () {
-		PreferencesPage.shouldUseTwoColConflictBetaFeature( false );
-		PreferencesPage.shouldUseTwoColConflict( false );
-		EditConflictPage.createConflict(
-			'A',
-			'B',
-			'C'
-		);
-
-		assert(
-			EditConflictPage.wpTextbox2.isDisplayed(),
-			'the editor for the core conflict UI is shown'
-		);
-		assert(
-			!EditConflictPage.conflictHeader.isExisting() &&
-			!EditConflictPage.conflictView.isExisting(),
-			'the two column UI is not loaded'
 		);
 	} );
 
