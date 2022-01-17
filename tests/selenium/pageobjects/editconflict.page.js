@@ -1,6 +1,7 @@
 'use strict';
 
-const Page = require( 'wdio-mediawiki/Page' ),
+const assert = require( 'assert' ),
+	Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	TestAccounts = require( '../test_accounts' ),
@@ -175,6 +176,52 @@ class EditConflictPage extends Page {
 			name: 'mw-twocolconflict-test-nojs',
 			value: '1'
 		} );
+	}
+
+	assertUnchangedIsCollapsed() {
+		assert(
+			this.fadeOverlay.isDisplayed(),
+			'an overlay fades the collapsed text'
+		);
+		assert(
+			this.collapsedParagraph.isDisplayed(),
+			'the collapsed paragraph text is visible'
+		);
+		assert(
+			!this.expandedParagraph.isDisplayed(),
+			'the expanded paragraph text is hidden'
+		);
+		assert(
+			this.expandButton.isDisplayed(),
+			'the expand button is visible'
+		);
+		assert(
+			!this.collapseButton.isDisplayed(),
+			'the collapse button is hidden'
+		);
+	}
+
+	assertUnchangedIsExpanded() {
+		assert(
+			!this.fadeOverlay.isDisplayed(),
+			'no overlay fades the collapsed text'
+		);
+		assert(
+			this.expandedParagraph.isDisplayed(),
+			'the expanded paragraph text is visible'
+		);
+		assert(
+			!this.collapsedParagraph.isDisplayed(),
+			'the collapsed paragraph text is hidden'
+		);
+		assert(
+			!this.expandButton.isDisplayed(),
+			'the expand button is hidden'
+		);
+		assert(
+			this.collapseButton.isDisplayed(),
+			'the collapse button is visible'
+		);
 	}
 
 }
