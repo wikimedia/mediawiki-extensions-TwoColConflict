@@ -3,196 +3,204 @@
 const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
-describe( 'TwoColConflict editable areas', function () {
+describe( 'TwoColConflict EditUi', function () {
 	before( function () {
 		EditConflictPage.prepareEditConflict();
 	} );
 
 	beforeEach( function () {
 		EditConflictPage.showSimpleConflict();
-
-		assert(
-			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-element-hidden' ) !== -1 &&
-			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-element-hidden' ) !== -1,
-			'neither side is activated'
-		);
-
-		assert( EditConflictPage.submitButton.isDisplayed(), 'submit button exists' );
-		assert( EditConflictPage.previewButton.isDisplayed(), 'preview button exists' );
-		assert( !EditConflictPage.diffButton.isDisplayed(), 'no diff button' );
 	} );
 
-	it( 'has edit buttons that toggle visibility depending on the side selection', function () {
-		EditConflictPage.yourParagraphSelection.click();
+	describe( 'on initial view', function () {
 
-		assert(
-			EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-element-hidden' ) === -1,
-			'I see an activated edit icon on the selected "yours" paragraph'
-		);
-		assert(
-			EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-element-hidden' ) !== -1,
-			'I don\'t see an edit icon on the selected "mine" paragraph'
-		);
-		assert(
-			EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
-				.indexOf( 'oo-ui-element-hidden' ) === -1,
-			'I see an activated edit icon on the unchanged paragraph'
-		);
-	} );
+		before( function () {
+			EditConflictPage.showSimpleConflict();
+		} );
 
-	it( 'will not begin editing if the columns are clicked as long as nothing is selected', function () {
-		EditConflictPage.getColumn( 'other' ).click();
-		EditConflictPage.getColumn( 'your' ).click();
-		EditConflictPage.getColumn( 'unchanged' ).click();
+		it( 'will not switch to edit mode as long as nothing is selected', function () {
+			EditConflictPage.getColumn( 'other' ).click();
+			EditConflictPage.getColumn( 'your' ).click();
+			EditConflictPage.getColumn( 'unchanged' ).click();
 
-		assert(
-			EditConflictPage.rowsInEditMode.waitForDisplayed( { reverse: true } ),
-			'no row is in edit mode'
-		);
-	} );
+			assert(
+				EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
+					.indexOf( 'oo-ui-element-hidden' ) !== -1 &&
+				EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
+					.indexOf( 'oo-ui-element-hidden' ) !== -1,
+				'neither side is activated'
+			);
 
-	it( 'will not begin editing if the column that is selected is not the column that is clicked', function () {
-		EditConflictPage.otherParagraphSelection.click();
-		EditConflictPage.getColumn( 'your' ).click();
+			assert(
+				EditConflictPage.rowsInEditMode.waitForDisplayed( { reverse: true } ),
+				'no row is in edit mode'
+			);
+			assert(
+				!EditConflictPage.getSaveButton( 'unchanged' ).isDisplayed(),
+				'the edit icon in the unselected unchanged text box is hidden'
+			);
+			assert(
+				!EditConflictPage.getSaveButton( 'other' ).isDisplayed(),
+				'the edit icon in the selected text box is hidden'
+			);
+			assert(
+				!EditConflictPage.getSaveButton( 'your' ).isDisplayed(),
+				'the edit icon in the unselected text box is hidden'
+			);
 
-		assert(
-			EditConflictPage.getEditor( 'other' ).waitForDisplayed( { reverse: true } ),
-			'the selected other text box stays as it is'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
-			'the unselected unchanged text box stays as it is'
-		);
-	} );
+			assert(
+				!EditConflictPage.getResetButton( 'unchanged' ).isDisplayed(),
+				'the reset icon in the unselected unchanged text box is hidden'
+			);
+			assert(
+				!EditConflictPage.getResetButton( 'other' ).isDisplayed(),
+				'the reset icon in the selected text box is hidden'
+			);
+			assert(
+				!EditConflictPage.getResetButton( 'your' ).isDisplayed(),
+				'the reset icon in the unselected text box is hidden'
+			);
+		} );
 
-	it( 'will begin editing if the column that is selected is clicked', function () {
-		EditConflictPage.otherParagraphSelection.click();
-		EditConflictPage.getColumn( 'other' ).click();
+		it( 'has edit buttons that toggle visibility depending on the side selection', function () {
+			EditConflictPage.yourParagraphSelection.click();
 
-		assert(
-			EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
-			'the selected other text box becomes a wikitext editor'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
-			'the unselected your text box stays as it is'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
-			'the unselected unchanged text box stays as it is'
-		);
-	} );
+			assert(
+				EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
+					.indexOf( 'oo-ui-element-hidden' ) === -1,
+				'I see an activated edit icon on the selected "yours" paragraph'
+			);
+			assert(
+				EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
+					.indexOf( 'oo-ui-element-hidden' ) !== -1,
+				'I don\'t see an edit icon on the selected "mine" paragraph'
+			);
+			assert(
+				EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
+					.indexOf( 'oo-ui-element-hidden' ) === -1,
+				'I see an activated edit icon on the unchanged paragraph'
+			);
+		} );
 
-	it( 'allows editing of conflict paragraphs by clicking the activated edit button', function () {
-		EditConflictPage.otherParagraphSelection.click();
+		it( 'will not switch to edit mode if the column clicked is not selected', function () {
+			EditConflictPage.otherParagraphSelection.click();
+			EditConflictPage.getColumn( 'your' ).click();
 
-		EditConflictPage.getEditButton( 'other' ).click();
+			assert(
+				EditConflictPage.getEditor( 'other' ).waitForDisplayed( { reverse: true } ),
+				'the selected other text box stays as it is'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+				'the unselected unchanged text box stays as it is'
+			);
+		} );
 
-		assert(
-			EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
-			'the selected text box becomes a wikitext editor'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
-			'the unselected text box stays as it is'
-		);
-		assert(
-			!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
-			'the edit icon disappears in the selected text box'
-		);
-		assert(
-			!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
-			'the edit icon in the unselected text box stays hidden'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
-			'the unselected unchanged text box stays as it is'
-		);
-		assert(
-			EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
-				.indexOf( 'mw-editfont-monospace' ) !== -1,
-			'the layout changes to wikitext editor layout for both paragraphs'
-		);
-		assert(
-			EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
-				.indexOf( 'mw-editfont-monospace' ) === -1,
-			'the layout stays the same for the unselected unchanged text box'
-		);
-	} );
+		it( 'will switch to edit mode by clicking the column that is selected', function () {
+			EditConflictPage.otherParagraphSelection.click();
+			EditConflictPage.getColumn( 'other' ).click();
 
-	it( 'allows editing of unchanged paragraphs by clicking the activated edit button', function () {
-		EditConflictPage.getEditButton( 'unchanged' ).click();
-		assert(
-			!EditConflictPage.getEditor( 'other' ).isDisplayed(),
-			'the selected text box stays as it is'
-		);
-		assert(
-			!EditConflictPage.getEditor( 'your' ).isDisplayed(),
-			'the unselected text box stays as it is'
-		);
-		assert(
-			!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
-			'the edit icon in the selected text box stays hidden'
-		);
-		assert(
-			!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
-			'the edit icon in the unselected text box stays hidden'
-		);
-		assert(
-			EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
-			'the unselected unchanged text box becomes a wikitext editor'
-		);
-		assert(
-			!EditConflictPage.getEditButton( 'unchanged' ).isDisplayed(),
-			'the edit icon disappears in the unchanged text box'
-		);
-		assert(
-			EditConflictPage.getParagraph( 'other' ).getAttribute( 'class' )
-				.indexOf( 'mw-editfont-monospace' ) === -1,
-			'the layout stays the same for the selected text box'
-		);
-		assert(
-			EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
-				.indexOf( 'mw-editfont-monospace' ) === -1,
-			'the layout stays the same for the unselected text box'
-		);
-		assert(
-			EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
-				.indexOf( 'mw-editfont-monospace' ) !== -1,
-			'the layout changes to wikitext editor layout'
-		);
-	} );
+			assert(
+				EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
+				'the selected other text box becomes a wikitext editor'
+			);
+			assert(
+				EditConflictPage.getEditor( 'other' ).isFocused(),
+				'text editor is focused'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'your' ).isDisplayed(),
+				'the unselected your text box stays as it is'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+				'the unselected unchanged text box stays as it is'
+			);
+		} );
 
-	it( 'certain edit specific buttons should not be visible at first', function () {
-		assert(
-			!EditConflictPage.getSaveButton( 'unchanged' ).isDisplayed(),
-			'the edit icon in the unselected unchanged text box is hidden'
-		);
-		assert(
-			!EditConflictPage.getSaveButton( 'other' ).isDisplayed(),
-			'the edit icon in the selected text box is hidden'
-		);
-		assert(
-			!EditConflictPage.getSaveButton( 'your' ).isDisplayed(),
-			'the edit icon in the unselected text box is hidden'
-		);
+		it( 'will switch to edit mode by clicking the edit button in the column that is selected', function () {
+			EditConflictPage.otherParagraphSelection.click();
 
-		assert(
-			!EditConflictPage.getResetButton( 'unchanged' ).isDisplayed(),
-			'the reset icon in the unselected unchanged text box is hidden'
-		);
-		assert(
-			!EditConflictPage.getResetButton( 'other' ).isDisplayed(),
-			'the reset icon in the selected text box is hidden'
-		);
-		assert(
-			!EditConflictPage.getResetButton( 'your' ).isDisplayed(),
-			'the reset icon in the unselected text box is hidden'
-		);
+			EditConflictPage.getEditButton( 'other' ).click();
+
+			assert(
+				EditConflictPage.getEditor( 'other' ).waitForDisplayed(),
+				'the selected text box becomes a wikitext editor'
+			);
+			assert(
+				EditConflictPage.getEditor( 'other' ).isFocused(),
+				'text editor is focused'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'your' ).isDisplayed(),
+				'the unselected text box stays as it is'
+			);
+			assert(
+				!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
+				'the edit icon disappears in the selected text box'
+			);
+			assert(
+				!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
+				'the edit icon in the unselected text box stays hidden'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+				'the unselected unchanged text box stays as it is'
+			);
+			assert(
+				EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
+					.indexOf( 'mw-editfont-monospace' ) !== -1,
+				'the layout changes to wikitext editor layout for both paragraphs'
+			);
+			assert(
+				EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
+					.indexOf( 'mw-editfont-monospace' ) === -1,
+				'the layout stays the same for the unselected unchanged text box'
+			);
+		} );
+
+		it( 'will switch to edit mode by clicking the edit button in unchanged paragraphs', function () {
+			EditConflictPage.getEditButton( 'unchanged' ).click();
+			assert(
+				!EditConflictPage.getEditor( 'other' ).isDisplayed(),
+				'the selected text box stays as it is'
+			);
+			assert(
+				!EditConflictPage.getEditor( 'your' ).isDisplayed(),
+				'the unselected text box stays as it is'
+			);
+			assert(
+				!EditConflictPage.getEditButton( 'other' ).isDisplayed(),
+				'the edit icon in the selected text box stays hidden'
+			);
+			assert(
+				!EditConflictPage.getEditButton( 'your' ).isDisplayed(),
+				'the edit icon in the unselected text box stays hidden'
+			);
+			assert(
+				EditConflictPage.getEditor( 'unchanged' ).isDisplayed(),
+				'the unselected unchanged text box becomes a wikitext editor'
+			);
+			assert(
+				!EditConflictPage.getEditButton( 'unchanged' ).isDisplayed(),
+				'the edit icon disappears in the unchanged text box'
+			);
+			assert(
+				EditConflictPage.getParagraph( 'other' ).getAttribute( 'class' )
+					.indexOf( 'mw-editfont-monospace' ) === -1,
+				'the layout stays the same for the selected text box'
+			);
+			assert(
+				EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
+					.indexOf( 'mw-editfont-monospace' ) === -1,
+				'the layout stays the same for the unselected text box'
+			);
+			assert(
+				EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
+					.indexOf( 'mw-editfont-monospace' ) !== -1,
+				'the layout changes to wikitext editor layout'
+			);
+		} );
 	} );
 
 	it( 'edits of unchanged paragraphs should be saved', function () {
@@ -307,14 +315,6 @@ describe( 'TwoColConflict editable areas', function () {
 		assert(
 			!EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'the editor is hidden again and we left editing mode'
-		);
-	} );
-
-	it( 'clicking edit should automatically focus the text editor', function () {
-		EditConflictPage.getEditButton( 'unchanged' ).click();
-		assert(
-			EditConflictPage.getEditor( 'unchanged' ).isFocused(),
-			'text editor is focused'
 		);
 	} );
 
