@@ -25,9 +25,9 @@ describe( 'TwoColConflict EditUi', function () {
 
 			assert(
 				EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-					.indexOf( 'oo-ui-element-hidden' ) !== -1 &&
+					.includes( 'oo-ui-element-hidden' ) &&
 				EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-					.indexOf( 'oo-ui-element-hidden' ) !== -1,
+					.includes( 'oo-ui-element-hidden' ),
 				'neither side is activated'
 			);
 
@@ -66,18 +66,18 @@ describe( 'TwoColConflict EditUi', function () {
 			EditConflictPage.yourParagraphSelection.click();
 
 			assert(
-				EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
-					.indexOf( 'oo-ui-element-hidden' ) === -1,
+				!EditConflictPage.getEditButton( 'your' ).getAttribute( 'class' )
+					.includes( 'oo-ui-element-hidden' ),
 				'I see an activated edit icon on the selected "yours" paragraph'
 			);
 			assert(
 				EditConflictPage.getEditButton( 'other' ).getAttribute( 'class' )
-					.indexOf( 'oo-ui-element-hidden' ) !== -1,
+					.includes( 'oo-ui-element-hidden' ),
 				'I don\'t see an edit icon on the selected "mine" paragraph'
 			);
 			assert(
-				EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
-					.indexOf( 'oo-ui-element-hidden' ) === -1,
+				!EditConflictPage.getEditButton( 'unchanged' ).getAttribute( 'class' )
+					.includes( 'oo-ui-element-hidden' ),
 				'I see an activated edit icon on the unchanged paragraph'
 			);
 		} );
@@ -149,12 +149,12 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 			assert(
 				EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
-					.indexOf( 'mw-editfont-monospace' ) !== -1,
+					.includes( 'mw-editfont-monospace' ),
 				'the layout changes to wikitext editor layout for both paragraphs'
 			);
 			assert(
-				EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
-					.indexOf( 'mw-editfont-monospace' ) === -1,
+				!EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
+					.includes( 'mw-editfont-monospace' ),
 				'the layout stays the same for the unselected unchanged text box'
 			);
 		} );
@@ -186,18 +186,18 @@ describe( 'TwoColConflict EditUi', function () {
 				'the edit icon disappears in the unchanged text box'
 			);
 			assert(
-				EditConflictPage.getParagraph( 'other' ).getAttribute( 'class' )
-					.indexOf( 'mw-editfont-monospace' ) === -1,
+				!EditConflictPage.getParagraph( 'other' ).getAttribute( 'class' )
+					.includes( 'mw-editfont-monospace' ),
 				'the layout stays the same for the selected text box'
 			);
 			assert(
-				EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
-					.indexOf( 'mw-editfont-monospace' ) === -1,
+				!EditConflictPage.getParagraph( 'your' ).getAttribute( 'class' )
+					.includes( 'mw-editfont-monospace' ),
 				'the layout stays the same for the unselected text box'
 			);
 			assert(
 				EditConflictPage.getParagraph( 'unchanged' ).getAttribute( 'class' )
-					.indexOf( 'mw-editfont-monospace' ) !== -1,
+					.includes( 'mw-editfont-monospace' ),
 				'the layout changes to wikitext editor layout'
 			);
 		} );
