@@ -292,7 +292,7 @@ function showPreview( parsedContent, parsedNote ) {
 				.attr( 'id', 'mw-previewheader' )
 				.append( mw.msg( 'preview' ) ),
 			$( '<div>' )
-				.addClass( 'warningbox' )
+				.addClass( [ 'mw-message-box', 'mw-message-box-warning' ] )
 				.append( $( parsedNote ).children() )
 		);
 
