@@ -55,10 +55,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		// Note: Only needed by BetaFeatures
 		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
 
-		$title = $this->createMock( Title::class );
-		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
-		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
-		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
+		$title = $this->createTitle( $namespace );
 
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
@@ -130,10 +127,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		int $namespace,
 		bool $expected
 	) {
-		$title = $this->createMock( Title::class );
-		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
-		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
-		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
+		$title = $this->createTitle( $namespace );
 
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
@@ -293,6 +287,14 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 				'expected' => true,
 			],
 		];
+	}
+
+	private function createTitle( int $namespace ): Title {
+		$title = $this->createMock( Title::class );
+		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
+		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
+		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
+		return $title;
 	}
 
 	private function createConfig( bool $isBetaFeature = false, bool $suggestResolution = true ) {
