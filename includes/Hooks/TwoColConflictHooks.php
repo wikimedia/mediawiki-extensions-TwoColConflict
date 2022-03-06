@@ -4,6 +4,7 @@ namespace TwoColConflict\Hooks;
 
 use EditPage;
 use ExtensionRegistry;
+use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\User\UserIdentity;
@@ -195,7 +196,7 @@ class TwoColConflictHooks {
 				}
 			}
 
-			\EventLogging::logEvent(
+			EventLogging::logEvent(
 				'TwoColConflictConflict',
 				-1,
 				[
