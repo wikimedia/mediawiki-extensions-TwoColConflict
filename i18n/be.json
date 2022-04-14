@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"Chadyka"
+			"Chadyka",
+			"Tomato Cream"
 		]
 	},
 	"twocolconflict": "Канфлікт правак па абзацах",
@@ -27,5 +28,6 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Пачаць аб'яднанне",
 	"twocolconflict-split-tour-popup-btn-text": "Так, зразумела.",
 	"twocolconflict-split-reset-warning-cancel": "Адмена",
-	"twocolconflict-split-help-tooltip": "Паказаць дапамогу"
+	"twocolconflict-split-help-tooltip": "Паказаць дапамогу",
+	"twocolconflict-talk-your": "Ваш каментар"
 }
