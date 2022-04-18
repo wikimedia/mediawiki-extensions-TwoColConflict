@@ -19,7 +19,8 @@
 			"DDPAT",
 			"KATRINE1993",
 			"Rodney Araujo",
-			"Suecarmol"
+			"Suecarmol",
+			"Ice bulldog"
 		]
 	},
 	"twocolconflict": "Conflicto de edición basado en párrafos",
@@ -43,7 +44,7 @@
 	"twocolconflict-split-your-version-header": "Tu revisión",
 	"twocolconflict-split-current-version-header": "Última revisión de $1",
 	"twocolconflict-split-not-saved-at": "Aún sin publicar",
-	"twocolconflict-split-choose-version": "Por favor, elige una versión",
+	"twocolconflict-split-choose-version": "Elige una versión",
 	"twocolconflict-split-other-version-chosen": "Otras versiones",
 	"twocolconflict-split-your-version-chosen": "Tu versión",
 	"twocolconflict-split-select-all": "Seleccionar todo",
