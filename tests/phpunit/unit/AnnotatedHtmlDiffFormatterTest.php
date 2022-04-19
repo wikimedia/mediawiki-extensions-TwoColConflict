@@ -401,7 +401,7 @@ TEXT
 						'newhtml' => '<ins class="mw-twocolconflict-diffchange">B2</ins>',
 						'newtext' => "B2\n",
 					],
-					3 => [
+					[
 						'action' => 'change',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">C1</del>',
 						'oldtext' => 'C1',
@@ -418,7 +418,7 @@ TEXT
 				'before' => "\n\n\nA1\n\n\nB\n\n\nC1\n\n\n",
 				'after' => "\n\n\nA2\n\n\nB\n\n\nC2\n\n\n",
 				'result' => [
-					1 => [
+					[
 						'action' => 'change',
 						'oldhtml' => '<del class="mw-twocolconflict-diffchange">A1</del>',
 						'oldtext' => "\n\n\nA1",
@@ -521,6 +521,13 @@ TEXT
 				],
 			],
 		];
+	}
+
+	public function testT306221() {
+		$formatter = new AnnotatedHtmlDiffFormatter();
+		$before = explode( "\n", "Before\n\nBefore" );
+		$after = explode( "\n", "After\n\nAfter" );
+		$this->assertSame( [ 0, 1 ], array_keys( $formatter->format( $before, $after, $after ) ) );
 	}
 
 	/**
