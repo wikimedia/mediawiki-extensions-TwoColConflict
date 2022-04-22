@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\TalkPageConflict;
 
+use MediaWiki\Diff\ComplexityException;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
@@ -56,11 +57,15 @@ class ResolutionSuggester {
 		array $yourLines
 	): ?TalkPageResolution {
 		$baseLines = $this->getBaseRevisionLines();
-
 		$formatter = new AnnotatedHtmlDiffFormatter();
-		// TODO: preSaveTransform $yourLines, but not $storedLines
-		$diffYourLines = $formatter->format( $baseLines, $yourLines, $yourLines );
-		$diffStoredLines = $formatter->format( $baseLines, $storedLines, $storedLines );
+
+		try {
+			// TODO: preSaveTransform $yourLines, but not $storedLines
+			$diffYourLines = $formatter->format( $baseLines, $yourLines, $yourLines );
+			$diffStoredLines = $formatter->format( $baseLines, $storedLines, $storedLines );
+		} catch ( ComplexityException $ex ) {
+			return null;
+		}
 
 		if ( count( $diffYourLines ) !== count( $diffStoredLines ) ) {
 			return null;

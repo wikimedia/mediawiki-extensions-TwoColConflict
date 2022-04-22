@@ -17,6 +17,7 @@ class AnnotatedHtmlDiffFormatter {
 	 * @param string[] $newLines
 	 * @param string[] $preSaveTransformedLines
 	 *
+	 * @throws \MediaWiki\Diff\ComplexityException
 	 * @return array[] List of changes, each of which include an HTML representation of the diff,
 	 *  and the original wikitext. Note the HTML does not use <br> but relies on `white-space:
 	 *  pre-line` being set!
