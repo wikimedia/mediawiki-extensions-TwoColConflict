@@ -51,5 +51,21 @@
 	"twocolconflict-split-expand-tooltip": "Buka teks yang tidak berubah",
 	"twocolconflict-split-select-all-other-tooltip": "Tekan untuk memilih semua perubahan revisi orang lain",
 	"twocolconflict-split-select-all-your-tooltip": "Tekan untuk memilih semua perubahan revisi Anda",
-	"twocolconflict-talk-switch-tooltip": "Ganti urutan"
+	"twocolconflict-split-selected-all-other-tooltip": "Semua perubahan dari revisi lain dipilih",
+	"twocolconflict-split-selected-all-your-tooltip": "Semua perubahan dari revisi Anda dipilih",
+	"twocolconflict-split-select-other-tooltip": "Tekan untuk memilih versi lain",
+	"twocolconflict-split-select-your-tooltip": "Tekan untuk memilih versi Anda",
+	"twocolconflict-split-selected-other-tooltip": "Versi lain dipilih",
+	"twocolconflict-split-selected-your-tooltip": "Versi Anda dipilih",
+	"twocolconflict-split-help-tooltip": "Tampilkan bantuan",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Pos yang Berkonflik",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Sayangnya, seseorang mengirimkan pos bersamaan dengan Anda. Tolong tinjau komentarnya di halaman berikutnya. Jika perlu, Anda bisa mengubah komentar Anda mengubah urutan akhirnya.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Selesaikan masalah",
+	"twocolconflict-talk-header-overview": "Seseorang mengirimkan pos bersamaan dengan Anda. Tolong tinjau komentarnya di halaman berikutnya. Jika perlu, Anda bisa mengubah komentar Anda mengubah urutan akhirnya.",
+	"twocolconflict-talk-your": "Komentar Anda",
+	"twocolconflict-talk-conflicting": "Komentar yang berkonflik",
+	"twocolconflict-talk-switch-tooltip": "Ganti urutan",
+	"twocolconflict-talk-reorder-prompt": "Posisikan komentar Anda terhadap komentar yang berkonflik:",
+	"twocolconflict-talk-same-order": "Tetap setelahnya",
+	"twocolconflict-talk-reverse-order": "Pindah ke sebelumnya"
 }
