@@ -3,10 +3,10 @@
 namespace TwoColConflict\Tests;
 
 use MediaWikiIntegrationTestCase;
-use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
+use RawMessage;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictView;
@@ -227,8 +227,11 @@ TEXT
 				return "<textarea>$text</textarea>";
 			} );
 
-		$localizer = $this->createMock( MessageLocalizer::class );
-		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
+		$localizer = new class implements MessageLocalizer {
+			public function msg( $key, ...$params ) {
+				return new RawMessage( '' );
+			}
+		};
 
 		return new HtmlSplitConflictView( $editableTextComponent, $localizer );
 	}

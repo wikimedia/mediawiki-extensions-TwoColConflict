@@ -9,13 +9,13 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\User\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
-use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\InputWidget;
 use OOUI\Theme;
 use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
+use RawMessage;
 use Title;
 use TwoColConflict\Hooks\TwoColConflictHooks;
 use TwoColConflict\TwoColConflictContext;
@@ -301,12 +301,11 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	private function createOutputPage() {
-		$context = $this->createMock( MessageLocalizer::class );
-		$context->method( 'msg' )->willReturnCallback( function ( $key ) {
-			$msg = $this->createMock( Message::class );
-			$msg->method( 'parse' )->willReturn( "($key)" );
-			return $msg;
-		} );
+		$context = new class implements MessageLocalizer {
+			public function msg( $key, ...$params ) {
+				return new RawMessage( "($key)" );
+			}
+		};
 
 		$outputPage = $this->createMock( OutputPage::class );
 		$outputPage->method( 'getUser' )

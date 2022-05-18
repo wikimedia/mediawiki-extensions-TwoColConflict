@@ -16,12 +16,6 @@
 			<property name="license" value="GPL-2.0-or-later" />
 		</properties>
 	</rule>
-	<rule ref="Squiz.WhiteSpace.FunctionSpacing.AfterLast">
-		<severity>5</severity>
-	</rule>
-	<rule ref="Squiz.WhiteSpace.FunctionSpacing.BeforeFirst">
-		<severity>5</severity>
-	</rule>
 
 	<file>.</file>
 	<arg name="extensions" value="php" />

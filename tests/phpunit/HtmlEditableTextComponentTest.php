@@ -4,10 +4,10 @@ namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWikiIntegrationTestCase;
-use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
+use RawMessage;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
@@ -160,8 +160,11 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function createInstance() {
-		$localizer = $this->createMock( MessageLocalizer::class );
-		$localizer->method( 'msg' )->willReturn( $this->createMock( Message::class ) );
+		$localizer = new class implements MessageLocalizer {
+			public function msg( $key, ...$params ) {
+				return new RawMessage( '' );
+			}
+		};
 
 		return new HtmlEditableTextComponent(
 			$localizer,

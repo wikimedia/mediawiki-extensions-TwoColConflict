@@ -6,12 +6,12 @@ use IBufferingStatsdDataFactory;
 use Language;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Session\SessionId;
-use Message;
 use MessageLocalizer;
 use MockTitleTrait;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use OutputPage;
+use RawMessage;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
@@ -93,12 +93,11 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	private function createOutputPage() {
-		$msg = $this->createMock( Message::class );
-		$msg->method( 'parse' )->willReturn( '' );
-		$msg->method( 'rawParams' )->willReturnSelf();
-
-		$localizer = $this->createMock( MessageLocalizer::class );
-		$localizer->method( 'msg' )->willReturn( $msg );
+		$localizer = new class implements MessageLocalizer {
+			public function msg( $key, ...$params ) {
+				return new RawMessage( '' );
+			}
+		};
 
 		$request = $this->createMock( WebRequest::class );
 		$request->method( 'getBool' )->willReturn( false );
