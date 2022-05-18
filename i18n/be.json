@@ -3,14 +3,15 @@
 		"authors": [
 			"Artsiom91",
 			"Chadyka",
+			"No Sleep till Krupki",
 			"Tomato Cream"
 		]
 	},
 	"twocolconflict": "Канфлікт правак на падставе абзацаў",
 	"twocolconflict-desc": "Паказвае экран з версіямі побач для рашэння канфліктаў правак",
 	"twocolconflictprovidesubmittedtext": "Канфлікт правак:",
-	"twocolconflict-beta-feature-message": "Двухслупковы канфлікт рэдагавання",
-	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагавання ў больш сучасным, двухслупковым выглядзе.",
+	"twocolconflict-beta-feature-message": "Канфлікт правак на падставе абзацаў",
+	"twocolconflict-beta-feature-description": "Паказваць канфлікт правак у пашыраным выглядзе абзацаў.",
 	"twocolconflict-copy-action": "капіраваць поўны тэкст",
 	"twocolconflict-copy-notice": "Поўны вікі-тэкст вашай версіі быў скапіраваны ў буфер абмену (праўкі, зробленыя ніжэй, не ўключаны).",
 	"twocolconflict-copy-tab-action": "паказаць поўны тэкст",
