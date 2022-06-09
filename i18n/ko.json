@@ -9,14 +9,15 @@
 			"SeoJeongHo",
 			"Ykhwong",
 			"렌즈",
-			"밝은소년"
+			"밝은소년",
+			"Bluehill"
 		]
 	},
 	"twocolconflict": "단락 기반 편집 충돌",
 	"twocolconflict-desc": "편집 충돌 해결을 위한 병렬식 편집 병합 화면을 보여줌",
 	"twocolconflictprovidesubmittedtext": "편집 충돌:",
 	"twocolconflict-beta-feature-message": "단락 기반 편집 충돌",
-	"twocolconflict-beta-feature-description": "더 진보된 단락 기반 뷰를 사용하여 편집 충돌 뷰를 표시합니다.",
+	"twocolconflict-beta-feature-description": "더 진보된 단락 기반 보기를 사용하여 편집 충돌 보기를 표시합니다.",
 	"twocolconflict-copy-action": "전체 텍스트 복사",
 	"twocolconflict-copy-notice": "당신이 수정한 판의 전체 위키텍스트를 클립보드에 복사했습니다 (아래에 한 편집은 포함되지 않았습니다).",
 	"twocolconflict-copy-tab-action": "전문 보기",
@@ -58,7 +59,12 @@
 	"twocolconflict-split-reset-warning-accept": "버리기",
 	"twocolconflict-split-collapse-tooltip": "바뀌지 않은 텍스트 접기",
 	"twocolconflict-split-expand-tooltip": "바뀌지 않은 텍스트 펼치기",
+	"twocolconflict-split-selected-other-tooltip": "다른 버전이 선택됨",
+	"twocolconflict-split-selected-your-tooltip": "당신의 버전이 선택됨",
 	"twocolconflict-split-help-tooltip": "도움말 보기",
+	"twocolconflict-split-tour-dialog-message-single-column-view": "유감스럽게도 다른 사람이 당신과 동시에 글을 올렸습니다. 다음 문서의 댓글을 검토하십시오. 필요한 경우 수정하고 최종 순서를 변경할 수 있습니다.",
 	"twocolconflict-talk-header-overview": "어떤 다른 사람이 당신과 같은 시각에 게시했습니다. 아래의 의견을 검토하고 게시할 순서를 정하십세요. 필요한 경우 당신의 기여를 편집할 수 있습니다.",
+	"twocolconflict-talk-your": "당신의 댓글",
+	"twocolconflict-talk-switch-tooltip": "순서 바꾸기",
 	"twocolconflict-talk-reverse-order": "이전으로 이동"
 }
