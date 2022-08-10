@@ -6,11 +6,15 @@
 			"NGC 54"
 		]
 	},
+	"twocolconflict": "Conflict de modificare bazat pe paragrafe",
+	"twocolconflict-desc": "Afișează un ecran de contopire a editărilor una lângă alta pentru rezolvarea conflictelor de modificare",
 	"twocolconflictprovidesubmittedtext": "Conflict de editare:",
 	"twocolconflict-beta-feature-message": "Conflict de modificare bazat pe paragrafe",
 	"twocolconflict-beta-feature-description": "Afișează vizualizarea conflictului de modificare utilizând o vizualizare mai avansată bazată pe paragrafe.",
 	"twocolconflict-copy-action": "copiază tot textul",
 	"twocolconflict-copy-tab-action": "afișare text complet",
+	"twocolconflict-core-ui-hint-close": "Nu mai afișa din nou",
+	"twocolconflict-special-not-saved": "Nepublicat",
 	"twocolconflict-special-malformed-title": "Titlu lipsă sau invalid.",
 	"twocolconflict-split-your-version-header": "Revizia dumneavoastră",
 	"twocolconflict-split-other-version-chosen": "Altă versiune",
