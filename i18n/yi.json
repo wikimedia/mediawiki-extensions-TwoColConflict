@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sol lemon"
+			"Sol lemon",
+			"Pacha Tchernof"
 		]
 	},
-	"twocolconflict-base-selection-own-label": "מיין טעקסט"
+	"twocolconflict-split-reset-warning-cancel": "אַנולירן"
 }
