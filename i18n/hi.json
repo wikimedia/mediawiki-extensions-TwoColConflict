@@ -5,9 +5,20 @@
 			"Gopalindians",
 			"Matma Rex",
 			"Rajatkatiyar10",
-			"Sfic"
+			"Sfic",
+			"Saurmandal"
 		]
 	},
+	"twocolconflict": "अनुच्छेद-आधारित संपादन टकराव",
+	"twocolconflict-desc": "संपादन टकरावों को सुलझाने के लिए संपादनों को मर्ज करने के लिए एक साइड-ब-साइड स्क्रीन दिखाता है",
+	"twocolconflictprovidesubmittedtext": "संपादन टकराव:",
+	"twocolconflict-beta-feature-message": "अनुच्छेद-आधारित संपादन टकराव",
+	"twocolconflict-beta-feature-description": "एक उन्नत अनुच्छेद-आधारित दृष्टि से संपादन टकराव को दिखाएँ।",
+	"twocolconflict-copy-action": "पूरे टेक्स्ट की प्रतिलिपि बनाएँ",
+	"twocolconflict-copy-notice": "आपके अवतरण के पूरे विकिटेक्स्ट की प्रतिलिपि क्लिपबोर्ड पर बना दी गई है (नीचे किए गए संपादन शामिल नहीं हैं)।",
+	"twocolconflict-copy-tab-action": "पूरा टेक्स्ट देखें",
+	"twocolconflict-copy-tab-tooltip": "अपने अवतरण का पूरा विकिटेक्स्ट देखें (नीचे किए गए संपादन शामिल नहीं हैं)। नए टैब में खुलता है।",
+	"twocolconflict-copy-tooltip": "आपके अवतरण के पूरे विकिटेक्स्ट की प्रतिलिपि बनाएँ (नीचे किए गए संपादन शामिल नहीं हैं)।",
 	"twocolconflict-talk-your": "आपका प्रवेश",
 	"twocolconflict-talk-conflicting": "संघर्षपूर्ण प्रवेश"
 }
