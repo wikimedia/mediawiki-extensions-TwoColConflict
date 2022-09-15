@@ -11,7 +11,7 @@
 	"twocolconflict-copy-action": "eilañ testenn glok",
 	"twocolconflict-core-ui-hint-close": "Arabat diskouez se ken",
 	"twocolconflict-special-not-saved": "Hep embann",
-	"twocolconflict-split-current-version-header": "Stumm red eus 1",
+	"twocolconflict-split-current-version-header": "Stumm red eus $1",
 	"twocolconflict-split-not-saved-at": "Hep embann c’hoazh",
 	"twocolconflict-split-choose-version": "Dibabit ur stumm mar plij",
 	"twocolconflict-split-other-version-chosen": "Stumm all",
