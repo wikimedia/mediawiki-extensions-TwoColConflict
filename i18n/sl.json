@@ -6,6 +6,7 @@
 			"Eleassar"
 		]
 	},
+	"twocolconflict-desc": "Zaslonski prikaz pri združevanju urejanja po straneh za odpravljanje navzkrižij urejanja",
 	"twocolconflict-beta-feature-message": "Navzkrižje urejanj po odstavkih",
 	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj z naprednejšim prikazom na podlagi odstavkov",
 	"twocolconflict-copy-action": "Skopiraj vse besedilo",
@@ -24,7 +25,7 @@
 	"twocolconflict-split-tour-dialog-btn-text": "Začnite združevati",
 	"twocolconflict-split-tour-popup-btn-text": "V redu, razumem",
 	"twocolconflict-split-tour-popup1-header": "Razhajajoče se spremembe so prikazane vrstico za vrstico.",
-	"twocolconflict-split-tour-popup1-message": "Ko se vaša redakcija in redakcija drugega uporabnika razlikujeta, sta druga ob drugi prikazani obe redakciji: redakcija drugega uporabnika v rumenem polju na levi strani in vaša redakcija v modrem polju na desni strani.<br /><br />Če med obema redakcijama ni razlike, sta vrstici prikazani v sivih poljih. Ta lahko razširite ali skrčite in po potrebi uredite.",
+	"twocolconflict-split-tour-popup1-message": "Ko se vaša redakcija in redakcija drugega uporabnika razlikujeta, sta druga ob drugi prikazani obe redakciji: redakcija drugega uporabnika v rumenem polju na levi strani in vaša redakcija v modrem polju na desni strani.<br /><br />Če med obema redakcijama ni razlike, sta vrstici prikazani v sivih poljih. Ta lahko razširite ali strnete in po potrebi uredite.",
 	"twocolconflict-split-tour-popup2-header": "Izberite, katere spremembe želite ohraniti",
 	"twocolconflict-split-tour-popup2-message": "Izberite, katero besedilno redakcijo želite ohraniti, tako da kliknete enega od dveh gumbov med posameznim parom vrstic. Redakcijo, ki ste jo izbrali, lahko uredite s klikom ikone pisala. Z uporabo možnosti kopiraj-in-prilepi na tipkovnici ali desnim klikom je mogoče tudi skopirati besedilo iz redakcije, ki je niste izbrali.<br /><br />Da shranite združeno besedilo, morate za vsako spremenjeno vrstico izbrati eno od redakcij.",
 	"twocolconflict-split-edit-tooltip": "Kliknite, da uredite to besedilo",
@@ -32,7 +33,7 @@
 	"twocolconflict-split-reset-tooltip": "Zavrzite vse svoje spremembe tega besedila",
 	"twocolconflict-split-reset-warning": "Zavržem spremembe? Besedilo v tem polju bo ponastavljeno na tako, kakršno je bilo pred pojavom navzkrižja urejanj.",
 	"twocolconflict-split-reset-warning-cancel": "Prekliči",
-	"twocolconflict-split-collapse-tooltip": "Skrči nespremenjeno besedilo",
+	"twocolconflict-split-collapse-tooltip": "Strni nespremenjeno besedilo",
 	"twocolconflict-split-expand-tooltip": "Razširi nespremenjeno besedilo",
 	"twocolconflict-split-select-all-other-tooltip": "Kliknite, da izberete vse spremembe drugega uporabnika",
 	"twocolconflict-split-select-all-your-tooltip": "Kliknite za izbiro vseh sprememb vaše redakcije",
