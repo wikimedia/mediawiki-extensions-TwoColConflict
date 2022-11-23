@@ -29,6 +29,7 @@
 	"twocolconflict-special-header-overview": "Durante la modifica, un altro utente ha modificato la stessa pagina e l'ha pubblicata prima di te. Di seguito è conservata una copia di sola visualizzazione della versione. Eventuali modifiche apportate nell'interfaccia di conflitto di modifica non saranno pubblicate. Per unire le modifiche e risolvere il problema utilizzando l'interfaccia di conflitto di modifica, torna alla scheda precedente.",
 	"twocolconflict-special-not-saved": "Non pubblicata",
 	"twocolconflict-special-malformed-title": "Titolo mancante o non valido.",
+	"twocolconflict-special-expired": "Se non appare più nulla da leggere in questa pagina è perché probabilmente sei incorso in un conflitto di modifiche, ma la sessione è scaduta e il testo generato temporaneamente non è più disponibile.",
 	"twocolconflict-split-header-hint-beta": "Grazie per aver provato questa funzione beta. Puoi aiutare a migliorarla lasciando il tuo parere [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface su questa pagina].",
 	"twocolconflict-split-your-version-header": "La tua versione",
 	"twocolconflict-split-current-version-header": "Versione attuale delle $1",
