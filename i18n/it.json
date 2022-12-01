@@ -10,7 +10,8 @@
 			"Selven",
 			"Senpremì",
 			"Pierpao",
-			"McDutchie"
+			"McDutchie",
+			"Valepert"
 		]
 	},
 	"twocolconflict": "Conflitto di modifiche basato su paragrafo",
@@ -25,6 +26,7 @@
 	"twocolconflict-copy-tooltip": "Copia il wikitesto completo della tua versione negli appunti (le modifiche effettuate qui sotto non sono incluse)",
 	"twocolconflict-core-ui-hint": "È ora disponibile un'interfaccia aggiornata per la risoluzione dei conflitti di modifica. Abilita l'interfaccia d conflitto di modifica basata su paragrafi nelle tue [[Special:Preferences#mw-prefsection-editing|preferenze]] per provarla.",
 	"twocolconflict-core-ui-hint-close": "Non mostrare più",
+	"twocolconflict-preference-enabled": "Abilità l'[[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|interfaccia del conflitto di modifica basata su paragrafo]] per risolvere i conflitti di modifica",
 	"twocolconflict-special-footer-hint": "Chiudi questa pagina per tornare all'interfaccia del conflitto di modifica.",
 	"twocolconflict-special-header-overview": "Durante la modifica, un altro utente ha modificato la stessa pagina e l'ha pubblicata prima di te. Di seguito è conservata una copia di sola visualizzazione della versione. Eventuali modifiche apportate nell'interfaccia di conflitto di modifica non saranno pubblicate. Per unire le modifiche e risolvere il problema utilizzando l'interfaccia di conflitto di modifica, torna alla scheda precedente.",
 	"twocolconflict-special-not-saved": "Non pubblicata",
