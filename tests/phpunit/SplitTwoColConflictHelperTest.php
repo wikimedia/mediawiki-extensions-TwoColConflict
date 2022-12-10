@@ -4,6 +4,7 @@ namespace TwoColConflict\Tests;
 
 use IBufferingStatsdDataFactory;
 use Language;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Session\SessionId;
 use MessageLocalizer;
@@ -43,7 +44,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			$this->createMock( CommentFormatter::class )
 		);
 
 		$this->assertSame( '', $helper->getExplainHeader() );
@@ -60,7 +62,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			$this->createMock( CommentFormatter::class )
 		);
 		$helper->setTextboxes( '<YOURTEXT attribute="">', '<STOREDVERSION attribute="">' );
 
@@ -86,7 +89,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
-			$this->createMock( ResolutionSuggester::class )
+			$this->createMock( ResolutionSuggester::class ),
+			$this->createMock( CommentFormatter::class )
 		);
 
 		$this->assertSame( '', $helper->getEditFormHtmlAfterContent() );

@@ -77,6 +77,7 @@ class TwoColConflictHooks {
 					$baseRevision,
 					$wikiPage->getContentHandler()->getDefaultFormat()
 				),
+				$services->getCommentFormatter(),
 				$services->getMainObjectStash(),
 				$editPage->summary,
 				$services->getUserOptionsLookup()->getOption( $context->getUser(), 'editfont' )
