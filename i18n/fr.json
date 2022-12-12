@@ -18,7 +18,7 @@
 	},
 	"twocolconflict": "Conflit de modification basé sur les paragraphes",
 	"twocolconflict-desc": "Affichage d’un écran de fusion des modifications côte-à-côte pour résoudre les conflits de modification",
-	"twocolconflictprovidesubmittedtext": "Conflit de modification :",
+	"twocolconflictprovidesubmittedtext": "Conflit de modification :",
 	"twocolconflict-beta-feature-message": "Conflit de modification basé sur les paragraphes",
 	"twocolconflict-beta-feature-description": "Afficher le conflit de modification en utilisant une version plus avancée de la vue basée sur les paragraphes.",
 	"twocolconflict-copy-action": "copier tout le texte",
