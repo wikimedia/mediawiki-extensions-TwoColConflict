@@ -153,6 +153,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 			$summary,
 			$language,
 			$localizer,
+			$this->getServiceContainer()->getCommentFormatter(),
 			self::NOW,
 			$revision
 		);

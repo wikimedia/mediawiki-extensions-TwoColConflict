@@ -5,6 +5,7 @@ namespace TwoColConflict;
 use BagOStuff;
 use Html;
 use IBufferingStatsdDataFactory;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\MediaWikiServices;
@@ -33,6 +34,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/** @var ResolutionSuggester */
 	private $resolutionSuggester;
 
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
 	/** @var SubmittedTextCache|null */
 	private $textCache;
 
@@ -50,6 +54,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	 * @param IContentHandlerFactory $contentHandlerFactory
 	 * @param TwoColConflictContext $twoColContext
 	 * @param ResolutionSuggester $resolutionSuggester
+	 * @param CommentFormatter $commentFormatter
 	 * @param BagOStuff|null $textCache
 	 * @param string $newEditSummary
 	 * @param string|null $editFontOption
@@ -62,6 +67,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		IContentHandlerFactory $contentHandlerFactory,
 		TwoColConflictContext $twoColContext,
 		ResolutionSuggester $resolutionSuggester,
+		CommentFormatter $commentFormatter,
 		BagOStuff $textCache = null,
 		string $newEditSummary = '',
 		string $editFontOption = null
@@ -70,6 +76,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 		$this->twoColContext = $twoColContext;
 		$this->resolutionSuggester = $resolutionSuggester;
+		$this->commentFormatter = $commentFormatter;
 		$this->textCache = $textCache ? new SubmittedTextCache( $textCache ) : null;
 		$this->newEditSummary = $newEditSummary;
 		$this->editFontOption = $editFontOption;
@@ -228,7 +235,8 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			$user,
 			$this->newEditSummary,
 			$language,
-			$this->out->getContext()
+			$this->out->getContext(),
+			$this->commentFormatter
 		) )->getHtml( $this->twoColContext->isUsedAsBetaFeature() );
 		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		$out .= ( new HtmlSplitConflictView(

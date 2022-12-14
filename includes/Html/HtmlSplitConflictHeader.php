@@ -5,6 +5,7 @@ namespace TwoColConflict\Html;
 use Html;
 use Language;
 use Linker;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
@@ -73,11 +74,17 @@ class HtmlSplitConflictHeader {
 	private $wikiPageFactory;
 
 	/**
+	 * @var CommentFormatter
+	 */
+	private $commentFormatter;
+
+	/**
 	 * @param Title $title
 	 * @param Authority $authority
 	 * @param string $newEditSummary
 	 * @param Language $language
 	 * @param MessageLocalizer $messageLocalizer
+	 * @param CommentFormatter $commentFormatter
 	 * @param string|int|false $now Current time for testing. Any value the ConvertibleTimestamp
 	 *  class accepts. False for the current time.
 	 * @param RevisionRecord|null $revision Latest revision for testing, derived from the
@@ -89,6 +96,7 @@ class HtmlSplitConflictHeader {
 		string $newEditSummary,
 		Language $language,
 		MessageLocalizer $messageLocalizer,
+		CommentFormatter $commentFormatter,
 		$now = false,
 		RevisionRecord $revision = null
 	) {
@@ -102,6 +110,7 @@ class HtmlSplitConflictHeader {
 		$this->authority = $authority;
 		$this->language = $language;
 		$this->messageLocalizer = $messageLocalizer;
+		$this->commentFormatter = $commentFormatter;
 		$this->now = new ConvertibleTimestamp( $now );
 		$this->newEditSummary = $newEditSummary;
 	}
@@ -206,7 +215,7 @@ class HtmlSplitConflictHeader {
 
 		if ( $summary !== '' ) {
 			$summaryMsg = $this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( Linker::formatComment( $summary, $this->title ) );
+				->rawParams( $this->commentFormatter->format( $summary, $this->title ) );
 			$html .= Html::element( 'br' ) .
 				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
 		}
