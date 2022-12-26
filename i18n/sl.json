@@ -10,6 +10,7 @@
 	"twocolconflict-beta-feature-message": "Navzkrižje urejanj po odstavkih",
 	"twocolconflict-beta-feature-description": "Prikaži navzkrižje urejanj z naprednejšim prikazom na podlagi odstavkov",
 	"twocolconflict-copy-action": "Kopiraj vse besedilo",
+	"twocolconflict-copy-tooltip": "Kopirajte celotno vikibesedilo vaše redakcije v odložišče (spodnja urejanja niso vključena)",
 	"twocolconflict-special-not-saved": "Ni objavljeno",
 	"twocolconflict-split-header-hint-beta": "Hvala za uporabo te beta možnosti. Še dodatno jo lahko pomagate izboljšati, če pustite komentar [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface na tej strani].",
 	"twocolconflict-split-your-version-header": "Vaša redakcija",
