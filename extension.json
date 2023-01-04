@@ -155,7 +155,8 @@
 		"ext.TwoColConflict.JSCheck": {
 			"packageFiles": [
 				"modules/ext.TwoColConflict.JSCheck.js"
-			]
+			],
+			"targets": [ "desktop", "mobile" ]
 		}
 	},
 	"ExtensionMessagesFiles": {

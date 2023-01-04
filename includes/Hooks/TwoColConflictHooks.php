@@ -107,6 +107,7 @@ class TwoColConflictHooks {
 		EditPage $editPage,
 		OutputPage $outputPage
 	) {
+		// What the script does is only used for logging in doEditPageBeforeConflictDiff below
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
 			$outputPage->addModules( 'ext.TwoColConflict.JSCheck' );
 		}
