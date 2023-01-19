@@ -19,7 +19,7 @@ class EditConflictPage extends Page {
 	getDiffText( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
 	getColumn( column ) { return $( this.columnToClass( column ) ); }
 
-	get selectionLabel() { return $( '//div[contains(@class,"mw-twocolconflict-split-selection-row")]/preceding-sibling::div/span' ); }
+	get selectionLabel() { return $( '.mw-twocolconflict-split-row .mw-twocolconflict-split-selector-label > span' ); }
 	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) span' ); }
 	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) input' ); }
 	get otherParagraphAllSelection() { return $( '.mw-twocolconflict-split-selection-header div:nth-child(1) span' ); }
