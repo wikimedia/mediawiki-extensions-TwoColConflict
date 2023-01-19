@@ -13,22 +13,19 @@ describe( 'TwoColConflict', function () {
 		EditConflictPage.showSimpleConflict();
 
 		const initialText = EditConflictPage.selectionLabel.getText();
+		assert.strictEqual( initialText, 'Please select a version' );
 
 		EditConflictPage.yourParagraphSelection.click();
 
 		const yourSelectionText = EditConflictPage.selectionLabel.getText();
-
-		assert(
-			initialText !== yourSelectionText,
+		assert.strictEqual( yourSelectionText, 'Your version',
 			'Your side is selected when you click the row\'s radio button'
 		);
 
 		EditConflictPage.otherParagraphAllSelection.click();
 
 		const otherSelectionText = EditConflictPage.selectionLabel.getText();
-
-		assert(
-			yourSelectionText !== otherSelectionText && initialText !== otherSelectionText,
+		assert.strictEqual( otherSelectionText, 'Other version',
 			'The other side is selected when you click the other side\'s select all button'
 		);
 	} );
