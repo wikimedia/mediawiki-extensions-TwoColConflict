@@ -26,7 +26,7 @@ describe( 'TwoColConflict collapse button', function () {
 		EditConflictPage.getEditor( 'unchanged' ).setValue( unchangedParagraphNewText );
 		EditConflictPage.getResetButton( 'unchanged' ).click();
 
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 2000 } );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed();
 		EditConflictPage.resetConfirmationButton.click();
 		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
 			timeout: 2000,

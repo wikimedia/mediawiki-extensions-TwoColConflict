@@ -48,7 +48,7 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 
 		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', function () {
-			EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 2000 } );
+			EditConflictPage.tourDialogCloseButton.waitForDisplayed();
 			EditConflictPage.tourDialogCloseButton.click();
 
 			assert(
@@ -91,13 +91,13 @@ describe( 'TwoColConflict GuidedTour', function () {
 			);
 
 			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed( { timeout: 2000 } ),
+				EditConflictPage.tourDiffChangePopup.waitForDisplayed(),
 				'Diff change popup has appeared'
 			);
 		} );
 
 		it( 'clicking on a popup\'s close button closes the popup', function () {
-			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed( { timeout: 2000 } );
+			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed();
 			EditConflictPage.tourDiffChangePopupCloseButton.click();
 
 			assert(

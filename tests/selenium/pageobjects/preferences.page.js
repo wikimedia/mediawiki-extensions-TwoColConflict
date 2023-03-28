@@ -37,7 +37,7 @@ class PreferencesPage extends Page {
 
 	hasBetaFeatureSetting() {
 		try {
-			this.twoColBetaLabel.waitForDisplayed( { timeout: 2000 } );
+			this.twoColBetaLabel.waitForDisplayed();
 			return true;
 		} catch ( e ) {
 			return false;

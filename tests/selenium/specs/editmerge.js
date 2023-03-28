@@ -275,7 +275,7 @@ describe( 'TwoColConflict EditUi', function () {
 
 		EditConflictPage.getEditButton( 'other' ).click();
 		EditConflictPage.getResetButton( 'other' ).click();
-		EditConflictPage.resetConfirmationPopup.waitForDisplayed( { timeout: 2000 } );
+		EditConflictPage.resetConfirmationPopup.waitForDisplayed();
 		EditConflictPage.resetConfirmationButton.click();
 		EditConflictPage.resetConfirmationButton.waitForDisplayed( {
 			timeout: 2000,
