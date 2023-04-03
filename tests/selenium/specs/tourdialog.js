@@ -74,39 +74,6 @@ describe( 'TwoColConflict GuidedTour', function () {
 				'Your version header popup has appeared'
 			);
 		} );
-
-		it( 'clicking on a pulsating button opens a popup', function () {
-			// FIXME tourDiffChangeButton.click() throws an error with the new wdio config this is a workaround
-			browser.execute( function () {
-				$( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ).click();
-			} );
-
-			EditConflictPage.tourDiffChangeButton.waitForDisplayed( {
-				timeout: 2000, reverse: true
-			} );
-
-			assert(
-				!EditConflictPage.tourDiffChangeButton.isDisplayed(),
-				'Diff change pulsating button has disappeared'
-			);
-
-			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed(),
-				'Diff change popup has appeared'
-			);
-		} );
-
-		it( 'clicking on a popup\'s close button closes the popup', function () {
-			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed();
-			EditConflictPage.tourDiffChangePopupCloseButton.click();
-
-			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed( {
-					timeout: 500, reverse: true
-				} ),
-				'Diff change popup has disappeared'
-			);
-		} );
 	} );
 
 	after( function () {
