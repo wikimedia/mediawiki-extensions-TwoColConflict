@@ -5,7 +5,7 @@ const assert = require( 'assert' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	TestAccounts = require( '../test_accounts' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	Util = require( '../util' );
 
 class EditConflictPage extends Page {
 	get conflictHeader() { return $( '.mw-twocolconflict-split-header' ); }
@@ -75,9 +75,9 @@ class EditConflictPage extends Page {
 	 *
 	 * @return {Promise} Promise from the mw.Api request
 	 */
-	prepareUserSettings() {
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function () {
+	async prepareUserSettings() {
+		await Util.waitForModuleState( 'mediawiki.base' );
+		return await browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOptions( {
 					'visualeditor-hidebetawelcome': '1',
@@ -95,10 +95,10 @@ class EditConflictPage extends Page {
 	 * @param {boolean} [show] Defaults to true.
 	 * @return {Promise} Promise from the mw.Api request
 	 */
-	toggleHelpDialog( show ) {
+	async toggleHelpDialog( show ) {
 		const hide = show === false;
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function ( setHide ) {
+		await Util.waitForModuleState( 'mediawiki.base' );
+		return await browser.execute( function ( setHide ) {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption(
 					'userjs-twocolconflict-hide-help-dialogue',
@@ -108,13 +108,13 @@ class EditConflictPage extends Page {
 		}, hide );
 	}
 
-	prepareEditConflict() {
-		UserLoginPage.loginAdmin();
-		this.prepareUserSettings();
+	async prepareEditConflict() {
+		await UserLoginPage.loginAdmin();
+		await this.prepareUserSettings();
 	}
 
-	showSimpleConflict() {
-		this.createConflict(
+	async showSimpleConflict() {
+		await this.createConflict(
 			// Includes HTML characters to check for proper escaping throughout the process.
 			// Note the final assertions will look for "Line 1", "Change A" and such only, without
 			// any of the HTML code being visible.
@@ -122,103 +122,103 @@ class EditConflictPage extends Page {
 			'Line<span>1</span>\n\nChange <span lang="de">A</span>',
 			'Line<span>1</span>\n\nChange <span lang="en">B</span>'
 		);
-		this.waitForJS();
+		await this.waitForJS();
 	}
 
-	showBigConflict() {
-		this.createConflict(
+	async showBigConflict() {
+		await this.createConflict(
 			'Line1\nLine2\nLine3\nline4',
 			'Line1\nLine2\nLine3\nChange <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nChange <span lang="en">B</span>'
 		);
-		this.waitForJS();
+		await this.waitForJS();
 	}
 
-	editPage( bot, title, text ) {
-		browser.call( async () => {
+	async editPage( bot, title, text ) {
+		await browser.call( async () => {
 			return await bot.edit( title, text );
 		} );
-		browser.pause( 500 );
+		await browser.pause( 500 );
 	}
 
-	createConflict(
+	async createConflict(
 		startText,
 		otherText,
 		yourText,
 		title = null,
 		section = null
 	) {
-		title = ( title !== null ) ? title : Util.getTestString( 'conflict-title-' );
+		title = ( title !== null ) ? title : ( Util.getTestString( 'conflict-title-' ) );
 
-		this.editPage( TestAccounts.you, title, startText );
+		await this.editPage( ( await TestAccounts.you ), title, startText );
 
 		if ( section !== null ) {
-			EditPage.openSectionForEditing( title, section );
+			await EditPage.openSectionForEditing( title, section );
 		} else {
-			EditPage.openForEditing( title );
+			await EditPage.openForEditing( title );
 		}
 
-		EditPage.content.waitForExist();
+		await ( await EditPage.content ).waitForExist();
 
-		this.editPage( TestAccounts.other, title, otherText );
+		await this.editPage( await TestAccounts.other(), title, otherText );
 
-		EditPage.content.setValue( yourText );
-		EditPage.save.click();
+		await EditPage.content.setValue( yourText );
+		await EditPage.save.click();
 	}
 
-	waitForJS() {
-		Util.waitForModuleState( 'ext.TwoColConflict.SplitJs' );
+	async waitForJS() {
+		await Util.waitForModuleState( 'ext.TwoColConflict.SplitJs' );
 	}
 
-	testNoJs() {
-		return browser.setCookies( {
+	async testNoJs() {
+		return await browser.setCookies( {
 			name: 'mw-twocolconflict-test-nojs',
 			value: '1'
 		} );
 	}
 
-	assertUnchangedIsCollapsed() {
+	async assertUnchangedIsCollapsed() {
 		assert(
-			this.fadeOverlay.isDisplayed(),
+			await this.fadeOverlay.isDisplayed(),
 			'an overlay fades the collapsed text'
 		);
 		assert(
-			this.collapsedParagraph.isDisplayed(),
+			await this.collapsedParagraph.isDisplayed(),
 			'the collapsed paragraph text is visible'
 		);
 		assert(
-			!this.expandedParagraph.isDisplayed(),
+			!( await this.expandedParagraph.isDisplayed() ),
 			'the expanded paragraph text is hidden'
 		);
 		assert(
-			this.expandButton.isDisplayed(),
+			await this.expandButton.isDisplayed(),
 			'the expand button is visible'
 		);
 		assert(
-			!this.collapseButton.isDisplayed(),
+			!( await this.collapseButton.isDisplayed() ),
 			'the collapse button is hidden'
 		);
 	}
 
-	assertUnchangedIsExpanded() {
+	async assertUnchangedIsExpanded() {
 		assert(
-			!this.fadeOverlay.isDisplayed(),
+			!( await this.fadeOverlay.isDisplayed() ),
 			'no overlay fades the collapsed text'
 		);
 		assert(
-			this.expandedParagraph.isDisplayed(),
+			await this.expandedParagraph.isDisplayed(),
 			'the expanded paragraph text is visible'
 		);
 		assert(
-			!this.collapsedParagraph.isDisplayed(),
+			!( await this.collapsedParagraph.isDisplayed() ),
 			'the collapsed paragraph text is hidden'
 		);
 		assert(
-			!this.expandButton.isDisplayed(),
+			!( await this.expandButton.isDisplayed() ),
 			'the expand button is hidden'
 		);
 		assert(
-			this.collapseButton.isDisplayed(),
+			await this.collapseButton.isDisplayed(),
 			'the collapse button is visible'
 		);
 	}

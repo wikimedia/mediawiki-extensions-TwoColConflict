@@ -6,61 +6,61 @@ const assert = require( 'assert' ),
 	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
 
 describe( 'TwoColConflict without JavaScript', function () {
-	before( function () {
-		EditConflictPage.prepareEditConflict();
-		EditConflictPage.testNoJs();
+	before( async function () {
+		await EditConflictPage.prepareEditConflict();
+		await EditConflictPage.testNoJs();
 	} );
 
-	it( 'is showing the default version correctly', function () {
-		EditConflictPage.createConflict(
+	it( 'is showing the default version correctly', async function () {
+		await EditConflictPage.createConflict(
 			'A',
 			'B',
 			'C'
 		);
 		// wait for the nojs script to switch CSS visibility
-		EditConflictPage.getEditor( 'your' ).waitForDisplayed();
+		await EditConflictPage.getEditor( 'your' ).waitForDisplayed();
 
-		assert( EditConflictPage.conflictHeader.isDisplayed() );
-		assert( EditConflictPage.conflictView.isDisplayed() );
+		assert( await EditConflictPage.conflictHeader.isDisplayed() );
+		assert( await EditConflictPage.conflictView.isDisplayed() );
 		assert(
-			EditConflictPage.yourParagraphRadio.isSelected() &&
-			!EditConflictPage.otherParagraphRadio.isSelected(),
+			await EditConflictPage.yourParagraphRadio.isSelected() &&
+			!( await EditConflictPage.otherParagraphRadio.isSelected() ),
 			'your side is selected by default'
 		);
 		assert(
-			EditConflictPage.getEditor( 'your' ).isDisplayed() &&
-			EditConflictPage.getEditor( 'other' ).isDisplayed(),
+			await EditConflictPage.getEditor( 'your' ).isDisplayed() &&
+			await EditConflictPage.getEditor( 'other' ).isDisplayed(),
 			'editors are visible right away'
 		);
 	} );
 
-	it( 'is showing the talk page version correctly', function () {
-		TalkConflictPage.createTalkPageConflict();
+	it( 'is showing the talk page version correctly', async function () {
+		await TalkConflictPage.createTalkPageConflict();
 
-		assert( !TalkConflictPage.splitColumn.isExisting() );
+		assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
 
-		TalkConflictPage.orderSelector.waitForDisplayed();
-		assert( TalkConflictPage.keepAfterButton.isSelected() );
+		await TalkConflictPage.orderSelector.waitForDisplayed();
+		assert( await TalkConflictPage.keepAfterButton.isSelected() );
 
-		assert( EditConflictPage.getParagraph( 'other' ) );
-		assert( EditConflictPage.getParagraph( 'your' ) );
-		assert( EditConflictPage.getParagraph( 'copy' ) );
+		assert( await EditConflictPage.getParagraph( 'other' ) );
+		assert( await EditConflictPage.getParagraph( 'your' ) );
+		assert( await EditConflictPage.getParagraph( 'copy' ) );
 	} );
 
-	it( 'handles order selection on the talk page version correctly', function () {
-		TalkConflictPage.createTalkPageConflict();
-		TalkConflictPage.orderSelector.waitForDisplayed();
+	it( 'handles order selection on the talk page version correctly', async function () {
+		await TalkConflictPage.createTalkPageConflict();
+		await TalkConflictPage.orderSelector.waitForDisplayed();
 
-		TalkConflictPage.moveBeforeButton.click();
-		EditConflictPage.submitButton.click();
+		await TalkConflictPage.moveBeforeButton.click();
+		await EditConflictPage.submitButton.click();
 
 		assert.strictEqual(
-			FinishedConflictPage.pageWikitext,
+			await FinishedConflictPage.pageWikitext(),
 			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>\nComment <span lang="de">A</span>'
 		);
 	} );
 
-	after( function () {
-		browser.deleteCookies();
+	after( async function () {
+		await browser.deleteCookies();
 	} );
 } );

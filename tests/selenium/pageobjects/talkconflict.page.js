@@ -1,7 +1,7 @@
 'use strict';
 
 const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	Util = require( '../util' );
 
 class TalkConflictPage {
 	get talkRow() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
@@ -11,34 +11,34 @@ class TalkConflictPage {
 	get moveBeforeButton() { return $( '.mw-twocolconflict-order-selector [value="reverse"]' ); }
 	get swapButton() { return $( '.mw-twocolconflict-single-swap-button' ); }
 
-	createTalkPageConflict() {
-		EditConflictPage.createConflict(
+	async createTalkPageConflict() {
+		await EditConflictPage.createConflict(
 			'Line1\nLine2\nLine3\n',
 			'Line1\nLine2\nLine3\nComment <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>',
-			Util.getTestString( 'Talk:Test-conflict-' )
+			( Util.getTestString( 'Talk:Test-conflict-' ) )
 		);
-		this.talkRow.waitForDisplayed();
+		await this.talkRow.waitForDisplayed();
 	}
 
-	editMyComment( newText ) {
-		EditConflictPage.getEditButton( 'your' ).click();
-		EditConflictPage.getEditor( 'your' ).setValue( newText );
-		EditConflictPage.getSaveButton( 'your' ).click();
+	async editMyComment( newText ) {
+		await EditConflictPage.getEditButton( 'your' ).click();
+		await EditConflictPage.getEditor( 'your' ).setValue( newText );
+		await EditConflictPage.getSaveButton( 'your' ).click();
 	}
 
-	isOtherBlockFirst() {
+	async isOtherBlockFirst() {
 		const rows = $$( '.mw-twocolconflict-single-column' );
 		// FIXME: This assumes that the tested conflict shows "copy" and then the conflict.
-		return rows[ 1 ].getAttribute( 'class' ).includes( 'mw-twocolconflict-split-delete' ) &&
-			rows[ 2 ].getAttribute( 'class' ).includes( 'mw-twocolconflict-split-add' );
+		return ( await rows[ 1 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-delete' ) &&
+			( await rows[ 2 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-add' );
 	}
 
-	isYourBlockFirst() {
+	async isYourBlockFirst() {
 		const rows = $$( '.mw-twocolconflict-single-column' );
 		// FIXME: This assumes that the tested conflict shows "copy" and then the conflict.
-		return rows[ 1 ].getAttribute( 'class' ).includes( 'mw-twocolconflict-split-add' ) &&
-			rows[ 2 ].getAttribute( 'class' ).includes( 'mw-twocolconflict-split-delete' );
+		return ( await rows[ 1 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-add' ) &&
+			( await rows[ 2 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-delete' );
 	}
 }
 

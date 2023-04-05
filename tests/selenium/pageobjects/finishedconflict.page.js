@@ -1,13 +1,13 @@
 'use strict';
 
 const Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	Util = require( '../util' );
 
 class FinishedConflictPage extends Page {
-	get pageWikitext() {
-		Util.waitForModuleState( 'mediawiki.base' );
+	async pageWikitext() {
+		await Util.waitForModuleState( 'mediawiki.base' );
 
-		const result = browser.executeAsync( ( done ) =>
+		const result = await browser.execute( ( done ) =>
 			mw.loader.using( 'mediawiki.api' ).then( () =>
 				new mw.Api().get( {
 					action: 'query',

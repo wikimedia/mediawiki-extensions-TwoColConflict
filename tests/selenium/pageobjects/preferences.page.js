@@ -1,21 +1,21 @@
 'use strict';
 
 const Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+	Util = require( '../util' );
 
 class PreferencesPage extends Page {
 	get betaPreferencesLink() { return $( '//span[text() = "(prefs-betafeatures)"]' ); }
 	get twoColBetaLabel() { return $( '//*[@name="wptwocolconflict"]//parent::span' ); }
 
-	openBetaFeaturesPreferences() {
-		super.openTitle( 'Special:Preferences', { uselang: 'qqx' } );
-		this.betaPreferencesLink.waitForDisplayed();
-		this.betaPreferencesLink.click();
+	async openBetaFeaturesPreferences() {
+		await super.openTitle( 'Special:Preferences', { uselang: 'qqx' } );
+		await this.betaPreferencesLink.waitForDisplayed();
+		await this.betaPreferencesLink.click();
 	}
 
-	shouldUseTwoColConflict( shouldUse ) {
-		Util.waitForModuleState( 'mediawiki.base' );
-		return browser.execute( function ( use ) {
+	async shouldUseTwoColConflict( shouldUse ) {
+		await Util.waitForModuleState( 'mediawiki.base' );
+		return await browser.execute( function ( use ) {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption(
 					'twocolconflict-enabled',
@@ -25,10 +25,10 @@ class PreferencesPage extends Page {
 		}, shouldUse );
 	}
 
-	resetCoreHintVisibility() {
-		Util.waitForModuleState( 'mediawiki.base' );
+	async resetCoreHintVisibility() {
+		await Util.waitForModuleState( 'mediawiki.base' );
 
-		return browser.execute( function () {
+		return await browser.execute( function () {
 			return mw.loader.using( 'mediawiki.api' ).then( function () {
 				return new mw.Api().saveOption( 'userjs-twocolconflict-hide-core-hint', null );
 			} );
