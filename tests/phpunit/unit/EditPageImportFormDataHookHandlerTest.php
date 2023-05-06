@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests;
 
-use EditPage;
+use MediaWiki\EditPage\EditPage;
 use TwoColConflict\Hooks\EditPageImportFormDataHookHandler;
 use WebRequest;
 use Wikimedia\TestingAccessWrapper;

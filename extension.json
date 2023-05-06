@@ -14,7 +14,7 @@
 	"type": "other",
 	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"config": {
 		"TwoColConflictBetaFeature": {
@@ -156,7 +156,10 @@
 			"packageFiles": [
 				"modules/ext.TwoColConflict.JSCheck.js"
 			],
-			"targets": [ "desktop", "mobile" ]
+			"targets": [
+				"desktop",
+				"mobile"
+			]
 		}
 	},
 	"ExtensionMessagesFiles": {

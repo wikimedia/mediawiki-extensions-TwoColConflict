@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Hooks;
 
-use EditPage;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use TwoColConflict\ConflictFormValidator;
 use TwoColConflict\SplitConflictMerger;

@@ -2,9 +2,9 @@
 
 namespace TwoColConflict\Tests;
 
-use EditPage;
 use ExtensionRegistry;
 use IContextSource;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;

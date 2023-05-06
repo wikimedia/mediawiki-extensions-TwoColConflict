@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Hooks;
 
-use EditPage;
 use ExtensionRegistry;
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;

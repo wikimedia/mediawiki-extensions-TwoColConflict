@@ -61,7 +61,7 @@ class HtmlEditableTextComponent {
 	): string {
 		$diffHtml = trim( $diffHtml, "\r\n\u{00A0}" );
 		$editorText = trim( (string)$text, "\r\n" );
-		// This duplicates what EditPage::addNewLineAtEnd() does
+		// This duplicates what \MediaWiki\EditPage\EditPage::addNewLineAtEnd() does
 		if ( $editorText !== '' ) {
 			$editorText .= "\n";
 		}
