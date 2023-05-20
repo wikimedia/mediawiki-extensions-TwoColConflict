@@ -11,7 +11,7 @@ $.extend( Settings.prototype, {
 	 */
 	loadSetting: function ( name, defaultValue ) {
 		var setting;
-		if ( !mw.user.isAnon() ) {
+		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-twocolconflict-' + name );
 		} else {
 			setting = mw.storage.get( 'mw-twocolconflict-' + name );
@@ -37,7 +37,7 @@ $.extend( Settings.prototype, {
 	 * @param {string} value
 	 */
 	saveSetting: function ( name, value ) {
-		if ( !mw.user.isAnon() ) {
+		if ( mw.user.isNamed() ) {
 			( new mw.Api() ).saveOption( 'userjs-twocolconflict-' + name, value );
 		} else {
 			if ( !mw.storage.set( 'mw-twocolconflict-' + name, value ) ) {
