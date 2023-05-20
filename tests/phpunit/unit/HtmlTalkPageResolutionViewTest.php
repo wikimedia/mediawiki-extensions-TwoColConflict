@@ -26,7 +26,7 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 		parent::tearDown();
 	}
 
-	public function provideDiffs() {
+	public static function provideDiffs() {
 		return [
 			'empty' => [ [], 0, 0, [] ],
 			'single row' => [

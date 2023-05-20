@@ -14,7 +14,7 @@ use Wikimedia\TestingAccessWrapper;
  */
 class EditPageImportFormDataHookHandlerTest extends \MediaWikiUnitTestCase {
 
-	public function provideWebRequests() {
+	public static function provideWebRequests() {
 		return [
 			'empty request' => [ [], '' ],
 			'no content' => [ [ 'mw-twocolconflict-split-content' => [], ], '' ],
@@ -148,7 +148,7 @@ class EditPageImportFormDataHookHandlerTest extends \MediaWikiUnitTestCase {
 		return $request;
 	}
 
-	public function provideTalkPageRequests() {
+	public static function provideTalkPageRequests() {
 		return [
 			'empty' => [
 				'contentRows' => [],

@@ -47,7 +47,7 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 		);
 	}
 
-	public function provideMakeCacheKey() {
+	public static function provideMakeCacheKey() {
 		return [
 			'logged-in user, non-main namespace' => [
 				'title' => 'Project:TestArticle',

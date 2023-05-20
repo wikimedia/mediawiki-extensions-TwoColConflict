@@ -60,10 +60,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $result );
 	}
 
-	public function configurationProvider() {
-		$defaultUser = $this->createUserOptionsLookup();
-		$betaUser = $this->createUserOptionsLookup( '1', '1' );
-		$optOutUser = $this->createUserOptionsLookup( '0' );
+	public static function configurationProvider() {
+		$defaultUser = self::createUserOptionsLookup();
+		$betaUser = self::createUserOptionsLookup( '1', '1' );
+		$optOutUser = self::createUserOptionsLookup( '0' );
 
 		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
 		$talkPage = Title::makeTitle( NS_TALK, __CLASS__ );
@@ -116,7 +116,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @dataProvider configurationProviderNoBetaFeatures
+	 * @dataProvider configurationNoBetaFeaturesProvider
 	 */
 	public function testShouldTwoColConflictBeShown_noBetaFeatures(
 		bool $betaConfig,
@@ -134,9 +134,9 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $result );
 	}
 
-	public function configurationProviderNoBetaFeatures() {
-		$defaultUser = $this->createUserOptionsLookup();
-		$betaUser = $this->createUserOptionsLookup( '1', '1' );
+	public static function configurationNoBetaFeaturesProvider() {
+		$defaultUser = self::createUserOptionsLookup();
+		$betaUser = self::createUserOptionsLookup( '1', '1' );
 
 		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
 
@@ -169,7 +169,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		/** @var TwoColConflictContext $twoColContext */
 		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext(
 			$this->createConfig( false ),
-			$this->createUserOptionsLookup( $editingPreference, $betaPreference ),
+			self::createUserOptionsLookup( $editingPreference, $betaPreference ),
 			$this->createExtensionRegistry()
 		) );
 
@@ -177,7 +177,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedResult, $result );
 	}
 
-	public function provideHasUserEnabledFeature() {
+	public static function provideHasUserEnabledFeature() {
 		// Note that 'editing' => null is impossible from the point of view of this
 		//  function, in other words null and true are indistinguishable because the
 		//  default value has already been merged into the option.
@@ -215,7 +215,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		];
 	}
 
-	private function createUserOptionsLookup( string $enabled = '1', ?string $beta = null ): UserOptionsLookup {
+	private static function createUserOptionsLookup( string $enabled = '1', ?string $beta = null ): UserOptionsLookup {
 		return new StaticUserOptionsLookup( [], [
 			TwoColConflictContext::BETA_PREFERENCE_NAME => $beta,
 			TwoColConflictContext::ENABLED_PREFERENCE => $enabled,
@@ -247,7 +247,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedResult, $result );
 	}
 
-	public function provideShouldCoreHintBeShown() {
+	public static function provideShouldCoreHintBeShown() {
 		return [
 			[
 				'isRegistered' => false,

@@ -12,7 +12,7 @@ use TwoColConflict\SplitConflictUtils;
  */
 class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 
-	public function provideSplitText() {
+	public static function provideSplitText() {
 		return [
 			[
 				"A\nB\nC",
@@ -48,7 +48,7 @@ class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 		$this->assertSame( $expected, SplitConflictUtils::splitText( $text ) );
 	}
 
-	public function provideLinesToMerge() {
+	public static function provideLinesToMerge() {
 		return [
 			'empty' => [
 				[],
@@ -76,7 +76,7 @@ class SplitConflictUtilsTest extends \MediaWikiUnitTestCase {
 		$this->assertSame( $expected, SplitConflictUtils::mergeTextLines( $lines ) );
 	}
 
-	public function provideLinks() {
+	public static function provideLinks() {
 		return [
 			'regular link' => [
 				'<a href="#test">',

@@ -33,7 +33,7 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( 'readonly', $html );
 	}
 
-	public function provideEditorTexts() {
+	public static function provideEditorTexts() {
 		return [
 			'escaping' => [ '<script>alert()</script>', "&lt;script>alert()&lt;/script>\n", '0' ],
 
@@ -79,7 +79,7 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( ">$expectedText</textarea>", $html );
 	}
 
-	public function provideRawTextareaContents() {
+	public static function provideRawTextareaContents() {
 		return [
 			// A leading newline needs to be duplicated
 			'newline only' => [ "\n", "\n\n" ],
@@ -104,7 +104,7 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( ">$expected</textarea>", $html );
 	}
 
-	public function provideExtraLinefeeds() {
+	public static function provideExtraLinefeeds() {
 		return [
 			[ null, '0' ],
 			[ '', '0,was-empty' ],
@@ -129,7 +129,7 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $component->countExtraLineFeeds( $text ) );
 	}
 
-	public function provideRowsForText() {
+	public static function provideRowsForText() {
 		return [
 			[ "a", 3 ],
 			[ "a\nb", 3 ],

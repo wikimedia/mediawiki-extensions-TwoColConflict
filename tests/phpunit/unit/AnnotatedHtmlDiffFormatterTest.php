@@ -28,7 +28,7 @@ class AnnotatedHtmlDiffFormatterTest extends \MediaWikiUnitTestCase {
 		$this->assertSame( $expectedOutput, $output );
 	}
 
-	public function provideFormat() {
+	public static function provideFormat() {
 		return [
 			[
 				'before' => 'Just text.',
@@ -457,7 +457,7 @@ TEXT
 		$this->assertSame( $expectedOutput, $output );
 	}
 
-	public function provideFormatWithMarkup() {
+	public static function provideFormatWithMarkup() {
 		return [
 			'copy' => [
 				'before' => 'Text with [markup] <references />.',

@@ -32,7 +32,7 @@ class HtmlSplitConflictViewTest extends MediaWikiIntegrationTestCase {
 		parent::tearDown();
 	}
 
-	public function provideIntegrationTests() {
+	public static function provideIntegrationTests() {
 		return [
 			'added line' => [ "A\nC", "A\nB\nC", 3, 4 ],
 			'changed line' => [ "A\nB\nC", "A\nX\nC", 3, 4 ],
@@ -67,7 +67,7 @@ class HtmlSplitConflictViewTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedCells, substr_count( $html, 'mw-twocolconflict-split-column' ) );
 	}
 
-	public function provideGetHtml() {
+	public static function provideGetHtml() {
 		// inputs inspired by the AnnotatedHtmlDiffFormatterTest
 		return [
 			[

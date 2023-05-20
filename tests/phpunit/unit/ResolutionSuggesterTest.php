@@ -17,7 +17,7 @@ use Wikimedia\TestingAccessWrapper;
  */
 class ResolutionSuggesterTest extends MediaWikiUnitTestCase {
 
-	public function provideSuggestion() {
+	public static function provideSuggestion() {
 		return [
 			[
 				'base' => '',

@@ -164,7 +164,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedEditing, (bool)$fetchedEditing );
 	}
 
-	public function provideGetOption() {
+	public static function provideGetOption() {
 		return [
 			[
 				'origBeta' => 0,
@@ -236,7 +236,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->assertSame( $newEditing, (bool)$fetchedEditing );
 	}
 
-	public function provideSetOption() {
+	public static function provideSetOption() {
 		return [
 			[
 				'origBeta' => null,

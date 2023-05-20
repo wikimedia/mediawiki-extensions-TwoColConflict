@@ -28,7 +28,7 @@ class ConflictFormValidatorTest extends \MediaWikiUnitTestCase {
 		$this->assertTrue( $merger->validateRequest( $this->createRequest( [] ) ) );
 	}
 
-	public function provideRequests() {
+	public static function provideRequests() {
 		return [
 			'Empty post' => [
 				'params' => [],
