@@ -182,7 +182,7 @@ class TwoColConflictHooks {
 						$user,
 						$context->getTitle()
 					),
-					'isAnon' => !$user->isRegistered(),
+					'isAnon' => !$user->isNamed(),
 					'editCount' => (int)$user->getEditCount(),
 					'pageNs' => $context->getTitle()->getNamespace(),
 					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
