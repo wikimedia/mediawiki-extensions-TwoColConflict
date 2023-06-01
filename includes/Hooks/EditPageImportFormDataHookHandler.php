@@ -54,7 +54,7 @@ class EditPageImportFormDataHookHandler {
 
 		if ( $request->getBool( 'mw-twocolconflict-disable-core-hint' ) ) {
 			$user = $editPage->getContext()->getUser();
-			if ( $user->isRegistered() ) {
+			if ( $user->isNamed() ) {
 				$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
 				$userOptionsManager->setOption( $user, TwoColConflictContext::HIDE_CORE_HINT_PREFERENCE, '1' );
 				$userOptionsManager->saveOptions( $user );
