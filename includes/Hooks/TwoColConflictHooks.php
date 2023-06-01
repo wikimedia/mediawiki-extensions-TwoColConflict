@@ -5,6 +5,7 @@ namespace TwoColConflict\Hooks;
 use ExtensionRegistry;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\EventLogging\EventLogging;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonInputWidget;
@@ -252,13 +253,13 @@ class TwoColConflictHooks {
 	public function doGetBetaFeaturePreferences( array &$prefs ) {
 		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			$config = MediaWikiServices::getInstance()->getMainConfig();
-			$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
+			$path = $config->get( MainConfigNames::ExtensionAssetsPath );
 			$prefs[TwoColConflictContext::BETA_PREFERENCE_NAME] = [
 				'label-message' => 'twocolconflict-beta-feature-message',
 				'desc-message' => 'twocolconflict-beta-feature-description',
 				'screenshot' => [
-					'ltr' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-ltr.svg",
-					'rtl' => "$extensionAssetsPath/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",
+					'ltr' => "$path/TwoColConflict/resources/TwoColConflict-beta-features-ltr.svg",
+					'rtl' => "$path/TwoColConflict/resources/TwoColConflict-beta-features-rtl.svg",
 				],
 				'info-link'
 					=> 'https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Two_Column_Edit_Conflict_View',

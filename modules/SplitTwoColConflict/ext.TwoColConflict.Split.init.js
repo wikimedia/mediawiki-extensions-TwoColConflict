@@ -323,10 +323,8 @@ function validateForm() {
 		var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
 			$checked = $row.find( 'input:checked' );
 
-		if ( $checked.length ) {
-			$row.removeClass( 'mw-twocolconflict-no-selection' );
-		} else {
-			$row.addClass( 'mw-twocolconflict-no-selection' );
+		$row.toggleClass( 'mw-twocolconflict-no-selection', !$checked.length );
+		if ( !$checked.length ) {
 			isFormValid = false;
 		}
 	} );
