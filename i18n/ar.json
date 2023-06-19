@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Asma",
 			"Dr. Mohammed",
 			"FShbib",
 			"Meno25",
@@ -23,8 +24,8 @@
 	"twocolconflict-preference-enabled": "فعّل [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|واجهة تعارض التحرير المُستندة على الفقرات]] لحل تضاربات التحرير",
 	"twocolconflict-special-footer-hint": "أغلق الصفحة الحالية وعد إلى واجهة تضارب التحرير.",
 	"twocolconflict-special-not-saved": "غير منشورة",
-	"twocolconflict-split-header-hint": "ساعد في تحسين هذه الأداة بالتعليق في [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View هذه الصفحة].",
-	"twocolconflict-split-header-hint-beta": "نشكرك على استخدام هذه الميزة التجريبية، يمكنك المساعدة في تحسينها بشكل أكبر، إذا تركت تغذية راجعة [//www.mediawiki.org/wiki/Help_talk:Two_Column_Edit_Conflict_View في هذه الصفحة].",
+	"twocolconflict-split-header-hint": "يمكنك المساعدة في تحسين هذه الميزة بشكل أكبر ، إذا تركت تعليقات على [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface the project's talk page].",
+	"twocolconflict-split-header-hint-beta": "شكرا لك على استخدام هذه الميزة التجريبية. يمكنك المساعدة في تحسينه بشكل أكبر ، إذا تركت تعليقًا بشأنه [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface the project's talk page].",
 	"twocolconflict-split-header-overview": "أثناء قيامك بالتحرير، قام مستخدم آخر بتحرير نفس الصفحة ونشرها قبلك. يرجى مراجعة كلا النسختين ودمجهما. سيتم حفظ النص في المربعات المحددة فقط عند النقر \"{{int:publishchanges}}\".",
 	"twocolconflict-split-your-version-header": "نسختك",
 	"twocolconflict-split-current-version-header": "آخر نسخة في $1",
