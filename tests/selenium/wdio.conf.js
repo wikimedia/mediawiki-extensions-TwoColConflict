@@ -8,5 +8,6 @@ exports.config = { ...config,
 	//
 	// Example:
 	// logLevel: 'info',
-	waitforTimeout: 5000
+	waitforTimeout: 5000,
+	maxInstances: 4
 };
