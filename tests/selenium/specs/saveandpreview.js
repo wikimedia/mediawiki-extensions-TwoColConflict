@@ -39,8 +39,8 @@ describe( 'TwoColConflict save and preview', function () {
 		await EditConflictPage.waitForJS();
 
 		// a user editing a different section while the initial conflict is still being resolved
-		await EditConflictPage.editPage(
-			( await TestAccounts.other() ),
+		await EditConflictPage.apiEditPage(
+			await TestAccounts.otherBot(),
 			title,
 			'==A==\nEdit3\n==B==\nEdit1 <span lang="de">Other</span>'
 		);
@@ -68,7 +68,7 @@ describe( 'TwoColConflict save and preview', function () {
 		await EditConflictPage.waitForJS();
 
 		// a user editing in a line affected by the conflict above
-		await EditConflictPage.editPage( await TestAccounts.other(), title, 'Line1\nThird Change C' );
+		await EditConflictPage.apiEditPage( await TestAccounts.otherBot(), title, 'Line1\nThird Change C' );
 
 		await EditConflictPage.yourParagraphSelection.click();
 		await EditConflictPage.getEditButton( 'your' ).click();

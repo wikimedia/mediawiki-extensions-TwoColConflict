@@ -1,11 +1,13 @@
 'use strict';
 
 const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' );
+	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	TestAccounts = require( '../test_accounts' );
 
 describe( 'TwoColConflict GuidedTour', function () {
 	before( async function () {
-		await EditConflictPage.prepareEditConflict();
+		await TestAccounts.loginAsUser();
+		await EditConflictPage.prepareUserSettings();
 	} );
 
 	describe( 'on initial view', function () {

@@ -132,7 +132,7 @@ class EditConflictPage extends Page {
 		await this.waitForJS();
 	}
 
-	async editPage( bot, title, text ) {
+	async apiEditPage( bot, title, text ) {
 		await browser.call( async () => {
 			return await bot.edit( title, text );
 		} );
@@ -148,19 +148,22 @@ class EditConflictPage extends Page {
 	) {
 		title = ( title !== null ) ? title : ( Util.getTestString( 'conflict-title-' ) );
 
-		await this.editPage( ( await TestAccounts.you ), title, startText );
+		// set initial page content
+		await this.apiEditPage( await TestAccounts.adminBot, title, startText );
 
+		// open editor and change the initial content
 		if ( section !== null ) {
 			await EditPage.openSectionForEditing( title, section );
 		} else {
 			await EditPage.openForEditing( title );
 		}
-
-		await ( await EditPage.content ).waitForExist();
-
-		await this.editPage( await TestAccounts.other(), title, otherText );
-
+		await EditPage.content.waitForExist();
 		await EditPage.content.setValue( yourText );
+
+		// conflicting edit by another party in the background
+		await this.apiEditPage( await TestAccounts.otherBot(), title, otherText );
+
+		// should trigger the edit conflict UI
 		await EditPage.save.click();
 	}
 
