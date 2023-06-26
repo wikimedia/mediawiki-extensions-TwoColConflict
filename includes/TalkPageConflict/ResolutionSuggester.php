@@ -2,11 +2,11 @@
 
 namespace TwoColConflict\TalkPageConflict;
 
-use MediaWiki\Diff\ComplexityException;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\SplitConflictUtils;
+use Wikimedia\Diff\ComplexityException;
 
 /**
  * @license GPL-2.0-or-later

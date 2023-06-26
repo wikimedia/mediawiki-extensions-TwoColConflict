@@ -47,6 +47,10 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		Title $title,
 		bool $expected
 	) {
+		if ( $betaConfig ) {
+			$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
+		}
+
 		$user = $this->createMock( User::class );
 		// Note: Only needed by BetaFeatures
 		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
