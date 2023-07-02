@@ -56,7 +56,7 @@ describe( 'TwoColConflict', function () {
 	} );
 
 	it( 'shows a dismissible hint on the core edit conflict interface', async function () {
-		if ( ( await browser.config.baseUrl ).includes( 'beta.wmflabs.org' ) ) {
+		if ( browser.config.baseUrl.includes( 'beta.wmflabs.org' ) ) {
 			// FIXME This test does not work on the beta cluster. No idea why.
 			this.skip( 'Skipping, very flaky on the beta cluster' );
 		}
@@ -65,7 +65,7 @@ describe( 'TwoColConflict', function () {
 		} catch ( e ) {
 			this.skip( 'Failed to load beta preferences.' );
 		}
-		if ( PreferencesPage.hasBetaFeatureSetting() ) {
+		if ( await PreferencesPage.hasBetaFeatureSetting() ) {
 			this.skip( 'Is run in beta feature mode.' );
 		}
 		await PreferencesPage.shouldUseTwoColConflict( false );

@@ -15,29 +15,27 @@ class PreferencesPage extends Page {
 
 	async shouldUseTwoColConflict( shouldUse ) {
 		await Util.waitForModuleState( 'mediawiki.base' );
-		return await browser.execute( function ( use ) {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOption(
-					'twocolconflict-enabled',
-					use ? '1' : '0'
-				);
-			} );
+		return await browser.execute( async ( use ) => {
+			await mw.loader.using( 'mediawiki.api' );
+			return new mw.Api().saveOption(
+				'twocolconflict-enabled',
+				use ? '1' : '0'
+			);
 		}, shouldUse );
 	}
 
 	async resetCoreHintVisibility() {
 		await Util.waitForModuleState( 'mediawiki.base' );
 
-		return await browser.execute( function () {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOption( 'userjs-twocolconflict-hide-core-hint', null );
-			} );
+		return await browser.execute( async () => {
+			await mw.loader.using( 'mediawiki.api' );
+			return new mw.Api().saveOption( 'userjs-twocolconflict-hide-core-hint', null );
 		} );
 	}
 
-	hasBetaFeatureSetting() {
+	async hasBetaFeatureSetting() {
 		try {
-			this.twoColBetaLabel.waitForDisplayed();
+			await this.twoColBetaLabel.waitForDisplayed();
 			return true;
 		} catch ( e ) {
 			return false;
