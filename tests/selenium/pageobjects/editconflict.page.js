@@ -77,16 +77,15 @@ class EditConflictPage extends Page {
 	 */
 	async prepareUserSettings() {
 		await Util.waitForModuleState( 'mediawiki.base' );
-		return await browser.execute( function () {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOptions( {
-					'visualeditor-hidebetawelcome': '1',
-					'visualeditor-betatempdisable': '1',
-					useeditwarning: '0',
-					'twocolconflict-enabled': '1',
-					twocolconflict: '1',
-					'userjs-twocolconflict-hide-help-dialogue': '1'
-				} );
+		return await browser.execute( async () => {
+			await mw.loader.using( 'mediawiki.api' );
+			return new mw.Api().saveOptions( {
+				'visualeditor-hidebetawelcome': '1',
+				'visualeditor-betatempdisable': '1',
+				useeditwarning: '0',
+				'twocolconflict-enabled': '1',
+				twocolconflict: '1',
+				'userjs-twocolconflict-hide-help-dialogue': '1'
 			} );
 		} );
 	}
@@ -98,13 +97,12 @@ class EditConflictPage extends Page {
 	async toggleHelpDialog( show ) {
 		const hide = show === false;
 		await Util.waitForModuleState( 'mediawiki.base' );
-		return await browser.execute( function ( setHide ) {
-			return mw.loader.using( 'mediawiki.api' ).then( function () {
-				return new mw.Api().saveOption(
-					'userjs-twocolconflict-hide-help-dialogue',
-					setHide ? '1' : '0'
-				);
-			} );
+		return await browser.execute( async ( setHide ) => {
+			await mw.loader.using( 'mediawiki.api' );
+			return new mw.Api().saveOption(
+				'userjs-twocolconflict-hide-help-dialogue',
+				setHide ? '1' : '0'
+			);
 		}, hide );
 	}
 
@@ -171,7 +169,7 @@ class EditConflictPage extends Page {
 	}
 
 	async testNoJs() {
-		return await browser.setCookies( {
+		await browser.setCookies( {
 			name: 'mw-twocolconflict-test-nojs',
 			value: '1'
 		} );
