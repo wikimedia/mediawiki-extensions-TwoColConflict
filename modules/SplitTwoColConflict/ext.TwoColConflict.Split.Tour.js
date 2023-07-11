@@ -10,7 +10,7 @@
  * @param {string} config.close button text for the dialog window
  * @constructor
  */
-var Tour = function ( windowManager, config ) {
+const Tour = function ( windowManager, config ) {
 	this.windowManager = windowManager;
 	this.config = config;
 };
@@ -41,7 +41,7 @@ $.extend( Tour.prototype, {
 	 * Creates the initial dialog window
 	 */
 	createDialog: function () {
-		var self = this;
+		const self = this;
 
 		function TourDialog( config ) {
 			this.panel = config.panel;
@@ -59,12 +59,12 @@ $.extend( Tour.prototype, {
 			this.$body.append( this.content.$element );
 		};
 
-		var closeButton = new OO.ui.ButtonWidget( {
+		const closeButton = new OO.ui.ButtonWidget( {
 			label: this.config.close,
 			flags: [ 'primary', 'progressive' ]
 		} );
 
-		var $panel = $( '<div>' )
+		const $panel = $( '<div>' )
 			.append(
 				$( '<h5>' )
 					.text( this.config.header )
@@ -129,18 +129,18 @@ $.extend( Tour.prototype, {
 	 * @return {OO.ui.PopupWidget}
 	 */
 	createPopup: function ( header, message, $pulsatingButton ) {
-		var self = this;
+		const self = this;
 
-		var closeButton = new OO.ui.ButtonWidget( {
+		const closeButton = new OO.ui.ButtonWidget( {
 			label: mw.msg( 'twocolconflict-split-tour-popup-btn-text' ),
 			flags: [ 'primary', 'progressive' ]
 		} );
 
-		var $content = $( '<div>' )
+		const $content = $( '<div>' )
 			.append( $( '<h5>' ).text( header ) )
 			.append( $( '<p>' ).html( message ) );
 
-		var popup = new OO.ui.PopupWidget( {
+		const popup = new OO.ui.PopupWidget( {
 			position: 'below',
 			align: 'forwards',
 			$content: $content,
@@ -164,7 +164,7 @@ $.extend( Tour.prototype, {
 	},
 
 	showButtons: function () {
-		var self = this;
+		const self = this;
 
 		this.buttons.forEach( function ( data ) {
 			if ( !data.popup ) {
@@ -224,12 +224,12 @@ $.extend( Tour.prototype, {
 	 * @return {OO.ui.ButtonWidget}
 	 */
 	getHelpButton: function ( buttonClasses ) {
-		var self = this;
+		const self = this;
 
 		// The following classes are used here:
 		// * mw-twocolconflict-split-tour-help-button
 		// * mw-twocolconflict-split-tour-help-button-single-column-view
-		var helpButton = new OO.ui.ButtonWidget( {
+		const helpButton = new OO.ui.ButtonWidget( {
 			icon: 'info',
 			framed: false,
 			title: mw.msg( 'twocolconflict-split-help-tooltip' ),
@@ -261,12 +261,12 @@ function isSingleColumnView() {
  * Initializes the tour
  */
 function initialize() {
-	var $body = $( 'body' ),
-		hideDialogSetting,
-		Settings = require( '../ext.TwoColConflict.Settings.js' ),
-		settings = new Settings(),
-		tour,
-		windowManager = new OO.ui.WindowManager();
+	const $body = $( 'body' );
+	const Settings = require( '../ext.TwoColConflict.Settings.js' );
+	const settings = new Settings();
+	const windowManager = new OO.ui.WindowManager();
+	let tour;
+	let hideDialogSetting;
 
 	if ( isSingleColumnView() ) {
 		hideDialogSetting = 'hide-help-dialogue-single-column-view';

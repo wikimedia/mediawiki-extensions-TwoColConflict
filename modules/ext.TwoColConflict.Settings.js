@@ -1,7 +1,7 @@
 /**
  * @constructor
  */
-var Settings = function () {};
+const Settings = function () {};
 
 $.extend( Settings.prototype, {
 	/**
@@ -10,7 +10,7 @@ $.extend( Settings.prototype, {
 	 * @return {string|boolean}
 	 */
 	loadSetting: function ( name, defaultValue ) {
-		var setting;
+		let setting;
 		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-twocolconflict-' + name );
 		} else {
