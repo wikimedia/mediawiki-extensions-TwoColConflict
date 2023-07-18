@@ -1,8 +1,8 @@
-var UtilModule = require( 'ext.TwoColConflict.Util' ),
+const UtilModule = require( 'ext.TwoColConflict.Util' ),
 	RowFormatter = UtilModule.Tracking.private.RowFormatter;
 
 function buildColumn( params, columnClass, type ) {
-	var typeMap = {
+	const typeMap = {
 			other: 'mw-twocolconflict-split-delete',
 			your: 'mw-twocolconflict-split-add',
 			copy: 'mw-twocolconflict-split-copy'
@@ -27,7 +27,7 @@ function buildColumn( params, columnClass, type ) {
 }
 
 function buildSplitSelector( selection ) {
-	var $input = $( '<input>' )
+	const $input = $( '<input>' )
 		.attr( 'type', 'radio' );
 	if ( selection ) {
 		$input
@@ -42,7 +42,7 @@ function buildSplitColumn( params, type ) {
 }
 
 function buildSplitRow( params ) {
-	var $row = $( '<div>' )
+	const $row = $( '<div>' )
 		.addClass( 'mw-twocolconflict-split-row' );
 	if ( params.copy ) {
 		return $row

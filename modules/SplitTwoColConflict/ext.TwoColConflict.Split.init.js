@@ -1,6 +1,6 @@
 'use strict';
 
-var UtilModule = require( 'ext.TwoColConflict.Util' );
+const UtilModule = require( 'ext.TwoColConflict.Util' );
 
 /**
  * @param {jQuery} $column
@@ -66,8 +66,8 @@ function collapseText( $row ) {
  * @param {jQuery} $row
  */
 function enableEditing( $row ) {
-	var $selected = getSelectedColumn( $row ),
-		originalHeight = $selected.find( '.mw-twocolconflict-split-editable' ).height();
+	const $selected = getSelectedColumn( $row );
+	const originalHeight = $selected.find( '.mw-twocolconflict-split-editable' ).height();
 
 	expandText( $row );
 	$row.addClass( 'mw-twocolconflict-split-editing' );
@@ -78,7 +78,7 @@ function enableEditing( $row ) {
 	$row.find( '.mw-twocolconflict-split-editable' ).addClass( getEditorFontClass() );
 
 	$selected.find( 'textarea' ).each( function () {
-		var $editor = $( this );
+		const $editor = $( this );
 		if ( $editor.height() < originalHeight ) {
 			$editor.height( originalHeight );
 		}
@@ -103,12 +103,12 @@ function disableEditing( $row ) {
  * @param {jQuery} $row
  */
 function saveEditing( $row ) {
-	var $selected = getSelectedColumn( $row ),
-		$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-		$diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
+	const $selected = getSelectedColumn( $row );
+	const $editor = $selected.find( '.mw-twocolconflict-split-editor' );
+	const $diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
 
 	if ( !$editor.length || $editor.val() === $editor[ 0 ].defaultValue ) {
-		var $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
+		const $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 		$diffText.html( $resetDiffText.html() );
 	} else {
 		$diffText.text( $editor.val() );
@@ -121,9 +121,9 @@ function saveEditing( $row ) {
  * @param {jQuery} $row
  */
 function resetWarning( $row ) {
-	var $selected = getSelectedColumn( $row ),
-		$editor = $selected.find( '.mw-twocolconflict-split-editor' ),
-		originalText = $editor[ 0 ].defaultValue;
+	const $selected = getSelectedColumn( $row );
+	const $editor = $selected.find( '.mw-twocolconflict-split-editor' );
+	const originalText = $editor[ 0 ].defaultValue;
 
 	// The later merge ignores trailing newlines, they don't cause a change
 	if ( !$editor.length ||
@@ -149,8 +149,8 @@ function resetWarning( $row ) {
 		}
 	).done( function ( confirmed ) {
 		if ( confirmed ) {
-			var $diffText = $selected.find( '.mw-twocolconflict-split-difftext' ),
-				$resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
+			const $diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
+			const $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
 
 			$editor.val( originalText );
 			$diffText.html( $resetDiffText.html() );
@@ -168,8 +168,8 @@ function initButtonEvents() {
 		{ selector: '.mw-twocolconflict-split-collapse-button', onclick: collapseText }
 	].forEach( function ( button ) {
 		$( button.selector ).each( function () {
-			var widget = OO.ui.ButtonWidget.static.infuse( this ),
-				$row = widget.$element.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
+			const widget = OO.ui.ButtonWidget.static.infuse( this );
+			const $row = widget.$element.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
 			widget.on( 'click', function () {
 				button.onclick( $row );
@@ -184,8 +184,8 @@ function isEditableSingleColumn( $column ) {
 
 function initColumnClickEvent() {
 	$( '.mw-twocolconflict-split-column, .mw-twocolconflict-single-column' ).each( function () {
-		var $column = $( this ),
-			$row = $column.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
+		const $column = $( this );
+		const $row = $column.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
 		$column.on( 'click', function () {
 			if (
@@ -199,8 +199,8 @@ function initColumnClickEvent() {
 }
 
 function resetHeaderSideSelector( selectedValue ) {
-	var $headerSelection = $( '.mw-twocolconflict-split-selection-header' ),
-		$selectedSide = $headerSelection.find( 'input:checked' );
+	const $headerSelection = $( '.mw-twocolconflict-split-selection-header' );
+	const $selectedSide = $headerSelection.find( 'input:checked' );
 
 	if ( $selectedSide.val() !== selectedValue ) {
 		$selectedSide.prop( 'checked', false );
@@ -213,11 +213,11 @@ function resetHeaderSideSelector( selectedValue ) {
 }
 
 function initHeaderSideSelector() {
-	var $headerSelection = $( '.mw-twocolconflict-split-selection-header' );
+	const $headerSelection = $( '.mw-twocolconflict-split-selection-header' );
 
 	$headerSelection.find( 'input' ).on( 'change', function () {
-		var $selectedHeaderSide = $( this ),
-			$unselectedHeaderSide = $headerSelection.find( 'input:not(:checked)' );
+		const $selectedHeaderSide = $( this );
+		const $unselectedHeaderSide = $headerSelection.find( 'input:not(:checked)' );
 		$selectedHeaderSide.prop( 'title', mw.msg(
 			$selectedHeaderSide.val() === 'other' ?
 				'twocolconflict-split-selected-all-other-tooltip' :
@@ -230,7 +230,7 @@ function initHeaderSideSelector() {
 		) );
 
 		$( '.mw-twocolconflict-split-selection-row input' ).each( function () {
-			var $rowButton = $( this );
+			const $rowButton = $( this );
 			if ( $rowButton.val() === $selectedHeaderSide.val() ) {
 				$rowButton.click();
 			}
@@ -239,13 +239,13 @@ function initHeaderSideSelector() {
 }
 
 function handleSelectColumn() {
-	var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
-		$selected = $row.find( '.mw-twocolconflict-split-selection-row input:checked' ),
-		$unselected = $row.find( '.mw-twocolconflict-split-selection-row input:not(:checked)' ),
-		$label = $row.find( '.mw-twocolconflict-split-selector-label span' ),
-		// TODO: Rename classes, "add" should be "your", etc.
-		$yourColumn = $row.find( '.mw-twocolconflict-split-add' ),
-		$otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
+	const $row = $( this ).closest( '.mw-twocolconflict-split-row' );
+	const $selected = $row.find( '.mw-twocolconflict-split-selection-row input:checked' );
+	const $unselected = $row.find( '.mw-twocolconflict-split-selection-row input:not(:checked)' );
+	const $label = $row.find( '.mw-twocolconflict-split-selector-label span' );
+	// TODO: Rename classes, "add" should be "your", etc.
+	const $yourColumn = $row.find( '.mw-twocolconflict-split-add' );
+	const $otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
 
 	if ( $selected.val() === 'your' ) {
 		disableColumn( $otherColumn );
@@ -271,8 +271,8 @@ function handleSelectColumn() {
 }
 
 function initRowSideSelectors() {
-	var $rowSwitches = $( '.mw-twocolconflict-split-selection-row' ),
-		$radioButtons = $rowSwitches.find( 'input' );
+	const $rowSwitches = $( '.mw-twocolconflict-split-selection-row' );
+	const $radioButtons = $rowSwitches.find( 'input' );
 
 	// TODO remove when having no selection is the default
 	$radioButtons.prop( 'checked', false );
@@ -283,9 +283,9 @@ function initRowSideSelectors() {
 
 function showPreview( parsedContent, parsedNote ) {
 	$( '#wikiPreview' ).remove();
-	var $html = $( 'html' );
+	const $html = $( 'html' );
 
-	var $note = $( '<div>' )
+	const $note = $( '<div>' )
 		.addClass( 'previewnote' )
 		.append(
 			$( '<h2>' )
@@ -299,13 +299,13 @@ function showPreview( parsedContent, parsedNote ) {
 	// The following classes are used here:
 	// * mw-content-ltr
 	// * mw-content-rtl
-	var $content = $( '<div>' )
+	const $content = $( '<div>' )
 		.addClass( 'mw-content-' + $html.attr( 'dir' ) )
 		.attr( 'dir', $html.attr( 'dir' ) )
 		.attr( 'lang', $html.attr( 'lang' ) )
 		.append( parsedContent );
 
-	var $preview = $( '<div>' )
+	const $preview = $( '<div>' )
 		.attr( 'id', 'wikiPreview' )
 		.addClass( 'ontop' );
 
@@ -317,11 +317,11 @@ function showPreview( parsedContent, parsedNote ) {
 }
 
 function validateForm() {
-	var isFormValid = true;
+	let isFormValid = true;
 
 	$( '.mw-twocolconflict-split-selection-row' ).each( function () {
-		var $row = $( this ).closest( '.mw-twocolconflict-split-row' ),
-			$checked = $row.find( 'input:checked' );
+		const $row = $( this ).closest( '.mw-twocolconflict-split-row' );
+		const $checked = $row.find( 'input:checked' );
 
 		$row.toggleClass( 'mw-twocolconflict-no-selection', !$checked.length );
 		if ( !$checked.length ) {
@@ -333,12 +333,12 @@ function validateForm() {
 }
 
 function initPreview() {
-	var $previewBtn = $( '#wpPreviewWidget' );
+	const $previewBtn = $( '#wpPreviewWidget' );
 	if ( !$previewBtn.length ) {
 		return;
 	}
 
-	var api = new mw.Api();
+	const api = new mw.Api();
 
 	OO.ui.infuse( $previewBtn )
 		.setDisabled( false );
@@ -350,8 +350,8 @@ function initPreview() {
 			return;
 		}
 
-		var arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→',
-			title = mw.config.get( 'wgPageName' );
+		const arrow = $( 'html' ).attr( 'dir' ) === 'rtl' ? '←' : '→';
+		const title = mw.config.get( 'wgPageName' );
 
 		$.when(
 			api.parse(
@@ -389,7 +389,7 @@ function initSubmit() {
 }
 
 function initSwapHandling() {
-	var $swapButton = $( '.mw-twocolconflict-single-swap-button' );
+	const $swapButton = $( '.mw-twocolconflict-single-swap-button' );
 	if ( !$swapButton.length ) {
 		return;
 	}
@@ -407,13 +407,13 @@ function initSwapHandling() {
 	}
 
 	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', function () {
-		var $rowContainer = $( '.mw-twocolconflict-single-column-rows' ),
-			$rows = $rowContainer.find( '.mw-twocolconflict-conflicting-talk-row' ),
-			$buttonContainer = $rowContainer.find( '.mw-twocolconflict-single-swap-button-container' ),
-			$upper = $rows.eq( 0 ),
-			$lower = $rows.eq( 1 ),
-			upperRowNum = getRowNumber( $upper ),
-			lowerRowNum = getRowNumber( $lower );
+		const $rowContainer = $( '.mw-twocolconflict-single-column-rows' );
+		const $rows = $rowContainer.find( '.mw-twocolconflict-conflicting-talk-row' );
+		const $buttonContainer = $rowContainer.find( '.mw-twocolconflict-single-swap-button-container' );
+		const $upper = $rows.eq( 0 );
+		const $lower = $rows.eq( 1 );
+		const upperRowNum = getRowNumber( $upper );
+		const lowerRowNum = getRowNumber( $lower );
 
 		setRowNumber( $upper, upperRowNum, lowerRowNum );
 		setRowNumber( $lower, lowerRowNum, upperRowNum );
@@ -426,14 +426,14 @@ function initSwapHandling() {
  * Expose an action to copy the entire wikitext source of "your" originally submitted revision.
  */
 function initSourceCopy() {
-	var $copyLink = $( '.mw-twocolconflict-copy-link a' ),
-		wasClicked = false,
-		$confirmPopup, popupTimeout;
+	const $copyLink = $( '.mw-twocolconflict-copy-link a' );
+	let wasClicked = false;
+	let popupTimeout;
 	if ( !$copyLink.length ) {
 		return;
 	}
 
-	$confirmPopup = new OO.ui.PopupWidget( {
+	const $confirmPopup = new OO.ui.PopupWidget( {
 		$content: $( '<p>' ).text( mw.msg( 'twocolconflict-copy-notice' ) ),
 		$floatableContainer: $copyLink,
 		position: 'above',
@@ -470,7 +470,7 @@ function initSourceCopy() {
 }
 
 $( function () {
-	var $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
+	const $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
 	if ( $coreHintCheckbox.length ) {
 		$coreHintCheckbox.change( function () {
 			if ( this.checked && mw.user.isNamed() ) {
@@ -481,8 +481,8 @@ $( function () {
 		return;
 	}
 
-	var initTracking = UtilModule.Tracking.initTrackingListeners,
-		initTour = require( './ext.TwoColConflict.Split.Tour.js' );
+	const initTracking = UtilModule.Tracking.initTrackingListeners;
+	const initTour = require( './ext.TwoColConflict.Split.Tour.js' );
 
 	// disable all javascript from this feature when testing the nojs implementation
 	if ( mw.cookie.get( '-twocolconflict-test-nojs', 'mw' ) ) {
