@@ -47,6 +47,7 @@
 	"twocolconflict-split-reset-warning-accept": "Одбаци",
 	"twocolconflict-split-collapse-tooltip": "Скупи непромењени текст",
 	"twocolconflict-split-expand-tooltip": "Рашири непромењени текст",
+	"twocolconflict-split-selected-other-tooltip": "Друга верзија изабрана",
 	"twocolconflict-split-selected-your-tooltip": "Ваша верзија је изабрана",
 	"twocolconflict-split-help-tooltip": "Прикажи помоћ",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Разреши проблем",
