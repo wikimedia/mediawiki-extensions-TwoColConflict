@@ -18,6 +18,7 @@ use User;
 /**
  * @covers \TwoColConflict\Html\HtmlSplitConflictHeader
  *
+ * @group Database
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
