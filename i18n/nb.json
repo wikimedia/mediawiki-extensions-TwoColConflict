@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jon Harald Søby",
-			"Pmt"
+			"Pmt",
+			"TommyG"
 		]
 	},
 	"twocolconflict": "Avsnittsbasert redigeringskonflikt",
@@ -33,7 +34,7 @@
 	"twocolconflict-split-your-version-chosen": "Versjonen din",
 	"twocolconflict-split-select-all": "Velg alle",
 	"twocolconflict-split-tour-dialog-dot-message": "Trykk på de glødende blå prikkene for nyttige tips.",
-	"twocolconflict-split-tour-dialog-header": "Slå sammen konflikterende versjoner",
+	"twocolconflict-split-tour-dialog-header": "Slå sammen versjoner med konflikt",
 	"twocolconflict-split-tour-dialog-message": "Mens du redigerte var det dessverre en annen bruker som også redigerte samme side, og publiserte sine endringer før du gjorde det.\n\nIngen fare, endringene dine er ikke tapt! Gå gjennom begge versjonene og slå dem sammen. Hvis det trengs kan du redigere den valgte teksten. Bare teksten i de valgte boksene blir lagret når du trykker på «{{int:publishchanges}}».",
 	"twocolconflict-split-tour-dialog-btn-text": "Start fletting",
 	"twocolconflict-split-tour-popup-btn-text": "Ok, skjønner.",
@@ -60,7 +61,7 @@
 	"twocolconflict-split-selected-other-tooltip": "Den andre versjonen er valgt",
 	"twocolconflict-split-selected-your-tooltip": "Versjonen din er valgt",
 	"twocolconflict-split-help-tooltip": "Vis hjelp",
-	"twocolconflict-split-tour-dialog-header-single-column-view": "Konflikterende poster",
+	"twocolconflict-split-tour-dialog-header-single-column-view": "Poster med konflikt",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Dessverre postet noen andre samtidig som deg. Gå gjennom kommentarene på neste side. Hvis det er nødvendig kan du redigere dine og endre den endelige rekkefølgen.",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Løs problemet",
 	"twocolconflict-talk-header-overview": "Noen andre postet samtidig som deg. Gå gjennom kommentarene nedenfor og velg rekkefølgen som skal publiseres. Hvis det trengs kan du redigere teksten din.",
