@@ -5,10 +5,10 @@ namespace TwoColConflict;
 use Config;
 use ExtensionRegistry;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
 use MobileContext;
-use Title;
 
 /**
  * @license GPL-2.0-or-later

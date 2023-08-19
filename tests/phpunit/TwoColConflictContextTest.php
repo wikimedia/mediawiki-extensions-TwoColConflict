@@ -4,11 +4,11 @@ namespace TwoColConflict\Tests;
 
 use ExtensionRegistry;
 use HashConfig;
+use MediaWiki\Title\Title;
 use MediaWiki\User\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\User\UserOptionsLookup;
-use Title;
 use TwoColConflict\TwoColConflictContext;
 use User;
 use Wikimedia\TestingAccessWrapper;

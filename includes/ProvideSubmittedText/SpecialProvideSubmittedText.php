@@ -7,9 +7,9 @@ use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\EditPage\TextboxBuilder;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\Title\Title;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
-use Title;
 use TwoColConflict\TwoColConflictContext;
 use UnlistedSpecialPage;
 

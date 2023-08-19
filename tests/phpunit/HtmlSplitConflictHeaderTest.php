@@ -6,12 +6,12 @@ use Language;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use Title;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 use User;
 
