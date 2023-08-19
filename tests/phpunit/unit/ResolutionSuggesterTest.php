@@ -426,7 +426,7 @@ class ResolutionSuggesterTest extends MediaWikiUnitTestCase {
 
 	public function testGetBaseRevisionLines() {
 		$suggester = $this->createResolutionSuggester( "A\nB\nC" );
-		$this->assertSame( [ 'A','B','C' ], $suggester->getBaseRevisionLines() );
+		$this->assertSame( [ 'A', 'B', 'C' ], $suggester->getBaseRevisionLines() );
 	}
 
 	public function testGetBaseRevisionLinesNoContent() {
