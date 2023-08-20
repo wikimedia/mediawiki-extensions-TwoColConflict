@@ -2,11 +2,11 @@
 
 namespace TwoColConflict\Tests;
 
+use MediaWiki\Language\RawMessage;
 use MediaWikiIntegrationTestCase;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use RawMessage;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictView;

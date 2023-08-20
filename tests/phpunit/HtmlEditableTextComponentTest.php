@@ -3,11 +3,11 @@
 namespace TwoColConflict\Tests;
 
 use Language;
+use MediaWiki\Language\RawMessage;
 use MediaWikiIntegrationTestCase;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use RawMessage;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
