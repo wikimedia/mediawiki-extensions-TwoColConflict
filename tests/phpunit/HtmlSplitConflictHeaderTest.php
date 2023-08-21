@@ -3,7 +3,9 @@
 namespace TwoColConflict\Tests;
 
 use Language;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Page\PageIdentityValue;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
@@ -18,7 +20,6 @@ use User;
 /**
  * @covers \TwoColConflict\Html\HtmlSplitConflictHeader
  *
- * @group Database
  * @license GPL-2.0-or-later
  * @author Christoph Jauera <christoph.jauera@wikimedia.de>
  */
@@ -26,17 +27,11 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 
 	private const NOW = 1000000000;
 
-	/**
-	 * @var User
-	 */
-	private $otherUser;
-
 	protected function setUp(): void {
 		parent::setUp();
 
 		Theme::setSingleton( new BlankTheme() );
-		$this->setUserLang( 'qqx' );
-		$this->otherUser = $this->getTestUser()->getUser();
+		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
 	}
 
 	public function testConflictOnNewPage() {
@@ -64,7 +59,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		);
 		$html = $htmlHeader->getHtml();
 
-		$this->assertStringContainsString( '>' . $this->otherUser->getName() . '<', $html );
+		$this->assertStringContainsString( '>' . __CLASS__ . '<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-header-hint)<', $html );
 		$this->assertStringContainsString(
 			'>(twocolconflict-split-current-version-header: 20180721234200)<',
@@ -126,6 +121,8 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
+		$user = $this->createNoOpMock( Authority::class, [ 'getUser' ] );
+
 		$language = $this->createMock( Language::class );
 		$language->method( 'userTimeAndDate' )->willReturnCallback( static function ( ?string $ts ) {
 			return $ts ?? '(just-now)';
@@ -150,7 +147,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 
 		return new HtmlSplitConflictHeader(
 			Title::makeTitle( NS_MAIN, __METHOD__ ),
-			$this->getTestUser()->getUser(),
+			$user,
 			$summary,
 			$language,
 			$localizer,
@@ -167,10 +164,13 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	 * @return RevisionRecord
 	 */
 	private function newRevisionRecord( string $timestamp, string $editSummary = '' ): MutableRevisionRecord {
+		$user = $this->createMock( User::class );
+		$user->method( 'getName' )->willReturn( __CLASS__ );
+
 		$revision = new MutableRevisionRecord(
 			new PageIdentityValue( 0, NS_MAIN, __CLASS__, PageIdentityValue::LOCAL )
 		);
-		$revision->setUser( $this->otherUser )
+		$revision->setUser( $user )
 			->setTimestamp( $timestamp )
 			->setComment( \CommentStoreComment::newUnsavedComment( $editSummary ) );
 		return $revision;

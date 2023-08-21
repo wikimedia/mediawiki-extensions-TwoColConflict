@@ -16,12 +16,12 @@ use OutputPage;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
+use User;
 use WebRequest;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
  *
- * @group Database
  * @license GPL-2.0-or-later
  */
 class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
@@ -110,7 +110,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 		$out = $this->createMock( OutputPage::class );
 		$out->expects( $this->never() )->method( 'addHTML' );
-		$out->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
+		$out->method( 'getUser' )->willReturn( $this->createMock( User::class ) );
 		$out->method( 'getLanguage' )->willReturn( $this->createMock( Language::class ) );
 		$out->method( 'getContext' )->willReturn( $localizer );
 		$out->method( 'getRequest' )->willReturn( $request );
