@@ -313,7 +313,7 @@ function showPreview( parsedContent, parsedNote ) {
 		$preview.append( $note, $content )
 	);
 
-	$( 'html, body' ).animate( { scrollTop: $( '#top' ).offset().top }, 500 );
+	$( 'html, body' ).animate( { scrollTop: $( '#content' ).offset().top }, 500 );
 }
 
 function validateForm() {
