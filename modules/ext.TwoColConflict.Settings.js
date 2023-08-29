@@ -14,10 +14,8 @@ $.extend( Settings.prototype, {
 		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-twocolconflict-' + name );
 		} else {
-			setting = mw.storage.get( 'mw-twocolconflict-' + name );
-			if ( !setting ) {
-				setting = mw.cookie.get( '-twocolconflict-' + name );
-			}
+			setting = mw.storage.get( 'mw-twocolconflict-' + name ) ||
+				mw.cookie.get( '-twocolconflict-' + name );
 		}
 
 		return setting !== null && setting !== false ? setting : defaultValue;
