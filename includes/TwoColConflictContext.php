@@ -80,6 +80,12 @@ class TwoColConflictContext {
 	 *   may be excluded for this interface.
 	 */
 	public function shouldTwoColConflictBeShown( UserIdentity $user, Title $title ): bool {
+		if ( !$title->hasContentModel( CONTENT_MODEL_WIKITEXT ) &&
+			!$title->hasContentModel( CONTENT_MODEL_TEXT )
+		) {
+			return false;
+		}
+
 		// T249817: Temporarily disabled on mobile
 		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			return false;
