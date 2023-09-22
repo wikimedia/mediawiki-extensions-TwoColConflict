@@ -22,6 +22,7 @@ use WebRequest;
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
  *
+ * @group Database
  * @license GPL-2.0-or-later
  */
 class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {

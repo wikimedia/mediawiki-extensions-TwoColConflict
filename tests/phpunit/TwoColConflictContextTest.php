@@ -44,7 +44,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $betaConfig,
 		bool $singleColumnConfig,
 		UserOptionsLookup $userOptionsLookup,
-		Title $title,
+		int $namespace,
 		bool $expected
 	) {
 		if ( $betaConfig ) {
@@ -54,6 +54,11 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$user = $this->createMock( User::class );
 		// Note: Only needed by BetaFeatures
 		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
+
+		$title = $this->createMock( Title::class );
+		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
+		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
+		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
 
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
@@ -69,51 +74,47 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$betaUser = self::createUserOptionsLookup( '1', '1' );
 		$optOutUser = self::createUserOptionsLookup( '0' );
 
-		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
-		$talkPage = Title::makeTitle( NS_TALK, __CLASS__ );
-		$projectPage = Title::makeTitle( NS_PROJECT, __CLASS__ );
-
 		return [
 			'disabled in Beta' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $defaultUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => false,
 			],
 			'user enabled Beta feature' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $betaUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'enabled by default when not in Beta any more' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $defaultUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'user disabled new interface' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $optOutUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => false,
 			],
 			'disabled on talk pages' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => false,
 				'userOptionsLookup' => $defaultUser,
-				'title' => $talkPage,
+				'namespace' => NS_TALK,
 				'expected' => false,
 			],
 			'disabled in the project namespace' => [
 				'wgTwoColConflictBetaFeature' => false,
 				'wgTwoColConflictSuggestResolution' => false,
 				'userOptionsLookup' => $defaultUser,
-				'title' => $projectPage,
+				'namespace' => NS_PROJECT,
 				'expected' => false,
 			],
 		];
@@ -126,9 +127,14 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $betaConfig,
 		bool $singleColumnConfig,
 		UserOptionsLookup $userOptionsLookup,
-		Title $title,
+		int $namespace,
 		bool $expected
 	) {
+		$title = $this->createMock( Title::class );
+		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
+		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
+		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
+
 		$twoColContext = new TwoColConflictContext(
 			$this->createConfig( $betaConfig, $singleColumnConfig ),
 			$userOptionsLookup,
@@ -142,21 +148,19 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		$defaultUser = self::createUserOptionsLookup();
 		$betaUser = self::createUserOptionsLookup( '1', '1' );
 
-		$defaultPage = Title::makeTitle( NS_MAIN, __CLASS__ );
-
 		return [
 			'enabled in beta mode when BetaFeatures not installed' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $defaultUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'enabled without BetaFeatures, also for an opted-in user' => [
 				'wgTwoColConflictBetaFeature' => true,
 				'wgTwoColConflictSuggestResolution' => true,
 				'userOptionsLookup' => $betaUser,
-				'title' => $defaultPage,
+				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 		];
