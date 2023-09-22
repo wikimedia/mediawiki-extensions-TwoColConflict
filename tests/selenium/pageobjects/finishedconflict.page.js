@@ -1,7 +1,7 @@
 'use strict';
 
 const Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( '../util' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class FinishedConflictPage extends Page {
 	async pageWikitext() {

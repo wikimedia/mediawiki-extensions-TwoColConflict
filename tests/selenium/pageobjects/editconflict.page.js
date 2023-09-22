@@ -5,7 +5,7 @@ const assert = require( 'assert' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	TestAccounts = require( '../test_accounts' ),
-	Util = require( '../util' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class EditConflictPage extends Page {
 	get conflictHeader() { return $( '.mw-twocolconflict-split-header' ); }

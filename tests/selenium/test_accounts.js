@@ -2,7 +2,7 @@
 
 const Api = require( 'wdio-mediawiki/Api' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
-	Util = require( './util' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class TestAccounts {
 	// FIXME: Note that these cannot be lazy-initialized from within another browser.call

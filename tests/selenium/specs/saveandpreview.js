@@ -4,7 +4,7 @@ const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	TestAccounts = require( '../test_accounts' ),
-	Util = require( '../util' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 describe( 'TwoColConflict save and preview', function () {
 	before( async function () {

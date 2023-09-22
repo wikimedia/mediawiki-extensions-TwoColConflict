@@ -1,7 +1,7 @@
 'use strict';
 
 const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Util = require( '../util' );
+	Util = require( 'wdio-mediawiki/Util' );
 
 class TalkConflictPage {
 	get talkRow() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
