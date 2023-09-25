@@ -65,6 +65,10 @@
 			"styles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.less"
 			],
+
+			"skinStyles": {
+				"monobook": "modules/TalkPageConflict/ext.TwoColConflict.Talk.styles.monobook.less"
+			},
 			"dependencies": [
 				"mediawiki.api",
 				"mediawiki.cookie",
