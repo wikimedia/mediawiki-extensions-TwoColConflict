@@ -44,6 +44,12 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		parent::tearDown();
 	}
 
+	private function getHookHandlerInstance() {
+		return new TwoColConflictHooks(
+			$this->getServiceContainer()->getService( 'TwoColConflictContext' )
+		);
+	}
+
 	public function testOnAlternateEdit_withFeatureDisabled() {
 		$this->setService( 'UserOptionsLookup', new StaticUserOptionsLookup( [], [
 			TwoColConflictContext::ENABLED_PREFERENCE => false,
@@ -53,7 +59,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
 		$editPage->expects( $this->never() )->method( 'setEditConflictHelperFactory' );
 
-		TwoColConflictHooks::onAlternateEdit( $editPage );
+		$this->getHookHandlerInstance()->onAlternateEdit( $editPage );
 	}
 
 	public function testOnAlternateEdit_withInvalidRequest() {
@@ -70,7 +76,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		// TODO: The code in the factory function is currently not tested
 		$editPage->expects( $this->once() )->method( 'setEditConflictHelperFactory' );
 
-		TwoColConflictHooks::onAlternateEdit( $editPage );
+		$this->getHookHandlerInstance()->onAlternateEdit( $editPage );
 	}
 
 	public function testOnEditPageBeforeEditButtons() {
@@ -82,7 +88,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$previewButton->expects( $this->once() )->method( 'setDisabled' );
 
 		$buttons = [ 'diff' => null, 'preview' => $previewButton ];
-		TwoColConflictHooks::onEditPageBeforeEditButtons( $editPage, $buttons, $tabIndex );
+		$this->getHookHandlerInstance()->onEditPageBeforeEditButtons( $editPage, $buttons, $tabIndex );
 		$this->assertArrayNotHasKey( 'diff', $buttons );
 	}
 
@@ -91,7 +97,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$outputPage = $this->createMock( OutputPage::class );
 		$outputPage->expects( $this->exactly( $calls ) )->method( 'addModules' );
 
-		TwoColConflictHooks::onEditPageShowEditFormInitial(
+		$this->getHookHandlerInstance()->onEditPage__showEditForm_initial(
 			$this->createMock( EditPage::class ),
 			$outputPage
 		);
@@ -108,13 +114,13 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		] );
 
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
+		$this->getHookHandlerInstance()->onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
 	public function testOnGetBetaFeaturePreferences_withBetaDisabled() {
 		$prefs = [];
-		TwoColConflictHooks::onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
+		$this->getHookHandlerInstance()->onGetBetaFeaturePreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::BETA_PREFERENCE_NAME, $prefs );
 	}
 
@@ -126,13 +132,13 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
 		$prefs = [];
-		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
+		$this->getHookHandlerInstance()->onGetPreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayNotHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
 	public function testOnGetPreferences() {
 		$prefs = [];
-		TwoColConflictHooks::onGetPreferences( $this->getTestUser()->getUser(), $prefs );
+		$this->getHookHandlerInstance()->onGetPreferences( $this->getTestUser()->getUser(), $prefs );
 		$this->assertArrayHasKey( TwoColConflictContext::ENABLED_PREFERENCE, $prefs );
 	}
 
@@ -298,7 +304,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			->method( 'addHTML' )
 			->with( $this->stringContains( '(twocolconflict-core-ui-hint)' ) );
 
-		TwoColConflictHooks::onEditPageShowEditFormFields( $editPage, $outputPage );
+		$this->getHookHandlerInstance()->onEditPage__showEditForm_fields( $editPage, $outputPage );
 	}
 
 	private function createOutputPage() {

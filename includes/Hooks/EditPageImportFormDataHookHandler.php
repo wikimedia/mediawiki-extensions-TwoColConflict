@@ -1,8 +1,11 @@
 <?php
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace TwoColConflict\Hooks;
 
 use MediaWiki\EditPage\EditPage;
+use MediaWiki\Hook\EditPage__importFormDataHook;
 use MediaWiki\MediaWikiServices;
 use TwoColConflict\ConflictFormValidator;
 use TwoColConflict\SplitConflictMerger;
@@ -12,7 +15,7 @@ use WebRequest;
 /**
  * @license GPL-2.0-or-later
  */
-class EditPageImportFormDataHookHandler {
+class EditPageImportFormDataHookHandler implements EditPage__importFormDataHook {
 
 	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::importFormData
@@ -20,7 +23,7 @@ class EditPageImportFormDataHookHandler {
 	 * @param EditPage $editPage
 	 * @param WebRequest $request
 	 */
-	public static function onEditPageImportFormData( EditPage $editPage, WebRequest $request ) {
+	public function onEditPage__importFormData( $editPage, $request ) {
 		$contentRows = $request->getArray( 'mw-twocolconflict-split-content' );
 		if ( $contentRows ) {
 			$extraLineFeeds = $request->getArray( 'mw-twocolconflict-split-linefeeds' ) ?? [];

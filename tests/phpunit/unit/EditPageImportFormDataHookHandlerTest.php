@@ -126,10 +126,10 @@ class EditPageImportFormDataHookHandlerTest extends \MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideWebRequests
 	 */
-	public function testOnEditPageImportFormData( array $requestData, string $expectedWikitext ) {
+	public function testonEditPage__importFormData( array $requestData, string $expectedWikitext ) {
 		$editPage = $this->createMock( EditPage::class );
 		$request = $this->createRequest( $requestData );
-		EditPageImportFormDataHookHandler::onEditPageImportFormData( $editPage, $request );
+		( new EditPageImportFormDataHookHandler )->onEditPage__importFormData( $editPage, $request );
 		$this->assertSame( $expectedWikitext, $editPage->textbox1 );
 	}
 
