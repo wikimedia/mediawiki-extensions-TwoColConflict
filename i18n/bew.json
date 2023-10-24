@@ -55,10 +55,10 @@
 	"twocolconflict-split-help-tooltip": "Kasi unjuk pertulungan",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Kiriman nyang bentrok",
 	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Seleséin mas'alah",
-	"twocolconflict-talk-your": "Lu punya tanggepan",
-	"twocolconflict-talk-conflicting": "Tanggepan nyang bentrok",
+	"twocolconflict-talk-your": "Lu punya sautan",
+	"twocolconflict-talk-conflicting": "Sautan nyang bentrok",
 	"twocolconflict-talk-switch-tooltip": "Ganti rèndèngan",
-	"twocolconflict-talk-reorder-prompt": "Nempatin lu punya tanggepan bekaètan ama tanggepan nyang bentrok:",
+	"twocolconflict-talk-reorder-prompt": "Nempatin lu punya sautan bekaètan ama sautan nyang bentrok:",
 	"twocolconflict-talk-same-order": "Tetepin abisnya",
 	"twocolconflict-talk-reverse-order": "Pindahin ke sebelonnya"
 }
