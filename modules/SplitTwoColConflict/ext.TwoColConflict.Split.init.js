@@ -4,34 +4,15 @@ const UtilModule = require( 'ext.TwoColConflict.Util' );
 
 /**
  * @param {jQuery} $column
- * @return {OO.ui.Element}
+ * @param {boolean} [enabled=true]
  */
-function getColumnEditButton( $column ) {
-	return OO.ui.ButtonWidget.static.infuse(
-		$column.find( '.mw-twocolconflict-split-edit-button' )
-	);
-}
-
-/**
- * @param {jQuery} $column
- */
-function disableColumn( $column ) {
-	getColumnEditButton( $column )
-		.toggle( false );
-	$column
-		.removeClass( 'mw-twocolconflict-split-selected' )
-		.addClass( 'mw-twocolconflict-split-unselected' );
-}
-
-/**
- * @param {jQuery} $column
- */
-function enableColumn( $column ) {
-	getColumnEditButton( $column )
-		.toggle( true );
-	$column
-		.addClass( 'mw-twocolconflict-split-selected' )
-		.removeClass( 'mw-twocolconflict-split-unselected' );
+function enableColumn( $column, enabled ) {
+	enabled = enabled !== false;
+	const $editButton = $column.find( '.mw-twocolconflict-split-edit-button' );
+	const editButton = OO.ui.ButtonWidget.static.infuse( $editButton );
+	editButton.toggle( enabled );
+	$column.toggleClass( 'mw-twocolconflict-split-selected', enabled )
+		.toggleClass( 'mw-twocolconflict-split-unselected', !enabled );
 }
 
 function getSelectedColumn( $element ) {
@@ -248,7 +229,7 @@ function handleSelectColumn() {
 	const $otherColumn = $row.find( '.mw-twocolconflict-split-delete' );
 
 	if ( $selected.val() === 'your' ) {
-		disableColumn( $otherColumn );
+		enableColumn( $otherColumn, false );
 		enableColumn( $yourColumn );
 		$selected.prop( 'title', mw.msg( 'twocolconflict-split-selected-your-tooltip' ) );
 		$unselected.prop( 'title', mw.msg( 'twocolconflict-split-select-other-tooltip' ) );
@@ -256,14 +237,14 @@ function handleSelectColumn() {
 		$label.text( mw.msg( 'twocolconflict-split-your-version-chosen' ) );
 	} else if ( $selected.val() === 'other' ) {
 		enableColumn( $otherColumn );
-		disableColumn( $yourColumn );
+		enableColumn( $yourColumn, false );
 		$selected.prop( 'title', mw.msg( 'twocolconflict-split-selected-other-tooltip' ) );
 		$unselected.prop( 'title', mw.msg( 'twocolconflict-split-select-your-tooltip' ) );
 		$row.removeClass( 'mw-twocolconflict-no-selection' );
 		$label.text( mw.msg( 'twocolconflict-split-other-version-chosen' ) );
 	} else {
-		disableColumn( $otherColumn );
-		disableColumn( $yourColumn );
+		enableColumn( $otherColumn, false );
+		enableColumn( $yourColumn, false );
 		$label.text( mw.msg( 'twocolconflict-split-choose-version' ) );
 	}
 
