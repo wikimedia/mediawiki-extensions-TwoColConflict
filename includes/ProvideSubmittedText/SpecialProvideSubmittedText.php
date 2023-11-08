@@ -22,20 +22,10 @@ use UnlistedSpecialPage;
  */
 class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
-	/** @var TwoColConflictContext */
-	private $twoColConflictContext;
+	private TwoColConflictContext $twoColConflictContext;
+	private SubmittedTextCache $textCache;
+	private IBufferingStatsdDataFactory $statsdDataFactory;
 
-	/** @var SubmittedTextCache */
-	private $textCache;
-
-	/** @var IBufferingStatsdDataFactory */
-	private $statsdDataFactory;
-
-	/**
-	 * @param TwoColConflictContext $twoColConflictContext
-	 * @param BagOStuff $textCache
-	 * @param IBufferingStatsdDataFactory $statsdDataFactory
-	 */
 	public function __construct(
 		TwoColConflictContext $twoColConflictContext,
 		BagOStuff $textCache,
@@ -109,7 +99,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		return $out;
 	}
 
-	private function getTextHeaderLabelHtml() {
+	private function getTextHeaderLabelHtml(): string {
 		$html = Html::element(
 			'span',
 			[ 'class' => 'mw-twocolconflict-revision-label' ],
@@ -134,7 +124,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 	 * @param PageIdentity $page Used to create the lang="…" and dir="…" attributes
 	 * @return string
 	 */
-	private function getTextAreaHtml( string $text, PageIdentity $page ) {
+	private function getTextAreaHtml( string $text, PageIdentity $page ): string {
 		$builder = new TextboxBuilder();
 		$attribs = $builder->mergeClassesIntoAttributes(
 			[ 'mw-twocolconflict-submitted-text' ],
@@ -156,7 +146,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			);
 	}
 
-	private function getFooterHtml() {
+	private function getFooterHtml(): string {
 		return Html::element( 'p', [], $this->msg( 'twocolconflict-special-footer-hint' )->text() );
 	}
 

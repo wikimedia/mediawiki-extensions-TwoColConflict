@@ -41,12 +41,9 @@ class TwoColConflictHooks implements
 	EditPage__showEditForm_fieldsHook
 {
 
-	/**
-	 * @var TwoColConflictContext
-	 */
-	private $twoColContext;
+	private TwoColConflictContext $twoColContext;
 
-	private static function newFromGlobalState() {
+	private static function newFromGlobalState(): self {
 		return new self( MediaWikiServices::getInstance()->getService( 'TwoColConflictContext' ) );
 	}
 

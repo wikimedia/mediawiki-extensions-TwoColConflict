@@ -19,32 +19,11 @@ class TwoColConflictContext {
 	public const ENABLED_PREFERENCE = 'twocolconflict-enabled';
 	public const HIDE_CORE_HINT_PREFERENCE = 'userjs-twocolconflict-hide-core-hint';
 
-	/**
-	 * @var Config
-	 */
-	private $config;
+	private Config $config;
+	private UserOptionsLookup $userOptionsLookup;
+	private ExtensionRegistry $extensionRegistry;
+	private ?MobileContext $mobileContext;
 
-	/**
-	 * @var UserOptionsLookup
-	 */
-	private $userOptionsLookup;
-
-	/**
-	 * @var ExtensionRegistry
-	 */
-	private $extensionRegistry;
-
-	/**
-	 * @var MobileContext|null
-	 */
-	private $mobileContext;
-
-	/**
-	 * @param Config $config
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param ExtensionRegistry $extensionRegistry
-	 * @param MobileContext|null $mobileContext
-	 */
 	public function __construct(
 		Config $config,
 		UserOptionsLookup $userOptionsLookup,

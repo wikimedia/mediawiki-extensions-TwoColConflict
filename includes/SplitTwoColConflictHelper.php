@@ -28,23 +28,12 @@ use WikitextContent;
  */
 class SplitTwoColConflictHelper extends TextConflictHelper {
 
-	/** @var TwoColConflictContext */
-	private $twoColContext;
-
-	/** @var ResolutionSuggester */
-	private $resolutionSuggester;
-
-	/** @var CommentFormatter */
-	private $commentFormatter;
-
-	/** @var SubmittedTextCache|null */
-	private $textCache;
-
-	/** @var string */
-	private $newEditSummary;
-
-	/** @var string|null */
-	private $editFontOption;
+	private TwoColConflictContext $twoColContext;
+	private ResolutionSuggester $resolutionSuggester;
+	private CommentFormatter $commentFormatter;
+	private ?SubmittedTextCache $textCache;
+	private string $newEditSummary;
+	private ?string $editFontOption;
 
 	/**
 	 * @param Title $title
@@ -198,7 +187,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		return '';
 	}
 
-	private function getPreSaveTransformedLines() {
+	private function getPreSaveTransformedLines(): array {
 		$user = $this->out->getUser();
 
 		$content = new WikitextContent( $this->yourtext );
@@ -288,7 +277,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 			);
 	}
 
-	private function setSubmittedTextCache() {
+	private function setSubmittedTextCache(): void {
 		if ( $this->textCache && !$this->textCache->stashText(
 			$this->title->getPrefixedDBkey(),
 			$this->out->getUser(),

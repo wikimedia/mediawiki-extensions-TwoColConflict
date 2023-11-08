@@ -12,20 +12,9 @@ use OOUI\ButtonWidget;
  */
 class HtmlEditableTextComponent {
 
-	/**
-	 * @var MessageLocalizer
-	 */
-	private $messageLocalizer;
-
-	/**
-	 * @var Language
-	 */
-	private $language;
-
-	/**
-	 * @var string|null
-	 */
-	private $editFontOption;
+	private MessageLocalizer $messageLocalizer;
+	private Language $language;
+	private ?string $editFontOption;
 
 	/**
 	 * @param MessageLocalizer $messageLocalizer

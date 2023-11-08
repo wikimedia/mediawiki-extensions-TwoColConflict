@@ -134,7 +134,7 @@ class AnnotatedHtmlDiffFormatter {
 	 * @param string &$before
 	 * @param string &$after
 	 */
-	private function commonRTrim( string &$before, string &$after ) {
+	private function commonRTrim( string &$before, string &$after ): void {
 		$uncommonBefore = strlen( $before );
 		$uncommonAfter = strlen( $after );
 		while ( $uncommonBefore > 0 &&
