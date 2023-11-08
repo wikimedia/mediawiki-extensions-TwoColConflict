@@ -171,7 +171,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$storedLines = SplitConflictUtils::splitText( $this->storedversion );
 		$yourLines = SplitConflictUtils::splitText( $this->yourtext );
 
-		$suggestion = $this->twoColContext->shouldTalkPageSuggestionBeConsidered( $this->title )
+		$page = $this->out->getWikiPage();
+		$user = $this->out->getUser();
+		$suggestion = $this->twoColContext->shouldTalkPageSuggestionBeConsidered( $page, $user )
 			? $this->resolutionSuggester->getResolutionSuggestion( $storedLines, $yourLines )
 			: null;
 		if ( $suggestion ) {

@@ -9,6 +9,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
 use MobileContext;
+use WikiPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -102,13 +103,20 @@ class TwoColConflictContext {
 	}
 
 	/**
-	 * @param Title $title
+	 * @param WikiPage $page
+	 * @param UserIdentity $user
 	 * @return bool True if this article is appropriate for the talk page
 	 *   workflow, and the interface has been enabled by configuration.
 	 */
-	public function shouldTalkPageSuggestionBeConsidered( Title $title ): bool {
+	public function shouldTalkPageSuggestionBeConsidered( WikiPage $page, UserIdentity $user ): bool {
 		return $this->isTalkPageSuggesterEnabled() &&
-			$this->isEligibleTalkPage( $title );
+			$this->isEligibleTalkPage( $page->getTitle() ) &&
+			!$this->isSelfConflict( $page, $user );
+	}
+
+	private function isSelfConflict( WikiPage $page, UserIdentity $user ): bool {
+		$lastRevision = $page->getRevisionRecord();
+		return $lastRevision && $user->equals( $lastRevision->getUser() );
 	}
 
 	private function hasUserEnabledFeature( UserIdentity $user ): bool {

@@ -18,6 +18,7 @@ use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
 use User;
 use WebRequest;
+use WikiPage;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
@@ -111,6 +112,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 		$out = $this->createMock( OutputPage::class );
 		$out->expects( $this->never() )->method( 'addHTML' );
+		$out->method( 'getWikiPage' )->willReturn( $this->createMock( WikiPage::class ) );
 		$out->method( 'getUser' )->willReturn( $this->createMock( User::class ) );
 		$out->method( 'getLanguage' )->willReturn( $this->createMock( Language::class ) );
 		$out->method( 'getContext' )->willReturn( $localizer );
