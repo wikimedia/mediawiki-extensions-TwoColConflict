@@ -22,7 +22,7 @@
 	"twocolconflict-special-not-saved": "Није објављено",
 	"twocolconflict-special-textarea-hint": "Можете погледати и копирати извор ваше измене:",
 	"twocolconflict-special-malformed-title": "Наслов недостаје или није важећи.",
-	"twocolconflict-split-header-hint-beta": "Хвала вам на коришћењу ове бета функције. Оставите повратне информације [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface на овој страници] како бисте нам помогли да је додатно побољшамо.",
+	"twocolconflict-split-header-hint-beta": "Хвала вам на коришћењу ове бета функције. Можете помоћи у њеном унапређивању, уколико оставите повратну информацију на [//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface страници за разговор пројекта].",
 	"twocolconflict-split-your-version-header": "Ваша измена",
 	"twocolconflict-split-current-version-header": "Најновија измена од $1",
 	"twocolconflict-split-not-saved-at": "Још није објављено",
