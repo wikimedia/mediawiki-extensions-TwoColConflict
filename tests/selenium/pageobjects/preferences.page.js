@@ -4,8 +4,13 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class PreferencesPage extends Page {
-	get betaPreferencesLink() { return $( '//span[text() = "(prefs-betafeatures)"]' ); }
-	get twoColBetaLabel() { return $( '//*[@name="wptwocolconflict"]//parent::span' ); }
+	get betaPreferencesLink() {
+		return $( '//span[text() = "(prefs-betafeatures)"]' );
+	}
+
+	get twoColBetaLabel() {
+		return $( '//*[@name="wptwocolconflict"]//parent::span' );
+	}
 
 	async openBetaFeaturesPreferences() {
 		await super.openTitle( 'Special:Preferences', { uselang: 'qqx' } );

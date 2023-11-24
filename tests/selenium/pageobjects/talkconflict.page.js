@@ -4,12 +4,29 @@ const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class TalkConflictPage {
-	get talkRow() { return $( '.mw-twocolconflict-conflicting-talk-row' ); }
-	get splitColumn() { return $( '.mw-twocolconflict-split-column' ); }
-	get orderSelector() { return $( '.mw-twocolconflict-order-selector' ); }
-	get keepAfterButton() { return $( '.mw-twocolconflict-order-selector [value="no-change"]' ); }
-	get moveBeforeButton() { return $( '.mw-twocolconflict-order-selector [value="reverse"]' ); }
-	get swapButton() { return $( '.mw-twocolconflict-single-swap-button' ); }
+	get talkRow() {
+		return $( '.mw-twocolconflict-conflicting-talk-row' );
+	}
+
+	get splitColumn() {
+		return $( '.mw-twocolconflict-split-column' );
+	}
+
+	get orderSelector() {
+		return $( '.mw-twocolconflict-order-selector' );
+	}
+
+	get keepAfterButton() {
+		return $( '.mw-twocolconflict-order-selector [value="no-change"]' );
+	}
+
+	get moveBeforeButton() {
+		return $( '.mw-twocolconflict-order-selector [value="reverse"]' );
+	}
+
+	get swapButton() {
+		return $( '.mw-twocolconflict-single-swap-button' );
+	}
 
 	async createTalkPageConflict() {
 		await EditConflictPage.createConflict(

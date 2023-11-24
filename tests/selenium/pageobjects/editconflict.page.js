@@ -8,54 +8,153 @@ const assert = require( 'assert' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 class EditConflictPage extends Page {
-	get conflictHeader() { return $( '.mw-twocolconflict-split-header' ); }
-	get conflictView() { return $( '.mw-twocolconflict-split-view' ); }
+	get conflictHeader() {
+		return $( '.mw-twocolconflict-split-header' );
+	}
 
-	getParagraph( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editable' ); }
-	getEditButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' ); }
-	getSaveButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' ); }
-	getResetButton( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' ); }
-	getEditor( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' ); }
-	getDiffText( column ) { return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' ); }
-	getColumn( column ) { return $( this.columnToClass( column ) ); }
+	get conflictView() {
+		return $( '.mw-twocolconflict-split-view' );
+	}
 
-	get selectionLabel() { return $( '.mw-twocolconflict-split-row .mw-twocolconflict-split-selector-label > span' ); }
-	get otherParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) span' ); }
-	get otherParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) input' ); }
-	get otherParagraphAllSelection() { return $( '.mw-twocolconflict-split-selection-header div:nth-child(1) span' ); }
-	get yourParagraphSelection() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) span' ); }
-	get yourParagraphRadio() { return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) input' ); }
+	getParagraph( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editable' );
+	}
 
-	get resetConfirmationPopup() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content' ); }
-	get resetConfirmationButton() { return $( '.oo-ui-windowManager-floating .oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' ); }
+	getEditButton( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-edit-button' );
+	}
 
-	get collapsedParagraph() { return $( '.mw-twocolconflict-split-collapsed' ); }
-	get expandedParagraph() { return $( '.mw-twocolconflict-split-expanded' ); }
-	get fadeOverlay() { return $( '.mw-twocolconflict-split-fade' ); }
-	get collapseButton() { return $( '.mw-twocolconflict-split-collapse-button' ); }
-	get expandButton() { return $( '.mw-twocolconflict-split-expand-button' ); }
+	getSaveButton( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-save-button' );
+	}
 
-	get infoButton() { return $( '.mw-twocolconflict-split-tour-help-button' ); }
-	get tourDialog() { return $( '.mw-twocolconflict-split-tour-intro-container' ); }
-	get tourDialogCloseButton() { return $( '.mw-twocolconflict-split-tour-intro-container a' ); }
+	getResetButton( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-reset-button' );
+	}
 
-	get tourDiffChangeButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ); }
-	get tourSplitSelectionButton() { return $( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-pulsating-button' ); }
+	getEditor( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-editor' );
+	}
 
-	get tourYourVersionHeaderPopup() { return $( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-popup' ); }
-	get tourDiffChangePopup() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' ); }
-	get tourDiffChangePopupCloseButton() { return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' ); }
+	getDiffText( column ) {
+		return $( this.columnToClass( column ) + ' .mw-twocolconflict-split-difftext' );
+	}
 
-	get submitButton() { return $( '#wpSave' ); }
-	get previewButton() { return $( '#wpPreview' ); }
+	getColumn( column ) {
+		return $( this.columnToClass( column ) );
+	}
 
-	get previewView() { return $( '#wikiPreview' ); }
-	get previewText() { return $( '#wikiPreview .mw-parser-output' ); }
+	get selectionLabel() {
+		return $( '.mw-twocolconflict-split-row .mw-twocolconflict-split-selector-label > span' );
+	}
 
-	get coreUiHint() { return $( '.mw-twocolconflict-core-ui-hint .oo-ui-messageWidget' ); }
-	get coreUiHintCloseButton() { return $( '.mw-twocolconflict-core-ui-hint .oo-ui-icon-close' ); }
+	get otherParagraphSelection() {
+		return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) span' );
+	}
 
-	get rowsInEditMode() { return $( '.mw-twocolconflict-split-editing' ); }
+	get otherParagraphRadio() {
+		return $( '.mw-twocolconflict-split-selection-row div:nth-child(1) input' );
+	}
+
+	get otherParagraphAllSelection() {
+		return $( '.mw-twocolconflict-split-selection-header div:nth-child(1) span' );
+	}
+
+	get yourParagraphSelection() {
+		return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) span' );
+	}
+
+	get yourParagraphRadio() {
+		return $( '.mw-twocolconflict-split-selection-row div:nth-child(2) input' );
+	}
+
+	get resetConfirmationPopup() {
+		return $( '.oo-ui-windowManager-floating .oo-ui-window-content' );
+	}
+
+	get resetConfirmationButton() {
+		return $( '.oo-ui-windowManager-floating .oo-ui-window-content .oo-ui-messageDialog-actions span:nth-of-type(2) a' );
+	}
+
+	get collapsedParagraph() {
+		return $( '.mw-twocolconflict-split-collapsed' );
+	}
+
+	get expandedParagraph() {
+		return $( '.mw-twocolconflict-split-expanded' );
+	}
+
+	get fadeOverlay() {
+		return $( '.mw-twocolconflict-split-fade' );
+	}
+
+	get collapseButton() {
+		return $( '.mw-twocolconflict-split-collapse-button' );
+	}
+
+	get expandButton() {
+		return $( '.mw-twocolconflict-split-expand-button' );
+	}
+
+	get infoButton() {
+		return $( '.mw-twocolconflict-split-tour-help-button' );
+	}
+
+	get tourDialog() {
+		return $( '.mw-twocolconflict-split-tour-intro-container' );
+	}
+
+	get tourDialogCloseButton() {
+		return $( '.mw-twocolconflict-split-tour-intro-container a' );
+	}
+
+	get tourDiffChangeButton() {
+		return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' );
+	}
+
+	get tourSplitSelectionButton() {
+		return $( '.mw-twocolconflict-split-selection .mw-twocolconflict-split-tour-pulsating-button' );
+	}
+
+	get tourYourVersionHeaderPopup() {
+		return $( '.mw-twocolconflict-split-your-version-header .mw-twocolconflict-split-tour-popup' );
+	}
+
+	get tourDiffChangePopup() {
+		return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup' );
+	}
+
+	get tourDiffChangePopupCloseButton() {
+		return $( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-popup a' );
+	}
+
+	get submitButton() {
+		return $( '#wpSave' );
+	}
+
+	get previewButton() {
+		return $( '#wpPreview' );
+	}
+
+	get previewView() {
+		return $( '#wikiPreview' );
+	}
+
+	get previewText() {
+		return $( '#wikiPreview .mw-parser-output' );
+	}
+
+	get coreUiHint() {
+		return $( '.mw-twocolconflict-core-ui-hint .oo-ui-messageWidget' );
+	}
+
+	get coreUiHintCloseButton() {
+		return $( '.mw-twocolconflict-core-ui-hint .oo-ui-icon-close' );
+	}
+
+	get rowsInEditMode() {
+		return $( '.mw-twocolconflict-split-editing' );
+	}
 
 	columnToClass( column ) {
 		switch ( column ) {
