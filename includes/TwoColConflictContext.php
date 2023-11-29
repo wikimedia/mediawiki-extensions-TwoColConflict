@@ -6,8 +6,8 @@ use Config;
 use ExtensionRegistry;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
 use MediaWiki\Title\Title;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserOptionsLookup;
 use MobileContext;
 use WikiPage;
 
