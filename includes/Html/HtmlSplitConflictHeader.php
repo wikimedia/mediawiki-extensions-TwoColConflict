@@ -7,7 +7,6 @@ use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
@@ -28,7 +27,7 @@ use WikiPage;
  */
 class HtmlSplitConflictHeader {
 
-	private LinkTarget $title;
+	private Title $title;
 	private ?RevisionRecord $revision;
 	private Authority $authority;
 	private Language $language;
@@ -76,9 +75,6 @@ class HtmlSplitConflictHeader {
 		$this->newEditSummary = $newEditSummary;
 	}
 
-	/**
-	 * @return RevisionRecord|null
-	 */
 	private function getLatestRevision(): ?RevisionRecord {
 		$wikiPage = $this->wikiPageFactory->newFromTitle( $this->title );
 		/** @see https://phabricator.wikimedia.org/T203085 */
@@ -205,11 +201,6 @@ class HtmlSplitConflictHeader {
 		);
 	}
 
-	/**
-	 * @param string|null $timestamp
-	 *
-	 * @return string
-	 */
 	private function getFormattedDateTime( ?string $timestamp ): string {
 		$diff = ( new ConvertibleTimestamp( $timestamp ?: false ) )->diff( $this->now );
 

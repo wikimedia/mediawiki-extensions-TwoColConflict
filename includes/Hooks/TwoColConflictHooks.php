@@ -233,7 +233,7 @@ class TwoColConflictHooks implements
 	/**
 	 * @param array[] &$prefs
 	 */
-	public function doGetBetaFeaturePreferences( array &$prefs ) {
+	private function doGetBetaFeaturePreferences( array &$prefs ): void {
 		if ( $this->twoColContext->isUsedAsBetaFeature() ) {
 			$config = MediaWikiServices::getInstance()->getMainConfig();
 			$path = $config->get( MainConfigNames::ExtensionAssetsPath );

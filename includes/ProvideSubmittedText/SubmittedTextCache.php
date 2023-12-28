@@ -47,13 +47,6 @@ class SubmittedTextCache {
 		return $this->cache->get( $key );
 	}
 
-	/**
-	 * @param string $titleDbKey
-	 * @param UserIdentity $user
-	 * @param SessionId|null $sessionId
-	 *
-	 * @return string
-	 */
 	private function makeCacheKey( string $titleDbKey, UserIdentity $user, ?SessionId $sessionId ): string {
 		$components = [
 			self::CACHE_KEY,

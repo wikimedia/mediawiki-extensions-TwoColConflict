@@ -35,16 +35,10 @@ class TalkPageResolution {
 		return $this->diff;
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getOtherIndex(): int {
 		return $this->otherIndex;
 	}
 
-	/**
-	 * @return int
-	 */
 	public function getYourIndex(): int {
 		return $this->yourIndex;
 	}
