@@ -51,7 +51,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( '>(twocolconflict-split-your-version-header)<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-split-not-saved-at)<', $html );
 		$this->assertStringContainsString( '>(twocolconflict-copy-tab-action)<', $html );
-		$this->assertStringContainsString( 'Special:ProvideSubmittedText/', $html );
+		$this->assertStringContainsString( 'Special:ProvideSubmittedText/Talk:Original_page', $html );
 	}
 
 	public function testGetHtmlMoreThan23HoursAgo() {
@@ -148,7 +148,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		} );
 
 		return new HtmlSplitConflictHeader(
-			Title::makeTitle( NS_MAIN, __METHOD__ ),
+			Title::makeTitle( NS_TALK, 'Original page' ),
 			$user,
 			$summary,
 			$language,

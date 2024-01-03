@@ -7,12 +7,12 @@ use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Title\Title;
 use Message;
 use MessageLocalizer;
 use OOUI\HtmlSnippet;
@@ -27,7 +27,7 @@ use WikiPage;
  */
 class HtmlSplitConflictHeader {
 
-	private Title $title;
+	private LinkTarget $linkTarget;
 	private ?RevisionRecord $revision;
 	private Authority $authority;
 	private Language $language;
@@ -39,7 +39,7 @@ class HtmlSplitConflictHeader {
 	private CommentFormatter $commentFormatter;
 
 	/**
-	 * @param Title $title
+	 * @param LinkTarget $linkTarget
 	 * @param Authority $authority
 	 * @param string $newEditSummary
 	 * @param Language $language
@@ -51,7 +51,7 @@ class HtmlSplitConflictHeader {
 	 *  title otherwise.
 	 */
 	public function __construct(
-		Title $title,
+		LinkTarget $linkTarget,
 		Authority $authority,
 		string $newEditSummary,
 		Language $language,
@@ -65,7 +65,7 @@ class HtmlSplitConflictHeader {
 		$this->linkRenderer = $services->getLinkRenderer();
 		$this->wikiPageFactory = $services->getWikiPageFactory();
 
-		$this->title = $title;
+		$this->linkTarget = $linkTarget;
 		$this->revision = $revision ?? $this->getLatestRevision();
 		$this->authority = $authority;
 		$this->language = $language;
@@ -76,7 +76,7 @@ class HtmlSplitConflictHeader {
 	}
 
 	private function getLatestRevision(): ?RevisionRecord {
-		$wikiPage = $this->wikiPageFactory->newFromTitle( $this->title );
+		$wikiPage = $this->wikiPageFactory->newFromLinkTarget( $this->linkTarget );
 		/** @see https://phabricator.wikimedia.org/T203085 */
 		$wikiPage->loadPageData( WikiPage::READ_LATEST );
 		return $wikiPage->getRevisionRecord();
@@ -172,7 +172,7 @@ class HtmlSplitConflictHeader {
 
 		if ( $summary !== '' ) {
 			$summaryMsg = $this->messageLocalizer->msg( 'parentheses' )
-				->rawParams( $this->commentFormatter->format( $summary, $this->title ) );
+				->rawParams( $this->commentFormatter->format( $summary, $this->linkTarget ) );
 			$html .= Html::element( 'br' ) .
 				Html::rawElement( 'span', [ 'class' => 'comment' ], $summaryMsg->escaped() );
 		}
@@ -183,7 +183,7 @@ class HtmlSplitConflictHeader {
 	private function getCopyLink(): string {
 		$specialPage = SpecialPage::getTitleValueFor(
 			'TwoColConflictProvideSubmittedText',
-			$this->title->getPrefixedDBkey()
+			(string)$this->linkTarget
 		);
 		$label = $this->messageLocalizer->msg( 'twocolconflict-copy-tab-action' )->text();
 		$tooltip = $this->messageLocalizer->msg( 'twocolconflict-copy-tab-tooltip' )->text();
