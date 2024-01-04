@@ -3,19 +3,20 @@
 namespace TwoColConflict\Tests;
 
 use Language;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\MutableRevisionRecord;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 use Message;
 use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
-use User;
 
 /**
  * @covers \TwoColConflict\Html\HtmlSplitConflictHeader
@@ -173,7 +174,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		);
 		$revision->setUser( $user )
 			->setTimestamp( $timestamp )
-			->setComment( \CommentStoreComment::newUnsavedComment( $editSummary ) );
+			->setComment( CommentStoreComment::newUnsavedComment( $editSummary ) );
 		return $revision;
 	}
 

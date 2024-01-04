@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Html;
 
-use Html;
 use Language;
+use MediaWiki\Html\Html;
 use MessageLocalizer;
 use OOUI\ButtonWidget;
 

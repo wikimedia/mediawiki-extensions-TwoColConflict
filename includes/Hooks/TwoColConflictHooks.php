@@ -14,17 +14,17 @@ use MediaWiki\Hook\EditPageBeforeConflictDiffHook;
 use MediaWiki\Hook\EditPageBeforeEditButtonsHook;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\User\Options\Hook\LoadUserOptionsHook;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use OOUI\ButtonInputWidget;
-use OutputPage;
 use TwoColConflict\ConflictFormValidator;
 use TwoColConflict\Html\CoreUiHintHtml;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
-use User;
 
 /**
  * Hook handlers for the TwoColConflict extension.

@@ -2,22 +2,22 @@
 
 namespace TwoColConflict\Html;
 
-use Html;
 use Language;
-use Linker;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use Message;
 use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
-use SpecialPage;
 use TwoColConflict\SplitConflictUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 use WikiPage;

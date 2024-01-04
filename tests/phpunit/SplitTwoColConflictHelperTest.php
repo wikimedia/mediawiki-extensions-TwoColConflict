@@ -7,17 +7,17 @@ use Language;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionId;
+use MediaWiki\User\User;
 use MessageLocalizer;
 use MockTitleTrait;
 use OOUI\BlankTheme;
 use OOUI\Theme;
-use OutputPage;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
-use User;
-use WebRequest;
 use WikiPage;
 
 /**

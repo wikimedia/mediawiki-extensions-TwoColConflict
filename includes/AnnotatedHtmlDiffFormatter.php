@@ -2,10 +2,10 @@
 
 namespace TwoColConflict;
 
-use Diff;
 use Wikimedia\Diff\ComplexityException;
+use Wikimedia\Diff\Diff;
 use Wikimedia\Diff\WordAccumulator;
-use WordLevelDiff;
+use Wikimedia\Diff\WordLevelDiff;
 
 /**
  * @license GPL-2.0-or-later

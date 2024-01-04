@@ -3,14 +3,15 @@
 namespace TwoColConflict;
 
 use BagOStuff;
-use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\EditPage\TextConflictHelper;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Title\Title;
-use OutputPage;
+use MediaWiki\User\User;
 use ParserOptions;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
@@ -19,7 +20,6 @@ use TwoColConflict\Html\HtmlTalkPageResolutionView;
 use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TalkPageConflict\TalkPageResolution;
-use User;
 use WikitextContent;
 
 /**

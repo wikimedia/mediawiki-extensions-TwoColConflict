@@ -3,15 +3,15 @@
 namespace TwoColConflict\ProvideSubmittedText;
 
 use BagOStuff;
-use Html;
 use IBufferingStatsdDataFactory;
 use MediaWiki\EditPage\TextboxBuilder;
+use MediaWiki\Html\Html;
 use MediaWiki\Page\PageIdentity;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use TwoColConflict\TwoColConflictContext;
-use UnlistedSpecialPage;
 
 /**
  * Special page allows users to see their originally submitted text while they

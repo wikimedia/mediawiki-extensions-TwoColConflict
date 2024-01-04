@@ -2,8 +2,8 @@
 
 namespace TwoColConflict;
 
-use Config;
 use ExtensionRegistry;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;

@@ -7,10 +7,10 @@ namespace TwoColConflict\Hooks;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Hook\EditPage__importFormDataHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Request\WebRequest;
 use TwoColConflict\ConflictFormValidator;
 use TwoColConflict\SplitConflictMerger;
 use TwoColConflict\TwoColConflictContext;
-use WebRequest;
 
 /**
  * @license GPL-2.0-or-later

@@ -3,8 +3,8 @@
 namespace TwoColConflict\Tests;
 
 use MediaWiki\EditPage\EditPage;
+use MediaWiki\Request\WebRequest;
 use TwoColConflict\Hooks\EditPageImportFormDataHookHandler;
-use WebRequest;
 use Wikimedia\TestingAccessWrapper;
 
 /**

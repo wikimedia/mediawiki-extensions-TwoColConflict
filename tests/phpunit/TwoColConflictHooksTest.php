@@ -7,6 +7,8 @@ use IContextSource;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;
@@ -15,11 +17,9 @@ use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\InputWidget;
 use OOUI\Theme;
-use OutputPage;
 use PHPUnit\Framework\MockObject\MockObject;
 use TwoColConflict\Hooks\TwoColConflictHooks;
 use TwoColConflict\TwoColConflictContext;
-use WebRequest;
 
 /**
  * @covers \TwoColConflict\Hooks\TwoColConflictHooks

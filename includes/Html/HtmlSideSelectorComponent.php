@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Html;
 
-use Html;
+use MediaWiki\Html\Html;
 use MessageLocalizer;
 use OOUI\RadioInputWidget;
 

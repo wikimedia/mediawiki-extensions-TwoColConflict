@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Tests;
 
+use MediaWiki\Request\WebRequest;
 use TwoColConflict\ConflictFormValidator;
-use WebRequest;
 use Wikimedia\TestingAccessWrapper;
 
 /**

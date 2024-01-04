@@ -3,14 +3,14 @@
 namespace TwoColConflict\Tests;
 
 use ExtensionRegistry;
-use HashConfig;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use TwoColConflict\TwoColConflictContext;
-use User;
 use Wikimedia\TestingAccessWrapper;
 
 /**
