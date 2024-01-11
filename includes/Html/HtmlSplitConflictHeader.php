@@ -28,55 +28,16 @@ use WikiPage;
  */
 class HtmlSplitConflictHeader {
 
-	/**
-	 * @var LinkTarget
-	 */
-	private $title;
-
-	/**
-	 * @var RevisionRecord|null
-	 */
-	private $revision;
-
-	/**
-	 * @var Authority
-	 */
-	private $authority;
-
-	/**
-	 * @var Language
-	 */
-	private $language;
-
-	/**
-	 * @var MessageLocalizer
-	 */
-	private $messageLocalizer;
-
-	/**
-	 * @var ConvertibleTimestamp
-	 */
-	private $now;
-
-	/**
-	 * @var string
-	 */
-	private $newEditSummary;
-
-	/**
-	 * @var LinkRenderer
-	 */
-	private $linkRenderer;
-
-	/**
-	 * @var WikiPageFactory
-	 */
-	private $wikiPageFactory;
-
-	/**
-	 * @var CommentFormatter
-	 */
-	private $commentFormatter;
+	private LinkTarget $title;
+	private ?RevisionRecord $revision;
+	private Authority $authority;
+	private Language $language;
+	private MessageLocalizer $messageLocalizer;
+	private ConvertibleTimestamp $now;
+	private string $newEditSummary;
+	private LinkRenderer $linkRenderer;
+	private WikiPageFactory $wikiPageFactory;
+	private CommentFormatter $commentFormatter;
 
 	/**
 	 * @param Title $title
@@ -223,7 +184,7 @@ class HtmlSplitConflictHeader {
 		return Html::rawElement( 'div', [ 'class' => $class ], $html );
 	}
 
-	private function getCopyLink() {
+	private function getCopyLink(): string {
 		$specialPage = SpecialPage::getTitleValueFor(
 			'TwoColConflictProvideSubmittedText',
 			$this->title->getPrefixedDBkey()
@@ -272,13 +233,13 @@ class HtmlSplitConflictHeader {
 		return $this->messageLocalizer->msg( 'just-now' )->text();
 	}
 
-	private function getMessageBox( string $messageKey, string $type, $classes = [] ): string {
+	private function getMessageBox( string $messageKey, string $type, string ...$classes ): string {
 		$html = $this->messageLocalizer->msg( $messageKey )->parse();
 		return ( new MessageWidget( [
 			'label' => new HtmlSnippet( SplitConflictUtils::addTargetBlankToLinks( $html ) ),
 			'type' => $type,
 		] ) )
-			->addClasses( array_merge( [ 'mw-twocolconflict-messageWidget' ], (array)$classes ) )
+			->addClasses( [ 'mw-twocolconflict-messageWidget', ...$classes ] )
 			->toString();
 	}
 

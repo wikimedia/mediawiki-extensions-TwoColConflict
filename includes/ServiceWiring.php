@@ -7,7 +7,7 @@ use MediaWiki\MediaWikiServices;
 
 return [
 
-	'TwoColConflictContext' => static function ( MediaWikiServices $services ) {
+	'TwoColConflictContext' => static function ( MediaWikiServices $services ): TwoColConflictContext {
 		$extensionRegistry = ExtensionRegistry::getInstance();
 		$mobileContext = $extensionRegistry->isLoaded( 'MobileFrontend' )
 			? $services->getService( 'MobileFrontend.Context' )

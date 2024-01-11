@@ -16,12 +16,8 @@ class SubmittedTextCache {
 
 	private const CACHE_KEY = 'twoColConflict_yourText';
 
-	/** @var BagOStuff */
-	private $cache;
+	private BagOStuff $cache;
 
-	/**
-	 * @param BagOStuff $cache
-	 */
 	public function __construct( BagOStuff $cache ) {
 		$this->cache = $cache;
 	}
@@ -34,7 +30,7 @@ class SubmittedTextCache {
 	 *
 	 * @return bool If caching was successful or not.
 	 */
-	public function stashText( string $titleDbKey, UserIdentity $user, ?SessionId $sessionId, string $text ) {
+	public function stashText( string $titleDbKey, UserIdentity $user, ?SessionId $sessionId, string $text ): bool {
 		$key = $this->makeCacheKey( $titleDbKey, $user, $sessionId );
 		return $this->cache->set( $key, $text, ExpirationAwareness::TTL_DAY );
 	}
@@ -58,7 +54,7 @@ class SubmittedTextCache {
 	 *
 	 * @return string
 	 */
-	private function makeCacheKey( string $titleDbKey, UserIdentity $user, ?SessionId $sessionId ) {
+	private function makeCacheKey( string $titleDbKey, UserIdentity $user, ?SessionId $sessionId ): string {
 		$components = [
 			self::CACHE_KEY,
 			$titleDbKey,

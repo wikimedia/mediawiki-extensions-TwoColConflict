@@ -14,20 +14,9 @@ use Wikimedia\Diff\ComplexityException;
  */
 class ResolutionSuggester {
 
-	/**
-	 * @var RevisionRecord|null
-	 */
-	private $baseRevision;
+	private ?RevisionRecord $baseRevision;
+	private string $contentFormat;
 
-	/**
-	 * @var string
-	 */
-	private $contentFormat;
-
-	/**
-	 * @param RevisionRecord|null $baseRevision
-	 * @param string $contentFormat
-	 */
 	public function __construct( ?RevisionRecord $baseRevision, string $contentFormat ) {
 		$this->baseRevision = $baseRevision;
 		$this->contentFormat = $contentFormat;
@@ -129,7 +118,7 @@ class ResolutionSuggester {
 	/**
 	 * @return string[]
 	 */
-	private function getBaseRevisionLines() {
+	private function getBaseRevisionLines(): array {
 		if ( !$this->baseRevision ) {
 			return [];
 		}
@@ -155,7 +144,7 @@ class ResolutionSuggester {
 		return [ $before, $after ];
 	}
 
-	private function moveNewlinesUp( array &$diff, int $i, int $count ) {
+	private function moveNewlinesUp( array &$diff, int $i, int $count ): void {
 		if ( $count < 1 || !isset( $diff[$i - 1] ) || $diff[$i - 1]['action'] !== 'add' ) {
 			return;
 		}
@@ -165,7 +154,7 @@ class ResolutionSuggester {
 		$diff[$i]['copytext'] = substr( $diff[$i]['copytext'], $count );
 	}
 
-	private function moveNewlinesDown( array &$diff, int $i, int $count ) {
+	private function moveNewlinesDown( array &$diff, int $i, int $count ): void {
 		if ( $count < 1 || !isset( $diff[$i + 1] ) || $diff[$i + 1]['action'] !== 'add' ) {
 			return;
 		}
