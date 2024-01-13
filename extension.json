@@ -139,7 +139,7 @@
 			]
 		},
 		"ext.TwoColConflict.Split.TourImages": {
-			"class": "ResourceLoaderImageModule",
+			"class": "MediaWiki\\ResourceLoader\\ImageModule",
 			"selector": ".mw-twocolconflict-split-tour-image-{name}",
 			"images": {
 				"blue-dot": {
