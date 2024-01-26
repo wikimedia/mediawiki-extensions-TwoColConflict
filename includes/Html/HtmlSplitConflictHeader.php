@@ -2,6 +2,7 @@
 
 namespace TwoColConflict\Html;
 
+use IDBAccessObject;
 use Language;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Html\Html;
@@ -19,7 +20,6 @@ use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use TwoColConflict\SplitConflictUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
-use WikiPage;
 
 /**
  * @license GPL-2.0-or-later
@@ -78,7 +78,7 @@ class HtmlSplitConflictHeader {
 	private function getLatestRevision(): ?RevisionRecord {
 		$wikiPage = $this->wikiPageFactory->newFromLinkTarget( $this->linkTarget );
 		/** @see https://phabricator.wikimedia.org/T203085 */
-		$wikiPage->loadPageData( WikiPage::READ_LATEST );
+		$wikiPage->loadPageData( IDBAccessObject::READ_LATEST );
 		return $wikiPage->getRevisionRecord();
 	}
 
