@@ -58,7 +58,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			return;
 		}
 
-		$out->setPageTitle(
+		$out->setPageTitleMsg(
 			$this->msg( 'editconflict', $title->getPrefixedText() )
 		);
 
