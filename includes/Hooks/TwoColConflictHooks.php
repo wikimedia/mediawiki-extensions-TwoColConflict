@@ -77,7 +77,7 @@ class TwoColConflictHooks implements
 			return new SplitTwoColConflictHelper(
 				$title,
 				$context->getOutput(),
-				$services->getStatsdDataFactory(),
+				$services->getStatsFactory(),
 				$submitButtonLabel,
 				$services->getContentHandlerFactory(),
 				$this->twoColContext,
