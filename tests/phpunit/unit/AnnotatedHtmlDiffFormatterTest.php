@@ -249,8 +249,8 @@ Just multi-line <ins class="mw-twocolconflict-diffchange">test</ins>.
 <ins class="mw-twocolconflict-diffchange">Line </ins>number 2 <ins class="mw-twocolconflict-diffchange">changed</ins>.
 <ins class="mw-twocolconflict-diffchange">Line </ins>number 3 <ins class="mw-twocolconflict-diffchange">also changed</ins>.
 TEXT
+,
 // phpcs:enable
-						,
 						'newtext' => <<<TEXT
 Just multi-line test.
 Line number 2 changed.
@@ -291,8 +291,9 @@ Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del 
 \u{00A0}
 <del class="mw-twocolconflict-diffchange">Just another line with an empty line above</del>.
 TEXT
+,
 // phpcs:enable
-						,
+
 						'oldtext' => <<<TEXT
 Line number two. This line is quite long!
 And that's line number three - even longer than the line before.
@@ -307,8 +308,9 @@ TEXT
 Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins class="mw-twocolconflict-diffchange">number three and </ins>quite long!
 <ins class="mw-twocolconflict-diffchange">Add more new stuff</ins>.
 TEXT
+,
 // phpcs:enable
-						,
+
 						'newtext' => <<<TEXT
 Add something new.
 Line number two. Now line number three and quite long!
