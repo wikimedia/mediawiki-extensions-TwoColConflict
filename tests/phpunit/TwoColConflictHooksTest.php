@@ -104,9 +104,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnGetBetaFeaturePreferences_whileInBeta() {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
+		$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
 
 		$this->setMwGlobals( [
 			'wgTwoColConflictBetaFeature' => true,
@@ -125,9 +123,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnGetPreferences_whileInBeta() {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
+		$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
 
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
 
@@ -288,9 +284,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnEditPageShowEditFormFields() {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'BetaFeatures' ) ) {
-			$this->markTestSkipped( 'BetaFeatures not loaded' );
-		}
+		$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
 
 		$this->setService( 'UserOptionsLookup', new StaticUserOptionsLookup( [], [
 			TwoColConflictContext::ENABLED_PREFERENCE => false,
