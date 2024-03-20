@@ -137,7 +137,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 			$msg->method( $this->logicalOr( 'escaped', 'parse', 'text' ) )->willReturn( $text );
 			$msg->method( 'rawParams' )->willReturnCallback( function ( ...$params ) use ( $key ) {
 				// fallback for the copy links
-				if ( strpos( $params[0], 'twocolconflict-copy' ) ) {
+				if ( str_contains( $params[0], 'twocolconflict-copy-tab-action' ) ) {
 					return $params[0];
 				}
 				$msg = $this->createMock( Message::class );
