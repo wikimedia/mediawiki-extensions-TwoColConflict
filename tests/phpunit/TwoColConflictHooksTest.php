@@ -153,7 +153,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @dataProvider provideGetOption
 	 */
-	public function testGetOption( ?int $origBeta, ?int $origEditing, bool $expectedEditing ) {
+	public function testGetOption( ?string $origBeta, ?string $origEditing, bool $expectedEditing ) {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
@@ -170,23 +170,23 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	public static function provideGetOption() {
 		return [
 			[
-				'origBeta' => 0,
-				'origEditing' => 0,
+				'origBeta' => '0',
+				'origEditing' => '0',
 				'newEditing' => false,
 			],
 			[
-				'origBeta' => 0,
+				'origBeta' => '0',
 				'origEditing' => null,
 				'newEditing' => true,
 			],
 			[
-				'origBeta' => 0,
-				'origEditing' => 1,
+				'origBeta' => '0',
+				'origEditing' => '1',
 				'newEditing' => true,
 			],
 			[
 				'origBeta' => null,
-				'origEditing' => 0,
+				'origEditing' => '0',
 				'newEditing' => false,
 			],
 			[
@@ -196,22 +196,22 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			],
 			[
 				'origBeta' => null,
-				'origEditing' => 1,
+				'origEditing' => '1',
 				'newEditing' => true,
 			],
 			[
-				'origBeta' => 1,
-				'origEditing' => 0,
+				'origBeta' => '1',
+				'origEditing' => '0',
 				'newEditing' => false,
 			],
 			[
-				'origBeta' => 1,
+				'origBeta' => '1',
 				'origEditing' => null,
 				'newEditing' => true,
 			],
 			[
-				'origBeta' => 1,
-				'origEditing' => 1,
+				'origBeta' => '1',
+				'origEditing' => '1',
 				'newEditing' => true,
 			],
 		];
@@ -222,7 +222,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @dataProvider provideSetOption
 	 */
-	public function testSetOption( ?int $origBeta, ?int $origEditing, ?bool $setEditing, bool $newEditing ) {
+	public function testSetOption( ?string $origBeta, ?string $origEditing, ?bool $setEditing, bool $newEditing ) {
 		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
