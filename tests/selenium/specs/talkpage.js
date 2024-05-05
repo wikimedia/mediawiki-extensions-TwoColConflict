@@ -7,75 +7,75 @@ const assert = require( 'assert' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
 describe( 'TwoColConflict', function () {
-	before( function () {
-		EditConflictPage.prepareEditConflict();
+	before( async function () {
+		await EditConflictPage.prepareEditConflict();
 	} );
 
 	describe( 'on talk page conflicts', function () {
-		before( function () {
-			TalkConflictPage.createTalkPageConflict();
-			EditConflictPage.waitForJS();
+		before( async function () {
+			await TalkConflictPage.createTalkPageConflict();
+			await EditConflictPage.waitForJS();
 		} );
 
-		it( 'shows the talk page screen correctly', function () {
-			assert( !TalkConflictPage.splitColumn.isExisting() );
+		it( 'shows the talk page screen correctly', async function () {
+			assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
 
-			assert( EditConflictPage.getParagraph( 'other' ) );
-			assert( EditConflictPage.getParagraph( 'your' ) );
-			assert( EditConflictPage.getParagraph( 'copy' ) );
+			assert( await EditConflictPage.getParagraph( 'other' ) );
+			assert( await EditConflictPage.getParagraph( 'your' ) );
+			assert( await EditConflictPage.getParagraph( 'copy' ) );
 
 			// Only "your" block is editable
-			assert( EditConflictPage.getEditButton( 'your' ).isExisting() );
-			assert( !EditConflictPage.getEditButton( 'other' ).isExisting() );
-			assert( !EditConflictPage.getEditButton( 'copy' ).isExisting() );
+			assert( await EditConflictPage.getEditButton( 'your' ).isExisting() );
+			assert( !( await EditConflictPage.getEditButton( 'other' ).isExisting() ) );
+			assert( !( await EditConflictPage.getEditButton( 'copy' ).isExisting() ) );
 
-			assert( TalkConflictPage.isOtherBlockFirst() );
+			assert( await TalkConflictPage.isOtherBlockFirst() );
 		} );
 
-		it( 'swaps blocks when switch button is clicked', function () {
-			TalkConflictPage.swapButton.click();
+		it( 'swaps blocks when switch button is clicked', async function () {
+			await TalkConflictPage.swapButton.click();
 
-			assert( TalkConflictPage.isYourBlockFirst() );
+			assert( await TalkConflictPage.isYourBlockFirst() );
 		} );
 
-		it( 'shows correct preview when swapped', function () {
-			EditConflictPage.previewButton.click();
+		it( 'shows correct preview when swapped', async function () {
+			await EditConflictPage.previewButton.click();
 
-			assert( EditConflictPage.previewView.waitForDisplayed() );
+			assert( await EditConflictPage.previewView.waitForDisplayed() );
 
 			assert.strictEqual(
-				EditConflictPage.previewText.getText(),
+				await EditConflictPage.previewText.getText(),
 				'Line1 Line2 Line3 Comment B Comment A'
 			);
 		} );
 
-		it( 'stores correct merge when swapped and edited', function () {
-			TalkConflictPage.editMyComment( 'Comment B edited' );
+		it( 'stores correct merge when swapped and edited', async function () {
+			await TalkConflictPage.editMyComment( 'Comment B edited' );
 
-			EditConflictPage.submitButton.click();
+			await EditConflictPage.submitButton.click();
 
 			assert.strictEqual(
-				FinishedConflictPage.pageWikitext,
+				await FinishedConflictPage.pageWikitext(),
 				'Line1\nLine2\nLine3\nComment B edited\nComment <span lang="de">A</span>'
 			);
 		} );
 	} );
 
-	it( 'shows the talk page screen on conflicts that also add new lines', function () {
-		EditConflictPage.createConflict(
+	it( 'shows the talk page screen on conflicts that also add new lines', async function () {
+		await EditConflictPage.createConflict(
 			'Line1\n\nLine2',
 			'Line1\nComment <span lang="de">A</span>\nLine2',
 			'Line1\nComment <span lang="en">B</span>\n\nLine2',
 			Util.getTestString( 'Talk:Test-conflict-' )
 		);
-		TalkConflictPage.talkRow.waitForDisplayed();
+		await TalkConflictPage.talkRow.waitForDisplayed();
 
-		assert( !TalkConflictPage.splitColumn.isExisting() );
+		assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
 	} );
 
 	// TODO: test for double-conflict, all text should be restored even if edited.
 
-	after( function () {
-		browser.deleteAllCookies();
+	after( async function () {
+		await browser.deleteAllCookies();
 	} );
 } );
