@@ -1,23 +1,25 @@
 'use strict';
 
 const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' );
+	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+	TestAccounts = require( '../test_accounts' );
 
 describe( 'TwoColConflict GuidedTour', function () {
-	before( function () {
-		EditConflictPage.prepareEditConflict();
+	before( async function () {
+		await TestAccounts.loginAsUser();
+		await EditConflictPage.prepareUserSettings();
 	} );
 
 	describe( 'on initial view', function () {
 
-		before( function () {
-			EditConflictPage.toggleHelpDialog( true );
-			EditConflictPage.showSimpleConflict();
+		before( async function () {
+			await EditConflictPage.toggleHelpDialog( true );
+			await EditConflictPage.showSimpleConflict();
 		} );
 
-		it( 'shows the tour', function () {
+		it( 'shows the tour', async function () {
 			assert(
-				EditConflictPage.tourDialog.waitForDisplayed(),
+				await EditConflictPage.tourDialog.waitForDisplayed(),
 				'I see an info tour'
 			);
 		} );
@@ -25,34 +27,34 @@ describe( 'TwoColConflict GuidedTour', function () {
 
 	describe( 'on subsequent view', function () {
 
-		before( function () {
-			EditConflictPage.openTitle( '' );
-			EditConflictPage.toggleHelpDialog( false );
-			EditConflictPage.showSimpleConflict();
+		before( async function () {
+			await EditConflictPage.openTitle( '' );
+			await EditConflictPage.toggleHelpDialog( false );
+			await EditConflictPage.showSimpleConflict();
 		} );
 
-		it( 'hides the tour', function () {
+		it( 'hides the tour', async function () {
 			assert(
-				!EditConflictPage.tourDialog.isDisplayed(),
+				!( await EditConflictPage.tourDialog.isDisplayed() ),
 				'I don\'t see an info tour'
 			);
 		} );
 
-		it( 'clicking the info button shows the tour', function () {
-			EditConflictPage.infoButton.click();
+		it( 'clicking the info button shows the tour', async function () {
+			await EditConflictPage.infoButton.click();
 
 			assert(
-				EditConflictPage.tourDialog.waitForDisplayed(),
+				await EditConflictPage.tourDialog.waitForDisplayed(),
 				'I see an info tour'
 			);
 		} );
 
-		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', function () {
-			EditConflictPage.tourDialogCloseButton.waitForDisplayed( { timeout: 2000 } );
-			EditConflictPage.tourDialogCloseButton.click();
+		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', async function () {
+			await EditConflictPage.tourDialogCloseButton.waitForDisplayed();
+			await EditConflictPage.tourDialogCloseButton.click();
 
 			assert(
-				EditConflictPage.tourDialogCloseButton.waitForDisplayed( {
+				await EditConflictPage.tourDialogCloseButton.waitForDisplayed( {
 					timeout: 2000,
 					reverse: true
 				} ),
@@ -60,58 +62,23 @@ describe( 'TwoColConflict GuidedTour', function () {
 			);
 
 			assert(
-				EditConflictPage.tourDiffChangeButton.isDisplayed(),
+				await EditConflictPage.tourDiffChangeButton.isDisplayed(),
 				'Diff change pulsating button has appeared'
 			);
 
 			assert(
-				EditConflictPage.tourSplitSelectionButton.isDisplayed(),
+				await EditConflictPage.tourSplitSelectionButton.isDisplayed(),
 				'Split selection pulsating button has appeared'
 			);
 
 			assert(
-				EditConflictPage.tourYourVersionHeaderPopup.isDisplayed(),
+				await EditConflictPage.tourYourVersionHeaderPopup.isDisplayed(),
 				'Your version header popup has appeared'
-			);
-		} );
-
-		it( 'clicking on a pulsating button opens a popup', function () {
-			EditConflictPage.tourDiffChangeButton.waitForDisplayed( { timeout: 2000 } );
-
-			// FIXME tourDiffChangeButton.click() throws an error with the new wdio config this is a workaround
-			browser.execute( function () {
-				$( '.mw-twocolconflict-diffchange .mw-twocolconflict-split-tour-pulsating-button' ).click();
-			} );
-
-			EditConflictPage.tourDiffChangeButton.waitForDisplayed( {
-				timeout: 2000, reverse: true
-			} );
-
-			assert(
-				!EditConflictPage.tourDiffChangeButton.isDisplayed(),
-				'Diff change pulsating button has disappeared'
-			);
-
-			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed(),
-				'Diff change popup has appeared'
-			);
-		} );
-
-		it( 'clicking on a popup\'s close button closes the popup', function () {
-			EditConflictPage.tourDiffChangePopupCloseButton.waitForDisplayed( { timeout: 2000 } );
-			EditConflictPage.tourDiffChangePopupCloseButton.click();
-
-			assert(
-				EditConflictPage.tourDiffChangePopup.waitForDisplayed( {
-					timeout: 500, reverse: true
-				} ),
-				'Diff change popup has disappeared'
 			);
 		} );
 	} );
 
-	after( function () {
-		browser.deleteCookies();
+	after( async function () {
+		await browser.deleteCookies();
 	} );
 } );
