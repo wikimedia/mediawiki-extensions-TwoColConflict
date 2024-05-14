@@ -6,6 +6,7 @@ use ExtensionRegistry;
 use IContextSource;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\WebRequest;
@@ -34,8 +35,9 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		parent::setUp();
 		Theme::setSingleton( new BlankTheme() );
 
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => false,
+		$this->overrideConfigValues( [
+			'TwoColConflictBetaFeature' => false,
+			MainConfigNames::LanguageCode => 'qqx',
 		] );
 	}
 
@@ -55,9 +57,8 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 			TwoColConflictContext::ENABLED_PREFERENCE => false,
 		] ) );
 
-		$editPage = $this->createMock( EditPage::class );
+		$editPage = $this->createNoOpMock( EditPage::class, [ 'getContext' ] );
 		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
-		$editPage->expects( $this->never() )->method( 'setEditConflictHelperFactory' );
 
 		$this->getHookHandlerInstance()->onAlternateEdit( $editPage );
 	}
@@ -71,7 +72,8 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$context = $this->createContext();
 		$context->method( 'getRequest' )->willReturn( $request );
 
-		$editPage = $this->createMock( EditPage::class );
+		$editPage = $this->createNoOpMock( EditPage::class,
+			[ 'getContext', 'setEditConflictHelperFactory' ] );
 		$editPage->method( 'getContext' )->willReturn( $context );
 		// TODO: The code in the factory function is currently not tested
 		$editPage->expects( $this->once() )->method( 'setEditConflictHelperFactory' );
@@ -80,7 +82,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnEditPageBeforeEditButtons() {
-		$editPage = $this->createMock( EditPage::class );
+		$editPage = $this->createNoOpMock( EditPage::class, [ 'getContext' ] );
 		$editPage->isConflict = true;
 		$editPage->method( 'getContext' )->willReturn( $this->createContext() );
 
@@ -98,7 +100,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$outputPage->expects( $this->exactly( $calls ) )->method( 'addModules' );
 
 		$this->getHookHandlerInstance()->onEditPage__showEditForm_initial(
-			$this->createMock( EditPage::class ),
+			$this->createNoOpMock( EditPage::class ),
 			$outputPage
 		);
 	}
@@ -106,9 +108,9 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	public function testOnGetBetaFeaturePreferences_whileInBeta() {
 		$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
 
-		$this->setMwGlobals( [
-			'wgTwoColConflictBetaFeature' => true,
-			'wgExtensionAssetsPath' => '',
+		$this->overrideConfigValues( [
+			'TwoColConflictBetaFeature' => true,
+			MainConfigNames::ExtensionAssetsPath => '',
 		] );
 
 		$prefs = [];
@@ -125,7 +127,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	public function testOnGetPreferences_whileInBeta() {
 		$this->markTestSkippedIfExtensionNotLoaded( 'BetaFeatures' );
 
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', true );
+		$this->overrideConfigValue( 'TwoColConflictBetaFeature', true );
 
 		$prefs = [];
 		$this->getHookHandlerInstance()->onGetPreferences( $this->getTestUser()->getUser(), $prefs );
@@ -154,7 +156,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 * @dataProvider provideGetOption
 	 */
 	public function testGetOption( ?string $origBeta, ?string $origEditing, bool $expectedEditing ) {
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+		$this->overrideConfigValue( 'TwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
 		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
@@ -223,7 +225,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 * @dataProvider provideSetOption
 	 */
 	public function testSetOption( ?string $origBeta, ?string $origEditing, ?bool $setEditing, bool $newEditing ) {
-		$this->setMwGlobals( 'wgTwoColConflictBetaFeature', false );
+		$this->overrideConfigValue( 'TwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
 		$this->setOptionRow( $user, TwoColConflictContext::BETA_PREFERENCE_NAME, $origBeta );
@@ -291,9 +293,11 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 		$this->setService( 'UserOptionsLookup', new StaticUserOptionsLookup( [], [
 			TwoColConflictContext::ENABLED_PREFERENCE => false,
+			// T364741
+			'skin' => '',
 		] ) );
 
-		$editPage = $this->createMock( EditPage::class );
+		$editPage = $this->createNoOpMock( EditPage::class );
 		$editPage->isConflict = true;
 
 		$outputPage = $this->createOutputPage();
