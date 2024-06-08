@@ -102,7 +102,7 @@ $.extend( Tour.prototype, {
 			panel: $panel
 		} );
 
-		closeButton.on( 'click', function () {
+		closeButton.on( 'click', () => {
 			self.dialog.close();
 			self.showButtons();
 		} );
@@ -150,11 +150,11 @@ $.extend( Tour.prototype, {
 			classes: [ 'mw-twocolconflict-split-tour-popup' ]
 		} );
 
-		closeButton.on( 'click', function () {
+		closeButton.on( 'click', () => {
 			popup.toggle( false );
 		} );
 
-		$pulsatingButton.on( 'click', function ( e ) {
+		$pulsatingButton.on( 'click', ( e ) => {
 			e.preventDefault();
 			$pulsatingButton.hide();
 			self.showTourPopup( popup );
@@ -166,7 +166,7 @@ $.extend( Tour.prototype, {
 	showButtons: function () {
 		const self = this;
 
-		this.buttons.forEach( function ( data ) {
+		this.buttons.forEach( ( data ) => {
 			if ( !data.popup ) {
 				data.$pulsatingButton = self.createPopupButton( data.$element );
 				data.popup = self.createPopup(
@@ -203,7 +203,7 @@ $.extend( Tour.prototype, {
 	},
 
 	showTourPopup: function ( popup ) {
-		this.buttons.forEach( function ( data ) {
+		this.buttons.forEach( ( data ) => {
 			if ( data.popup ) {
 				data.popup.toggle( data.popup === popup );
 			}
@@ -211,7 +211,7 @@ $.extend( Tour.prototype, {
 	},
 
 	hideTourPopups: function () {
-		this.buttons.forEach( function ( data ) {
+		this.buttons.forEach( ( data ) => {
 			if ( data.popup ) {
 				data.popup.toggle( false );
 				data.$pulsatingButton.hide();
@@ -236,7 +236,7 @@ $.extend( Tour.prototype, {
 			classes: buttonClasses
 		} );
 
-		helpButton.on( 'click', function () {
+		helpButton.on( 'click', () => {
 			self.showTour();
 		} );
 

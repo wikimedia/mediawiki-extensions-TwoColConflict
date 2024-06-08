@@ -8,9 +8,7 @@ class TestAccounts {
 	// FIXME: Note that these cannot be lazy-initialized from within another browser.call
 
 	get adminBot() {
-		return browser.call( async () => {
-			return await Api.bot();
-		} );
+		return browser.call( async () => await Api.bot() );
 	}
 
 	async createUserAccount() {
@@ -29,9 +27,7 @@ class TestAccounts {
 
 	async otherBot() {
 		const credentials = await this.createUserAccount();
-		return await browser.call( async () => {
-			return await Api.bot( credentials.username, credentials.password );
-		} );
+		return await browser.call( async () => await Api.bot( credentials.username, credentials.password ) );
 	}
 }
 

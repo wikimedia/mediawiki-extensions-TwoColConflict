@@ -21,7 +21,7 @@
 	QUnit.module( 'ext.TwoColConflict.Split.Merger' );
 	const merger = require( 'ext.TwoColConflict.SplitJs' ).private.Merger;
 
-	QUnit.test( 'testSingleCopyRow', function ( assert ) {
+	QUnit.test( 'testSingleCopyRow', ( assert ) => {
 		assert.strictEqual(
 			merger(
 				buildColumns( [
@@ -32,7 +32,7 @@
 		);
 	} );
 
-	QUnit.test( 'testMultipleColumns', function ( assert ) {
+	QUnit.test( 'testMultipleColumns', ( assert ) => {
 		assert.strictEqual(
 			merger(
 				buildColumns( [
@@ -44,7 +44,7 @@
 		);
 	} );
 
-	QUnit.test( 'testExtraLineFeedsAreAdded', function ( assert ) {
+	QUnit.test( 'testExtraLineFeedsAreAdded', ( assert ) => {
 		assert.strictEqual(
 			merger(
 				buildColumns( [
@@ -56,7 +56,7 @@
 		);
 	} );
 
-	QUnit.test( 'testEmptyLinesAreSkipped', function ( assert ) {
+	QUnit.test( 'testEmptyLinesAreSkipped', ( assert ) => {
 		assert.strictEqual(
 			merger(
 				buildColumns( [
@@ -69,7 +69,7 @@
 		);
 	} );
 
-	QUnit.test( 'testRowsNotEmptiedByTheUserAreNotIgnored', function ( assert ) {
+	QUnit.test( 'testRowsNotEmptiedByTheUserAreNotIgnored', ( assert ) => {
 		assert.strictEqual(
 			merger(
 				buildColumns( [

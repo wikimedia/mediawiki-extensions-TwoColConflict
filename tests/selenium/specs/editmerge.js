@@ -3,22 +3,22 @@
 const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' );
 
-describe( 'TwoColConflict EditUi', function () {
-	before( async function () {
+describe( 'TwoColConflict EditUi', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await EditConflictPage.showSimpleConflict();
 	} );
 
-	describe( 'on initial view', function () {
+	describe( 'on initial view', () => {
 
-		before( async function () {
+		before( async () => {
 			await EditConflictPage.showSimpleConflict();
 		} );
 
-		it( 'will not switch to edit mode as long as nothing is selected', async function () {
+		it( 'will not switch to edit mode as long as nothing is selected', async () => {
 			await EditConflictPage.getColumn( 'other' ).click();
 			await EditConflictPage.getColumn( 'your' ).click();
 			await EditConflictPage.getColumn( 'unchanged' ).click();
@@ -61,7 +61,7 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 		} );
 
-		it( 'has edit buttons that toggle visibility depending on the side selection', async function () {
+		it( 'has edit buttons that toggle visibility depending on the side selection', async () => {
 			await EditConflictPage.yourParagraphSelection.click();
 
 			assert(
@@ -81,7 +81,7 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 		} );
 
-		it( 'will not switch to edit mode if the column clicked is not selected', async function () {
+		it( 'will not switch to edit mode if the column clicked is not selected', async () => {
 			await EditConflictPage.otherParagraphSelection.click();
 			await EditConflictPage.getColumn( 'your' ).click();
 
@@ -95,7 +95,7 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 		} );
 
-		it( 'will switch to edit mode by clicking the column that is selected', async function () {
+		it( 'will switch to edit mode by clicking the column that is selected', async () => {
 			await EditConflictPage.otherParagraphSelection.click();
 			await EditConflictPage.getColumn( 'other' ).click();
 
@@ -117,7 +117,7 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 		} );
 
-		it( 'will switch to edit mode by clicking the edit button in the column that is selected', async function () {
+		it( 'will switch to edit mode by clicking the edit button in the column that is selected', async () => {
 			await EditConflictPage.otherParagraphSelection.click();
 
 			await EditConflictPage.getEditButton( 'other' ).click();
@@ -158,7 +158,7 @@ describe( 'TwoColConflict EditUi', function () {
 			);
 		} );
 
-		it( 'will switch to edit mode by clicking the edit button in unchanged paragraphs', async function () {
+		it( 'will switch to edit mode by clicking the edit button in unchanged paragraphs', async () => {
 			await EditConflictPage.getEditButton( 'unchanged' ).click();
 			assert(
 				!( await EditConflictPage.getEditor( 'other' ).isDisplayed() ),
@@ -202,7 +202,7 @@ describe( 'TwoColConflict EditUi', function () {
 		} );
 	} );
 
-	it( 'edits of unchanged paragraphs should be saved', async function () {
+	it( 'edits of unchanged paragraphs should be saved', async () => {
 		const unchangedParagraphNewText = 'Dummy Text';
 
 		await EditConflictPage.getEditButton( 'unchanged' ).click();
@@ -222,7 +222,7 @@ describe( 'TwoColConflict EditUi', function () {
 		);
 	} );
 
-	it( 'edits of selected paragraphs should be saved and should not affect unselected paragraphs', async function () {
+	it( 'edits of selected paragraphs should be saved and should not affect unselected paragraphs', async () => {
 		const yourParagraphDiffText = await EditConflictPage.getDiffText( 'your' ).getText(),
 			yourParagraphEditorText = await EditConflictPage.getEditor( 'your' ).getValue(),
 			otherParagraphNewText = 'Dummy Text';
@@ -258,7 +258,7 @@ describe( 'TwoColConflict EditUi', function () {
 		);
 	} );
 
-	it( 'paragraph edits can be reverted', async function () {
+	it( 'paragraph edits can be reverted', async () => {
 		const otherParagraphOriginalDiffText = await EditConflictPage.getDiffText( 'other' ).getHTML(),
 			otherParagraphOriginalText = await EditConflictPage.getEditor( 'other' ).getValue();
 
@@ -298,7 +298,7 @@ describe( 'TwoColConflict EditUi', function () {
 		);
 	} );
 
-	it( 'revert confirmation will not show if nothing changed', async function () {
+	it( 'revert confirmation will not show if nothing changed', async () => {
 		await EditConflictPage.otherParagraphSelection.click();
 
 		await EditConflictPage.getEditButton( 'other' ).click();
@@ -317,7 +317,7 @@ describe( 'TwoColConflict EditUi', function () {
 		);
 	} );
 
-	it( 'saving an editor with no changes will preserve the highlight portions', async function () {
+	it( 'saving an editor with no changes will preserve the highlight portions', async () => {
 		const otherParagraphOriginalDiffText = await EditConflictPage.getDiffText( 'other' ).getHTML();
 
 		await EditConflictPage.otherParagraphSelection.click();
@@ -332,7 +332,7 @@ describe( 'TwoColConflict EditUi', function () {
 		);
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

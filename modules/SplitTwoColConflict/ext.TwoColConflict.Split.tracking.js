@@ -111,11 +111,11 @@ function recordExitStatistics() {
 }
 
 function initTrackingListeners() {
-	$( '#wpSave' ).on( 'click', function () {
+	$( '#wpSave' ).on( 'click', () => {
 		finalExitEvent = 'save';
 	} );
 
-	$( '#mw-editform-cancel' ).on( 'click', function () {
+	$( '#mw-editform-cancel' ).on( 'click', () => {
 		finalExitEvent = 'cancel';
 	} );
 

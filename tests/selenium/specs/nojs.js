@@ -5,13 +5,13 @@ const assert = require( 'assert' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
 
-describe( 'TwoColConflict without JavaScript', function () {
-	before( async function () {
+describe( 'TwoColConflict without JavaScript', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 		await EditConflictPage.testNoJs();
 	} );
 
-	it( 'is showing the default version correctly', async function () {
+	it( 'is showing the default version correctly', async () => {
 		await EditConflictPage.createConflict(
 			'A',
 			'B',
@@ -34,7 +34,7 @@ describe( 'TwoColConflict without JavaScript', function () {
 		);
 	} );
 
-	it( 'is showing the talk page version correctly', async function () {
+	it( 'is showing the talk page version correctly', async () => {
 		await TalkConflictPage.createTalkPageConflict();
 
 		assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
@@ -47,7 +47,7 @@ describe( 'TwoColConflict without JavaScript', function () {
 		assert( await EditConflictPage.getParagraph( 'copy' ) );
 	} );
 
-	it( 'handles order selection on the talk page version correctly', async function () {
+	it( 'handles order selection on the talk page version correctly', async () => {
 		await TalkConflictPage.createTalkPageConflict();
 		await TalkConflictPage.orderSelector.waitForDisplayed();
 
@@ -60,7 +60,7 @@ describe( 'TwoColConflict without JavaScript', function () {
 		);
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

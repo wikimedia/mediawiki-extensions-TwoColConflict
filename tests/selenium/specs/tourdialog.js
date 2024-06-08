@@ -4,20 +4,20 @@ const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	TestAccounts = require( '../test_accounts' );
 
-describe( 'TwoColConflict GuidedTour', function () {
-	before( async function () {
+describe( 'TwoColConflict GuidedTour', () => {
+	before( async () => {
 		await TestAccounts.loginAsUser();
 		await EditConflictPage.prepareUserSettings();
 	} );
 
-	describe( 'on initial view', function () {
+	describe( 'on initial view', () => {
 
-		before( async function () {
+		before( async () => {
 			await EditConflictPage.toggleHelpDialog( true );
 			await EditConflictPage.showSimpleConflict();
 		} );
 
-		it( 'shows the tour', async function () {
+		it( 'shows the tour', async () => {
 			assert(
 				await EditConflictPage.tourDialog.waitForDisplayed(),
 				'I see an info tour'
@@ -25,22 +25,22 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 	} );
 
-	describe( 'on subsequent view', function () {
+	describe( 'on subsequent view', () => {
 
-		before( async function () {
+		before( async () => {
 			await EditConflictPage.openTitle( '' );
 			await EditConflictPage.toggleHelpDialog( false );
 			await EditConflictPage.showSimpleConflict();
 		} );
 
-		it( 'hides the tour', async function () {
+		it( 'hides the tour', async () => {
 			assert(
 				!( await EditConflictPage.tourDialog.isDisplayed() ),
 				'I don\'t see an info tour'
 			);
 		} );
 
-		it( 'clicking the info button shows the tour', async function () {
+		it( 'clicking the info button shows the tour', async () => {
 			await EditConflictPage.infoButton.click();
 
 			assert(
@@ -49,7 +49,7 @@ describe( 'TwoColConflict GuidedTour', function () {
 			);
 		} );
 
-		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', async function () {
+		it( 'clicking the close button dismisses the dialog, adds pulsating buttons, and opens the your version header popup', async () => {
 			await EditConflictPage.tourDialogCloseButton.waitForDisplayed();
 			await EditConflictPage.tourDialogCloseButton.click();
 
@@ -78,7 +78,7 @@ describe( 'TwoColConflict GuidedTour', function () {
 		} );
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

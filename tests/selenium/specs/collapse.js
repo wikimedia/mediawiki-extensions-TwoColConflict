@@ -2,16 +2,16 @@
 
 const EditConflictPage = require( '../pageobjects/editconflict.page' );
 
-describe( 'TwoColConflict collapse button', function () {
-	before( async function () {
+describe( 'TwoColConflict collapse button', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await EditConflictPage.showBigConflict();
 	} );
 
-	it( 'collapses and expands long unchanged paragraphs', async function () {
+	it( 'collapses and expands long unchanged paragraphs', async () => {
 		await EditConflictPage.assertUnchangedIsCollapsed();
 		await EditConflictPage.expandButton.click();
 		await EditConflictPage.assertUnchangedIsExpanded();
@@ -19,7 +19,7 @@ describe( 'TwoColConflict collapse button', function () {
 		await EditConflictPage.assertUnchangedIsCollapsed();
 	} );
 
-	it( 'expands collapsed paragraphs after editing or aborting edits', async function () {
+	it( 'expands collapsed paragraphs after editing or aborting edits', async () => {
 		const unchangedParagraphNewText = 'Dummy Text';
 
 		await EditConflictPage.getEditButton( 'unchanged' ).waitForDisplayed();
@@ -52,7 +52,7 @@ describe( 'TwoColConflict collapse button', function () {
 		await EditConflictPage.assertUnchangedIsExpanded();
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

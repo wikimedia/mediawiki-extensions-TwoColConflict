@@ -4,12 +4,12 @@ const assert = require( 'assert' ),
 	EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	PreferencesPage = require( '../pageobjects/preferences.page' );
 
-describe( 'TwoColConflict', function () {
-	before( async function () {
+describe( 'TwoColConflict', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 	} );
 
-	it( 'labels change according to selected column', async function () {
+	it( 'labels change according to selected column', async () => {
 		await EditConflictPage.showSimpleConflict();
 
 		const initialText = await EditConflictPage.selectionLabel.getText();
@@ -30,7 +30,7 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
-	it( 'editor should not decode html entities', async function () {
+	it( 'editor should not decode html entities', async () => {
 		await EditConflictPage.createConflict(
 			'α\n&beta;',
 			'α\n&gamma; <span lang="de">A</span>',
@@ -101,7 +101,7 @@ describe( 'TwoColConflict', function () {
 		);
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

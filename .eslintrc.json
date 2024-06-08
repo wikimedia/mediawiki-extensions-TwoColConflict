@@ -10,6 +10,7 @@
 	],
 	"rules": {
 		"no-jquery/no-event-shorthand": "off",
-		"no-jquery/no-global-selector": "off"
+		"no-jquery/no-global-selector": "off",
+		"no-jquery/no-extend": "warn"
 	}
 }

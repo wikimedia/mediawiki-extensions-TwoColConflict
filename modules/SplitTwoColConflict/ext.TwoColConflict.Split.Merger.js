@@ -18,7 +18,7 @@ function lineFeeds( num ) {
 function merger( $selected ) {
 	const textLines = [];
 
-	$selected.each( function ( index, element ) {
+	$selected.each( ( index, element ) => {
 		let line = $( element ).find( '.mw-twocolconflict-split-editor' ).val()
 			.replace( /[\r\n]+$/, '' );
 		let emptiedByUser = line === '';

@@ -6,12 +6,12 @@ const assert = require( 'assert' ),
 	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
-describe( 'TwoColConflict save and preview', function () {
-	before( async function () {
+describe( 'TwoColConflict save and preview', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 	} );
 
-	it( 'should save a resolved conflict successfully', async function () {
+	it( 'should save a resolved conflict successfully', async () => {
 		await EditConflictPage.showSimpleConflict();
 
 		await EditConflictPage.yourParagraphSelection.click();
@@ -25,7 +25,7 @@ describe( 'TwoColConflict save and preview', function () {
 		);
 	} );
 
-	it( 'should save a resolved conflict successfully when another user edits a different section in the meantime', async function () {
+	it( 'should save a resolved conflict successfully when another user edits a different section in the meantime', async () => {
 		const title = Util.getTestString( 'conflict-title-' );
 
 		// an initial conflict in a specific section
@@ -55,7 +55,7 @@ describe( 'TwoColConflict save and preview', function () {
 		);
 	} );
 
-	it( 'should trigger a new conflict when another user edits in the same lines in the meantime', async function () {
+	it( 'should trigger a new conflict when another user edits in the same lines in the meantime', async () => {
 		const title = Util.getTestString( 'conflict-title-' );
 
 		// an initial conflict
@@ -92,7 +92,7 @@ describe( 'TwoColConflict save and preview', function () {
 		);
 	} );
 
-	it( 'should show a correct preview page when changes are present', async function () {
+	it( 'should show a correct preview page when changes are present', async () => {
 		await EditConflictPage.showSimpleConflict();
 
 		await EditConflictPage.yourParagraphSelection.click();
@@ -112,7 +112,7 @@ describe( 'TwoColConflict save and preview', function () {
 		);
 	} );
 
-	it( 'should be possible to edit and preview the left ("other") side', async function () {
+	it( 'should be possible to edit and preview the left ("other") side', async () => {
 		await EditConflictPage.showSimpleConflict();
 
 		await EditConflictPage.otherParagraphSelection.click();
@@ -139,7 +139,7 @@ describe( 'TwoColConflict save and preview', function () {
 		);
 	} );
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteCookies();
 	} );
 } );

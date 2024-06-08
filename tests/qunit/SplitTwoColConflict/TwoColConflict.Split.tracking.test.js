@@ -84,14 +84,14 @@ function buildSingleView( paramArray ) {
 
 QUnit.module( 'ext.TwoColConflict.Split.tracking' );
 
-QUnit.test( 'test empty', function ( assert ) {
+QUnit.test( 'test empty', ( assert ) => {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSingleView( [] ) ),
 		'v1:'
 	);
 } );
 
-QUnit.test( 'test multiple single-column rows', function ( assert ) {
+QUnit.test( 'test multiple single-column rows', ( assert ) => {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSingleView( [
 			{ type: 'copy', content: 'A' },
@@ -102,7 +102,7 @@ QUnit.test( 'test multiple single-column rows', function ( assert ) {
 	);
 } );
 
-QUnit.test( 'test edited single-column row', function ( assert ) {
+QUnit.test( 'test edited single-column row', ( assert ) => {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSingleView( [
 			{ type: 'copy', content: 'A' },
@@ -113,7 +113,7 @@ QUnit.test( 'test edited single-column row', function ( assert ) {
 	);
 } );
 
-QUnit.test( 'test split-column row selections', function ( assert ) {
+QUnit.test( 'test split-column row selections', ( assert ) => {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSplitView( [
 			{ copy: { content: 'A' } },
@@ -136,7 +136,7 @@ QUnit.test( 'test split-column row selections', function ( assert ) {
 	);
 } );
 
-QUnit.test( 'test edited split-column row', function ( assert ) {
+QUnit.test( 'test edited split-column row', ( assert ) => {
 	assert.strictEqual(
 		RowFormatter.formatView( buildSplitView( [
 			{ copy: { content: 'A1', editedContent: 'A2' } },

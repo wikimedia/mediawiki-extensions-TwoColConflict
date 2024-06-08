@@ -232,9 +232,7 @@ class EditConflictPage extends Page {
 	}
 
 	async apiEditPage( bot, title, text ) {
-		await browser.call( async () => {
-			return await bot.edit( title, text );
-		} );
+		await browser.call( async () => await bot.edit( title, text ) );
 		await browser.pause( 500 );
 	}
 

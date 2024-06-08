@@ -6,18 +6,18 @@ const assert = require( 'assert' ),
 	TalkConflictPage = require( '../pageobjects/talkconflict.page' ),
 	Util = require( 'wdio-mediawiki/Util' );
 
-describe( 'TwoColConflict', function () {
-	before( async function () {
+describe( 'TwoColConflict', () => {
+	before( async () => {
 		await EditConflictPage.prepareEditConflict();
 	} );
 
-	describe( 'on talk page conflicts', function () {
-		before( async function () {
+	describe( 'on talk page conflicts', () => {
+		before( async () => {
 			await TalkConflictPage.createTalkPageConflict();
 			await EditConflictPage.waitForJS();
 		} );
 
-		it( 'shows the talk page screen correctly', async function () {
+		it( 'shows the talk page screen correctly', async () => {
 			assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
 
 			assert( await EditConflictPage.getParagraph( 'other' ) );
@@ -32,13 +32,13 @@ describe( 'TwoColConflict', function () {
 			assert( await TalkConflictPage.isOtherBlockFirst() );
 		} );
 
-		it( 'swaps blocks when switch button is clicked', async function () {
+		it( 'swaps blocks when switch button is clicked', async () => {
 			await TalkConflictPage.swapButton.click();
 
 			assert( await TalkConflictPage.isYourBlockFirst() );
 		} );
 
-		it( 'shows correct preview when swapped', async function () {
+		it( 'shows correct preview when swapped', async () => {
 			await EditConflictPage.previewButton.click();
 
 			assert( await EditConflictPage.previewView.waitForDisplayed() );
@@ -49,7 +49,7 @@ describe( 'TwoColConflict', function () {
 			);
 		} );
 
-		it( 'stores correct merge when swapped and edited', async function () {
+		it( 'stores correct merge when swapped and edited', async () => {
 			await TalkConflictPage.editMyComment( 'Comment B edited' );
 
 			await EditConflictPage.submitButton.click();
@@ -61,7 +61,7 @@ describe( 'TwoColConflict', function () {
 		} );
 	} );
 
-	it( 'shows the talk page screen on conflicts that also add new lines', async function () {
+	it( 'shows the talk page screen on conflicts that also add new lines', async () => {
 		await EditConflictPage.createConflict(
 			'Line1\n\nLine2',
 			'Line1\nComment <span lang="de">A</span>\nLine2',
@@ -75,7 +75,7 @@ describe( 'TwoColConflict', function () {
 
 	// TODO: test for double-conflict, all text should be restored even if edited.
 
-	after( async function () {
+	after( async () => {
 		await browser.deleteAllCookies();
 	} );
 } );

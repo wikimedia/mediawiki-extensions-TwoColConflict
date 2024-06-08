@@ -129,7 +129,7 @@ function resetWarning( $row ) {
 				}
 			]
 		}
-	).done( function ( confirmed ) {
+	).done( ( confirmed ) => {
 		if ( confirmed ) {
 			const $diffText = $selected.find( '.mw-twocolconflict-split-difftext' );
 			const $resetDiffText = $selected.find( '.mw-twocolconflict-split-reset-diff-text' );
@@ -148,12 +148,12 @@ function initButtonEvents() {
 		{ selector: '.mw-twocolconflict-split-reset-button', onclick: resetWarning },
 		{ selector: '.mw-twocolconflict-split-expand-button', onclick: expandText },
 		{ selector: '.mw-twocolconflict-split-collapse-button', onclick: collapseText }
-	].forEach( function ( button ) {
+	].forEach( ( button ) => {
 		$( button.selector ).each( function () {
 			const widget = OO.ui.ButtonWidget.static.infuse( this );
 			const $row = widget.$element.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
-			widget.on( 'click', function () {
+			widget.on( 'click', () => {
 				button.onclick( $row );
 			} );
 		} );
@@ -169,7 +169,7 @@ function initColumnClickEvent() {
 		const $column = $( this );
 		const $row = $column.closest( '.mw-twocolconflict-single-row, .mw-twocolconflict-split-row' );
 
-		$column.on( 'click', function () {
+		$column.on( 'click', () => {
 			if (
 				( $column.is( '.mw-twocolconflict-split-selected' ) || isEditableSingleColumn( $column ) ) &&
 				!$row.is( '.mw-twocolconflict-split-editing' )
@@ -325,7 +325,7 @@ function initPreview() {
 	OO.ui.infuse( $previewBtn )
 		.setDisabled( false );
 
-	$( '#wpPreview' ).click( function ( e ) {
+	$( '#wpPreview' ).click( ( e ) => {
 		e.preventDefault();
 
 		if ( !validateForm() ) {
@@ -356,14 +356,14 @@ function initPreview() {
 					disableeditsection: true
 				}
 			)
-		).done( function ( parsedContent, parsedNote ) {
+		).done( ( parsedContent, parsedNote ) => {
 			showPreview( parsedContent, parsedNote );
 		} );
 	} );
 }
 
 function initSubmit() {
-	$( '#wpSave' ).click( function ( e ) {
+	$( '#wpSave' ).click( ( e ) => {
 		if ( !validateForm() ) {
 			e.preventDefault();
 		}
@@ -383,12 +383,12 @@ function initSwapHandling() {
 	}
 
 	function setRowNumber( $column, oldRowNum, newRowNum ) {
-		$column.find( 'input, textarea' ).each( function ( index, input ) {
+		$column.find( 'input, textarea' ).each( ( index, input ) => {
 			input.name = input.name.replace( '[' + oldRowNum + ']', '[' + newRowNum + ']' );
 		} );
 	}
 
-	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', function () {
+	OO.ui.ButtonWidget.static.infuse( $swapButton ).on( 'click', () => {
 		const $rowContainer = $( '.mw-twocolconflict-single-column-rows' );
 		const $rows = $rowContainer.find( '.mw-twocolconflict-conflicting-talk-row' );
 		const $buttonContainer = $rowContainer.find( '.mw-twocolconflict-single-swap-button-container' );
@@ -428,7 +428,7 @@ function initSourceCopy() {
 
 	$copyLink.text( mw.msg( 'twocolconflict-copy-action' ) )
 		.attr( 'title', mw.msg( 'twocolconflict-copy-tooltip' ) );
-	$copyLink.click( function () {
+	$copyLink.click( () => {
 		$( '.mw-twocolconflict-your-text' ).select();
 		document.execCommand( 'copy' );
 
@@ -439,20 +439,20 @@ function initSourceCopy() {
 		}
 
 		$confirmPopup.toggle( true );
-		popupTimeout = setTimeout( function () {
+		popupTimeout = setTimeout( () => {
 			$confirmPopup.toggle( false );
 		}, 5000 );
 
 		return false;
 	} );
 
-	$confirmPopup.on( 'toggle', function () {
+	$confirmPopup.on( 'toggle', () => {
 		clearTimeout( popupTimeout );
 	} );
 }
 
 if ( !window.QUnit ) {
-	$( function () {
+	$( () => {
 		const $coreHintCheckbox = $( '.mw-twocolconflict-core-ui-hint input[ type="checkbox" ]' );
 		if ( $coreHintCheckbox.length ) {
 			$coreHintCheckbox.change( function () {
