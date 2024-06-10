@@ -3,7 +3,7 @@
 namespace TwoColConflict\Tests;
 
 use ExtensionRegistry;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
