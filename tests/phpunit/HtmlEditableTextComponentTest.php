@@ -4,10 +4,9 @@ namespace TwoColConflict\Tests;
 
 use Language;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Output\OutputPage;
 use MediaWikiIntegrationTestCase;
 use MessageLocalizer;
-use OOUI\BlankTheme;
-use OOUI\Theme;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 
@@ -20,7 +19,8 @@ class HtmlEditableTextComponentTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		Theme::setSingleton( new BlankTheme() );
+		// intentionally not reset in teardown, see Icb6901f4d5
+		OutputPage::setupOOUI();
 	}
 
 	public function testEnabledElement() {

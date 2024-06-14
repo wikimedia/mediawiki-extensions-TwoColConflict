@@ -15,9 +15,7 @@ use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MessageLocalizer;
-use OOUI\BlankTheme;
 use OOUI\InputWidget;
-use OOUI\Theme;
 use PHPUnit\Framework\MockObject\MockObject;
 use TwoColConflict\Hooks\TwoColConflictHooks;
 use TwoColConflict\TwoColConflictContext;
@@ -33,17 +31,14 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		Theme::setSingleton( new BlankTheme() );
+
+		// intentionally not reset in teardown, see Icb6901f4d5
+		OutputPage::setupOOUI();
 
 		$this->overrideConfigValues( [
 			'TwoColConflictBetaFeature' => false,
 			MainConfigNames::LanguageCode => 'qqx',
 		] );
-	}
-
-	protected function tearDown(): void {
-		Theme::setSingleton();
-		parent::tearDown();
 	}
 
 	private function getHookHandlerInstance() {

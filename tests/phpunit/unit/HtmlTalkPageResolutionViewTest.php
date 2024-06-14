@@ -18,12 +18,8 @@ class HtmlTalkPageResolutionViewTest extends \MediaWikiUnitTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
+		// intentionally not reset in teardown, see Icb6901f4d5
 		Theme::setSingleton( new BlankTheme() );
-	}
-
-	protected function tearDown(): void {
-		Theme::setSingleton();
-		parent::tearDown();
 	}
 
 	public static function provideDiffs() {

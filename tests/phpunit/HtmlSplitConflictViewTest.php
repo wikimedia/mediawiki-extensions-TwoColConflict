@@ -3,10 +3,9 @@
 namespace TwoColConflict\Tests;
 
 use MediaWiki\Language\RawMessage;
+use MediaWiki\Output\OutputPage;
 use MediaWikiIntegrationTestCase;
 use MessageLocalizer;
-use OOUI\BlankTheme;
-use OOUI\Theme;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictView;
@@ -24,12 +23,8 @@ class HtmlSplitConflictViewTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		Theme::setSingleton( new BlankTheme() );
-	}
-
-	protected function tearDown(): void {
-		Theme::setSingleton();
-		parent::tearDown();
+		// intentionally not reset in teardown, see Icb6901f4d5
+		OutputPage::setupOOUI();
 	}
 
 	public static function provideIntegrationTests() {

@@ -6,6 +6,7 @@ use Language;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Revision\MutableRevisionRecord;
@@ -14,8 +15,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
 use MessageLocalizer;
-use OOUI\BlankTheme;
-use OOUI\Theme;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 
 /**
@@ -32,7 +31,9 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		Theme::setSingleton( new BlankTheme() );
+		// intentionally not reset in teardown, see Icb6901f4d5
+		OutputPage::setupOOUI();
+
 		$this->overrideConfigValue( MainConfigNames::LanguageCode, 'qqx' );
 	}
 
