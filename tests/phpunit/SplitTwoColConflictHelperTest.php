@@ -13,8 +13,6 @@ use MediaWiki\Session\SessionId;
 use MediaWiki\User\User;
 use MessageLocalizer;
 use MockTitleTrait;
-use OOUI\BlankTheme;
-use OOUI\Theme;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
@@ -31,12 +29,8 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		Theme::setSingleton( new BlankTheme() );
-	}
-
-	protected function tearDown(): void {
-		Theme::setSingleton();
-		parent::tearDown();
+		// intentionally not reset in teardown, see Icb6901f4d5
+		OutputPage::setupOOUI();
 	}
 
 	public function testBasics() {
