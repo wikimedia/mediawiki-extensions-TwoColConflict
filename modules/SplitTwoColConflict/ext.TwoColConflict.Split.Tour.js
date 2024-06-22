@@ -15,7 +15,7 @@ const Tour = function ( windowManager, config ) {
 	this.config = config;
 };
 
-$.extend( Tour.prototype, {
+Object.assign( Tour.prototype, {
 
 	/**
 	 * @type {OO.ui.Dialog}

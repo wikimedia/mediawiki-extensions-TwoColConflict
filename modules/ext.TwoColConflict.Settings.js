@@ -3,7 +3,7 @@
  */
 const Settings = function () {};
 
-$.extend( Settings.prototype, {
+Object.assign( Settings.prototype, {
 	/**
 	 * @param {string} name
 	 * @param {string} defaultValue
