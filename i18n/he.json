@@ -29,7 +29,7 @@
 	"twocolconflict-special-textarea-hint": "באפשרותך להציג ולהעתיק את קוד המקור של הגרסה שלך:",
 	"twocolconflict-special-malformed-title": "כותרת חסרה או בלתי־תקינה.",
 	"twocolconflict-special-expired": "אין מה לראות פה. ייתכן שנתקלת בהתנגשות עריכה קודם, אבל זה היה מזמן, והטקסט שלך, שנשמר באופן זמני, הספיק לפוג בינתיים.",
-	"twocolconflict-split-header-hint": "אתם יכולים לעזור לשפר את האפשרות הזאת עוד, אם תשאירו משוב ב[//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface דף השיחה של הפרויקט].",
+	"twocolconflict-split-header-hint": "אפשר לעזור לשפר את האפשרות הזאת עוד על־ידי שליחת משוב ב[//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface דף השיחה של הפרויקט].",
 	"twocolconflict-split-header-hint-beta": "תודה על השימוש באפשרות הבטא הזאת. {{GENDER:|אתה יכול|את יכולה}} עזור לשפר אותה עוד יותר באמצעות שליחת משוב ב[//www.mediawiki.org/wiki/Help_talk:Paragraph-based_Edit_Conflict_Interface דף השיחה של הפרויקט].",
 	"twocolconflict-split-header-overview": "בזמן שערכת, משתמש אחר ערך את אותו הדף ופרסם {{GENDER:|לפניך|לפנייך}}. נא לסקור את שתי הגרסאות ולמזג אותן. רק הטקסט בתיבות שנבחרו יישמר בעת לחיצה על \"{{int:publishchanges}}\".",
 	"twocolconflict-split-your-version-header": "הגרסה שלך",
