@@ -3,7 +3,8 @@
 		"authors": [
 			"Banjo",
 			"Elisardojm",
-			"Sabelaraga"
+			"Sabelaraga",
+			"Toliño"
 		]
 	},
 	"twocolconflict": "TwoColConflict",
@@ -19,14 +20,14 @@
 	"twocolconflict-split-your-version-header": "A súa revisión",
 	"twocolconflict-split-not-saved-at": "Sen publicar aínda",
 	"twocolconflict-split-choose-version": "Por favor, escolla unha versión",
-	"twocolconflict-split-tour-dialog-header": "Resolver conflitos de edición",
+	"twocolconflict-split-tour-dialog-header": "Fusionar versións en conflito",
 	"twocolconflict-split-tour-dialog-btn-text": "Comezar fusión",
 	"twocolconflict-split-tour-popup-btn-text": "Entendido.",
 	"twocolconflict-split-tour-popup3-header": "Texto resaltado",
-	"twocolconflict-split-edit-tooltip": "Editar texto",
-	"twocolconflict-split-reset-tooltip": "Inicializar o texto",
+	"twocolconflict-split-edit-tooltip": "Preme para editar o texto",
+	"twocolconflict-split-reset-tooltip": "Desbotar todos os cambios feitos no texto",
 	"twocolconflict-split-reset-warning-cancel": "Cancelar",
 	"twocolconflict-split-reset-warning-accept": "Desbotar",
-	"twocolconflict-split-collapse-tooltip": "Minimizar texto",
-	"twocolconflict-split-expand-tooltip": "Expandir texto"
+	"twocolconflict-split-collapse-tooltip": "Minimizar o texto sen modificar",
+	"twocolconflict-split-expand-tooltip": "Expandir o texto sen modificar"
 }
