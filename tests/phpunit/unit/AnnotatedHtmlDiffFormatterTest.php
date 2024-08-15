@@ -13,10 +13,8 @@ use TwoColConflict\AnnotatedHtmlDiffFormatter;
 class AnnotatedHtmlDiffFormatterTest extends \MediaWikiUnitTestCase {
 
 	/**
-	 * @param string $before
-	 * @param string $after
-	 * @param array[] $expectedOutput
 	 * @dataProvider provideFormat
+	 * @dataProvider provideFormatWithMarkup
 	 */
 	public function testFormat( string $before, string $after, array $expectedOutput ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
@@ -443,22 +441,6 @@ TEXT
 		];
 	}
 
-	/**
-	 * @param string $before
-	 * @param string $after
-	 * @param array[] $expectedOutput
-	 * @dataProvider provideFormatWithMarkup
-	 */
-	public function testMarkupFormat( string $before, string $after, array $expectedOutput ) {
-		$instance = new AnnotatedHtmlDiffFormatter();
-		$output = $instance->format(
-			explode( "\n", $before ),
-			explode( "\n", $after ),
-			explode( "\n", $this->preSaveTransform( $after ) )
-		);
-		$this->assertSame( $expectedOutput, $output );
-	}
-
 	public static function provideFormatWithMarkup() {
 		return [
 			'copy' => [
@@ -534,10 +516,6 @@ TEXT
 
 	/**
 	 * @see \Parser::pstPass2
-	 *
-	 * @param string $wikitext
-	 *
-	 * @return string
 	 */
 	private function preSaveTransform( string $wikitext ): string {
 		return preg_replace( '/~~~+/', '[[User signature]]', $wikitext );
