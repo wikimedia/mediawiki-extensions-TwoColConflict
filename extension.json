@@ -68,6 +68,11 @@
 	},
 	"ResourceModules": {
 		"ext.TwoColConflict.SplitJs": {
+			"class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"codexComponents": [
+				"CdxMessage"
+			],
+			"codexStyleOnly": true,
 			"packageFiles": [
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js",
@@ -82,6 +87,7 @@
 				"monobook": "modules/TalkPageConflict/ext.TwoColConflict.Talk.styles.monobook.less"
 			},
 			"dependencies": [
+				"mediawiki.util",
 				"mediawiki.api",
 				"mediawiki.cookie",
 				"mediawiki.pulsatingdot",

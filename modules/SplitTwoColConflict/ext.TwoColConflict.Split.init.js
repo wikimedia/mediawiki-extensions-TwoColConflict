@@ -266,16 +266,15 @@ function initRowSideSelectors() {
 function showPreview( parsedContent, parsedNote ) {
 	$( '#wikiPreview' ).remove();
 	const $html = $( 'html' );
-
+	const noteContentElement = $( '<div>' )
+		.append( $( parsedNote ).children() )[ 0 ];
 	const $note = $( '<div>' )
 		.addClass( 'previewnote' )
 		.append(
 			$( '<h2>' )
 				.attr( 'id', 'mw-previewheader' )
 				.append( mw.msg( 'preview' ) ),
-			$( '<div>' )
-				.addClass( [ 'mw-message-box', 'mw-message-box-warning' ] )
-				.append( $( parsedNote ).children() )
+			mw.util.messageBox( noteContentElement, 'warning' )
 		);
 
 	// The following classes are used here:
