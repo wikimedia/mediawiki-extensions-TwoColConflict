@@ -3,7 +3,6 @@
 namespace TwoColConflict\ProvideSubmittedText;
 
 use BagOStuff;
-use IBufferingStatsdDataFactory;
 use MediaWiki\EditPage\TextboxBuilder;
 use MediaWiki\Html\Html;
 use MediaWiki\Page\PageIdentity;
@@ -12,6 +11,7 @@ use MediaWiki\Title\Title;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use TwoColConflict\TwoColConflictContext;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * Special page allows users to see their originally submitted text while they
@@ -24,17 +24,17 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
 	private TwoColConflictContext $twoColConflictContext;
 	private SubmittedTextCache $textCache;
-	private IBufferingStatsdDataFactory $statsdDataFactory;
+	private StatsFactory $statsFactory;
 
 	public function __construct(
 		TwoColConflictContext $twoColConflictContext,
 		BagOStuff $textCache,
-		IBufferingStatsdDataFactory $statsdDataFactory
+		StatsFactory $statsFactory
 	) {
 		parent::__construct( 'TwoColConflictProvideSubmittedText' );
 		$this->twoColConflictContext = $twoColConflictContext;
 		$this->textCache = new SubmittedTextCache( $textCache );
-		$this->statsdDataFactory = $statsdDataFactory;
+		$this->statsFactory = $statsFactory;
 	}
 
 	/**
@@ -45,7 +45,9 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 		$out->enableOOUI();
-		$this->statsdDataFactory->increment( 'TwoColConflict.copy.special.load' );
+		$this->statsFactory->getCounter( 'TwoColConflict_copy_special_load_total' )
+			->copyToStatsdAt( 'TwoColConflict.copy.special.load' )
+			->increment();
 
 		$title = Title::newFromDBkey( $subPage ?? '' );
 		if ( !$title ) {
@@ -78,7 +80,9 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 			return;
 		}
 
-		$this->statsdDataFactory->increment( 'TwoColConflict.copy.special.retrieved' );
+		$this->statsFactory->getCounter( 'TwoColConflict_copy_special_retrieved_total' )
+			->copyToStatsdAt( 'TwoColConflict.copy.special.retrieved' )
+			->increment();
 
 		$html = $this->getHeaderHintsHtml();
 		$html .= $this->getTextHeaderLabelHtml();
