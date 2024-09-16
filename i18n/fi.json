@@ -25,6 +25,7 @@
 	"twocolconflict-copy-tooltip": "Kopioi versiosi koko wikiteksti (ei sisällä alla tehtyjä muokkauksia)",
 	"twocolconflict-core-ui-hint-close": "Älä näytä tätä uudelleen",
 	"twocolconflict-preference-enabled": "Ota [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|kaksisarakkeinen muokkausristiriita]] käyttöön ratkaistaksesi päällekkäiset muokkaukset.",
+	"twocolconflict-special-footer-hint": "Sulje nykyinen sivu palataksesi muokkausristiriidan käyttöliittymään.",
 	"twocolconflict-special-header-overview": "Valitettavasti muokatessasi myös joku toinen käyttäjä muokkasi samaa sivua ja julkaisi ennen sinua. Katseltavissa oleva kopio versiostasi on saatavilla alempana. Muokkausristiriitakäyttöliittymässä tehdyt muokkaukset eivät näy. Yhdistääksesi muutokset ja ratkaistaksesi ongelman käyttäen  muokkausristiriitakäyttöliittymää, palaa edelliselle sivulle.",
 	"twocolconflict-special-not-saved": "Ei julkaistu",
 	"twocolconflict-special-malformed-title": "Puuttuva tai virheellinen otsikko.",
@@ -65,5 +66,13 @@
 	"twocolconflict-split-selected-other-tooltip": "Toisen käyttäjän versio on valittuna",
 	"twocolconflict-split-selected-your-tooltip": "Sinun versiosi on valittuna",
 	"twocolconflict-split-help-tooltip": "Näytä ohje",
-	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Ratkaise ongelma"
+	"twocolconflict-split-tour-dialog-message-single-column-view": "Joku muu lähetti kommentin samaan aikaan kuin sinä. Tarkasta kommentit seuraavalla sivulla. Voit tarvittaessa muokata omaasi ja vaihtaa niiden lopullista järjestystä.",
+	"twocolconflict-split-tour-dialog-btn-text-single-column-view": "Ratkaise ongelma",
+	"twocolconflict-talk-header-overview": "Joku muu lähetti kommentin samaan aikaan kuin sinä. Tarkasta kommentit alla, ja valitse niiden julkaisujärjestys. Voit tarvittaessa muokata tekstiäsi.",
+	"twocolconflict-talk-your": "Kommenttisi",
+	"twocolconflict-talk-conflicting": "Päällekkäinen kommentti",
+	"twocolconflict-talk-switch-tooltip": "Vaihda järjestystä",
+	"twocolconflict-talk-reorder-prompt": "Sijoita kommenttisi suhteessa päällekäiseen kommenttiin:",
+	"twocolconflict-talk-same-order": "Pidä jälkeen",
+	"twocolconflict-talk-reverse-order": "Siirrä ennen"
 }
