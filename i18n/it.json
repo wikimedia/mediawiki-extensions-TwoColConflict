@@ -55,7 +55,7 @@
 	"twocolconflict-split-reset-tooltip": "Annulla modifiche al testo",
 	"twocolconflict-split-reset-warning": "Annullare le modifiche? Il testo in questo riquadro sarà ripristinato a quello che era quando si è verificato il conflitto di modifiche.",
 	"twocolconflict-split-reset-warning-cancel": "Annulla",
-	"twocolconflict-split-reset-warning-accept": "Cancella",
+	"twocolconflict-split-reset-warning-accept": "Scarta",
 	"twocolconflict-split-collapse-tooltip": "Comprimi testo non modificato",
 	"twocolconflict-split-expand-tooltip": "Espandi testo non modificato",
 	"twocolconflict-split-select-all-other-tooltip": "Clicca per selezionare tutte le modifiche dell'altra versione",
