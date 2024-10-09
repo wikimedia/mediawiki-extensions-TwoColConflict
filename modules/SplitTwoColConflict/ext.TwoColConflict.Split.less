@@ -1,4 +1,5 @@
 /* stylelint-disable no-descending-specificity */
+@import 'mediawiki.skin.variables.less';
 
 @error-border-color: #ff1f1f;
 @error-background-color: #ffe7e7;
@@ -50,7 +51,7 @@
 
 	&.mw-twocolconflict-no-selection {
 		background-color: @error-background-color;
-		border: 2px solid @error-border-color;
+		border: @border-width-thick @border-style-base @error-border-color;
 		border-radius: 2px;
 		margin: 5px -5px;
 		padding: 3px;
@@ -65,8 +66,8 @@
 	position: relative;
 	// Same radius as in MediaWiki core's diff.css
 	border-radius: 0.33em;
-	border-width: 2px 2px 2px 6px;
-	border-style: solid;
+	border-width: @border-width-thick @border-width-thick @border-width-thick 6px;
+	border-style: @border-style-base;
 	padding: 5px 40px 5px 20px;
 	min-height: 50px;
 	white-space: pre-line;
@@ -96,7 +97,7 @@
 
 	ins.mw-twocolconflict-diffchange,
 	del.mw-twocolconflict-diffchange {
-		text-decoration: none;
+		text-decoration: @text-decoration-none;
 	}
 
 	&.mw-twocolconflict-split-unselected {
@@ -162,7 +163,7 @@
 			left: 0;
 			pointer-events: none; // Allows clicking "through" the element
 			position: absolute;
-			width: 100%;
+			width: @size-full;
 		}
 
 		.mw-twocolconflict-split-collapse-button {
