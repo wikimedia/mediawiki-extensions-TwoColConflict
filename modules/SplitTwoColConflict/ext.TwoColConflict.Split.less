@@ -1,9 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 @import 'mediawiki.skin.variables.less';
 
-@error-border-color: #ff1f1f;
-@error-background-color: #ffe7e7;
-
 .mw-twocolconflict-split-header,
 .mw-twocolconflict-special-your-version-header {
 	margin-top: 20px;
@@ -27,12 +24,12 @@
 }
 
 .mw-twocolconflict-split-current-version-header .mw-twocolconflict-revision-label {
-	background-color: #ffe8a6;
+	background-color: @background-color-content-removed;
 }
 
 .mw-twocolconflict-special-your-version-header .mw-twocolconflict-revision-label,
 .mw-twocolconflict-split-your-version-header .mw-twocolconflict-revision-label {
-	background-color: #add8ff;
+	background-color: @background-color-content-added;
 }
 
 .mw-twocolconflict-split-view {
@@ -50,8 +47,8 @@
 	align-items: flex-start;
 
 	&.mw-twocolconflict-no-selection {
-		background-color: @error-background-color;
-		border: @border-width-thick @border-style-base @error-border-color;
+		background-color: @background-color-error-subtle;
+		border: @border-width-thick @border-style-base @border-color-error;
 		border-radius: 2px;
 		margin: 5px -5px;
 		padding: 3px;
@@ -204,7 +201,7 @@
 	}
 
 	.mw-twocolconflict-no-selection & {
-		color: @error-border-color;
+		color: @color-error;
 	}
 }
 
@@ -221,7 +218,7 @@
 
 	.mw-twocolconflict-split-row.mw-twocolconflict-no-selection & > div {
 		.oo-ui-radioInputWidget [ type='radio' ] + span {
-			border-color: @error-border-color;
+			border-color: @border-color-error;
 		}
 	}
 
