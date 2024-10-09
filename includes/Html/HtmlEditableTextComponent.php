@@ -54,7 +54,8 @@ class HtmlEditableTextComponent {
 		if ( $editorText !== '' ) {
 			$editorText .= "\n";
 		}
-		$classes = [ 'mw-twocolconflict-split-editable' ];
+		// FIXME: Remove the temporary "notheme", see T373231
+		$classes = [ 'mw-twocolconflict-split-editable', 'notheme' ];
 
 		$innerHtml = Html::rawElement(
 			'span',

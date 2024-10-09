@@ -49,7 +49,7 @@
 	&.mw-twocolconflict-no-selection {
 		background-color: @background-color-error-subtle;
 		border: @border-width-thick @border-style-base @border-color-error;
-		border-radius: 2px;
+		border-radius: @border-radius-base;
 		margin: 5px -5px;
 		padding: 3px;
 	}
@@ -72,24 +72,24 @@
 	min-width: 0;
 
 	&.mw-twocolconflict-split-add {
-		border-color: #add8ff;
+		border-color: @border-color-content-added;
 	}
 
 	&.mw-twocolconflict-split-delete {
-		border-color: #ffe8a6;
+		border-color: @border-color-content-removed;
 	}
 
 	&.mw-twocolconflict-split-copy {
-		border-color: #e9e9e9;
+		border-color: @border-color-muted;
 		background-color: #fafafa;
 	}
 
 	ins.mw-twocolconflict-diffchange {
-		background-color: #add8ff;
+		background-color: @background-color-content-added;
 	}
 
 	del.mw-twocolconflict-diffchange {
-		background-color: #ffe8a6;
+		background-color: @background-color-content-removed;
 	}
 
 	ins.mw-twocolconflict-diffchange,
@@ -98,7 +98,7 @@
 	}
 
 	&.mw-twocolconflict-split-unselected {
-		color: #72777d;
+		color: @color-disabled;
 
 		&.mw-twocolconflict-split-add {
 			border-color: #eaf3ff;
@@ -153,8 +153,8 @@
 		overflow: hidden;
 
 		.mw-twocolconflict-split-fade {
-			background-image: linear-gradient( transparent, #fafafa );
-			border-radius: 8px;
+			background-image: linear-gradient( @background-color-transparent, #fafafa );
+			border-radius: @border-radius-base;
 			bottom: 0;
 			height: 50px;
 			left: 0;
