@@ -2,17 +2,16 @@
 
 namespace TwoColConflict;
 
-use BagOStuff;
-use IBufferingStatsdDataFactory;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\EditPage\TextConflictHelper;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use ParserOptions;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 use TwoColConflict\Html\HtmlSplitConflictView;
@@ -20,8 +19,9 @@ use TwoColConflict\Html\HtmlTalkPageResolutionView;
 use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TalkPageConflict\TalkPageResolution;
+use Wikimedia\ObjectCache\BagOStuff;
+use Wikimedia\Stats\IBufferingStatsdDataFactory;
 use Wikimedia\Stats\StatsFactory;
-use WikitextContent;
 
 /**
  * @license GPL-2.0-or-later

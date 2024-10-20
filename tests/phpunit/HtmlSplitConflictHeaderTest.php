@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Tests;
 
-use Language;
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Language\Language;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;

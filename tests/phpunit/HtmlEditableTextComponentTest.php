@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests;
 
-use Language;
+use MediaWiki\Language\Language;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Output\OutputPage;
 use MediaWikiIntegrationTestCase;

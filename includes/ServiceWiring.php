@@ -2,8 +2,8 @@
 
 namespace TwoColConflict;
 
-use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 
 return [
 

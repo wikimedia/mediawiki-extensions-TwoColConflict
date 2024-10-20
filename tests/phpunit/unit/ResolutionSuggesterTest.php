@@ -2,7 +2,7 @@
 
 namespace TwoColConflict\Tests;
 
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWikiUnitTestCase;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;

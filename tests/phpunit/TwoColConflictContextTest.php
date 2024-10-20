@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Tests;
 
-use ExtensionRegistry;
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\Options\UserOptionsLookup;

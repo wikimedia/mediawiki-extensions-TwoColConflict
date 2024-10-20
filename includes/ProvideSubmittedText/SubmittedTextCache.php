@@ -2,11 +2,11 @@
 
 namespace TwoColConflict\ProvideSubmittedText;
 
-use BagOStuff;
 use MediaWiki\Session\SessionId;
 use MediaWiki\User\UserIdentity;
 use UnexpectedValueException;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * @license GPL-2.0-or-later

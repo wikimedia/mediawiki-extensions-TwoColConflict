@@ -2,7 +2,6 @@
 
 namespace TwoColConflict\ProvideSubmittedText;
 
-use BagOStuff;
 use MediaWiki\EditPage\TextboxBuilder;
 use MediaWiki\Html\Html;
 use MediaWiki\Page\PageIdentity;
@@ -11,6 +10,7 @@ use MediaWiki\Title\Title;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use TwoColConflict\TwoColConflictContext;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Stats\StatsFactory;
 
 /**

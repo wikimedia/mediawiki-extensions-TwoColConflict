@@ -2,12 +2,12 @@
 
 namespace TwoColConflict\Tests;
 
-use BagOStuff;
 use MediaWiki\Session\SessionId;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use UnexpectedValueException;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\TestingAccessWrapper;
 
 /**

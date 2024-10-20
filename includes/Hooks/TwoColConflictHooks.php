@@ -4,7 +4,6 @@
 
 namespace TwoColConflict\Hooks;
 
-use ExtensionRegistry;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\AlternateEditHook;
@@ -16,6 +15,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\User\Options\Hook\LoadUserOptionsHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;

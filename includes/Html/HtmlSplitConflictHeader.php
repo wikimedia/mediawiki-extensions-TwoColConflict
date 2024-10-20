@@ -2,10 +2,9 @@
 
 namespace TwoColConflict\Html;
 
-use IDBAccessObject;
-use Language;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\Language;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
@@ -19,6 +18,7 @@ use MessageLocalizer;
 use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use TwoColConflict\SplitConflictUtils;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**

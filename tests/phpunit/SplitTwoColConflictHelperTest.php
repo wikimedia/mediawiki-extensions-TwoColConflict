@@ -2,10 +2,9 @@
 
 namespace TwoColConflict\Tests;
 
-use IBufferingStatsdDataFactory;
-use Language;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Content\IContentHandlerFactory;
+use MediaWiki\Language\Language;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\WebRequest;
@@ -16,6 +15,7 @@ use MockTitleTrait;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
+use Wikimedia\Stats\IBufferingStatsdDataFactory;
 use WikiPage;
 
 /**
