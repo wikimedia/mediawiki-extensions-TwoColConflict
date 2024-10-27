@@ -29,7 +29,7 @@ class TwoColConflictContext {
 		Config $config,
 		UserOptionsLookup $userOptionsLookup,
 		ExtensionRegistry $extensionRegistry,
-		MobileContext $mobileContext = null
+		?MobileContext $mobileContext = null
 	) {
 		$this->config = $config;
 		$this->userOptionsLookup = $userOptionsLookup;

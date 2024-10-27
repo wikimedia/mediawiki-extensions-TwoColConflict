@@ -123,7 +123,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$this->assertStringContainsString( '>(parentheses: Conflicting edit summary)<', $html );
 	}
 
-	private function newConflictHeader( string $summary, RevisionRecord $revision = null ) {
+	private function newConflictHeader( string $summary, ?RevisionRecord $revision = null ) {
 		$user = $this->createNoOpMock( Authority::class, [ 'getUser' ] );
 
 		$language = $this->createMock( Language::class );

@@ -58,7 +58,7 @@ class HtmlSplitConflictHeader {
 		MessageLocalizer $messageLocalizer,
 		CommentFormatter $commentFormatter,
 		$now = false,
-		RevisionRecord $revision = null
+		?RevisionRecord $revision = null
 	) {
 		// TODO inject?
 		$services = MediaWikiServices::getInstance();

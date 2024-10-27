@@ -58,9 +58,9 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		TwoColConflictContext $twoColContext,
 		ResolutionSuggester $resolutionSuggester,
 		CommentFormatter $commentFormatter,
-		BagOStuff $textCache = null,
+		?BagOStuff $textCache = null,
 		string $newEditSummary = '',
-		string $editFontOption = null
+		?string $editFontOption = null
 	) {
 		parent::__construct( $title, $out, $stats, $submitLabel, $contentHandlerFactory );
 
@@ -82,7 +82,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @inheritDoc
 	 */
-	public function incrementConflictStats( User $user = null ) {
+	public function incrementConflictStats( ?User $user = null ) {
 		parent::incrementConflictStats( $user );
 		// XXX This is copied largely from core and we may be able to refactor something here.
 		$namespace = 'n/a';
@@ -113,7 +113,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @inheritDoc
 	 */
-	public function incrementResolvedStats( User $user = null ) {
+	public function incrementResolvedStats( ?User $user = null ) {
 		parent::incrementResolvedStats( $user );
 		// XXX This is copied largely from core and we may be able to refactor something here.
 		$namespace = 'n/a';
