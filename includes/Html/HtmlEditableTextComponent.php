@@ -25,7 +25,7 @@ class HtmlEditableTextComponent {
 	public function __construct(
 		MessageLocalizer $messageLocalizer,
 		Language $language,
-		string $editFontOption = null
+		?string $editFontOption = null
 	) {
 		$this->messageLocalizer = $messageLocalizer;
 		$this->language = $language;
