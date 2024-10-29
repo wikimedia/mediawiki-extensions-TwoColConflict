@@ -69,13 +69,13 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 			],
 			'anonymous user' => [
 				'title' => 'TestArticle',
-				'user' => UserIdentityValue::newAnonymous( '' ),
+				'user' => UserIdentityValue::newAnonymous( 'TestUser' ),
 				'sessionId' => new SessionId( 'abc123' ),
 				'expected' => 'twoColConflict_yourText:TestArticle:0:abc123',
 			],
 			'anonymous user, no session' => [
 				'title' => 'TestArticle',
-				'user' => UserIdentityValue::newAnonymous( '' ),
+				'user' => UserIdentityValue::newAnonymous( 'TestUser' ),
 				'sessionId' => null,
 				'expected' => null,
 			],

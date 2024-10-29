@@ -110,10 +110,13 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$request->method( 'getBool' )->willReturn( false );
 		$request->method( 'getSessionId' )->willReturn( new SessionId( '' ) );
 
+		$user = $this->createMock( User::class );
+		$user->method( 'getName' )->willReturn( 'TestUser' );
+
 		$out = $this->createMock( OutputPage::class );
 		$out->expects( $this->never() )->method( 'addHTML' );
 		$out->method( 'getWikiPage' )->willReturn( $this->createMock( WikiPage::class ) );
-		$out->method( 'getUser' )->willReturn( $this->createMock( User::class ) );
+		$out->method( 'getUser' )->willReturn( $user );
 		$out->method( 'getLanguage' )->willReturn( $this->createMock( Language::class ) );
 		$out->method( 'getContext' )->willReturn( $localizer );
 		$out->method( 'getRequest' )->willReturn( $request );
