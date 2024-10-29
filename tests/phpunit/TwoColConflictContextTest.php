@@ -52,6 +52,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		}
 
 		$user = $this->createMock( User::class );
+		$user->method( 'getName' )->willReturn( 'TestUser' );
 		// Note: Only needed by BetaFeatures
 		$this->setService( 'UserOptionsLookup', $userOptionsLookup );
 
