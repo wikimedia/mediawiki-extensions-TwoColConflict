@@ -11,7 +11,6 @@
 			"Сербијана"
 		]
 	},
-	"twocolconflict": "TwoColConflict",
 	"twocolconflict-desc": "Упоредо приказује екран за решавање сукоба измена",
 	"twocolconflictprovidesubmittedtext": "Сукоб измена:",
 	"twocolconflict-beta-feature-message": "Сукоб измена базиран на параграфима",

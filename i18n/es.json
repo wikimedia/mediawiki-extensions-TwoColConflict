@@ -78,8 +78,6 @@
 	"twocolconflict-split-selected-all-your-tooltip": "Todos los cambios de tu revisión están seleccionados",
 	"twocolconflict-split-select-other-tooltip": "Pulsa para seleccionar la otra versión",
 	"twocolconflict-split-select-your-tooltip": "Pulsa para seleccionar tu versión",
-	"twocolconflict-split-selected-other-tooltip": "Otra versión está seleccionada",
-	"twocolconflict-split-selected-your-tooltip": "La versión está seleccionada",
 	"twocolconflict-split-help-tooltip": "Mostrar la ayuda",
 	"twocolconflict-split-tour-dialog-header-single-column-view": "Publicaciones en conflicto",
 	"twocolconflict-split-tour-dialog-message-single-column-view": "Desafortunadamente, alguien más publicó al mismo tiempo que tú. Por favor revisa los comentarios en la página siguiente. Si es necesario, puedes editar los tuyos y cambiar el orden final.",
