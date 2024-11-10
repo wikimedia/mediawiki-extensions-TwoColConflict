@@ -141,7 +141,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	private function createContext(): IContextSource {
 		$context = $this->createMock( IContextSource::class );
 		$context->method( 'getTitle' )->willReturn( Title::makeTitle( NS_MAIN, __CLASS__ ) );
-		$context->method( 'getUser' )->willReturn( UserIdentityValue::newAnonymous( '' ) );
+		$context->method( 'getUser' )->willReturn( UserIdentityValue::newAnonymous( 'TestUser' ) );
 		return $context;
 	}
 
