@@ -111,7 +111,6 @@ class ResolutionSuggester {
 			return null;
 		}
 
-		// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 		return new TalkPageResolution( $diff, $spliceIndex, $spliceIndex + 1 );
 	}
 
