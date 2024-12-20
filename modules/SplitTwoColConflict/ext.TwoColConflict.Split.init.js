@@ -434,6 +434,7 @@ function initSourceCopy() {
 		if ( !wasClicked ) {
 			// only count once if the user clicks several times from the same screen
 			mw.track( 'counter.MediaWiki.TwoColConflict.copy.jsclick' );
+			mw.track( 'stats.mediawiki_TwoColConflict_copy_jsclick_total' );
 			wasClicked = true;
 		}
 
