@@ -4,7 +4,8 @@
 			"NMW03",
 			"Toghrul Rahimli",
 			"Vesely35",
-			"Nemoralis"
+			"Nemoralis",
+			"Əkrəm Cəfər"
 		]
 	},
 	"twocolconflict": "Paraqraf əsaslı redaktə toqquşması",
@@ -12,7 +13,7 @@
 	"twocolconflictprovidesubmittedtext": "Redaktə toqquşması:",
 	"twocolconflict-beta-feature-message": "Paraqraf əsaslı redaktə toqquşması",
 	"twocolconflict-beta-feature-description": "Daha inkişaf etmiş bir paraqraf əsaslı görünüşdən istifadə edərək redaktə toqquşmasını göstər.",
-	"twocolconflict-copy-action": "tam mətni kopyala",
+	"twocolconflict-copy-action": "tam mətni kopiyala",
 	"twocolconflict-copy-notice": "Sizin versiyanın tam vikimətni mübadilə buferinə kopyalandı (aşağıda edilən redaktələr daxil edilmir).",
 	"twocolconflict-copy-tab-action": "tam mətnə bax",
 	"twocolconflict-copy-tab-tooltip": "Versiyanızın tam vikimətninə baxın (aşağıda edilən redaktələr daxil deyil). Yeni vərəqədə açılır.",
@@ -44,7 +45,7 @@
 	"twocolconflict-split-tour-popup1-header": "Fərqli dəyişikliklər sətir-sətir göstərilir.",
 	"twocolconflict-split-tour-popup1-message": "Digər istifadəçinin mətni ilə sizinkiniz arasında fərq olduqda, iki versiya yan-yana göstərilir: sol tərəfdəki sarı qutuda digər istifadəçinin versiyası və sağdakı mavi qutuda sizinki.<br /><br /> İki versiya arasında fərq olmadıqda, xətlər boz qutularda göstərilir. Lazım gələrsə, bunlar genişləndirilə və ya daraldıla və redaktə edilə bilər.",
 	"twocolconflict-split-tour-popup2-header": "Hansı dəyişiklikləri saxlamaq istədiyinizi seçin",
-	"twocolconflict-split-tour-popup2-message": "Hər bir sətir cütü arasındakı iki düymədən birini klikləməklə hansı mətn versiyasını saxlamaq istədiyinizi seçin. Versiyanı seçdiyiniz zaman qələm simvoluna klikləməklə onu redaktə edə bilərsiniz. Klaviaturanızda kopyala-yapışdır funksiyasından istifadə etməklə və ya sağ klikləməklə seçmədiyiniz versiyadan mətni kopyalamaq da mümkündür.<br /><br /> Birləşdirilmiş mətni saxlamaq üçün hər dəyişdirilmiş sətir üçün bir versiya seçməlisiniz.",
+	"twocolconflict-split-tour-popup2-message": "Hər bir sətir cütü arasındakı iki düymədən birini klikləməklə hansı mətn versiyasını saxlamaq istədiyinizi seçin. Versiyanı seçdiyiniz zaman qələm simvoluna klikləməklə onu redaktə edə bilərsiniz. Klaviaturanızda kopiyalayıb-yapışdırmaq funksiyasından istifadə etməklə və ya sağ klikləməklə seçmədiyiniz versiyadan mətni kopiyalamaq da mümkündür.<br /><br /> Birləşdirilmiş mətni saxlamaq üçün hər dəyişdirilmiş sətir üçün bir versiya seçməlisiniz.",
 	"twocolconflict-split-tour-popup3-header": "Vurğulanan mətn",
 	"twocolconflict-split-tour-popup3-message": "Xəttin hər iki versiyasında dəyişdirilmiş mətn vurğulanır. Mətni redaktə etdikdən sonra vurğulama yox olacaq.",
 	"twocolconflict-split-edit-tooltip": "Mətni redaktə etmək üçün klikləyin",
