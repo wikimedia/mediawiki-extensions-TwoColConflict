@@ -1,5 +1,3 @@
-'use strict';
-
 $( () => {
 	$( '<input>' ).attr( {
 		type: 'hidden',
