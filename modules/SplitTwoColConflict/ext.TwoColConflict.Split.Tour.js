@@ -327,7 +327,7 @@ function initialize() {
 		);
 	}
 
-	if ( !settings.loadBoolean( hideDialogSetting, false ) ) {
+	if ( !settings.loadBoolean( hideDialogSetting ) ) {
 		tour.showTour();
 		settings.saveBoolean( hideDialogSetting, true );
 	}
