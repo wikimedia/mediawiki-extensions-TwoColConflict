@@ -24,7 +24,7 @@
 	"twocolconflict-core-ui-hint-close": "לא להציג שוב לעולם",
 	"twocolconflict-preference-enabled": "הפעלת [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|ממשק מבוסס פסקאות]] לפתרון התנגשויות עריכה",
 	"twocolconflict-special-footer-hint": "לסגור את הדף הנוכחי ולחזור לממשק התנגשות העריכה.",
-	"twocolconflict-special-header-overview": "בזמן שערכת, משתמש אחר ערך את אותו הדף ופרסם אותו לפניך. עותק לתצוגה בלבד שמור למטה. כל השינויים שנעשו בממשק התנגשות העריכה אינם מוצגים. כדי למזג שינויים ולפתור את העניין באמצעות ממשק התנגשויות עריכה, נא לחזור ללשונית הקודמת.",
+	"twocolconflict-special-header-overview": "בזמן שערכת, משתמש אחר ערך את אותו הדף ופרסם אותו לפניך. עותק לתצוגה בלבד שמור למטה. כל השינויים שנעשו בממשק התנגשות העריכה אינם מוצגים. כדי למזג שינויים ולפתור את הבעיה באמצעות ממשק התנגשויות עריכה, נא לחזור ללשונית הקודמת.",
 	"twocolconflict-special-not-saved": "לא פורסם",
 	"twocolconflict-special-textarea-hint": "באפשרותך להציג ולהעתיק את קוד המקור של הגרסה שלך:",
 	"twocolconflict-special-malformed-title": "כותרת חסרה או בלתי־תקינה.",
