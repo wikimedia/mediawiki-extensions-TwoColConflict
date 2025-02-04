@@ -16,7 +16,7 @@
 	"twocolconflict-copy-tooltip": "Copy full wikitext of your revision to clipboard (edits made below are not included)",
 	"twocolconflict-core-ui-hint": "An updated interface for solving edit conflicts is now available. Enable the Paragraph-based Edit Conflict Interface in your [[Special:Preferences#mw-prefsection-editing|preferences]] to try it out.",
 	"twocolconflict-core-ui-hint-close": "Never show again",
-	"twocolconflict-preference-enabled": "Enable the [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Paragraph-based Edit Conflict Interface]] to resolve edit conflicts",
+	"twocolconflict-preference-enabled": "Enable the [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface Paragraph-based Edit Conflict Interface] to resolve edit conflicts",
 	"twocolconflict-special-footer-hint": "Close the current page to return to the edit conflict interface.",
 	"twocolconflict-special-header-overview": "While you were editing, another user edited the same page and published before you. A view-only copy of your revision is preserved below. Any changes made in the edit conflict interface are not reflected. To merge changes and resolve the issue using the edit conflict interface, return to the previous tab.",
 	"twocolconflict-special-not-saved": "Not published",
