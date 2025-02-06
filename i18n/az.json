@@ -20,7 +20,7 @@
 	"twocolconflict-copy-tooltip": "Versiyanızın tam vikimətnini mübadilə buferinə köçürün (aşağıda edilən redaktələr daxil deyil)",
 	"twocolconflict-core-ui-hint": "Redaktə münaqişələrinin həlli üçün yenilənmiş interfeys artıq mövcuddur. Onu sınamaq üçün [[Special:Preferences#mw-prefsection-editing|nizamlamalarda]] Paraqraf əsaslı redaktə toqquşması interfeysini aktiv edin.",
 	"twocolconflict-core-ui-hint-close": "Bir daha göstərmə",
-	"twocolconflict-preference-enabled": "Redaktə münaqişələrini həll etmək üçün [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Paraqraf əsaslı redaktə toqquşması interfeysini]] aktiv edin",
+	"twocolconflict-preference-enabled": "Redaktə münaqişələrini həll etmək üçün [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface Paraqraf əsaslı redaktə münaqişəsi interfeysini] aktiv edin",
 	"twocolconflict-special-footer-hint": "Redaktə münaqişəsi interfeysinə qayıtmaq üçün cari səhifəni bağlayın.",
 	"twocolconflict-special-header-overview": "Siz redaktə edərkən başqa istifadəçi də bu səhifəni redaktə edib və sizdən əvvəl yayımlayıb. Versiyanızın yalnız baxış üçün olan nüsxəsi aşağıda göstərilir. Redaktə münaqişəsi interfeysində edilən hər hansı dəyişiklik əks olunmur. Dəyişiklikləri birləşdirmək və redaktə münaqişəsi interfeysindən istifadə edərək problemi həll etmək üçün əvvəlki vərəqəyə qayıdın.",
 	"twocolconflict-special-not-saved": "Yayımlanmayıb",

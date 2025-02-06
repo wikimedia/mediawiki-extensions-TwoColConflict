@@ -25,7 +25,7 @@
 	"twocolconflict-copy-tooltip": "Kopioi versiosi koko wikiteksti (ei sisällä alla tehtyjä muokkauksia)",
 	"twocolconflict-core-ui-hint": "Päivitetty käyttöliittymä päällekkäisten muokkausten ratkaisemiseen on nyt saatavilla. Ota käyttöön kappalepohjainen päällekkäisten muokkausten näkymä [[Special:Preferences#mw-prefsection-editing|asetuksissasi]] kokeillaksesi sitä.",
 	"twocolconflict-core-ui-hint-close": "Älä näytä tätä uudelleen",
-	"twocolconflict-preference-enabled": "Ota [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|kappalepohjainen päällekkäisten muokkausten näkymä]] käyttöön ratkaistaksesi päällekkäiset muokkaukset.",
+	"twocolconflict-preference-enabled": "Ota käyttöön [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface kappalepohjainen päällekkäisten muokkausten näkymä] päällekkäisten muokkausten ratkaisemiseen.",
 	"twocolconflict-special-footer-hint": "Sulje nykyinen sivu palataksesi päällekkäisten muokkausten näkymään.",
 	"twocolconflict-special-header-overview": "Valitettavasti muokatessasi myös joku toinen käyttäjä muokkasi samaa sivua ja julkaisi ennen sinua. Katseltavissa oleva kopio versiostasi on saatavilla alempana. Päällekkäisten muokkausten näkymässä tehdyt muokkaukset eivät näy. Yhdistääksesi muutokset ja ratkaistaksesi ongelman käyttäen  muokkausristiriitakäyttöliittymää, palaa edelliselle sivulle.",
 	"twocolconflict-special-not-saved": "Ei julkaistu",
