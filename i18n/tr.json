@@ -21,7 +21,7 @@
 	"twocolconflict-copy-tooltip": "Revizyonunuzun tam vikimetinini panoya kopyalayın (aşağıda yapılan değişiklikler dahil değildir)",
 	"twocolconflict-core-ui-hint": "Değişiklik  çakışmalarını çözmek için güncellenmiş bir arayüz artık kullanılabilir. Denemek için [[Special:Preferences#mw-prefsection-editing|tercihler]] sayfasında Paragraf Tabanlı Değişiklik Çakışma Arabirimini etkinleştirin.",
 	"twocolconflict-core-ui-hint-close": "Bir daha asla gösterme",
-	"twocolconflict-preference-enabled": "Değişiklik çakışmalarını çözmek için [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Paragraf Tabanlı Değişiklik Çakışma Arabirimi]]'ni etkinleştirin",
+	"twocolconflict-preference-enabled": "Değişiklik çakışmalarını çözmek için [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface Paragraph-based Paragraf Tabanlı Değişiklik Çakışma Arayüzü]'nü etkinleştirin",
 	"twocolconflict-special-footer-hint": "Değişiklik çakışması arayüzüne dönmek için geçerli sayfayı kapatın.",
 	"twocolconflict-special-header-overview": "Siz değişiklik yaparken başka bir kullanıcı aynı sayfayı değiştirdi ve önünüzde yayınladı. Revizyonunuzun salt görüntülenebilir bir kopyası aşağıda korunur. Değişiklik çakışması arayüzünde yapılan değişiklikler yansıtılmaz. Değişiklikleri birleştirmek ve çakışmayı değiştirme arayüzünü kullanarak sorunu çözmek için önceki sekmeye dönün.",
 	"twocolconflict-special-not-saved": "Yayımlanmadı",
