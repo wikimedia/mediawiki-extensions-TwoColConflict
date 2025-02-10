@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Asma",
+			"Cigaryno",
 			"Dr. Mohammed",
 			"FShbib",
 			"Meno25",
@@ -25,7 +26,7 @@
 	"twocolconflict-copy-tooltip": "انسخ نص الويكي الكامل لمراجعتك إلى الحافظة (التعديلات التي أجريتها أدناه غير متضمنة)",
 	"twocolconflict-core-ui-hint": "تتوفر الآن واجهة محدثة لحل تعارضات التحرير. قم بتمكين واجهة تعارض التحرير المستندة إلى الفقرة في [[Special:Preferences#mw-prefsection-editing|تفضيلاتك]] لتجربتها.",
 	"twocolconflict-core-ui-hint-close": "لا تعرض هذا مجددا",
-	"twocolconflict-preference-enabled": "فعّل [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|واجهة تعارض التحرير المُستندة على الفقرات]] لحل تضاربات التحرير",
+	"twocolconflict-preference-enabled": "فعّل [https://www.mediawiki.org/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface واجهة تعارض التحرير المُستندة على الفقرات] لحل تضاربات التحرير",
 	"twocolconflict-special-footer-hint": "أغلق الصفحة الحالية وعد إلى واجهة تضارب التحرير.",
 	"twocolconflict-special-header-overview": "أثناء قيامك بالتحرير، قام مستخدم آخر بتحرير نفس الصفحة ونشرها قبلك. يتم الاحتفاظ بنسخة للعرض فقط من المراجعة أدناه. لا تنعكس أي تغييرات تم إجراؤها في واجهة تعارض التحرير. لدمج التغييرات وحل المشكلة باستخدام واجهة تعارض التحرير، ارجع إلى علامة التبويب السابقة.",
 	"twocolconflict-special-not-saved": "غير منشورة",

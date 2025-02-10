@@ -18,7 +18,7 @@
 	"twocolconflict-copy-action": "копирај цео текст",
 	"twocolconflict-copy-tab-action": "види цео текст",
 	"twocolconflict-core-ui-hint-close": "Не приказуј поново",
-	"twocolconflict-preference-enabled": "Омогући [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|приказ конфликта измена базиран на параграфима]] за решавање конфликта у изменама",
+	"twocolconflict-preference-enabled": "Омогући [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface приказ конфликта измена базиран на параграфима] за решавање конфликта у изменама",
 	"twocolconflict-special-not-saved": "Није објављено",
 	"twocolconflict-special-textarea-hint": "Можете погледати и копирати извор ваше измене:",
 	"twocolconflict-special-malformed-title": "Наслов недостаје или није важећи.",

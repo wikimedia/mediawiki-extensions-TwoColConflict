@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"twocolconflict": "Ännerungskonflikt op Basis vum Abschnitt",
@@ -13,7 +14,7 @@
 	"twocolconflict-copy-action": "kompletten Text kopéieren",
 	"twocolconflict-copy-tab-action": "ganzen Text weisen",
 	"twocolconflict-core-ui-hint-close": "Ni méi weisen",
-	"twocolconflict-preference-enabled": "Den [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|Änneurngskonflikt-Interface op der Basis vum Abschnitt]] aktivéiere fir Ännerungskonflikter ze léisen",
+	"twocolconflict-preference-enabled": "Den [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface Änneurngskonflikt-Interface op der Basis vum Abschnitt] aktivéiere fir Ännerungskonflikter ze léisen",
 	"twocolconflict-special-not-saved": "Net publizéiert",
 	"twocolconflict-special-malformed-title": "Titel feelt oder ass net valabel.",
 	"twocolconflict-split-your-version-header": "Är Versioun",
