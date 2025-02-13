@@ -20,7 +20,7 @@
 	"twocolconflict-copy-tooltip": "Скопіювати весь вікітекст вашої версії у буфер обміну (редагування, зроблені нижче, не включено)",
 	"twocolconflict-core-ui-hint": "Оновлений інтерфейс вирішення конфліктів редагувань уже доступний. Щоб спробувати, увімкніть поабзацний перегляд конфлікту редагувань у своїх [[Special:Preferences#mw-prefsection-editing|налаштуваннях]].",
 	"twocolconflict-core-ui-hint-close": "Більше не показувати",
-	"twocolconflict-preference-enabled": "Увімкнути [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|абзацовий інтерфейс конфліктів редагувань]] для вирішення конфліктів редагувань",
+	"twocolconflict-preference-enabled": "Увімкнути [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface абзацовий інтерфейс конфліктів редагувань] для вирішення конфліктів редагувань",
 	"twocolconflict-special-footer-hint": "Закрийте поточну сторінку, щоб повернутися до інтерфейсу конфлікту редагувань.",
 	"twocolconflict-special-header-overview": "Поки ви редагували, інший користувач редагував цю саму сторінку й опублікував своє редагування раніше за вас. Копія вашої версії збережена нижче. Будь-які зміни, зроблені в інтерфейсі конфлікту редагувань, не показані. Щоб об'єднати зміни і вирішити проблему з використанням інтерфейсу конфлікту редагувань, поверніться на попередню вкладку.",
 	"twocolconflict-special-not-saved": "Не опубліковано",
