@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
 
@@ -20,31 +19,37 @@ describe( 'TwoColConflict without JavaScript', () => {
 		// wait for the nojs script to switch CSS visibility
 		await EditConflictPage.getEditor( 'your' ).waitForDisplayed();
 
-		assert( await EditConflictPage.conflictHeader.isDisplayed() );
-		assert( await EditConflictPage.conflictView.isDisplayed() );
-		assert(
-			await EditConflictPage.yourParagraphRadio.isSelected() &&
-			!( await EditConflictPage.otherParagraphRadio.isSelected() ),
-			'your side is selected by default'
+		await expect( EditConflictPage.conflictHeader ).toBeDisplayed();
+		await expect( EditConflictPage.conflictView ).toBeDisplayed();
+		await expect(
+			EditConflictPage.yourParagraphRadio ).toBeSelected(
+			{ message: 'your side is selected by default' }
 		);
-		assert(
-			await EditConflictPage.getEditor( 'your' ).isDisplayed() &&
-			await EditConflictPage.getEditor( 'other' ).isDisplayed(),
-			'editors are visible right away'
+		await expect(
+			EditConflictPage.otherParagraphRadio ).not.toBeSelected(
+			{ message: 'other side is not selected by default' }
+		);
+		await expect(
+			EditConflictPage.getEditor( 'your' ) ).toBeDisplayed(
+			{ message: '"your" editor is visible right away' }
+		);
+		await expect(
+			EditConflictPage.getEditor( 'other' ) ).toBeDisplayed(
+			{ message: '"other" editor is visible right away' }
 		);
 	} );
 
 	it( 'is showing the talk page version correctly', async () => {
 		await TalkConflictPage.createTalkPageConflict();
 
-		assert( !( await TalkConflictPage.splitColumn.isExisting() ) );
+		await expect( TalkConflictPage.splitColumn ).not.toExist();
 
 		await TalkConflictPage.orderSelector.waitForDisplayed();
-		assert( await TalkConflictPage.keepAfterButton.isSelected() );
+		await expect( TalkConflictPage.keepAfterButton ).toBeSelected();
 
-		assert( await EditConflictPage.getParagraph( 'other' ) );
-		assert( await EditConflictPage.getParagraph( 'your' ) );
-		assert( await EditConflictPage.getParagraph( 'copy' ) );
+		await expect( await EditConflictPage.getParagraph( 'other' ) ).toExist();
+		await expect( await EditConflictPage.getParagraph( 'your' ) ).toExist();
+		await expect( await EditConflictPage.getParagraph( 'copy' ) ).toExist();
 	} );
 
 	it( 'handles order selection on the talk page version correctly', async () => {
@@ -54,8 +59,8 @@ describe( 'TwoColConflict without JavaScript', () => {
 		await TalkConflictPage.moveBeforeButton.click();
 		await EditConflictPage.submitButton.click();
 
-		assert.strictEqual(
-			await FinishedConflictPage.pageWikitext(),
+		await expect(
+			await FinishedConflictPage.pageWikitext() ).toBe(
 			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>\nComment <span lang="de">A</span>'
 		);
 	} );

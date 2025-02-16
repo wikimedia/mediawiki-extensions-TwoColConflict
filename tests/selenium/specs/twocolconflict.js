@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	PreferencesPage = require( '../pageobjects/preferences.page' );
 
 describe( 'TwoColConflict', () => {
@@ -13,20 +12,20 @@ describe( 'TwoColConflict', () => {
 		await EditConflictPage.showSimpleConflict();
 
 		const initialText = await EditConflictPage.selectionLabel.getText();
-		assert.strictEqual( initialText, 'Please select a version' );
+		await expect( initialText ).toBe( 'Please select a version' );
 
 		await EditConflictPage.yourParagraphSelection.click();
 
 		const yourSelectionText = await EditConflictPage.selectionLabel.getText();
-		assert.strictEqual( yourSelectionText, 'Your version',
-			'Your side is selected when you click the row\'s radio button'
+		await expect( yourSelectionText ).toBe( 'Your version',
+			{ message: 'Your side is selected when you click the row\'s radio button' }
 		);
 
 		await EditConflictPage.otherParagraphAllSelection.click();
 
 		const otherSelectionText = await EditConflictPage.selectionLabel.getText();
-		assert.strictEqual( otherSelectionText, 'Other version',
-			'The other side is selected when you click the other side\'s select all button'
+		await expect( otherSelectionText ).toBe( 'Other version',
+			{ message: 'The other side is selected when you click the other side\'s select all button' }
 		);
 	} );
 
@@ -42,16 +41,16 @@ describe( 'TwoColConflict', () => {
 
 		await EditConflictPage.getEditButton( 'other' ).click();
 
-		assert.strictEqual(
-			await EditConflictPage.getEditor().getValue(),
+		await expect(
+			await EditConflictPage.getEditor().getValue() ).toBe(
 			'α\n',
-			'unchanged text editor did not decode html entities'
+			{ message: 'unchanged text editor did not decode html entities' }
 		);
 
-		assert.strictEqual(
-			await EditConflictPage.getEditor( 'other' ).getValue(),
+		await expect(
+			await EditConflictPage.getEditor( 'other' ).getValue() ).toBe(
 			'&gamma; <span lang="de">A</span>\n',
-			'selectable text editor did not decode html entities'
+			{ message: 'selectable text editor did not decode html entities' }
 		);
 	} );
 
@@ -76,17 +75,17 @@ describe( 'TwoColConflict', () => {
 			'C'
 		);
 
-		assert(
-			await EditConflictPage.coreUiHint.isDisplayed(),
-			'the core conflict UI shows a hint to enable the new interface'
+		await expect(
+			EditConflictPage.coreUiHint ).toBeDisplayed(
+			{ message: 'the core conflict UI shows a hint to enable the new interface' }
 		);
 
 		await EditConflictPage.waitForJS();
 		await EditConflictPage.coreUiHintCloseButton.click();
 
-		assert(
-			!( await EditConflictPage.coreUiHint.isDisplayed() ),
-			'the hint on the core conflict is hidden'
+		await expect(
+			EditConflictPage.coreUiHint ).not.toBeDisplayed(
+			{ message: 'the hint on the core conflict is hidden' }
 		);
 
 		await EditConflictPage.createConflict(
@@ -95,9 +94,9 @@ describe( 'TwoColConflict', () => {
 			'C'
 		);
 
-		assert(
-			!( await EditConflictPage.coreUiHint.isDisplayed() ),
-			'the hint on the core conflict is hidden on the next conflict'
+		await expect(
+			EditConflictPage.coreUiHint ).not.toBeDisplayed(
+			{ message: 'the hint on the core conflict is hidden on the next conflict' }
 		);
 	} );
 

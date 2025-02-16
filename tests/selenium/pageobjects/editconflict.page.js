@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	Page = require( 'wdio-mediawiki/Page' ),
+const Page = require( 'wdio-mediawiki/Page' ),
 	EditPage = require( '../pageobjects/edit.page' ),
 	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
 	TestAccounts = require( '../test_accounts' ),
@@ -276,48 +275,48 @@ class EditConflictPage extends Page {
 	}
 
 	async assertUnchangedIsCollapsed() {
-		assert(
-			await this.fadeOverlay.isDisplayed(),
-			'an overlay fades the collapsed text'
+		await expect(
+			this.fadeOverlay ).toBeDisplayed(
+			{ message: 'an overlay fades the collapsed text' }
 		);
-		assert(
-			await this.collapsedParagraph.isDisplayed(),
-			'the collapsed paragraph text is visible'
+		await expect(
+			this.collapsedParagraph ).toBeDisplayed(
+			{ message: 'the collapsed paragraph text is visible' }
 		);
-		assert(
-			!( await this.expandedParagraph.isDisplayed() ),
-			'the expanded paragraph text is hidden'
+		await expect(
+			this.expandedParagraph ).not.toBeDisplayed(
+			{ message: 'the expanded paragraph text is hidden' }
 		);
-		assert(
-			await this.expandButton.isDisplayed(),
-			'the expand button is visible'
+		await expect(
+			this.expandButton ).toBeDisplayed(
+			{ message: 'the expand button is visible' }
 		);
-		assert(
-			!( await this.collapseButton.isDisplayed() ),
-			'the collapse button is hidden'
+		await expect(
+			this.collapseButton ).not.toBeDisplayed(
+			{ message: 'the collapse button is hidden' }
 		);
 	}
 
 	async assertUnchangedIsExpanded() {
-		assert(
-			!( await this.fadeOverlay.isDisplayed() ),
-			'no overlay fades the collapsed text'
+		await expect(
+			this.fadeOverlay ).not.toBeDisplayed(
+			{ message: 'no overlay fades the collapsed text' }
 		);
-		assert(
-			await this.expandedParagraph.isDisplayed(),
-			'the expanded paragraph text is visible'
+		await expect(
+			this.expandedParagraph ).toBeDisplayed(
+			{ message: 'the expanded paragraph text is visible' }
 		);
-		assert(
-			!( await this.collapsedParagraph.isDisplayed() ),
-			'the collapsed paragraph text is hidden'
+		await expect(
+			this.collapsedParagraph ).not.toBeDisplayed(
+			{ message: 'the collapsed paragraph text is hidden' }
 		);
-		assert(
-			!( await this.expandButton.isDisplayed() ),
-			'the expand button is hidden'
+		await expect(
+			this.expandButton ).not.toBeDisplayed(
+			{ message: 'the expand button is hidden' }
 		);
-		assert(
-			await this.collapseButton.isDisplayed(),
-			'the collapse button is visible'
+		await expect(
+			this.collapseButton ).toBeDisplayed(
+			{ message: 'the collapse button is visible' }
 		);
 	}
 

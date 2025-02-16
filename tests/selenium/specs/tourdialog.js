@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	TestAccounts = require( '../test_accounts' );
 
 describe( 'TwoColConflict GuidedTour', () => {
@@ -18,9 +17,9 @@ describe( 'TwoColConflict GuidedTour', () => {
 		} );
 
 		it( 'shows the tour', async () => {
-			assert(
-				await EditConflictPage.tourDialog.waitForDisplayed(),
-				'I see an info tour'
+			await expect(
+				EditConflictPage.tourDialog ).toBeDisplayed(
+				{ message: 'I see an info tour' }
 			);
 		} );
 	} );
@@ -34,18 +33,18 @@ describe( 'TwoColConflict GuidedTour', () => {
 		} );
 
 		it( 'hides the tour', async () => {
-			assert(
-				!( await EditConflictPage.tourDialog.isDisplayed() ),
-				'I don\'t see an info tour'
+			await expect(
+				EditConflictPage.tourDialog ).not.toBeDisplayed(
+				{ message: 'I don\'t see an info tour' }
 			);
 		} );
 
 		it( 'clicking the info button shows the tour', async () => {
 			await EditConflictPage.infoButton.click();
 
-			assert(
-				await EditConflictPage.tourDialog.waitForDisplayed(),
-				'I see an info tour'
+			await expect(
+				EditConflictPage.tourDialog ).toBeDisplayed(
+				{ message: 'I see an info tour' }
 			);
 		} );
 
@@ -53,27 +52,21 @@ describe( 'TwoColConflict GuidedTour', () => {
 			await EditConflictPage.tourDialogCloseButton.waitForDisplayed();
 			await EditConflictPage.tourDialogCloseButton.click();
 
-			assert(
-				await EditConflictPage.tourDialogCloseButton.waitForDisplayed( {
-					timeout: 2000,
-					reverse: true
-				} ),
-				'Dialog has disappeared'
+			await expect(
+				EditConflictPage.tourDialogCloseButton ).not.toBeDisplayed(
+				{ message: 'Dialog has disappeared' }
 			);
-
-			assert(
-				await EditConflictPage.tourDiffChangeButton.isDisplayed(),
-				'Diff change pulsating button has appeared'
+			await expect(
+				EditConflictPage.tourDiffChangeButton ).toBeDisplayed(
+				{ message: 'Diff change pulsating button has appeared' }
 			);
-
-			assert(
-				await EditConflictPage.tourSplitSelectionButton.isDisplayed(),
-				'Split selection pulsating button has appeared'
+			await expect(
+				EditConflictPage.tourSplitSelectionButton ).toBeDisplayed(
+				{ message: 'Split selection pulsating button has appeared' }
 			);
-
-			assert(
-				await EditConflictPage.tourYourVersionHeaderPopup.isDisplayed(),
-				'Your version header popup has appeared'
+			await expect(
+				EditConflictPage.tourYourVersionHeaderPopup ).toBeDisplayed(
+				{ message: 'Your version header popup has appeared' }
 			);
 		} );
 	} );

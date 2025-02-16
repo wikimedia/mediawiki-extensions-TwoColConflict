@@ -1,7 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	EditConflictPage = require( '../pageobjects/editconflict.page' ),
+const EditConflictPage = require( '../pageobjects/editconflict.page' ),
 	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
 	TestAccounts = require( '../test_accounts' ),
 	Util = require( 'wdio-mediawiki/Util' );
@@ -19,8 +18,8 @@ describe( 'TwoColConflict save and preview', () => {
 		await EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text' );
 		await EditConflictPage.submitButton.click();
 
-		assert.strictEqual(
-			await FinishedConflictPage.pageWikitext(),
+		await expect(
+			await FinishedConflictPage.pageWikitext() ).toBe(
 			'Line<span>1</span>\n\nDummy Text'
 		);
 	} );
@@ -49,10 +48,9 @@ describe( 'TwoColConflict save and preview', () => {
 		await EditConflictPage.getEditButton( 'your' ).click();
 		await EditConflictPage.submitButton.click();
 
-		assert.strictEqual(
-			await FinishedConflictPage.pageWikitext(),
-			'==A==\nEdit3\n==B==\nEdit2\\r <span lang="en">Your</span>'
-		);
+		await expect(
+			await FinishedConflictPage.pageWikitext() )
+			.toBe( '==A==\nEdit3\n==B==\nEdit2\\r <span lang="en">Your</span>' );
 	} );
 
 	it( 'should trigger a new conflict when another user edits in the same lines in the meantime', async () => {
@@ -75,20 +73,25 @@ describe( 'TwoColConflict save and preview', () => {
 		await EditConflictPage.getEditor( 'your' ).setValue( 'Merged AB' );
 		await EditConflictPage.submitButton.click();
 
-		assert(
-			await EditConflictPage.conflictHeader.isExisting() &&
-			await EditConflictPage.conflictView.isExisting(),
-			'there will be another edit conflict'
+		await expect(
+			EditConflictPage.conflictHeader ).toExist(
+			{ message: 'there will be another edit conflict' }
 		);
-		assert.strictEqual(
-			await EditConflictPage.getDiffText( 'other' ).getText(),
+		await expect(
+			EditConflictPage.conflictView ).toExist(
+			{ message: 'there will be another edit conflict' }
+		);
+
+		await expect(
+			await EditConflictPage.getDiffText( 'other' ).getText() ).toBe(
 			'Third Change C',
-			'the other text will be the text of the third edit'
+			{ message: 'the other text will be the text of the third edit' }
 		);
-		assert.strictEqual(
-			await EditConflictPage.getDiffText( 'your' ).getText(),
+
+		await expect(
+			await EditConflictPage.getDiffText( 'your' ).getText() ).toBe(
 			'Merged AB',
-			'your text will be the result of the first merge'
+			{ message: 'your text will be the result of the first merge' }
 		);
 	} );
 
@@ -101,13 +104,12 @@ describe( 'TwoColConflict save and preview', () => {
 		await EditConflictPage.getEditor( 'your' ).setValue( 'Dummy Text [[title (topic)|]]' );
 		await EditConflictPage.previewButton.click();
 
-		assert(
-			await EditConflictPage.previewView.waitForDisplayed(),
-			'I see a preview page for my changes'
+		await expect(
+			EditConflictPage.previewView ).toBeDisplayed(
+			{ message: 'I see a preview page for my changes' }
 		);
-
-		assert.strictEqual(
-			await EditConflictPage.previewText.getText(),
+		expect(
+			await EditConflictPage.previewText.getText() ).toBe(
 			'Line1\n\nDummy Text title'
 		);
 	} );
@@ -121,21 +123,21 @@ describe( 'TwoColConflict save and preview', () => {
 		await EditConflictPage.getEditor( 'other' ).setValue( 'Other, but improved' );
 		await EditConflictPage.previewButton.click();
 
-		assert(
-			await EditConflictPage.previewView.waitForDisplayed(),
-			'The preview appears'
+		await expect(
+			EditConflictPage.previewView ).toBeDisplayed(
+			{ message: 'The preview appears' }
 		);
 
-		assert.strictEqual(
-			await EditConflictPage.previewText.getText(),
+		expect(
+			await EditConflictPage.previewText.getText() ).toBe(
 			'Line1\n\nOther, but improved',
-			'My edit appears in the preview'
+			{ message: 'My edit appears in the preview' }
 		);
 
-		assert.strictEqual(
-			await EditConflictPage.getEditor( 'other' ).getValue(),
+		expect(
+			await EditConflictPage.getEditor( 'other' ).getValue() ).toBe(
 			'Other, but improved',
-			'I can continue the edit I started'
+			{ message: 'I can continue the edit I started' }
 		);
 	} );
 
