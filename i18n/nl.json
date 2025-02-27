@@ -24,7 +24,7 @@
 	"twocolconflict-copy-tooltip": "Kopieer de volledige wikitekst van uw revisie naar het klembord (hieronder aangebrachte bewerkingen zijn niet inbegrepen)",
 	"twocolconflict-core-ui-hint": "Er is nu een bijgewerkte interface beschikbaar voor het oplossen van bewerkingsconflicten. Schakel de op alinea gebaseerde bewerkingsconflictinterface in uw [[Special:Preferences#mw-prefsection-editing|voorkeuren]] in om het uit te proberen.",
 	"twocolconflict-core-ui-hint-close": "Dit nooit meer weergeven",
-	"twocolconflict-preference-enabled": "Schakel de [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|alinea gebaseerde bewerkingsconflictinterface]] in om bewerkingsconflicten op te lossen",
+	"twocolconflict-preference-enabled": "Schakel de [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface op alinea’s gebaseerde bewerkingsconflict-interface] in om bewerkingsconflicten op te lossen",
 	"twocolconflict-special-footer-hint": "Sluit de huidige pagina om terug te keren naar de interface voor het bewerken van conflicten.",
 	"twocolconflict-special-header-overview": "Terwijl u aan het bewerken was, heeft een andere gebruiker dezelfde pagina bewerkt en voor u gepubliceerd. Hieronder wordt een alleen-lezen kopie van uw revisie bewaard. Alle wijzigingen die zijn aangebracht in de interface voor bewerkingsconflicten, worden niet weergegeven. Om wijzigingen samen te voegen en het probleem op te lossen met behulp van de interface voor het bewerken van conflicten, keert u terug naar het vorige tabblad.",
 	"twocolconflict-special-not-saved": "Niet gepubliceerd",
