@@ -132,7 +132,7 @@ class HtmlEditableTextComponent {
 		return Html::hidden( "mw-twocolconflict-split-linefeeds[$rowNum][$changeType]", $counts );
 	}
 
-	private function buildEditButton() {
+	private function buildEditButton(): ButtonWidget {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
@@ -143,7 +143,7 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	private function buildSaveButton() {
+	private function buildSaveButton(): ButtonWidget {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
@@ -154,7 +154,7 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	private function buildResetButton() {
+	private function buildResetButton(): ButtonWidget {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
@@ -165,7 +165,7 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	private function buildExpandButton() {
+	private function buildExpandButton(): ButtonWidget {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
@@ -176,7 +176,7 @@ class HtmlEditableTextComponent {
 		] );
 	}
 
-	private function buildCollapseButton() {
+	private function buildCollapseButton(): ButtonWidget {
 		return new ButtonWidget( [
 			'infusable' => true,
 			'framed' => false,
