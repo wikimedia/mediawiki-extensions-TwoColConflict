@@ -4,12 +4,12 @@ namespace TwoColConflict;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\BetaFeatures\BetaFeatures;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\UserIdentity;
 use MobileContext;
-use WikiPage;
 
 /**
  * @license GPL-2.0-or-later

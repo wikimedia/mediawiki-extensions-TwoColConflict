@@ -7,6 +7,7 @@ use MediaWiki\Content\IContentHandlerFactory;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionId;
 use MediaWiki\User\User;
@@ -16,7 +17,6 @@ use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
 use Wikimedia\Stats\IBufferingStatsdDataFactory;
-use WikiPage;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
