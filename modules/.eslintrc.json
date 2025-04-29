@@ -1,8 +1,5 @@
 {
 	"root": true,
-	"parserOptions": {
-		"sourceType": "commonjs"
-	},
 	"extends": [
 		"../resources/.eslintrc"
 	],
