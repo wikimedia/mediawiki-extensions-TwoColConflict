@@ -130,10 +130,11 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 	 */
 	private function getTextAreaHtml( string $text, PageIdentity $page ): string {
 		$builder = new TextboxBuilder();
-		$attribs = $builder->mergeClassesIntoAttributes(
-			[ 'mw-twocolconflict-submitted-text' ],
-			[ 'readonly', 'tabindex' => 1 ]
-		);
+		$attribs = [
+			'class' => [ 'mw-twocolconflict-submitted-text' ],
+			'readonly',
+			'tabindex' => 1,
+		];
 
 		$attribs = $builder->buildTextboxAttribs(
 			'wpTextbox2',
