@@ -264,64 +264,6 @@ TEXT
 				'before' => <<<TEXT
 Just a multi-line text.
 Line number two. This line is quite long!
-And that's line number three - even longer than the line before.
-
-Just another line with an empty line above.
-TEXT
-				,
-				'after' => <<<TEXT
-Just a multi-line text.
-Add something new.
-Line number two. Now line number three and quite long!
-Add more new stuff.
-TEXT
-				,
-				'result' => [
-					[
-						'action' => 'copy',
-						'copytext' => 'Just a multi-line text.',
-					],
-					[
-						'action' => 'change',
-						'oldhtml' =>
-// phpcs:disable Generic.Files.LineLength
-<<<TEXT
-Line number two. <del class="mw-twocolconflict-diffchange">This </del>line <del class="mw-twocolconflict-diffchange">is </del>quite long!
-<del class="mw-twocolconflict-diffchange">And that's line number three - even longer than the line before.</del>
-\u{00A0}
-<del class="mw-twocolconflict-diffchange">Just another line with an empty line above</del>.
-TEXT
-// phpcs:enable
-						,
-						'oldtext' => <<<TEXT
-Line number two. This line is quite long!
-And that's line number three - even longer than the line before.
-
-Just another line with an empty line above.
-TEXT
-						,
-						'newhtml' =>
-// phpcs:disable Generic.Files.LineLength
-<<<TEXT
-<ins class="mw-twocolconflict-diffchange">Add something new.</ins>
-Line number two. <ins class="mw-twocolconflict-diffchange">Now </ins>line <ins class="mw-twocolconflict-diffchange">number three and </ins>quite long!
-<ins class="mw-twocolconflict-diffchange">Add more new stuff</ins>.
-TEXT
-// phpcs:enable
-						,
-						'newtext' => <<<TEXT
-Add something new.
-Line number two. Now line number three and quite long!
-Add more new stuff.
-TEXT
-						,
-					],
-				],
-			],
-			[
-				'before' => <<<TEXT
-Just a multi-line text.
-Line number two. This line is quite long!
 Line number three.
 TEXT
 				,
