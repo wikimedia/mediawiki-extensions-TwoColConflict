@@ -23,7 +23,8 @@
 			"沈澄心",
 			"神樂坂秀吉",
 			"科劳",
-			"铁桶"
+			"铁桶",
+			"Key0121"
 		]
 	},
 	"twocolconflict": "基于段落的编辑冲突",
@@ -38,7 +39,7 @@
 	"twocolconflict-copy-tooltip": "将您修订的完整wikitext复制到剪贴板（不包括下面所做的编辑）",
 	"twocolconflict-core-ui-hint": "用于解决编辑冲突的更新界面现已可用。在您的[[Special:Preferences#mw-prefsection-editing|参数设置]]中启用基于段落的编辑冲突界面来尝试一下。",
 	"twocolconflict-core-ui-hint-close": "不再显示",
-	"twocolconflict-preference-enabled": "启用[[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|基于段落的编辑冲突界面]]解决编辑冲突",
+	"twocolconflict-preference-enabled": "启用[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interfac 基于段落的编辑冲突界面]解决编辑冲突",
 	"twocolconflict-special-footer-hint": "关闭当前页面返回编辑冲突界面。",
 	"twocolconflict-special-header-overview": "在您编辑时，另一个用户编辑了同一页面并在您之前发布。您的修订版本的仅供查看副本保存在下方。在编辑冲突界面中所做的任何更改都不会反映出来。要使用编辑冲突界面合并更改并解决问题，请返回上一个选项卡。",
 	"twocolconflict-special-not-saved": "未发布",
