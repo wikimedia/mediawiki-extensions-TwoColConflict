@@ -1,7 +1,6 @@
 'use strict';
 
 const Merger = require( './ext.TwoColConflict.Split.Merger.js' );
-const Tracking = require( './ext.TwoColConflict.Split.tracking.js' );
 
 /**
  * @param {jQuery} $column
@@ -464,7 +463,6 @@ if ( !window.QUnit ) {
 			return;
 		}
 
-		const initTracking = Tracking.initTrackingListeners;
 		const initTour = require( './ext.TwoColConflict.Split.Tour.js' );
 
 		// disable all javascript from this feature when testing the nojs implementation
@@ -482,9 +480,8 @@ if ( !window.QUnit ) {
 		initPreview();
 		initSubmit();
 		initTour();
-		initTracking();
 		initSourceCopy();
 	} );
 }
 
-module.exports = { private: { Merger, RowFormatter: Tracking.private.RowFormatter } };
+module.exports = { private: { Merger } };

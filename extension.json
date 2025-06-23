@@ -22,11 +22,6 @@
 			"public": true,
 			"value": true
 		},
-		"TwoColConflictTrackingOversample": {
-			"description": "100% sampling for EditStepAttempt events whenever a user is in the conflict workflow.  FIXME: This should be disabled everywhere unless we're explicitly collecting data and planning to analyze the results.",
-			"public": true,
-			"value": false
-		},
 		"TwoColConflictSuggestResolution": {
 			"description": "Suggest an easy resolution for edit conflicts on talk pages when two users replied at the same time.",
 			"public": true,
@@ -42,9 +37,7 @@
 		"LoadUserOptions": "main",
 		"AlternateEdit": "main",
 		"EditPage::importFormData": "editpageformdata",
-		"EditPageBeforeConflictDiff": "main",
 		"EditPageBeforeEditButtons": "main",
-		"EditPage::showEditForm:initial": "main",
 		"EditPage::showEditForm:fields": "main"
 	},
 	"HookHandlers": {
@@ -77,7 +70,6 @@
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.init.js",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Merger.js",
 				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.Tour.js",
-				"modules/SplitTwoColConflict/ext.TwoColConflict.Split.tracking.js",
 				"modules/ext.TwoColConflict.Settings.js"
 			],
 			"styles": [
@@ -165,11 +157,6 @@
 					}
 				}
 			}
-		},
-		"ext.TwoColConflict.JSCheck": {
-			"packageFiles": [
-				"modules/ext.TwoColConflict.JSCheck.js"
-			]
 		}
 	},
 	"ExtensionMessagesFiles": {
@@ -189,20 +176,11 @@
 		"localBasePath": "tests/qunit",
 		"remoteExtPath": "TwoColConflict/tests/qunit",
 		"scripts": [
-			"SplitTwoColConflict/TwoColConflict.Merger.test.js",
-			"SplitTwoColConflict/TwoColConflict.Split.tracking.test.js"
+			"SplitTwoColConflict/TwoColConflict.Merger.test.js"
 		],
 		"dependencies": [
 			"ext.TwoColConflict.SplitJs"
 		]
-	},
-	"attributes": {
-		"EventLogging": {
-			"Schemas": {
-				"TwoColConflictConflict": "/analytics/legacy/twocolconflictconflict/1.0.0",
-				"TwoColConflictExit": "/analytics/legacy/twocolconflictexit/1.0.0"
-			}
-		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
