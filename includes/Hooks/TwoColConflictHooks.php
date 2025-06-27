@@ -5,17 +5,13 @@
 namespace TwoColConflict\Hooks;
 
 use MediaWiki\EditPage\EditPage;
-use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\AlternateEditHook;
 use MediaWiki\Hook\EditPage__showEditForm_fieldsHook;
-use MediaWiki\Hook\EditPage__showEditForm_initialHook;
-use MediaWiki\Hook\EditPageBeforeConflictDiffHook;
 use MediaWiki\Hook\EditPageBeforeEditButtonsHook;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\User\Options\Hook\LoadUserOptionsHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -35,9 +31,7 @@ class TwoColConflictHooks implements
 	GetPreferencesHook,
 	LoadUserOptionsHook,
 	AlternateEditHook,
-	EditPageBeforeConflictDiffHook,
 	EditPageBeforeEditButtonsHook,
-	EditPage__showEditForm_initialHook,
 	EditPage__showEditForm_fieldsHook
 {
 
@@ -105,23 +99,6 @@ class TwoColConflictHooks implements
 	}
 
 	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::showEditForm:initial
-	 * @codeCoverageIgnore this is only for logging, not a user-facing feature
-	 *
-	 * @param EditPage $editPage
-	 * @param OutputPage $outputPage
-	 */
-	public function onEditPage__showEditForm_initial(
-		$editPage,
-		$outputPage
-	) {
-		// What the script does is only used for logging in doEditPageBeforeConflictDiff below
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
-			$outputPage->addModules( 'ext.TwoColConflict.JSCheck' );
-		}
-	}
-
-	/**
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPage::showEditForm:fields
 	 *
 	 * @param EditPage $editPage
@@ -139,57 +116,6 @@ class TwoColConflictHooks implements
 			$outputPage->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 			$outputPage->addModules( 'ext.TwoColConflict.SplitJs' );
 			$outputPage->addHTML( ( new CoreUiHintHtml( $outputPage->getContext() ) )->getHtml() );
-		}
-	}
-
-	/**
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/EditPageBeforeConflictDiff
-	 * @codeCoverageIgnore this is only for logging, not a user-facing feature
-	 *
-	 * @param EditPage $editPage
-	 * @param OutputPage $outputPage
-	 */
-	public function onEditPageBeforeConflictDiff(
-		$editPage,
-		$outputPage
-	) {
-		$context = $editPage->getContext();
-		$title = $context->getTitle();
-		$request = $context->getRequest();
-		if ( $context->getConfig()->get( 'TwoColConflictTrackingOversample' ) ) {
-			$request->setVal( 'editingStatsOversample', true );
-		}
-
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ) {
-			$user = $outputPage->getUser();
-			$baseRevision = $editPage->getExpectedParentRevision();
-			$revisionStore = MediaWikiServices::getInstance()->getRevisionStore();
-			$latestRevision = $revisionStore->getKnownCurrentRevision( $title );
-
-			EventLogging::logEvent(
-				'TwoColConflictConflict',
-				-1,
-				[
-					'twoColConflictShown' => $this->twoColContext->shouldTwoColConflictBeShown(
-						$user,
-						$context->getTitle()
-					),
-					'isAnon' => !$user->isNamed(),
-					'editCount' => (int)$user->getEditCount(),
-					'pageNs' => $context->getTitle()->getNamespace(),
-					'baseRevisionId' => $baseRevision ? $baseRevision->getId() : 0,
-					'latestRevisionId' => $latestRevision ? $latestRevision->getId() : 0,
-					// Previously we tried a 3-way-merge with the unsaved content and tracked some
-					// not so sensitive metrics here, but this was expensive and fragile
-					'conflictChunks' => -1,
-					'conflictChars' => -1,
-					'startTime' => $editPage->starttime ?: '',
-					'editTime' => $editPage->edittime ?: '',
-					'pageTitle' => $context->getTitle()->getText(),
-					'hasJavascript' => $request->getBool( 'mw-twocolconflict-js' )
-						|| $request->getBool( 'veswitched' ),
-				]
-			);
 		}
 	}
 

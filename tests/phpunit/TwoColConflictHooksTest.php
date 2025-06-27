@@ -8,7 +8,6 @@ use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
@@ -87,17 +86,6 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$buttons = [ 'diff' => null, 'preview' => $previewButton ];
 		$this->getHookHandlerInstance()->onEditPageBeforeEditButtons( $editPage, $buttons, $tabIndex );
 		$this->assertArrayNotHasKey( 'diff', $buttons );
-	}
-
-	public function testOnEditPageShowEditFormInitial() {
-		$calls = ExtensionRegistry::getInstance()->isLoaded( 'EventLogging' ) ? 1 : 0;
-		$outputPage = $this->createMock( OutputPage::class );
-		$outputPage->expects( $this->exactly( $calls ) )->method( 'addModules' );
-
-		$this->getHookHandlerInstance()->onEditPage__showEditForm_initial(
-			$this->createNoOpMock( EditPage::class ),
-			$outputPage
-		);
 	}
 
 	public function testOnGetBetaFeaturePreferences_whileInBeta() {
