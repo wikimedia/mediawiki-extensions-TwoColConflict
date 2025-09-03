@@ -17,7 +17,7 @@
 	"twocolconflict-copy-tooltip": "Копирајте го целосниот викитекст на вашата преработка во меѓускладот (долунаправеаните уредувања не се вклучени).",
 	"twocolconflict-core-ui-hint": "Сега е достапен унапреден посредник за решавање на спротивставени уредувања. Овозможете ја „Пасусна двостолбна спротивставеност на уредувања“ во вашите [[Special:Preferences#mw-prefsection-editing|нагодувања]] за да го испробате.",
 	"twocolconflict-core-ui-hint-close": "Повеќе не прикажувај",
-	"twocolconflict-preference-enabled": "Овозможете го [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|параграфскиот посредник за преглед на  спротивставености]] за да ги решите",
+	"twocolconflict-preference-enabled": "Овозможете го [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface параграфскиот посредник за преглед на спротивставености] за да ги решите",
 	"twocolconflict-special-footer-hint": "Затвори ја тековната страница и врати се на посредникот за спротивставености",
 	"twocolconflict-special-header-overview": "Додека уредувавте, друг корисник ја уредил истата страница и ја објавил пред вас. Подолу е запазен чисто нагледен примерок на вашата преработка. Сите промени направени во посредникот за спротивставености не се одразени. За да ги споите промените и да го решите проблемот со посредникот, вратете се на претходното јазиче.",
 	"twocolconflict-special-not-saved": "Необјавено",
