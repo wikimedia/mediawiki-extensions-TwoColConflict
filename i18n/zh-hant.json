@@ -24,7 +24,7 @@
 	"twocolconflict-copy-tooltip": "複製您修訂裡的 wikitext 到剪貼簿（不包含以下做出的編輯內容）",
 	"twocolconflict-core-ui-hint": "用於解決編輯衝突的更新介面現已可用。請在您的[[Special:Preferences#mw-prefsection-editing|偏好設定]]裡啟用基於段落編輯衝突介面來試試。",
 	"twocolconflict-core-ui-hint-close": "永遠不再顯示",
-	"twocolconflict-preference-enabled": "啟用[[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|基於段落的編輯衝突介面]]來解決編輯衝突",
+	"twocolconflict-preference-enabled": "啟用[https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface 基於段落的編輯衝突介面]來解決編輯衝突",
 	"twocolconflict-special-footer-hint": "關閉目前頁面來返回到編輯衝突介面。",
 	"twocolconflict-special-header-overview": "在您進行編輯時，剛好也有其他編者在相同的頁面上編輯，並比您先發布內容。您的修訂的唯讀複本保存在下方。在編輯衝突介面裡所做出的變動並不會直接反映出。要使用編輯衝突介面來合併更改並解決問題，請返回到前一個分頁。",
 	"twocolconflict-special-not-saved": "尚未發布",
