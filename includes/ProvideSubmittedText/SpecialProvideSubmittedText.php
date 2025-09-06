@@ -22,19 +22,15 @@ use Wikimedia\Stats\StatsFactory;
  */
 class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 
-	private TwoColConflictContext $twoColConflictContext;
-	private SubmittedTextCache $textCache;
-	private StatsFactory $statsFactory;
+	private readonly SubmittedTextCache $textCache;
 
 	public function __construct(
-		TwoColConflictContext $twoColConflictContext,
+		private readonly TwoColConflictContext $twoColConflictContext,
 		BagOStuff $textCache,
-		StatsFactory $statsFactory
+		private readonly StatsFactory $statsFactory,
 	) {
 		parent::__construct( 'TwoColConflictProvideSubmittedText' );
-		$this->twoColConflictContext = $twoColConflictContext;
 		$this->textCache = new SubmittedTextCache( $textCache );
-		$this->statsFactory = $statsFactory;
 	}
 
 	/**

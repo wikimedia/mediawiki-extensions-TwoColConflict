@@ -35,14 +35,11 @@ class TwoColConflictHooks implements
 	EditPage__showEditForm_fieldsHook
 {
 
-	private TwoColConflictContext $twoColContext;
-
 	private static function newFromGlobalState(): self {
 		return new self( MediaWikiServices::getInstance()->getService( 'TwoColConflictContext' ) );
 	}
 
-	public function __construct( TwoColConflictContext $twoColContext ) {
-		$this->twoColContext = $twoColContext;
+	public function __construct( private readonly TwoColConflictContext $twoColContext ) {
 	}
 
 	/**
