@@ -281,8 +281,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 
 	/**
 	 * Build HTML for the hidden field with the text the user submitted.
-	 *
-	 * @return string
 	 */
 	private function buildRawTextsHiddenFields(): string {
 		return Html::textarea(

@@ -189,9 +189,6 @@ class AnnotatedHtmlDiffFormatter {
 		return implode( "\n", $wordAccumulator->getLines() );
 	}
 
-	/**
-	 * @return WordAccumulator
-	 */
 	private function getWordAccumulator(): WordAccumulator {
 		$wordAccumulator = new WordAccumulator();
 		$wordAccumulator->insClass = ' class="mw-twocolconflict-diffchange"';
