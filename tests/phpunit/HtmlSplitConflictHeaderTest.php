@@ -127,9 +127,9 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$user = $this->createNoOpMock( Authority::class, [ 'getUser' ] );
 
 		$language = $this->createMock( Language::class );
-		$language->method( 'userTimeAndDate' )->willReturnCallback( static function ( ?string $ts ) {
-			return $ts ?? '(just-now)';
-		} );
+		$language->method( 'userTimeAndDate' )->willReturnCallback(
+			static fn ( ?string $ts ) => $ts ?? '(just-now)'
+		);
 
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturnCallback( function ( $key, ...$params ) {
@@ -171,7 +171,7 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$user->method( 'getName' )->willReturn( __CLASS__ );
 
 		$revision = new MutableRevisionRecord(
-			new PageIdentityValue( 0, NS_MAIN, __CLASS__, PageIdentityValue::LOCAL )
+			PageIdentityValue::localIdentity( 0, NS_MAIN, __CLASS__ )
 		);
 		$revision->setUser( $user )
 			->setTimestamp( $timestamp )

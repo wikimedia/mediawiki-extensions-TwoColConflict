@@ -217,10 +217,9 @@ TEXT
 
 	private function createInstance() {
 		$editableTextComponent = $this->createMock( HtmlEditableTextComponent::class );
-		$editableTextComponent->method( 'getHtml' )
-			->willReturnCallback( static function ( $diffHtml, $text ) {
-				return "<textarea>$text</textarea>";
-			} );
+		$editableTextComponent->method( 'getHtml' )->willReturnCallback(
+			static fn ( $_, $text ) => "<textarea>$text</textarea>"
+		);
 
 		$localizer = new class implements MessageLocalizer {
 			public function msg( $key, ...$params ) {
