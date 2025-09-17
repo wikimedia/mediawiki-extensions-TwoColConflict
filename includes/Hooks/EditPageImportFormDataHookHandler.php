@@ -1,7 +1,5 @@
 <?php
 
-// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
-
 namespace TwoColConflict\Hooks;
 
 use MediaWiki\EditPage\EditPage;
