@@ -17,7 +17,7 @@
 	"twocolconflict-copy-tooltip": "Kopiera den fullständiga wikitexten från din version till urklipp (redigeringar som gjordes nedan inkluderas inte).",
 	"twocolconflict-core-ui-hint": "Ett uppdaterat gränssnitt för att lösa redigeringskonflikter finns nu tillgängligt. Aktivera det paragrafbaserade gränssnittet för redigeringskonflikter i dina [[Special:Preferences#mw-prefsection-editing|inställningar]] för att prova det.",
 	"twocolconflict-core-ui-hint-close": "Visa aldrig igen",
-	"twocolconflict-preference-enabled": "Aktivera [[mw:Special:MyLanguage/Help:Paragraph-based Edit Conflict Interface|paragrafbaserade gränssnittet för redigeringskonflikter]] för att lösa redigeringskonflikter",
+	"twocolconflict-preference-enabled": "Aktivera [https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Paragraph-based_Edit_Conflict_Interface paragrafbaserade gränssnittet för redigeringskonflikter] för att lösa redigeringskonflikter",
 	"twocolconflict-special-footer-hint": "Stäng den nuvarande sidan för att återvända till gränssnittet för redigeringskonflikter.",
 	"twocolconflict-special-header-overview": "Medan du redigerade har en annan användare redigerat och publicerat samma sida innan dig. En skrivskyddad kopia av din version finns nedan. Alla ändringar som gjordes i gränssnittet för redigeringskonflikter visas inte. För att sammanfoga ändringar och lösa problemet via gränssnittet, gå tillbaka till föregående flik.",
 	"twocolconflict-special-not-saved": "Inte publicerad",
