@@ -10,5 +10,6 @@
 	"twocolconflict-desc": "Паказвае побач экраны з вэрсіямі для разьвязаньня канфлікту рэдагаваньня",
 	"twocolconflict-beta-feature-message": "канфлікт рэдагаваньня на аснове параграфаў",
 	"twocolconflict-beta-feature-description": "Паказваць канфлікт рэдагаваньня ў палепшаным выглядзе параграфаў.",
+	"twocolconflict-special-malformed-title": "Брак ці няслушная назва.",
 	"twocolconflict-split-reset-warning-cancel": "Скасаваць"
 }

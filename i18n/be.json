@@ -54,7 +54,7 @@
 	"twocolconflict-split-save-tooltip": "Ужыць свае змяненні к гэтаму тэксту",
 	"twocolconflict-split-reset-tooltip": "Адмяніць усе вашы змяненні ў гэтым тэксце",
 	"twocolconflict-split-reset-warning": "Адмяніць змены? Тэкст у гэтым полі будзе вернуты да таго, які быў, калі ўзнік канфлікт правак.",
-	"twocolconflict-split-reset-warning-cancel": "Адмена",
+	"twocolconflict-split-reset-warning-cancel": "Скасаваць",
 	"twocolconflict-split-reset-warning-accept": "Адхіліць",
 	"twocolconflict-split-collapse-tooltip": "Згарнуць тэкст без змен",
 	"twocolconflict-split-expand-tooltip": "Разгарнуць тэкст без змяненняў",
