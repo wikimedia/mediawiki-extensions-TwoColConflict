@@ -131,7 +131,7 @@ class TwoColConflictHooks implements
 				$context->getUser(),
 				$context->getTitle()
 			) &&
-			$editPage->isConflict === true
+			$editPage->isConflict
 		) {
 			unset( $buttons['diff'] );
 			// T230152
