@@ -41,7 +41,7 @@ class CoreUiHintHtml {
 					Html::rawElement(
 						'label',
 						[ 'for' => 'mw-twocolconflict-disable-core-hint' ],
-						$closeIcon
+						(string)$closeIcon
 					)
 				)
 			] )

@@ -197,7 +197,7 @@ class HtmlSplitConflictHeader {
 		return ' ' . Html::rawElement(
 			'span',
 			[ 'class' => 'mw-twocolconflict-copy-link' ],
-			$this->messageLocalizer->msg( 'parentheses' )->rawParams( $link )
+			$this->messageLocalizer->msg( 'parentheses' )->rawParams( $link )->parse()
 		);
 	}
 

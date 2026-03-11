@@ -139,15 +139,9 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 				$this->identicalTo( 'parse' ),
 				$this->identicalTo( 'text' )
 			) )->willReturn( '(' . implode( ': ', [ $key, ...$params ] ) . ')' );
-			$msg->method( 'rawParams' )->willReturnCallback( function ( $param ) use ( $key ) {
-				// fallback for the copy links
-				if ( str_contains( $param, 'twocolconflict-copy-tab-action' ) ) {
-					return $param;
-				}
-				$msg = $this->createMock( Message::class );
-				$msg->method( 'escaped' )->willReturn( "($key: $param)" );
-				return $msg;
-			} );
+			$msg->method( 'rawParams' )->willReturnCallback(
+				fn ( ...$p ) => $this->getMockMessage( "($key: " . implode( '|', $p ) . ')' )
+			);
 			return $msg;
 		} );
 

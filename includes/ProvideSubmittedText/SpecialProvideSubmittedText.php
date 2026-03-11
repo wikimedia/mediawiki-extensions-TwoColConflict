@@ -49,7 +49,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		if ( !$title ) {
 			// Should be the same error code as for every malformed title
 			$out->setStatusCode( 404 );
-			$out->addHTML( new MessageWidget( [
+			$out->addHTML( (string)new MessageWidget( [
 				'label' => $this->msg( 'twocolconflict-special-malformed-title' )->text(),
 				'type' => 'error',
 			] ) );
@@ -69,7 +69,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		if ( !$text ) {
 			// 410 means "gone", which is quite literally what happened here
 			$out->setStatusCode( 410 );
-			$out->addHTML( new MessageWidget( [
+			$out->addHTML( (string)new MessageWidget( [
 				'label' => $this->msg( 'twocolconflict-special-expired' )->text(),
 				'type' => 'warning',
 			] ) );
