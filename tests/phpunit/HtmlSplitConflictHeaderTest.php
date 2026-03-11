@@ -134,15 +134,18 @@ class HtmlSplitConflictHeaderTest extends MediaWikiIntegrationTestCase {
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->method( 'msg' )->willReturnCallback( function ( $key, ...$params ) {
 			$msg = $this->createMock( Message::class );
-			$text = "($key" . ( $params ? ': ' . implode( '|', $params ) : '' ) . ')';
-			$msg->method( $this->logicalOr( 'escaped', 'parse', 'text' ) )->willReturn( $text );
-			$msg->method( 'rawParams' )->willReturnCallback( function ( ...$params ) use ( $key ) {
+			$msg->method( $this->logicalOr(
+				$this->identicalTo( 'escaped' ),
+				$this->identicalTo( 'parse' ),
+				$this->identicalTo( 'text' )
+			) )->willReturn( '(' . implode( ': ', [ $key, ...$params ] ) . ')' );
+			$msg->method( 'rawParams' )->willReturnCallback( function ( $param ) use ( $key ) {
 				// fallback for the copy links
-				if ( str_contains( $params[0], 'twocolconflict-copy-tab-action' ) ) {
-					return $params[0];
+				if ( str_contains( $param, 'twocolconflict-copy-tab-action' ) ) {
+					return $param;
 				}
 				$msg = $this->createMock( Message::class );
-				$msg->method( 'escaped' )->willReturn( "($key: " . implode( '|', $params ) . ')' );
+				$msg->method( 'escaped' )->willReturn( "($key: $param)" );
 				return $msg;
 			} );
 			return $msg;
