@@ -42,7 +42,7 @@ describe( 'TwoColConflict without JavaScript', () => {
 	it( 'is showing the talk page version correctly', async () => {
 		await TalkConflictPage.createTalkPageConflict();
 
-		await expect( TalkConflictPage.splitColumn ).not.toExist();
+		expect( await TalkConflictPage.splitColumn.isExisting() ).toBe( false );
 
 		await TalkConflictPage.orderSelector.waitForDisplayed();
 		await expect( TalkConflictPage.keepAfterButton ).toBeSelected();

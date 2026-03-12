@@ -17,7 +17,7 @@ describe( 'TwoColConflict', () => {
 		} );
 
 		it( 'shows the talk page screen correctly', async () => {
-			await expect( await TalkConflictPage.splitColumn ).not.toExist();
+			expect( await TalkConflictPage.splitColumn.isExisting() ).toBe( false );
 
 			await expect( await EditConflictPage.getParagraph( 'other' ) ).toExist();
 			await expect( await EditConflictPage.getParagraph( 'your' ) ).toExist();
@@ -25,8 +25,8 @@ describe( 'TwoColConflict', () => {
 
 			// Only "your" block is editable
 			await expect( await EditConflictPage.getEditButton( 'your' ) ).toExist();
-			await expect( await EditConflictPage.getEditButton( 'other' ) ).not.toExist();
-			await expect( await EditConflictPage.getEditButton( 'copy' ) ).not.toExist();
+			expect( await EditConflictPage.getEditButton( 'other' ).isExisting() ).toBe( false );
+			expect( await EditConflictPage.getEditButton( 'copy' ).isExisting() ).toBe( false );
 
 			await expect( await TalkConflictPage.isOtherBlockFirst() ).toBeTruthy();
 		} );
@@ -69,7 +69,7 @@ describe( 'TwoColConflict', () => {
 		);
 		await TalkConflictPage.talkRow.waitForDisplayed();
 
-		await expect( TalkConflictPage.splitColumn ).not.toExist();
+		expect( await TalkConflictPage.splitColumn.isExisting() ).toBe( false );
 	} );
 
 	// TODO: test for double-conflict, all text should be restored even if edited.
