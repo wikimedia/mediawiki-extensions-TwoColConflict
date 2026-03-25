@@ -16,14 +16,14 @@ class AnnotatedHtmlDiffFormatterTest extends \MediaWikiUnitTestCase {
 	 * @dataProvider provideFormat
 	 * @dataProvider provideFormatWithMarkup
 	 */
-	public function testFormat( string $before, string $after, array $expectedOutput ) {
+	public function testFormat( string $before, string $after, array $result ) {
 		$instance = new AnnotatedHtmlDiffFormatter();
 		$output = $instance->format(
 			explode( "\n", $before ),
 			explode( "\n", $after ),
 			explode( "\n", $this->preSaveTransform( $after ) )
 		);
-		$this->assertSame( $expectedOutput, $output );
+		$this->assertSame( $result, $output );
 	}
 
 	public static function provideFormat() {

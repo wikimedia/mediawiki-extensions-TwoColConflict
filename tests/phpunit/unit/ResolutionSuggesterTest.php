@@ -411,12 +411,12 @@ class ResolutionSuggesterTest extends MediaWikiUnitTestCase {
 		string $base,
 		string $your,
 		string $stored,
-		?TalkPageResolution $expectedOutput
+		?TalkPageResolution $expected
 	) {
 		$suggester = $this->createResolutionSuggester( $base );
 
 		$this->assertEquals(
-			$expectedOutput,
+			$expected,
 			$suggester->getResolutionSuggestion(
 				explode( "\n", $stored ),
 				explode( "\n", $your )

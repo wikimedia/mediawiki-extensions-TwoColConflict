@@ -74,43 +74,43 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
 		return [
 			'disabled in Beta' => [
-				'wgTwoColConflictBetaFeature' => true,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => true,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $defaultUser,
 				'namespace' => NS_MAIN,
 				'expected' => false,
 			],
 			'user enabled Beta feature' => [
-				'wgTwoColConflictBetaFeature' => true,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => true,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $betaUser,
 				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'enabled by default when not in Beta any more' => [
-				'wgTwoColConflictBetaFeature' => false,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => false,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $defaultUser,
 				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'user disabled new interface' => [
-				'wgTwoColConflictBetaFeature' => false,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => false,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $optOutUser,
 				'namespace' => NS_MAIN,
 				'expected' => false,
 			],
 			'disabled on talk pages' => [
-				'wgTwoColConflictBetaFeature' => false,
-				'wgTwoColConflictSuggestResolution' => false,
+				'betaConfig' => false,
+				'singleColumnConfig' => false,
 				'userOptionsLookup' => $defaultUser,
 				'namespace' => NS_TALK,
 				'expected' => false,
 			],
 			'disabled in the project namespace' => [
-				'wgTwoColConflictBetaFeature' => false,
-				'wgTwoColConflictSuggestResolution' => false,
+				'betaConfig' => false,
+				'singleColumnConfig' => false,
 				'userOptionsLookup' => $defaultUser,
 				'namespace' => NS_PROJECT,
 				'expected' => false,
@@ -145,15 +145,15 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
 		return [
 			'enabled in beta mode when BetaFeatures not installed' => [
-				'wgTwoColConflictBetaFeature' => true,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => true,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $defaultUser,
 				'namespace' => NS_MAIN,
 				'expected' => true,
 			],
 			'enabled without BetaFeatures, also for an opted-in user' => [
-				'wgTwoColConflictBetaFeature' => true,
-				'wgTwoColConflictSuggestResolution' => true,
+				'betaConfig' => true,
+				'singleColumnConfig' => true,
 				'userOptionsLookup' => $betaUser,
 				'namespace' => NS_MAIN,
 				'expected' => true,
@@ -165,19 +165,19 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 	 * @dataProvider provideHasUserEnabledFeature
 	 */
 	public function testHasUserEnabledFeature(
-		$betaPreference,
-		$editingPreference,
-		bool $expectedResult
+		$beta,
+		$editing,
+		bool $expected
 	) {
 		/** @var TwoColConflictContext $twoColContext */
 		$twoColContext = TestingAccessWrapper::newFromObject( new TwoColConflictContext(
 			$this->createConfig( false ),
-			self::createUserOptionsLookup( $editingPreference, $betaPreference ),
+			self::createUserOptionsLookup( $editing, $beta ),
 			$this->createExtensionRegistry()
 		) );
 
 		$result = $twoColContext->hasUserEnabledFeature( $this->createMock( UserIdentity::class ) );
-		$this->assertSame( $expectedResult, $result );
+		$this->assertSame( $expected, $result );
 	}
 
 	public static function provideHasUserEnabledFeature() {
@@ -233,7 +233,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 		bool $usedAsBeta,
 		bool $enabledOpt,
 		bool $hideHintOpt,
-		bool $expectedResult
+		bool $expected
 	) {
 		$user = new UserIdentityValue( (int)$isRegistered, '' );
 		$userOptionsLookup = new StaticUserOptionsLookup( [], [
@@ -247,7 +247,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 			$this->createExtensionRegistry()
 		);
 		$result = $twoColContext->shouldCoreHintBeShown( $user );
-		$this->assertSame( $expectedResult, $result );
+		$this->assertSame( $expected, $result );
 	}
 
 	public static function provideShouldCoreHintBeShown() {

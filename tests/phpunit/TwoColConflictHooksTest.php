@@ -138,7 +138,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @dataProvider provideGetOption
 	 */
-	public function testGetOption( ?string $origBeta, ?string $origEditing, bool $expectedEditing ) {
+	public function testGetOption( ?string $origBeta, ?string $origEditing, bool $newEditing ) {
 		$this->overrideConfigValue( 'TwoColConflictBetaFeature', false );
 		$user = $this->getTestUser()->getUser();
 
@@ -149,7 +149,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 		$fetchedBeta = $userOptionsLookup->getOption( $user, TwoColConflictContext::BETA_PREFERENCE_NAME );
 		$fetchedEditing = $userOptionsLookup->getOption( $user, TwoColConflictContext::ENABLED_PREFERENCE );
 		$this->assertNull( $fetchedBeta );
-		$this->assertSame( $expectedEditing, (bool)$fetchedEditing );
+		$this->assertSame( $newEditing, (bool)$fetchedEditing );
 	}
 
 	public static function provideGetOption() {

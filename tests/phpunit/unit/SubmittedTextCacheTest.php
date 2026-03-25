@@ -22,7 +22,7 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 	 * @dataProvider provideMakeCacheKey
 	 */
 	public function testMakeCacheKey(
-		string $prefixedDbKey,
+		string $title,
 		UserIdentity $user,
 		?SessionId $sessionId,
 		?string $expected
@@ -40,7 +40,7 @@ class SubmittedTextCacheTest extends \MediaWikiUnitTestCase {
 
 		$this->assertSame(
 			$expected,
-			$cache->makeCacheKey( $prefixedDbKey, $user, $sessionId )
+			$cache->makeCacheKey( $title, $user, $sessionId )
 		);
 	}
 
