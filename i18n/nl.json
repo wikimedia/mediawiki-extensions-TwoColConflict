@@ -9,6 +9,7 @@
 			"Optilete",
 			"PonkoSasuke",
 			"Romaine",
+			"Siebrand",
 			"Sjoerddebruin"
 		]
 	},
@@ -19,7 +20,7 @@
 	"twocolconflict-beta-feature-description": "Laat het scherm voor bewerkingsconflicten zien als een verbeterd, op alinea's gebaseerd overzicht.",
 	"twocolconflict-copy-action": "kopieer volledige tekst",
 	"twocolconflict-copy-notice": "De volledige wikitekst van uw versie is naar het klembord gekopieerd (hieronder aangebrachte bewerkingen zijn niet inbegrepen).",
-	"twocolconflict-copy-tab-action": "toon volledige tekst",
+	"twocolconflict-copy-tab-action": "volledige tekst bekijken",
 	"twocolconflict-copy-tab-tooltip": "Bekijk de volledige wikitekst van uw versie (hieronder aangebrachte bewerkingen zijn niet inbegrepen). Wordt geopend in een nieuw tabblad.",
 	"twocolconflict-copy-tooltip": "Kopieer de volledige wikitekst van uw versie naar het klembord (hieronder aangebrachte bewerkingen zijn niet inbegrepen)",
 	"twocolconflict-core-ui-hint": "Er is nu een bijgewerkte interface beschikbaar voor het oplossen van bewerkingsconflicten. Schakel de op alinea gebaseerde bewerkingsconflictinterface in uw [[Special:Preferences#mw-prefsection-editing|voorkeuren]] in om het uit te proberen.",
