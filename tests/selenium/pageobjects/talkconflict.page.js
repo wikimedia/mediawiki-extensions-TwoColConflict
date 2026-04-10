@@ -1,7 +1,5 @@
-'use strict';
-
-const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+import { getTestString } from 'wdio-mediawiki/Util';
+import EditConflictPage from '../pageobjects/editconflict.page.js';
 
 class TalkConflictPage {
 	get talkRow() {
@@ -33,7 +31,7 @@ class TalkConflictPage {
 			'Line1\nLine2\nLine3\n',
 			'Line1\nLine2\nLine3\nComment <span lang="de">A</span>',
 			'Line1\nLine2\nLine3\nComment <span lang="en">B</span>',
-			( Util.getTestString( 'Talk:Test-conflict-' ) )
+			( getTestString( 'Talk:Test-conflict-' ) )
 		);
 		await this.talkRow.waitForDisplayed();
 	}
@@ -59,4 +57,4 @@ class TalkConflictPage {
 	}
 }
 
-module.exports = new TalkConflictPage();
+export default new TalkConflictPage();

@@ -1,6 +1,4 @@
-'use strict';
-
-const EditConflictPage = require( '../pageobjects/editconflict.page' );
+import EditConflictPage from '../pageobjects/editconflict.page.js';
 
 describe( 'TwoColConflict EditUi', () => {
 	before( async () => {

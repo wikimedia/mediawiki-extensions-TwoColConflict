@@ -1,34 +1,31 @@
-'use strict';
-
-const Api = require( 'wdio-mediawiki/Api' ),
-	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
-	Util = require( 'wdio-mediawiki/Util' );
+import { createApiClient } from 'wdio-mediawiki/Api';
+import LoginPage from 'wdio-mediawiki/LoginPage';
+import { getTestString } from 'wdio-mediawiki/Util';
 
 class TestAccounts {
-	// FIXME: Note that these cannot be lazy-initialized from within another browser.call
-
-	get adminBot() {
-		return browser.call( async () => await Api.bot() );
-	}
-
 	async createUserAccount() {
 		const credentials = {
-			username: Util.getTestString( 'User-' ),
-			password: Util.getTestString( 'pwd-' )
+			username: getTestString( 'User-' ),
+			password: getTestString( 'pwd-' )
 		};
-		await Api.createAccount( await this.adminBot, credentials.username, credentials.password );
+		const apiClient = await createApiClient();
+		await apiClient.createAccount( credentials.username, credentials.password );
 		return credentials;
 	}
 
 	async loginAsUser() {
 		const credentials = await this.createUserAccount();
-		await UserLoginPage.login( credentials.username, credentials.password );
+		await LoginPage.login( credentials.username, credentials.password );
+	}
+
+	async adminBot() {
+		return await createApiClient();
 	}
 
 	async otherBot() {
 		const credentials = await this.createUserAccount();
-		return await browser.call( async () => await Api.bot( credentials.username, credentials.password ) );
+		return await createApiClient( { username: credentials.username, password: credentials.password } );
 	}
 }
 
-module.exports = new TestAccounts();
+export default new TestAccounts();

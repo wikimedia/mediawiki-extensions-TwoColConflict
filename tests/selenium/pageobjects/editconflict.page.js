@@ -1,10 +1,8 @@
-'use strict';
-
-const Page = require( 'wdio-mediawiki/Page' ),
-	EditPage = require( '../pageobjects/edit.page' ),
-	UserLoginPage = require( 'wdio-mediawiki/LoginPage' ),
-	TestAccounts = require( '../test_accounts' ),
-	Util = require( 'wdio-mediawiki/Util' );
+import Page from 'wdio-mediawiki/Page';
+import LoginPage from 'wdio-mediawiki/LoginPage';
+import { getTestString, waitForModuleState } from 'wdio-mediawiki/Util';
+import EditPage from '../pageobjects/edit.page.js';
+import TestAccounts from '../test_accounts.js';
 
 class EditConflictPage extends Page {
 	get conflictHeader() {
@@ -102,7 +100,7 @@ class EditConflictPage extends Page {
 	 * @return {Promise} Promise from the mw.Api request
 	 */
 	async prepareUserSettings() {
-		await Util.waitForModuleState( 'mediawiki.base' );
+		await waitForModuleState( 'mediawiki.base' );
 		return await browser.execute( async () => {
 			await mw.loader.using( 'mediawiki.api' );
 			return new mw.Api().saveOptions( {
@@ -122,7 +120,7 @@ class EditConflictPage extends Page {
 	 */
 	async toggleHelpDialog( show ) {
 		const hide = show === false;
-		await Util.waitForModuleState( 'mediawiki.base' );
+		await waitForModuleState( 'mediawiki.base' );
 		return await browser.execute( async ( setHide ) => {
 			await mw.loader.using( 'mediawiki.api' );
 			return new mw.Api().saveOption(
@@ -133,7 +131,7 @@ class EditConflictPage extends Page {
 	}
 
 	async prepareEditConflict() {
-		await UserLoginPage.loginAdmin();
+		await LoginPage.loginAdmin();
 		await this.prepareUserSettings();
 	}
 
@@ -149,9 +147,8 @@ class EditConflictPage extends Page {
 		await this.waitForJS();
 	}
 
-	async apiEditPage( bot, title, text ) {
-		await browser.call( async () => await bot.edit( title, text ) );
-		await browser.pause( 500 );
+	async apiEditPage( apiClient, title, text ) {
+		await apiClient.edit( title, text );
 	}
 
 	async createConflict(
@@ -161,10 +158,10 @@ class EditConflictPage extends Page {
 		title = null,
 		section = null
 	) {
-		title = ( title !== null ) ? title : ( Util.getTestString( 'conflict-title-' ) );
+		title = ( title !== null ) ? title : ( getTestString( 'conflict-title-' ) );
 
 		// set initial page content
-		await this.apiEditPage( await TestAccounts.adminBot, title, startText );
+		await this.apiEditPage( await TestAccounts.adminBot(), title, startText );
 
 		// open editor and change the initial content
 		if ( section !== null ) {
@@ -183,7 +180,7 @@ class EditConflictPage extends Page {
 	}
 
 	async waitForJS() {
-		await Util.waitForModuleState( 'ext.TwoColConflict.SplitJs' );
+		await waitForModuleState( 'ext.TwoColConflict.SplitJs' );
 	}
 
 	async testNoJs() {
@@ -194,4 +191,4 @@ class EditConflictPage extends Page {
 	}
 }
 
-module.exports = new EditConflictPage();
+export default new EditConflictPage();

@@ -1,9 +1,7 @@
-'use strict';
-
-const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
-	TalkConflictPage = require( '../pageobjects/talkconflict.page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+import EditConflictPage from '../pageobjects/editconflict.page.js';
+import FinishedConflictPage from '../pageobjects/finishedconflict.page.js';
+import TalkConflictPage from '../pageobjects/talkconflict.page.js';
+import { getTestString } from 'wdio-mediawiki/Util';
 
 describe( 'TwoColConflict', () => {
 	before( async () => {
@@ -65,7 +63,7 @@ describe( 'TwoColConflict', () => {
 			'Line1\n\nLine2',
 			'Line1\nComment <span lang="de">A</span>\nLine2',
 			'Line1\nComment <span lang="en">B</span>\n\nLine2',
-			Util.getTestString( 'Talk:Test-conflict-' )
+			getTestString( 'Talk:Test-conflict-' )
 		);
 		await TalkConflictPage.talkRow.waitForDisplayed();
 

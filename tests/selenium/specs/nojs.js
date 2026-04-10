@@ -1,8 +1,6 @@
-'use strict';
-
-const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' ),
-	TalkConflictPage = require( '../pageobjects/talkconflict.page' );
+import EditConflictPage from '../pageobjects/editconflict.page.js';
+import FinishedConflictPage from '../pageobjects/finishedconflict.page.js';
+import TalkConflictPage from '../pageobjects/talkconflict.page.js';
 
 describe( 'TwoColConflict without JavaScript', () => {
 	before( async () => {

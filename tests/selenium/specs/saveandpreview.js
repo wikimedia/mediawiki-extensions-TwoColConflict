@@ -1,7 +1,5 @@
-'use strict';
-
-const EditConflictPage = require( '../pageobjects/editconflict.page' ),
-	FinishedConflictPage = require( '../pageobjects/finishedconflict.page' );
+import EditConflictPage from '../pageobjects/editconflict.page.js';
+import FinishedConflictPage from '../pageobjects/finishedconflict.page.js';
 
 describe( 'TwoColConflict save and preview', () => {
 	before( async () => {
@@ -37,7 +35,7 @@ describe( 'TwoColConflict save and preview', () => {
 		);
 		expect(
 			await EditConflictPage.previewText.getText() ).toBe(
-			'Line1\n\nDummy Text title'
+			'Line1\nDummy Text title'
 		);
 	} );
 

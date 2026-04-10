@@ -1,11 +1,9 @@
-'use strict';
-
-const Page = require( 'wdio-mediawiki/Page' ),
-	Util = require( 'wdio-mediawiki/Util' );
+import Page from 'wdio-mediawiki/Page';
+import { waitForModuleState } from 'wdio-mediawiki/Util';
 
 class FinishedConflictPage extends Page {
 	async pageWikitext() {
-		await Util.waitForModuleState( 'mediawiki.base' );
+		await waitForModuleState( 'mediawiki.base' );
 
 		const result = await browser.execute( async () => {
 			await mw.loader.using( 'mediawiki.api' );
@@ -22,4 +20,4 @@ class FinishedConflictPage extends Page {
 	}
 }
 
-module.exports = new FinishedConflictPage();
+export default new FinishedConflictPage();
