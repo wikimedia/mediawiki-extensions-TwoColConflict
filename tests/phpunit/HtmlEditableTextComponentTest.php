@@ -3,10 +3,10 @@
 namespace TwoColConflict\Tests;
 
 use MediaWiki\Language\Language;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Output\OutputPage;
 use MediaWikiIntegrationTestCase;
-use MessageLocalizer;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use Wikimedia\TestingAccessWrapper;
 

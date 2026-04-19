@@ -3,7 +3,7 @@
 namespace TwoColConflict\Html;
 
 use MediaWiki\Html\Html;
-use MessageLocalizer;
+use MediaWiki\Language\MessageLocalizer;
 
 /**
  * @license GPL-2.0-or-later

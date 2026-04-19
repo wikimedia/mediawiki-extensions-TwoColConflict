@@ -4,6 +4,7 @@ namespace TwoColConflict\Tests;
 
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Language\Language;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
@@ -14,7 +15,6 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
-use MessageLocalizer;
 use TwoColConflict\Html\HtmlSplitConflictHeader;
 
 /**

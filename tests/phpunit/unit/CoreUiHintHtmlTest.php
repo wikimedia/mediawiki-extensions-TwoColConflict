@@ -2,8 +2,8 @@
 
 namespace TwoColConflict\Tests;
 
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Message\Message;
-use MessageLocalizer;
 use OOUI\BlankTheme;
 use OOUI\Theme;
 use TwoColConflict\Html\CoreUiHintHtml;

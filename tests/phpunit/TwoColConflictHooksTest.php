@@ -4,6 +4,7 @@ namespace TwoColConflict\Tests;
 
 use MediaWiki\Context\IContextSource;
 use MediaWiki\EditPage\EditPage;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
@@ -13,7 +14,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
-use MessageLocalizer;
 use OOUI\InputWidget;
 use PHPUnit\Framework\MockObject\MockObject;
 use TwoColConflict\Hooks\TwoColConflictHooks;

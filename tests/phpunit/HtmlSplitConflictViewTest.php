@@ -2,10 +2,10 @@
 
 namespace TwoColConflict\Tests;
 
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Output\OutputPage;
 use MediaWikiIntegrationTestCase;
-use MessageLocalizer;
 use TwoColConflict\AnnotatedHtmlDiffFormatter;
 use TwoColConflict\Html\HtmlEditableTextComponent;
 use TwoColConflict\Html\HtmlSplitConflictView;

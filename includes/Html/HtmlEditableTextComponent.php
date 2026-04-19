@@ -4,7 +4,7 @@ namespace TwoColConflict\Html;
 
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
-use MessageLocalizer;
+use MediaWiki\Language\MessageLocalizer;
 use OOUI\ButtonWidget;
 
 /**
