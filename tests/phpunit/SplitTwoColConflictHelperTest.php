@@ -16,7 +16,7 @@ use MockTitleTrait;
 use TwoColConflict\SplitTwoColConflictHelper;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TwoColConflictContext;
-use Wikimedia\Stats\NullStatsdDataFactory;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * @covers \TwoColConflict\SplitTwoColConflictHelper
@@ -37,7 +37,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$helper = new SplitTwoColConflictHelper(
 			$this->makeMockTitle( __CLASS__ ),
 			$this->createOutputPage(),
-			new NullStatsdDataFactory(),
+			StatsFactory::newNull(),
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
@@ -55,7 +55,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$helper = new SplitTwoColConflictHelper(
 			$this->makeMockTitle( __CLASS__ ),
 			$this->createOutputPage(),
-			new NullStatsdDataFactory(),
+			StatsFactory::newNull(),
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),
@@ -82,7 +82,7 @@ class SplitTwoColConflictHelperTest extends \MediaWikiIntegrationTestCase {
 		$helper = new SplitTwoColConflictHelper(
 			$this->makeMockTitle( __CLASS__ ),
 			$out,
-			new NullStatsdDataFactory(),
+			StatsFactory::newNull(),
 			'',
 			$this->createMock( IContentHandlerFactory::class ),
 			$this->createMock( TwoColConflictContext::class ),

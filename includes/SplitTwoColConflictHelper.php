@@ -20,7 +20,6 @@ use TwoColConflict\ProvideSubmittedText\SubmittedTextCache;
 use TwoColConflict\TalkPageConflict\ResolutionSuggester;
 use TwoColConflict\TalkPageConflict\TalkPageResolution;
 use Wikimedia\ObjectCache\BagOStuff;
-use Wikimedia\Stats\IBufferingStatsdDataFactory;
 use Wikimedia\Stats\StatsFactory;
 
 /**
@@ -39,7 +38,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	/**
 	 * @param Title $title
 	 * @param OutputPage $out
-	 * @param IBufferingStatsdDataFactory|StatsFactory $stats
+	 * @param StatsFactory $stats
 	 * @param string $submitLabel Message key for submit button's label
 	 * @param IContentHandlerFactory $contentHandlerFactory
 	 * @param TwoColConflictContext $twoColContext
@@ -52,7 +51,7 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 	public function __construct(
 		Title $title,
 		OutputPage $out,
-		$stats,
+		StatsFactory $stats,
 		string $submitLabel,
 		IContentHandlerFactory $contentHandlerFactory,
 		TwoColConflictContext $twoColContext,
