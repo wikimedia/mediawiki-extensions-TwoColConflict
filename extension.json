@@ -166,7 +166,8 @@
 			"services": [
 				"TwoColConflictContext",
 				"MainObjectStash",
-				"StatsFactory"
+				"StatsFactory",
+				"TextboxBuilder"
 			]
 		}
 	},

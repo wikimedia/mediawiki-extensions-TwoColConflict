@@ -28,6 +28,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		private readonly TwoColConflictContext $twoColConflictContext,
 		BagOStuff $textCache,
 		private readonly StatsFactory $statsFactory,
+		private readonly TextboxBuilder $textboxBuilder,
 	) {
 		parent::__construct( 'TwoColConflictProvideSubmittedText' );
 		$this->textCache = new SubmittedTextCache( $textCache );
@@ -125,14 +126,13 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 	 * @return string
 	 */
 	private function getTextAreaHtml( string $text, PageIdentity $page ): string {
-		$builder = new TextboxBuilder();
 		$attribs = [
 			'class' => [ 'mw-twocolconflict-submitted-text' ],
 			'readonly',
 			'tabindex' => 1,
 		];
 
-		$attribs = $builder->buildTextboxAttribs(
+		$attribs = $this->textboxBuilder->buildTextboxAttribs(
 			'wpTextbox2',
 			$attribs,
 			$this->getUser(),
@@ -142,7 +142,7 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		return Html::element( 'span', [], $this->msg( 'twocolconflict-special-textarea-hint' )->text() ) .
 			Html::textarea(
 				'wpTextbox2',
-				$builder->addNewLineAtEnd( $text ),
+				$this->textboxBuilder->addNewLineAtEnd( $text ),
 				$attribs
 			);
 	}
