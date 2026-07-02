@@ -71,7 +71,7 @@ class HtmlTalkPageResolutionView {
 						(string)new ButtonWidget( [
 							'infusable' => true,
 							'framed' => true,
-							'icon' => 'markup',
+							'icon' => 'sortVertical',
 							'title' => $this->messageLocalizer->msg(
 								'twocolconflict-talk-switch-tooltip'
 							)->text(),

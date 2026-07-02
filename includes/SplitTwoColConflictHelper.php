@@ -73,7 +73,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		$this->out->enableOOUI();
 		$this->out->addModuleStyles( [
 			'oojs-ui.styles.icons-editing-core',
-			'oojs-ui.styles.icons-editing-advanced',
 			'oojs-ui.styles.icons-movement'
 		] );
 	}
