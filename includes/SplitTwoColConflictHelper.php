@@ -85,7 +85,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		// XXX This is copied largely from core and we may be able to refactor something here.
 		$namespace = 'n/a';
 		$userBucket = 'n/a';
-		$statsdNamespaces = [ 'TwoColConflict.conflict' ];
 		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
 		if (
 			$this->title->getNamespace() >= NS_MAIN &&
@@ -93,18 +92,15 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) {
 			// getNsText() returns empty string if getNamespace() === NS_MAIN
 			$namespace = $this->title->getNsText() ?: 'Main';
-			$statsdNamespaces[] = 'TwoColConflict.conflict.byNamespaceId.' . $this->title->getNamespace();
 		}
 		if ( $user ) {
 			$userBucket = $this->getUserBucket( $user->getEditCount() );
-			$statsdNamespaces[] = 'TwoColConflict.conflict.byUserEdits.' . $userBucket;
 		}
 
 		$this->stats->withComponent( 'TwoColConflict' )
 			->getCounter( 'edit_failure_total' )
 			->setLabel( 'namespace', $namespace )
 			->setLabel( 'user_bucket', $userBucket )
-			->copyToStatsdAt( $statsdNamespaces )
 			->increment();
 	}
 
@@ -116,7 +112,6 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		// XXX This is copied largely from core and we may be able to refactor something here.
 		$namespace = 'n/a';
 		$userBucket = 'n/a';
-		$statsdNamespaces = [ 'TwoColConflict.conflict.resolved' ];
 		// Only include 'standard' namespaces to avoid creating unknown numbers of statsd metrics
 		if (
 			$this->title->getNamespace() >= NS_MAIN &&
@@ -124,18 +119,15 @@ class SplitTwoColConflictHelper extends TextConflictHelper {
 		) {
 			// getNsText() returns empty string if getNamespace() === NS_MAIN
 			$namespace = $this->title->getNsText() ?: 'Main';
-			$statsdNamespaces[] = 'TwoColConflict.conflict.resolved.byNamespaceId.' . $this->title->getNamespace();
 		}
 		if ( $user ) {
 			$userBucket = $this->getUserBucket( $user->getEditCount() );
-			$statsdNamespaces[] = 'TwoColConflict.conflict.resolved.byUserEdits.' . $userBucket;
 		}
 
 		$this->stats->withComponent( 'TwoColConflict' )
 			->getCounter( 'edit_failure_resolved_total' )
 			->setLabel( 'namespace', $namespace )
 			->setLabel( 'user_bucket', $userBucket )
-			->copyToStatsdAt( $statsdNamespaces )
 			->increment();
 	}
 

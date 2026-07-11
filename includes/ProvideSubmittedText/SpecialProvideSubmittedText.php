@@ -43,7 +43,6 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		$out->addModuleStyles( 'ext.TwoColConflict.SplitCss' );
 		$out->enableOOUI();
 		$this->statsFactory->getCounter( 'TwoColConflict_copy_special_load_total' )
-			->copyToStatsdAt( 'TwoColConflict.copy.special.load' )
 			->increment();
 
 		$title = Title::newFromDBkey( $subPage ?? '' );
@@ -78,7 +77,6 @@ class SpecialProvideSubmittedText extends UnlistedSpecialPage {
 		}
 
 		$this->statsFactory->getCounter( 'TwoColConflict_copy_special_retrieved_total' )
-			->copyToStatsdAt( 'TwoColConflict.copy.special.retrieved' )
 			->increment();
 
 		$html = $this->getHeaderHintsHtml();
