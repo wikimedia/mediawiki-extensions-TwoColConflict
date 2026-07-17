@@ -8,7 +8,8 @@
 			"Rail",
 			"Railfail536",
 			"Tar Lócesilion",
-			"Woytecr"
+			"Woytecr",
+			"PanWor"
 		]
 	},
 	"twocolconflict": "Konflikt edycji w oparciu o akapity",
@@ -17,7 +18,7 @@
 	"twocolconflict-beta-feature-message": "Konflikt edycji oparty o akapity",
 	"twocolconflict-beta-feature-description": "Pokazuje przegląd konfliktu zapisu edycji w postaci widoku opartego o akapity.",
 	"twocolconflict-copy-action": "skopiuj pełen tekst",
-	"twocolconflict-copy-notice": "Pełen wikitekst twojej wersji został skopiowany do schowka (edycje wykonane poniżej nie zostały dołączone).",
+	"twocolconflict-copy-notice": "Pełen wikikod Twojej wersji został skopiowany do schowka (edycje wykonane poniżej nie zostały dołączone).",
 	"twocolconflict-copy-tab-action": "zobacz pełen tekst",
 	"twocolconflict-copy-tab-tooltip": "Zobacz pełen tekst swojej wersji (edycje wykonane poniżej nie są uwzględnione). Otwiera się w nowej karcie.",
 	"twocolconflict-copy-tooltip": "Skopiuj pełen tekst swojej wersji do schowka (edycje wykonane poniżej nie zostaną uwzględnione)",
