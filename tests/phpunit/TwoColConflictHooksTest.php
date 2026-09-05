@@ -7,7 +7,6 @@ use MediaWiki\EditPage\EditPage;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
@@ -248,7 +247,7 @@ class TwoColConflictHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	private function setOptionRow( UserIdentity $user, string $key, ?string $value ) {
-		$db = MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->getPrimaryDatabase();
+		$db = $this->getDb();
 		if ( $value === null ) {
 			$db->newDeleteQueryBuilder()
 				->deleteFrom( 'user_properties' )
