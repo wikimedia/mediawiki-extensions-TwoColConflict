@@ -292,7 +292,7 @@ class TwoColConflictContextTest extends \MediaWikiIntegrationTestCase {
 
 	private function createTitle( int $namespace ): Title {
 		$title = $this->createMock( Title::class );
-		$title->method( 'hasContentModel' )->willReturn( CONTENT_MODEL_WIKITEXT );
+		$title->method( 'hasContentModel' )->willReturn( true );
 		$title->method( 'isTalkPage' )->willReturn( $namespace === NS_TALK );
 		$title->method( 'inNamespace' )->willReturn( $namespace === NS_PROJECT );
 		return $title;

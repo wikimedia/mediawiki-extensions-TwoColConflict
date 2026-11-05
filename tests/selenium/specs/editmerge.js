@@ -65,11 +65,12 @@ describe( 'TwoColConflict EditUi', () => {
 		await EditConflictPage.getSaveButton( 'other' ).click();
 
 		await EditConflictPage.getEditButton( 'other' ).click();
+		await EditConflictPage.getResetButton( 'other' ).waitForClickable();
 		await EditConflictPage.getResetButton( 'other' ).click();
 		await EditConflictPage.resetConfirmationPopup.waitForDisplayed();
+		await EditConflictPage.resetConfirmationButton.waitForClickable();
 		await EditConflictPage.resetConfirmationButton.click();
 		await EditConflictPage.resetConfirmationButton.waitForDisplayed( {
-			timeout: 2000,
 			reverse: true
 		} );
 

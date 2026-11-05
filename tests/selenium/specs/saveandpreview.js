@@ -33,8 +33,8 @@ describe( 'TwoColConflict save and preview', () => {
 			EditConflictPage.previewView ).toBeDisplayed(
 			{ message: 'I see a preview page for my changes' }
 		);
-		expect(
-			await EditConflictPage.previewText.getText() ).toBe(
+		await expect(
+			EditConflictPage.previewText ).toHaveText(
 			'Line1\nDummy Text title'
 		);
 	} );

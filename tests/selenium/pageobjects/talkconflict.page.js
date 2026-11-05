@@ -43,17 +43,27 @@ class TalkConflictPage {
 	}
 
 	async isOtherBlockFirst() {
-		const rows = $$( '.mw-twocolconflict-single-column' );
+		const rows = await $$( '.mw-twocolconflict-single-column' );
+		if ( rows.length < 3 ) {
+			return false;
+		}
 		// FIXME: This assumes that the tested conflict shows "copy" and then the conflict.
-		return ( await rows[ 1 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-delete' ) &&
-			( await rows[ 2 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-add' );
+		const class1 = await rows[ 1 ].getAttribute( 'class' );
+		const class2 = await rows[ 2 ].getAttribute( 'class' );
+		return class1.includes( 'mw-twocolconflict-split-delete' ) &&
+			class2.includes( 'mw-twocolconflict-split-add' );
 	}
 
 	async isYourBlockFirst() {
-		const rows = $$( '.mw-twocolconflict-single-column' );
+		const rows = await $$( '.mw-twocolconflict-single-column' );
+		if ( rows.length < 3 ) {
+			return false;
+		}
 		// FIXME: This assumes that the tested conflict shows "copy" and then the conflict.
-		return ( await rows[ 1 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-add' ) &&
-			( await rows[ 2 ].getAttribute( 'class' ) ).includes( 'mw-twocolconflict-split-delete' );
+		const class1 = await rows[ 1 ].getAttribute( 'class' );
+		const class2 = await rows[ 2 ].getAttribute( 'class' );
+		return class1.includes( 'mw-twocolconflict-split-add' ) &&
+			class2.includes( 'mw-twocolconflict-split-delete' );
 	}
 }
 

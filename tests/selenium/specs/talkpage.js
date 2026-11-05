@@ -41,7 +41,7 @@ describe( 'TwoColConflict', () => {
 			await expect( EditConflictPage.previewView ).toBeDisplayed();
 
 			await expect(
-				await EditConflictPage.previewText.getText() ).toBe(
+				EditConflictPage.previewText ).toHaveText(
 				'Line1 Line2 Line3 Comment B Comment A'
 			);
 		} );

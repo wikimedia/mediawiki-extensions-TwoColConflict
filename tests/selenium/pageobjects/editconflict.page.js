@@ -145,6 +145,7 @@ class EditConflictPage extends Page {
 			'Line<span>1</span>\n\nChange <span lang="en">B</span>'
 		);
 		await this.waitForJS();
+		await this.conflictView.waitForDisplayed();
 	}
 
 	async apiEditPage( apiClient, title, text ) {
@@ -169,13 +170,23 @@ class EditConflictPage extends Page {
 		} else {
 			await EditPage.openForEditing( title );
 		}
-		await EditPage.content.waitForExist();
+		await EditPage.content.waitForDisplayed();
 		await EditPage.content.setValue( yourText );
+
+		// Wait until the editor actually reflects yourText before triggering conflict
+		await browser.waitUntil(
+			async () => ( await EditPage.content.getValue() ) === yourText,
+			{ timeoutMsg: 'Edit box did not update with yourText' }
+		);
+
+		// Ensure the background edit is timestamped in a subsequent second.
+		await browser.pause( 1000 );
 
 		// conflicting edit by another party in the background
 		await this.apiEditPage( await TestAccounts.otherBot(), title, otherText );
 
 		// should trigger the edit conflict UI
+		await EditPage.save.waitForClickable();
 		await EditPage.save.click();
 	}
 
